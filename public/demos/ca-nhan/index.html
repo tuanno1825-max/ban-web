@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoàng (黃) - Du Học Sinh Đài Loan • Chia Sẻ Cuộc Sống &amp; Góc Mời Trà Sữa Cà Phê</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FDF8F0;
+      --bg-surface: #FFFFFF;
+      --bg-oat: #F7EFE2;
+      --bg-oat-hover: #EFE3CE;
+      --espresso: #4A2E1B;
+      --terracotta: #E0533C;
+      --matcha: #3F7A52;
+      --boba-amber: #D97706;
+      --boba-caramel: #B45309;
+      --sticky-butter: #FEF08A;
+      --sticky-cream: #FFFBEB;
+      --boba-gradient: linear-gradient(135deg, #E0533C 0%, #D97706 100%);
+      --caramel-gradient: linear-gradient(135deg, #D97706 0%, #92400E 100%);
+      --text-heading: #2C1A11;
+      --text-body: #5C4332;
+      --text-muted: #846A58;
+      --border-warm: #E6D7C3;
+      --border-dashed: #D6C4B0;
+      --shadow-polaroid: 0 10px 25px rgba(74, 46, 27, 0.12);
+      --shadow-polaroid-hover: 0 18px 36px rgba(74, 46, 27, 0.2);
+      --shadow-soft: 0 8px 24px rgba(74, 46, 27, 0.08);
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans: 'Quicksand', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-cream);
+      background-image:
+        radial-gradient(rgba(180, 145, 110, 0.22) 1px, transparent 1px),
+        linear-gradient(to right, rgba(222, 205, 182, 0.28) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(222, 205, 182, 0.28) 1px, transparent 1px);
+      background-size: 24px 24px, 48px 48px, 48px 48px;
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* COZY JOURNAL POSTAL TOP BAR */
+    .top-bar {
+      background: var(--bg-oat);
+      border-bottom: 2px dashed var(--border-dashed);
+      padding: 9px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      color: var(--text-body);
+      z-index: 100;
+      position: relative;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(63, 122, 82, 0.12);
+      border: 1px solid rgba(63, 122, 82, 0.35);
+      color: var(--matcha);
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .status-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--matcha);
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(63, 122, 82, 0.6);
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .top-link {
+      color: var(--text-heading);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .top-link:hover {
+      color: var(--terracotta);
+    }
+
+    /* PERSONAL CREATOR JOURNAL HEADER */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(253, 248, 240, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-warm);
+      box-shadow: 0 4px 20px rgba(74, 46, 27, 0.05);
+      padding: 14px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90;
+      gap: 24px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .avatar-mini {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid #FFFFFF;
+      outline: 2px solid var(--boba-amber);
+      box-shadow: 0 4px 12px rgba(74, 46, 27, 0.18);
+    }
+    .brand-text h1 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: var(--text-heading);
+      line-height: 1.15;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-text h1::after {
+      content: '臺北日記';
+      font-size: 0.65rem;
+      font-family: var(--font-sans);
+      color: var(--terracotta);
+      border: 1.5px solid var(--terracotta);
+      padding: 1px 6px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      transform: rotate(-3deg);
+      background: rgba(224, 83, 60, 0.08);
+    }
+    .brand-text p {
+      font-size: 0.72rem;
+      letter-spacing: 1.2px;
+      color: var(--boba-caramel);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      background: var(--bg-oat);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-warm);
+    }
+    .nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-heading);
+      background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(74, 46, 27, 0.08);
+    }
+
+    .btn-boba {
+      background: var(--boba-gradient);
+      color: #FFFFFF;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.3px;
+      text-decoration: none;
+      border: 2px solid #FFFFFF;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(224, 83, 60, 0.3);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-family: var(--font-sans);
+    }
+    .btn-boba:hover {
+      transform: translateY(-2px) rotate(-0.5deg);
+      box-shadow: 0 10px 24px rgba(224, 83, 60, 0.42);
+    }
+
+    /* HERO SECTION: SCRAPBOOK INTRO & POLAROID PORTRAIT */
+    .hero {
+      position: relative;
+      min-height: 620px;
+      background:
+        radial-gradient(circle at 80% 35%, rgba(217, 119, 6, 0.1) 0%, transparent 55%),
+        radial-gradient(circle at 15% 25%, rgba(224, 83, 60, 0.08) 0%, transparent 45%);
+      display: flex;
+      align-items: center;
+      padding: 72px 48px 84px;
+      border-bottom: 2px dashed var(--border-dashed);
+      overflow: hidden;
+    }
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sticky-butter);
+      border: 1px solid #EAB308;
+      color: var(--espresso);
+      padding: 6px 16px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      box-shadow: 2px 3px 0 rgba(74, 46, 27, 0.12);
+      transform: rotate(-1deg);
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+      line-height: 1.22;
+      color: var(--text-heading);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .hero-title span {
+      color: var(--terracotta);
+      font-style: italic;
+      display: block;
+      text-decoration: underline wavy rgba(217, 119, 6, 0.45) 2px;
+      text-underline-offset: 8px;
+    }
+    .hero-desc {
+      color: var(--text-body);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 30px;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 16px 20px;
+      border-left: 4px solid var(--boba-amber);
+      border-radius: 0 14px 14px 0;
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .hero-stats-strip {
+      display: flex;
+      gap: 24px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-warm);
+      border-radius: 18px;
+      padding: 16px 24px;
+      box-shadow: var(--shadow-soft);
+      max-width: 560px;
+    }
+    .hero-stat-item {
+      flex: 1;
+      border-right: 1px dashed var(--border-dashed);
+      padding-right: 16px;
+    }
+    .hero-stat-item:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    /* HERO POLAROID PHOTO FRAME WITH WASHI TAPE */
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+    }
+    .hero-photo-card {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      background: #FFFFFF;
+      padding: 16px 16px 68px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border-warm);
+      box-shadow: 0 18px 40px rgba(74, 46, 27, 0.16), 0 3px 8px rgba(74, 46, 27, 0.08);
+      transform: rotate(2deg);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s;
+    }
+    /* Washi tape strip on top of Hero Polaroid */
+    .hero-photo-card::before {
+      content: 'TAIPEI • 台灣留學生活';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      width: 165px;
+      height: 30px;
+      background: rgba(254, 240, 138, 0.88);
+      border-left: 2px dotted rgba(74, 46, 27, 0.25);
+      border-right: 2px dotted rgba(74, 46, 27, 0.25);
+      box-shadow: 0 2px 6px rgba(74, 46, 27, 0.12);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--espresso);
+    }
+    /* Stamp seal on corner */
+    .hero-photo-card::after {
+      content: '黃';
+      position: absolute;
+      bottom: 14px;
+      right: 20px;
+      width: 38px;
+      height: 38px;
+      border: 2px solid var(--terracotta);
+      border-radius: 6px;
+      color: var(--terracotta);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: grid;
+      place-items: center;
+      transform: rotate(-8deg);
+      opacity: 0.85;
+      background: rgba(224, 83, 60, 0.05);
+    }
+    .hero-photo-card:hover {
+      transform: rotate(0deg) translateY(-6px);
+      box-shadow: var(--shadow-polaroid-hover);
+    }
+    .hero-photo-card img {
+      width: 100%;
+      height: 410px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 3px;
+      border: 1px solid #EFE6D8;
+      display: block;
+    }
+    .floating-badge-role {
+      position: absolute;
+      bottom: 12px;
+      left: 20px;
+      background: transparent;
+      padding: 0;
+      text-align: left;
+    }
+    .floating-badge-role p:first-child {
+      font-size: 0.7rem;
+      color: var(--boba-caramel);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 800;
+    }
+    .floating-badge-role p:last-child {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
+    /* SECTION TITLE STYLES */
+    .section-wrap {
+      padding: 80px 48px;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 54px;
+    }
+    .section-tag {
+      background: var(--bg-oat);
+      border: 1px solid var(--border-warm);
+      color: var(--terracotta);
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      padding: 5px 16px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: 2.45rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .section-desc {
+      color: var(--text-body);
+      font-size: 0.98rem;
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    /* SECTION 1: POLAROID SCRAPBOOK GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      align-items: stretch;
+    }
+    .gallery-item {
+      position: relative;
+      background: #FFFFFF;
+      padding: 12px 12px 42px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-warm);
+      box-shadow: var(--shadow-polaroid);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      transform: rotate(-1.5deg);
+    }
+    .gallery-item:nth-child(even) {
+      transform: rotate(1.5deg);
+    }
+    .gallery-item:nth-child(3n) {
+      transform: rotate(-1deg);
+    }
+    .gallery-item:first-child {
+      grid-column: span 2;
+      transform: rotate(-1deg);
+    }
+    /* Washi tape on each Polaroid */
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 105px;
+      height: 24px;
+      background: rgba(224, 83, 60, 0.25);
+      border-left: 2px dotted rgba(74, 46, 27, 0.2);
+      border-right: 2px dotted rgba(74, 46, 27, 0.2);
+      z-index: 4;
+    }
+    .gallery-item:nth-child(even)::before {
+      background: rgba(63, 122, 82, 0.25);
+      transform: translateX(-50%) rotate(3deg);
+    }
+    .gallery-item:nth-child(3n)::before {
+      background: rgba(254, 240, 138, 0.85);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid #F0E6D8;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item:hover {
+      transform: rotate(0deg) translateY(-8px) scale(1.01);
+      box-shadow: var(--shadow-polaroid-hover);
+      z-index: 10;
+    }
+    .gallery-caption {
+      padding: 14px 8px 0;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--text-heading);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* SECTION 2: STUDY ABROAD NOTEBOOK GUIDE CARDS */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .topic-card {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid var(--border-warm);
+      border-top: 5px solid var(--boba-amber);
+      border-radius: 16px;
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s;
+    }
+    .topic-card:nth-child(2) {
+      border-top-color: var(--terracotta);
+    }
+    .topic-card:nth-child(3) {
+      border-top-color: var(--matcha);
+    }
+    .topic-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-polaroid-hover);
+    }
+    .topic-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--espresso);
+      background: var(--bg-oat);
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .topic-title {
+      font-family: var(--font-serif);
+      font-size: 1.28rem;
+      color: var(--text-heading);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .topic-desc {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .topic-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--bg-cream);
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px dashed var(--border-dashed);
+    }
+    .topic-perks li {
+      font-size: 0.83rem;
+      color: var(--text-heading);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .topic-perks li span {
+      color: var(--matcha);
+      font-weight: 800;
+    }
+
+    /* SECTION 3: TAIPEI BOBA SHOP MENU BOARD & PAPER RECEIPT */
+    .donate-section {
+      background: var(--bg-oat);
+      border-top: 2px dashed var(--border-dashed);
+      border-bottom: 2px dashed var(--border-dashed);
+      padding: 90px 48px;
+      position: relative;
+    }
+    .donate-card {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 2px solid var(--border-warm);
+      border-radius: 28px;
+      padding: 48px;
+      box-shadow: 0 20px 50px rgba(74, 46, 27, 0.12);
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+    }
+    .donate-menu-header {
+      border-bottom: 2px dashed var(--border-dashed);
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+    }
+    .donate-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 20px 0 24px;
+    }
+    .donate-opt-btn {
+      background: var(--bg-cream);
+      border: 2px solid var(--border-warm);
+      border-radius: 16px;
+      padding: 15px 18px;
+      cursor: pointer;
+      transition: all 0.22s;
+      text-align: left;
+      position: relative;
+    }
+    .donate-opt-btn:hover,
+    .donate-opt-btn.active {
+      border-color: var(--terracotta);
+      background: #FFF7ED;
+      box-shadow: 0 6px 16px rgba(224, 83, 60, 0.15);
+      transform: translateY(-2px);
+    }
+    .donate-opt-btn.active::after {
+      content: '✓ Đang chọn';
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      background: var(--terracotta);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+    .donate-opt-btn strong {
+      display: block;
+      font-size: 1.12rem;
+      color: var(--espresso);
+      font-family: var(--font-serif);
+      margin-bottom: 4px;
+    }
+    .donate-opt-btn span {
+      font-size: 0.8rem;
+      color: var(--text-body);
+      font-weight: 600;
+    }
+
+    .custom-input-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg-cream);
+      border: 1.5px solid var(--border-warm);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+    .custom-input-box:focus-within {
+      border-color: var(--boba-amber);
+      background: #FFFFFF;
+    }
+    .custom-input-box input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-heading);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      width: 100%;
+    }
+    .custom-input-box input::placeholder {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* PAPER CAFE RECEIPT FOR VIETQR */
+    .qr-display-box {
+      background: #FFFDF9;
+      border: 1px solid var(--border-warm);
+      border-top: 6px solid var(--espresso);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 14px 32px rgba(74, 46, 27, 0.12);
+      position: relative;
+    }
+    .receipt-divider {
+      width: 100%;
+      border-bottom: 2px dashed var(--border-dashed);
+      margin: 12px 0;
+    }
+    .qr-img-frame {
+      width: 230px;
+      height: 230px;
+      background: #FFFFFF;
+      border: 2px dashed var(--border-dashed);
+      border-radius: 14px;
+      padding: 10px;
+      display: grid;
+      place-items: center;
+      margin: 10px 0 14px;
+      box-shadow: 0 6px 18px rgba(74, 46, 27, 0.08);
+      overflow: hidden;
+    }
+    .qr-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* SECTION 4: BẢNG VÀNG TRI ÂN (STICKY NOTE WALL OF FAME) */
+    .leaderboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .donor-badge-card {
+      position: relative;
+      background: #FEF9C3;
+      border: 1px solid #FDE047;
+      border-radius: 6px 6px 18px 6px;
+      padding: 26px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 22px rgba(74, 46, 27, 0.1);
+      transform: rotate(-1deg);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .donor-badge-card:nth-child(2n) {
+      background: #FFEDD5;
+      border-color: #FDBA74;
+      transform: rotate(1.2deg);
+    }
+    .donor-badge-card:nth-child(3n) {
+      background: #DCFCE7;
+      border-color: #86EFAC;
+      transform: rotate(-0.8deg);
+    }
+    /* Pin / tape at top of sticky note */
+    .donor-badge-card::before {
+      content: '📌';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2rem;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+    }
+    .donor-badge-card:hover {
+      transform: rotate(0deg) translateY(-5px);
+      box-shadow: 0 16px 32px rgba(74, 46, 27, 0.16);
+      z-index: 5;
+    }
+    .donor-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(74, 46, 27, 0.2);
+    }
+    .donor-name-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .donor-avatar-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 2px solid var(--espresso);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: var(--espresso);
+      font-size: 0.98rem;
+    }
+    .donor-amount {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--terracotta);
+      background: rgba(255, 255, 255, 0.75);
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(224, 83, 60, 0.3);
+    }
+    .donor-msg {
+      font-family: var(--font-serif);
+      font-size: 0.92rem;
+      color: var(--text-heading);
+      font-style: italic;
+      line-height: 1.55;
+      background: rgba(255, 255, 255, 0.55);
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin-top: 4px;
+    }
+
+    /* SECTION 5: KÊNH LIÊN HỆ POSTCARD */
+    .contact-card-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 2px solid var(--border-warm);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: var(--shadow-polaroid);
+      position: relative;
+      background-image: repeating-linear-gradient(
+        135deg,
+        rgba(224, 83, 60, 0.06) 0px,
+        rgba(224, 83, 60, 0.06) 12px,
+        transparent 12px,
+        transparent 24px,
+        rgba(63, 122, 82, 0.06) 24px,
+        rgba(63, 122, 82, 0.06) 36px,
+        transparent 36px,
+        transparent 48px
+      );
+    }
+    .social-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .social-btn-single {
+      background: #FFFFFF;
+      border: 2px solid var(--espresso);
+      color: var(--text-heading);
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 3px 4px 0 var(--espresso);
+      transition: all 0.2s;
+    }
+    .social-btn-single:hover {
+      background: var(--sticky-butter);
+      color: var(--text-heading);
+      transform: translate(-1px, -2px);
+      box-shadow: 5px 6px 0 var(--espresso);
+    }
+
+    /* FOOTER: COZY ROASTED ESPRESSO & CREAM */
+    .footer {
+      background: #EFE5D5;
+      border-top: 2px dashed var(--border-dashed);
+      padding: 68px 48px 30px;
+      color: var(--text-body);
+    }
+    .footer-grid {
+      max-width: 1240px;
+      margin: 0 auto 46px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      color: var(--text-heading);
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--terracotta);
+    }
+    .footer-bottom {
+      max-width: 1240px;
+      margin: 0 auto;
+      border-top: 1px dashed var(--border-dashed);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* MODAL POPUP */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(44, 26, 17, 0.65);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: grid;
+    }
+    .thanks-modal {
+      background: #FFFDF9;
+      border: 2px solid var(--border-warm);
+      border-top: 6px solid var(--terracotta);
+      border-radius: 24px;
+      max-width: 500px;
+      width: 100%;
+      padding: 36px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(44, 26, 17, 0.35);
+      animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-container, .donate-card { grid-template-columns: 1fr; }
+      .gallery-grid, .topics-grid, .leaderboard-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .navbar { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 50px 20px; }
+      .hero-stats-strip { flex-direction: column; gap: 12px; }
+      .hero-stat-item { border-right: none; border-bottom: 1px dashed var(--border-dashed); padding-bottom: 10px; }
+      .hero-stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .donate-card { padding: 24px; }
+      .donate-options-grid { grid-template-columns: 1fr; }
+      .gallery-grid, .topics-grid, .leaderboard-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: span 1; }
+      .section-wrap, .donate-section, .footer { padding: 50px 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR: TAIPEI JOURNAL STAMP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="status-badge">Đang Học Tập &amp; Sinh Sống Tại Đài Loan</div>
+      <span>📍 Taipei / Kaohsiung • Nhật Ký Du Học Sinh &amp; Góc Trà Sữa</span>
+    </div>
+    <div class="top-bar-right">
+      <a href="https://www.facebook.com/thanthien.no" target="_blank" class="top-link">
+        <span>🌐 Facebook:</span>
+        <strong style="color: var(--terracotta);">/thanthien.no</strong>
+      </a>
+      <a href="#donate" class="btn-boba" style="padding: 4px 14px; font-size: 0.76rem;">🧋 Mời Trà Sữa</a>
+    </div>
+  </div>
+
+  <!-- MAIN STICKY NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="brand-logo">
+      <img src="image/avatar-hoang.jpg" alt="Hoàng Du Học Sinh Đài Loan" class="avatar-mini">
+      <div class="brand-text">
+        <h1>Hoàng (黃)</h1>
+        <p>Du Học Sinh Đài Loan • Taiwan Scrapbook</p>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Trang Chủ</a></li>
+      <li><a href="#gallery">Góc Cuộc Sống</a></li>
+      <li><a href="#topics">Kinh Nghiệm Du Học</a></li>
+      <li><a href="#donate">🧋 Mời Cà Phê / Trà Sữa</a></li>
+      <li><a href="#leaderboard">Bảng Vàng Tri Ân</a></li>
+      <li><a href="#contact">Kết Nối 1:1</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="#donate" class="btn-boba">
+        <span>🧋</span>
+        <span>Ủng Hộ Trà Sữa</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div>
+        <div class="hero-eyebrow">
+          <span>🇹🇼 🇻🇳</span>
+          <span>Taiwan International Student &amp; Creator</span>
+        </div>
+        <h2 class="hero-title">
+          Xin chào, mình là
+          <span>Hoàng tại Đài Loan</span>
+        </h2>
+        <p class="hero-desc">
+          "Du học sinh Việt Nam tại đảo ngọc Đài Loan. Nơi mình lưu giữ những trang nhật ký thực tế về học tập, săn học bổng, cuộc sống đời thường, văn hóa trà sữa và những góc phố thân quen nơi xứ Đài."
+        </p>
+
+        <div class="hero-actions">
+          <a href="#donate" class="btn-boba" style="padding: 13px 28px;">
+            <span>🧋</span>
+            <span>Mời Mình Cốc Trà Sữa (Donate)</span>
+          </a>
+          <a href="https://www.facebook.com/thanthien.no" target="_blank" class="social-btn-single">
+            <span>🌐</span>
+            <span>Facebook Cá Nhân</span>
+          </a>
+        </div>
+
+        <div class="hero-stats-strip">
+          <div class="hero-stat-item">
+            <strong style="font-size: 1.45rem; font-family: var(--font-serif); color: var(--terracotta);">4+ Năm</strong>
+            <p style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Du Học &amp; Trải Nghiệm</p>
+          </div>
+          <div class="hero-stat-item">
+            <strong style="font-size: 1.45rem; font-family: var(--font-serif); color: var(--boba-amber);">100+</strong>
+            <p style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Bài Viết &amp; Chia Sẻ</p>
+          </div>
+          <div class="hero-stat-item">
+            <strong style="font-size: 1.45rem; font-family: var(--font-serif); color: var(--matcha);">380+</strong>
+            <p style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Ly Trà Sữa Được Mời</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-card">
+          <img src="image/hero-person.jpg" alt="Hoàng Du Học Sinh Đài Loan">
+          <div class="floating-badge-role">
+            <p>Taiwan International Student</p>
+            <p>Hoàng (黃先生) — Taipei</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: PHOTO GALLERY ĐỜI THƯỜNG (POLAROID SCRAPBOOK) -->
+  <section class="section-wrap" id="gallery">
+    <div class="section-header">
+      <div class="section-tag">Nhật Ký Xứ Đài • Polaroid Album</div>
+      <h3 class="section-heading">Khoảnh Khắc Đời Thường Nơi Đảo Ngọc</h3>
+      <p class="section-desc">Những tấm ảnh Polaroid lưu giữ kỷ niệm sinh hoạt, học tập, dạo chợ đêm cùng bạn bè tại Đài Loan</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="image/photo-1.jpg" alt="Hảo Cửu Bất Kiến">
+        <div class="gallery-caption">✨ "Hảo Cửu Bất Kiến" (好久不見) - Gặp lại những người anh em thân thiết</div>
+      </div>
+      <div class="gallery-item">
+        <img src="image/photo-2.jpg" alt="Học tập và làm việc">
+        <div class="gallery-caption">💻 Những giờ ôn thi và chuẩn bị đồ án tốt nghiệp</div>
+      </div>
+      <div class="gallery-item">
+        <img src="image/photo-3.jpg" alt="Dạo phố đêm">
+        <div class="gallery-caption">🏮 Khám phá chợ đêm và ẩm thực đường phố Đài Loan</div>
+      </div>
+      <div class="gallery-item">
+        <img src="image/photo-4.jpg" alt="Giao lưu bạn bè">
+        <div class="gallery-caption">🧋 Cafe sáng và những câu chuyện về cuộc sống du học</div>
+      </div>
+      <div class="gallery-item">
+        <img src="image/photo-5.jpg" alt="Kỷ niệm thanh xuân">
+        <div class="gallery-caption">🌿 Những chuyến đi thanh xuân tươi đẹp nơi xứ Đài</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: CHIA SẺ KINH NGHIỆM DU HỌC -->
+  <section class="section-wrap" id="topics" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="section-tag">Sổ Tay Du Học Sinh</div>
+      <h3 class="section-heading">Những Chủ Đề Mình Hay Chia Sẻ</h3>
+      <p class="section-desc">Hỗ trợ các bạn trẻ định hướng, chuẩn bị hồ sơ và tự tin sang Đài Loan học tập</p>
+    </div>
+
+    <div class="topics-grid">
+      <div class="topic-card">
+        <span class="topic-badge">Học Bổng Toàn Phần</span>
+        <h4 class="topic-title">Bí Quyết Săn Học Bổng MOE &amp; Trường</h4>
+        <p class="topic-desc">Hướng dẫn chi tiết từ cách viết Kế hoạch học tập (Study Plan), thư giới thiệu đến bí quyết phỏng vấn trực tiếp cùng giáo sư Đài Loan.</p>
+        <ul class="topic-perks">
+          <li><span>✔</span> Mẫu Study Plan chuẩn tiếng Anh &amp; Trung</li>
+          <li><span>✔</span> Danh sách các trường đại học top đầu Đài Loan</li>
+        </ul>
+      </div>
+
+      <div class="topic-card">
+        <span class="topic-badge">Ngôn Ngữ &amp; Giao Tiếp</span>
+        <h4 class="topic-title">Tự Học Tiếng Trung Phồn Thể (TOCFL)</h4>
+        <p class="topic-desc">Mẹo nhớ nhanh bộ thủ chữ Hán Phồn thể, phương pháp luyện phản xạ nghe nói như người bản xứ và bí kíp thi đỗ TOCFL B2/C1.</p>
+        <ul class="topic-perks">
+          <li><span>✔</span> Lộ trình tự học từ con số 0 đến giao tiếp trôi chảy</li>
+          <li><span>✔</span> Bộ tài liệu nghe nói tiếng Đài thực tế</li>
+        </ul>
+      </div>
+
+      <div class="topic-card">
+        <span class="topic-badge">Đời Sống Thực Tế</span>
+        <h4 class="topic-title">Kinh Nghiệm Thuê Nhà &amp; Đi Làm Thêm</h4>
+        <p class="topic-desc">Những lưu ý quan trọng về luật lao động cho du học sinh, cách xin giấy phép đi làm (Work Permit) và mẹo chi tiêu tiết kiệm ở Đài Bắc.</p>
+        <ul class="topic-perks">
+          <li><span>✔</span> Hướng dẫn tìm việc làm thêm hợp pháp an toàn</li>
+          <li><span>✔</span> Danh sách các món ăn chợ đêm ngon - bổ - rẻ</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: KHU VỰC DONATE / MỜI HOÀNG TRÀ SỮA & CÀ PHÊ (CAFE RECEIPT & MENU BOARD) -->
+  <section class="donate-section" id="donate">
+    <div class="section-header">
+      <div class="section-tag">Tiệm Trà Sữa Nhỏ Của Hoàng • 台灣珍珠奶茶</div>
+      <h3 class="section-heading">
+        Mời Hoàng Một Cốc Trà Sữa Đài Loan 🧋
+      </h3>
+      <p class="section-desc">
+        Nếu những chia sẻ hoặc hỗ trợ của mình giúp ích được cho hành trình du học của bạn, một ly trà sữa ngọt ngào sẽ là nguồn động viên vô cùng to lớn!
+      </p>
+    </div>
+
+    <div class="donate-card">
+      <div>
+        <div class="donate-menu-header">
+          <span style="font-size: 0.74rem; font-weight: 800; color: var(--terracotta); text-transform: uppercase; letter-spacing: 1.5px;">📋 Thực Đơn Yêu Thương (Menu Order)</span>
+          <h4 style="font-family: var(--font-serif); font-size: 1.45rem; color: var(--text-heading); margin-top: 4px;">
+            Chọn Món Quà Muốn Gửi Tặng Hoàng
+          </h4>
+          <p style="font-size: 0.88rem; color: var(--text-body); margin-top: 4px;">
+            Mỗi món quà đều giúp mình có thêm năng lượng để viết tiếp những bài chia sẻ hữu ích:
+          </p>
+        </div>
+
+        <!-- PRESET OPTIONS -->
+        <div class="donate-options-grid">
+          <div class="donate-opt-btn active" onclick="selectBoba(20000, '1 Ly Trà Sữa Trân Châu', this)">
+            <strong>🧋 20.000đ (~25 NTD)</strong>
+            <span>1 Ly Trà Sữa Trân Châu Đường Đen</span>
+          </div>
+
+          <div class="donate-opt-btn" onclick="selectBoba(50000, '1 Xửng Tiểu Long Bao', this)">
+            <strong>🥟 50.000đ (~65 NTD)</strong>
+            <span>1 Xửng Tiểu Long Bao Nóng Hổi</span>
+          </div>
+
+          <div class="donate-opt-btn" onclick="selectBoba(100000, '1 Tô Mì Bò Đài Loan', this)">
+            <strong>🍜 100.000đ (~130 NTD)</strong>
+            <span>1 Tô Mì Bò Hầm Cay Đậm Đà</span>
+          </div>
+
+          <div class="donate-opt-btn" onclick="selectBoba(500000, 'Vé Tàu HSR Xứ Đài', this)">
+            <strong>🚅 500.000đ (~650 NTD)</strong>
+            <span>Vé Tàu Cao Tốc Khám Phá Xứ Đài</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 800; color: var(--espresso); margin-bottom: 6px; text-transform: uppercase;">
+            🏷️ Tên Của Bạn / Nickname Trên Ly Trà Sữa
+          </label>
+          <div class="custom-input-box">
+            <input type="text" id="donorName" placeholder="Ví dụ: Bạn chuẩn bị sang Đài Loan, Người bạn ẩn danh...">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 22px;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 800; color: var(--espresso); margin-bottom: 6px; text-transform: uppercase;">
+            💌 Lời Nhắn Gửi Đến Hoàng (Dán lên Bảng Vàng Tri Ân)
+          </label>
+          <div class="custom-input-box">
+            <input type="text" id="donorMessage" placeholder="Chúc Hoàng học tập xuất sắc và ra thêm nhiều video hay nhé!">
+          </div>
+        </div>
+
+        <button class="btn-boba" style="width: 100%; justify-content: center; padding: 15px; font-size: 0.95rem;" onclick="confirmBobaDonation()">
+          <span>✨ Xác Nhận Đã Gửi Quà &amp; Dán Lên Bảng Vàng</span>
+        </button>
+      </div>
+
+      <!-- KHUNG QR CODE THỰC TẾ TRONG THƯ MỤC IMAGE (RECEIPT STYLE) -->
+      <div class="qr-display-box">
+        <div style="font-size: 0.76rem; color: var(--espresso); text-transform: uppercase; font-weight: 800; letter-spacing: 1.5px;">
+          🧾 PHIẾU THANH TOÁN TRÀ SỮA • TAIPEI CAFE
+        </div>
+        <div class="receipt-divider"></div>
+
+        <div class="qr-img-frame">
+          <img src="image/qr-donate.jpg" alt="Mã QR Donate Hoàng Đài Loan">
+        </div>
+
+        <div class="receipt-divider"></div>
+        <div style="font-size: 0.98rem; font-weight: 800; color: var(--terracotta); margin-bottom: 4px; font-family: var(--font-serif);" id="bobaAmountDisplay">
+          Món quà: 1 Ly Trà Sữa (20.000 VNĐ)
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-body); margin-bottom: 6px; font-weight: 600;">
+          Quét bằng bất kỳ App Ngân Hàng hoặc Ví điện tử
+        </p>
+        <p style="font-size: 0.8rem; color: var(--matcha); font-weight: 700;">
+          Cảm ơn bạn rất nhiều vì đã luôn ủng hộ Hoàng! 💖
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: BẢNG VÀNG TRI ÂN REALTIME (STICKY NOTE WALL) -->
+  <section class="section-wrap" id="leaderboard">
+    <div class="section-header">
+      <div class="section-tag">Bảng Ghi Chú Yêu Thương • Sticky Notes</div>
+      <h3 class="section-heading">Bảng Vàng Tri Ân Những Người Bạn Tuyệt Vời</h3>
+      <p class="section-desc">Cảm ơn chân thành những món quà trà sữa, cà phê và lời nhắn ấm áp được dán trên góc tường nhỏ của Hoàng</p>
+    </div>
+
+    <div class="leaderboard-grid" id="leaderboardList">
+      <!-- DONOR 1 -->
+      <div class="donor-badge-card">
+        <div class="donor-top-row">
+          <div class="donor-name-box">
+            <div class="donor-avatar-circle">M</div>
+            <div>
+              <strong style="color: var(--text-heading); font-size: 0.95rem;">Minh Anh (Kỳ thi TOCFL)</strong>
+              <div style="font-size: 0.74rem; color: var(--matcha); font-weight: 700;">Vừa ủng hộ xong</div>
+            </div>
+          </div>
+          <span class="donor-amount">🧋 50.000đ</span>
+        </div>
+        <div class="donor-msg">
+          "Nhờ bộ tài liệu từ vựng của Hoàng mà mình đã đỗ TOCFL B2 để kịp nộp học bổng kỳ Thu này. Cảm ơn Hoàng nhiều nhé!"
+        </div>
+      </div>
+
+      <!-- DONOR 2 -->
+      <div class="donor-badge-card">
+        <div class="donor-top-row">
+          <div class="donor-name-box">
+            <div class="donor-avatar-circle">H</div>
+            <div>
+              <strong style="color: var(--text-heading); font-size: 0.95rem;">Huy Hoàng (Đài Bắc)</strong>
+              <div style="font-size: 0.74rem; color: var(--text-muted); font-weight: 600;">Hôm qua</div>
+            </div>
+          </div>
+          <span class="donor-amount">🍜 100.000đ</span>
+        </div>
+        <div class="donor-msg">
+          "Mời người anh em cùng tên tô mì bò hầm cay bồi dưỡng năng lượng làm đồ án tốt nghiệp nhé!"
+        </div>
+      </div>
+
+      <!-- DONOR 3 -->
+      <div class="donor-badge-card">
+        <div class="donor-top-row">
+          <div class="donor-name-box">
+            <div class="donor-avatar-circle">P</div>
+            <div>
+              <strong style="color: var(--text-heading); font-size: 0.95rem;">Phụ Huynh Em Linh</strong>
+              <div style="font-size: 0.74rem; color: var(--text-muted); font-weight: 600;">3 ngày trước</div>
+            </div>
+          </div>
+          <span class="donor-amount">🚅 500.000đ</span>
+        </div>
+        <div class="donor-msg">
+          "Gia đình cảm ơn cháu Hoàng đã nhiệt tình hướng dẫn cháu Linh lúc mới bỡ ngỡ sang Cao Hùng nhập học."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: KÊNH LIÊN HỆ & FACEBOOK -->
+  <section class="section-wrap" id="contact" style="padding-top: 0;">
+    <div class="contact-card-wrap">
+      <div class="section-tag">Bưu Thiếp Từ Đài Bắc • Postcard</div>
+      <h3 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--text-heading); margin-bottom: 12px;">
+        Kết Nối Cùng Hoàng Nhé!
+      </h3>
+      <p style="color: var(--text-body); font-size: 0.98rem; max-width: 600px; margin: 0 auto; font-weight: 500;">
+        Nếu bạn có bất kỳ câu hỏi nào về du học Đài Loan, học tiếng Trung hay đơn giản là muốn làm quen, đừng ngần ngại nhắn tin cho mình qua Facebook cá nhân:
+      </p>
+
+      <div class="social-btn-group">
+        <a href="https://www.facebook.com/thanthien.no" target="_blank" class="social-btn-single">
+          <span>🌐 Facebook Chính Thức: /thanthien.no</span>
+        </a>
+
+        <a href="https://www.facebook.com/thanthien.no" target="_blank" class="social-btn-single">
+          <span>💬 Nhắn Tin Messenger 1:1</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CHUẨN ĐỒNG BỘ PAT TECH PHẠM ANH TUẤN -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+          <img src="image/avatar-hoang.jpg" alt="Avatar Hoàng" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--boba-amber);">
+          <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--text-heading);">Hoàng in Taiwan (黃)</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-body); line-height: 1.65; margin-bottom: 16px;">
+          Trang nhật ký cá nhân của Hoàng - Du học sinh Đài Loan. Nơi lưu giữ những kỷ niệm thanh xuân, chia sẻ kinh nghiệm học tập và kết nối bạn bè bốn phương.
+        </p>
+        <p style="font-size: 0.84rem; color: var(--terracotta); font-weight: 700;">
+          📍 Học tập &amp; sinh sống tại Đài Loan (Taiwan).
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Chủ Đề Yêu Thích</h4>
+        <ul class="footer-links">
+          <li><a href="#topics">Săn học bổng MOE toàn phần</a></li>
+          <li><a href="#topics">Luyện thi TOCFL chữ Phồn thể</a></li>
+          <li><a href="#topics">Kinh nghiệm thuê nhà &amp; việc làm</a></li>
+          <li><a href="#gallery">Ẩm thực chợ đêm Đài Bắc</a></li>
+          <li><a href="#donate">Góc mời trà sữa tri ân</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kênh Mạng Xã Hội</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.facebook.com/thanthien.no" target="_blank">Facebook cá nhân (/thanthien.no)</a></li>
+          <li><a href="https://www.facebook.com/thanthien.no" target="_blank">Nhắn tin Messenger trực tiếp</a></li>
+          <li><a href="#">Kênh Vlog Cuộc Sống Đài Loan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Ghé Thăm Facebook</h4>
+        <p style="font-size: 0.85rem; color: var(--text-body); line-height: 1.6; margin-bottom: 14px;">
+          Theo dõi hành trình học tập và những câu chuyện thú vị hàng ngày của Hoàng tại Đài Loan.
+        </p>
+        <a href="https://www.facebook.com/thanthien.no" target="_blank" class="btn-boba" style="width: 100%; justify-content: center; font-size: 0.86rem;">
+          <span>🌐 /thanthien.no</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- BẢN QUYỀN ĐỒNG BỘ PHẠM ANH TUẤN - PAT TECH -->
+    <div class="footer-bottom">
+      <p>© 2026 PAT TECH (Phạm Anh Tuấn). Toàn bộ bản quyền giao diện và hệ thống được bảo lưu.</p>
+      <p>Thiết kế &amp; Phát triển độc quyền bởi <a href="../../index.html" style="color: var(--terracotta); text-decoration: none; font-weight: 800;">PAT TECH - Phạm Anh Tuấn</a>.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL XÁC NHẬN DONATE -->
+  <div class="modal-overlay" id="thanksModal">
+    <div class="thanks-modal">
+      <div style="font-size: 3rem; margin-bottom: 10px;">🧋</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-heading); margin-bottom: 8px;">
+        Cảm Ơn Tấm Lòng Của Bạn!
+      </h3>
+      <p style="font-size: 0.92rem; color: var(--text-body); margin-bottom: 20px;">
+        Món quà và lời nhắn của <strong id="modalDonorName" style="color: var(--terracotta);"></strong> đã được Hoàng ghi nhận trang trọng trên Bảng Vàng Tri Ân!
+      </p>
+
+      <div style="background: var(--bg-cream); border: 2px dashed var(--boba-amber); border-radius: 16px; padding: 16px; margin-bottom: 24px; text-align: left;">
+        <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 6px;">Món quà: <strong id="modalDonorAmount" style="color: var(--matcha);"></strong></div>
+        <div style="font-size: 0.85rem; color: var(--text-body);">Lời chúc: <strong id="modalDonorMsg" style="color: var(--text-heading); font-style: italic; font-family: var(--font-serif);"></strong></div>
+      </div>
+
+      <button class="btn-boba" style="width: 100%; justify-content: center;" onclick="closeModal()">
+        Hoàn Tất &amp; Xem Bảng Vàng
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let currentGift = '1 Ly Trà Sữa Trân Châu';
+    let currentAmount = 20000;
+
+    function selectBoba(amount, giftName, btn) {
+      document.querySelectorAll('.donate-opt-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentGift = giftName;
+      currentAmount = amount;
+
+      document.getElementById('bobaAmountDisplay').innerText = `Món quà: ${giftName} (${amount.toLocaleString('vi-VN')} VNĐ)`;
+    }
+
+    function confirmBobaDonation() {
+      const name = document.getElementById('donorName').value.trim() || 'Người bạn ẩn danh';
+      const msg = document.getElementById('donorMessage').value.trim() || `Mời Hoàng ${currentGift}, chúc bạn luôn học tập tốt và thành công tại Đài Loan!`;
+
+      // Prepend to leaderboard
+      const list = document.getElementById('leaderboardList');
+      const newCard = document.createElement('div');
+      newCard.className = 'donor-badge-card';
+      newCard.innerHTML = `
+        <div class="donor-top-row">
+          <div class="donor-name-box">
+            <div class="donor-avatar-circle">${name.charAt(0).toUpperCase()}</div>
+            <div>
+              <strong style="color: var(--text-heading); font-size: 0.95rem;">${name}</strong>
+              <div style="font-size: 0.74rem; color: var(--matcha); font-weight: 700;">Vừa gửi tặng tức thì</div>
+            </div>
+          </div>
+          <span class="donor-amount">🧋 ${currentAmount.toLocaleString('vi-VN')}đ</span>
+        </div>
+        <div class="donor-msg">"${msg}"</div>
+      `;
+      list.prepend(newCard);
+
+      // Open Modal
+      document.getElementById('modalDonorName').innerText = name;
+      document.getElementById('modalDonorAmount').innerText = `${currentGift} (${currentAmount.toLocaleString('vi-VN')} VNĐ)`;
+      document.getElementById('modalDonorMsg').innerText = `"${msg}"`;
+      document.getElementById('thanksModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('thanksModal').classList.remove('open');
+      document.getElementById('donorName').value = '';
+      document.getElementById('donorMessage').value = '';
+      document.getElementById('leaderboard').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

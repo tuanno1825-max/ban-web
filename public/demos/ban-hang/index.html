@@ -3,57 +3,1853 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trendy Style - Cửa Hàng Thời Trang & Phụ Kiện</title>
+  <title>ATELIER NOIR — N°26 Haute Minimalist &amp; Editorial Mode 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root { --accent: #4f46e5; --dark: #0f172a; --bg: #f8fafc; }
-    * { margin:0; padding:0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
-    body { background: var(--bg); color: var(--dark); line-height: 1.6; }
-    header { background: #fff; padding: 16px 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 10; }
-    .logo { font-size: 1.3rem; font-weight: 800; color: var(--accent); }
-    .hero { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; padding: 48px 24px; text-align: center; }
-    .hero h1 { font-size: 2rem; margin-bottom: 12px; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 32px 24px; max-width: 1000px; margin: 0 auto; }
-    .card { background: #fff; border-radius: 12px; padding: 16px; border: 1px solid #e2e8f0; text-align: center; }
-    .card-img { height: 140px; background: #e0e7ff; border-radius: 8px; display: grid; place-items: center; font-size: 3rem; margin-bottom: 12px; }
-    .price { font-size: 1.2rem; font-weight: 700; color: #dc2626; margin: 8px 0; }
-    .btn { display: inline-block; background: var(--accent); color: #fff; padding: 9px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; width: 100%; }
+    :root {
+      --bg-ivory: #FAF7F2;
+      --bg-white: #FFFFFF;
+      --bg-stone: #F2ECE1;
+      --bg-stone-deep: #E8E0D2;
+      --ink-noir: #111111;
+      --ink-espresso: #1C1917;
+      --ink-charcoal: #292524;
+      --ink-muted: #5C564F;
+      --ink-subtle: #857D73;
+      --champagne: #A67C52;
+      --champagne-light: #C8A27A;
+      --champagne-pale: #EFE6DA;
+      --rose-editorial: #9E2A2B;
+      --border-hairline: #111111;
+      --border-soft: #DDD6CA;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Syne', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-ivory);
+      color: var(--ink-noir);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP RUNWAY MARQUEE & EDITORIAL BAR */
+    .top-bar {
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      border-bottom: 1px solid var(--ink-noir);
+      padding: 8px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 100;
+      position: relative;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      overflow: hidden;
+    }
+    .top-badge-promo {
+      background: var(--champagne);
+      color: var(--bg-white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 0px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .runway-ticker {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      color: #E6E1DA;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .runway-ticker strong {
+      color: var(--champagne-light);
+      font-weight: 700;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-shrink: 0;
+    }
+    .hotline-link {
+      color: #E6E1DA;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+    }
+    .hotline-link strong {
+      color: var(--bg-white);
+      font-weight: 700;
+      border-bottom: 1px solid var(--champagne);
+    }
+
+    /* MAGAZINE MASTHEAD NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(250, 247, 242, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90;
+      gap: 24px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-emblem {
+      width: 42px;
+      height: 42px;
+      border-radius: 0px;
+      background: var(--ink-noir);
+      border: 1px solid var(--ink-noir);
+      display: grid;
+      place-items: center;
+      color: var(--bg-ivory);
+      font-weight: 600;
+      font-size: 1.5rem;
+      font-family: var(--font-serif);
+      font-style: italic;
+      transition: all 0.25s ease;
+    }
+    .brand-logo:hover .logo-emblem {
+      background: var(--champagne);
+      border-color: var(--champagne);
+    }
+    .brand-text h1 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--ink-noir);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .brand-text p {
+      font-size: 0.62rem;
+      letter-spacing: 0.26em;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--ink-noir);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      white-space: nowrap;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--ink-noir);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--champagne);
+    }
+
+    .cart-pill {
+      background: var(--bg-white);
+      border: 1px solid var(--border-hairline);
+      color: var(--ink-noir);
+      padding: 10px 18px;
+      border-radius: 0px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .cart-pill:hover {
+      background: var(--ink-noir);
+      color: var(--bg-white);
+    }
+    .cart-badge {
+      background: var(--champagne);
+      color: var(--bg-white);
+      border-radius: 0px;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 5px;
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .btn-gold {
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      padding: 11px 24px;
+      border-radius: 0px;
+      font-weight: 700;
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--ink-noir);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+    }
+    .btn-gold:hover {
+      background: var(--bg-ivory);
+      color: var(--ink-noir);
+      border-color: var(--ink-noir);
+    }
+
+    /* EDITORIAL HERO SECTION — VOGUE / ZARA LOOKBOOK SPREAD */
+    .hero {
+      position: relative;
+      background: var(--bg-ivory);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 0;
+      overflow: hidden;
+    }
+    .hero-spread {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      min-height: 680px;
+      border-left: 1px solid var(--border-soft);
+      border-right: 1px solid var(--border-soft);
+    }
+    .hero-content {
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--border-hairline);
+      background: var(--bg-ivory);
+      position: relative;
+      z-index: 10;
+    }
+    .hero-issue-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 16px;
+      margin-bottom: 32px;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      font-weight: 700;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-stone);
+      border: 1px solid var(--ink-noir);
+      color: var(--ink-noir);
+      padding: 6px 14px;
+      border-radius: 0px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      width: fit-content;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 5.2vw, 4.7rem);
+      line-height: 1.03;
+      color: var(--ink-noir);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .hero-title span {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--champagne);
+      display: block;
+      margin-top: 6px;
+    }
+    .hero-desc {
+      color: var(--ink-muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 560px;
+      border-left: 2px solid var(--champagne);
+      padding-left: 18px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .hero-social-proof {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--bg-white);
+      padding: 14px 20px;
+      border: 1px solid var(--border-soft);
+      width: 100%;
+    }
+    .hero-social-proof .stars {
+      color: var(--champagne);
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+    }
+    .hero-social-proof .proof-text {
+      font-size: 0.82rem;
+      color: var(--ink-espresso);
+    }
+
+    /* RIGHT COLUMN: MAGAZINE VISUAL FRAME */
+    .hero-visual-col {
+      position: relative;
+      background: var(--bg-stone);
+      padding: 36px 40px 36px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-frame-wrap {
+      position: relative;
+      width: 100%;
+      height: 540px;
+      border: 1px solid var(--ink-noir);
+      background: var(--bg-white);
+      padding: 12px;
+    }
+    .hero-frame-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: contrast(1.03);
+      display: block;
+    }
+    .hero-vertical-tag {
+      position: absolute;
+      top: 24px;
+      right: -10px;
+      writing-mode: vertical-rl;
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      padding: 14px 7px;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .hero-caption-card {
+      position: absolute;
+      bottom: 28px;
+      left: -18px;
+      background: var(--bg-white);
+      border: 1px solid var(--ink-noir);
+      padding: 14px 20px;
+      max-width: 290px;
+      box-shadow: 8px 8px 0px var(--ink-noir);
+    }
+    .hero-caption-card .cap-no {
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      color: var(--champagne);
+      text-transform: uppercase;
+    }
+    .hero-caption-card .cap-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ink-noir);
+      line-height: 1.2;
+      margin: 3px 0;
+    }
+    .hero-caption-card .cap-sub {
+      font-size: 0.74rem;
+      color: var(--ink-muted);
+    }
+    .hero-visual-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    /* 4 BRAND VALUES — ARCHITECTURAL ATELIER PILLARS */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1400px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border-hairline);
+      border-left: 1px solid var(--border-soft);
+      border-right: 1px solid var(--border-soft);
+      background: var(--bg-white);
+    }
+    .val-card {
+      background: var(--bg-white);
+      border-right: 1px solid var(--border-soft);
+      border-radius: 0px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: background 0.25s ease;
+      position: relative;
+    }
+    .val-card:last-child {
+      border-right: none;
+    }
+    .val-card:hover {
+      background: var(--bg-stone);
+    }
+    .val-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .val-roman {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--champagne);
+    }
+    .val-icon {
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+    .val-text h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink-noir);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .val-text p {
+      font-size: 0.84rem;
+      color: var(--ink-muted);
+      line-height: 1.55;
+    }
+
+    /* SECTION TITLE STYLES — EDITORIAL HEADER */
+    .section-wrap {
+      padding: 88px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 48px;
+    }
+    .section-tag {
+      color: var(--champagne);
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      margin-bottom: 12px;
+      display: inline-block;
+      border-bottom: 1px solid var(--champagne);
+      padding-bottom: 4px;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.3rem, 3.8vw, 3.3rem);
+      font-weight: 600;
+      color: var(--ink-noir);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+    .section-desc {
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      max-width: 620px;
+    }
+
+    /* SECTION 1: CATALOGUE SẢN PHẨM & FILTER TABS */
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      border: 1px solid var(--ink-noir);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--bg-white);
+    }
+    .cat-btn {
+      background: var(--bg-white);
+      border: none;
+      border-right: 1px solid var(--ink-noir);
+      color: var(--ink-noir);
+      padding: 12px 24px;
+      border-radius: 0px;
+      font-weight: 700;
+      font-size: 0.76rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cat-btn:last-child {
+      border-right: none;
+    }
+    .cat-btn:hover,
+    .cat-btn.active {
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .product-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-soft);
+      border-radius: 0px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s ease;
+      position: relative;
+    }
+    .product-card:hover {
+      border-color: var(--ink-noir);
+      box-shadow: 10px 10px 0px var(--ink-noir);
+      transform: translateY(-4px);
+    }
+    .product-img-wrap {
+      width: 100%;
+      height: 390px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-stone);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.06);
+    }
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      padding: 5px 12px;
+      border-radius: 0px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .product-index-no {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--ink-noir);
+      color: var(--ink-noir);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      z-index: 2;
+    }
+    .product-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background: var(--bg-white);
+    }
+    .product-color-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .color-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 0px;
+      border: 1px solid var(--ink-noir);
+      cursor: pointer;
+    }
+    .product-title {
+      font-family: var(--font-serif);
+      font-size: 1.42rem;
+      color: var(--ink-noir);
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .product-desc {
+      font-size: 0.84rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 16px;
+      margin-top: auto;
+    }
+    .price-group span:first-child {
+      font-size: 0.76rem;
+      color: var(--ink-subtle);
+      text-decoration: line-through;
+      display: block;
+    }
+    .price-group span:last-child {
+      font-family: var(--font-serif);
+      font-size: 1.38rem;
+      font-weight: 700;
+      color: var(--ink-noir);
+    }
+    .btn-cart-add {
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      border: 1px solid var(--ink-noir);
+      width: 42px;
+      height: 42px;
+      border-radius: 0px;
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.25rem;
+      transition: all 0.2s ease;
+    }
+    .btn-cart-add:hover {
+      background: var(--champagne);
+      border-color: var(--champagne);
+      color: var(--bg-white);
+    }
+
+    /* SECTION 2: ATELIER MEASUREMENT STUDIO (AI SIZE FINDER) */
+    .size-finder-section {
+      background: var(--bg-stone);
+      border-top: 1px solid var(--border-hairline);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 96px 40px;
+    }
+    .size-card {
+      max-width: 1120px;
+      margin: 0 auto;
+      background: var(--bg-white);
+      border: 1px solid var(--ink-noir);
+      border-radius: 0px;
+      padding: 52px;
+      box-shadow: 14px 14px 0px var(--ink-noir);
+      position: relative;
+    }
+    .size-studio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--ink-noir);
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .size-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 48px;
+      align-items: stretch;
+    }
+    .slider-field {
+      margin-bottom: 28px;
+      background: var(--bg-ivory);
+      border: 1px solid var(--border-soft);
+      padding: 20px 24px;
+    }
+    .slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .slider-label-row label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--ink-noir);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    .slider-val-num {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--champagne);
+    }
+    .range-styled {
+      width: 100%;
+      height: 4px;
+      background: var(--border-soft);
+      border-radius: 0px;
+      outline: none;
+      cursor: pointer;
+      accent-color: var(--ink-noir);
+    }
+
+    .size-guarantee-note {
+      background: var(--champagne-pale);
+      border-left: 3px solid var(--ink-noir);
+      padding: 16px 20px;
+      font-size: 0.84rem;
+      color: var(--ink-espresso);
+    }
+
+    .size-result-box {
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      border: 1px solid var(--ink-noir);
+      border-radius: 0px;
+      padding: 36px 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .size-result-eyebrow {
+      font-size: 0.72rem;
+      color: var(--champagne-light);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+    .recommended-size-tag {
+      font-family: var(--font-serif);
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: var(--bg-white);
+      line-height: 1;
+      margin: 14px 0;
+      letter-spacing: 0.04em;
+    }
+    .size-result-box .btn-gold {
+      background: var(--bg-ivory);
+      color: var(--ink-noir);
+      border-color: var(--bg-ivory);
+    }
+    .size-result-box .btn-gold:hover {
+      background: var(--champagne);
+      color: var(--bg-white);
+      border-color: var(--champagne);
+    }
+
+    /* SECTION 3: LOOKBOOK MIX & MATCH — EDITORIAL SPREAD */
+    .lookbook-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .look-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .look-opt-btn {
+      background: var(--bg-white);
+      border: 1px solid var(--border-soft);
+      border-radius: 0px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: left;
+    }
+    .look-opt-btn:hover,
+    .look-opt-btn.active {
+      border-color: var(--ink-noir);
+      background: var(--bg-stone);
+      box-shadow: 6px 6px 0px var(--ink-noir);
+      transform: translateX(4px);
+    }
+    .look-num-badge {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--champagne);
+      line-height: 1;
+      padding-top: 2px;
+      min-width: 32px;
+    }
+    .look-opt-btn h5 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink-noir);
+      margin-bottom: 4px;
+    }
+    .look-opt-btn p {
+      font-size: 0.83rem;
+      color: var(--ink-muted);
+    }
+
+    .look-display-box {
+      position: relative;
+      width: 100%;
+      height: 540px;
+      border-radius: 0px;
+      overflow: hidden;
+      border: 1px solid var(--ink-noir);
+      background: var(--bg-white);
+      padding: 14px;
+      box-shadow: 12px 12px 0px var(--ink-noir);
+    }
+    .look-display-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: all 0.5s ease;
+    }
+    .look-floating-tag {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      background: var(--bg-white);
+      border: 1px solid var(--ink-noir);
+      padding: 16px 24px;
+      border-radius: 0px;
+      box-shadow: 6px 6px 0px var(--ink-noir);
+    }
+
+    /* SECTION 4: FORM ĐẶT HÀNG NHANH GIAO TẬN NHÀ (BESPOKE CONCIERGE) */
+    .order-section-wrapper {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-hairline);
+    }
+    .order-section {
+      padding: 96px 40px;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .order-perk-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 24px 0;
+    }
+    .order-perk-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--ink-espresso);
+      font-weight: 500;
+    }
+    .order-perk-item .check-mark {
+      width: 22px;
+      height: 22px;
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      display: inline-grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .concierge-box {
+      background: var(--bg-ivory);
+      border: 1px solid var(--ink-noir);
+      padding: 22px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .order-card {
+      background: var(--bg-ivory);
+      border: 1px solid var(--ink-noir);
+      border-radius: 0px;
+      padding: 44px;
+      box-shadow: 12px 12px 0px var(--ink-noir);
+    }
+    .form-group-fashion {
+      margin-bottom: 18px;
+    }
+    .form-group-fashion label {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--ink-noir);
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .form-group-fashion input,
+    .form-group-fashion select {
+      width: 100%;
+      background: var(--bg-white);
+      border: 1px solid var(--ink-noir);
+      padding: 13px 15px;
+      border-radius: 0px;
+      color: var(--ink-noir);
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-group-fashion input::placeholder {
+      color: var(--ink-subtle);
+    }
+    .form-group-fashion input:focus,
+    .form-group-fashion select:focus {
+      border-color: var(--champagne);
+      box-shadow: 4px 4px 0px var(--ink-noir);
+    }
+
+    /* FOOTER — HAUTE COUTURE MAISON NOIR */
+    .footer {
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      border-top: 1px solid var(--ink-noir);
+      padding: 80px 40px 36px;
+    }
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto 56px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 44px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--bg-white);
+      margin-bottom: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .footer-links a {
+      color: #C4BDB3;
+      text-decoration: none;
+      font-size: 0.86rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--champagne-light);
+    }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: #9E968B;
+    }
+
+    /* MODAL TICKET — HAUTE COUTURE RECEIPT */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 17, 17, 0.82);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: grid;
+    }
+    .order-modal {
+      background: var(--bg-ivory);
+      color: var(--ink-noir);
+      border: 2px solid var(--ink-noir);
+      border-radius: 0px;
+      max-width: 520px;
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 16px 16px 0px var(--champagne);
+      animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes popIn {
+      from { transform: translateY(12px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1080px) {
+      .hero-spread { grid-template-columns: 1fr; }
+      .hero-content { border-right: none; border-bottom: 1px solid var(--border-hairline); padding: 48px 32px; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .val-card { border-bottom: 1px solid var(--border-soft); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .size-grid, .lookbook-container, .order-section { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .navbar { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 36px 20px; }
+      .hero-visual-col { padding: 24px 20px; }
+      .hero-frame-wrap { height: 400px; }
+      .hero-caption-card { left: 10px; bottom: 16px; }
+      .values-grid, .products-grid { grid-template-columns: 1fr; }
+      .category-tabs { width: 100%; }
+      .cat-btn { flex: 1 1 45%; border-bottom: 1px solid var(--ink-noir); }
+      .section-wrap, .size-finder-section, .order-section, .footer { padding: 56px 20px; }
+      .size-card, .order-card { padding: 28px 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">🛍️ TRENDY SHOP</div>
-    <div style="font-weight: 600; font-size: 0.9rem;">🛒 Giỏ Hàng (0)</div>
-  </header>
-  <div class="hero">
-    <h1>Bộ Sưu Tập Mới Nhất 2026</h1>
-    <p>Thời trang xu hướng, phong cách trẻ trung và tự tin mỗi ngày</p>
-  </div>
-  <div class="product-grid">
-    <div class="card">
-      <div class="card-img">👕</div>
-      <h3>Áo Thun Oversize Unisex</h3>
-      <div class="price">189.000đ</div>
-      <button class="btn" onclick="orderItem('Áo Thun Oversize Unisex (189k)')">Mua Nhanh 1 Chạm</button>
+
+  <!-- TOP RUNWAY MARQUEE BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span class="top-badge-promo">ISSUE N°26 • SS/AW</span>
+      <div class="runway-ticker">
+        <span>MIỄN PHÍ VẬN CHUYỂN HỎA TỐC TOÀN QUỐC CHO ĐƠN TỪ <strong>499.000Đ</strong></span>
+        <span>•</span>
+        <span>ATELIER TAILORING PARIS — MILAN — HANOI</span>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-img">🧥</div>
-      <h3>Áo Khoác Bomber Kaki</h3>
-      <div class="price">349.000đ</div>
-      <button class="btn" onclick="orderItem('Áo Khoác Bomber Kaki (349k)')">Mua Nhanh 1 Chạm</button>
-    </div>
-    <div class="card">
-      <div class="card-img">👖</div>
-      <h3>Quần Jean Baggy Trơn</h3>
-      <div class="price">279.000đ</div>
-      <button class="btn" onclick="orderItem('Quần Jean Baggy Trơn (279k)')">Mua Nhanh 1 Chạm</button>
+    <div class="top-bar-right">
+      <a href="tel:19008892" class="hotline-link">
+        <span>CONCIERGE:</span>
+        <strong>1900 8892</strong>
+      </a>
+      <a href="#size" class="btn-gold" style="padding: 5px 14px; font-size: 0.68rem; background: var(--bg-ivory); color: var(--ink-noir);">Đo Size AI</a>
     </div>
   </div>
+
+  <!-- MAGAZINE MASTHEAD NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="brand-logo">
+      <div class="logo-emblem">A</div>
+      <div class="brand-text">
+        <h1>ATELIER NOIR</h1>
+        <p>Maison de Mode • Haute Minimalist</p>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Trang Chủ</a></li>
+      <li><a href="#collection">Bộ Sưu Tập 2026</a></li>
+      <li><a href="#size">Bảng Size AI</a></li>
+      <li><a href="#lookbook">Lookbook Phối Đồ</a></li>
+      <li><a href="#order">Đặt Hàng Nhanh</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div class="cart-pill" onclick="openCartDetails()">
+        <span>Túi Đồ</span>
+        <span class="cart-badge" id="cartCount">0</span>
+      </div>
+      <a href="#collection" class="btn-gold">
+        <span>Mua Ngay</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- EDITORIAL HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-spread">
+      <!-- LEFT EDITORIAL MANIFESTO -->
+      <div class="hero-content">
+        <div>
+          <div class="hero-issue-meta">
+            <span>ÉDITION N° 26 — ARCHIVE 2026</span>
+            <span>HAUTE COUTURE READY-TO-WEAR</span>
+          </div>
+
+          <div class="hero-eyebrow">
+            <span>✦</span>
+            <span>Bộ Sưu Tập Thiết Kế Độc Bản 2026</span>
+          </div>
+
+          <h2 class="hero-title">
+            Tuyên Ngôn Phong Cách
+            <span>Tối Giản Nhưng Không Thỏa Hiệp</span>
+          </h2>
+
+          <p class="hero-desc">
+            Mỗi thiết kế tại ATELIER NOIR là sự kết hợp hoàn hảo giữa kỹ thuật cắt may cấu trúc Ý và chất liệu tự nhiên cao cấp (Linen Pháp, Lụa Mulberry, Cotton dệt sợi dài). Khẳng định khí chất thanh lịch vượt thời gian.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#collection" class="btn-gold" style="padding: 15px 30px;">
+              <span>Khám Phá Bộ Sưu Tập</span>
+              <span>→</span>
+            </a>
+            <a href="#size" class="cart-pill" style="padding: 14px 24px;">
+              <span>📏 Trắc Nghiệm Chọn Size AI</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-social-proof">
+          <span class="stars">★ ★ ★ ★ ★</span>
+          <span class="proof-text">Được hơn <strong>35.000+</strong> quý cô &amp; quý ông sành điệu tin chọn</span>
+        </div>
+      </div>
+
+      <!-- RIGHT ASYMMETRIC LOOKBOOK PLATE -->
+      <div class="hero-visual-col">
+        <div class="hero-frame-wrap">
+          <img src="image/hero-fashion.jpg" alt="Atelier Noir Editorial Lookbook 2026">
+          <div class="hero-vertical-tag">SILHOUETTE N°01 • TAILORED</div>
+          <div class="hero-caption-card">
+            <div class="cap-no">LOOK N° 01 / RUNWAY ARCHIVE</div>
+            <div class="cap-title">The Structured Noir Edit</div>
+            <div class="cap-sub">100% Virgin Wool &amp; Mulberry Silk Lining</div>
+          </div>
+        </div>
+        <div class="hero-visual-footer">
+          <span>PHOTOGRAPHY: ATELIER STUDIO</span>
+          <span>PARIS • MILAN • HANOI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 BRAND VALUES — ARCHITECTURAL GRID -->
+  <div class="values-grid">
+    <div class="val-card">
+      <div class="val-top-row">
+        <span class="val-roman">I.</span>
+        <div class="val-icon">🧵</div>
+      </div>
+      <div class="val-text">
+        <h4>Chất Liệu Thượng Hạng</h4>
+        <p>100% Linen dệt tự nhiên, lụa tơ tằm Mulberry và len lông cừu Merino tuyển chọn.</p>
+      </div>
+    </div>
+
+    <div class="val-card">
+      <div class="val-top-row">
+        <span class="val-roman">II.</span>
+        <div class="val-icon">📐</div>
+      </div>
+      <div class="val-text">
+        <h4>Form Dáng Chuẩn Á Đông</h4>
+        <p>Rập thiết kế đo ni đóng giày tôn đường cong và che khuyết điểm khéo léo.</p>
+      </div>
+    </div>
+
+    <div class="val-card">
+      <div class="val-top-row">
+        <span class="val-roman">III.</span>
+        <div class="val-icon">🔄</div>
+      </div>
+      <div class="val-text">
+        <h4>Đổi Size Tận Nhà</h4>
+        <p>Hỗ trợ đổi size miễn phí trong 7 ngày, shipper mang đồ đến tận cửa đổi.</p>
+      </div>
+    </div>
+
+    <div class="val-card">
+      <div class="val-top-row">
+        <span class="val-roman">IV.</span>
+        <div class="val-icon">📦</div>
+      </div>
+      <div class="val-text">
+        <h4>Đồng Kiểm Khi Nhận</h4>
+        <p>Thử đồ ưng ý mới thanh toán (COD), không ưng trả lại không mất phí.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: CATALOGUE SẢN PHẨM & FILTER TABS -->
+  <section class="section-wrap" id="collection">
+    <div class="section-header">
+      <div class="section-tag">New Arrivals • Édition 2026</div>
+      <h3 class="section-heading">Tuyệt Tác Thời Trang Thiết Kế</h3>
+      <p class="section-desc">Từng đường kim mũi chỉ được hoàn thiện thủ công bởi các nghệ nhân may đo lành nghề tại Atelier</p>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="category-tabs">
+      <button class="cat-btn active" onclick="filterFashion('all', this)">Tất Cả Sản Phẩm</button>
+      <button class="cat-btn" onclick="filterFashion('blazer', this)">Áo Blazer &amp; Vest</button>
+      <button class="cat-btn" onclick="filterFashion('dress', this)">Đầm &amp; Váy Lụa</button>
+      <button class="cat-btn" onclick="filterFashion('shirt', this)">Sơ Mi Linen</button>
+      <button class="cat-btn" onclick="filterFashion('pants', this)">Quần Suông &amp; Túi Da</button>
+    </div>
+
+    <div class="products-grid">
+      <!-- SẢN PHẨM 1: BLAZER -->
+      <div class="product-card" data-cat="blazer">
+        <div class="product-img-wrap">
+          <span class="product-tag">Bán Chạy Nhất</span>
+          <span class="product-index-no">N° 01</span>
+          <img src="image/blazer-black.jpg" alt="Tailored Oversized Blazer">
+        </div>
+        <div class="product-body">
+          <div class="product-color-dots">
+            <span class="color-dot" style="background: #111111;" title="Noir Black"></span>
+            <span class="color-dot" style="background: #DFD5C6;" title="Sand Ivory"></span>
+            <span class="color-dot" style="background: #4A3F35;" title="Espresso"></span>
+          </div>
+          <h4 class="product-title">Oversized Structured Noir Blazer</h4>
+          <p class="product-desc">Áo blazer dáng suông cấu trúc đệm vai quyền lực, lót lụa tơ tằm thoáng khí, tôn dáng công sở thanh lịch.</p>
+          <div class="product-bottom">
+            <div class="price-group">
+              <span>1.850.000đ</span>
+              <span>1.290.000đ</span>
+            </div>
+            <button class="btn-cart-add" title="Thêm vào giỏ" onclick="addToCartItem('Oversized Noir Blazer', '1.290.000đ')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SẢN PHẨM 2: ĐẦM LỤA -->
+      <div class="product-card" data-cat="dress">
+        <div class="product-img-wrap">
+          <span class="product-tag">Limited Edition</span>
+          <span class="product-index-no">N° 02</span>
+          <img src="image/dress-silk.jpg" alt="Mulberry Silk Slip Dress">
+        </div>
+        <div class="product-body">
+          <div class="product-color-dots">
+            <span class="color-dot" style="background: #F5EFE6;" title="Pearl Silk"></span>
+            <span class="color-dot" style="background: #111111;" title="Obsidian"></span>
+            <span class="color-dot" style="background: #A67C52;" title="Champagne Bronze"></span>
+          </div>
+          <h4 class="product-title">Mulberry Silk Minimalist Slip Dress</h4>
+          <p class="product-desc">Đầm lụa 100% tơ tằm dệt rủ tự nhiên, thiết kế cổ yếm khoe lưng trần quyến rũ cho những buổi tiệc tối lãng mạn.</p>
+          <div class="product-bottom">
+            <div class="price-group">
+              <span>2.100.000đ</span>
+              <span>1.450.000đ</span>
+            </div>
+            <button class="btn-cart-add" title="Thêm vào giỏ" onclick="addToCartItem('Mulberry Silk Slip Dress', '1.450.000đ')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SẢN PHẨM 3: SƠ MI LINEN -->
+      <div class="product-card" data-cat="shirt">
+        <div class="product-img-wrap">
+          <span class="product-tag">Hè Thoáng Mát</span>
+          <span class="product-index-no">N° 03</span>
+          <img src="image/shirt-linen.jpg" alt="Relaxed French Linen Shirt">
+        </div>
+        <div class="product-body">
+          <div class="product-color-dots">
+            <span class="color-dot" style="background: #FFFFFF;" title="Crisp White"></span>
+            <span class="color-dot" style="background: #D8C2AA;" title="Oat Linen"></span>
+            <span class="color-dot" style="background: #7A8278;" title="Sage Grey"></span>
+          </div>
+          <h4 class="product-title">Relaxed French Linen Shirt</h4>
+          <p class="product-desc">Áo sơ mi vải đũi Pháp dệt sợi mộc, thấm hút mồ hôi vượt trội, phom rộng phóng khoáng chuẩn phong cách Parisian.</p>
+          <div class="product-bottom">
+            <div class="price-group">
+              <span>950.000đ</span>
+              <span>690.000đ</span>
+            </div>
+            <button class="btn-cart-add" title="Thêm vào giỏ" onclick="addToCartItem('French Linen Shirt', '690.000đ')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SẢN PHẨM 4: QUẦN TÂY SUÔNG -->
+      <div class="product-card" data-cat="pants">
+        <div class="product-img-wrap">
+          <span class="product-tag">Hack Dáng 5cm</span>
+          <span class="product-index-no">N° 04</span>
+          <img src="image/pants-wide.jpg" alt="High-Waist Tailored Trousers">
+        </div>
+        <div class="product-body">
+          <div class="product-color-dots">
+            <span class="color-dot" style="background: #111111;" title="Noir"></span>
+            <span class="color-dot" style="background: #5C564F;" title="Taupe"></span>
+            <span class="color-dot" style="background: #D6CBBF;" title="Stone"></span>
+          </div>
+          <h4 class="product-title">High-Waist Wide-Leg Trousers</h4>
+          <p class="product-desc">Quần tây cạp cao ống suông xếp ly tinh tế, chất vải chéo Ý đứng phom giúp kéo dài chân và hack eo thon gọn.</p>
+          <div class="product-bottom">
+            <div class="price-group">
+              <span>1.150.000đ</span>
+              <span>790.000đ</span>
+            </div>
+            <button class="btn-cart-add" title="Thêm vào giỏ" onclick="addToCartItem('High-Waist Trousers', '790.000đ')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SẢN PHẨM 5: TÚI DA CAO CẤP -->
+      <div class="product-card" data-cat="pants">
+        <div class="product-img-wrap">
+          <span class="product-tag">Da Bò Thật 100%</span>
+          <span class="product-index-no">N° 05</span>
+          <img src="image/leather-bag.jpg" alt="Noir Leather Crossbody Bag">
+        </div>
+        <div class="product-body">
+          <div class="product-color-dots">
+            <span class="color-dot" style="background: #111111;" title="Black Box Calf"></span>
+            <span class="color-dot" style="background: #6E3B2B;" title="Cognac Leather"></span>
+          </div>
+          <h4 class="product-title">Minimalist Leather Shoulder Bag</h4>
+          <p class="product-desc">Túi kẹp nách da bò thuộc tự nhiên, khóa mạ vàng champagne chống xước, ngăn chứa rộng rãi đựng đồ tiện lợi.</p>
+          <div class="product-bottom">
+            <div class="price-group">
+              <span>1.600.000đ</span>
+              <span>1.150.000đ</span>
+            </div>
+            <button class="btn-cart-add" title="Thêm vào giỏ" onclick="addToCartItem('Minimalist Leather Bag', '1.150.000đ')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SẢN PHẨM 6: SET OUTFIT PHỐI SẴN -->
+      <div class="product-card" data-cat="blazer">
+        <div class="product-img-wrap">
+          <span class="product-tag">Combo Tiết Kiệm</span>
+          <span class="product-index-no">N° 06</span>
+          <img src="image/lookbook-office.jpg" alt="Office Chic Outfit Set">
+        </div>
+        <div class="product-body">
+          <div class="product-color-dots">
+            <span class="color-dot" style="background: #111111;" title="Noir Suit"></span>
+            <span class="color-dot" style="background: #DFD5C6;" title="Creme Suit"></span>
+          </div>
+          <h4 class="product-title">Set Office Chic: Blazer + Trousers</h4>
+          <p class="product-desc">Trọn bộ outfit công sở cao cấp gồm 01 áo blazer và 01 quần suông cạp cao đồng bộ, tiết kiệm thêm 15% so với mua lẻ.</p>
+          <div class="product-bottom">
+            <div class="price-group">
+              <span>2.440.000đ</span>
+              <span>1.850.000đ</span>
+            </div>
+            <button class="btn-cart-add" title="Thêm vào giỏ" onclick="addToCartItem('Set Office Chic (Blazer + Trousers)', '1.850.000đ')">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ATELIER MEASUREMENT STUDIO (BẢNG TÌM SIZE AI CHUẨN XÁC) -->
+  <section class="size-finder-section" id="size">
+    <div class="size-card">
+      <div class="size-studio-header">
+        <div>
+          <div class="section-tag" style="margin-bottom: 8px;">Atelier Measurement Studio • AI Bespoke Fit</div>
+          <h3 class="section-heading" style="font-size: 2.4rem; margin-bottom: 0; text-align: left;">Tìm Size Chuẩn Xác Khuyên Dùng</h3>
+        </div>
+        <p class="section-desc" style="text-align: right; max-width: 380px;">
+          Kéo thanh trượt chiều cao và cân nặng để hệ thống AI tính toán độ vừa vặn chuẩn 99% theo phom rập Á Đông.
+        </p>
+      </div>
+
+      <div class="size-grid">
+        <div>
+          <div class="slider-field">
+            <div class="slider-label-row">
+              <label>01 / Chiều Cao Của Bạn</label>
+              <span class="slider-val-num" id="valHeight">162 cm</span>
+            </div>
+            <input type="range" min="150" max="185" value="162" class="range-styled" id="sliderHeight" oninput="calculateSize()">
+          </div>
+
+          <div class="slider-field">
+            <div class="slider-label-row">
+              <label>02 / Cân Nặng Của Bạn</label>
+              <span class="slider-val-num" id="valWeight">52 kg</span>
+            </div>
+            <input type="range" min="40" max="85" value="52" class="range-styled" id="sliderWeight" oninput="calculateSize()">
+          </div>
+
+          <div class="size-guarantee-note">
+            <p>
+              <strong>✦ Chính sách bảo hành Atelier:</strong> Nếu mặc không vừa vặn, shipper của chúng tôi sẽ mang size khác đến tận nhà đổi hoàn toàn miễn phí!
+            </p>
+          </div>
+        </div>
+
+        <div class="size-result-box">
+          <div class="size-result-eyebrow">
+            SỐ ĐO KHUYÊN DÙNG CHO BẠN
+          </div>
+          <div class="recommended-size-tag" id="resSizeTag">M</div>
+          <p id="resSizeDesc" style="font-size: 0.9rem; color: #E6E1DA; margin-bottom: 24px; line-height: 1.6;">
+            Vừa vặn thoải mái, tôn dáng và che khuyết điểm bụng dưới khéo léo.
+          </p>
+          <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="applySizeToOrder()">
+            <span>Chọn Size Này Khi Mua →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: LOOKBOOK EDITORIAL - MIX & MATCH -->
+  <section class="section-wrap" id="lookbook">
+    <div class="lookbook-container">
+      <div>
+        <div class="section-tag">Editorial Lookbook • Mix &amp; Match</div>
+        <h3 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 3.5vw, 3rem); color: var(--ink-noir); margin-bottom: 14px; line-height: 1.15; font-weight: 600;">
+          Gợi Ý Phối Đồ
+          <span style="display: block; font-style: italic; color: var(--champagne); font-weight: 400;">Chuẩn Gu Từng Khoảnh Khắc</span>
+        </h3>
+        <p style="color: var(--ink-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 10px;">
+          Bấm chọn các phong cách bên dưới để xem hình ảnh phối đồ thực tế từ Giám Đốc Sáng Tạo và mua trọn bộ tiết kiệm:
+        </p>
+
+        <div class="look-options">
+          <div class="look-opt-btn active" onclick="switchLook('office', this)">
+            <span class="look-num-badge">01.</span>
+            <div>
+              <h5>Office Chic • Quý Cô Công Sở Quyền Lực</h5>
+              <p>Oversized Blazer phối sơ mi lụa trắng và quần suông cạp cao</p>
+            </div>
+          </div>
+
+          <div class="look-opt-btn" onclick="switchLook('street', this)">
+            <span class="look-num-badge">02.</span>
+            <div>
+              <h5>Weekend Street • Dạo Phố Cuối Tuần Phóng Khoáng</h5>
+              <p>Set đũi linen nhẹ tênh cùng túi da kẹp nách tối giản</p>
+            </div>
+          </div>
+
+          <div class="look-opt-btn" onclick="switchLook('party', this)">
+            <span class="look-num-badge">03.</span>
+            <div>
+              <h5>Night Glamour • Dạ Tiệc Rượu Vang Quyến Rũ</h5>
+              <p>Đầm lụa cổ yếm khoe lưng trần thanh lịch dưới ánh đèn vàng</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="look-display-box">
+        <img src="image/lookbook-office.jpg" id="lookMainImg" alt="Outfit phối đồ">
+        <div class="look-floating-tag">
+          <p id="lookTagTitle" style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: var(--ink-noir); margin-bottom: 2px;">Office Chic Collection</p>
+          <p id="lookTagDesc" style="font-size: 0.72rem; color: var(--champagne); font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em;">Combo 3 món giảm thêm 15%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FORM ĐẶT HÀNG NHANH GIAO TẬN NHÀ -->
+  <div class="order-section-wrapper">
+    <section class="order-section" id="order">
+      <div>
+        <div class="section-tag">VIP Concierge • Đặt Hàng 1 Chạm</div>
+        <h3 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 3.5vw, 3rem); line-height: 1.15; color: var(--ink-noir); margin-bottom: 16px; font-weight: 600;">
+          Sở Hữu Ngay Thiết Kế Yêu Thích
+          <span style="display: block; font-style: italic; color: var(--champagne); font-weight: 400;">Chỉ Trong 2 Giờ</span>
+        </h3>
+        <p style="color: var(--ink-muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 24px;">
+          Điền thông tin đặt hàng nhanh chóng, chúng tôi sẽ đóng gói hộp quà hard-box sang trọng kèm thiệp viết tay và giao hỏa tốc đến tận tay bạn:
+        </p>
+
+        <div class="order-perk-list">
+          <div class="order-perk-item">
+            <span class="check-mark">✓</span>
+            <span>Hộp quà signature ATELIER NOIR thắt ruy băng lụa cao cấp.</span>
+          </div>
+          <div class="order-perk-item">
+            <span class="check-mark">✓</span>
+            <span>Kiểm tra mặc thử vừa vặn trước khi thanh toán.</span>
+          </div>
+          <div class="order-perk-item">
+            <span class="check-mark">✓</span>
+            <span>Miễn phí giao hàng toàn quốc từ 499.000đ.</span>
+          </div>
+        </div>
+
+        <div class="concierge-box">
+          <div>
+            <p style="font-size: 0.72rem; color: var(--champagne); font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em;">Hotline Đặt Hàng Trực Tiếp</p>
+            <p style="font-size: 0.82rem; color: var(--ink-muted);">Stylist riêng tư vấn 09:00 – 21:30</p>
+          </div>
+          <p style="font-size: 1.65rem; font-weight: 700; color: var(--ink-noir); font-family: var(--font-serif);">1900 8892</p>
+        </div>
+      </div>
+
+      <div class="order-card">
+        <div style="border-bottom: 1px solid var(--ink-noir); padding-bottom: 14px; margin-bottom: 22px;">
+          <h4 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--ink-noir); font-weight: 700; margin-bottom: 4px;">Thông Tin Giao Hàng Hỏa Tốc</h4>
+          <p style="font-size: 0.82rem; color: var(--ink-muted);">Đơn hàng sẽ được chuyên viên Concierge gọi xác nhận trong 10 phút</p>
+        </div>
+
+        <form onsubmit="handleFashionOrder(event)">
+          <div class="form-group-fashion">
+            <label>Họ Và Tên Người Nhận</label>
+            <input type="text" id="custName" placeholder="Ví dụ: Hoàng Mai Chi" required>
+          </div>
+
+          <div class="form-group-fashion">
+            <label>Số Điện Thoại</label>
+            <input type="tel" id="custPhone" placeholder="090x xxx xxx" required>
+          </div>
+
+          <div class="form-group-fashion">
+            <label>Địa Chỉ Giao Hàng Tận Nơi</label>
+            <input type="text" id="custAddr" placeholder="Số nhà, tên đường, Phường/Xã, Quận/Huyện, Tỉnh/TP" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px;">
+            <div class="form-group-fashion">
+              <label>Sản Phẩm Quan Tâm</label>
+              <select id="custProduct">
+                <option value="Oversized Noir Blazer (1.290k)">Oversized Noir Blazer (1.290k)</option>
+                <option value="Mulberry Silk Slip Dress (1.450k)">Mulberry Silk Slip Dress (1.450k)</option>
+                <option value="French Linen Shirt (690k)">French Linen Shirt (690k)</option>
+                <option value="High-Waist Trousers (790k)">High-Waist Trousers (790k)</option>
+                <option value="Set Office Chic Combo (1.850k)">Set Office Chic Combo (1.850k)</option>
+              </select>
+            </div>
+
+            <div class="form-group-fashion">
+              <label>Size Khuyên Dùng</label>
+              <select id="custSize">
+                <option value="S (45 - 52kg)">Size S</option>
+                <option value="M (53 - 62kg)" selected>Size M</option>
+                <option value="L (63 - 72kg)">Size L</option>
+                <option value="XL (73 - 85kg)">Size XL</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 15px; margin-top: 12px;">
+            <span>Xác Nhận Đặt Hàng Ngay →</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER CHUẨN ĐỒNG BỘ PAT TECH PHẠM ANH TUẤN -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <div class="logo-emblem" style="width: 36px; height: 36px; font-size: 1.15rem; background: var(--bg-ivory); color: var(--ink-noir);">A</div>
+          <span style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; letter-spacing: 0.18em; color: var(--bg-white);">ATELIER NOIR</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #C4BDB3; line-height: 1.65; margin-bottom: 16px;">
+          Thương hiệu thời trang thiết kế tối giản cao cấp. Định hình bản sắc quý cô hiện đại bằng chất liệu thượng hạng và kỹ thuật may đo tinh xảo.
+        </p>
+        <p style="font-size: 0.82rem; color: var(--champagne-light);">
+          📍 Flagship Store: 108 Phố Huế, Hoàn Kiếm, Hà Nội &amp; 42 Đồng Khởi, Quận 1, TP.HCM.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Bộ Sưu Tập</h4>
+        <ul class="footer-links">
+          <li><a href="#collection">Áo Blazer &amp; Vest cấu trúc</a></li>
+          <li><a href="#collection">Đầm lụa Mulberry tơ tằm</a></li>
+          <li><a href="#collection">Áo sơ mi đũi Linen Pháp</a></li>
+          <li><a href="#collection">Quần tây cạp cao hack dáng</a></li>
+          <li><a href="#lookbook">Lookbook phối đồ theo dịp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Chính Sách Khách Hàng</h4>
+        <ul class="footer-links">
+          <li><a href="#size">Bảng đo size AI thông minh</a></li>
+          <li><a href="#">Đổi size miễn phí 7 ngày tận nhà</a></li>
+          <li><a href="#">Bảo hành đường may trọn đời</a></li>
+          <li><a href="#">Miễn phí giao hàng hỏa tốc</a></li>
+          <li><a href="#">Đồng kiểm tra hàng trước khi nhận</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Chăm Sóc Khách Hàng</h4>
+        <p style="font-size: 0.84rem; color: #C4BDB3; line-height: 1.6; margin-bottom: 8px;">
+          • Email tiếp nhận: contact@ateliernoir.vn
+        </p>
+        <p style="font-size: 0.84rem; color: #C4BDB3; line-height: 1.6; margin-bottom: 16px;">
+          • Mở cửa đón khách: 09:00 - 21:30 hàng ngày.
+        </p>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); padding: 14px 16px;">
+          <div style="font-size: 0.7rem; color: var(--champagne-light); text-transform: uppercase; font-weight: 700; letter-spacing: 0.14em;">Hotline Hỗ Trợ Mua Hàng</div>
+          <div style="font-size: 1.35rem; font-weight: 700; color: var(--bg-white); font-family: var(--font-serif);">1900 8892</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BẢN QUYỀN ĐỒNG BỘ PHẠM ANH TUẤN - PAT TECH -->
+    <div class="footer-bottom">
+      <p>© 2026 PAT TECH (Phạm Anh Tuấn). Toàn bộ bản quyền giao diện và hệ thống được bảo lưu.</p>
+      <p>Thiết kế &amp; Phát triển độc quyền bởi <a href="../../index.html" style="color: var(--champagne-light); text-decoration: none; font-weight: 700;">PAT TECH - Phạm Anh Tuấn</a>.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL XÁC NHẬN ĐƠN HÀNG TICKET (VIP ATELIER RECEIPT) -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="order-modal">
+      <div style="display: inline-block; background: var(--ink-noir); color: var(--bg-ivory); font-weight: 700; font-size: 0.7rem; letter-spacing: 0.2em; padding: 5px 14px; text-transform: uppercase; margin-bottom: 16px;">
+        ATELIER NOIR • VIP RECEIPT
+      </div>
+      <h3 style="font-family: var(--font-serif); font-size: 2rem; color: var(--ink-noir); margin-bottom: 8px; font-weight: 700;">
+        Đặt Hàng Thành Công!
+      </h3>
+      <p style="font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 22px;">
+        Chuyên viên tư vấn phong cách của ATELIER NOIR đang chuẩn bị đóng gói hộp quà để giao tới:
+      </p>
+
+      <div style="background: var(--bg-white); border: 1px solid var(--ink-noir); padding: 20px; margin-bottom: 24px; text-align: left;">
+        <div style="font-size: 0.84rem; color: var(--ink-muted); margin-bottom: 8px; border-bottom: 1px dashed var(--border-soft); padding-bottom: 8px;">
+          Người nhận: <strong id="modalCustName" style="color: var(--ink-noir);"></strong>
+        </div>
+        <div style="font-size: 0.84rem; color: var(--ink-muted); margin-bottom: 8px; border-bottom: 1px dashed var(--border-soft); padding-bottom: 8px;">
+          Sản phẩm: <strong id="modalCustProduct" style="color: var(--champagne);"></strong>
+        </div>
+        <div style="font-size: 0.84rem; color: var(--ink-muted); margin-bottom: 8px; border-bottom: 1px dashed var(--border-soft); padding-bottom: 8px;">
+          Địa chỉ: <strong id="modalCustAddr" style="color: var(--ink-noir);"></strong>
+        </div>
+        <div style="font-size: 0.84rem; color: var(--ink-muted);">
+          Mã Vận Đơn VIP: <strong id="modalOrderCode" style="color: var(--ink-noir); font-family: var(--font-serif); font-size: 1.25rem; letter-spacing: 2px;"></strong>
+        </div>
+      </div>
+
+      <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="closeModal()">
+        Hoàn Tất &amp; Đóng
+      </button>
+    </div>
+  </div>
+
   <script>
-    function orderItem(name) {
-      const phone = prompt(`Bạn chọn đặt mua: ${name}\nVui lòng nhập số điện thoại để shop giao hàng ngay:`);
-      if (phone) {
-        alert(`Thành công! Đơn hàng [${name} - SĐT: ${phone}] đã được bắn tự động về Telegram của chủ shop!`);
+    // CART STATE
+    let cartItems = [];
+
+    function addToCartItem(name, price) {
+      cartItems.push({ name, price });
+      document.getElementById('cartCount').innerText = cartItems.length;
+      alert(`Đã thêm vào giỏ hàng:\n✨ ${name} (${price})\n\nTổng số món trong giỏ: ${cartItems.length}`);
+    }
+
+    function openCartDetails() {
+      if (cartItems.length === 0) {
+        alert("Giỏ hàng của bạn đang trống.\nHãy chọn các thiết kế ưng ý từ bộ sưu tập để đặt hàng!");
+      } else {
+        let msg = "GIỎ HÀNG THỜI TRANG CỦA BẠN:\n";
+        cartItems.forEach((item, idx) => {
+          msg += `${idx + 1}. ${item.name} - ${item.price}\n`;
+        });
+        msg += "\nNhân viên sẽ liên hệ để xác nhận màu sắc, size và giao hàng hỏa tốc tận nhà!";
+        alert(msg);
       }
+    }
+
+    // FILTER CATEGORY TABS
+    function filterFashion(cat, btn) {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // AI SIZE CALCULATOR
+    function calculateSize() {
+      const h = parseInt(document.getElementById('sliderHeight').value);
+      const w = parseInt(document.getElementById('sliderWeight').value);
+
+      document.getElementById('valHeight').innerText = h + ' cm';
+      document.getElementById('valWeight').innerText = w + ' kg';
+
+      const tag = document.getElementById('resSizeTag');
+      const desc = document.getElementById('resSizeDesc');
+
+      if (w <= 50) {
+        tag.innerText = 'S';
+        desc.innerText = 'Size S: Ôm vừa vặn đường cong, tạo cảm giác thanh mảnh nhẹ nhàng.';
+      } else if (w <= 60) {
+        tag.innerText = 'M';
+        desc.innerText = 'Size M: Vừa vặn thoải mái, tôn dáng và che khuyết điểm bụng dưới khéo léo.';
+      } else if (w <= 70) {
+        tag.innerText = 'L';
+        desc.innerText = 'Size L: Phom rộng phóng khoáng, thoải mái cử động và che bắp tay tốt.';
+      } else {
+        tag.innerText = 'XL';
+        desc.innerText = 'Size XL: Thoải mái tối đa, phom suông suôn mượt che dáng hoàn hảo.';
+      }
+    }
+
+    function applySizeToOrder() {
+      const size = document.getElementById('resSizeTag').innerText;
+      document.getElementById('custSize').value = size === 'S' ? 'S (45 - 52kg)' : size === 'M' ? 'M (53 - 62kg)' : size === 'L' ? 'L (63 - 72kg)' : 'XL (73 - 85kg)';
+      document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // LOOKBOOK SWITCHER
+    function switchLook(type, btn) {
+      document.querySelectorAll('.look-opt-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const img = document.getElementById('lookMainImg');
+      const title = document.getElementById('lookTagTitle');
+      const desc = document.getElementById('lookTagDesc');
+
+      if (type === 'office') {
+        img.src = 'image/lookbook-office.jpg';
+        title.innerText = 'Office Chic Collection';
+        desc.innerText = 'Combo 3 món giảm thêm 15%';
+      } else if (type === 'street') {
+        img.src = 'image/lookbook-street.jpg';
+        title.innerText = 'Weekend Street Style';
+        desc.innerText = 'Phóng khoáng & Thoải mái dạo phố';
+      } else {
+        img.src = 'image/lookbook-party.jpg';
+        title.innerText = 'Night Glamour Party Dress';
+        desc.innerText = 'Quyến rũ & Thu hút mọi ánh nhìn';
+      }
+    }
+
+    // ORDER FORM SUBMIT
+    function handleFashionOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const addr = document.getElementById('custAddr').value.trim();
+      const prod = document.getElementById('custProduct').value;
+      const size = document.getElementById('custSize').value;
+
+      const code = 'NOIR-' + Math.floor(1000 + Math.random() * 9000);
+
+      document.getElementById('modalCustName').innerText = `${name} (${phone})`;
+      document.getElementById('modalCustProduct').innerText = `${prod} • ${size}`;
+      document.getElementById('modalCustAddr').innerText = addr;
+      document.getElementById('modalOrderCode').innerText = code;
+
+      document.getElementById('orderModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('orderModal').classList.remove('open');
+      document.querySelector('.order-card form').reset();
     }
   </script>
 </body>

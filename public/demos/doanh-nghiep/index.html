@@ -3,46 +3,1857 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Corp - Giải Pháp Dịch Vụ & Chuyển Đổi Số Doanh Nghiệp</title>
+  <title>LIFETEC &amp; PARTNERS - Tư Vấn Quản Trị Doanh Nghiệp, Pháp Lý Đầu Tư &amp; Dịch Vụ B2B</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; background: #0f172a; color: #f8fafc; line-height: 1.6; }
-    header { padding: 20px 32px; display: flex; justify-content: space-between; align-items: center; background: #1e293b; }
-    .hero { text-align: center; padding: 60px 24px; max-width: 800px; margin: 0 auto; }
-    .hero h1 { font-size: 2.2rem; color: #818cf8; margin-bottom: 14px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1000px; margin: 20px auto; padding: 0 20px; }
-    .card { background: #1e293b; padding: 24px; border-radius: 12px; border: 1px solid #334155; }
-    .card h3 { color: #a5b4fc; margin-bottom: 8px; }
-    .btn { background: #6366f1; color: #fff; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; cursor: pointer; }
-    .contact-box { max-width: 600px; margin: 40px auto; background: #1e293b; padding: 30px; border-radius: 16px; border: 1px solid #4f46e5; text-align: center; }
+    :root {
+      --bg-platinum: #F8FAFC;
+      --bg-white: #FFFFFF;
+      --bg-navy: #0A192F;
+      --bg-navy-elevated: #112240;
+      --accent-cobalt: #0052CC;
+      --accent-cobalt-hover: #003E99;
+      --accent-teal: #0D9488;
+      --accent-brass: #B48327;
+      --text-primary: #0F172A;
+      --text-secondary: #334155;
+      --text-muted: #64748B;
+      --border-hairline: #CBD5E1;
+      --border-subtle: #E2E8F0;
+      --radius-sharp: 4px;
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-platinum);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image:
+        linear-gradient(to right, rgba(203, 213, 225, 0.28) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(203, 213, 225, 0.28) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    /* TOP CORPORATE UTILITY BAR - SWISS ARCHITECTURAL */
+    .top-bar {
+      background: var(--bg-navy);
+      border-bottom: 1px solid #1E293B;
+      padding: 8px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: #CBD5E1;
+      z-index: 100;
+      position: relative;
+      font-family: var(--font-sans);
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .top-license-pill {
+      background: rgba(13, 148, 136, 0.16);
+      border: 1px solid var(--accent-teal);
+      color: #5EEAD4;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-sharp);
+      letter-spacing: 0.5px;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .hotline-link {
+      color: #F8FAFC;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+    }
+    .hotline-link strong {
+      color: #FCD34D;
+    }
+    .lang-pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 3px 10px;
+      border-radius: var(--radius-sharp);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* MAIN STICKY NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 16px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90;
+      gap: 24px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-emblem {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sharp);
+      background: var(--bg-navy);
+      border: 1px solid var(--accent-cobalt);
+      display: grid;
+      place-items: center;
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1.15rem;
+      position: relative;
+    }
+    .logo-emblem::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent-brass);
+    }
+    .brand-text h1 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.1;
+    }
+    .brand-text p {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 1.4px;
+      color: var(--accent-cobalt);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+      transition: color 0.2s;
+      white-space: nowrap;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-cobalt);
+      border-bottom-color: var(--accent-cobalt);
+    }
+
+    .btn-cyan {
+      background: var(--accent-cobalt);
+      color: #FFFFFF;
+      padding: 11px 22px;
+      border-radius: var(--radius-sharp);
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.2px;
+      text-decoration: none;
+      border: 1px solid var(--accent-cobalt);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .btn-cyan:hover {
+      background: var(--accent-cobalt-hover);
+      border-color: var(--accent-cobalt-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 82, 204, 0.22);
+      color: #FFFFFF;
+    }
+    .btn-outline-swiss {
+      background: var(--bg-white);
+      color: var(--text-primary);
+      padding: 11px 22px;
+      border-radius: var(--radius-sharp);
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid var(--border-hairline);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-outline-swiss:hover {
+      border-color: var(--accent-cobalt);
+      color: var(--accent-cobalt);
+      background: #F1F5F9;
+    }
+
+    /* HERO SECTION - SWISS ARCHITECTURAL BLUEPRINT */
+    .hero {
+      position: relative;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 72px 48px 96px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: 'SWISS GRID // ISO-9001:2015 // FDI-ADVISORY-BLUEPRINT';
+      position: absolute;
+      top: 18px;
+      right: 48px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+    }
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border-hairline);
+      background: var(--bg-platinum);
+    }
+    .hero-left-cell {
+      padding: 48px;
+      background: var(--bg-white);
+      border-right: 1px solid var(--border-hairline);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-right-cell {
+      padding: 32px;
+      background: var(--bg-platinum);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #F1F5F9;
+      border: 1px solid var(--border-hairline);
+      border-left: 3px solid var(--accent-cobalt);
+      color: var(--accent-cobalt);
+      padding: 6px 14px;
+      border-radius: var(--radius-sharp);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      width: fit-content;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 4vw, 3.45rem);
+      line-height: 1.12;
+      color: var(--text-primary);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+    }
+    .hero-title span {
+      color: var(--accent-cobalt);
+      display: block;
+      margin-top: 4px;
+    }
+    .hero-desc {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.72;
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .hero-accreditation {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg-platinum);
+      padding: 12px 16px;
+      border-radius: var(--radius-sharp);
+      border: 1px solid var(--border-hairline);
+      width: fit-content;
+    }
+    .hero-accreditation-stars {
+      font-family: var(--font-mono);
+      color: var(--accent-brass);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .hero-accreditation-text {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .blueprint-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .hero-visual-card {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius-sharp);
+      overflow: hidden;
+      border: 1px solid var(--border-hairline);
+      background: var(--bg-navy);
+    }
+    .hero-visual-card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .hero-visual-card:hover img {
+      transform: scale(1.03);
+    }
+    .hero-floating-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: rgba(10, 25, 47, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(203, 213, 225, 0.3);
+      border-left: 4px solid var(--accent-teal);
+      padding: 12px 16px;
+      border-radius: var(--radius-sharp);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hero-floating-badge p:first-child {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #5EEAD4;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .hero-floating-badge p:last-child {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    /* 4 TRUST NUMBERS - SWISS ARCHITECTURAL HAIRLINE MATRIX */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1280px;
+      margin: -48px auto 64px;
+      padding: 0 48px;
+      position: relative;
+      z-index: 30;
+    }
+    .stat-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-hairline);
+      margin-left: -1px;
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .stat-card:first-child {
+      margin-left: 0;
+      border-top-left-radius: var(--radius-sharp);
+      border-bottom-left-radius: var(--radius-sharp);
+    }
+    .stat-card:last-child {
+      border-top-right-radius: var(--radius-sharp);
+      border-bottom-right-radius: var(--radius-sharp);
+    }
+    .stat-card:hover {
+      background: #F8FAFC;
+      border-top: 3px solid var(--accent-cobalt);
+    }
+    .stat-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stat-index {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--accent-brass);
+      letter-spacing: 1px;
+    }
+    .stat-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sharp);
+      background: var(--bg-platinum);
+      border: 1px solid var(--border-hairline);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      color: var(--accent-cobalt);
+    }
+    .stat-text h4 {
+      font-family: var(--font-mono);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.05;
+      margin-bottom: 4px;
+      letter-spacing: -0.03em;
+    }
+    .stat-text p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-weight: 700;
+    }
+
+    /* SECTION TITLE STYLES */
+    .section-wrap {
+      padding: 72px 48px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .section-header-left {
+      max-width: 720px;
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      color: var(--accent-cobalt);
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 2px;
+      background: var(--accent-brass);
+    }
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .section-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      max-width: 420px;
+    }
+
+    /* SECTION 1: 4 TRỤ CỘT DỊCH VỤ DOANH NGHIỆP (SWISS ARCHITECTURAL GRID) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border-hairline);
+      background: var(--bg-white);
+      border-radius: var(--radius-sharp);
+    }
+    .service-card {
+      background: var(--bg-white);
+      border-right: 1px solid var(--border-hairline);
+      display: flex;
+      flex-direction: column;
+      transition: background 0.25s ease;
+      position: relative;
+    }
+    .service-card:last-child {
+      border-right: none;
+    }
+    .service-card:hover {
+      background: #F8FAFC;
+    }
+    .service-index-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 20px 22px 14px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .service-oversized-num {
+      font-family: var(--font-mono);
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .service-code-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--accent-teal);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      background: rgba(13, 148, 136, 0.08);
+      border: 1px solid rgba(13, 148, 136, 0.28);
+      padding: 3px 8px;
+      border-radius: var(--radius-sharp);
+    }
+    .service-img-wrap {
+      width: 100%;
+      height: 175px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .service-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: contrast(1.04);
+    }
+    .service-card:hover .service-img-wrap img {
+      transform: scale(1.05);
+    }
+    .service-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(10, 25, 47, 0.9);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      padding: 3px 9px;
+      border-radius: var(--radius-sharp);
+      font-size: 0.66rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .service-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.32;
+    }
+    .service-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .service-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-hairline);
+    }
+    .service-perks li {
+      font-size: 0.78rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .service-perks li span {
+      color: var(--accent-teal);
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+    .service-bottom {
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    /* INTERACTIVE COMMAND CENTER / HOLOGRAM SECTION IN DEEP OXFORD NAVY (#0A192F) */
+    .command-center-section {
+      background: var(--bg-navy);
+      color: #FFFFFF;
+      border-top: 2px solid var(--accent-cobalt);
+      border-bottom: 2px solid var(--accent-brass);
+      padding: 88px 48px;
+      position: relative;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .command-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .command-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid rgba(203, 213, 225, 0.2);
+      gap: 24px;
+    }
+    .command-tag {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: #5EEAD4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .command-heading {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    .hologram-shell {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      border: 1px solid rgba(203, 213, 225, 0.24);
+      border-radius: var(--radius-sharp);
+      background: rgba(17, 34, 64, 0.85);
+      margin-bottom: 56px;
+    }
+    .hologram-tabs {
+      border-right: 1px solid rgba(203, 213, 225, 0.2);
+      display: flex;
+      flex-direction: column;
+    }
+    .hologram-tab-btn {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(203, 213, 225, 0.16);
+      padding: 22px 24px;
+      text-align: left;
+      color: #94A3B8;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .hologram-tab-btn:last-child {
+      border-bottom: none;
+    }
+    .hologram-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: #FFFFFF;
+    }
+    .hologram-tab-btn.active {
+      background: rgba(0, 82, 204, 0.25);
+      border-left: 4px solid #5EEAD4;
+      color: #FFFFFF;
+    }
+    .holo-tab-idx {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #FCD34D;
+      letter-spacing: 1px;
+    }
+    .holo-tab-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .hologram-viewport {
+      padding: 36px 40px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .holo-top-telemetry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(203, 213, 225, 0.16);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #5EEAD4;
+    }
+    .holo-metrics-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .holo-metric-box {
+      background: rgba(10, 25, 47, 0.9);
+      border: 1px solid rgba(203, 213, 225, 0.2);
+      padding: 18px;
+      border-radius: var(--radius-sharp);
+    }
+    .holo-metric-box span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #94A3B8;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .holo-metric-box strong {
+      font-family: var(--font-mono);
+      font-size: 1.65rem;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+    .holo-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .holo-bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .holo-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: #E2E8F0;
+    }
+    .holo-bar-track {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .holo-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-cobalt), #14B8A6);
+      transition: width 0.4s ease;
+    }
+
+    /* 4-STEP PROCESS INSIDE OXFORD NAVY BLUEPRINT */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(203, 213, 225, 0.24);
+      background: rgba(10, 25, 47, 0.75);
+    }
+    .process-card {
+      padding: 28px 24px;
+      border-right: 1px solid rgba(203, 213, 225, 0.2);
+      transition: background 0.25s;
+    }
+    .process-card:last-child {
+      border-right: none;
+    }
+    .process-card:hover {
+      background: rgba(17, 34, 64, 0.95);
+    }
+    .process-step-num {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: #FCD34D;
+      margin-bottom: 14px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(203, 213, 225, 0.16);
+    }
+    .process-step-num::after {
+      content: 'STEP // SLA';
+      font-size: 0.65rem;
+      color: #5EEAD4;
+      letter-spacing: 1px;
+    }
+    .process-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      color: #FFFFFF;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .process-card p {
+      font-size: 0.84rem;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+
+    /* SECTION 3: BẢNG TÍNH DỰ TOÁN B2B REALTIME (SWISS BLUEPRINT SHEET) */
+    .estimator-section {
+      padding: 84px 48px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .estimator-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-hairline);
+      border-top: 4px solid var(--accent-cobalt);
+      border-radius: var(--radius-sharp);
+      padding: 44px 48px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+    }
+    .est-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 40px;
+      margin-top: 24px;
+      align-items: stretch;
+    }
+    .est-field {
+      margin-bottom: 20px;
+    }
+    .est-field label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .est-field select {
+      width: 100%;
+      background: var(--bg-platinum);
+      border: 1px solid var(--border-hairline);
+      padding: 13px 14px;
+      border-radius: var(--radius-sharp);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .est-field select:focus {
+      border-color: var(--accent-cobalt);
+      background: var(--bg-white);
+    }
+    .est-result-box {
+      background: var(--bg-navy);
+      border: 1px solid var(--bg-navy);
+      border-left: 4px solid var(--accent-brass);
+      border-radius: var(--radius-sharp);
+      padding: 32px;
+      text-align: left;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .est-final-fee {
+      font-family: var(--font-mono);
+      font-size: 2.15rem;
+      font-weight: 700;
+      color: #FCD34D;
+      margin: 10px 0;
+      letter-spacing: -0.02em;
+    }
+
+    /* SECTION 4: FORM ĐẶT LỊCH TƯ VẤN 1:1 */
+    .consult-section {
+      padding: 80px 48px 96px;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 48px;
+      align-items: start;
+      border-top: 1px solid var(--border-hairline);
+    }
+    .consult-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-hairline);
+      border-top: 4px solid var(--accent-teal);
+      border-radius: var(--radius-sharp);
+      padding: 38px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+    }
+    .form-group-corp {
+      margin-bottom: 16px;
+    }
+    .form-group-corp label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .form-group-corp input,
+    .form-group-corp select {
+      width: 100%;
+      background: var(--bg-platinum);
+      border: 1px solid var(--border-hairline);
+      padding: 12px 14px;
+      border-radius: var(--radius-sharp);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-group-corp input::placeholder {
+      color: var(--text-muted);
+    }
+    .form-group-corp input:focus,
+    .form-group-corp select:focus {
+      border-color: var(--accent-cobalt);
+      background: var(--bg-white);
+    }
+
+    /* FOOTER CHUẨN ĐỒNG BỘ PAT TECH */
+    .footer {
+      background: var(--bg-navy);
+      border-top: 1px solid #1E293B;
+      padding: 70px 48px 30px;
+      color: #CBD5E1;
+    }
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto 50px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #FCD34D;
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #FFFFFF;
+    }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(203, 213, 225, 0.15);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: #94A3B8;
+    }
+
+    /* MODAL TICKET */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 25, 47, 0.82);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: grid;
+    }
+    .b2b-modal {
+      background: var(--bg-white);
+      border: 1px solid var(--border-hairline);
+      border-top: 5px solid var(--accent-cobalt);
+      border-radius: var(--radius-sharp);
+      max-width: 520px;
+      width: 100%;
+      padding: 36px;
+      text-align: center;
+      color: var(--text-primary);
+      box-shadow: 0 30px 70px rgba(10, 25, 47, 0.45);
+      animation: popIn 0.25s ease;
+    }
+
+    @keyframes popIn {
+      from { transform: translateY(10px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .stats-grid, .services-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-container, .est-grid, .consult-section, .hologram-shell { grid-template-columns: 1fr; }
+      .hero-left-cell { border-right: none; border-bottom: 1px solid var(--border-hairline); }
+      .hologram-tabs { border-right: none; border-bottom: 1px solid rgba(203, 213, 225, 0.2); }
+      .section-header, .command-header { flex-direction: column; align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .navbar { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 40px 20px; }
+      .hero-left-cell, .hero-right-cell { padding: 24px; }
+      .stats-grid { grid-template-columns: 1fr; padding: 0 20px; margin-top: 20px; }
+      .stat-card { margin-left: 0; margin-top: -1px; }
+      .section-wrap, .command-center-section, .estimator-section, .consult-section, .footer { padding: 50px 20px; }
+      .services-grid, .process-grid, .holo-metrics-row { grid-template-columns: 1fr; }
+      .service-card, .process-card { border-right: none; border-bottom: 1px solid var(--border-hairline); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div style="font-size: 1.3rem; font-weight: 800; color: #818cf8;">💼 NOVA CORP</div>
-    <div style="color: #94a3b8; font-size: 0.9rem;">Đối tác tin cậy của hơn 500+ doanh nghiệp</div>
-  </header>
-  <div class="hero">
-    <h1>Khẳng Định Uy Tín Thương Hiệu Doanh Nghiệp</h1>
-    <p>Cung cấp giải pháp tư vấn quản trị, phát triển phần mềm và chuyển đổi số toàn diện</p>
-  </div>
-  <div class="grid">
-    <div class="card">
-      <h3>🚀 Tư Vấn Chuyển Đổi Số</h3>
-      <p>Số hóa quy trình vận hành, nâng cao hiệu suất làm việc và tiết kiệm đến 40% chi phí quản trị.</p>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span class="top-license-pill">GPKD SỞ KH&amp;ĐT: 0108924762 // ISO-27001</span>
+      <span>Cố vấn Quản trị Chiến lược, Pháp lý Đầu tư &amp; M&amp;A cho hơn <strong>500+ Tập đoàn FDI &amp; Doanh nghiệp B2B</strong></span>
     </div>
-    <div class="card">
-      <h3>📈 Giải Pháp Tăng Trưởng</h3>
-      <p>Chiến lược tiếp cận khách hàng tiềm năng B2B đa kênh với tỷ lệ chuyển đổi tối ưu.</p>
-    </div>
-    <div class="card">
-      <h3>🛡️ Bảo Mật & Pháp Lý</h3>
-      <p>Hỗ trợ rà soát hợp đồng kinh tế và xây dựng hệ thống bảo mật dữ liệu doanh nghiệp an toàn tuyệt đối.</p>
+    <div class="top-bar-right">
+      <a href="tel:18006890" class="hotline-link">
+        <span>DIRECT LINE:</span>
+        <strong>1800 6890</strong> (24/7 NDA DESK)
+      </a>
+      <div class="lang-pill">
+        <span>VN</span> / <span>EN</span> / <span>JP</span>
+      </div>
     </div>
   </div>
-  <div class="contact-box">
-    <h3 style="color: #818cf8; margin-bottom: 8px;">Yêu Cầu Tư Vấn Giải Pháp Doanh Nghiệp</h3>
-    <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 20px;">Đội ngũ chuyên gia sẽ gửi báo cáo phân tích sơ bộ trong 24 giờ</p>
-    <button class="btn" onclick="alert('Đã tiếp nhận yêu cầu! Đội ngũ tư vấn B2B sẽ liên hệ kết nối với bạn.');">Đặt Lịch Hẹn Tư Vấn 1-1</button>
+
+  <!-- MAIN STICKY NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="brand-logo">
+      <div class="logo-emblem">L&amp;P</div>
+      <div class="brand-text">
+        <h1>LIFETEC &amp; PARTNERS</h1>
+        <p>Swiss Executive B2B &amp; Legal Blueprint</p>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Tổng Quan</a></li>
+      <li><a href="#services">04 Trụ Cột B2B</a></li>
+      <li><a href="#process">Command Center &amp; Quy Trình</a></li>
+      <li><a href="#estimator">Ma Trận Phí Tư Vấn</a></li>
+      <li><a href="#consult">Đặt Lịch Cố Vấn 1:1</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="#consult" class="btn-cyan">
+        <span>[01:01]</span>
+        <span>Họp Chiến Lược Cùng Partner</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION (SWISS ARCHITECTURAL BLUEPRINT) -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-left-cell">
+        <div class="hero-eyebrow">
+          <span>DOC-REF // B2B-2026</span>
+          <span>Quản Trị Vận Hành • Pháp Lý FDI &amp; Kỹ Thuật Môi Trường</span>
+        </div>
+        <h2 class="hero-title">
+          Kiến Trúc Quản Trị Chuẩn Xác
+          <span>Bảo Hộ Pháp Lý Bứt Phá Toàn Cầu</span>
+        </h2>
+        <p class="hero-desc">
+          Đồng hành cùng các tập đoàn công nghiệp, kỹ thuật môi trường và doanh nghiệp B2B: Tái cấu trúc hiệu suất vận hành (Operational Efficiency), xúc tiến thương mại (B2B Sales Brokerage), phân tích dữ liệu dung lượng thị trường và thiết lập lá chắn pháp lý chuẩn quốc tế.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#consult" class="btn-cyan" style="padding: 13px 26px;">
+            <span>Đặt Lịch Tư Vấn Chiến Lược</span>
+            <span>→</span>
+          </a>
+          <a href="#estimator" class="btn-outline-swiss" style="padding: 13px 24px;">
+            <span>📊 Ma Trận Dự Toán Chi Phí</span>
+          </a>
+        </div>
+
+        <div class="hero-accreditation">
+          <span class="hero-accreditation-stars">★★★★★ [4.98/5.0]</span>
+          <span class="hero-accreditation-text">Đối tác chiến lược của các Hiệp hội Thương mại Quốc tế &amp; 32 KCN Trọng điểm</span>
+        </div>
+      </div>
+
+      <!-- VISUAL ẢNH NGƯỜI DÙNG CUNG CẤP TRONG KHUNG BLUEPRINT -->
+      <div class="hero-right-cell">
+        <div class="blueprint-meta-bar">
+          <span>FIG 01. EXECUTIVE ADVISORY BOARD</span>
+          <span>SCALE: ENTERPRISE / FDI</span>
+        </div>
+        <div class="hero-visual-card">
+          <img src="image/hero-consulting.jpg" alt="Dịch vụ tư vấn quản trị doanh nghiệp Lifetec B2B">
+          <div class="hero-floating-badge">
+            <div>
+              <p>Operational Efficiency &amp; Market Data</p>
+              <p>LIFETEC B2B Architectural Solution</p>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: #FCD34D; font-weight: 700;">NDA VERIFIED</span>
+          </div>
+        </div>
+        <div class="blueprint-meta-bar" style="margin-top: 12px; margin-bottom: 0; padding-bottom: 0; border-bottom: none;">
+          <span>STATUS: ACTIVE TELEMETRY</span>
+          <span>HANOI • HCMC • TOKYO • SINGAPORE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 TRUST NUMBERS -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-top-row">
+        <span class="stat-index">INDEX // 01</span>
+        <div class="stat-icon">🏢</div>
+      </div>
+      <div class="stat-text">
+        <h4>500+</h4>
+        <p>Doanh Nghiệp FDI &amp; B2B Tin Chọn</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-top-row">
+        <span class="stat-index">INDEX // 02</span>
+        <div class="stat-icon">⚖️</div>
+      </div>
+      <div class="stat-text">
+        <h4>99.4%</h4>
+        <p>Hồ Sơ Pháp Lý Phê Duyệt Ngay Lần 1</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-top-row">
+        <span class="stat-index">INDEX // 03</span>
+        <div class="stat-icon">📉</div>
+      </div>
+      <div class="stat-text">
+        <h4>-35.0%</h4>
+        <p>Chi Phí Vận Hành Tối Ưu Trung Bình</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-top-row">
+        <span class="stat-index">INDEX // 04</span>
+        <div class="stat-icon">📜</div>
+      </div>
+      <div class="stat-text">
+        <h4>20+ Năm</h4>
+        <p>Kinh Nghiệm Luật Sư &amp; Chuyên Gia Cấp Cao</p>
+      </div>
+    </div>
   </div>
+
+  <!-- SECTION 1: 4 TRỤ CỘT DỊCH VỤ DOANH NGHIỆP MŨI NHỌN -->
+  <section class="section-wrap" id="services">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-tag">Architecture of Value // 01—04</div>
+        <h3 class="section-heading">4 Mũi Nhọn Dịch Vụ Doanh Nghiệp &amp; Pháp Lý B2B</h3>
+      </div>
+      <p class="section-desc">Phục vụ chuyên sâu các tập đoàn sản xuất, công nghệ kỹ thuật, môi trường và chuỗi cung ứng công nghiệp với chuẩn mực Thụy Sĩ.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- DỊCH VỤ 1 -->
+      <div class="service-card">
+        <div class="service-index-bar">
+          <span class="service-oversized-num">01</span>
+          <span class="service-code-tag">OP-EFFICIENCY</span>
+        </div>
+        <div class="service-img-wrap">
+          <span class="service-tag">Operational Efficiency</span>
+          <img src="image/industrial-tech.jpg" alt="Tư vấn quản trị vận hành công nghiệp">
+        </div>
+        <div class="service-body">
+          <h4 class="service-title">Tư Vấn Quản Trị &amp; Hiệu Quả Vận Hành</h4>
+          <p class="service-desc">Tái cấu trúc bộ máy, tinh gọn quy trình sản xuất, tối ưu chuỗi cung ứng kỹ thuật công nghiệp và chuyển giao công nghệ xử lý môi trường (RO, hạt nhựa trao đổi ion Samyang).</p>
+          <ul class="service-perks">
+            <li><span>[✓]</span> Giảm lãng phí &amp; nâng hiệu suất 35%+</li>
+            <li><span>[✓]</span> Chuẩn hóa quy trình theo tiêu chuẩn quốc tế ISO</li>
+            <li><span>[✓]</span> Chuyển đổi số quản trị dữ liệu thời gian thực</li>
+          </ul>
+          <div class="service-bottom">
+            <a href="#consult" class="btn-cyan" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.8rem;" onclick="selectServiceInForm('Tư Vấn Quản Trị & Hiệu Quả Vận Hành')">Yêu Cầu Khảo Sát [01]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DỊCH VỤ 2 -->
+      <div class="service-card">
+        <div class="service-index-bar">
+          <span class="service-oversized-num">02</span>
+          <span class="service-code-tag">B2B-BROKERAGE</span>
+        </div>
+        <div class="service-img-wrap">
+          <span class="service-tag">B2B Sales Brokerage</span>
+          <img src="image/corporate-boardroom.jpg" alt="Môi giới và xúc tiến thương mại B2B">
+        </div>
+        <div class="service-body">
+          <h4 class="service-title">Môi Giới &amp; Xúc Tiến Bán Hàng B2B</h4>
+          <p class="service-desc">Phân tích dung lượng thị trường (Market Sizing Data), xây dựng phễu bán hàng B2B chuyên nghiệp và kết nối trực tiếp với mạng lưới nhà máy công nghiệp trên toàn quốc.</p>
+          <ul class="service-perks">
+            <li><span>[✓]</span> Tiếp cận trực tiếp giám đốc nhà máy &amp; thu mua</li>
+            <li><span>[✓]</span> Đàm phán hợp đồng cung ứng dài hạn</li>
+            <li><span>[✓]</span> Xúc tiến kênh phân phối thiết bị lọc &amp; hóa chất</li>
+          </ul>
+          <div class="service-bottom">
+            <a href="#consult" class="btn-cyan" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.8rem;" onclick="selectServiceInForm('Môi Giới & Xúc Tiến Bán Hàng B2B')">Yêu Cầu Khảo Sát [02]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DỊCH VỤ 3 -->
+      <div class="service-card">
+        <div class="service-index-bar">
+          <span class="service-oversized-num">03</span>
+          <span class="service-code-tag">FDI-LEGAL-M&amp;A</span>
+        </div>
+        <div class="service-img-wrap">
+          <span class="service-tag">Legal &amp; FDI Investment</span>
+          <img src="image/legal-contract.jpg" alt="Tư vấn pháp lý doanh nghiệp và FDI">
+        </div>
+        <div class="service-body">
+          <h4 class="service-title">Pháp Lý Doanh Nghiệp &amp; Đầu Tư FDI</h4>
+          <p class="service-desc">Thành lập công ty có vốn nước ngoài (FDI), xin giấy phép chủ trương đầu tư KCN, rà soát hợp đồng thương mại quốc tế, tư vấn sáp nhập &amp; mua bán doanh nghiệp (M&amp;A).</p>
+          <ul class="service-perks">
+            <li><span>[✓]</span> Rà soát phòng ngừa 100% rủi ro tranh chấp</li>
+            <li><span>[✓]</span> Giấy phép đầu tư &amp; môi trường trọn gói</li>
+            <li><span>[✓]</span> Bảo hộ thương hiệu &amp; sáng chế công nghiệp</li>
+          </ul>
+          <div class="service-bottom">
+            <a href="#consult" class="btn-cyan" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.8rem;" onclick="selectServiceInForm('Pháp Lý Doanh Nghiệp & Đầu Tư FDI')">Yêu Cầu Khảo Sát [03]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DỊCH VỤ 4 -->
+      <div class="service-card">
+        <div class="service-index-bar">
+          <span class="service-oversized-num">04</span>
+          <span class="service-code-tag">TAX-COMPLIANCE</span>
+        </div>
+        <div class="service-img-wrap">
+          <span class="service-tag">Tax &amp; Audit Compliance</span>
+          <img src="image/financial-audit.jpg" alt="Tư vấn thuế và kiểm toán tuân thủ">
+        </div>
+        <div class="service-body">
+          <h4 class="service-title">Tư Vấn Thuế &amp; Kiểm Toán Tuân Thủ</h4>
+          <p class="service-desc">Hoạch định cấu trúc chi phí thuế tối ưu hợp pháp, chuẩn bị hồ sơ quyết toán thuế thanh tra, soát xét sổ sách kế toán và quản trị rủi ro dòng tiền doanh nghiệp.</p>
+          <ul class="service-perks">
+            <li><span>[✓]</span> Tối ưu thuế thu nhập doanh nghiệp hợp lệ</li>
+            <li><span>[✓]</span> Đại diện giải trình trực tiếp với cơ quan thuế</li>
+            <li><span>[✓]</span> Báo cáo tài chính minh bạch cho nhà đầu tư</li>
+          </ul>
+          <div class="service-bottom">
+            <a href="#consult" class="btn-cyan" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.8rem;" onclick="selectServiceInForm('Tư Vấn Thuế & Kiểm Toán Tuân Thủ')">Yêu Cầu Khảo Sát [04]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: DEEP OXFORD NAVY (#0A192F) INTERACTIVE COMMAND CENTER / HOLOGRAM & 4-STEP PROCESS -->
+  <section class="command-center-section" id="process">
+    <div class="command-container">
+      <div class="command-header">
+        <div>
+          <div class="command-tag">● LIVE EXECUTIVE TELEMETRY // OXFORD NAVY COMMAND CENTER</div>
+          <h3 class="command-heading">Trung Tâm Dữ Liệu Chiến Lược &amp; Lộ Trình 04 Bước</h3>
+        </div>
+        <p style="color: #94A3B8; font-size: 0.9rem; max-width: 420px;">
+          Mô phỏng thời gian thực các chỉ số Quản trị Vận hành, Xúc tiến B2B và Tuân thủ Pháp lý theo phương pháp luận McKinsey &amp; Swiss Blueprint.
+        </p>
+      </div>
+
+      <!-- INTERACTIVE HOLOGRAM TABS -->
+      <div class="hologram-shell">
+        <div class="hologram-tabs">
+          <button type="button" class="hologram-tab-btn active" onclick="switchHologramTab(0, this)">
+            <span class="holo-tab-idx">MODULE 01 // LEAN OPEX</span>
+            <span class="holo-tab-title">Hiệu Suất Vận Hành &amp; Kỹ Thuật RO</span>
+          </button>
+          <button type="button" class="hologram-tab-btn" onclick="switchHologramTab(1, this)">
+            <span class="holo-tab-idx">MODULE 02 // MARKET SIZING</span>
+            <span class="holo-tab-title">Dữ Liệu Xúc Tiến Bán Hàng B2B</span>
+          </button>
+          <button type="button" class="hologram-tab-btn" onclick="switchHologramTab(2, this)">
+            <span class="holo-tab-idx">MODULE 03 // FDI SHIELD</span>
+            <span class="holo-tab-title">Thẩm Định Pháp Lý &amp; M&amp;A Radar</span>
+          </button>
+          <button type="button" class="hologram-tab-btn" onclick="switchHologramTab(3, this)">
+            <span class="holo-tab-idx">MODULE 04 // TAX MATRIX</span>
+            <span class="holo-tab-title">Kiểm Toán Tuân Thủ &amp; Cấu Trúc Thuế</span>
+          </button>
+        </div>
+
+        <div class="hologram-viewport">
+          <div class="holo-top-telemetry">
+            <span id="holoCodeReadout">SYS.BLUEPRINT // OPEX-OPTIMIZATION-V4.2</span>
+            <span>STATUS: VERIFIED BENCHMARK</span>
+          </div>
+
+          <div>
+            <h4 id="holoTitle" style="font-family: var(--font-display); font-size: 1.5rem; color: #FFFFFF; margin-bottom: 8px;">
+              Tái Cấu Trúc Chuỗi Cung Ứng &amp; Dây Chuyền Kỹ Thuật Công Nghiệp
+            </h4>
+            <p id="holoDesc" style="color: #CBD5E1; font-size: 0.92rem; line-height: 1.65;">
+              Đo lường điểm nghẽn tại nhà máy, chuẩn hóa định mức nguyên vật liệu, tối ưu hệ thống xử lý nước siêu tinh khiết RO &amp; hạt nhựa trao đổi ion Samyang giúp tiết giảm 35% chi phí vận hành định kỳ.
+            </p>
+          </div>
+
+          <div class="holo-metrics-row">
+            <div class="holo-metric-box">
+              <span id="holoLabel1">Tỷ Lệ Giảm Chi Phí OPEX</span>
+              <strong id="holoVal1">-35.4%</strong>
+            </div>
+            <div class="holo-metric-box">
+              <span id="holoLabel2">Thời Gian Hoàn Vốn ROI</span>
+              <strong id="holoVal2">4.5 Tháng</strong>
+            </div>
+            <div class="holo-metric-box">
+              <span id="holoLabel3">Độ Tuân Thủ Chuẩn ISO/FDI</span>
+              <strong id="holoVal3">99.8%</strong>
+            </div>
+          </div>
+
+          <div class="holo-bars">
+            <div class="holo-bar-item">
+              <div class="holo-bar-label">
+                <span id="holoBarName1">Hiệu suất dây chuyền sau tái cấu trúc</span>
+                <span id="holoBarPct1">94%</span>
+              </div>
+              <div class="holo-bar-track">
+                <div class="holo-bar-fill" id="holoBarFill1" style="width: 94%;"></div>
+              </div>
+            </div>
+            <div class="holo-bar-item">
+              <div class="holo-bar-label">
+                <span id="holoBarName2">Kiểm soát rủi ro pháp lý &amp; hợp đồng B2B</span>
+                <span id="holoBarPct2">99%</span>
+              </div>
+              <div class="holo-bar-track">
+                <div class="holo-bar-fill" id="holoBarFill2" style="width: 99%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-STEP EXECUTIVE PROCESS -->
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-step-num">01</div>
+          <h4>Khảo Sát Hiện Trạng &amp; Rà Soát Ban Đầu</h4>
+          <p>Tiếp nhận yêu cầu, ký cam kết bảo mật NDA và thực hiện rà soát chuyên sâu (Due Diligence) để phát hiện lỗ hổng vận hành và pháp lý.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-num">02</div>
+          <h4>Thiết Lập Bản Đồ Giải Pháp Chiến Lược</h4>
+          <p>Xây dựng phương án quản trị tối ưu, lộ trình pháp lý hoặc chiến lược xúc tiến B2B kèm cam kết KPI đo lường được bằng văn bản.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-num">03</div>
+          <h4>Đồng Hành Thực Thi &amp; Chuyển Giao</h4>
+          <p>Luật sư và chuyên gia cao cấp trực tiếp tham gia đàm phán, xử lý thủ tục hành chính, đào tạo đội ngũ nội bộ và chuyển giao công cụ quản trị.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-num">04</div>
+          <h4>Bảo Hộ Thường Xuyên &amp; Đo Lường Hiệu Quả</h4>
+          <p>Theo dõi định kỳ, bảo trợ pháp lý 24/7 và cập nhật kịp thời các biến động luật pháp hoặc thị trường để doanh nghiệp an tâm phát triển.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: BẢNG TÍNH DỰ TOÁN B2B REALTIME -->
+  <section class="estimator-section" id="estimator">
+    <div class="estimator-card">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <div class="section-header-left">
+          <div class="section-tag">Financial Matrix // Fee Estimator</div>
+          <h3 class="section-heading" style="font-size: 2rem;">Bảng Tính Dự Toán Chi Phí Tư Vấn B2B</h3>
+        </div>
+        <p class="section-desc">Ước tính nhanh ngân sách triển khai dịch vụ phù hợp theo quy mô và lĩnh vực kinh doanh của doanh nghiệp bạn.</p>
+      </div>
+
+      <div class="est-grid">
+        <div>
+          <div class="est-field">
+            <label>01. Quy Mô Doanh Nghiệp Hiện Tại</label>
+            <select id="estScale" onchange="calculateB2B()">
+              <option value="sme">Doanh nghiệp vừa và nhỏ (Dưới 50 nhân sự / Doanh thu &lt; 20 tỷ)</option>
+              <option value="medium" selected>Doanh nghiệp quy mô trung bình (50 - 200 nhân sự / Doanh thu 20 - 100 tỷ)</option>
+              <option value="enterprise">Doanh nghiệp lớn / Tập đoàn FDI / Nhà máy sản xuất (&gt; 200 nhân sự)</option>
+            </select>
+          </div>
+
+          <div class="est-field">
+            <label>02. Nhóm Dịch Vụ Cần Hỗ Trợ Trọng Tâm</label>
+            <select id="estScope" onchange="calculateB2B()">
+              <option value="legal">Gói Bảo Trợ Pháp Lý &amp; Rà Soát Hợp Đồng Thường Xuyên</option>
+              <option value="operation" selected>Tối Ưu Hóa Vận Hành &amp; Tinh Gọn Quy Trình Sản Xuất</option>
+              <option value="brokerage">Môi Giới &amp; Xúc Tiến Thương Mại B2B Mở Rộng Thị Trường</option>
+              <option value="fdi">Trọn Gói Giấy Phép Đầu Tư FDI &amp; M&amp;A Doanh Nghiệp</option>
+            </select>
+          </div>
+
+          <div class="est-field" style="margin-bottom: 0;">
+            <label>03. Thời Gian Kế Hoạch Triển Khai</label>
+            <select id="estDuration" onchange="calculateB2B()">
+              <option value="project">Theo Từng Hạng Mục Dự Án Cụ Thể</option>
+              <option value="monthly" selected>Ký Hợp Đồng Cố Vấn Định Kỳ Hàng Tháng (6 - 12 Tháng)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="est-result-box">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.74rem; color: #5EEAD4; text-transform: uppercase; font-weight: 700; letter-spacing: 1.2px;">
+              ESTIMATED RETAINER // NGÂN SÁCH DỰ KIẾN
+            </div>
+            <div class="est-final-fee" id="resFeeDisplay">40.000.000đ/tháng</div>
+            <div style="font-size: 0.88rem; color: #FFFFFF; font-weight: 700; margin-bottom: 14px;" id="resScopeName">
+              Tư Vấn Quản Trị &amp; Tối Ưu Vận Hành
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.06); border: 1px dashed rgba(94, 234, 212, 0.45); border-radius: var(--radius-sharp); padding: 12px; font-size: 0.8rem; color: #E2E8F0; margin-bottom: 20px;">
+              🎁 Đặc quyền Executive: Tặng kèm 01 buổi thẩm định pháp lý &amp; rủi ro vận hành ban đầu (Trị giá 10.000.000đ)
+            </div>
+          </div>
+          <button class="btn-cyan" style="width: 100%; justify-content: center; background: #0052CC; border-color: #38BDF8;" onclick="bookFromEstimator()">
+            <span>Nhận Báo Giá Chi Tiết Chính Thức →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FORM ĐẶT LỊCH TƯ VẤN 1:1 -->
+  <section class="consult-section" id="consult">
+    <div>
+      <div class="section-tag">Executive Consultation // 1:1</div>
+      <h3 style="font-family: var(--font-display); font-size: 2.25rem; line-height: 1.2; color: var(--text-primary); margin-bottom: 16px; letter-spacing: -0.02em;">
+        Đăng Ký Tư Vấn 1:1 Cùng
+        <span style="color: var(--accent-cobalt); display: block;">Luật Sư Thành Viên &amp; Chuyên Gia Trưởng</span>
+      </h3>
+      <p style="color: var(--text-secondary); font-size: 0.96rem; line-height: 1.7; margin-bottom: 24px;">
+        Đội ngũ cố vấn cấp cao của LIFETEC &amp; PARTNERS sẽ trực tiếp lắng nghe bài toán của doanh nghiệp bạn, phân tích sơ bộ và đề xuất định hướng chiến lược trong vòng 60 phút làm việc:
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-primary); font-weight: 600;">
+          <span style="color: var(--accent-teal); font-family: var(--font-mono); font-weight: 700;">[01]</span>
+          Cam kết bảo mật 100% dữ liệu doanh nghiệp theo điều khoản NDA.
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-primary); font-weight: 600;">
+          <span style="color: var(--accent-teal); font-family: var(--font-mono); font-weight: 700;">[02]</span>
+          Làm việc trực tiếp cùng Luật sư thành viên &amp; Chuyên gia trưởng ngành.
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-primary); font-weight: 600;">
+          <span style="color: var(--accent-teal); font-family: var(--font-mono); font-weight: 700;">[03]</span>
+          Cung cấp báo cáo thẩm định sơ bộ miễn phí sau buổi họp.
+        </div>
+      </div>
+
+      <div style="background: var(--bg-navy); border-left: 4px solid var(--accent-brass); border-radius: var(--radius-sharp); padding: 20px 24px; color: #FFFFFF;">
+        <p style="font-family: var(--font-mono); font-size: 0.74rem; color: #5EEAD4; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Đường Dây Nóng Doanh Nghiệp (24/7)</p>
+        <p style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF; font-family: var(--font-mono); margin-top: 4px;">1800 6890</p>
+      </div>
+    </div>
+
+    <div class="consult-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <h4 style="font-family: var(--font-display); font-size: 1.3rem; color: var(--text-primary);">Phiếu Đăng Ký Tư Vấn Doanh Nghiệp</h4>
+        <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-teal); font-weight: 700;">FORM // B2B-NDA</span>
+      </div>
+      <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 22px;">Chuyên viên cao cấp sẽ liên hệ lại trong vòng 60 phút để xác nhận lịch họp</p>
+
+      <form onsubmit="handleB2BSubmit(event)">
+        <div class="form-group-corp">
+          <label>Tên Doanh Nghiệp / Tổ Chức</label>
+          <input type="text" id="corpName" placeholder="Ví dụ: Công ty Cổ phần Kỹ Thuật Môi Trường Lifetec" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group-corp">
+            <label>Người Đại Diện Liên Hệ</label>
+            <input type="text" id="repName" placeholder="Họ và tên" required>
+          </div>
+          <div class="form-group-corp">
+            <label>Chức Vụ</label>
+            <input type="text" id="repRole" placeholder="CEO / Giám đốc / Trưởng phòng" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group-corp">
+            <label>Số Điện Thoại</label>
+            <input type="tel" id="repPhone" placeholder="090x xxx xxx" required>
+          </div>
+          <div class="form-group-corp">
+            <label>Email Công Việc</label>
+            <input type="email" id="repEmail" placeholder="ceo@company.com" required>
+          </div>
+        </div>
+
+        <div class="form-group-corp">
+          <label>Nhóm Dịch Vụ Cần Tư Vấn</label>
+          <select id="corpService">
+            <option value="Tư Vấn Quản Trị & Hiệu Quả Vận Hành">Tư Vấn Quản Trị &amp; Hiệu Quả Vận Hành</option>
+            <option value="Tối Ưu Hóa Vận Hành & Hiệu Suất Sản Xuất">Tối Ưu Hóa Vận Hành &amp; Hiệu Suất Sản Xuất</option>
+            <option value="Môi Giới & Xúc Tiến Bán Hàng B2B">Môi Giới &amp; Xúc Tiến Bán Hàng B2B</option>
+            <option value="Môi Giới & Xúc Tiến Thương Mại B2B">Môi Giới &amp; Xúc Tiến Thương Mại B2B</option>
+            <option value="Pháp Lý Doanh Nghiệp & Đầu Tư FDI">Pháp Lý Doanh Nghiệp &amp; Đầu Tư FDI</option>
+            <option value="Tư Vấn Thuế & Kiểm Toán Tuân Thủ">Tư Vấn Thuế &amp; Kiểm Toán Tuân Thủ</option>
+            <option value="Tư Vấn Thuế & Quản Trị Rủi Ro Tài Chính">Tư Vấn Thuế &amp; Quản Trị Rủi Ro Tài Chính</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-cyan" style="width: 100%; justify-content: center; padding: 13px; margin-top: 10px;">
+          <span>Xác Nhận Đặt Lịch Tư Vấn 1:1 →</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER CHUẨN ĐỒNG BỘ PAT TECH PHẠM ANH TUẤN -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div class="logo-emblem" style="width: 36px; height: 36px; font-size: 0.95rem; background: #112240;">L&amp;P</div>
+          <span style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: #FFFFFF;">LIFETEC &amp; PARTNERS</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #94A3B8; line-height: 1.65; margin-bottom: 16px;">
+          Công ty Tư vấn Quản trị Doanh nghiệp, Pháp lý Đầu tư &amp; Dịch vụ Thương mại B2B. Đối tác chiến lược cho các doanh nghiệp kỹ thuật công nghiệp và môi trường.
+        </p>
+        <p style="font-size: 0.82rem; color: #5EEAD4; font-family: var(--font-mono);">
+          📍 Trụ sở chính: Tầng 18, Tòa nhà Keangnam Landmark 72, Nam Từ Liêm, Hà Nội.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Dịch Vụ B2B</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Tối ưu hiệu quả vận hành</a></li>
+          <li><a href="#services">Môi giới &amp; Xúc tiến thương mại</a></li>
+          <li><a href="#services">Tư vấn pháp lý doanh nghiệp FDI</a></li>
+          <li><a href="#services">Hoạch định cấu trúc thuế</a></li>
+          <li><a href="#process">Quy trình thẩm định 4 bước</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cam Kết Khách Hàng</h4>
+        <ul class="footer-links">
+          <li><a href="#consult">Bảo mật thông tin tuyệt đối (NDA)</a></li>
+          <li><a href="#consult">Luật sư chuyên gia trực tiếp làm việc</a></li>
+          <li><a href="#consult">Bảo hiểm trách nhiệm nghề nghiệp</a></li>
+          <li><a href="#consult">Hỗ trợ pháp lý khẩn cấp 24/7</a></li>
+          <li><a href="#consult">Chính sách hoàn phí nếu không đạt KPI</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Liên Hệ Doanh Nghiệp</h4>
+        <p style="font-size: 0.82rem; color: #94A3B8; line-height: 1.6; margin-bottom: 8px;">
+          • Email tiếp nhận: b2b@lifetec-consulting.com
+        </p>
+        <p style="font-size: 0.82rem; color: #94A3B8; line-height: 1.6; margin-bottom: 14px;">
+          • Thời gian làm việc: Thứ 2 - Thứ 6 (08:30 - 18:00).
+        </p>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(203, 213, 225, 0.2); border-radius: var(--radius-sharp); padding: 12px 14px;">
+          <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #5EEAD4; text-transform: uppercase; font-weight: 700;">Tổng Đài Tư Vấn Doanh Nghiệp</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; font-family: var(--font-mono); margin-top: 2px;">1800 6890</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BẢN QUYỀN ĐỒNG BỘ PHẠM ANH TUẤN - PAT TECH -->
+    <div class="footer-bottom">
+      <p>© 2026 PAT TECH (Phạm Anh Tuấn). Toàn bộ bản quyền giao diện và hệ thống được bảo lưu.</p>
+      <p>Thiết kế &amp; Phát triển độc quyền bởi <a href="../../index.html" style="color: #5EEAD4; text-decoration: none; font-weight: 700;">PAT TECH - Phạm Anh Tuấn</a>.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL XÁC NHẬN TIẾP NHẬN B2B -->
+  <div class="modal-overlay" id="ticketModal">
+    <div class="b2b-modal">
+      <div style="display: inline-block; background: #F1F5F9; border: 1px solid var(--border-hairline); color: var(--accent-cobalt); font-family: var(--font-mono); font-weight: 700; font-size: 0.72rem; letter-spacing: 1.5px; padding: 4px 12px; border-radius: var(--radius-sharp); text-transform: uppercase; margin-bottom: 14px;">
+        Hồ Sơ Doanh Nghiệp Đã Được Tiếp Nhận
+      </div>
+      <div style="font-size: 2.4rem; margin-bottom: 8px;">📋</div>
+      <h3 style="font-family: var(--font-display); font-size: 1.45rem; color: var(--text-primary); margin-bottom: 8px;">
+        Đăng Ký Tư Vấn Thành Công!
+      </h3>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 20px;">
+        Chuyên viên cao cấp của LIFETEC &amp; PARTNERS đang rà soát thông tin để sắp xếp buổi làm việc 1:1 với bạn:
+      </p>
+
+      <div style="background: var(--bg-platinum); border: 1px solid var(--border-hairline); border-left: 4px solid var(--accent-cobalt); border-radius: var(--radius-sharp); padding: 18px; margin-bottom: 24px; text-align: left;">
+        <div style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 6px;">Doanh nghiệp: <strong id="modalCorpName" style="color: var(--text-primary);"></strong></div>
+        <div style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 6px;">Người đại diện: <strong id="modalRepName" style="color: var(--accent-cobalt);"></strong></div>
+        <div style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 8px;">Nội dung: <strong id="modalService" style="color: var(--text-primary);"></strong></div>
+        <div style="font-size: 0.84rem; color: var(--text-secondary); padding-top: 8px; border-top: 1px dashed var(--border-hairline);">Mã Phiếu Tiếp Nhận VIP: <strong id="modalTicketCode" style="font-family: var(--font-mono); color: var(--accent-teal); font-size: 1.1rem; letter-spacing: 1.5px;"></strong></div>
+      </div>
+
+      <button class="btn-cyan" style="width: 100%; justify-content: center;" onclick="closeModal()">
+        Hoàn Tất &amp; Đóng
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Interactive Command Center / Hologram Tabs Data
+    const hologramData = [
+      {
+        code: 'SYS.BLUEPRINT // OPEX-OPTIMIZATION-V4.2',
+        title: 'Tái Cấu Trúc Chuỗi Cung Ứng & Dây Chuyền Kỹ Thuật Công Nghiệp',
+        desc: 'Đo lường điểm nghẽn tại nhà máy, chuẩn hóa định mức nguyên vật liệu, tối ưu hệ thống xử lý nước siêu tinh khiết RO & hạt nhựa trao đổi ion Samyang giúp tiết giảm 35% chi phí vận hành định kỳ.',
+        l1: 'Tỷ Lệ Giảm Chi Phí OPEX', v1: '-35.4%',
+        l2: 'Thời Gian Hoàn Vốn ROI', v2: '4.5 Tháng',
+        l3: 'Độ Tuân Thủ Chuẩn ISO/FDI', v3: '99.8%',
+        b1Name: 'Hiệu suất dây chuyền sau tái cấu trúc', b1Pct: '94%',
+        b2Name: 'Kiểm soát rủi ro pháp lý & hợp đồng B2B', b2Pct: '99%'
+      },
+      {
+        code: 'SYS.BLUEPRINT // B2B-MARKET-SIZING-RADAR',
+        title: 'Bản Đồ Dung Lượng Thị Trường & Xúc Tiến Thương Mại B2B',
+        desc: 'Phân tích dữ liệu nhập khẩu, kết nối trực tiếp Giám đốc Nhà máy & Trưởng phòng Thu mua tại 32 Khu công nghiệp trọng điểm, thiết lập hợp đồng cung ứng thiết bị & hóa chất dài hạn.',
+        l1: 'Tăng Trưởng Doanh Thu B2B', v1: '+62.0%',
+        l2: 'Mạng Lưới Nhà Máy Kết Nối', v2: '320+ KCN',
+        l3: 'Tỷ Lệ Chốt Hợp Đồng Khung', v3: '78.5%',
+        b1Name: 'Độ phủ tệp khách hàng công nghiệp mục tiêu', b1Pct: '91%',
+        b2Name: 'Tỷ lệ tái ký hợp đồng cung ứng hàng năm', b2Pct: '96%'
+      },
+      {
+        code: 'SYS.BLUEPRINT // FDI-LEGAL-SHIELD-2026',
+        title: 'Thẩm Định Pháp Lý Đầu Tư FDI, Giấy Phép KCN & Cấu Trúc M&A',
+        desc: 'Soát xét toàn diện hồ sơ cấp Giấy chứng nhận đăng ký đầu tư (IRC/ERC), đánh giá tác động môi trường (ĐTM) và thẩm định pháp lý chuyên sâu (Legal Due Diligence) cho các thương vụ M&A.',
+        l1: 'Phê Duyệt Hồ Sơ Lần 1', v1: '99.4%',
+        l2: 'Rút Ngắn Thời Gian Cấp Phép', v2: '-40.0%',
+        l3: 'Phòng Ngừa Tranh Chấp Hợp Đồng', v3: '100%',
+        b1Name: 'Chỉ số an toàn pháp lý dự án đầu tư FDI', b1Pct: '100%',
+        b2Name: 'Tốc độ hoàn tất thủ tục hành chính liên ngành', b2Pct: '95%'
+      },
+      {
+        code: 'SYS.BLUEPRINT // TAX-AUDIT-GOVERNANCE',
+        title: 'Hoạch Định Cấu Trúc Chi Phí Thuế & Kiểm Toán Tuân Thủ',
+        desc: 'Rà soát báo cáo tài chính, chuẩn hóa hồ sơ giao dịch liên kết (Transfer Pricing) cho doanh nghiệp FDI và bảo vệ tối đa quyền lợi hợp pháp trong các kỳ thanh kiểm tra quyết toán thuế.',
+        l1: 'Tối Ưu Nghĩa Vụ Thuế Hợp Pháp', v1: '-24.8%',
+        l2: 'Loại Bỏ Rủi Ro Truy Thu', v2: '99.6%',
+        l3: 'Chuẩn Hóa Hồ Sơ Kiểm Toán', v3: '100%',
+        b1Name: 'Tính minh bạch & chuẩn mực báo cáo tài chính', b1Pct: '98%',
+        b2Name: 'Mức độ sẵn sàng giải trình thanh tra thuế', b2Pct: '99%'
+      }
+    ];
+
+    function switchHologramTab(idx, btn) {
+      document.querySelectorAll('.hologram-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const d = hologramData[idx];
+      document.getElementById('holoCodeReadout').innerText = d.code;
+      document.getElementById('holoTitle').innerText = d.title;
+      document.getElementById('holoDesc').innerText = d.desc;
+      document.getElementById('holoLabel1').innerText = d.l1;
+      document.getElementById('holoVal1').innerText = d.v1;
+      document.getElementById('holoLabel2').innerText = d.l2;
+      document.getElementById('holoVal2').innerText = d.v2;
+      document.getElementById('holoLabel3').innerText = d.l3;
+      document.getElementById('holoVal3').innerText = d.v3;
+      document.getElementById('holoBarName1').innerText = d.b1Name;
+      document.getElementById('holoBarPct1').innerText = d.b1Pct;
+      document.getElementById('holoBarFill1').style.width = d.b1Pct;
+      document.getElementById('holoBarName2').innerText = d.b2Name;
+      document.getElementById('holoBarPct2').innerText = d.b2Pct;
+      document.getElementById('holoBarFill2').style.width = d.b2Pct;
+    }
+
+    // Form helper
+    function selectServiceInForm(srvName) {
+      document.getElementById('corpService').value = srvName;
+      document.getElementById('consult').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Estimator calculator
+    function calculateB2B() {
+      const scale = document.getElementById('estScale').value;
+      const scope = document.getElementById('estScope').value;
+      const duration = document.getElementById('estDuration').value;
+
+      let base = 15000000;
+      let scopeLabel = 'Tư Vấn Pháp Lý Doanh Nghiệp Thường Xuyên';
+
+      if (scope === 'operation') {
+        base = 25000000;
+        scopeLabel = 'Tư Vấn Quản Trị & Tối Ưu Vận Hành';
+      } else if (scope === 'brokerage') {
+        base = 35000000;
+        scopeLabel = 'Xúc Tiến Thương Mại B2B & Mở Rộng Thị Trường';
+      } else if (scope === 'fdi') {
+        base = 45000000;
+        scopeLabel = 'Trọn Gói Giấy Phép Đầu Tư FDI & Thẩm Định M&A';
+      }
+
+      let multiplier = 1.0;
+      if (scale === 'medium') multiplier = 1.6;
+      else if (scale === 'enterprise') multiplier = 2.5;
+
+      if (duration === 'project') multiplier *= 0.8;
+
+      const finalFee = Math.round(base * multiplier);
+
+      document.getElementById('resFeeDisplay').innerText = finalFee.toLocaleString('vi-VN') + 'đ' + (duration === 'monthly' ? '/tháng' : '/dự án');
+      document.getElementById('resScopeName').innerText = scopeLabel;
+    }
+
+    function bookFromEstimator() {
+      const scopeSelect = document.getElementById('estScope');
+      const scopeName = scopeSelect.options[scopeSelect.selectedIndex].text;
+      document.getElementById('corpService').value = 'Tối Ưu Hóa Vận Hành & Hiệu Suất Sản Xuất';
+      document.getElementById('consult').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Submit handler
+    function handleB2BSubmit(e) {
+      e.preventDefault();
+      const corp = document.getElementById('corpName').value.trim();
+      const rep = document.getElementById('repName').value.trim();
+      const role = document.getElementById('repRole').value.trim();
+      const srv = document.getElementById('corpService').value;
+
+      const code = 'B2B-VIP-' + Math.floor(1000 + Math.random() * 9000);
+
+      document.getElementById('modalCorpName').innerText = corp;
+      document.getElementById('modalRepName').innerText = `${rep} (${role})`;
+      document.getElementById('modalService').innerText = srv;
+      document.getElementById('modalTicketCode').innerText = code;
+
+      document.getElementById('ticketModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('ticketModal').classList.remove('open');
+      document.querySelector('.consult-card form').reset();
+    }
+
+    // Initialize calculator display
+    calculateB2B();
+  </script>
 </body>
 </html>

@@ -3,42 +3,1578 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skyline Landmark - Dự Án Căn Hộ Nghỉ Dưỡng Hạng Sang</title>
+  <title>Vinhomes Elite Residence - Tuyệt Tác Bất Động Sản Nghỉ Dưỡng Hạng Sang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; background: #0c1222; color: #e2e8f0; line-height: 1.6; }
-    header { padding: 18px 30px; display: flex; justify-content: space-between; align-items: center; background: #131d36; border-bottom: 1px solid #1e2d52; }
-    .hero { padding: 60px 20px; text-align: center; max-width: 850px; margin: 0 auto; }
-    .hero h1 { font-size: 2.3rem; color: #38bdf8; margin-bottom: 16px; }
-    .specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 800px; margin: 30px auto; }
-    .spec-card { background: #182444; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #283a66; }
-    .spec-val { font-size: 1.5rem; font-weight: 800; color: #38bdf8; }
-    .form-box { max-width: 550px; margin: 40px auto 60px; background: #131d36; padding: 30px; border-radius: 16px; border: 1px solid #38bdf8; }
-    .btn { background: #0284c7; color: #fff; padding: 12px; border: none; border-radius: 8px; width: 100%; font-weight: 700; cursor: pointer; font-size: 1rem; }
-    input { width: 100%; padding: 11px; margin: 6px 0 16px; background: #0c1222; border: 1px solid #283a66; color: #fff; border-radius: 6px; }
+    :root {
+      --bg-champagne: #F9F6F0;
+      --bg-marble-white: #FFFFFF;
+      --bg-med-navy: #071C24;
+      --bg-med-emerald: #0B2833;
+      --gold-primary: #C59B27;
+      --gold-bronze: #8E6B13;
+      --gold-light: #E8CF82;
+      --gold-gradient: linear-gradient(135deg, #D9B44A 0%, #C59B27 50%, #9E7818 100%);
+      --text-navy: #071C24;
+      --text-body: #3E4C52;
+      --text-muted-light: #6E6A5F;
+      --text-white: #FFFFFF;
+      --text-ivory: #F4EFE6;
+      --border-marble: #E5DEC9;
+      --border-gold: rgba(197, 155, 39, 0.38);
+      --font-display: 'Cormorant Garamond', 'Lora', Georgia, serif;
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-champagne);
+      color: var(--text-navy);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* TOP UTILITY BAR - MEDITERRANEAN EMERALD-NAVY */
+    .top-bar {
+      background: #041218;
+      border-bottom: 1px solid rgba(197, 155, 39, 0.25);
+      padding: 9px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #CBD5E1;
+      z-index: 100;
+      letter-spacing: 0.3px;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .top-bar-left span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .top-bar-left strong {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .lang-pill {
+      background: rgba(197, 155, 39, 0.16);
+      padding: 3px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--gold-light);
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* MAIN NAVBAR - SUNLIT CHAMPAGNE MARBLE WHITE */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-marble);
+      padding: 16px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90;
+      gap: 24px;
+      box-shadow: 0 8px 30px rgba(7, 28, 36, 0.05);
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-symbol {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--bg-med-navy);
+      border: 1px solid var(--gold-primary);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 14px rgba(197, 155, 39, 0.25);
+    }
+    .logo-symbol svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--gold-light);
+    }
+    .logo-text h1 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      color: var(--text-navy);
+      line-height: 1.1;
+    }
+    .logo-text p {
+      font-size: 0.66rem;
+      letter-spacing: 2.5px;
+      color: var(--gold-bronze);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-navy);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+      white-space: nowrap;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold-bronze);
+      border-bottom-color: var(--gold-primary);
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #071C24;
+      padding: 11px 24px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 0.86rem;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+      border: 1px solid #D9B44A;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.32);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(197, 155, 39, 0.5);
+      background: linear-gradient(135deg, #E8C766 0%, #C59B27 100%);
+    }
+
+    /* HERO SECTION - DEEP MEDITERRANEAN EMERALD-NAVY (#071C24) + CHAMPAGNE GOLD */
+    .hero {
+      position: relative;
+      min-height: 740px;
+      padding: 96px 48px 136px;
+      background: linear-gradient(180deg, rgba(7, 28, 36, 0.72) 0%, rgba(7, 28, 36, 0.88) 70%, #071C24 100%),
+                  url('image/hero-villa.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-white);
+      border-bottom: 3px solid var(--gold-primary);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(7, 28, 36, 0.78);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 7px 22px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4.3rem);
+      line-height: 1.16;
+      max-width: 980px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .hero-title span {
+      color: var(--gold-light);
+      display: inline-block;
+      margin-top: 6px;
+    }
+
+    .hero-desc {
+      font-size: 1.06rem;
+      color: #E2E8F0;
+      max-width: 760px;
+      margin-bottom: 44px;
+      line-height: 1.7;
+    }
+
+    /* FLOATING WHITE-AND-GOLD PROPERTY SEARCH CONCIERGE BAR */
+    .search-filter-card {
+      width: 100%;
+      max-width: 1120px;
+      background: var(--bg-marble-white);
+      border: 2px solid var(--border-marble);
+      border-top: 4px solid var(--gold-primary);
+      border-radius: 12px;
+      padding: 26px 32px 30px;
+      box-shadow: 0 28px 65px rgba(7, 28, 36, 0.45);
+      position: relative;
+      z-index: 20;
+      color: var(--text-navy);
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-marble);
+      padding-bottom: 16px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .filter-tab-btn {
+      background: var(--bg-champagne);
+      border: 1px solid var(--border-marble);
+      color: var(--text-body);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-tab-btn:hover {
+      border-color: var(--gold-primary);
+      color: var(--text-navy);
+    }
+    .filter-tab-btn.active {
+      background: var(--bg-med-navy);
+      color: var(--gold-light);
+      border-color: var(--bg-med-navy);
+      box-shadow: 0 4px 14px rgba(7, 28, 36, 0.22);
+    }
+
+    .filter-inputs-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1.2fr 1.2fr 1fr;
+      gap: 18px;
+      align-items: end;
+    }
+    .filter-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      text-align: left;
+    }
+    .filter-field label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--gold-bronze);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .filter-field select,
+    .filter-field input {
+      background: var(--bg-champagne);
+      border: 1px solid var(--border-marble);
+      padding: 12px 14px;
+      border-radius: 6px;
+      color: var(--text-navy);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-field select:focus {
+      border-color: var(--gold-primary);
+      background: var(--bg-marble-white);
+    }
+    .btn-search-exec {
+      background: var(--bg-med-navy);
+      color: var(--gold-light);
+      padding: 13px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid var(--gold-primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(7, 28, 36, 0.25);
+      transition: all 0.25s;
+      height: 46px;
+    }
+    .btn-search-exec:hover {
+      background: var(--gold-primary);
+      color: var(--bg-med-navy);
+      transform: translateY(-2px);
+    }
+
+    /* BỘ 3 PHÂN KHÚC CHỦ LỰC ON WARM CHAMPAGNE MARBLE */
+    .pillar-section {
+      padding: 0 48px 72px;
+      margin-top: -54px;
+      position: relative;
+      z-index: 30;
+    }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .pillar-card {
+      background: var(--bg-marble-white);
+      border-radius: 10px;
+      border: 1px solid var(--border-marble);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 18px 42px rgba(7, 28, 36, 0.08);
+    }
+    .pillar-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 26px 55px rgba(7, 28, 36, 0.14);
+    }
+
+    .pillar-img-wrap {
+      width: 100%;
+      height: 230px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid var(--border-marble);
+    }
+    .pillar-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pillar-card:hover .pillar-img-wrap img {
+      transform: scale(1.07);
+    }
+    .pillar-badge-float {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(7, 28, 36, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 5px 14px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .pillar-content {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .pillar-title {
+      font-family: var(--font-serif);
+      font-size: 1.38rem;
+      font-weight: 700;
+      color: var(--text-navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .pillar-desc {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+    .pillar-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-marble);
+      padding-top: 16px;
+    }
+    .pillar-price {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold-bronze);
+    }
+    .pillar-price span {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--text-muted-light);
+      font-weight: 500;
+    }
+    .pillar-link {
+      color: var(--text-navy);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .pillar-link:hover {
+      color: var(--gold-bronze);
+      gap: 10px;
+    }
+
+    /* SECTION TITLE STYLES (SUNLIT CHAMPAGNE SECTIONS) */
+    .section-wrap {
+      padding: 80px 48px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 740px;
+      margin: 0 auto 48px;
+    }
+    .section-tag {
+      color: var(--gold-bronze);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2.8px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: 2.45rem;
+      font-weight: 700;
+      color: var(--text-navy);
+      margin-bottom: 14px;
+      line-height: 1.24;
+    }
+    .section-desc {
+      color: var(--text-body);
+      font-size: 0.96rem;
+    }
+
+    /* PROPERTY SHOWCASE (LUXURY GALLERY FRAMES ON WARM MARBLE WHITE) */
+    .property-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 42px;
+      flex-wrap: wrap;
+    }
+    .prop-tab-btn {
+      background: var(--bg-marble-white);
+      border: 1px solid var(--border-marble);
+      color: var(--text-navy);
+      padding: 11px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .prop-tab-btn:hover,
+    .prop-tab-btn.active {
+      background: var(--bg-med-navy);
+      color: var(--gold-light);
+      border-color: var(--gold-primary);
+      box-shadow: 0 8px 20px rgba(7, 28, 36, 0.16);
+    }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 32px;
+    }
+    .property-card {
+      background: var(--bg-marble-white);
+      border-radius: 10px;
+      border: 1px solid var(--border-marble);
+      padding: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      box-shadow: 0 12px 32px rgba(7, 28, 36, 0.06);
+    }
+    .property-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 22px 48px rgba(7, 28, 36, 0.14);
+    }
+    .prop-img-container {
+      width: 100%;
+      height: 230px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid var(--border-marble);
+    }
+    .prop-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .property-card:hover .prop-img-container img {
+      transform: scale(1.06);
+    }
+    .prop-status-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(7, 28, 36, 0.92);
+      color: var(--gold-light);
+      border: 1px solid var(--gold-primary);
+      font-weight: 700;
+      font-size: 0.7rem;
+      padding: 5px 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .prop-body {
+      padding: 20px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .prop-location {
+      font-size: 0.78rem;
+      color: var(--gold-bronze);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .prop-title {
+      font-family: var(--font-serif);
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: var(--text-navy);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+    .prop-specs {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: var(--text-body);
+      font-weight: 600;
+      padding: 12px 0;
+      border-top: 1px solid var(--border-marble);
+      border-bottom: 1px solid var(--border-marble);
+      margin-bottom: 16px;
+    }
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .prop-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .prop-price {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-navy);
+    }
+    .prop-price span {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      color: var(--gold-bronze);
+      font-weight: 600;
+    }
+    .btn-prop-action {
+      background: var(--bg-champagne);
+      color: var(--text-navy);
+      border: 1px solid var(--border-marble);
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-prop-action:hover {
+      background: var(--bg-med-navy);
+      color: var(--gold-light);
+      border-color: var(--bg-med-navy);
+    }
+
+    /* PRIVATE BANKING MORTGAGE CALCULATOR IN DEEP MEDITERRANEAN EMERALD-NAVY (#071C24) */
+    .calculator-section {
+      background: var(--bg-med-navy);
+      border-top: 2px solid var(--gold-primary);
+      border-bottom: 2px solid var(--gold-primary);
+      padding: 96px 48px;
+      color: var(--text-white);
+    }
+    .calculator-section .section-tag {
+      color: var(--gold-light);
+    }
+    .calculator-section .section-heading {
+      color: #FFFFFF;
+    }
+    .calculator-section .section-desc {
+      color: #CBD5E1;
+    }
+    .calc-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      background: var(--bg-med-emerald);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 46px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .calc-sliders {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+    .slider-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .slider-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #E2E8F0;
+    }
+    .slider-val {
+      font-family: var(--font-serif);
+      color: var(--gold-light);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.14);
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      cursor: pointer;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 0 12px rgba(197, 155, 39, 0.75);
+    }
+    .calc-result-box {
+      background: #041218;
+      border: 1px solid var(--gold-primary);
+      border-radius: 12px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    .res-monthly-title {
+      font-size: 0.82rem;
+      color: #CBD5E1;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+    .res-monthly-num {
+      font-family: var(--font-serif);
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.05;
+    }
+    .calc-breakdown {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      border-top: 1px solid rgba(197, 155, 39, 0.25);
+      padding-top: 18px;
+      font-size: 0.86rem;
+      text-align: left;
+    }
+    .calc-breakdown div strong {
+      display: block;
+      color: #FFFFFF;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      margin-top: 4px;
+    }
+
+    /* VIP RESORT AMENITIES ON CHAMPAGNE MARBLE */
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .amenity-card {
+      background: var(--bg-marble-white);
+      border: 1px solid var(--border-marble);
+      border-top: 3px solid var(--gold-primary);
+      border-radius: 10px;
+      padding: 30px 22px;
+      text-align: center;
+      transition: all 0.3s;
+      box-shadow: 0 10px 28px rgba(7, 28, 36, 0.05);
+    }
+    .amenity-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 18px 40px rgba(7, 28, 36, 0.12);
+    }
+    .amenity-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+    .amenity-title {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-navy);
+      margin-bottom: 8px;
+    }
+    .amenity-desc {
+      font-size: 0.85rem;
+      color: var(--text-body);
+    }
+
+    /* CONSULTATION FORM SECTION - PRIVATE CONCIERGE */
+    .consult-section {
+      padding: 96px 48px;
+      background: linear-gradient(180deg, rgba(7, 28, 36, 0.84) 0%, rgba(7, 28, 36, 0.94) 100%),
+                  url('image/interior-penthouse.jpg') center/cover no-repeat;
+      border-top: 1px solid var(--border-marble);
+    }
+    .consult-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      background: var(--bg-marble-white);
+      border: 2px solid var(--border-marble);
+      border-top: 5px solid var(--gold-primary);
+      border-radius: 14px;
+      padding: 48px;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.65);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 44px;
+      align-items: center;
+      color: var(--text-navy);
+    }
+    .consult-info h3 {
+      font-family: var(--font-serif);
+      font-size: 2.15rem;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      color: var(--text-navy);
+    }
+    .consult-info p {
+      color: var(--text-body);
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+    .consult-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-navy);
+      font-weight: 600;
+    }
+    .consult-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .consult-benefits li span {
+      color: var(--gold-bronze);
+      font-weight: 800;
+    }
+
+    .consult-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+    }
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .form-control {
+      background: var(--bg-champagne);
+      border: 1px solid var(--border-marble);
+      padding: 13px 16px;
+      border-radius: 6px;
+      color: var(--text-navy);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-control::placeholder {
+      color: var(--text-muted-light);
+    }
+    .form-control:focus {
+      border-color: var(--gold-primary);
+      background: var(--bg-marble-white);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    /* FOOTER IN DEEP MEDITERRANEAN EMERALD-NAVY */
+    .footer {
+      background: #041218;
+      border-top: 2px solid var(--gold-primary);
+      padding: 64px 48px 32px;
+      color: #CBD5E1;
+      font-size: 0.88rem;
+    }
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 44px;
+    }
+    .footer-col h4 {
+      color: var(--gold-light);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul a {
+      color: #94A3B8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover {
+      color: var(--gold-light);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(197, 155, 39, 0.2);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #94A3B8;
+    }
+
+    /* MODAL TẢI BẢNG GIÁ / ĐẶT HẸN VIP */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 28, 36, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: grid;
+    }
+    .vip-modal-box {
+      background: var(--bg-marble-white);
+      border: 2px solid var(--border-marble);
+      border-top: 5px solid var(--gold-primary);
+      border-radius: 14px;
+      max-width: 520px;
+      width: 100%;
+      padding: 36px;
+      text-align: center;
+      position: relative;
+      color: var(--text-navy);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+    }
+    .vip-ticket-code {
+      font-family: monospace;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold-bronze);
+      letter-spacing: 2px;
+      background: var(--bg-champagne);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px dashed var(--gold-primary);
+      margin: 18px 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .top-bar { padding: 8px 24px; }
+      .navbar { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .pillar-grid { grid-template-columns: 1fr; }
+      .calc-container { grid-template-columns: 1fr; }
+      .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+      .consult-container { grid-template-columns: 1fr; }
+      .footer-container { grid-template-columns: 1fr 1fr; }
+      .filter-inputs-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 60px 20px 80px; }
+      .pillar-section { padding: 0 20px 60px; margin-top: -20px; }
+      .filter-inputs-grid { grid-template-columns: 1fr; }
+      .properties-grid { grid-template-columns: 1fr; }
+      .amenities-grid { grid-template-columns: 1fr; }
+      .footer-container { grid-template-columns: 1fr; }
+      .calc-container { padding: 24px; }
+      .consult-container { padding: 24px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div style="font-weight: 800; font-size: 1.25rem; color: #38bdf8;">🏙️ SKYLINE LANDMARK</div>
-    <div style="font-size: 0.85rem; color: #94a3b8;">Vị Trí Kim Cương Mặt Tiền Đại Lộ</div>
+
+  <!-- TOP UTILITY BAR (Mediterranean Emerald-Navy & Champagne Gold) -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span>🇻🇳 VN / 🇬🇧 EN</span>
+      <span>📞 Private Concierge: <strong>1800 1036</strong> (Miễn phí 24/7)</span>
+      <span>📧 vip@vinhomes-elite.vn</span>
+    </div>
+    <div class="top-bar-right">
+      <span>Đón tiếp khách VIP bằng xe Limousine &amp; Du thuyền riêng</span>
+      <span class="lang-pill">Giỏ Hàng Ngoại Giao T11</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="brand-logo">
+      <div class="logo-symbol">
+        <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.8L19.5 19h-15L12 5.8z"/></svg>
+      </div>
+      <div class="logo-text">
+        <h1>VINHOMES ELITE</h1>
+        <p>Mediterranean Penthouse &amp; Villa</p>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Trang Chủ</a></li>
+      <li><a href="#phan-khuc">BĐS Mở Bán</a></li>
+      <li><a href="#phan-khuc">BĐS Cho Thuê</a></li>
+      <li><a href="#du-an">Bộ Sưu Tập Dinh Thự</a></li>
+      <li><a href="#tinh-vay">Private Banking</a></li>
+      <li><a href="#tien-ich">Đặc Quyền 5 Sao</a></li>
+    </ul>
+
+    <button class="btn-gold" onclick="openBrochureModal()">
+      <span>📥</span> Tải Bảng Giá &amp; Mặt Bằng
+    </button>
   </header>
-  <div class="hero">
-    <h1>Căn Hộ Nghỉ Dưỡng View Trọn Thành Phố</h1>
-    <p>Chính sách thanh toán đợt 1 chỉ 15% - Ân hạn nợ gốc và lãi suất 0% trong 24 tháng</p>
+
+  <!-- HERO SECTION IN DEEP MEDITERRANEAN EMERALD-NAVY + CHAMPAGNE GOLD -->
+  <section class="hero" id="hero">
+    <div class="hero-eyebrow">
+      <span>✨</span> MEDITERRANEAN OCEANFRONT &amp; RIVERSIDE COLLECTION
+    </div>
+
+    <h2 class="hero-title">
+      Kiến Tạo Di Sản Vĩnh Cửu <br>
+      <span>BIỆT THỰ ĐẢO &amp; SKY PENTHOUSE</span>
+    </h2>
+
+    <p class="hero-desc">
+      Đặc quyền sở hữu Đợt 1 phân khu kim cương ven hồ &amp; đại lộ Địa Trung Hải. Thanh toán 15% nhận nhà ngay • Ân hạn nợ gốc và hỗ trợ lãi suất 0% trong 24 tháng • Sổ hồng trao tay lâu dài.
+    </p>
+
+    <!-- FLOATING WHITE-AND-GOLD PROPERTY SEARCH CONCIERGE BAR -->
+    <div class="search-filter-card">
+      <div class="filter-tabs">
+        <button class="filter-tab-btn active" onclick="switchFilterTab(this, 'ban')">Bất Động Sản Bán</button>
+        <button class="filter-tab-btn" onclick="switchFilterTab(this, 'thue')">Bất Động Sản Cho Thuê</button>
+        <button class="filter-tab-btn" onclick="switchFilterTab(this, 'nghi-duong')">Biệt Thự Đảo Nghỉ Dưỡng</button>
+      </div>
+
+      <div class="filter-inputs-grid">
+        <div class="filter-field">
+          <label>Vị trí dự án</label>
+          <select id="filterLocation">
+            <option value="all">Tất cả khu đô thị</option>
+            <option value="q1">Vinhomes Central Park (Quận 1)</option>
+            <option value="q9">Vinhomes Grand Park (TP. Thủ Đức)</option>
+            <option value="hn1">Vinhomes Ocean Park (Hà Nội)</option>
+            <option value="hn2">Vinhomes Riverside (Long Biên)</option>
+          </select>
+        </div>
+
+        <div class="filter-field">
+          <label>Loại hình sản phẩm</label>
+          <select id="filterType">
+            <option value="all">Tất cả loại hình</option>
+            <option value="villa">Biệt thự đơn lập ven hồ</option>
+            <option value="penthouse">Sky Penthouse Horizon 360°</option>
+            <option value="shophouse">Shophouse thương mại mặt tiền</option>
+            <option value="condo">Căn hộ hạng sang 2PN - 3PN</option>
+          </select>
+        </div>
+
+        <div class="filter-field">
+          <label>Mức ngân sách dự kiến</label>
+          <select id="filterBudget">
+            <option value="all">Mọi mức giá</option>
+            <option value="3-6">Từ 3,5 Tỷ - 6 Tỷ (Vay 70%)</option>
+            <option value="6-12">Từ 6 Tỷ - 12 Tỷ</option>
+            <option value="15+">Trên 15 Tỷ (Dinh thự VIP)</option>
+            <option value="thue">Cho thuê: 25Tr - 80Tr/tháng</option>
+          </select>
+        </div>
+
+        <button class="btn-search-exec" onclick="applySearchFilter()">
+          <span>🔍</span> Tìm Kiếm (68 Căn)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BỘ 3 PHÂN KHÚC CHỦ LỰC ON CHAMPAGNE IVORY -->
+  <section class="pillar-section" id="phan-khuc">
+    <div class="pillar-grid">
+
+      <!-- Card 1: Bất Động Sản Bán -->
+      <div class="pillar-card">
+        <div class="pillar-img-wrap">
+          <img src="image/shophouse-complex.jpg" alt="Bất Động Sản Bán">
+          <div class="pillar-badge-float">🏛️ SỔ HỒNG TRAO TAY</div>
+        </div>
+        <div class="pillar-content">
+          <h3 class="pillar-title">Bất Động Sản Bán</h3>
+          <p class="pillar-desc">
+            Phân khu Shophouse thương mại phố đi bộ &amp; Dinh thự đơn lập mặt tiền đại lộ. Vị trí kim cương sinh lời khai thác dòng tiền và tăng giá bền vững.
+          </p>
+          <div class="pillar-bottom">
+            <div class="pillar-price">Từ 6.8 Tỷ <span>/ căn</span></div>
+            <a href="#du-an" class="pillar-link">Khám phá ngay ➔</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Bất Động Sản Cho Thuê -->
+      <div class="pillar-card">
+        <div class="pillar-img-wrap">
+          <img src="image/interior-penthouse.jpg" alt="Bất Động Sản Cho Thuê">
+          <div class="pillar-badge-float">🔑 FULL NỘI THẤT Ý</div>
+        </div>
+        <div class="pillar-content">
+          <h3 class="pillar-title">Bất Động Sản Cho Thuê</h3>
+          <p class="pillar-desc">
+            Căn hộ cao cấp &amp; Sky Penthouse tầng cao ngắm trọn hoàng hôn. Đầy đủ trang thiết bị thông minh Smarthome, dịch vụ quản gia quản lý chuẩn 5 sao.
+          </p>
+          <div class="pillar-bottom">
+            <div class="pillar-price">Từ 22 Triệu <span>/ tháng</span></div>
+            <a href="#du-an" class="pillar-link">Xem giỏ hàng thuê ➔</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Chính Sách & Ưu Đãi Đợt 1 -->
+      <div class="pillar-card">
+        <div class="pillar-img-wrap">
+          <img src="image/island-villa.jpg" alt="Chính Sách &amp; Ưu Đãi">
+          <div class="pillar-badge-float">💎 ĐẶC QUYỀN ĐỢT 1</div>
+        </div>
+        <div class="pillar-content">
+          <h3 class="pillar-title">Chính Sách &amp; Siêu Ưu Đãi</h3>
+          <p class="pillar-desc">
+            Ân hạn nợ gốc và 0% lãi suất 24 tháng. Tặng Voucher xe điện VinFast 200 Triệu, chiết khấu thanh toán sớm 9.5% và miễn phí quản lý 5 năm.
+          </p>
+          <div class="pillar-bottom">
+            <div class="pillar-price">Chỉ 15% <span>nhận nhà</span></div>
+            <a href="#tinh-vay" class="pillar-link">Nhận ưu đãi VIP ➔</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KHO DỰ ÁN NỔI BẬT ĐANG MỞ BÁN (SUNLIT CHAMPAGNE MARBLE GALLERY) -->
+  <section class="section-wrap" id="du-an">
+    <div class="section-header">
+      <div class="section-tag">GIỎ HÀNG NGOẠI GIAO ĐỘC QUYỀN</div>
+      <h2 class="section-heading">Tuyển Tập Dự Án Đang Mở Bán</h2>
+      <p class="section-desc">Mỗi sản phẩm đều được bảo chứng pháp lý 100%, bảo lãnh tiến độ ngân hàng và tiềm năng tăng trưởng đột phá.</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="property-tabs">
+      <button class="prop-tab-btn active" onclick="filterProjects('all', this)">Tất Cả Dự Án</button>
+      <button class="prop-tab-btn" onclick="filterProjects('villa', this)">Biệt Thự Đảo Ven Hồ</button>
+      <button class="prop-tab-btn" onclick="filterProjects('penthouse', this)">Penthouse &amp; Sky Villa</button>
+      <button class="prop-tab-btn" onclick="filterProjects('shophouse', this)">Shophouse Thương Mại</button>
+    </div>
+
+    <!-- PROPERTIES GRID -->
+    <div class="properties-grid" id="propertiesList">
+      <!-- Item 1 -->
+      <div class="property-card" data-cat="villa">
+        <div class="prop-img-container">
+          <img src="image/island-villa.jpg" alt="Biệt thự đảo The Horizon">
+          <span class="prop-status-tag">HOT - CHỈ CÒN 2 CĂN</span>
+        </div>
+        <div class="prop-body">
+          <div class="prop-location">📍 Vinhomes Riverside • Long Biên, Hà Nội</div>
+          <h3 class="prop-title">Dinh Thự Đơn Lập The River Sanctuary</h3>
+          <div class="prop-specs">
+            <div class="spec-item">📐 380 m²</div>
+            <div class="spec-item">🛏️ 5 Phòng Ngủ</div>
+            <div class="spec-item">🧭 Đông Nam (View Sông)</div>
+          </div>
+          <div class="prop-footer">
+            <div class="prop-price">28.5 Tỷ <span>(Vốn 4.2 Tỷ)</span></div>
+            <button class="btn-prop-action" onclick="openPropertyBooking('Dinh Thự The River Sanctuary', '28.5 Tỷ')">Nhận Mặt Bằng 3D</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="property-card" data-cat="penthouse">
+        <div class="prop-img-container">
+          <img src="image/interior-penthouse.jpg" alt="Sky Penthouse Horizon">
+          <span class="prop-status-tag">FULL NỘI THẤT CAO CẤP</span>
+        </div>
+        <div class="prop-body">
+          <div class="prop-location">📍 Landmark 81 • Quận 1, TP. HCM</div>
+          <h3 class="prop-title">Sky Penthouse Horizon Panorama 360°</h3>
+          <div class="prop-specs">
+            <div class="spec-item">📐 215 m²</div>
+            <div class="spec-item">🛏️ 3 PN + 1 Studio</div>
+            <div class="spec-item">🧭 Trực diện Sông Sài Gòn</div>
+          </div>
+          <div class="prop-footer">
+            <div class="prop-price">18.9 Tỷ <span>(Thuê: 65Tr/th)</span></div>
+            <button class="btn-prop-action" onclick="openPropertyBooking('Sky Penthouse Horizon 360°', '18.9 Tỷ')">Xem Nhà Mẫu</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="property-card" data-cat="shophouse">
+        <div class="prop-img-container">
+          <img src="image/shophouse-complex.jpg" alt="Shophouse Broadway">
+          <span class="prop-status-tag">SẴN HỢP ĐỒNG THUÊ 80TR</span>
+        </div>
+        <div class="prop-body">
+          <div class="prop-location">📍 Vinhomes Grand Park • TP. Thủ Đức</div>
+          <h3 class="prop-title">Shophouse Phố Đi Bộ Broadway Boulevard</h3>
+          <div class="prop-specs">
+            <div class="spec-item">📐 145 m² (1 Trệt 4 Lầu)</div>
+            <div class="spec-item">🏪 Mặt tiền 8m</div>
+            <div class="spec-item">🧭 Bắc</div>
+          </div>
+          <div class="prop-footer">
+            <div class="prop-price">14.2 Tỷ <span>(Khai thác ngay)</span></div>
+            <button class="btn-prop-action" onclick="openPropertyBooking('Shophouse Phố Đi Bộ Broadway', '14.2 Tỷ')">Tải Hợp Đồng Mẫu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVATE BANKING MORTGAGE CALCULATOR IN DEEP MEDITERRANEAN EMERALD-NAVY (#071C24) -->
+  <section class="calculator-section" id="tinh-vay">
+    <div class="section-header" style="margin-bottom: 40px;">
+      <div class="section-tag">PRIVATE BANKING &amp; WEALTH MANAGEMENT</div>
+      <h2 class="section-heading">Ước Tính Dòng Tiền &amp; Gói Vay Ưu Đãi Độc Quyền</h2>
+      <p class="section-desc">Kéo thanh trượt để tính toán ngay số tiền cần chuẩn bị và tiền gốc lãi hàng tháng với gói hỗ trợ 0% của ngân hàng.</p>
+    </div>
+
+    <div class="calc-container">
+      <div class="calc-sliders">
+        <!-- Giá trị BĐS -->
+        <div class="slider-box">
+          <div class="slider-head">
+            <span>Giá trị Bất động sản</span>
+            <span class="slider-val" id="valHomePrice">8.0 Tỷ</span>
+          </div>
+          <input type="range" id="sliderHomePrice" min="2" max="30" step="0.5" value="8" oninput="updateCalculator()">
+        </div>
+
+        <!-- Tỷ lệ vay -->
+        <div class="slider-box">
+          <div class="slider-head">
+            <span>Tỷ lệ vay ngân hàng</span>
+            <span class="slider-val" id="valLoanPercent">70%</span>
+          </div>
+          <input type="range" id="sliderLoanPercent" min="30" max="80" step="5" value="70" oninput="updateCalculator()">
+        </div>
+
+        <!-- Thời gian vay -->
+        <div class="slider-box">
+          <div class="slider-head">
+            <span>Thời hạn vay vốn</span>
+            <span class="slider-val" id="valLoanYears">25 Năm</span>
+          </div>
+          <input type="range" id="sliderLoanYears" min="5" max="35" step="5" value="25" oninput="updateCalculator()">
+        </div>
+
+        <!-- Lãi suất -->
+        <div class="slider-box">
+          <div class="slider-head">
+            <span>Lãi suất sau ưu đãi (%/năm)</span>
+            <span class="slider-val" id="valInterestRate">8.5%/năm</span>
+          </div>
+          <input type="range" id="sliderInterestRate" min="6" max="12" step="0.5" value="8.5" oninput="updateCalculator()">
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div class="calc-result-box">
+        <div class="res-monthly-title">Ước tính trả hàng tháng (Gốc + Lãi)</div>
+        <div class="res-monthly-num" id="resMonthlyPay">38.4 Triệu</div>
+        <div style="font-size: 0.82rem; color: var(--gold-light); font-weight: 600;">🎁 Ân hạn nợ gốc &amp; Miễn lãi 0% trong 24 tháng đầu</div>
+
+        <div class="calc-breakdown">
+          <div>
+            <span style="color: #94A3B8;">Vốn tự có (30%):</span>
+            <strong id="resDownPayment">2.4 Tỷ</strong>
+          </div>
+          <div>
+            <span style="color: #94A3B8;">Ngân hàng giải ngân:</span>
+            <strong id="resLoanAmount">5.6 Tỷ</strong>
+          </div>
+        </div>
+
+        <button class="btn-gold" style="width: 100%; justify-content: center; margin-top: 10px;" onclick="openBrochureModal()">
+          <span>📄</span> Nhận Bảng Dòng Tiền Chi Tiết (Excel)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ĐẶC QUYỀN TIỆN ÍCH 5 SAO ON CHAMPAGNE MARBLE -->
+  <section class="section-wrap" id="tien-ich">
+    <div class="section-header">
+      <div class="section-tag">RESORT AMENITIES</div>
+      <h2 class="section-heading">Đặc Quyền Nghỉ Dưỡng Chuẩn Quốc Tế</h2>
+      <p class="section-desc">Hệ sinh thái tiện ích khép kín đáp ứng trọn vẹn phong cách sống thượng lưu của giới tinh hoa.</p>
+    </div>
+
+    <div class="amenities-grid">
+      <div class="amenity-card">
+        <div class="amenity-icon">🏊‍♂️</div>
+        <h4 class="amenity-title">Hồ Bơi Vô Cực</h4>
+        <p class="amenity-desc">Hồ bơi tràn chân mây điện phân muối khoáng, ngắm hoàng hôn ven hồ.</p>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">🛥️</div>
+        <h4 class="amenity-title">Bến Du Thuyền</h4>
+        <p class="amenity-desc">Bến đỗ du thuyền sang trọng chuẩn quốc tế phục vụ các buổi tiệc riêng tư.</p>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">⛳</div>
+        <h4 class="amenity-title">Sân Golf &amp; Zen Garden</h4>
+        <p class="amenity-desc">Sân gạt golf 18 lỗ mini hòa quyện vườn thiền Nhật Bản thanh tịnh.</p>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">🛡️</div>
+        <h4 class="amenity-title">An Ninh AI Đa Lớp</h4>
+        <p class="amenity-desc">Camera AI nhận diện khuôn mặt và đội ngũ bảo vệ tuần tra 24/7 tuyệt đối an toàn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM TƯ VẤN VIP & ĐẶT LỊCH XE LIMOUSINE ĐÓN XEM NHÀ MẪU -->
+  <section class="consult-section" id="lien-he">
+    <div class="consult-container">
+      <div class="consult-info">
+        <div style="color: var(--gold-bronze); font-size: 0.78rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 6px;">EXCLUSIVE PRIVILEGE</div>
+        <h3>Trải Nghiệm Thực Tế <br>Nhà Mẫu Bằng Xe Limousine</h3>
+        <p>Chúng tôi cung cấp dịch vụ xe đưa đón tận nơi riêng tư và chuyên viên tư vấn phân tích chuyên sâu cho quý khách hàng.</p>
+        <ul class="consult-benefits">
+          <li><span>✓</span> Nhận trọn bộ hồ sơ pháp lý &amp; file quy hoạch 1/500</li>
+          <li><span>✓</span> Ưu tiên chọn căn góc, view hồ đẹp nhất giỏ hàng Đợt 1</li>
+          <li><span>✓</span> Hỗ trợ hoàn tất thủ tục ngân hàng trong 24 giờ</li>
+        </ul>
+      </div>
+
+      <form class="consult-form" onsubmit="handleConsultSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Họ và Tên Quý Khách *</label>
+            <input type="text" id="custName" class="form-control" placeholder="Ví dụ: Ông Trần Quốc Bảo" required>
+          </div>
+          <div class="form-group">
+            <label>Số Điện Thoại / Zalo *</label>
+            <input type="tel" id="custPhone" class="form-control" placeholder="0987.xxx.xxx" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Dự án hoặc Loại hình quan tâm</label>
+          <select id="custInterest" class="form-control">
+            <option value="Biệt thự đơn lập ven hồ">Biệt thự đơn lập ven sông (15 - 35 Tỷ)</option>
+            <option value="Dinh Thự The River Sanctuary">Dinh Thự The River Sanctuary (28.5 Tỷ)</option>
+            <option value="Sky Penthouse Horizon 360°">Sky Penthouse Horizon 360° (18.9 Tỷ)</option>
+            <option value="Shophouse Phố Đi Bộ Broadway">Shophouse Phố Đi Bộ Broadway (14.2 Tỷ)</option>
+            <option value="Căn hộ cao cấp cho thuê">Căn hộ cho thuê hạng sang (Từ 22Tr/tháng)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Yêu cầu đón tiếp riêng</label>
+          <input type="text" id="custNote" class="form-control" placeholder="Ví dụ: Đón tại Quận 1 lúc 9h sáng thứ 7...">
+        </div>
+
+        <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 14px; font-size: 0.95rem; margin-top: 6px;">
+          <span>🚀</span> Đăng Ký Trải Nghiệm &amp; Nhận Bảng Giá Zalo
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 style="color: var(--gold-light); font-size: 1.2rem; font-family: var(--font-serif);">VINHOMES ELITE RESIDENCE</h4>
+        <p style="line-height: 1.6; margin-bottom: 14px;">Hệ thống phân phối chiến lược F1 các dự án bất động sản hạng sang, nghỉ dưỡng và đầu tư sinh lời hàng đầu Việt Nam.</p>
+        <p>📍 <strong style="color: #FFFFFF;">Trụ sở chính:</strong> Tầng 48, Keangnam Landmark 72, Hà Nội &amp; Landmark 81, TP. HCM</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sản Phẩm Đang Mở Bán</h4>
+        <ul>
+          <li><a href="#du-an">Biệt thự Đảo Kim Cương</a></li>
+          <li><a href="#du-an">Sky Penthouse Horizon</a></li>
+          <li><a href="#du-an">Shophouse Phố Đi Bộ</a></li>
+          <li><a href="#du-an">Căn hộ Nghỉ Dưỡng Ven Hồ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Chính Sách &amp; Pháp Lý</h4>
+        <ul>
+          <li><a href="#tinh-vay">Tiến độ thanh toán Đợt 1</a></li>
+          <li><a href="#tinh-vay">Chính sách bảo lãnh ngân hàng</a></li>
+          <li><a href="#du-an">Sổ hồng sở hữu vĩnh viễn</a></li>
+          <li><a href="#lien-he">Hợp đồng mua bán mẫu</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Liên Hệ Chuyên Viên VIP</h4>
+        <p>Hotline phục vụ 24/7:</p>
+        <p style="font-size: 1.35rem; font-weight: 800; color: var(--gold-light); font-family: var(--font-serif); margin: 6px 0;">1800 1036</p>
+        <p>Email: vip@vinhomes-elite.vn</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 PAT TECH (Phạm Anh Tuấn). Toàn bộ bản quyền giao diện và hệ thống được bảo lưu • Thiết kế &amp; Phát triển bởi <a href="../../index.html" style="color: var(--gold-light); text-decoration: none; font-weight: 700;">PAT TECH - Phạm Anh Tuấn</a></p>
+    </div>
+  </footer>
+
+  <!-- MODAL XÁC NHẬN ĐĂNG KÝ VIP -->
+  <div class="modal-overlay" id="vipModal">
+    <div class="vip-modal-box">
+      <div style="background: var(--bg-champagne); border: 1px solid var(--gold-primary); color: var(--gold-bronze); padding: 5px 16px; border-radius: 999px; font-size: 0.74rem; font-weight: 800; display: inline-block; margin-bottom: 12px;">
+        ĐÃ XÁC NHẬN YÊU CẦU THÀNH CÔNG
+      </div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--text-navy); margin-bottom: 8px;">Thẻ Hẹn Chuyên Viên VIP</h3>
+      <p style="color: var(--text-body); font-size: 0.88rem;">Bộ file PDF mặt bằng chi tiết và bảng giá đã được gửi tự động qua số Zalo của bạn.</p>
+
+      <div class="vip-ticket-code" id="modalTicketCode">VH-9988VIP</div>
+
+      <div style="text-align: left; font-size: 0.88rem; background: var(--bg-champagne); border: 1px solid var(--border-marble); padding: 16px; border-radius: 8px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--text-navy);">
+        <div><strong>Khách hàng:</strong> <span id="modalCustName">-</span></div>
+        <div><strong>Dự án quan tâm:</strong> <span id="modalCustInterest">-</span></div>
+        <div><strong>Dịch vụ hỗ trợ:</strong> Xe Limousine đưa đón xem nhà mẫu thực tế</div>
+      </div>
+
+      <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="closeVipModal()">
+        Hoàn Tất &amp; Đóng
+      </button>
+    </div>
   </div>
-  <div class="specs">
-    <div class="spec-card"><div class="spec-val">15%</div><div>Đợt 1 Nhận Nhà</div></div>
-    <div class="spec-card"><div class="spec-val">0%</div><div>Lãi Suất 24 Tháng</div></div>
-    <div class="spec-card"><div class="spec-val">Sổ Hồng</div><div>Lâu Dài Vĩnh Viễn</div></div>
-  </div>
-  <div class="form-box">
-    <h3 style="text-align: center; margin-bottom: 8px; color: #38bdf8;">Đăng Ký Nhận Bảng Giá & Mặt Bằng Tầng</h3>
-    <p style="text-align: center; font-size: 0.85rem; color: #94a3b8; margin-bottom: 20px;">Hồ sơ pháp lý đầy đủ sẽ được gửi tự động qua Zalo trong 3 phút</p>
-    <form onsubmit="event.preventDefault(); alert('Đã gửi yêu cầu! Chuyên viên dự án sẽ gửi trọn bộ file mặt bằng và bảng giá qua Zalo cho bạn!');">
-      <label>Họ tên khách hàng:</label><input type="text" placeholder="Anh/Chị..." required>
-      <label>Số điện thoại nhận file:</label><input type="tel" placeholder="09xx.xxx.xxx" required>
-      <button class="btn">Tải Trọn Bộ Hồ Sơ Pháp Lý & Bảng Giá</button>
-    </form>
-  </div>
+
+  <script>
+    // Tab switching for filter
+    function switchFilterTab(btn, mode) {
+      document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    // Apply Filter Search
+    function applySearchFilter() {
+      const loc = document.getElementById('filterLocation').value;
+      const type = document.getElementById('filterType').value;
+      const budget = document.getElementById('filterBudget').value;
+      alert(`Đang lọc giỏ hàng BĐS phù hợp:\n- Vị trí: ${loc}\n- Loại hình: ${type}\n- Ngân sách: ${budget}\n\nĐã tìm thấy 68 căn phù hợp! Hệ thống đang tải danh sách...`);
+      document.getElementById('du-an').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Filter project tabs
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.prop-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.property-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Interactive Mortgage Calculator
+    function updateCalculator() {
+      const price = parseFloat(document.getElementById('sliderHomePrice').value);
+      const percent = parseInt(document.getElementById('sliderLoanPercent').value);
+      const years = parseInt(document.getElementById('sliderLoanYears').value);
+      const rate = parseFloat(document.getElementById('sliderInterestRate').value);
+
+      document.getElementById('valHomePrice').innerText = price.toFixed(1) + ' Tỷ';
+      document.getElementById('valLoanPercent').innerText = percent + '%';
+      document.getElementById('valLoanYears').innerText = years + ' Năm';
+      document.getElementById('valInterestRate').innerText = rate.toFixed(1) + '%/năm';
+
+      const loanAmount = price * (percent / 100); // Tỷ VNĐ
+      const downPayment = price - loanAmount; // Tỷ VNĐ
+
+      document.getElementById('resDownPayment').innerText = downPayment.toFixed(1) + ' Tỷ';
+      document.getElementById('resLoanAmount').innerText = loanAmount.toFixed(1) + ' Tỷ';
+
+      // Tính tiền trả hàng tháng (Dư nợ giảm dần hoặc niên kim)
+      const monthlyRate = (rate / 100) / 12;
+      const totalMonths = years * 12;
+      const loanVND = loanAmount * 1000000000;
+
+      // Công thức trả đều hàng tháng: P * r * (1+r)^n / ((1+r)^n - 1)
+      const monthlyPayVND = loanVND * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      const monthlyMillion = monthlyPayVND / 1000000;
+
+      document.getElementById('resMonthlyPay').innerText = monthlyMillion.toFixed(1) + ' Triệu';
+    }
+
+    // Modal Booking
+    function openPropertyBooking(title, price) {
+      document.getElementById('custInterest').value = title;
+      document.getElementById('custNote').value = `Quan tâm căn ${title} (${price}), muốn xem mặt bằng và sa bàn thực tế`;
+      document.getElementById('lien-he').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function openBrochureModal() {
+      document.getElementById('lien-he').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleConsultSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const interest = document.getElementById('custInterest').value;
+
+      const code = 'VH-' + Math.floor(1000 + Math.random() * 9000) + 'VIP';
+
+      document.getElementById('modalCustName').innerText = `${name} (${phone})`;
+      document.getElementById('modalCustInterest').innerText = interest;
+      document.getElementById('modalTicketCode').innerText = code;
+
+      document.getElementById('vipModal').classList.add('open');
+    }
+
+    function closeVipModal() {
+      document.getElementById('vipModal').classList.remove('open');
+      document.querySelector('.consult-form').reset();
+    }
+
+    // Init
+    updateCalculator();
+  </script>
 </body>
 </html>

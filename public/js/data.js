@@ -2,49 +2,117 @@
 const templatesData = [
   {
     id: "ban-hang",
-    name: "Cửa Hàng Thời Trang & Phụ Kiện (Shop Modern)",
+    name: "ATELIER NOIR - Thời Trang Thiết Kế & Boutique Cao Cấp 2026",
     industry: "ban-hang",
-    industryName: "Bán Hàng / Shop",
-    badge: "Bán chạy nhất",
-    gradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",
-    icon: "🛍️",
-    desc: "Giao diện bán hàng hiện đại, tối ưu hiển thị sản phẩm, hỗ trợ lọc theo danh mục, kích thước, màu sắc và giỏ hàng nhanh.",
+    industryName: "Thời Trang / Boutique",
+    badge: "Vogue Editorial",
+    gradient: "linear-gradient(135deg, #d4af37 0%, #785a32 45%, #1c1917 100%)",
+    icon: "👗",
+    desc: "Giao diện tạp chí thời trang thiết kế Haute Couture (nền Ivory & Noir sắc cạnh): Lookbook thời thượng, bảng đo size thông minh AI, chọn màu trực quan và giỏ hàng chốt đơn hỏa tốc.",
     highlights: [
-      "Bộ sưu tập sản phẩm & danh mục trực quan",
-      "Giỏ hàng & Đặt hàng nhanh 1 chạm",
-      "Chuẩn responsive điện thoại & máy tính",
-      "Nút mua hàng bắn thông báo về Telegram"
+      "Lookbook tạp chí phối đồ theo dịp: Office Chic, Street, Party",
+      "Công cụ đo size thông minh AI theo chiều cao & cân nặng",
+      "Chọn màu sắc & kích thước trực quan với giỏ hàng nhanh",
+      "Cam kết đổi size miễn phí 7 ngày tận nhà & đồng kiểm COD"
     ],
     demoUrl: "demos/ban-hang/index.html"
   },
   {
-    id: "spa-beauty",
-    name: "Thẩm Mỹ Viện & Spa Cao Cấp (Aura Beauty)",
+    id: "my-pham",
+    name: "The History of Whoo - Mỹ Phẩm Hoàng Cung Cao Cấp",
     industry: "spa-beauty",
-    industryName: "Spa / Làm Đẹp",
-    badge: "Sang trọng",
-    gradient: "linear-gradient(135deg, #f59e0b 0%, #ec4899 100%)",
-    icon: "💆‍♀️",
-    desc: "Thiết kế tông màu nhẹ nhàng, tôn vinh dịch vụ chăm sóc sắc đẹp, kèm form đặt lịch hẹn dịch vụ thông minh gửi thẳng về điện thoại.",
+    industryName: "Mỹ Phẩm / Làm Đẹp",
+    badge: "Lụa Gấm Hoàng Cung",
+    gradient: "linear-gradient(135deg, #e8b4b8 0%, #b8860b 50%, #6b1426 100%)",
+    icon: "👑",
+    desc: "Tuyệt tác thương hiệu mỹ phẩm Đông Y Hoàng Cung (Lụa Hồng Phấn & Cung Điện Chu Sa): Phiên bản Yeheonbo dát vàng, kiệt tác Hwanyu, 8 dòng bảo vật và Thái Y Viện soi da AI.",
     highlights: [
-      "Menu bảng giá dịch vụ & liệu trình chi tiết",
-      "Form đặt lịch hẹn chọn ngày giờ & chi nhánh",
-      "Góc feedback khách hàng & hình ảnh Before/After",
-      "Tích hợp gọi tư vấn nhanh Zalo/Hotline"
+      "Kiệt tác Yeheonbo & Hwanyu phong cách lụa sứ & chu sa dát vàng",
+      "8 Bộ sưu tập hoàng cung: Bichup, Cheongidan, Cheonyuldan...",
+      "Trợ lý AI trắc nghiệm soi da & đề xuất pháp đồ Đông Y",
+      "Đăng ký nhận Hộp quà trải nghiệm (Discovery Kit) tận nhà"
     ],
-    demoUrl: "demos/spa-beauty/index.html"
+    demoUrl: "demos/my-pham/index.html"
+  },
+  {
+    id: "da-lieu",
+    name: "PAT DERMA - Phòng Khám Chuyên Khoa Da Liễu Chuẩn Y Khoa",
+    industry: "da-lieu",
+    industryName: "Phòng Khám / Da Liễu",
+    badge: "Swiss Clinical Lab",
+    gradient: "linear-gradient(135deg, #38bdf8 0%, #0284c7 55%, #0d9488 100%)",
+    icon: "🩺",
+    desc: "Giao diện phòng khám da liễu chuẩn Swiss Clinical sáng trong & vô trùng: Đội ngũ Bác sĩ CKI-II, máy phân tích Before/After, dự toán chi phí phác đồ và Kiosk lấy số khám ưu tiên.",
+    highlights: [
+      "Đội ngũ Bác sĩ Chuyên khoa CKI-CKII & chứng nhận FDA Hoa Kỳ",
+      "Thanh trượt tương tác so sánh ảnh Trước & Sau (Before/After) trực quan",
+      "Công cụ dự toán chi phí & số buổi điều trị theo tình trạng da",
+      "Form đặt lịch khám 1:1 tự động cấp Phiếu Khám Ưu Tiên VIP"
+    ],
+    demoUrl: "demos/da-lieu/index.html"
+  },
+  {
+    id: "giao-duc",
+    name: "PAT ACADEMY - Học Viện Đào Tạo Kỹ Năng Số & Công Nghệ Thực Chiến",
+    industry: "giao-duc",
+    industryName: "Giáo Dục / Đào Tạo",
+    badge: "Bento Neo-Pop 2026",
+    gradient: "linear-gradient(135deg, #6366f1 0%, #ec4899 55%, #f59e0b 100%)",
+    icon: "🎓",
+    desc: "Giao diện học viện công nghệ phong cách Bento Grid & Neo-Pop đa sắc năng động: Lộ trình 4 chặng, bộ đếm ngược tuyển sinh, trắc nghiệm nghề nghiệp AI và săn học bổng 50%.",
+    highlights: [
+      "Catalog 4 khóa học đón đầu xu hướng: Lập trình, Marketing, UI/UX, IELTS",
+      "Đồng hồ đếm ngược tuyển sinh và số liệu việc làm 98.2%",
+      "Trắc nghiệm AI gợi ý ngành nghề phù hợp theo sở thích & mức lương",
+      "Đăng ký xét tuyển tự động cấp Mã Học Bổng Giảm 50% học phí"
+    ],
+    demoUrl: "demos/giao-duc/index.html"
+  },
+  {
+    id: "khach-san",
+    name: "An Nhiên Retreat - Resort Sinh Thái & Biệt Thự Nghỉ Dưỡng 5 Sao",
+    industry: "khach-san",
+    industryName: "Khách Sạn / Resort",
+    badge: "Tropical Zen 5 Sao",
+    gradient: "linear-gradient(135deg, #c88a4b 0%, #2d6a4f 55%, #1b4332 100%)",
+    icon: "🏖️",
+    desc: "Không gian nghỉ dưỡng Six Senses Tropical Zen (Màu cát ấm & Rừng trúc): Kiến trúc vòm Villa nghệ thuật, thanh tìm phòng thông minh, tour ảo 360° và Quản gia tính giá kỳ nghỉ.",
+    highlights: [
+      "Smart Booking Bar lọc phòng theo ngày check-in & số khách",
+      "Bộ sưu tập Oceanfront Pool Villa, Bungalow đồi thông & Glamping",
+      "Tour thực tế ảo đổi góc nhìn: Hồ bơi vô cực, Onsen, Bữa sáng nổi",
+      "Bảng dự toán chi phí kỳ nghỉ tự động áp dụng chiết khấu đặt sớm"
+    ],
+    demoUrl: "demos/khach-san/index.html"
+  },
+  {
+    id: "ca-nhan",
+    name: "Hoàng (黃) - Du Học Sinh Đài Loan & Góc Donate Trà Sữa",
+    industry: "ca-nhan",
+    industryName: "Cá Nhân / Blogger",
+    badge: "Polaroid & Boba Cafe",
+    gradient: "linear-gradient(135deg, #f59e0b 0%, #e0533c 55%, #5c3a21 100%)",
+    icon: "🧋",
+    desc: "Nhật ký Scrapbook & Quán Trà Sữa Đài Bắc ấm áp của Hoàng: Khung ảnh Polaroid dán băng keo, cẩm nang săn học bổng, hóa đơn Mời Trà Sữa QR thật và tường giấy nhớ tri ân.",
+    highlights: [
+      "Bộ ảnh Polaroid đời sống du học sinh: Taipei, MRT, Đồ án...",
+      "Cẩm nang chia sẻ: Học bổng MOE, thi TOCFL Phồn thể, việc làm",
+      "Góc Donate trà sữa / cà phê tích hợp mã QR thanh toán thật",
+      "Bảng Vàng Tri Ân phong cách giấy nhớ Sticky-Note trực tiếp"
+    ],
+    demoUrl: "demos/ca-nhan/index.html"
   },
   {
     id: "fnb-cafe",
-    name: "MÂM SƠN - Ẩm Thực Fine Dining & Giữ Bàn Tự Động",
+    name: "Huff & Puff - Ẩm Thực Fine Dining & Đặt Bàn VIP",
     industry: "fnb-cafe",
     industryName: "Nhà Hàng / F&B",
-    badge: "VIP 15 Triệu",
-    gradient: "linear-gradient(135deg, #d4af37 0%, #15171d 100%)",
+    badge: "Michelin Dark Grill",
+    gradient: "linear-gradient(135deg, #ff2a4b 0%, #991b1b 50%, #15171d 100%)",
     icon: "🍽️",
-    desc: "Mẫu nhà hàng chuẩn VIP lấy cảm hứng từ Mâm Sơn & Sushi Zeron: Thực đơn tương tác đổi đĩa ăn 1 chạm, mâm gọi món trước và chọn khung giờ giữ bàn sinh mã đặt chỗ tức thì.",
+    desc: "Tuyệt tác nhà hàng Fine Dining phong cách Michelin Dark Gastronomy: Thực đơn tương tác xoay đĩa ăn 1 chạm, chọn món trước vào bàn và khung giờ giữ bàn sinh mã thẻ VIP.",
     highlights: [
-      "Thực đơn tương tác Interactive Menu cao cấp",
+      "Thực đơn tương tác Interactive Menu xoay đĩa cao cấp",
       "Mâm của bạn: Khách tự chọn món trước khi đến",
       "Chọn khung giờ giữ bàn trực quan (Sắp hết / Còn chỗ)",
       "Sinh vé đặt bàn có Mã Booking VIP & bắn về Telegram"
@@ -53,35 +121,35 @@ const templatesData = [
   },
   {
     id: "bat-dong-san",
-    name: "Dự Án Bất Động Sản & Đất Nền (Skyline Landmark)",
+    name: "Vinhomes Elite Residence - Tuyệt Tác Nghỉ Dưỡng Hạng Sang",
     industry: "bat-dong-san",
     industryName: "Bất Động Sản",
-    badge: "Tỷ lệ chốt cao",
-    gradient: "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)",
-    icon: "🏢",
-    desc: "Landing Page dự án BĐS chuyên nghiệp: Tổng quan, vị trí, mặt bằng, tiện ích và form tải trọn bộ hồ sơ pháp lý & bảng giá.",
+    badge: "Marble & Ocean VIP",
+    gradient: "linear-gradient(135deg, #d4af37 0%, #0f4c5c 55%, #071c24 100%)",
+    icon: "🏰",
+    desc: "Kiến trúc Đá Cẩm Thạch Champagne & Vịnh Biển Thượng Lưu: Bộ 3 phân khúc Bán/Cho Thuê/Chính Sách, bộ lọc dinh thự thông minh và trung tâm tính lãi vay Private Banking.",
     highlights: [
-      "Form nhận bảng giá & mặt bằng qua Telegram",
-      "Bản đồ quy hoạch & tiện ích nội ngoại khu",
-      "Thư viện hình ảnh thực tế căn hộ mẫu 360",
-      "Đếm ngược ưu đãi đợt 1 tạo tính khan hiếm"
+      "Bộ 3 Card phân khúc Bán - Thuê - Chính sách VIP",
+      "Bộ lọc tìm kiếm BĐS theo vị trí, loại hình & ngân sách",
+      "Công cụ dự toán tài chính & lãi suất vay ngân hàng Realtime",
+      "Đăng ký xe Limousine đón xem sa bàn & dự án thực tế"
     ],
     demoUrl: "demos/bat-dong-san/index.html"
   },
   {
     id: "doanh-nghiep",
-    name: "Công Ty Dịch Vụ & Xuất Nhập Khẩu (Nova Corp)",
+    name: "LIFETEC & PARTNERS - Tư Vấn Quản Trị Doanh Nghiệp, Pháp Lý & B2B",
     industry: "doanh-nghiep",
-    industryName: "Doanh Nghiệp / Dịch Vụ",
-    badge: "Uy tín thương hiệu",
-    gradient: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
-    icon: "💼",
-    desc: "Giao diện khẳng định uy tín tổ chức, giới thiệu năng lực công ty, đội ngũ chuyên gia, các đối tác và các dự án đã triển khai.",
+    industryName: "Doanh Nghiệp / B2B",
+    badge: "Swiss Blueprint B2B",
+    gradient: "linear-gradient(135deg, #0052cc 0%, #0284c7 55%, #0a192f 100%)",
+    icon: "📊",
+    desc: "Cổng tư vấn quản trị doanh nghiệp chuẩn McKinsey / Swiss Architectural Grid: Bản đồ Hologram tương tác, 4 trụ cột pháp lý FDI và công cụ dự toán phí tư vấn Realtime.",
     highlights: [
-      "Hồ sơ năng lực (Profile công ty) trực tuyến",
-      "Danh sách dự án & khách hàng tiêu biểu",
-      "Form yêu cầu báo giá dự án / tư vấn hợp tác",
-      "Tối ưu SEO Google chuẩn quốc tế"
+      "Interactive Hologram: Bản đồ chiến lược quản trị Kỹ thuật & Môi trường",
+      "Bộ 4 trụ cột B2B: Tối ưu vận hành, Môi giới thương mại, Pháp lý FDI & Kiểm toán",
+      "Bảng dự toán phí dịch vụ tư vấn theo quy mô nhân sự & phạm vi",
+      "Đặt lịch tư vấn kín 1:1 cấp Mã Phiếu Tiếp Nhận Doanh Nghiệp VIP"
     ],
     demoUrl: "demos/doanh-nghiep/index.html"
   }
@@ -90,10 +158,14 @@ const templatesData = [
 // Danh sách ngành nghề để lọc
 const industriesList = [
   { id: "all", name: "Tất cả ngành nghề", icon: "🌐" },
-  { id: "ban-hang", name: "Bán Hàng / Shop", icon: "🛍️" },
-  { id: "spa-beauty", name: "Spa / Làm Đẹp", icon: "💆‍♀️" },
+  { id: "ca-nhan", name: "Cá Nhân / Creator", icon: "☕" },
+  { id: "khach-san", name: "Khách Sạn / Resort", icon: "🏖️" },
+  { id: "giao-duc", name: "Giáo Dục / Đào Tạo", icon: "🎓" },
+  { id: "da-lieu", name: "Phòng Khám / Da Liễu", icon: "🩺" },
+  { id: "spa-beauty", name: "Mỹ Phẩm / Spa", icon: "👑" },
   { id: "fnb-cafe", name: "Nhà Hàng / F&B", icon: "🍽️" },
   { id: "bat-dong-san", name: "Bất Động Sản", icon: "🏢" },
+  { id: "ban-hang", name: "Thời Trang / Shop", icon: "👗" },
   { id: "doanh-nghiep", name: "Doanh Nghiệp", icon: "💼" }
 ];
 

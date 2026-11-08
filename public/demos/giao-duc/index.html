@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAT ACADEMY - Học Viện Đào Tạo Kỹ Năng Số &amp; Công Nghệ Thực Chiến Chuẩn Doanh Nghiệp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=JetBrains+Mono:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-canvas: #F4F6FB;
+      --bg-white: #FFFFFF;
+      --bento-lavender: #EEF2FF;
+      --bento-mint: #ECFDF5;
+      --bento-amber: #FFFBEB;
+      --bento-sky: #E0F2FE;
+      --bento-rose: #FFF1F2;
+
+      --brand-indigo: #4F46E5;
+      --brand-blue: #2563EB;
+      --pop-orange: #FF5722;
+      --pop-yellow: #FACC15;
+      --pop-emerald: #10B981;
+      --pop-purple: #7C3AED;
+
+      --text-ink: #0F172A;
+      --text-slate: #334155;
+      --text-muted: #475569;
+
+      --border-ink: 2px solid #0F172A;
+      --border-thick: 3px solid #0F172A;
+      --shadow-sm: 3px 3px 0px #0F172A;
+      --shadow-md: 5px 5px 0px #0F172A;
+      --shadow-lg: 8px 8px 0px #0F172A;
+      --shadow-indigo: 6px 6px 0px #4F46E5;
+      --shadow-orange: 6px 6px 0px #FF5722;
+
+      --font-display: 'Be Vietnam Pro', 'Space Grotesk', sans-serif;
+      --font-sans: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-canvas);
+      background-image: radial-gradient(#CBD5E1 1.35px, transparent 1.35px);
+      background-size: 24px 24px;
+      color: var(--text-ink);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* TOP NOTIFICATION BAR */
+    .top-bar {
+      background: var(--text-ink);
+      border-bottom: var(--border-ink);
+      padding: 10px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      color: #F8FAFC;
+      z-index: 100;
+      position: relative;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .top-badge-hot {
+      background: var(--pop-orange);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1.5px solid #FFFFFF;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px var(--pop-yellow);
+    }
+    .top-bar-left strong {
+      color: var(--pop-yellow);
+      font-weight: 800;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .hotline-link {
+      color: #FFFFFF;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+    .hotline-link strong {
+      font-family: var(--font-mono);
+      color: var(--pop-yellow);
+      background: rgba(255, 255, 255, 0.12);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    /* MAIN NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: var(--border-ink);
+      padding: 14px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90;
+      gap: 24px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-emblem {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--pop-yellow);
+      border: var(--border-ink);
+      display: grid;
+      place-items: center;
+      color: var(--text-ink);
+      font-weight: 900;
+      font-size: 1.45rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s;
+    }
+    .brand-logo:hover .logo-emblem {
+      transform: rotate(-6deg) scale(1.05);
+    }
+    .brand-text h1 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--text-ink);
+      line-height: 1.1;
+    }
+    .brand-text p {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.8px;
+      color: var(--brand-indigo);
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      background: var(--bg-canvas);
+      padding: 5px;
+      border-radius: 12px;
+      border: var(--border-ink);
+    }
+    .nav-links a {
+      color: var(--text-ink);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 8px;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--brand-indigo);
+      color: #FFFFFF;
+    }
+
+    /* NEO-POP BUTTONS */
+    .btn-brand {
+      background: var(--brand-indigo);
+      color: #FFFFFF;
+      padding: 11px 24px;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: var(--border-ink);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.18s ease;
+    }
+    .btn-brand:hover {
+      background: var(--brand-blue);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-brand:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px #0F172A;
+    }
+
+    .btn-gold-pill {
+      background: var(--pop-yellow);
+      color: var(--text-ink);
+      padding: 11px 22px;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: var(--border-ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.18s ease;
+    }
+    .btn-gold-pill:hover {
+      background: #FDE047;
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* HERO SECTION - BENTO GRID SHOWCASE */
+    .hero {
+      position: relative;
+      padding: 64px 48px 90px;
+      border-bottom: var(--border-ink);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(238, 242, 255, 0.7) 0%, rgba(244, 246, 251, 0.3) 100%);
+    }
+    .hero-bento-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+    .hero-content {
+      background: var(--bg-white);
+      border: var(--border-ink);
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pop-yellow);
+      border: var(--border-ink);
+      color: var(--text-ink);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      width: fit-content;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.1rem, 3.8vw, 3.35rem);
+      line-height: 1.15;
+      color: var(--text-ink);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+    .hero-title span {
+      color: var(--brand-indigo);
+      display: inline-block;
+      background: var(--bento-lavender);
+      padding: 2px 12px;
+      border-radius: 10px;
+      border: var(--border-ink);
+      box-shadow: 4px 4px 0px var(--pop-orange);
+      margin-top: 8px;
+    }
+    .hero-desc {
+      color: var(--text-slate);
+      font-size: 1.02rem;
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    /* COUNTDOWN BANNER */
+    .countdown-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--bento-amber);
+      border: var(--border-ink);
+      padding: 14px 20px;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .countdown-label {
+      font-size: 0.84rem;
+      color: var(--text-ink);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .timer-units {
+      display: flex;
+      gap: 8px;
+    }
+    .timer-box {
+      background: var(--bg-white);
+      border: var(--border-ink);
+      padding: 6px 10px;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 52px;
+      box-shadow: 2px 2px 0px #0F172A;
+    }
+    .timer-box strong {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--pop-orange);
+      display: block;
+      line-height: 1.1;
+    }
+    .timer-box small {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 700;
+      color: var(--text-ink);
+      text-transform: uppercase;
+    }
+
+    /* RIGHT COLUMN BENTO SHOWCASE */
+    .hero-bento-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      gap: 18px;
+    }
+    .bento-Visual-main {
+      grid-column: 1 / -1;
+      background: var(--bento-lavender);
+      border: var(--border-ink);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      min-height: 310px;
+      box-shadow: var(--shadow-lg);
+    }
+    .bento-Visual-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .bento-sticker-top {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--bg-white);
+      border: var(--border-ink);
+      border-radius: 12px;
+      padding: 8px 14px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--text-ink);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bento-sticker-bottom {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: var(--pop-emerald);
+      border: var(--border-ink);
+      border-radius: 12px;
+      padding: 8px 14px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+    }
+    .bento-mini-tile {
+      border: var(--border-ink);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+    .bento-mini-tile:hover {
+      transform: translate(-2px, -2px);
+    }
+    .bento-mini-tile.tile-mint {
+      background: var(--bento-mint);
+    }
+    .bento-mini-tile.tile-orange {
+      background: #FFF7ED;
+    }
+    .bento-mini-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1.5px solid var(--text-ink);
+      width: fit-content;
+      margin-bottom: 10px;
+      background: var(--bg-white);
+    }
+    .bento-mini-tile h5 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-ink);
+      margin-bottom: 4px;
+    }
+    .bento-mini-tile p {
+      font-size: 0.8rem;
+      color: var(--text-slate);
+      font-weight: 500;
+    }
+
+    /* 4 TRUST NUMBERS - BENTO STATS BAR */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1240px;
+      margin: -38px auto 60px;
+      padding: 0 48px;
+      position: relative;
+      z-index: 30;
+    }
+    .stat-card {
+      background: var(--bg-white);
+      border: var(--border-ink);
+      border-radius: 20px;
+      padding: 22px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.2s ease;
+    }
+    .stat-card:nth-child(1) { background: var(--bento-lavender); }
+    .stat-card:nth-child(2) { background: var(--bento-mint); }
+    .stat-card:nth-child(3) { background: var(--bento-amber); }
+    .stat-card:nth-child(4) { background: var(--bento-sky); }
+    .stat-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
+    }
+    .stat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--bg-white);
+      border: var(--border-ink);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .stat-text h4 {
+      font-family: var(--font-mono);
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-ink);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .stat-text p {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-slate);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* SECTION STYLES */
+    .section-wrap {
+      padding: 76px 48px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 46px;
+    }
+    .section-tag {
+      background: var(--pop-yellow);
+      color: var(--text-ink);
+      border: var(--border-ink);
+      box-shadow: var(--shadow-sm);
+      border-radius: 8px;
+      padding: 4px 14px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 3vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      color: var(--text-ink);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .section-desc {
+      color: var(--text-slate);
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+
+    /* SECTION 1: CÁC KHÓA HỌC MŨI NHỌN (COURSES GRID & FILTER) */
+    .course-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .course-tab-btn {
+      background: var(--bg-white);
+      border: var(--border-ink);
+      color: var(--text-ink);
+      padding: 10px 22px;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.86rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.18s ease;
+    }
+    .course-tab-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
+      background: var(--bento-lavender);
+    }
+    .course-tab-btn.active {
+      background: var(--brand-indigo);
+      color: #FFFFFF;
+      box-shadow: var(--shadow-md);
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .course-card {
+      background: var(--bg-white);
+      border: var(--border-ink);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-md);
+      transition: all 0.22s ease;
+      position: relative;
+    }
+    .course-card::before {
+      content: "";
+      display: block;
+      height: 8px;
+      width: 100%;
+      background: var(--brand-indigo);
+      border-bottom: var(--border-ink);
+    }
+    .course-card[data-cat="marketing"]::before { background: var(--pop-orange); }
+    .course-card[data-cat="design"]::before { background: var(--pop-purple); }
+    .course-card[data-cat="english"]::before { background: var(--pop-emerald); }
+
+    .course-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .course-img-wrap {
+      width: 100%;
+      height: 190px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: var(--border-ink);
+    }
+    .course-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .course-card:hover .course-img-wrap img {
+      transform: scale(1.06);
+    }
+    .course-badge-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--bg-white);
+      border: var(--border-ink);
+      color: var(--text-ink);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px #0F172A;
+    }
+    .course-discount-pill {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--pop-orange);
+      border: var(--border-ink);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 0px #0F172A;
+    }
+    .course-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .course-meta {
+      display: flex;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--text-slate);
+      margin-bottom: 10px;
+    }
+    .course-meta span {
+      background: var(--bg-canvas);
+      border: 1.5px solid #CBD5E1;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .course-title {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      color: var(--text-ink);
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.35;
+      flex: 1;
+    }
+    .course-outcome {
+      font-size: 0.83rem;
+      color: var(--text-slate);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .course-salary {
+      background: var(--bento-mint);
+      border: var(--border-ink);
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 2px 2px 0px #0F172A;
+    }
+    .course-salary strong {
+      color: #047857;
+      font-weight: 800;
+    }
+    .course-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px dashed #CBD5E1;
+      padding-top: 14px;
+      margin-top: auto;
+    }
+    .course-price-box span:first-child {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: #64748B;
+      text-decoration: line-through;
+      display: block;
+    }
+    .course-price-box span:last-child {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--pop-orange);
+    }
+
+    /* SECTION 2: 4 CHẶNG ĐÀO TẠO THỰC CHIẾN (CAREER TIMELINE BENTO) */
+    .roadmap-section {
+      background: var(--bento-lavender);
+      border-top: var(--border-ink);
+      border-bottom: var(--border-ink);
+      padding: 84px 48px;
+    }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .roadmap-card {
+      background: var(--bg-white);
+      border: var(--border-ink);
+      border-radius: 22px;
+      padding: 28px 22px;
+      position: relative;
+      box-shadow: var(--shadow-md);
+      transition: all 0.2s ease;
+    }
+    .roadmap-card:nth-child(2) { background: var(--bento-amber); }
+    .roadmap-card:nth-child(3) { background: var(--bento-mint); }
+    .roadmap-card:nth-child(4) { background: var(--bento-sky); }
+    .roadmap-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .stage-step {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--brand-indigo);
+      border: var(--border-ink);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      font-size: 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .stage-duration {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-ink);
+      background: var(--bg-white);
+      border: 1.5px solid var(--text-ink);
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .stage-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--text-ink);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .stage-desc {
+      font-size: 0.86rem;
+      color: var(--text-slate);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* SECTION 3: TRẮC NGHIỆM CHỌN NGHỀ NGHIỆP AI QUIZ (GAMIFIED CHALLENGE) */
+    .quiz-card {
+      max-width: 1020px;
+      margin: 0 auto;
+      background: var(--bg-white);
+      border: var(--border-thick);
+      border-radius: 28px;
+      padding: 44px 48px;
+      box-shadow: var(--shadow-indigo);
+      position: relative;
+      overflow: hidden;
+    }
+    .quiz-card::before {
+      content: "AI CAREER MATCHER v2.6 // INTERACTIVE CHALLENGE";
+      display: block;
+      background: var(--text-ink);
+      color: var(--pop-yellow);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 10px 24px;
+      margin: -44px -48px 34px -48px;
+      border-bottom: var(--border-ink);
+    }
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .quiz-field {
+      background: var(--bg-canvas);
+      border: var(--border-ink);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .quiz-field label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--brand-indigo);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .quiz-field select {
+      width: 100%;
+      background: var(--bg-white);
+      border: var(--border-ink);
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: var(--text-ink);
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.88rem;
+      outline: none;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .quiz-field select:focus {
+      box-shadow: 3px 3px 0px var(--brand-indigo);
+    }
+    .quiz-result-box {
+      display: none;
+      background: var(--bento-amber);
+      border: var(--border-ink);
+      border-radius: 20px;
+      padding: 26px;
+      margin-top: 28px;
+      box-shadow: var(--shadow-md);
+      animation: fadeIn 0.35s ease;
+    }
+    .quiz-result-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      background: var(--pop-orange);
+      color: #FFFFFF;
+      border: 1.5px solid var(--text-ink);
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .quiz-res-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--text-ink);
+      margin-bottom: 6px;
+    }
+    .quiz-res-desc {
+      font-size: 0.9rem;
+      color: var(--text-slate);
+      font-weight: 500;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .quiz-scholar-pill {
+      background: var(--bento-mint);
+      border: 1.5px solid var(--text-ink);
+      color: #047857;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    /* SECTION 4: GÓC CỰU HỌC VIÊN THÀNH CÔNG */
+    .alumni-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .alumni-card {
+      background: var(--bg-white);
+      border: var(--border-ink);
+      border-radius: 22px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.2s ease;
+    }
+    .alumni-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
+    }
+    .alumni-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 2px dashed #E2E8F0;
+    }
+    .alumni-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: var(--border-ink);
+      box-shadow: 2px 2px 0px #0F172A;
+    }
+    .alumni-info h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-ink);
+    }
+    .alumni-info p {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--brand-indigo);
+    }
+    .alumni-quote {
+      font-size: 0.9rem;
+      color: var(--text-slate);
+      line-height: 1.65;
+      font-style: italic;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+    .alumni-salary-badge {
+      background: var(--bento-mint);
+      border: var(--border-ink);
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #047857;
+      width: fit-content;
+      box-shadow: 2px 2px 0px #0F172A;
+    }
+
+    /* SECTION 5: ĐĂNG KÝ HỌC BỔNG */
+    .scholarship-section {
+      padding: 80px 48px;
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .scholarship-info {
+      background: var(--bento-amber);
+      border: var(--border-ink);
+      border-radius: 26px;
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+    .scholarship-heading {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--text-ink);
+      margin-bottom: 16px;
+    }
+    .scholarship-heading span {
+      display: inline-block;
+      background: var(--pop-orange);
+      color: #FFFFFF;
+      padding: 2px 12px;
+      border-radius: 10px;
+      border: var(--border-ink);
+      box-shadow: 3px 3px 0px #0F172A;
+      margin-top: 6px;
+    }
+    .perk-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .perk-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-ink);
+      background: var(--bg-white);
+      border: var(--border-ink);
+      padding: 10px 14px;
+      border-radius: 12px;
+      box-shadow: 2px 2px 0px #0F172A;
+    }
+    .perk-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--pop-emerald);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      border: 1.5px solid var(--text-ink);
+    }
+    .hotline-bento-box {
+      background: var(--bg-white);
+      border: var(--border-ink);
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .scholarship-card {
+      background: var(--bg-white);
+      border: var(--border-thick);
+      border-radius: 26px;
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+    .form-group-edu {
+      margin-bottom: 18px;
+    }
+    .form-group-edu label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text-ink);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .form-group-edu input,
+    .form-group-edu select {
+      width: 100%;
+      background: var(--bg-canvas);
+      border: var(--border-ink);
+      padding: 13px 15px;
+      border-radius: 12px;
+      color: var(--text-ink);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-group-edu input::placeholder {
+      color: #64748B;
+    }
+    .form-group-edu input:focus,
+    .form-group-edu select:focus {
+      background: var(--bg-white);
+      border-color: var(--brand-indigo);
+      box-shadow: 4px 4px 0px var(--brand-indigo);
+    }
+
+    /* FOOTER CHUẨN ĐỒNG BỘ PAT TECH */
+    .footer {
+      background: var(--bg-white);
+      border-top: var(--border-thick);
+      padding: 70px 48px 34px;
+    }
+    .footer-grid {
+      max-width: 1240px;
+      margin: 0 auto 50px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-ink);
+      margin-bottom: 18px;
+      display: inline-block;
+      background: var(--pop-yellow);
+      padding: 2px 10px;
+      border-radius: 6px;
+      border: 1.5px solid var(--text-ink);
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-slate);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--brand-indigo);
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      max-width: 1240px;
+      margin: 0 auto;
+      border-top: 2px dashed #CBD5E1;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-slate);
+    }
+
+    /* MODAL POPUP */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: grid;
+    }
+    .scholar-modal {
+      background: var(--bg-white);
+      border: var(--border-thick);
+      border-radius: 26px;
+      max-width: 520px;
+      width: 100%;
+      padding: 38px;
+      text-align: center;
+      box-shadow: 10px 10px 0px var(--pop-yellow);
+      animation: popIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scholar-ticket {
+      background: var(--bento-lavender);
+      border: 2px dashed var(--brand-indigo);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-bento-container { grid-template-columns: 1fr; }
+      .stats-grid, .courses-grid, .roadmap-grid, .alumni-grid { grid-template-columns: repeat(2, 1fr); }
+      .scholarship-section, .quiz-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .navbar { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 40px 20px 60px; }
+      .hero-content { padding: 26px 20px; }
+      .hero-bento-right { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; padding: 0 20px; margin-top: 20px; }
+      .section-wrap, .roadmap-section, .scholarship-section, .footer { padding: 50px 20px; }
+      .quiz-card { padding: 36px 20px 24px; }
+      .courses-grid, .roadmap-grid, .alumni-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NOTIFICATION BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span class="top-badge-hot">Đang Tuyển Sinh K38</span>
+      <span>Học bổng Tài Năng <strong>Giảm 50% Học Phí</strong> chỉ còn <strong>12 suất</strong> đợt này!</span>
+    </div>
+    <div class="top-bar-right">
+      <a href="tel:18006936" class="hotline-link">
+        <span>📞 Hotline Tuyển Sinh:</span>
+        <strong>1800 6936</strong> (Miễn cước 24/7)
+      </a>
+      <a href="#scholarship" class="btn-gold-pill" style="padding: 5px 14px; font-size: 0.76rem;">Nhận Học Bổng</a>
+    </div>
+  </div>
+
+  <!-- MAIN NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="brand-logo">
+      <div class="logo-emblem">🎓</div>
+      <div class="brand-text">
+        <h1>PAT ACADEMY</h1>
+        <p>Học Viện Kỹ Năng Số &amp; Công Nghệ Thực Chiến</p>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Trang Chủ</a></li>
+      <li><a href="#courses">Khóa Học Mũi Nhọn</a></li>
+      <li><a href="#roadmap">Lộ Trình Đào Tạo</a></li>
+      <li><a href="#quiz">Định Hướng Nghề Nghiệp</a></li>
+      <li><a href="#alumni">Cựu Học Viên</a></li>
+      <li><a href="#scholarship">Nhận Học Bổng</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="#scholarship" class="btn-brand">
+        <span>🚀</span>
+        <span>Đăng Ký Học Thử</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION - BENTO GRID -->
+  <section class="hero" id="hero">
+    <div class="hero-bento-container">
+      <!-- Left Main Bento Tile -->
+      <div class="hero-content">
+        <div>
+          <div class="hero-eyebrow">
+            <span>⚡</span>
+            <span>Cam Kết Việc Làm Bằng Hợp Đồng Pháp Lý</span>
+          </div>
+          <h2 class="hero-title">
+            Đào Tạo Thực Chiến
+            <span>Bứt Phá Thu Nhập Cùng Công Nghệ</span>
+          </h2>
+          <p class="hero-desc">
+            Học trực tiếp cùng các chuyên gia Tech Lead &amp; Giám đốc dự án từ các tập đoàn lớn. Thực chiến 100% trên đồ án thực tế của doanh nghiệp, cam kết giới thiệu việc làm mức lương từ 12 - 25 Triệu ngay khi tốt nghiệp.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#courses" class="btn-brand" style="padding: 13px 28px;">
+              <span>🎯</span>
+              <span>Khám Phá Khóa Học</span>
+            </a>
+            <a href="#quiz" class="btn-gold-pill" style="padding: 13px 24px;">
+              <span>🕹️ Trắc Nghiệm Nghề Nghiệp AI</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- COUNTDOWN TIMER -->
+        <div class="countdown-card">
+          <span class="countdown-label">⏳ Ưu Đãi Tuyển Sinh Đợt 1 Còn:</span>
+          <div class="timer-units">
+            <div class="timer-box">
+              <strong id="timerDays">02</strong>
+              <small>Ngày</small>
+            </div>
+            <div class="timer-box">
+              <strong id="timerHours">14</strong>
+              <small>Giờ</small>
+            </div>
+            <div class="timer-box">
+              <strong id="timerMins">38</strong>
+              <small>Phút</small>
+            </div>
+            <div class="timer-box">
+              <strong id="timerSecs">45</strong>
+              <small>Giây</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Modular Bento Tiles -->
+      <div class="hero-bento-right">
+        <div class="bento-Visual-main">
+          <img src="image/hero-student.jpg" alt="Học viên thực chiến công nghệ tại PAT ACADEMY">
+          <div class="bento-sticker-top">
+            <span>🟢</span>
+            <span>100% Dự Án Thật Doanh Nghiệp</span>
+          </div>
+          <div class="bento-sticker-bottom">
+            💼 Cam Kết Lương 12 - 25 Triệu
+          </div>
+        </div>
+
+        <div class="bento-mini-tile tile-mint">
+          <span class="bento-mini-badge">MENTOR 1-KÈM-1</span>
+          <h5>Tech Lead Trực Tiếp Review</h5>
+          <p>Sửa từng dòng code, chiến dịch Ads và UI Figma thực tế 24/7.</p>
+        </div>
+
+        <div class="bento-mini-tile tile-orange">
+          <span class="bento-mini-badge">AI LAB 2026</span>
+          <h5>Tích Hợp Công Cụ AI Mới Nhất</h5>
+          <p>Nhân 3 hiệu suất làm việc với bộ công cụ GenAI chuyên nghiệp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 TRUST NUMBERS -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">💼</div>
+      <div class="stat-text">
+        <h4>98.2%</h4>
+        <p>Có Việc Làm Sau 6 Tháng</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🏢</div>
+      <div class="stat-text">
+        <h4>150+</h4>
+        <p>Doanh Nghiệp Đối Tác Tuyển Dụng</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">💰</div>
+      <div class="stat-text">
+        <h4>14.5 Tr</h4>
+        <p>Lương Khởi Điểm Trung Bình</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🎓</div>
+      <div class="stat-text">
+        <h4>25.000+</h4>
+        <p>Học Viên Đã Tốt Nghiệp</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: CÁC KHÓA HỌC MŨI NHỌN (INTERACTIVE CATALOG) -->
+  <section class="section-wrap" id="courses">
+    <div class="section-header">
+      <div class="section-tag">Chương Trình Đào Tạo</div>
+      <h3 class="section-heading">4 Ngành Nghề Đón Đầu Xu Hướng Lương Cao</h3>
+      <p class="section-desc">Giáo trình cập nhật liên tục theo nhu cầu thực tế của thị trường tuyển dụng trong nước &amp; quốc tế</p>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="course-filter-tabs">
+      <button class="course-tab-btn active" onclick="filterCourses('all', this)">Tất Cả Khóa Học</button>
+      <button class="course-tab-btn" onclick="filterCourses('tech', this)">Lập Trình Web &amp; AI</button>
+      <button class="course-tab-btn" onclick="filterCourses('marketing', this)">Digital Marketing</button>
+      <button class="course-tab-btn" onclick="filterCourses('design', this)">Thiết Kế UI/UX</button>
+      <button class="course-tab-btn" onclick="filterCourses('english', this)">Tiếng Anh Doanh Nghiệp</button>
+    </div>
+
+    <div class="courses-grid">
+      <!-- KHÓA 1 -->
+      <div class="course-card" data-cat="tech">
+        <div class="course-img-wrap">
+          <span class="course-badge-tag">Bán Chạy Nhất</span>
+          <span class="course-discount-pill">-50%</span>
+          <img src="image/coding-course.jpg" alt="Lập trình Fullstack & AI">
+        </div>
+        <div class="course-body">
+          <div class="course-meta">
+            <span>⏱️ 5.5 Tháng</span>
+            <span>👥 15 Học viên/lớp</span>
+          </div>
+          <h4 class="course-title">Fullstack Web Developer &amp; Ứng Dụng AI Thực Chiến</h4>
+          <p class="course-outcome">Làm chủ HTML5/CSS3, JavaScript hiện đại, React.js, Node.js và tích hợp AI APIs xây dựng ứng dụng web thương mại hoàn chỉnh.</p>
+          <div class="course-salary">
+            <span>💼</span>
+            <span>Mức lương kỳ vọng: <strong>14 - 25 Triệu/tháng</strong></span>
+          </div>
+          <div class="course-bottom">
+            <div class="course-price-box">
+              <span>18.000.000đ</span>
+              <span>8.900.000đ</span>
+            </div>
+            <button class="btn-brand" style="padding: 8px 16px; font-size: 0.8rem;" onclick="enrollCourse('Fullstack Web & AI')">Đăng Ký</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- KHÓA 2 -->
+      <div class="course-card" data-cat="marketing">
+        <div class="course-img-wrap">
+          <span class="course-badge-tag">Chốt Đơn Tự Động</span>
+          <span class="course-discount-pill">-45%</span>
+          <img src="image/marketing-course.jpg" alt="Digital Marketing Master">
+        </div>
+        <div class="course-body">
+          <div class="course-meta">
+            <span>⏱️ 3.5 Tháng</span>
+            <span>👥 18 Học viên/lớp</span>
+          </div>
+          <h4 class="course-title">Growth Digital Marketing &amp; E-Commerce Master</h4>
+          <p class="course-outcome">Chinh phục chạy Ads đa kênh (Facebook, TikTok, Google Ads), xây dựng hệ thống phễu Automation và chiến lược Viral Content triệu view.</p>
+          <div class="course-salary">
+            <span>💼</span>
+            <span>Mức lương kỳ vọng: <strong>12 - 20 Triệu/tháng</strong></span>
+          </div>
+          <div class="course-bottom">
+            <div class="course-price-box">
+              <span>14.500.000đ</span>
+              <span>7.500.000đ</span>
+            </div>
+            <button class="btn-brand" style="padding: 8px 16px; font-size: 0.8rem;" onclick="enrollCourse('Digital Marketing Master')">Đăng Ký</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- KHÓA 3 -->
+      <div class="course-card" data-cat="design">
+        <div class="course-img-wrap">
+          <span class="course-badge-tag">Sáng Tạo Số</span>
+          <span class="course-discount-pill">-40%</span>
+          <img src="image/design-course.jpg" alt="UI/UX Product Design">
+        </div>
+        <div class="course-body">
+          <div class="course-meta">
+            <span>⏱️ 4 Tháng</span>
+            <span>👥 14 Học viên/lớp</span>
+          </div>
+          <h4 class="course-title">UI/UX Product Design Chuyên Nghiệp (Figma Master)</h4>
+          <p class="course-outcome">Từ nghiên cứu người dùng (User Research), Wireframe đến thiết kế Design System hoàn chỉnh trên Figma cho Website và Mobile App.</p>
+          <div class="course-salary">
+            <span>💼</span>
+            <span>Mức lương kỳ vọng: <strong>13 - 22 Triệu/tháng</strong></span>
+          </div>
+          <div class="course-bottom">
+            <div class="course-price-box">
+              <span>15.000.000đ</span>
+              <span>8.200.000đ</span>
+            </div>
+            <button class="btn-brand" style="padding: 8px 16px; font-size: 0.8rem;" onclick="enrollCourse('UI/UX Product Design')">Đăng Ký</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- KHÓA 4 -->
+      <div class="course-card" data-cat="english">
+        <div class="course-img-wrap">
+          <span class="course-badge-tag">Hội Nhập Toàn Cầu</span>
+          <span class="course-discount-pill">-50%</span>
+          <img src="image/ielts-course.jpg" alt="Business English & IELTS">
+        </div>
+        <div class="course-body">
+          <div class="course-meta">
+            <span>⏱️ 4.5 Tháng</span>
+            <span>👥 12 Học viên/lớp</span>
+          </div>
+          <h4 class="course-title">Business English &amp; Phỏng Vấn Doanh Nghiệp Đa Quốc Gia</h4>
+          <p class="course-outcome">Luyện phản xạ giao tiếp công sở, thuyết trình dự án bằng tiếng Anh và tự tin vượt qua các vòng phỏng vấn gắt gao của tập đoàn nước ngoài.</p>
+          <div class="course-salary">
+            <span>💼</span>
+            <span>Mức lương kỳ vọng: <strong>15 - 30 Triệu/tháng</strong></span>
+          </div>
+          <div class="course-bottom">
+            <div class="course-price-box">
+              <span>16.000.000đ</span>
+              <span>7.900.000đ</span>
+            </div>
+            <button class="btn-brand" style="padding: 8px 16px; font-size: 0.8rem;" onclick="enrollCourse('Business English')">Đăng Ký</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 4 CHẶNG ĐÀO TẠO THỰC CHIẾN (CAREER ROADMAP) -->
+  <section class="roadmap-section" id="roadmap">
+    <div class="section-header">
+      <div class="section-tag">Lộ Trình Đào Tạo</div>
+      <h3 class="section-heading">Hành Trình Bứt Phá Từ Số 0 Đến Chuyên Nghiệp</h3>
+      <p class="section-desc">Mô hình đào tạo Agile thực chiến tương tự quy trình làm việc thực tế tại các công ty công nghệ</p>
+    </div>
+
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <div class="stage-step">1</div>
+        <div class="stage-duration">Tuần 1 - 4</div>
+        <h4 class="stage-title">Nền Tảng Tư Duy &amp; Kỹ Thuật Gốc</h4>
+        <p class="stage-desc">Nắm vững nguyên lý cốt lõi, tư duy giải quyết vấn đề và làm chủ bộ công cụ chuyên môn tiêu chuẩn ngành.</p>
+      </div>
+
+      <div class="roadmap-card">
+        <div class="stage-step">2</div>
+        <div class="stage-duration">Tuần 5 - 12</div>
+        <h4 class="stage-title">Thực Chiến Đồ Án Nhóm (Team Project)</h4>
+        <p class="stage-desc">Làm việc theo nhóm mô phỏng Scrum Team. Trực tiếp thực hiện 2 dự án mini dưới sự review code khắt khe của Mentor.</p>
+      </div>
+
+      <div class="roadmap-card">
+        <div class="stage-step">3</div>
+        <div class="stage-duration">Tuần 13 - 18</div>
+        <h4 class="stage-title">Đồ Án Tốt Nghiệp (Capstone Project)</h4>
+        <p class="stage-desc">Xây dựng sản phẩm hoàn chỉnh mang tính thực tế cao để đưa vào Portfolio cá nhân, được chấm bởi Giám đốc Doanh nghiệp.</p>
+      </div>
+
+      <div class="roadmap-card">
+        <div class="stage-step">4</div>
+        <div class="stage-duration">Tuần 19 - 24</div>
+        <h4 class="stage-title">Phỏng Vấn Thử &amp; Nhận Việc Làm</h4>
+        <p class="stage-desc">Mock Interview 1:1 với chuyên gia tuyển dụng, tối ưu CV và giới thiệu trực tiếp vào mạng lưới 150+ doanh nghiệp liên kết.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: TRẮC NGHIỆM CHỌN NGHỀ NGHIỆP AI QUIZ -->
+  <section class="section-wrap" id="quiz">
+    <div class="quiz-card">
+      <div class="section-header" style="margin-bottom: 28px;">
+        <div class="section-tag">Trợ Lý Định Hướng</div>
+        <h3 class="section-heading" style="font-size: 2.1rem;">Trắc Nghiệm Định Hướng Nghề Nghiệp AI</h3>
+        <p class="section-desc">Chỉ mất 30 giây để tìm ra ngành nghề phù hợp nhất với tính cách và mục tiêu tài chính của bạn</p>
+      </div>
+
+      <div class="quiz-grid">
+        <div class="quiz-field">
+          <label>1. Sở Thích &amp; Điểm Mạnh Nhất</label>
+          <select id="quizTrait">
+            <option value="logic">Tư duy logic, thích giải đố và công nghệ mới</option>
+            <option value="creative">Sáng tạo, thích cái đẹp, nhạy cảm với hình ảnh</option>
+            <option value="business">Thích kinh doanh, giao tiếp, bán hàng và số liệu</option>
+            <option value="language">Thích ngoại ngữ, làm việc với đối tác quốc tế</option>
+          </select>
+        </div>
+
+        <div class="quiz-field">
+          <label>2. Xuất Phát Điểm Của Bạn</label>
+          <select id="quizBackground">
+            <option value="zero">Chưa biết gì, người trái ngành muốn đổi nghề</option>
+            <option value="student">Sinh viên các trường CĐ/ĐH muốn học thêm thực chiến</option>
+            <option value="upgrade">Đã đi làm muốn nâng cấp kỹ năng và tăng lương</option>
+          </select>
+        </div>
+
+        <div class="quiz-field">
+          <label>3. Mục Tiêu Lương Kỳ Vọng</label>
+          <select id="quizSalary">
+            <option value="12-18">Từ 12 - 18 Triệu/tháng</option>
+            <option value="18-25" selected>Từ 18 - 25 Triệu/tháng</option>
+            <option value="25+">Trên 25 Triệu/tháng (Làm Remote quốc tế)</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="btn-brand" style="padding: 14px 36px; font-size: 0.96rem;" onclick="runCareerQuiz()">
+          <span>🔮 Phân Tích Lộ Trình Phù Hợp</span>
+        </button>
+      </div>
+
+      <!-- KẾT QUẢ QUIZ -->
+      <div class="quiz-result-box" id="quizResult">
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <div style="font-size: 2.8rem; background: var(--bg-white); border: var(--border-ink); border-radius: 16px; width: 72px; height: 72px; display: grid; place-items: center; box-shadow: var(--shadow-sm);">🎯</div>
+          <div style="flex: 1; min-width: 240px;">
+            <div class="quiz-result-tag">Kết Quả Đề Xuất Dành Cho Bạn</div>
+            <h4 id="quizResTitle" class="quiz-res-title">Khóa Học Fullstack Web Developer &amp; AI</h4>
+            <p id="quizResDesc" class="quiz-res-desc">Với tư duy logic và mục tiêu thu nhập cao, ngành Lập Trình Web kết hợp AI là bệ phóng hoàn hảo nhất. Học viện hỗ trợ 100% lộ trình từ con số 0.</p>
+            <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+              <span class="quiz-scholar-pill">🎁 Học bổng áp dụng: Giảm ngay 50%</span>
+              <button class="btn-brand" style="padding: 8px 18px; font-size: 0.82rem;" onclick="enrollCourse('Khóa học phù hợp từ Quiz')">
+                Đăng Ký Học Thử Khóa Này
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: GÓC CỰU HỌC VIÊN THÀNH CÔNG -->
+  <section class="section-wrap" id="alumni" style="padding-top: 10px;">
+    <div class="section-header">
+      <div class="section-tag">Câu Chuyện Người Thật Việc Thật</div>
+      <h3 class="section-heading">Cựu Học Viên Đã Thay Đổi Sự Nghiệp Như Thế Nào?</h3>
+      <p class="section-desc">Những tấm gương từ người chưa biết gì chuyển ngành thành công sang các tập đoàn công nghệ lớn</p>
+    </div>
+
+    <div class="alumni-grid">
+      <div class="alumni-card">
+        <div class="alumni-header">
+          <img src="image/instructor-1.jpg" alt="Nguyễn Minh Quân" class="alumni-avatar">
+          <div class="alumni-info">
+            <h4>Nguyễn Minh Quân</h4>
+            <p>Từ nhân viên kinh doanh ➔ Frontend Developer tại VNG</p>
+          </div>
+        </div>
+        <p class="alumni-quote">
+          "Mình xuất thân từ ngành Du lịch, từng rất tự ti khi bắt đầu học code. Nhưng nhờ lộ trình chi tiết và sự kèm cặp tận tình của Mentor tại PAT ACADEMY, sau 5 tháng mình đã tự tin pass phỏng vấn vòng 3 tại VNG."
+        </p>
+        <div class="alumni-salary-badge">Lương hiện tại: 18.5 Triệu/tháng</div>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-header">
+          <img src="image/instructor-2.jpg" alt="Lê Thu Trang" class="alumni-avatar">
+          <div class="alumni-info">
+            <h4>Lê Thu Trang</h4>
+            <p>Từ kế toán nội bộ ➔ UI/UX Designer tại MoMo</p>
+          </div>
+        </div>
+        <p class="alumni-quote">
+          "Khóa học UI/UX ở đây không dạy lý thuyết suông mà bắt tay vào làm Design System thật ngay từ tuần thứ 3. Bộ Portfolio tốt nghiệp chính là tấm vé vàng giúp mình nhận 3 offer cùng lúc."
+        </p>
+        <div class="alumni-salary-badge">Lương hiện tại: 21.0 Triệu/tháng</div>
+      </div>
+
+      <div class="alumni-card">
+        <div class="alumni-header">
+          <img src="image/alumni-success.jpg" alt="Phạm Đức Anh" class="alumni-avatar">
+          <div class="alumni-info">
+            <h4>Phạm Đức Anh</h4>
+            <p>Sinh viên năm 3 ➔ Performance Marketer tại Shopee</p>
+          </div>
+        </div>
+        <p class="alumni-quote">
+          "Nhờ được thực chiến ngân sách chạy Ads thật trong suốt khóa Digital Marketing, mình tích lũy được tư duy số liệu mà ở trường đại học không hề dạy. Vừa ra trường là có việc ngay."
+        </p>
+        <div class="alumni-salary-badge">Lương hiện tại: 16.0 Triệu/tháng</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: ĐĂNG KÝ NHẬN HỌC BỔNG -->
+  <section class="scholarship-section" id="scholarship">
+    <div class="scholarship-info">
+      <div class="section-tag">Cơ Hội Đặc Biệt</div>
+      <h3 class="scholarship-heading">
+        Đăng Ký Nhận Học Bổng
+        <span>Tài Năng Giảm 50%</span>
+      </h3>
+      <p style="color: var(--text-slate); font-size: 0.96rem; font-weight: 500; line-height: 1.7; margin-bottom: 24px;">
+        Quỹ khuyến học công nghệ PAT ACADEMY trao tặng 30 suất học bổng đặc biệt cho các bạn trẻ có ý chí bứt phá sự nghiệp trong đợt tuyển sinh này.
+      </p>
+
+      <div class="perk-list">
+        <div class="perk-item">
+          <span class="perk-check">✓</span>
+          <span>Giảm trực tiếp 50% học phí trọn gói khóa học.</span>
+        </div>
+        <div class="perk-item">
+          <span class="perk-check">✓</span>
+          <span>Tặng trọn bộ tài khoản học tập AI &amp; Khóa học Tiếng Anh chuyên ngành (Trị giá 4.500.000đ).</span>
+        </div>
+        <div class="perk-item">
+          <span class="perk-check">✓</span>
+          <span>Ký hợp đồng cam kết giới thiệu việc làm sau tốt nghiệp.</span>
+        </div>
+      </div>
+
+      <div class="hotline-bento-box">
+        <div>
+          <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--brand-indigo); font-weight: 800; text-transform: uppercase;">Hotline Giải Đáp Tuyển Sinh Trực Tiếp</p>
+          <p style="font-size: 1.45rem; font-weight: 900; color: var(--text-ink); font-family: var(--font-mono);">1800 6936</p>
+        </div>
+        <span style="font-size: 2rem;">☎️</span>
+      </div>
+    </div>
+
+    <div class="scholarship-card">
+      <h4 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; color: var(--text-ink); margin-bottom: 6px;">Đơn Đăng Ký Xét Tuyển Học Bổng</h4>
+      <p style="font-size: 0.86rem; color: var(--text-slate); font-weight: 500; margin-bottom: 22px;">Điền thông tin để chuyên viên đào tạo liên hệ tư vấn lộ trình và cấp mã học bổng</p>
+
+      <form onsubmit="handleScholarSubmit(event)">
+        <div class="form-group-edu">
+          <label>Họ Và Tên Học Viên</label>
+          <input type="text" id="stuName" placeholder="Ví dụ: Nguyễn Văn Hoàng" required>
+        </div>
+
+        <div class="form-group-edu">
+          <label>Số Điện Thoại / Zalo</label>
+          <input type="tel" id="stuPhone" placeholder="090x xxx xxx" required>
+        </div>
+
+        <div class="form-group-edu">
+          <label>Email Nhận Tài Liệu Học Thử</label>
+          <input type="email" id="stuEmail" placeholder="hoangnguyen@gmail.com" required>
+        </div>
+
+        <div class="form-group-edu">
+          <label>Khóa Học Quan Tâm Nhất</label>
+          <select id="stuCourse">
+            <option value="Fullstack Web Developer & AI Engineering">Fullstack Web Developer &amp; AI Engineering</option>
+            <option value="Growth Digital Marketing & E-Commerce">Growth Digital Marketing &amp; E-Commerce</option>
+            <option value="UI/UX Product Design Chuyên Nghiệp">UI/UX Product Design Chuyên Nghiệp</option>
+            <option value="Business English & Phỏng Vấn Doanh Nghiệp">Business English &amp; Phỏng Vấn Doanh Nghiệp</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-brand" style="width: 100%; justify-content: center; padding: 14px; margin-top: 10px; font-size: 0.95rem;">
+          <span>🎓 Xác Nhận Đăng Ký &amp; Nhận Học Bổng</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER CHUẨN ĐỒNG BỘ PAT TECH PHẠM ANH TUẤN -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <div class="logo-emblem" style="width: 40px; height: 40px; font-size: 1.2rem;">🎓</div>
+          <span style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: var(--text-ink);">PAT ACADEMY</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-slate); font-weight: 500; line-height: 1.65; margin-bottom: 16px;">
+          Học viện Đào tạo Kỹ năng Số &amp; Công nghệ Thực chiến chuẩn Doanh nghiệp. Tiên phong đào tạo theo dự án và cam kết việc làm bằng hợp đồng pháp lý.
+        </p>
+        <p style="font-size: 0.84rem; color: var(--brand-indigo); font-weight: 700;">
+          📍 3 Cơ sở trung tâm đào tạo công nghệ cao tại Hà Nội, Đà Nẵng &amp; TP.HCM.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Khóa Học Tiêu Biểu</h4>
+        <ul class="footer-links">
+          <li><a href="#courses">Lập trình Fullstack Web &amp; AI</a></li>
+          <li><a href="#courses">Digital Marketing &amp; E-Commerce</a></li>
+          <li><a href="#courses">Thiết kế UI/UX Product Design</a></li>
+          <li><a href="#courses">Tiếng Anh thương mại Business English</a></li>
+          <li><a href="#roadmap">Lộ trình đào tạo 4 chặng</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Đặc Quyền Học Viên</h4>
+        <ul class="footer-links">
+          <li><a href="#scholarship">Học bổng tài năng giảm 50%</a></li>
+          <li><a href="#alumni">Cam kết việc làm bằng văn bản</a></li>
+          <li><a href="#">Trợ giảng 1-kèm-1 hỗ trợ 24/7</a></li>
+          <li><a href="#">Học lại miễn phí nếu chưa vững</a></li>
+          <li><a href="#">Tham gia mạng lưới 25.000+ Alumni</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hệ Thống Cơ Sở</h4>
+        <p style="font-size: 0.85rem; color: var(--text-slate); font-weight: 500; line-height: 1.6; margin-bottom: 8px;">
+          • CS Hà Nội: Tầng 6, Tòa nhà PAT Tower, Cầu Giấy, Hà Nội.
+        </p>
+        <p style="font-size: 0.85rem; color: var(--text-slate); font-weight: 500; line-height: 1.6; margin-bottom: 14px;">
+          • CS TP.HCM: 284 Ba Tháng Hai, Phường 12, Quận 10, TP.HCM.
+        </p>
+        <div style="background: var(--bento-lavender); border: var(--border-ink); border-radius: 14px; padding: 12px 16px; box-shadow: var(--shadow-sm);">
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--brand-indigo); text-transform: uppercase; font-weight: 800;">Tổng Đài Tuyển Sinh Toàn Quốc</div>
+          <div style="font-size: 1.3rem; font-weight: 900; color: var(--text-ink); font-family: var(--font-mono);">1800 6936</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BẢN QUYỀN ĐỒNG BỘ PHẠM ANH TUẤN - PAT TECH -->
+    <div class="footer-bottom">
+      <p>© 2026 PAT TECH (Phạm Anh Tuấn). Toàn bộ bản quyền giao diện và hệ thống được bảo lưu.</p>
+      <p>Thiết kế &amp; Phát triển độc quyền bởi <a href="../../index.html" style="color: var(--brand-indigo); text-decoration: none; font-weight: 800;">PAT TECH - Phạm Anh Tuấn</a>.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL XÁC NHẬN HỌC BỔNG -->
+  <div class="modal-overlay" id="scholarModal">
+    <div class="scholar-modal">
+      <div style="display: inline-block; background: var(--pop-yellow); border: var(--border-ink); color: var(--text-ink); font-family: var(--font-mono); font-weight: 800; font-size: 0.75rem; letter-spacing: 1px; padding: 4px 14px; border-radius: 999px; text-transform: uppercase; margin-bottom: 14px; box-shadow: 2px 2px 0px #0F172A;">
+        Học Bổng Đã Được Giữ Chỗ
+      </div>
+      <div style="font-size: 2.6rem; margin-bottom: 10px;">🎉</div>
+      <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--text-ink); margin-bottom: 8px;">
+        Chúc Mừng Bạn Đã Đăng Ký Thành Công!
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--text-slate); font-weight: 500; margin-bottom: 20px;">
+        Chuyên viên tư vấn đào tạo của PAT ACADEMY sẽ liên hệ với bạn trong vòng 15 phút để hướng dẫn nhận giáo trình học thử:
+      </p>
+
+      <div class="scholar-ticket">
+        <div style="font-size: 0.86rem; color: var(--text-slate); margin-bottom: 6px;">Học viên: <strong id="modalStuName" style="color: var(--text-ink); font-weight: 800;"></strong></div>
+        <div style="font-size: 0.86rem; color: var(--text-slate); margin-bottom: 6px;">Khóa học: <strong id="modalStuCourse" style="color: var(--brand-indigo); font-weight: 800;"></strong></div>
+        <div style="font-size: 0.86rem; color: var(--text-slate);">Mã Học Bổng 50%: <strong id="modalScholarCode" style="color: var(--pop-orange); font-family: var(--font-mono); font-size: 1.15rem; font-weight: 800; letter-spacing: 1.5px;"></strong></div>
+      </div>
+
+      <button class="btn-brand" style="width: 100%; justify-content: center;" onclick="closeModal()">
+        Hoàn Tất &amp; Đóng
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // COUNTDOWN TIMER LOGIC
+    let timeSeconds = 2 * 86400 + 14 * 3600 + 38 * 60 + 45;
+    setInterval(() => {
+      if (timeSeconds > 0) {
+        timeSeconds--;
+        const d = Math.floor(timeSeconds / 86400);
+        const h = Math.floor((timeSeconds % 86400) / 3600);
+        const m = Math.floor((timeSeconds % 3600) / 60);
+        const s = timeSeconds % 60;
+
+        document.getElementById('timerDays').innerText = d < 10 ? '0' + d : d;
+        document.getElementById('timerHours').innerText = h < 10 ? '0' + h : h;
+        document.getElementById('timerMins').innerText = m < 10 ? '0' + m : m;
+        document.getElementById('timerSecs').innerText = s < 10 ? '0' + s : s;
+      }
+    }, 1000);
+
+    // FILTER COURSES TABS
+    function filterCourses(cat, btn) {
+      document.querySelectorAll('.course-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.course-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // DIRECT ENROLL HELPER
+    function enrollCourse(courseName) {
+      const selectEl = document.getElementById('stuCourse');
+      selectEl.value = courseName;
+      if (!selectEl.value) {
+        const lower = courseName.toLowerCase();
+        for (const opt of selectEl.options) {
+          if (
+            (lower.includes('fullstack') && opt.value.includes('Fullstack')) ||
+            (lower.includes('marketing') && opt.value.includes('Marketing')) ||
+            (lower.includes('ui/ux') && opt.value.includes('UI/UX')) ||
+            (lower.includes('english') && opt.value.includes('English'))
+          ) {
+            selectEl.value = opt.value;
+            break;
+          }
+        }
+        if (!selectEl.value && selectEl.options.length > 0) {
+          selectEl.selectedIndex = 0;
+        }
+      }
+      document.getElementById('scholarship').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // CAREER QUIZ LOGIC
+    function runCareerQuiz() {
+      const trait = document.getElementById('quizTrait').value;
+      const resBox = document.getElementById('quizResult');
+      const title = document.getElementById('quizResTitle');
+      const desc = document.getElementById('quizResDesc');
+
+      if (trait === 'logic') {
+        title.innerText = 'Khóa Học: Fullstack Web Developer & AI Engineering';
+        desc.innerText = 'Với tư duy logic xuất sắc, bạn rất phù hợp để trở thành Lập trình viên Web & Kỹ sư ứng dụng AI. Mức lương khởi điểm ngành này thuộc top cao nhất thị trường (15 - 25 Triệu).';
+      } else if (trait === 'creative') {
+        title.innerText = 'Khóa Học: UI/UX Product Design Chuyên Nghiệp';
+        desc.innerText = 'Gu thẩm mỹ tinh tế và sự nhạy bén thị giác là chìa khóa để bạn trở thành Product Designer. Nhu cầu thiết kế giao diện App & Web đang bùng nổ toàn cầu.';
+      } else if (trait === 'business') {
+        title.innerText = 'Khóa Học: Growth Digital Marketing & E-Commerce Master';
+        desc.innerText = 'Đam mê kinh doanh và số liệu kết hợp cùng kỹ năng chạy Ads thực chiến sẽ giúp bạn trở thành Growth Marketer có khả năng tự tạo doanh thu tiền tỷ cho doanh nghiệp.';
+      } else {
+        title.innerText = 'Khóa Học: Business English & Phỏng Vấn Quốc Tế';
+        desc.innerText = 'Ngoại ngữ chuyên ngành vững vàng sẽ giúp bạn tự tin ứng tuyển vào các tập đoàn đa quốc gia và nhận lương ngàn đô từ các công ty nước ngoài.';
+      }
+
+      resBox.style.display = 'block';
+      resBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // SUBMIT SCHOLARSHIP FORM
+    function handleScholarSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('stuName').value.trim();
+      const course = document.getElementById('stuCourse').value;
+
+      const code = 'PAT-SCHOLAR-' + Math.floor(1000 + Math.random() * 9000);
+
+      document.getElementById('modalStuName').innerText = name;
+      document.getElementById('modalStuCourse').innerText = course;
+      document.getElementById('modalScholarCode').innerText = code;
+
+      document.getElementById('scholarModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('scholarModal').classList.remove('open');
+      document.querySelector('.scholarship-card form').reset();
+    }
+  </script>
+</body>
+</html>
