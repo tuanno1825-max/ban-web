@@ -1088,17 +1088,28 @@
     }
     @media (max-width: 768px) {
       .top-bar { display: none; }
-      .navbar { padding: 14px 20px; }
+      .navbar { padding: 12px 16px; gap: 10px; }
       .nav-links { display: none; }
-      .hero { padding: 24px 16px 60px; }
-      .hero-sanctuary-showcase { padding: 28px 20px 60px; }
-      .hero-arch-frame { height: 380px; }
-      .hero-sanctuary-seal { left: 12px; bottom: 12px; }
+      .logo-emblem { width: 38px; height: 38px; font-size: 1.1rem; }
+      .brand-text h1 { font-size: 1.2rem; letter-spacing: 1px; }
+      .brand-text p { display: none; }
+      .navbar .btn-gold { padding: 8px 14px; font-size: 0.76rem; }
+      .hero { padding: 20px 16px 48px; }
+      .hero-sanctuary-showcase { padding: 24px 16px 56px; border-radius: 28px 12px 28px 12px; gap: 28px; }
+      .hero-zen-metrics { flex-wrap: wrap; gap: 16px; }
+      .hero-arch-frame { height: 340px; }
+      .hero-sanctuary-seal { left: 8px; right: 8px; bottom: 12px; padding: 10px 14px; }
+      .booking-filter-card { width: 100%; padding: 20px 16px; border-radius: 20px; margin-top: -32px; }
       .filter-grid-resort { grid-template-columns: 1fr; }
-      .highlights-grid, .rooms-grid { grid-template-columns: 1fr; padding: 0 20px; }
-      .section-wrap, .tour-section, .calculator-section, .booking-section, .footer { padding: 50px 20px; }
-      .tour-container, .calculator-card, .booking-form-card { padding: 28px 20px; }
-      .footer-grid { grid-template-columns: 1fr; }
+      .filter-grid-resort .btn-gold { width: 100%; justify-content: center; }
+      .highlights-grid, .rooms-grid { grid-template-columns: 1fr; padding: 0 16px; }
+      .section-wrap, .tour-section, .calculator-section, .booking-section, .footer { padding: 48px 16px; }
+      .tour-container, .calculator-card, .booking-form-card, .ticket-modal { padding: 24px 16px; }
+      .calculator-card::before { position: static; display: block; margin-bottom: 10px; }
+      .tour-display-box { height: 340px; }
+      .tour-floating-tag { left: 12px; right: 12px; bottom: 12px; padding: 10px 14px; }
+      .booking-form-card form > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>

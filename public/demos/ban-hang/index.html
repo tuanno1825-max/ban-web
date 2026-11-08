@@ -1104,18 +1104,35 @@
     }
     @media (max-width: 768px) {
       .top-bar { display: none; }
-      .navbar { padding: 14px 20px; }
+      .navbar { padding: 12px 16px; gap: 10px; }
       .nav-links { display: none; }
-      .hero-content { padding: 36px 20px; }
-      .hero-visual-col { padding: 24px 20px; }
-      .hero-frame-wrap { height: 400px; }
-      .hero-caption-card { left: 10px; bottom: 16px; }
+      .logo-emblem { width: 34px; height: 34px; font-size: 1.2rem; }
+      .brand-text h1 { font-size: 1.25rem; letter-spacing: 0.12em; }
+      .brand-text p { display: none; }
+      .nav-actions { gap: 8px; }
+      .cart-pill { padding: 8px 12px; font-size: 0.7rem; }
+      .navbar .btn-gold { padding: 9px 12px; font-size: 0.7rem; }
+      .hero-content { padding: 32px 16px; }
+      .hero-issue-meta { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .hero-cta-group { flex-direction: column; align-items: stretch; }
+      .hero-cta-group .btn-gold, .hero-cta-group .btn-outline-editorial { width: 100%; }
+      .hero-social-proof { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .hero-visual-col { padding: 20px 16px; }
+      .hero-frame-wrap { height: 360px; }
+      .hero-vertical-tag { right: 0; top: 12px; }
+      .hero-caption-card { left: 8px; right: 8px; bottom: 12px; max-width: calc(100% - 16px); padding: 14px 16px; box-shadow: 4px 4px 0px var(--ink-noir); }
       .values-grid, .products-grid { grid-template-columns: 1fr; }
       .category-tabs { width: 100%; }
-      .cat-btn { flex: 1 1 45%; border-bottom: 1px solid var(--ink-noir); }
-      .section-wrap, .size-finder-section, .order-section, .footer { padding: 56px 20px; }
-      .size-card, .order-card { padding: 28px 20px; }
-      .footer-grid { grid-template-columns: 1fr; }
+      .cat-btn { flex: 1 1 45%; padding: 10px 12px; font-size: 0.72rem; border-bottom: 1px solid var(--ink-noir); }
+      .section-wrap, .size-finder-section, .order-section, .footer { padding: 48px 16px; }
+      .size-studio-header p.section-desc { text-align: left !important; }
+      .size-card, .order-card { padding: 24px 16px; box-shadow: 6px 6px 0px var(--ink-noir); }
+      .look-display-box { height: 380px; box-shadow: 6px 6px 0px var(--ink-noir); }
+      .look-floating-tag { left: 12px; right: 12px; bottom: 12px; padding: 12px 16px; }
+      .concierge-box { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px; }
+      .order-card form > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .order-modal { padding: 24px 16px; box-shadow: 8px 8px 0px var(--champagne); }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>

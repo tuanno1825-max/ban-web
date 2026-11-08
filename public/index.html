@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -87,11 +87,12 @@
         <div class="hero-showcase-card">
           <div class="browser-dots">
             <span></span><span></span><span></span>
-            <div class="browser-url">https://webmaster.vn/demo-live</div>
+            <div class="browser-url">https://pattech.vn/kho-giao-dien-2026</div>
           </div>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 14px; font-weight: 600;">
-            🔥 Trải nghiệm mẫu theo ngành của bạn:
-          </p>
+          <div class="hero-showcase-label">
+            <span>🔥 Trải nghiệm mẫu theo ngành của bạn:</span>
+            <span class="hero-showcase-sub">(9 Mẫu Sẵn Sàng)</span>
+          </div>
           <div class="quick-industry-list" id="heroQuickList">
             <!-- Render via JS -->
           </div>
@@ -133,7 +134,7 @@
     </section>
 
     <!-- Quy trình 4 bước -->
-    <section class="section" style="background: rgba(255,255,255,0.02); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <section class="section process-section">
       <div class="container">
         <div class="section-header">
           <h2>Quy Trình Triển Khai Trong 24H</h2>
@@ -269,6 +270,7 @@
         <button class="close-modal-btn" onclick="closeOrderModal()">✕</button>
       </div>
 
+      <!-- Form nhập đăng ký -->
       <form id="orderForm" onsubmit="handleFormSubmit(event)">
         <div class="form-row">
           <div class="form-group">
@@ -302,11 +304,11 @@
           <div style="display: flex; align-items: center; gap: 10px;">
             <input type="checkbox" id="orderAddonChatbot" onchange="calculateTotalEstimate()">
             <div>
-              <strong style="color: #22d3ee; font-size: 0.95rem;">Gắn thêm Trợ Lý Chatbot 24/7</strong>
+              <strong class="addon-check-title">Gắn thêm Trợ Lý Chatbot 24/7</strong>
               <div style="font-size: 0.8rem; color: var(--text-muted);">Tự động tư vấn & xin SĐT khách hàng</div>
             </div>
           </div>
-          <span style="font-weight: 700; color: #fff;">+500.000đ</span>
+          <span class="addon-check-price">+500.000đ</span>
         </label>
 
         <!-- Bảng ước tính chi phí -->
@@ -317,11 +319,11 @@
           </div>
           <div class="estimate-line" id="estChatbotRow" style="display: none;">
             <span>Gói Chatbot (Setup + Tháng đầu):</span>
-            <strong style="color: #22d3ee;">+500.000đ</strong>
+            <strong style="color: var(--primary);">+500.000đ</strong>
           </div>
           <div class="estimate-total">
             <span>Tổng Chi Phí Dự Kiến:</span>
-            <span style="color: var(--accent);" id="estTotalVal">3.900.000đ</span>
+            <span style="color: var(--primary);" id="estTotalVal">3.900.000đ</span>
           </div>
         </div>
 
@@ -334,6 +336,58 @@
           <span>🚀</span> Gửi Yêu Cầu Tư Vấn Ngay
         </button>
       </form>
+
+      <!-- Khung Hướng dẫn gửi vào Chatbot AI sau khi đăng ký thành công -->
+      <div id="orderSuccessBox" class="order-success-step" style="display: none;">
+        <div class="success-header-badge">
+          <div class="success-check-icon">✓</div>
+          <div>
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Tạo Đơn Thành Công!</h4>
+            <p style="font-size: 0.85rem; color: #475569;">Hệ thống đã mã hóa thông tin đơn hàng của bạn</p>
+          </div>
+        </div>
+
+        <div class="chatbot-instruction-card">
+          <div class="instruction-title">
+            <span>🤖</span> BƯỚC CUỐI: GỬI VÀO CHATBOT ĐỂ DUYỆT TỰ ĐỘNG
+          </div>
+          <p class="instruction-desc">
+            Trợ lý AI của chúng tôi đã cài đặt <strong>duyệt đơn tự động 24/7</strong>. Bạn chỉ cần nhấn nút bên dưới để sao chép thông tin và gửi vào Chatbot ở góc phải màn hình:
+          </p>
+
+          <!-- Hộp nội dung đơn hàng -->
+          <div class="order-text-box">
+            <pre id="orderCompiledText"></pre>
+            <button type="button" class="btn-copy-order" id="btnCopyOrder" onclick="copyOrderDetails()">
+              <span id="copyBtnIcon">📋</span> <span id="copyBtnText">Sao Chép Toàn Bộ Đơn Hàng</span>
+            </button>
+          </div>
+
+          <div class="action-guide-box">
+            <div class="guide-step">
+              <span class="step-num">1</span>
+              <span>Bấm nút <strong>"Sao Chép Toàn Bộ Đơn Hàng"</strong> ở trên.</span>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">2</span>
+              <span>Bấm nút <strong>"Mở Chatbot & Dán Tự Động"</strong> dưới đây để mở khung chat góc phải màn hình.</span>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">3</span>
+              <span>Nhấn phím <strong>Gửi (Enter)</strong> để AI tiếp nhận & cấp mã ưu tiên ngay lập tức!</span>
+            </div>
+          </div>
+
+          <div class="modal-chatbot-actions">
+            <button type="button" class="btn btn-primary" style="width: 100%; padding: 14px;" onclick="openAndPasteChatbot()">
+              <span>💬</span> Mở Chatbot AI & Dán Đơn Ngay
+            </button>
+            <button type="button" class="btn btn-outline" style="width: 100%; margin-top: 10px;" onclick="closeOrderModal()">
+              <span>✕</span> Đóng & Quay lại trang chủ
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

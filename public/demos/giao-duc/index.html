@@ -1232,16 +1232,31 @@
     }
     @media (max-width: 768px) {
       .top-bar { display: none; }
-      .navbar { padding: 14px 20px; }
+      .navbar { padding: 12px 16px; gap: 10px; }
       .nav-links { display: none; }
-      .hero { padding: 40px 20px 60px; }
-      .hero-content { padding: 26px 20px; }
+      .logo-emblem { width: 38px; height: 38px; font-size: 1.2rem; }
+      .brand-text h1 { font-size: 1.15rem; }
+      .brand-text p { display: none; }
+      .navbar .btn-brand { padding: 8px 14px; font-size: 0.78rem; }
+      .hero { padding: 32px 16px 48px; }
+      .hero-content { padding: 24px 16px; }
+      .countdown-card { padding: 12px 14px; width: 100%; justify-content: center; }
+      .timer-units { width: 100%; justify-content: space-between; }
+      .timer-box { flex: 1; min-width: 0; padding: 6px 4px; }
+      .hero-cta-group { flex-direction: column; align-items: stretch; }
+      .hero-cta-group .btn-brand, .hero-cta-group .btn-outline { width: 100%; }
       .hero-bento-right { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: 1fr; padding: 0 20px; margin-top: 20px; }
-      .section-wrap, .roadmap-section, .scholarship-section, .footer { padding: 50px 20px; }
-      .quiz-card { padding: 36px 20px 24px; }
+      .bento-Visual-main { min-height: 240px; }
+      .bento-sticker-top, .bento-sticker-bottom { font-size: 0.68rem; padding: 6px 10px; max-width: calc(100% - 20px); }
+      .bento-sticker-top { left: 10px; right: auto; }
+      .bento-sticker-bottom { left: auto; right: 10px; }
+      .stats-grid { grid-template-columns: 1fr; padding: 0 16px; margin-top: 20px; margin-bottom: 40px; }
+      .section-wrap, .roadmap-section, .scholarship-section, .footer { padding: 48px 16px; }
+      .quiz-card { padding: 36px 16px 20px; }
+      .quiz-card::before { margin: -36px -16px 24px -16px; padding: 10px 16px; font-size: 0.68rem; }
+      .scholarship-info, .scholarship-card, .scholar-modal { padding: 24px 16px; }
       .courses-grid, .roadmap-grid, .alumni-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>

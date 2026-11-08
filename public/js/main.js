@@ -17,21 +17,21 @@ function switchPageTab(tabName) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Khởi tạo danh sách nhanh ở Hero section
+// Khởi tạo danh sách nhanh ở Hero section (hiển thị đầy đủ tất cả các ngành nghề với thanh cuộn tinh tế)
 function renderHeroQuickList() {
   const container = document.getElementById('heroQuickList');
   if (!container) return;
 
-  container.innerHTML = templatesData.slice(0, 4).map(tpl => `
+  container.innerHTML = templatesData.map(tpl => `
     <div class="quick-industry-item" onclick="openLivePreview('${tpl.id}')">
       <div class="quick-industry-info">
         <div class="quick-industry-icon">${tpl.icon}</div>
-        <div>
-          <div style="font-weight: 700; font-size: 0.95rem;">${tpl.industryName}</div>
-          <div style="font-size: 0.78rem; color: var(--text-muted);">${tpl.name}</div>
+        <div style="min-width: 0;">
+          <div style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">${tpl.industryName}</div>
+          <div style="font-size: 0.77rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px;">${tpl.name}</div>
         </div>
       </div>
-      <button class="btn btn-outline btn-sm" style="pointer-events: none;">
+      <button class="btn btn-outline btn-sm" style="pointer-events: none; flex-shrink: 0; padding: 6px 12px; font-size: 0.8rem;">
         Xem thử 👁️
       </button>
     </div>
@@ -69,11 +69,22 @@ function renderTemplatesGrid() {
 
   container.innerHTML = filtered.map(t => `
     <div class="template-card">
-      <div class="template-thumb" style="background: ${t.gradient};">
-        <span class="template-badge">${t.icon} ${t.badge}</span>
+      <div class="template-thumb" style="background: ${t.gradient};" onclick="openLivePreview('${t.id}')">
+        ${t.thumbImg ? `<img src="${t.thumbImg}" alt="${t.name}" class="template-thumb-img" loading="lazy">` : ''}
+        <div class="template-thumb-overlay"></div>
+        <div class="template-thumb-top">
+          <span class="template-badge">${t.icon} ${t.badge}</span>
+          ${t.palette ? `
+            <div class="template-palette" title="Bảng màu chủ đạo của giao diện">
+              ${t.palette.map(color => `<span class="palette-dot" style="background:${color}"></span>`).join('')}
+            </div>
+          ` : ''}
+        </div>
+        <div class="template-hover-cta">
+          <span>👁️ Nhấn xem giao diện thực tế</span>
+        </div>
         <div class="template-mock-window">
-          <h4>${t.industryName}</h4>
-          <p>${t.name}</p>
+          <div class="mock-industry-tag">${t.industryName}</div>
         </div>
       </div>
       <div class="template-body">
@@ -110,9 +121,9 @@ function renderPricingCombos() {
         <div class="amount">${c.priceStr}</div>
         <span class="unit">${c.unit}</span>
       </div>
-      <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 16px; border: 1px dashed rgba(255,255,255,0.15);">
-        <span style="color: var(--accent); font-weight: 600;">🔄 Duy trì từ năm 2:</span><br>
-        <span style="color: #cbd5e1;">${c.renewalPrice}</span>
+      <div class="combo-renewal-box">
+        <span class="combo-renewal-label">🔄 Duy trì từ năm 2:</span><br>
+        <span class="combo-renewal-val">${c.renewalPrice}</span>
       </div>
       <ul class="combo-features">
         ${c.features.map(f => `
@@ -206,6 +217,13 @@ function openOrderModal(templateId = '', comboTier = '', isChatbotOnly = false) 
 function closeOrderModal() {
   document.getElementById('orderModalBackdrop').classList.remove('open');
   document.body.style.overflow = '';
+  // Đặt lại hiển thị form ban đầu
+  setTimeout(() => {
+    const orderForm = document.getElementById('orderForm');
+    const successBox = document.getElementById('orderSuccessBox');
+    if (orderForm) orderForm.style.display = 'block';
+    if (successBox) successBox.style.display = 'none';
+  }, 300);
 }
 
 function calculateTotalEstimate() {
@@ -230,6 +248,9 @@ function calculateTotalEstimate() {
   estTotalVal.innerText = total.toLocaleString('vi-VN') + 'đ' + (comboSelect.value === '7900000' ? ' (Từ)' : '');
 }
 
+// Biến lưu trữ văn bản đơn hàng hiện tại
+let compiledOrderMessage = '';
+
 function handleFormSubmit(e) {
   e.preventDefault();
   const name = document.getElementById('custName').value.trim();
@@ -242,12 +263,85 @@ function handleFormSubmit(e) {
   const note = document.getElementById('custNote').value.trim();
   const total = document.getElementById('estTotalVal').innerText;
 
-  // Mô phỏng bắn thông tin về Telegram hoặc mở Zalo
-  const msg = `🔔 PAT TECH - YÊU CẦU BÁO GIÁ MỚI:\n- Họ tên: ${name}\n- SĐT: ${phone}\n- Mẫu: ${templateName}\n- Gói: ${comboName}\n- Kèm Chatbot: ${hasChatbot ? 'Có (+500k)' : 'Không'}\n- Dự kiến: ${total}\n- Ghi chú: ${note || 'Không'}`;
-  
-  alert(`Cảm ơn ${name}! PAT TECH đã tiếp nhận yêu cầu và bắn thông báo về hệ thống Telegram của kỹ thuật viên.\n\nThông tin đơn:\n${msg}\n\nKỹ thuật viên phụ trách (Hotline: 0387.637.982) sẽ liên hệ kết nối với bạn theo đúng lịch hẹn!`);
+  // Soạn sẵn định dạng đơn hàng chuẩn cho chatbot duyệt tự động
+  compiledOrderMessage = `[ĐƠN ĐĂNG KÝ TƯ VẤN WEBSITE]\n- Khách hàng: ${name}\n- Số điện thoại / Zalo: ${phone}\n- Mẫu giao diện: ${templateName}\n- Gói combo: ${comboName}\n- Gắn thêm Chatbot 24/7: ${hasChatbot ? 'Có (+500.000đ)' : 'Không'}\n- Dự toán tổng phí: ${total}\n- Yêu cầu thêm: ${note || 'Tư vấn triển khai chuẩn mẫu'}\n=> Nhờ Trợ Lý AI tiếp nhận & duyệt đơn ưu tiên giúp tôi!`;
+
+  // Hiển thị khung thành công & hướng dẫn gửi chatbot
+  document.getElementById('orderCompiledText').innerText = compiledOrderMessage;
+  document.getElementById('orderForm').style.display = 'none';
+  document.getElementById('orderSuccessBox').style.display = 'block';
+
+  // Tự động copy vào clipboard ngay nếu trình duyệt cho phép
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(compiledOrderMessage).catch(() => {});
+  }
+}
+
+// Hàm bấm copy toàn bộ thông tin
+function copyOrderDetails() {
+  if (!compiledOrderMessage) return;
+  const btnText = document.getElementById('copyBtnText');
+  const btnIcon = document.getElementById('copyBtnIcon');
+
+  navigator.clipboard.writeText(compiledOrderMessage).then(() => {
+    btnText.innerText = 'ĐÃ SAO CHÉP THÀNH CÔNG! ✓';
+    btnIcon.innerText = '✅';
+    setTimeout(() => {
+      btnText.innerText = 'Sao Chép Toàn Bộ Đơn Hàng';
+      btnIcon.innerText = '📋';
+    }, 2500);
+  }).catch(() => {
+    // Fallback nếu clipboard API bị chặn
+    const pre = document.getElementById('orderCompiledText');
+    const range = document.createRange();
+    range.selectNodeContents(pre);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    document.execCommand('copy');
+    btnText.innerText = 'ĐÃ SAO CHÉP THÀNH CÔNG! ✓';
+    btnIcon.innerText = '✅';
+    setTimeout(() => {
+      btnText.innerText = 'Sao Chép Toàn Bộ Đơn Hàng';
+      btnIcon.innerText = '📋';
+    }, 2500);
+  });
+}
+
+// Hàm mở Chatbot và dán tự động vào ô input
+function openAndPasteChatbot() {
+  copyOrderDetails();
+
+  // Đóng modal đăng ký để lộ rõ chatbot
   closeOrderModal();
-  e.target.reset();
+
+  // Tìm các phần tử của widget Chatbot
+  const chatWindow = document.getElementById('pat-ai-chat-window');
+  const widgetBtn = document.getElementById('pat-ai-widget-btn');
+  const inputText = document.getElementById('pat-ai-input-text');
+
+  // Mở khung chat nếu đang đóng
+  if (chatWindow && (chatWindow.style.display === 'none' || chatWindow.style.display === '')) {
+    if (widgetBtn) {
+      widgetBtn.click();
+    } else {
+      chatWindow.style.display = 'flex';
+    }
+  }
+
+  // Tự động điền nội dung vào ô nhập liệu của Chatbot
+  setTimeout(() => {
+    if (inputText) {
+      inputText.value = compiledOrderMessage;
+      inputText.focus();
+      // Highlight nhẹ ô nhập để khách thấy rõ chỉ cần bấm gửi
+      inputText.style.transition = 'all 0.3s ease';
+      inputText.style.boxShadow = '0 0 0 3px rgba(37, 99, 235, 0.45)';
+      setTimeout(() => {
+        inputText.style.boxShadow = '';
+      }, 3000);
+    }
+  }, 200);
 }
 
 // Khởi chạy khi tải trang
