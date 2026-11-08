@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MÂM SƠN LUXURY - Tinh Hoa Ẩm Thực & Nhà Hàng Cao Cấp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #08080a;
+      --bg-surface: #101115;
+      --bg-card: #15171d;
+      --gold: #d4af37;
+      --gold-light: #f5e7a9;
+      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #aa771c 50%, #fdf0cd 100%);
+      --red-accent: #c92a2a;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-gold: rgba(212, 175, 55, 0.22);
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    .vip-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 8, 10, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 16px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    }
+
+    .brand-text h1 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      letter-spacing: 2px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-text p {
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #000;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding: 90px 24px 70px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(201, 42, 42, 0.08) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 18px;
+      border: 1px solid var(--border-gold);
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .hero h2 span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 780px;
+      margin: 50px auto 0;
+      padding: 24px 0;
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .metric-item strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    .metric-item span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* INTERACTIVE MENU (LIKE VERDANT & SUSHI ZERON) */
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title h3 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-title h3 span {
+      color: var(--gold);
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .interactive-menu-container {
+      max-width: 1140px;
+      margin: 0 auto 90px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .dish-preview-stage {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: 24px;
+      padding: 32px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .dish-glow-ring {
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 290px;
+      height: 290px;
+      border: 2px dashed rgba(212, 175, 55, 0.4);
+      border-radius: 50%;
+      animation: spinRing 35s linear infinite;
+      box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
+      pointer-events: none;
+    }
+
+    @keyframes spinRing {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .dish-img-container {
+      width: 100%;
+      height: 240px;
+      margin: 0 auto 18px;
+      position: relative;
+      z-index: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    }
+
+    .dish-real-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .dish-preview-stage:hover .dish-real-img {
+      transform: scale(1.05);
+    }
+
+    @keyframes slowRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .dish-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(201, 42, 42, 0.2);
+      border: 1px solid rgba(201, 42, 42, 0.4);
+      color: #f87171;
+      font-size: 0.75rem;
+      border-radius: 6px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .dish-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .dish-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .dish-price {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* MENU LIST RIGHT */
+    .menu-category-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .cat-tab {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .cat-tab.active, .cat-tab:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .dish-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .dish-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 14px 18px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      gap: 14px;
+    }
+
+    .dish-list-item:hover, .dish-list-item.selected {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: var(--gold);
+      transform: translateX(6px);
+    }
+
+    .dish-thumb-small {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid var(--border-gold);
+    }
+
+    .dish-item-info {
+      flex: 1;
+    }
+
+    .dish-item-info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dish-item-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .dish-item-price {
+      text-align: right;
+    }
+
+    .dish-item-price .cost {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    .add-to-mam-btn {
+      margin-top: 6px;
+      background: transparent;
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .add-to-mam-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* BOOKING & MÂM CỦA BẠN (MÂM SƠN STYLE) */
+    .booking-wrapper {
+      background: linear-gradient(180deg, #101115 0%, #08080a 100%);
+      border-top: 1px solid var(--border-gold);
+      padding: 80px 24px;
+    }
+
+    .booking-grid {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+    }
+
+    .mam-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mam-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--border-gold);
+    }
+
+    .mam-header h4 {
+      font-family: var(--font-heading);
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    .mam-items-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+
+    .mam-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+    }
+
+    .mam-total {
+      padding-top: 14px;
+      border-top: 1px solid var(--border-gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    /* TIME PICKER SLOTS */
+    .form-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .form-panel h4 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .form-panel p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+
+    .time-slot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .time-slot {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 12px 10px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .time-slot .time {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+    }
+
+    .time-slot .avail {
+      font-size: 0.72rem;
+      color: #10b981;
+    }
+
+    .time-slot.almost-full .avail {
+      color: #f59e0b;
+    }
+
+    .time-slot:hover, .time-slot.selected {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.15);
+    }
+
+    .form-input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .form-ctrl {
+      width: 100%;
+      background: var(--bg-dark);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+
+    .form-ctrl:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    /* TICKET SUCCESS MODAL */
+    .ticket-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .ticket-modal-overlay.open {
+      display: grid;
+    }
+
+    .ticket-card {
+      background: #181920;
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      max-width: 460px;
+      width: 100%;
+      padding: 32px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+      animation: popTicket 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes popTicket {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .ticket-code-box {
+      background: #08080a;
+      border: 1px dashed var(--gold);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 20px 0;
+    }
+
+    .ticket-code {
+      font-family: monospace;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .interactive-menu-container,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER VIP -->
+  <header class="vip-header">
+    <a href="#" class="brand">
+      <div class="brand-mark">M</div>
+      <div class="brand-text">
+        <h1>MÂM SƠN</h1>
+        <p>FINE DINING & TRUYỀN THỐNG</p>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">VỀ CHÚNG TÔI</a></li>
+      <li><a href="#interactive-menu">THỰC ĐƠN ĐẶC BIỆT</a></li>
+      <li><a href="#booking">GỌI MÓN & ĐẶT BÀN</a></li>
+      <li><a href="#feedback">ĐÁNH GIÁ</a></li>
+    </ul>
+
+    <a href="#booking" class="btn-gold">
+      <span>🍽️</span> Đặt Bàn Ngay
+    </a>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="about">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✨ NẤU BẰNG TÂM - DỌN BẰNG VUI ✨</div>
+      <h2>Nếm Trọn Ngôn Ngữ Của <br><span>HƯƠNG VỊ ĐỈNH CAO</span></h2>
+      <p>
+        Giao thoa giữa di sản ẩm thực truyền thống Việt Nam và nghệ thuật thưởng thức hiện đại. Đặt chỗ trước để bếp trưởng chuẩn bị kịp lúc bạn đến.
+      </p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#interactive-menu" class="btn-gold">Khám Phá Thực Đơn</a>
+        <a href="#booking" class="btn-gold" style="background: rgba(255,255,255,0.06); color: #fff; border: 1px solid var(--border-gold);">Chọn Giờ Giữ Bàn</a>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <strong>100%</strong>
+          <span>Nguyên Liệu Tươi Trong Ngày</span>
+        </div>
+        <div class="metric-item">
+          <strong>15+ Năm</strong>
+          <span>Kinh Nghiệm Bếp Trưởng</span>
+        </div>
+        <div class="metric-item">
+          <strong>1 Phút</strong>
+          <span>Xác Nhận Giữ Chỗ Tức Thì</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE MENU (LIKE VERDANT & SUSHI ZERON) -->
+  <section id="interactive-menu">
+    <div class="section-title">
+      <div style="color: var(--gold); letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 8px;">EXPERIENCE THE ART</div>
+      <h3>THỰC ĐƠN <span>ẨM THỰC CHỌN LỌC</span></h3>
+      <p>Rê chuột hoặc chọn món để xem chi tiết đĩa ăn & thưởng thức trước bằng mắt</p>
+    </div>
+
+    <div class="interactive-menu-container">
+      <!-- Cột Trái: Đĩa ăn tương tác lớn -->
+      <div class="dish-preview-stage">
+        <div class="dish-img-container">
+          <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&auto=format&fit=crop&q=80" alt="Món ăn" class="dish-real-img" id="previewDishRealImg">
+        </div>
+        <span class="dish-tag" id="previewDishTag">BẾP TRƯỞNG KHUYÊN DÙNG</span>
+        <h3 class="dish-title" id="previewDishTitle">Bò Wagyu Nướng Tảng Mắm Nhĩ</h3>
+        <p class="dish-desc" id="previewDishDesc">
+          Thịt bò Wagyu vân mỡ A4 nướng than hoa trên đá nham thạch, hòa quyện sốt mắm nhĩ Phú Quốc ủ chượp 3 năm đậm đà thơm ngậy.
+        </p>
+        <div class="dish-price" id="previewDishPrice">485.000đ</div>
+        <button class="btn-gold" style="margin-top: 16px; width: 100%;" onclick="addCurrentPreviewToMam()">
+          <span>+</span> Đặt Món Này Vào Mâm
+        </button>
+      </div>
+
+      <!-- Cột Phải: Danh sách các món -->
+      <div>
+        <div class="menu-category-tabs">
+          <button class="cat-tab active" onclick="switchCategory('mon-chinh')">Món Chính Nổi Bật</button>
+          <button class="cat-tab" onclick="switchCategory('khai-vi')">Khai Vị & Gỏi</button>
+          <button class="cat-tab" onclick="switchCategory('do-uong')">Thức Uống & Rượu</button>
+        </div>
+
+        <div class="dish-list" id="dishListContainer">
+          <!-- Render via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING SECTION & MÂM CỦA BẠN (MÂM SƠN STYLE) -->
+  <section class="booking-wrapper" id="booking">
+    <div class="section-title">
+      <div style="color: var(--gold); letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 8px;">RESERVATION</div>
+      <h3>GỌI MÓN TRƯỚC & <span>GIỮ BÀN 1 PHÚT</span></h3>
+      <p>Chọn món vào mâm để bếp chuẩn bị trước, đến là dùng ngay không phải chờ đợi</p>
+    </div>
+
+    <div class="booking-grid">
+      <!-- Mâm của bạn -->
+      <div class="mam-panel">
+        <div class="mam-header">
+          <h4>🥘 Mâm Của Bạn</h4>
+          <span style="font-size: 0.82rem; color: var(--gold);" id="mamCount">2 món</span>
+        </div>
+        <div class="mam-items-box" id="mamItemsBox">
+          <!-- Render mâm items -->
+        </div>
+        <div class="mam-total">
+          <span>Tạm Tính:</span>
+          <span style="color: var(--gold);" id="mamTotalVal">560.000đ</span>
+        </div>
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 12px;">
+          *Khách có thể gọi thêm món hoặc thanh toán trực tiếp tại nhà hàng.
+        </p>
+      </div>
+
+      <!-- Chọn giờ và Thông tin đặt bàn -->
+      <div class="form-panel">
+        <h4>Chọn Khung Giờ Đến</h4>
+        <p>Chọn khung giờ bàn tiệc còn trống trong ngày hôm nay:</p>
+
+        <div class="time-slot-grid" id="timeSlotGrid">
+          <div class="time-slot selected" onclick="selectTimeSlot(this, '17:30')">
+            <span class="time">17:30</span>
+            <span class="avail">● Còn 18 chỗ</span>
+          </div>
+          <div class="time-slot" onclick="selectTimeSlot(this, '18:30')">
+            <span class="time">18:30</span>
+            <span class="avail">● Còn 12 chỗ</span>
+          </div>
+          <div class="time-slot almost-full" onclick="selectTimeSlot(this, '19:30')">
+            <span class="time">19:30</span>
+            <span class="avail">▲ Sắp hết chỗ (3)</span>
+          </div>
+          <div class="time-slot" onclick="selectTimeSlot(this, '20:15')">
+            <span class="time">20:15</span>
+            <span class="avail">● Còn 15 chỗ</span>
+          </div>
+          <div class="time-slot" onclick="selectTimeSlot(this, '21:00')">
+            <span class="time">21:00</span>
+            <span class="avail">● Còn 22 chỗ</span>
+          </div>
+          <div class="time-slot almost-full" onclick="selectTimeSlot(this, '21:30')">
+            <span class="time">21:30</span>
+            <span class="avail">▲ Sắp hết chỗ (5)</span>
+          </div>
+        </div>
+
+        <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
+          <div class="form-input-row">
+            <input type="text" class="form-ctrl" id="bookName" placeholder="Tên của bạn (Anh/Chị)..." required>
+            <input type="tel" class="form-ctrl" id="bookPhone" placeholder="Số điện thoại nhận mã SMS..." required>
+          </div>
+          <div class="form-input-row">
+            <select class="form-ctrl" id="bookGuests">
+              <option value="2">Bàn 2 Khách (Tiệc cặp đôi)</option>
+              <option value="4" selected>Bàn 4 Khách (Gia đình / Bạn bè)</option>
+              <option value="6">Bàn 6-8 Khách (Bàn lớn)</option>
+              <option value="12">Phòng VIP Riêng (Từ 10-15 khách)</option>
+            </select>
+            <input type="text" class="form-ctrl" id="bookNote" placeholder="Ghi chú (Ví dụ: bàn gần cửa sổ, ăn kiêng...)">
+          </div>
+
+          <button type="submit" class="btn-gold" style="width: 100%; padding: 14px; margin-top: 8px;">
+            <span>🎟️</span> Xác Nhận Giữ Chỗ & Bắn Mã Đặt Bàn
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL VÉ ĐẶT BÀN THÀNH CÔNG (MÃ XÁC NHẬN) -->
+  <div class="ticket-modal-overlay" id="ticketModal">
+    <div class="ticket-card">
+      <div style="font-size: 3rem; margin-bottom: 10px;">🎉</div>
+      <h3 style="font-family: var(--font-heading); color: #fff; margin-bottom: 6px;">ĐẶT BÀN THÀNH CÔNG!</h3>
+      <p style="font-size: 0.88rem; color: var(--text-muted);">
+        MÂM SƠN đã giữ chỗ cho quý khách. Thông tin chi tiết đã được gửi tự động qua Telegram của nhà hàng:
+      </p>
+
+      <div class="ticket-code-box">
+        <div style="font-size: 0.75rem; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 4px;">MÃ ĐẶT BÀN CỦA BẠN</div>
+        <div class="ticket-code" id="ticketCodeVal">MS-8924VIP</div>
+      </div>
+
+      <div style="text-align: left; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 20px; line-height: 1.8;">
+        <div>👤 Khách hàng: <strong id="ticketCustName" style="color: #fff;">Nguyễn Văn A</strong></div>
+        <div>⏰ Giờ đến: <strong id="ticketTime" style="color: var(--gold);">19:30 Tối Nay</strong></div>
+        <div>👥 Số lượng: <strong id="ticketGuests" style="color: #fff;">4 Khách</strong></div>
+        <div>🥘 Số món gọi trước: <strong id="ticketDishes" style="color: var(--gold);">2 món</strong></div>
+      </div>
+
+      <button class="btn-gold" style="width: 100%;" onclick="closeTicketModal()">
+        Hoàn Tất & Đóng Lại
+      </button>
+    </div>
+  </div>
+
+  <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-gold); font-size: 0.82rem; color: var(--text-muted);">
+    <p>© 2026 MÂM SƠN RESTAURANT - Thiết kế bởi PAT TECH (Hotline: 0387.637.982)</p>
+  </footer>
+
+  <script>
+    const dishesData = {
+      'mon-chinh': [
+        {
+          id: 'wagyu',
+          img: 'https://images.unsplash.com/photo-1558030006-450675393462?w=600&auto=format&fit=crop&q=80',
+          tag: 'BẾP TRƯỞNG KHUYÊN DÙNG',
+          name: 'Bò Wagyu Nướng Tảng Mắm Nhĩ',
+          desc: 'Thịt bò Wagyu vân mỡ A4 nướng than hoa trên đá nham thạch, hòa quyện sốt mắm nhĩ Phú Quốc ủ chượp 3 năm đậm đà thơm ngậy.',
+          price: 485000,
+          priceStr: '485.000đ'
+        },
+        {
+          id: 'sushi-set',
+          img: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80',
+          tag: 'SASHIMI THƯỢNG HẠNG',
+          name: 'Set Sashimi Cá Hồi & Sò Điệp Nhật',
+          desc: 'Cá hồi Na Uy béo ngậy, sò điệp Hokkaido giòn ngọt ăn kèm mù tạt Wasabi tươi nguyên củ mài tay chuẩn phong cách Omakase.',
+          price: 590000,
+          priceStr: '590.000đ'
+        },
+        {
+          id: 'tom-hum',
+          img: 'https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&auto=format&fit=crop&q=80',
+          tag: 'HẢI SẢN TƯƠI SỐNG',
+          name: 'Tôm Hùm Đút Lò Phô Mai Truffle',
+          desc: 'Tôm hùm bông Nha Trang đút lò phô mai Mozzarella kéo sợi hòa quyện hương thơm nấm Truffle đen quý tộc.',
+          price: 650000,
+          priceStr: '650.000đ'
+        }
+      ],
+      'khai-vi': [
+        {
+          id: 'salad-hai-san',
+          img: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
+          tag: 'KHAI VỊ THANH MÁT',
+          name: 'Salad Rong Biển & Bào Ngư Sốt Cam',
+          desc: 'Rong nho biển tươi mọng nước, bào ngư sốt dầu giấm hoa quả nhiệt đới chua ngọt đánh thức mọi giác quan.',
+          price: 195000,
+          priceStr: '195.000đ'
+        },
+        {
+          id: 'tempura',
+          img: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&auto=format&fit=crop&q=80',
+          tag: 'GIÒN RỤM HOÀNG GIA',
+          name: 'Tempura Tôm Sú Khổng Lồ',
+          desc: 'Tôm sú biển bọc bột Tempura Nhật Bản chiên xù giòn tan rôm rốp, chấm nước tương củ cải mài thanh dịu.',
+          price: 220000,
+          priceStr: '220.000đ'
+        }
+      ],
+      'do-uong': [
+        {
+          id: 'vang-do',
+          img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&auto=format&fit=crop&q=80',
+          tag: 'RƯỢU VANG PHÁP',
+          name: 'Château Margaux Grand Cru',
+          desc: 'Hương vị trái cây chín đỏ hòa quyện gỗ sồi và vani tinh tế, được thở trong bình Decanter pha lê trước khi phục vụ.',
+          price: 1250000,
+          priceStr: '1.250.000đ'
+        },
+        {
+          id: 'cocktail',
+          img: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&auto=format&fit=crop&q=80',
+          tag: 'COCKTAIL SIGNATURE',
+          name: 'Mâm Sơn Sunset Cocktail',
+          desc: 'Sự pha trộn rượu Gin thượng hạng, nước ép dứa nướng than và hương thảo mộc khói ấn tượng.',
+          price: 135000,
+          priceStr: '135.000đ'
+        }
+      ]
+    };
+
+    let currentCategory = 'mon-chinh';
+    let currentPreviewDish = dishesData['mon-chinh'][0];
+    let mamItems = [
+      { name: 'Bò Wagyu Nướng Tảng Mắm Nhĩ', price: 485000, img: dishesData['mon-chinh'][0].img },
+      { name: 'Mâm Sơn Sunset Cocktail', price: 135000, img: dishesData['do-uong'][1].img }
+    ];
+    let selectedTime = '17:30';
+
+    function switchCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-tab').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick').includes(cat)) btn.classList.add('active');
+      });
+      renderDishList();
+    }
+
+    function renderDishList() {
+      const container = document.getElementById('dishListContainer');
+      const list = dishesData[currentCategory];
+      container.innerHTML = list.map(item => `
+        <div class="dish-list-item ${item.id === currentPreviewDish.id ? 'selected' : ''}" onmouseenter="setPreviewDish('${item.id}')" onclick="setPreviewDish('${item.id}')">
+          <img src="${item.img}" class="dish-thumb-small" alt="${item.name}">
+          <div class="dish-item-info">
+            <h4>${item.name}</h4>
+            <p>${item.tag}</p>
+          </div>
+          <div class="dish-item-price">
+            <div class="cost">${item.priceStr}</div>
+            <button class="add-to-mam-btn" onclick="event.stopPropagation(); addToMam('${item.name}', ${item.price}, '${item.img}')">+ Thêm vào mâm</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setPreviewDish(dishId) {
+      const allDishes = [...dishesData['mon-chinh'], ...dishesData['khai-vi'], ...dishesData['do-uong']];
+      const found = allDishes.find(d => d.id === dishId);
+      if (!found) return;
+
+      currentPreviewDish = found;
+      const imgEl = document.getElementById('previewDishRealImg');
+      
+      // Hiệu ứng fade nhẹ khi đổi ảnh
+      imgEl.style.opacity = '0.3';
+      imgEl.style.transform = 'scale(0.92)';
+      setTimeout(() => {
+        imgEl.src = found.img;
+        imgEl.style.opacity = '1';
+        imgEl.style.transform = 'scale(1)';
+      }, 150);
+
+      document.getElementById('previewDishTag').innerText = found.tag;
+      document.getElementById('previewDishTitle').innerText = found.name;
+      document.getElementById('previewDishDesc').innerText = found.desc;
+      document.getElementById('previewDishPrice').innerText = found.priceStr;
+
+      document.querySelectorAll('.dish-list-item').forEach(el => {
+        el.classList.toggle('selected', el.innerHTML.includes(found.name));
+      });
+    }
+
+    function addCurrentPreviewToMam() {
+      addToMam(currentPreviewDish.name, currentPreviewDish.price, currentPreviewDish.img);
+    }
+
+    function addToMam(name, price, img) {
+      mamItems.push({ name, price, img });
+      renderMam();
+    }
+
+    function removeMamItem(index) {
+      mamItems.splice(index, 1);
+      renderMam();
+    }
+
+    function renderMam() {
+      const box = document.getElementById('mamItemsBox');
+      const countEl = document.getElementById('mamCount');
+      const totalEl = document.getElementById('mamTotalVal');
+
+      countEl.innerText = `${mamItems.length} món`;
+      const total = mamItems.reduce((sum, item) => sum + item.price, 0);
+      totalEl.innerText = total.toLocaleString('vi-VN') + 'đ';
+
+      if (mamItems.length === 0) {
+        box.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 20px 0;">Mâm của bạn đang trống. Hãy chọn món bên trên nhé!</div>`;
+        return;
+      }
+
+      box.innerHTML = mamItems.map((item, idx) => `
+        <div class="mam-item">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${item.img}" style="width: 32px; height: 32px; border-radius: 6px; object-fit: cover;" alt="">
+            <strong>${item.name}</strong>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="color: var(--gold);">${item.price.toLocaleString('vi-VN')}đ</span>
+            <button onclick="removeMamItem(${idx})" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1rem;">✕</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function selectTimeSlot(el, time) {
+      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedTime = time;
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('bookName').value.trim();
+      const phone = document.getElementById('bookPhone').value.trim();
+      const guests = document.getElementById('bookGuests').value;
+
+      // Sinh mã vé ngẫu nhiên VIP
+      const code = 'MS-' + Math.floor(1000 + Math.random() * 9000) + 'VIP';
+
+      document.getElementById('ticketCustName').innerText = name + ` (${phone})`;
+      document.getElementById('ticketTime').innerText = `${selectedTime} Hôm Nay`;
+      document.getElementById('ticketGuests').innerText = `${guests} Khách`;
+      document.getElementById('ticketDishes').innerText = `${mamItems.length} món (${document.getElementById('mamTotalVal').innerText})`;
+      document.getElementById('ticketCodeVal').innerText = code;
+
+      document.getElementById('ticketModal').classList.add('open');
+    }
+
+    function closeTicketModal() {
+      document.getElementById('ticketModal').classList.remove('open');
+      mamItems = [];
+      renderMam();
+      document.getElementById('bookingForm').reset();
+    }
+
+    // Init
+    renderDishList();
+    renderMam();
+  </script>
+</body>
+</html>

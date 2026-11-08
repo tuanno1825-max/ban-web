@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skyline Landmark - Dự Án Căn Hộ Nghỉ Dưỡng Hạng Sang</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; background: #0c1222; color: #e2e8f0; line-height: 1.6; }
+    header { padding: 18px 30px; display: flex; justify-content: space-between; align-items: center; background: #131d36; border-bottom: 1px solid #1e2d52; }
+    .hero { padding: 60px 20px; text-align: center; max-width: 850px; margin: 0 auto; }
+    .hero h1 { font-size: 2.3rem; color: #38bdf8; margin-bottom: 16px; }
+    .specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 800px; margin: 30px auto; }
+    .spec-card { background: #182444; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #283a66; }
+    .spec-val { font-size: 1.5rem; font-weight: 800; color: #38bdf8; }
+    .form-box { max-width: 550px; margin: 40px auto 60px; background: #131d36; padding: 30px; border-radius: 16px; border: 1px solid #38bdf8; }
+    .btn { background: #0284c7; color: #fff; padding: 12px; border: none; border-radius: 8px; width: 100%; font-weight: 700; cursor: pointer; font-size: 1rem; }
+    input { width: 100%; padding: 11px; margin: 6px 0 16px; background: #0c1222; border: 1px solid #283a66; color: #fff; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="font-weight: 800; font-size: 1.25rem; color: #38bdf8;">🏙️ SKYLINE LANDMARK</div>
+    <div style="font-size: 0.85rem; color: #94a3b8;">Vị Trí Kim Cương Mặt Tiền Đại Lộ</div>
+  </header>
+  <div class="hero">
+    <h1>Căn Hộ Nghỉ Dưỡng View Trọn Thành Phố</h1>
+    <p>Chính sách thanh toán đợt 1 chỉ 15% - Ân hạn nợ gốc và lãi suất 0% trong 24 tháng</p>
+  </div>
+  <div class="specs">
+    <div class="spec-card"><div class="spec-val">15%</div><div>Đợt 1 Nhận Nhà</div></div>
+    <div class="spec-card"><div class="spec-val">0%</div><div>Lãi Suất 24 Tháng</div></div>
+    <div class="spec-card"><div class="spec-val">Sổ Hồng</div><div>Lâu Dài Vĩnh Viễn</div></div>
+  </div>
+  <div class="form-box">
+    <h3 style="text-align: center; margin-bottom: 8px; color: #38bdf8;">Đăng Ký Nhận Bảng Giá & Mặt Bằng Tầng</h3>
+    <p style="text-align: center; font-size: 0.85rem; color: #94a3b8; margin-bottom: 20px;">Hồ sơ pháp lý đầy đủ sẽ được gửi tự động qua Zalo trong 3 phút</p>
+    <form onsubmit="event.preventDefault(); alert('Đã gửi yêu cầu! Chuyên viên dự án sẽ gửi trọn bộ file mặt bằng và bảng giá qua Zalo cho bạn!');">
+      <label>Họ tên khách hàng:</label><input type="text" placeholder="Anh/Chị..." required>
+      <label>Số điện thoại nhận file:</label><input type="tel" placeholder="09xx.xxx.xxx" required>
+      <button class="btn">Tải Trọn Bộ Hồ Sơ Pháp Lý & Bảng Giá</button>
+    </form>
+  </div>
+</body>
+</html>
