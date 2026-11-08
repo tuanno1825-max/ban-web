@@ -184,9 +184,11 @@ function openLivePreview(templateId) {
     openOrderModal(template.id);
   };
 
-  // Cập nhật hash trên URL trình duyệt để khách có thể copy link chia sẻ trực tiếp
+  // Cập nhật URL sạch trên trình duyệt (tự động xóa bỏ chữ /public/ nếu còn sót lại trong lịch sử)
   try {
-    history.replaceState(null, '', '#demo=' + template.id);
+    let cleanPath = window.location.pathname.replace(/\/public\/?/, '/');
+    if (!cleanPath.endsWith('/')) cleanPath += '/';
+    history.replaceState(null, '', cleanPath + '#demo=' + template.id);
   } catch (e) {}
 
   setDeviceView('desktop');
@@ -201,9 +203,11 @@ function closePreviewModal() {
   iframe.src = 'about:blank';
   document.body.style.overflow = '';
 
-  // Xóa hash trên URL khi đóng modal
+  // Xóa hash trên URL khi đóng modal và chuẩn hóa đường dẫn sạch
   try {
-    history.replaceState(null, '', window.location.pathname);
+    let cleanPath = window.location.pathname.replace(/\/public\/?/, '/');
+    if (!cleanPath.endsWith('/')) cleanPath += '/';
+    history.replaceState(null, '', cleanPath);
   } catch (e) {}
 }
 
