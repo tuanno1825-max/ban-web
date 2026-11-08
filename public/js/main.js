@@ -17,39 +17,60 @@ function switchPageTab(tabName) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Khởi tạo danh sách nhanh ở Hero section (hiển thị đầy đủ tất cả các ngành nghề với thanh cuộn tinh tế)
+// Khởi tạo danh sách nhanh ở Hero section (hiển thị đầy đủ 9 ngành nghề, chống tràn và không bị che)
 function renderHeroQuickList() {
   const container = document.getElementById('heroQuickList');
   if (!container) return;
 
   container.innerHTML = templatesData.map(tpl => `
-    <div class="quick-industry-item" onclick="openLivePreview('${tpl.id}')">
+    <div class="quick-industry-item" onclick="openLivePreview('${tpl.id}')" title="Nhấn để xem thử giao diện ${tpl.industryName}">
       <div class="quick-industry-info">
         <div class="quick-industry-icon">${tpl.icon}</div>
-        <div style="min-width: 0;">
-          <div style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">${tpl.industryName}</div>
-          <div style="font-size: 0.77rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px;">${tpl.name}</div>
+        <div class="quick-industry-text">
+          <div class="quick-industry-name">${tpl.industryName}</div>
+          <div class="quick-industry-desc">${tpl.name}</div>
         </div>
       </div>
-      <button class="btn btn-outline btn-sm" style="pointer-events: none; flex-shrink: 0; padding: 6px 12px; font-size: 0.8rem;">
-        Xem thử 👁️
+      <button class="btn btn-outline btn-sm quick-view-btn" style="pointer-events: none;">
+        <span>Xem thử</span> 👁️
       </button>
     </div>
   `).join('');
 }
 
-// Khởi tạo các Sub-tabs lọc ngành nghề ở Kho giao diện
+// Khởi tạo các Sub-tabs lọc ngành nghề ở Kho giao diện (đồng bộ cả Desktop Tabs & Mobile Dropdown Menu)
 let currentIndustryFilter = 'all';
 
 function renderIndustryFilterTabs() {
   const tabsContainer = document.getElementById('industryFilterTabs');
-  if (!tabsContainer) return;
+  const mobileSelect = document.getElementById('mobileIndustrySelect');
+  const countEl = document.getElementById('mobileFilterCount');
 
-  tabsContainer.innerHTML = industriesList.map(ind => `
-    <button class="industry-tab ${ind.id === currentIndustryFilter ? 'active' : ''}" onclick="filterByIndustry('${ind.id}')">
-      <span>${ind.icon}</span> ${ind.name}
-    </button>
-  `).join('');
+  // Render thanh pills trên Desktop
+  if (tabsContainer) {
+    tabsContainer.innerHTML = industriesList.map(ind => `
+      <button class="industry-tab ${ind.id === currentIndustryFilter ? 'active' : ''}" onclick="filterByIndustry('${ind.id}')">
+        <span>${ind.icon}</span> ${ind.name}
+      </button>
+    `).join('');
+  }
+
+  // Render menu chọn dropdown trên Mobile
+  if (mobileSelect) {
+    mobileSelect.innerHTML = industriesList.map(ind => `
+      <option value="${ind.id}" ${ind.id === currentIndustryFilter ? 'selected' : ''}>
+        ${ind.icon} ${ind.name}
+      </option>
+    `).join('');
+  }
+
+  // Cập nhật số lượng mẫu tương ứng
+  if (countEl) {
+    const count = currentIndustryFilter === 'all' 
+      ? templatesData.length 
+      : templatesData.filter(t => t.industry === currentIndustryFilter).length;
+    countEl.innerText = `${count} Mẫu`;
+  }
 }
 
 function filterByIndustry(industryId) {
@@ -95,10 +116,13 @@ function renderTemplatesGrid() {
         </ul>
         <div class="template-actions">
           <button class="btn btn-outline btn-sm" onclick="openLivePreview('${t.id}')">
-            <span>👁️</span> Trải Nghiệm Demo
+            <span>👁️</span> Trải Nghiệm
           </button>
+          <a href="${t.demoUrl}" target="_blank" class="btn btn-outline btn-sm btn-icon-only" title="Mở trang web độc lập (Tab mới)">
+            <span>🔗</span>
+          </a>
           <button class="btn btn-primary btn-sm" onclick="openOrderModal('${t.id}')">
-            <span>🛒</span> Báo Giá Mẫu Này
+            <span>🛒</span> Báo Giá
           </button>
         </div>
       </div>
@@ -141,7 +165,7 @@ function renderPricingCombos() {
   `).join('');
 }
 
-// Live Preview Modal
+// Live Preview Modal & Quản lý Link Riêng
 let currentPreviewTemplate = null;
 
 function openLivePreview(templateId) {
@@ -160,6 +184,11 @@ function openLivePreview(templateId) {
     openOrderModal(template.id);
   };
 
+  // Cập nhật hash trên URL trình duyệt để khách có thể copy link chia sẻ trực tiếp
+  try {
+    history.replaceState(null, '', '#demo=' + template.id);
+  } catch (e) {}
+
   setDeviceView('desktop');
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -171,6 +200,38 @@ function closePreviewModal() {
   modal.classList.remove('open');
   iframe.src = 'about:blank';
   document.body.style.overflow = '';
+
+  // Xóa hash trên URL khi đóng modal
+  try {
+    history.replaceState(null, '', window.location.pathname);
+  } catch (e) {}
+}
+
+// Mở trang web độc lập ở tab mới
+function openDirectTemplateTab() {
+  if (currentPreviewTemplate && currentPreviewTemplate.demoUrl) {
+    window.open(currentPreviewTemplate.demoUrl, '_blank');
+  }
+}
+
+// Sao chép link trực tiếp của mẫu web này
+function copyDemoLink() {
+  if (!currentPreviewTemplate) return;
+  // Tạo link tuyệt đối trực tiếp của file demo (ví dụ: https://webgiatot.me/demos/ca-nhan/index.html)
+  const directUrl = new URL(currentPreviewTemplate.demoUrl, window.location.href).href;
+  const btnText = document.getElementById('copyLinkText');
+  const btnIcon = document.getElementById('copyLinkIcon');
+
+  navigator.clipboard.writeText(directUrl).then(() => {
+    if (btnText) btnText.innerText = 'Đã chép!';
+    if (btnIcon) btnIcon.innerText = '✓';
+    setTimeout(() => {
+      if (btnText) btnText.innerText = 'Copy Link';
+      if (btnIcon) btnIcon.innerText = '📋';
+    }, 2200);
+  }).catch(() => {
+    prompt('Link trực tiếp của mẫu web này:', directUrl);
+  });
 }
 
 function setDeviceView(device) {
@@ -263,8 +324,20 @@ function handleFormSubmit(e) {
   const note = document.getElementById('custNote').value.trim();
   const total = document.getElementById('estTotalVal').innerText;
 
-  // Soạn sẵn định dạng đơn hàng chuẩn cho chatbot duyệt tự động
-  compiledOrderMessage = `[ĐƠN ĐĂNG KÝ TƯ VẤN WEBSITE]\n- Khách hàng: ${name}\n- Số điện thoại / Zalo: ${phone}\n- Mẫu giao diện: ${templateName}\n- Gói combo: ${comboName}\n- Gắn thêm Chatbot 24/7: ${hasChatbot ? 'Có (+500.000đ)' : 'Không'}\n- Dự toán tổng phí: ${total}\n- Yêu cầu thêm: ${note || 'Tư vấn triển khai chuẩn mẫu'}\n=> Nhờ Trợ Lý AI tiếp nhận & duyệt đơn ưu tiên giúp tôi!`;
+  // 1. Chuẩn hóa số điện thoại: Lọc sạch chỉ giữ lại đúng 10 chữ số liền mạch (chống lỗi regex của Bot)
+  let cleanPhone = phone.replace(/[^0-9]/g, '');
+  if (cleanPhone.startsWith('84') && cleanPhone.length === 11) {
+    cleanPhone = '0' + cleanPhone.slice(2);
+  }
+
+  // 2. Lấy tên mẫu web gọn gàng
+  let shortTemplate = templateName.replace(/^[👗👑🩺🎓🏖️🧋🍽️🏰📊\s]+/, '').split('-')[0].trim();
+  if (!shortTemplate || shortTemplate.includes('chọn mẫu')) {
+    shortTemplate = 'Theo tư vấn kỹ thuật';
+  }
+
+  // 3. Soạn tin nhắn tự nhiên chuẩn "Lead Capture" để AI nhận diện và bắn Telegram 100%
+  compiledOrderMessage = `Chào bạn, tôi muốn đăng ký làm website mẫu: ${shortTemplate} (${comboName}${hasChatbot ? ' + Chatbot AI' : ''}). Tên tôi là ${name}, số điện thoại của tôi là: ${cleanPhone}. Dự toán tổng phí: ${total}. Ghi chú: ${note || 'Tư vấn triển khai sớm giúp tôi'}. Bạn tiếp nhận và duyệt đơn giúp tôi nhé!`;
 
   // Hiển thị khung thành công & hướng dẫn gửi chatbot
   document.getElementById('orderCompiledText').innerText = compiledOrderMessage;
@@ -308,7 +381,7 @@ function copyOrderDetails() {
   });
 }
 
-// Hàm mở Chatbot và dán tự động vào ô input
+// Hàm mở Chatbot và dán tự động vào ô input, đồng thời tự bấm gửi luôn
 function openAndPasteChatbot() {
   copyOrderDetails();
 
@@ -319,6 +392,7 @@ function openAndPasteChatbot() {
   const chatWindow = document.getElementById('pat-ai-chat-window');
   const widgetBtn = document.getElementById('pat-ai-widget-btn');
   const inputText = document.getElementById('pat-ai-input-text');
+  const sendBtn = document.getElementById('pat-ai-send-btn');
 
   // Mở khung chat nếu đang đóng
   if (chatWindow && (chatWindow.style.display === 'none' || chatWindow.style.display === '')) {
@@ -329,19 +403,21 @@ function openAndPasteChatbot() {
     }
   }
 
-  // Tự động điền nội dung vào ô nhập liệu của Chatbot
+  // Tự động điền nội dung vào ô nhập liệu của Chatbot và bấm Gửi luôn
   setTimeout(() => {
     if (inputText) {
       inputText.value = compiledOrderMessage;
+      inputText.dispatchEvent(new Event('input', { bubbles: true }));
       inputText.focus();
-      // Highlight nhẹ ô nhập để khách thấy rõ chỉ cần bấm gửi
-      inputText.style.transition = 'all 0.3s ease';
-      inputText.style.boxShadow = '0 0 0 3px rgba(37, 99, 235, 0.45)';
+
+      // Tự động kích hoạt nút Gửi sau 300ms để khách không cần phải bấm Enter
       setTimeout(() => {
-        inputText.style.boxShadow = '';
-      }, 3000);
+        if (sendBtn && !sendBtn.disabled) {
+          sendBtn.click();
+        }
+      }, 350);
     }
-  }, 200);
+  }, 250);
 }
 
 // Khởi chạy khi tải trang
@@ -350,4 +426,13 @@ document.addEventListener('DOMContentLoaded', () => {
   renderIndustryFilterTabs();
   renderTemplatesGrid();
   renderPricingCombos();
+
+  // Kiểm tra nếu đường dẫn có mã demo (ví dụ: #demo=fnb-cafe) thì tự động mở xem thử mẫu đó luôn
+  const hash = window.location.hash;
+  if (hash && hash.includes('demo=')) {
+    const demoId = hash.split('demo=')[1]?.split('&')[0];
+    if (demoId) {
+      setTimeout(() => openLivePreview(demoId), 300);
+    }
+  }
 });

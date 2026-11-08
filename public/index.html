@@ -87,11 +87,14 @@
         <div class="hero-showcase-card">
           <div class="browser-dots">
             <span></span><span></span><span></span>
-            <div class="browser-url">https://pattech.vn/kho-giao-dien-2026</div>
+            <div class="browser-url">https://webgiatot.me/kho-giao-dien</div>
           </div>
           <div class="hero-showcase-label">
-            <span>🔥 Trải nghiệm mẫu theo ngành của bạn:</span>
-            <span class="hero-showcase-sub">(9 Mẫu Sẵn Sàng)</span>
+            <div class="showcase-title-wrap">
+              <span class="showcase-fire">🔥</span>
+              <span class="showcase-title">Trải nghiệm theo ngành:</span>
+            </div>
+            <span class="hero-showcase-badge">9 Mẫu Demo</span>
           </div>
           <div class="quick-industry-list" id="heroQuickList">
             <!-- Render via JS -->
@@ -175,9 +178,26 @@
         <p>Bấm vào từng ngành để xem giao diện mẫu thực tế trên cả giao diện Máy Tính & Điện Thoại</p>
       </div>
 
-      <!-- Sub-tabs ngành nghề -->
-      <div class="industry-tabs-bar" id="industryFilterTabs">
-        <!-- Render via JS -->
+      <!-- Bộ lọc ngành nghề: Desktop hiện thanh pills rộng rãi, Mobile hiện Menu Dropdown 1-chạm tiện lợi -->
+      <div class="industry-filter-wrapper">
+        <!-- Desktop Tabs Bar -->
+        <div class="industry-tabs-bar" id="industryFilterTabs">
+          <!-- Render via JS -->
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="industry-mobile-menu" id="industryMobileMenu">
+          <div class="mobile-filter-header">
+            <span class="mobile-filter-label">📂 Chọn nhanh ngành của bạn:</span>
+            <span class="mobile-filter-count" id="mobileFilterCount">9 Mẫu Sẵn Sàng</span>
+          </div>
+          <div class="mobile-select-custom-wrap">
+            <select class="mobile-industry-select" id="mobileIndustrySelect" onchange="filterByIndustry(this.value)">
+              <!-- Render via JS -->
+            </select>
+            <span class="select-chevron">▼</span>
+          </div>
+        </div>
       </div>
 
       <!-- Grid các thẻ mẫu web -->
@@ -248,9 +268,15 @@
         <button class="device-btn" data-device="mobile" onclick="setDeviceView('mobile')">📲 Điện Thoại</button>
       </div>
 
-      <div class="header-cta">
+      <div class="preview-actions-bar">
+        <button class="btn btn-outline btn-sm" id="btnOpenDirectTab" onclick="openDirectTemplateTab()" title="Mở trang web này ở tab độc lập">
+          <span>🔗</span> <span class="hide-on-mobile">Mở Tab Riêng</span>
+        </button>
+        <button class="btn btn-outline btn-sm" id="btnCopyDemoLink" onclick="copyDemoLink()" title="Sao chép link trực tiếp của mẫu này">
+          <span id="copyLinkIcon">📋</span> <span id="copyLinkText" class="hide-on-mobile">Copy Link</span>
+        </button>
         <button class="btn btn-primary btn-sm" id="btnBuyThisTemplate">
-          <span>🛒</span> Báo Giá Mẫu Này
+          <span>🛒</span> Báo Giá
         </button>
       </div>
     </div>
@@ -366,21 +392,17 @@
           <div class="action-guide-box">
             <div class="guide-step">
               <span class="step-num">1</span>
-              <span>Bấm nút <strong>"Sao Chép Toàn Bộ Đơn Hàng"</strong> ở trên.</span>
+              <span>Hệ thống đã <strong>chuẩn hóa số điện thoại sạch 10 số</strong> để Bot AI nhận diện chính xác 100%.</span>
             </div>
             <div class="guide-step">
               <span class="step-num">2</span>
-              <span>Bấm nút <strong>"Mở Chatbot & Dán Tự Động"</strong> dưới đây để mở khung chat góc phải màn hình.</span>
-            </div>
-            <div class="guide-step">
-              <span class="step-num">3</span>
-              <span>Nhấn phím <strong>Gửi (Enter)</strong> để AI tiếp nhận & cấp mã ưu tiên ngay lập tức!</span>
+              <span>Bấm nút <strong>"Mở Chatbot AI & Tự Động Gửi Đơn"</strong> dưới đây: Khung chat sẽ mở và <strong>tự động bắn tin nhắn vào bot</strong> giúp bạn!</span>
             </div>
           </div>
 
           <div class="modal-chatbot-actions">
             <button type="button" class="btn btn-primary" style="width: 100%; padding: 14px;" onclick="openAndPasteChatbot()">
-              <span>💬</span> Mở Chatbot AI & Dán Đơn Ngay
+              <span>⚡</span> Mở Chatbot AI & Tự Động Gửi Đơn Ngay
             </button>
             <button type="button" class="btn btn-outline" style="width: 100%; margin-top: 10px;" onclick="closeOrderModal()">
               <span>✕</span> Đóng & Quay lại trang chủ

@@ -2,13 +2,428 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=public/">
-  <title>PAT TECH - Chuyển hướng...</title>
-  <script>
-    window.location.href = "public/";
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiết Kế Website Đẹp & Bán Hàng Tự Động | Trọn Gói Giá Rẻ</title>
+  <meta name="description" content="Dịch vụ thiết kế website tĩnh chốt đơn nhanh qua Telegram, web bán hàng quản trị chuyên nghiệp có thống kê doanh thu và tự động hóa QR.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/jpeg" href="image/avatar.jpg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <p>Đang chuyển hướng đến trang chủ PAT TECH...</p>
+
+  <!-- HEADER NAVIGATION TABS -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo" onclick="switchPageTab('home'); return false;">
+        <img src="image/avatar.jpg" alt="PAT TECH Logo" class="logo-badge-img">
+        <div>PAT <span>TECH</span></div>
+      </a>
+
+      <!-- Main Navigation Tabs: Giới thiệu, Kho giao diện, Bảng giá Combo -->
+      <nav class="main-tabs">
+        <button class="main-tab-btn active" data-target="home" onclick="switchPageTab('home')">
+          <span>✨</span> Giới Thiệu
+        </button>
+        <button class="main-tab-btn" data-target="templates" onclick="switchPageTab('templates')">
+          <span>🎨</span> Kho Giao Diện Ngành Nghề
+        </button>
+        <button class="main-tab-btn" data-target="pricing" onclick="switchPageTab('pricing')">
+          <span>💎</span> Bảng Giá Combo
+        </button>
+      </nav>
+
+      <div class="header-cta">
+        <button class="btn btn-primary btn-sm" onclick="openOrderModal('', '', true)">
+          <span>📋</span> Đăng Ký Tư Vấn
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= TAB 1: TRANG GIỚI THIỆU (HOME) ================= -->
+  <main id="tab-home" class="page-view active">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="pill-tag">
+            <span>⚡</span> Thiết Kế Nhanh Trong 24h - Bắn Đơn Về Telegram
+          </div>
+          <h1>
+            Sở Hữu Website Chuẩn SEO <br>
+            <span class="highlight">Chốt Đơn Tự Động 24/7</span>
+          </h1>
+          <p>
+            Giải pháp website không lo tốn phí duy trì server cồng kềnh. Khách đặt hàng, đơn lập tức bắn thẳng về điện thoại qua Telegram / Zalo. Tích hợp quản trị doanh thu theo yêu cầu.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="switchPageTab('templates')">
+              <span>🚀</span> Khám Phá Kho Mẫu Ngành Nghề
+            </button>
+            <button class="btn btn-outline" onclick="switchPageTab('pricing')">
+              <span>💎</span> Xem 3 Gói Combo Giá Rẻ
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>1 Giây</strong>
+              <span>Bắn đơn Telegram</span>
+            </div>
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span>Không phí duy trì (C1)</span>
+            </div>
+            <div class="stat-item">
+              <strong>24/7</strong>
+              <span>Tự động trực bán</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Preview Box right in hero -->
+        <div class="hero-showcase-card">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+            <div class="browser-url">https://webgiatot.me/kho-giao-dien</div>
+          </div>
+          <div class="hero-showcase-label">
+            <div class="showcase-title-wrap">
+              <span class="showcase-fire">🔥</span>
+              <span class="showcase-title">Trải nghiệm theo ngành:</span>
+            </div>
+            <span class="hero-showcase-badge">9 Mẫu Demo</span>
+          </div>
+          <div class="quick-industry-list" id="heroQuickList">
+            <!-- Render via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tại Sao Nên Chọn Web Của Chúng Tôi?</h2>
+          <p>Tiết kiệm tối đa chi phí - Tối đa hóa tỷ lệ chốt đơn của khách hàng</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Bắn Đơn Tức Thì Về Telegram</h3>
+            <p>Khách hàng điền thông tin đặt hàng hoặc đặt lịch, tin nhắn báo về điện thoại của bạn trong 1 giây. Không lo bỏ sót khách.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Không Phí Duy Trì Cồng Kềnh</h3>
+            <p>Với gói Tinh Gọn, web chạy hoàn toàn tĩnh, tải siêu tốc, không cần thuê database đắt đỏ mỗi tháng.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Chuẩn Responsive Mọi Thiết Bị</h3>
+            <p>Hiển thị hoàn hảo trên điện thoại, máy tính bảng và máy tính. Khách bấm nút gọi hoặc Zalo chỉ với 1 chạm.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Nâng Cấp Quản Trị Linh Hoạt</h3>
+            <p>Dễ dàng nâng cấp lên hệ thống có trang Admin, phân quyền nhân viên và theo dõi biểu đồ doanh thu theo yêu cầu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quy trình 4 bước -->
+    <section class="section process-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quy Trình Triển Khai Trong 24H</h2>
+          <p>Đơn giản - Rõ ràng - Bàn giao nhanh chóng</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 12px;">01</div>
+            <h3>Chọn Mẫu Ngành Nghề</h3>
+            <p>Khách bấm xem trải nghiệm thực tế các mẫu web có sẵn phù hợp với ngành kinh doanh của mình.</p>
+          </div>
+          <div class="feature-card" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 12px;">02</div>
+            <h3>Chọn Gói Combo</h3>
+            <p>Chọn Combo 1 (Bắn đơn Telegram) hoặc Combo 2 (Có quản trị doanh thu) + Tùy chọn thêm Chatbot.</p>
+          </div>
+          <div class="feature-card" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 12px;">03</div>
+            <h3>Thay Thông Tin & Đấu Nối</h3>
+            <p>Chúng tôi thay logo, ảnh, số điện thoại, giá sản phẩm và kết nối Telegram bắn đơn cho bạn.</p>
+          </div>
+          <div class="feature-card" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 12px;">04</div>
+            <h3>Bàn Giao & Hướng Dẫn</h3>
+            <p>Kiểm tra hoạt động trên điện thoại, bàn giao quyền sở hữu 100% và bảo hành trọn đời.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= TAB 2: KHO GIAO DIỆN CÁC NGÀNH NGHỀ ================= -->
+  <main id="tab-templates" class="page-view">
+    <div class="container" style="padding-top: 48px; padding-bottom: 80px;">
+      <div class="section-header">
+        <div class="pill-tag"><span>🎨</span> Trải Nghiệm Thực Tế 100%</div>
+        <h2>Kho Giao Diện Website Các Ngành Nghề</h2>
+        <p>Bấm vào từng ngành để xem giao diện mẫu thực tế trên cả giao diện Máy Tính & Điện Thoại</p>
+      </div>
+
+      <!-- Bộ lọc ngành nghề: Desktop hiện thanh pills rộng rãi, Mobile hiện Menu Dropdown 1-chạm tiện lợi -->
+      <div class="industry-filter-wrapper">
+        <!-- Desktop Tabs Bar -->
+        <div class="industry-tabs-bar" id="industryFilterTabs">
+          <!-- Render via JS -->
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="industry-mobile-menu" id="industryMobileMenu">
+          <div class="mobile-filter-header">
+            <span class="mobile-filter-label">📂 Chọn nhanh ngành của bạn:</span>
+            <span class="mobile-filter-count" id="mobileFilterCount">9 Mẫu Sẵn Sàng</span>
+          </div>
+          <div class="mobile-select-custom-wrap">
+            <select class="mobile-industry-select" id="mobileIndustrySelect" onchange="filterByIndustry(this.value)">
+              <!-- Render via JS -->
+            </select>
+            <span class="select-chevron">▼</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid các thẻ mẫu web -->
+      <div class="templates-grid" id="templatesContainer">
+        <!-- Render via JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= TAB 3: BẢNG GIÁ COMBO & CHATBOT ================= -->
+  <main id="tab-pricing" class="page-view">
+    <div class="container" style="padding-top: 48px; padding-bottom: 80px;">
+      <div class="section-header">
+        <div class="pill-tag"><span>💎</span> Chi Phí Minh Bạch - Không Phát Sinh</div>
+        <h2>3 Combo Bảng Giá Tiết Kiệm</h2>
+        <p>Lựa chọn gói phù hợp với quy mô kinh doanh của bạn. Dễ dàng nâng cấp khi phát triển.</p>
+      </div>
+
+      <!-- 3 Thẻ Combo -->
+      <div class="pricing-grid" id="pricingGrid">
+        <!-- Render via JS -->
+      </div>
+
+      <!-- Add-on Chatbot Banner -->
+      <div class="addon-box">
+        <div>
+          <div class="addon-badge">🤖 DỊCH VỤ MUA THÊM (ADD-ON)</div>
+          <h3>Trợ Lý Chatbot Tự Động Trực Web 24/7</h3>
+          <p>
+            Tự động chào khách, tư vấn giải đáp thắc mắc dịch vụ và xin số điện thoại khách hàng gửi về Telegram cho bạn ngay cả khi bạn đang ngủ. Tích hợp được vào bất kỳ gói Combo nào!
+          </p>
+          <ul class="addon-perks">
+            <li>✓ Hoạt động 24/7/365</li>
+            <li>✓ Bắn số điện thoại khách về điện thoại</li>
+            <li>✓ Không cần thuê nhân viên trực ca đêm</li>
+          </ul>
+        </div>
+        <div class="addon-pricing-card">
+          <div class="addon-price-row">
+            <span>Setup + Tháng đầu:</span>
+            <strong>500.000đ</strong>
+          </div>
+          <div class="addon-price-row">
+            <span>Phí duy trì từ tháng 2:</span>
+            <strong>300.000đ<small>/th</small></strong>
+          </div>
+          <button class="btn btn-primary" style="width: 100%;" onclick="openOrderModal('', '', true)">
+            <span>⚡</span> Đăng Ký Gắn Chatbot
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= MODAL XEM LIVE PREVIEW (CHUYỂN DESKTOP / MOBILE) ================= -->
+  <div class="preview-modal" id="previewModal">
+    <div class="preview-topbar">
+      <div class="preview-left">
+        <button class="btn btn-outline btn-sm" onclick="closePreviewModal()">
+          ← Thoát Xem Thử
+        </button>
+        <span class="preview-title" id="previewModalTitle">Mẫu Giao Diện</span>
+      </div>
+
+      <div class="device-switcher">
+        <button class="device-btn active" data-device="desktop" onclick="setDeviceView('desktop')">💻 Máy Tính</button>
+        <button class="device-btn" data-device="tablet" onclick="setDeviceView('tablet')">📱 Tablet</button>
+        <button class="device-btn" data-device="mobile" onclick="setDeviceView('mobile')">📲 Điện Thoại</button>
+      </div>
+
+      <div class="preview-actions-bar">
+        <button class="btn btn-outline btn-sm" id="btnOpenDirectTab" onclick="openDirectTemplateTab()" title="Mở trang web này ở tab độc lập">
+          <span>🔗</span> <span class="hide-on-mobile">Mở Tab Riêng</span>
+        </button>
+        <button class="btn btn-outline btn-sm" id="btnCopyDemoLink" onclick="copyDemoLink()" title="Sao chép link trực tiếp của mẫu này">
+          <span id="copyLinkIcon">📋</span> <span id="copyLinkText" class="hide-on-mobile">Copy Link</span>
+        </button>
+        <button class="btn btn-primary btn-sm" id="btnBuyThisTemplate">
+          <span>🛒</span> Báo Giá
+        </button>
+      </div>
+    </div>
+    <div class="preview-stage" id="previewStage">
+      <iframe id="previewIframe" src="about:blank" title="Live Preview"></iframe>
+    </div>
+  </div>
+
+  <!-- ================= MODAL FORM ĐẶT HÀNG / BÁO GIÁ NHANH ================= -->
+  <div class="order-modal-backdrop" id="orderModalBackdrop" onclick="if(event.target === this) closeOrderModal()">
+    <div class="order-modal">
+      <div class="order-modal-header">
+        <div>
+          <h3 style="font-size: 1.35rem; margin-bottom: 4px;">Đăng Ký Tư Vấn & Báo Giá</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Chúng tôi sẽ liên hệ lại qua Zalo/SĐT trong 5 phút</p>
+        </div>
+        <button class="close-modal-btn" onclick="closeOrderModal()">✕</button>
+      </div>
+
+      <!-- Form nhập đăng ký -->
+      <form id="orderForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Họ và Tên của bạn *</label>
+            <input type="text" class="form-control" id="custName" placeholder="Ví dụ: Nguyễn Văn A" required>
+          </div>
+          <div class="form-group">
+            <label>Số Điện Thoại / Zalo *</label>
+            <input type="tel" class="form-control" id="custPhone" placeholder="Ví dụ: 0912.345.678" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Mẫu Giao Diện Bạn Quan Tâm</label>
+          <select class="form-control" id="orderTemplateSelect" onchange="calculateTotalEstimate()">
+            <!-- Render via JS -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Chọn Gói Combo Mong Muốn</label>
+          <select class="form-control" id="orderComboSelect" onchange="calculateTotalEstimate()">
+            <option value="1500000" data-name="Combo 1: Tinh Gọn (1.500.000đ)">Combo 1: Tinh Gọn - Bắn đơn Telegram (1.500.000đ)</option>
+            <option value="3900000" data-name="Combo 2: Quản Trị Chuyên Nghiệp (3.900.000đ)" selected>Combo 2: Quản Trị Chuyên Nghiệp & Doanh Thu (3.900.000đ) ⭐</option>
+            <option value="7900000" data-name="Combo 3: Toàn Diện Tự Động (7.900.000đ)">Combo 3: Toàn Diện Tự Động Hóa QR (Từ 7.900.000đ)</option>
+          </select>
+        </div>
+
+        <!-- Add-on Chatbot Checkbox -->
+        <label class="addon-checkbox-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" id="orderAddonChatbot" onchange="calculateTotalEstimate()">
+            <div>
+              <strong class="addon-check-title">Gắn thêm Trợ Lý Chatbot 24/7</strong>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Tự động tư vấn & xin SĐT khách hàng</div>
+            </div>
+          </div>
+          <span class="addon-check-price">+500.000đ</span>
+        </label>
+
+        <!-- Bảng ước tính chi phí -->
+        <div class="estimate-box">
+          <div class="estimate-line">
+            <span id="estComboLabel">Combo đã chọn:</span>
+            <strong id="estComboVal">3.900.000đ</strong>
+          </div>
+          <div class="estimate-line" id="estChatbotRow" style="display: none;">
+            <span>Gói Chatbot (Setup + Tháng đầu):</span>
+            <strong style="color: var(--primary);">+500.000đ</strong>
+          </div>
+          <div class="estimate-total">
+            <span>Tổng Chi Phí Dự Kiến:</span>
+            <span style="color: var(--primary);" id="estTotalVal">3.900.000đ</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Ghi chú thêm về yêu cầu của bạn (nếu có)</label>
+          <textarea class="form-control" id="custNote" rows="2" placeholder="Ví dụ: Cần làm tông màu vàng đồng, đổi menu theo file..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
+          <span>🚀</span> Gửi Yêu Cầu Tư Vấn Ngay
+        </button>
+      </form>
+
+      <!-- Khung Hướng dẫn gửi vào Chatbot AI sau khi đăng ký thành công -->
+      <div id="orderSuccessBox" class="order-success-step" style="display: none;">
+        <div class="success-header-badge">
+          <div class="success-check-icon">✓</div>
+          <div>
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Tạo Đơn Thành Công!</h4>
+            <p style="font-size: 0.85rem; color: #475569;">Hệ thống đã mã hóa thông tin đơn hàng của bạn</p>
+          </div>
+        </div>
+
+        <div class="chatbot-instruction-card">
+          <div class="instruction-title">
+            <span>🤖</span> BƯỚC CUỐI: GỬI VÀO CHATBOT ĐỂ DUYỆT TỰ ĐỘNG
+          </div>
+          <p class="instruction-desc">
+            Trợ lý AI của chúng tôi đã cài đặt <strong>duyệt đơn tự động 24/7</strong>. Bạn chỉ cần nhấn nút bên dưới để sao chép thông tin và gửi vào Chatbot ở góc phải màn hình:
+          </p>
+
+          <!-- Hộp nội dung đơn hàng -->
+          <div class="order-text-box">
+            <pre id="orderCompiledText"></pre>
+            <button type="button" class="btn-copy-order" id="btnCopyOrder" onclick="copyOrderDetails()">
+              <span id="copyBtnIcon">📋</span> <span id="copyBtnText">Sao Chép Toàn Bộ Đơn Hàng</span>
+            </button>
+          </div>
+
+          <div class="action-guide-box">
+            <div class="guide-step">
+              <span class="step-num">1</span>
+              <span>Hệ thống đã <strong>chuẩn hóa số điện thoại sạch 10 số</strong> để Bot AI nhận diện chính xác 100%.</span>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">2</span>
+              <span>Bấm nút <strong>"Mở Chatbot AI & Tự Động Gửi Đơn"</strong> dưới đây: Khung chat sẽ mở và <strong>tự động bắn tin nhắn vào bot</strong> giúp bạn!</span>
+            </div>
+          </div>
+
+          <div class="modal-chatbot-actions">
+            <button type="button" class="btn btn-primary" style="width: 100%; padding: 14px;" onclick="openAndPasteChatbot()">
+              <span>⚡</span> Mở Chatbot AI & Tự Động Gửi Đơn Ngay
+            </button>
+            <button type="button" class="btn btn-outline" style="width: 100%; margin-top: 10px;" onclick="closeOrderModal()">
+              <span>✕</span> Đóng & Quay lại trang chủ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 PAT TECH (Phạm Anh Tuấn) - Tiên Phong Giải Pháp Website & Chốt Đơn Tự Động. All Rights Reserved.</p>
+      <p style="margin-top: 6px; font-size: 0.8rem;">Cam kết bảo hành trọn đời • Hỗ trợ kỹ thuật 24/7 • Hotline tiếp nhận (khi cần kết nối trực tiếp): 0387.637.982</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Widget Trợ Lý AI Chatbot PAT TECH -->
+  <script src="https://chat-bot-o68v.onrender.com/widget.js" data-biz-id="1000102246817363"></script>
 </body>
 </html>

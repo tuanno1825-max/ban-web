@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên Retreat &amp; Luxury Eco Resort - Tuyệt Tác Nghỉ Dưỡng Sinh Thái 5 Sao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Six Senses / Aman Resort — Sunlit Tropical Zen & Organic Sanctuary Palette */
+      --bg-dark: #F6F2EA;          /* Warm Linen Sand */
+      --bg-surface: #FFFDF9;       /* Sunlit Ivory */
+      --bg-sage: #EBF1EC;          /* Soft Sage Mist */
+      --bg-card: #FFFDF9;          /* Pure Sunlit Villa Card */
+      --bg-card-hover: #FAF6EE;    /* Warm Sand Hover */
+      --primary-emerald: #2D6A4F;  /* Tropical Emerald */
+      --emerald-light: #40916C;    /* Bamboo Leaf */
+      --emerald-dark: #1B4332;     /* Deep Forest Moss */
+      --emerald-gradient: linear-gradient(135deg, #2D6A4F 0%, #1B4332 100%);
+      --accent-gold: #B5653A;      /* Warm Terracotta */
+      --teak-wood: #C88A4B;        /* Sunlit Teak Wood */
+      --gold-light: #9E5027;       /* Deep Terracotta Text Accent */
+      --gold-gradient: linear-gradient(135deg, #C88A4B 0%, #B5653A 100%);
+      --text-white: #182820;       /* Deep Espresso / Forest Heading */
+      --text-cream: #26382E;       /* Forest Charcoal */
+      --text-body: #3D4F46;        /* Soft Moss Body Text */
+      --text-muted: #5C6E64;       /* Muted Botanical Gray-Green */
+      --border-linen: #DFD5C5;     /* Organic Woven Linen Border */
+      --border-emerald: rgba(27, 67, 50, 0.16);
+      --border-glass: rgba(181, 101, 58, 0.18);
+      --shadow-soft: 0 18px 45px rgba(24, 40, 32, 0.07);
+      --shadow-elevated: 0 28px 65px rgba(24, 40, 32, 0.12);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-dark);
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(235, 241, 236, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 88% 35%, rgba(200, 138, 75, 0.08) 0%, transparent 45%);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* TOP UTILITY HOSPITALITY BAR — DEEP FOREST SANCTUARY STRIP */
+    .top-bar {
+      background: var(--emerald-dark);
+      border-bottom: 1px solid rgba(200, 138, 75, 0.28);
+      padding: 9px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255, 253, 249, 0.86);
+      z-index: 100;
+      position: relative;
+      letter-spacing: 0.2px;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .top-badge-retreat {
+      background: rgba(200, 138, 75, 0.22);
+      border: 1px solid rgba(200, 138, 75, 0.55);
+      color: #F7E5CE;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .top-bar-left strong {
+      color: #F5CBA7;
+      font-weight: 700;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .lang-pill {
+      background: rgba(255, 253, 249, 0.1);
+      border: 1px solid rgba(255, 253, 249, 0.2);
+      padding: 3px 12px;
+      border-radius: 999px;
+      color: #FFFDF9;
+      font-size: 0.75rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* MAIN STICKY NAVBAR — SUNLIT LINEN PAVILION */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-linen);
+      padding: 16px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90;
+      gap: 24px;
+      box-shadow: 0 4px 24px rgba(24, 40, 32, 0.04);
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-emblem {
+      width: 46px;
+      height: 46px;
+      border-radius: 24px 24px 8px 8px;
+      background: var(--emerald-gradient);
+      border: 1px solid var(--teak-wood);
+      display: grid;
+      place-items: center;
+      color: #FFFDF9;
+      font-size: 1.35rem;
+      box-shadow: 0 6px 18px rgba(27, 67, 50, 0.22);
+    }
+    .brand-text h1 {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--text-white);
+      line-height: 1.05;
+    }
+    .brand-text p {
+      font-size: 0.66rem;
+      letter-spacing: 2.8px;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-cream);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.25s;
+      white-space: nowrap;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--accent-gold);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-gold);
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* BESPOKE RESORT BUTTONS */
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #FFFDF9;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 253, 249, 0.25);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      box-shadow: 0 8px 22px rgba(181, 101, 58, 0.28);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+      box-shadow: 0 10px 26px rgba(27, 67, 50, 0.32);
+    }
+
+    .btn-emerald {
+      background: var(--emerald-gradient);
+      color: #FFFDF9;
+      padding: 11px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(27, 67, 50, 0.25);
+      transition: all 0.25s;
+    }
+    .btn-emerald:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(27, 67, 50, 0.38);
+    }
+
+    /* HERO SECTION — SUNLIT TROPICAL ARCH SANCTUARY PAVILION */
+    .hero {
+      position: relative;
+      padding: 64px 48px 110px;
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-sanctuary-showcase {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 56px;
+      align-items: center;
+      background: linear-gradient(135deg, #FFFDF9 0%, #F6F2EA 60%, #EBF1EC 100%);
+      border: 1px solid var(--border-linen);
+      border-radius: 48px 16px 48px 16px;
+      padding: 56px 60px 96px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-sanctuary-showcase::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 138, 75, 0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-editorial-col {
+      text-align: left;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-sage);
+      border: 1px solid rgba(45, 106, 79, 0.28);
+      color: var(--emerald-dark);
+      padding: 7px 18px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.7rem, 4.6vw, 4.35rem);
+      line-height: 1.08;
+      color: var(--text-white);
+      font-weight: 600;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+    .hero-title span {
+      display: block;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent-gold);
+      margin-top: 4px;
+    }
+    .hero-desc {
+      color: var(--text-body);
+      font-size: 1.04rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 580px;
+    }
+    .hero-zen-metrics {
+      display: flex;
+      gap: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-linen);
+    }
+    .hero-zen-metric strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--emerald-dark);
+      line-height: 1.1;
+    }
+    .hero-zen-metric span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+    }
+
+    /* TROPICAL ARCH HERO PORTAL */
+    .hero-arch-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+    }
+    .hero-arch-frame {
+      width: 100%;
+      max-width: 470px;
+      height: 510px;
+      border-radius: 240px 240px 24px 24px;
+      padding: 12px;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--teak-wood);
+      box-shadow: 0 26px 55px rgba(24, 40, 32, 0.16);
+      position: relative;
+    }
+    .hero-arch-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 228px 228px 16px 16px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-arch-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 0.8s ease;
+    }
+    .hero-arch-frame:hover .hero-arch-inner img {
+      transform: scale(1.07);
+    }
+    .hero-sanctuary-seal {
+      position: absolute;
+      bottom: 24px;
+      left: -24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-linen);
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 18px;
+      padding: 14px 20px;
+      box-shadow: 0 14px 32px rgba(24, 40, 32, 0.12);
+      text-align: left;
+    }
+    .hero-sanctuary-seal strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-white);
+    }
+    .hero-sanctuary-seal span {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    /* FLOATING RESORT CONCIERGE BAR (SUNLIT PILL DOCK) */
+    .booking-filter-card {
+      width: 94%;
+      max-width: 1180px;
+      background: #FFFDF9;
+      border: 1px solid #DFD5C5;
+      border-radius: 999px;
+      padding: 18px 28px 18px 36px;
+      box-shadow: 0 24px 55px rgba(24, 40, 32, 0.12), 0 0 0 8px rgba(255, 253, 249, 0.65);
+      position: relative;
+      z-index: 30;
+      margin-top: -52px;
+    }
+    .filter-grid-resort {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr 1.15fr 1.4fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+    .filter-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: left;
+      padding-right: 16px;
+      border-right: 1px solid #EAE2D3;
+    }
+    .filter-field:nth-child(4) {
+      border-right: none;
+      padding-right: 4px;
+    }
+    .filter-field label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .filter-field input,
+    .filter-field select {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 6px 4px;
+      border-radius: 8px;
+      color: var(--text-white);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-field input:focus,
+    .filter-field select:focus {
+      background: var(--bg-dark);
+      border-color: var(--teak-wood);
+      padding-left: 8px;
+    }
+
+    /* 4 RESORT HIGHLIGHTS — ORGANIC BAMBOO & SAGE PAVILIONS */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1280px;
+      margin: 20px auto 30px;
+      padding: 0 48px;
+    }
+    .highlight-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-linen);
+      border-radius: 32px 8px 32px 8px;
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .highlight-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--emerald-dark), var(--teak-wood));
+      opacity: 0.7;
+    }
+    .highlight-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--teak-wood);
+      background: #FFFDF9;
+      box-shadow: var(--shadow-elevated);
+    }
+    .highlight-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 24px 24px 6px 6px;
+      background: var(--bg-sage);
+      border: 1px solid rgba(45, 106, 79, 0.2);
+      display: grid;
+      place-items: center;
+      font-size: 1.55rem;
+      margin-bottom: 16px;
+    }
+    .highlight-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+    .highlight-card p {
+      font-size: 0.86rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* SECTION TITLE STYLES */
+    .section-wrap {
+      padding: 85px 48px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+    .section-tag {
+      color: var(--accent-gold);
+      background: rgba(200, 138, 75, 0.12);
+      border: 1px solid rgba(181, 101, 58, 0.25);
+      padding: 5px 16px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3.6vw, 3.1rem);
+      font-weight: 600;
+      color: var(--text-white);
+      margin-bottom: 14px;
+      line-height: 1.18;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* SECTION 1: HẠNG PHÒNG & BIỆT THỰ (ARCHED SANCTUARY VILLA CARDS) */
+    .room-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .room-tab-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-linen);
+      color: var(--text-cream);
+      padding: 11px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.86rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 12px rgba(24, 40, 32, 0.04);
+    }
+    .room-tab-btn:hover,
+    .room-tab-btn.active {
+      background: var(--emerald-gradient);
+      color: #FFFDF9;
+      border-color: var(--emerald-dark);
+      box-shadow: 0 8px 20px rgba(27, 67, 50, 0.22);
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+    }
+    .room-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-linen);
+      border-radius: 150px 150px 24px 24px;
+      padding: 12px 12px 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: var(--shadow-soft);
+    }
+    .room-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--teak-wood);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-elevated);
+    }
+    .room-img-wrap {
+      width: 100%;
+      height: 245px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 140px 140px 16px 16px;
+      border: 1px solid rgba(200, 138, 75, 0.3);
+    }
+    .room-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .room-card:hover .room-img-wrap img {
+      transform: scale(1.08);
+    }
+    .room-badge-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 253, 249, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--teak-wood);
+      color: var(--emerald-dark);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(24, 40, 32, 0.12);
+    }
+    .room-body {
+      padding: 18px 12px 0;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .room-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .room-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--text-white);
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .room-desc {
+      font-size: 0.83rem;
+      color: var(--text-body);
+      line-height: 1.58;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .room-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+      background: var(--bg-dark);
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(223, 213, 197, 0.7);
+    }
+    .room-perks li {
+      font-size: 0.77rem;
+      color: var(--text-cream);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+    .room-perks li span {
+      color: var(--primary-emerald);
+      font-weight: 800;
+    }
+    .room-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px dashed var(--border-linen);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+    .room-price-box span:first-child {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      display: block;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .room-price-box span:last-child {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--emerald-dark);
+    }
+
+    /* SECTION 2: 360° SANCTUARY VIEWER (PANORAMIC NATURAL LINEN & TEAK WINDOW) */
+    .tour-section {
+      background: linear-gradient(180deg, var(--bg-sage) 0%, #E2ECE4 100%);
+      border-top: 1px solid #CFDFD3;
+      border-bottom: 1px solid #CFDFD3;
+      padding: 96px 48px;
+      position: relative;
+    }
+    .tour-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 54px;
+      align-items: center;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-linen);
+      border-radius: 40px 16px 40px 16px;
+      padding: 48px;
+      box-shadow: var(--shadow-elevated);
+    }
+    .tour-heading {
+      font-family: var(--font-serif);
+      font-size: 2.55rem;
+      color: var(--text-white);
+      margin-bottom: 14px;
+      line-height: 1.18;
+      font-weight: 600;
+    }
+    .tour-heading span {
+      color: var(--accent-gold);
+      font-style: italic;
+    }
+    .tour-view-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .tour-opt-btn {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-linen);
+      border-radius: 20px 6px 20px 6px;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-align: left;
+    }
+    .tour-opt-btn:hover,
+    .tour-opt-btn.active {
+      border-color: var(--accent-gold);
+      background: #FFFDF9;
+      box-shadow: 0 10px 24px rgba(181, 101, 58, 0.12);
+      transform: translateX(6px);
+    }
+    .tour-opt-btn h5 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 2px;
+    }
+    .tour-opt-btn p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .tour-display-box {
+      position: relative;
+      width: 100%;
+      height: 470px;
+      border-radius: 180px 180px 24px 24px;
+      padding: 12px;
+      background: var(--bg-dark);
+      border: 2px solid var(--teak-wood);
+      box-shadow: var(--shadow-elevated);
+    }
+    .tour-display-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 168px 168px 16px 16px;
+      transition: all 0.5s ease;
+    }
+    .tour-floating-tag {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      background: rgba(255, 253, 249, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--teak-wood);
+      border-left: 5px solid var(--emerald-dark);
+      padding: 14px 22px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(24, 40, 32, 0.15);
+    }
+    .tour-floating-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 2px;
+    }
+    .tour-floating-desc {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    /* SECTION 3: PRIVATE BUTLER ITINERARY PLANNER (VACATION CALCULATOR) */
+    .calculator-section {
+      padding: 90px 48px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .calculator-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-linen);
+      border-radius: 40px 12px 40px 12px;
+      padding: 52px 54px;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+      overflow: hidden;
+    }
+    .calculator-card::before {
+      content: 'PRIVATE BUTLER FOLIO • AN NHIÊN SANCTUARY';
+      position: absolute;
+      top: 18px;
+      right: 32px;
+      font-size: 0.68rem;
+      letter-spacing: 2.5px;
+      color: var(--teak-wood);
+      font-weight: 700;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 44px;
+      margin-top: 30px;
+      align-items: center;
+    }
+    .calc-field {
+      margin-bottom: 22px;
+    }
+    .calc-field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--emerald-dark);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .calc-field select {
+      width: 100%;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-linen);
+      padding: 14px 16px;
+      border-radius: 14px;
+      color: var(--text-white);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .calc-field select:focus {
+      border-color: var(--accent-gold);
+    }
+    .calc-result-box {
+      background: linear-gradient(180deg, #F6F2EA 0%, #EFE8D8 100%);
+      border: 2px dashed var(--teak-wood);
+      border-radius: 120px 120px 24px 24px;
+      padding: 46px 32px 32px;
+      text-align: center;
+      position: relative;
+      box-shadow: inset 0 0 0 6px rgba(255, 253, 249, 0.6);
+    }
+    .calc-final-price {
+      font-family: var(--font-serif);
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--emerald-dark);
+      margin: 8px 0;
+      line-height: 1.1;
+    }
+
+    /* SECTION 4: FORM ĐẶT PHÒNG VIP (SANCTUARY RESERVATION CONCIERGE) */
+    .booking-section {
+      padding: 70px 48px 100px;
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .booking-privilege-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .booking-privilege-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--text-cream);
+      background: var(--bg-surface);
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border-linen);
+    }
+    .booking-privilege-item span {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--bg-sage);
+      color: var(--primary-emerald);
+      display: inline-grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+    .booking-hotline-card {
+      background: var(--emerald-gradient);
+      color: #FFFDF9;
+      border: 1px solid var(--teak-wood);
+      border-radius: 24px 8px 24px 8px;
+      padding: 22px 26px;
+      box-shadow: 0 16px 35px rgba(27, 67, 50, 0.2);
+    }
+    .booking-form-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-linen);
+      border-top: 5px solid var(--accent-gold);
+      border-radius: 32px 12px 32px 12px;
+      padding: 40px;
+      box-shadow: var(--shadow-elevated);
+    }
+    .form-group-hotel {
+      margin-bottom: 18px;
+    }
+    .form-group-hotel label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--emerald-dark);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .form-group-hotel input,
+    .form-group-hotel select {
+      width: 100%;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-linen);
+      padding: 13px 16px;
+      border-radius: 12px;
+      color: var(--text-white);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-group-hotel input:focus,
+    .form-group-hotel select:focus {
+      background: #FFFDF9;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 3px rgba(181, 101, 58, 0.12);
+    }
+
+    /* FOOTER — DEEP FOREST BOTANICAL SANCTUARY */
+    .footer {
+      background: #14261D;
+      color: rgba(255, 253, 249, 0.82);
+      border-top: 3px solid var(--teak-wood);
+      padding: 76px 48px 34px;
+    }
+    .footer-grid {
+      max-width: 1240px;
+      margin: 0 auto 50px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: #F5CBA7;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: rgba(255, 253, 249, 0.72);
+      text-decoration: none;
+      font-size: 0.86rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #F5CBA7;
+    }
+    .footer-bottom {
+      max-width: 1240px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 253, 249, 0.12);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: rgba(255, 253, 249, 0.6);
+    }
+
+    /* MODAL TICKET — SUNLIT LINEN VOUCHER */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 40, 32, 0.65);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: grid;
+    }
+    .ticket-modal {
+      background: var(--bg-surface);
+      border: 2px solid var(--teak-wood);
+      border-radius: 36px 12px 36px 12px;
+      max-width: 520px;
+      width: 100%;
+      padding: 40px 36px;
+      text-align: center;
+      box-shadow: 0 30px 70px rgba(24, 40, 32, 0.35);
+      animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-sanctuary-showcase {
+        grid-template-columns: 1fr;
+        padding: 40px 32px 72px;
+      }
+      .booking-filter-card {
+        border-radius: 28px;
+        padding: 24px;
+      }
+      .filter-grid-resort { grid-template-columns: 1fr 1fr; }
+      .filter-field { border-right: none; border-bottom: 1px solid #EAE2D3; padding-bottom: 10px; }
+      .highlights-grid, .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+      .tour-container, .calc-grid, .booking-section { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .navbar { padding: 12px 16px; gap: 10px; }
+      .nav-links { display: none; }
+      .logo-emblem { width: 38px; height: 38px; font-size: 1.1rem; }
+      .brand-text h1 { font-size: 1.2rem; letter-spacing: 1px; }
+      .brand-text p { display: none; }
+      .navbar .btn-gold { padding: 8px 14px; font-size: 0.76rem; }
+      .hero { padding: 20px 16px 48px; }
+      .hero-sanctuary-showcase { padding: 24px 16px 56px; border-radius: 28px 12px 28px 12px; gap: 28px; }
+      .hero-zen-metrics { flex-wrap: wrap; gap: 16px; }
+      .hero-arch-frame { height: 340px; }
+      .hero-sanctuary-seal { left: 8px; right: 8px; bottom: 12px; padding: 10px 14px; }
+      .booking-filter-card { width: 100%; padding: 20px 16px; border-radius: 20px; margin-top: -32px; }
+      .filter-grid-resort { grid-template-columns: 1fr; }
+      .filter-grid-resort .btn-gold { width: 100%; justify-content: center; }
+      .highlights-grid, .rooms-grid { grid-template-columns: 1fr; padding: 0 16px; }
+      .section-wrap, .tour-section, .calculator-section, .booking-section, .footer { padding: 48px 16px; }
+      .tour-container, .calculator-card, .booking-form-card, .ticket-modal { padding: 24px 16px; }
+      .calculator-card::before { position: static; display: block; margin-bottom: 10px; }
+      .tour-display-box { height: 340px; }
+      .tour-floating-tag { left: 12px; right: 12px; bottom: 12px; padding: 10px 14px; }
+      .booking-form-card form > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP UTILITY BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span class="top-badge-retreat">Resort Sinh Thái 5 Sao</span>
+      <span>Miễn phí đưa đón sân bay bằng Limousine cho kỳ nghỉ từ <strong>2 đêm</strong>!</span>
+    </div>
+    <div class="top-bar-right">
+      <span>📞 Hotline Lễ Tân: <strong style="color: #F5CBA7;">1800 8926</strong> (24/7)</span>
+      <div class="lang-pill">
+        <span>🇻🇳 VN</span> | <span>🇬🇧 EN</span>
+      </div>
+      <a href="#booking" class="btn-gold" style="padding: 4px 14px; font-size: 0.76rem;">Đặt Phòng</a>
+    </div>
+  </div>
+
+  <!-- MAIN STICKY NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="brand-logo">
+      <div class="logo-emblem">🌿</div>
+      <div class="brand-text">
+        <h1>AN NHIÊN RETREAT</h1>
+        <p>Luxury Eco Resort &amp; Villas</p>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Trang Chủ</a></li>
+      <li><a href="#rooms">Hạng Phòng &amp; Villa</a></li>
+      <li><a href="#tour">Khám Phá 360°</a></li>
+      <li><a href="#calculator">Dự Toán Kỳ Nghỉ</a></li>
+      <li><a href="#booking">Đặt Phòng Trực Tuyến</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="#booking" class="btn-gold">
+        <span>🛎️</span>
+        <span>Kiểm Tra Phòng Trống</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION — SUNLIT TROPICAL ZEN ARCH SHOWCASE -->
+  <section class="hero" id="hero">
+    <div class="hero-sanctuary-showcase">
+      <div class="hero-editorial-col">
+        <div class="hero-eyebrow">
+          <span>✨</span>
+          <span>Tuyệt Tác Nghỉ Dưỡng Tách Biệt Giữa Thiên Nhiên</span>
+        </div>
+        <h2 class="hero-title">
+          Nơi Thân Tâm Tìm Về
+          <span>Chốn Bình Yên Nguyên Bản</span>
+        </h2>
+        <p class="hero-desc">
+          Đắm mình trong làn nước ấm của hồ bơi vô cực hướng biển, lắng nghe tiếng thông reo giữa thung lũng sương mai và tận hưởng dịch vụ quản gia phục vụ riêng chuẩn 5 sao quốc tế.
+        </p>
+        <div class="hero-zen-metrics">
+          <div class="hero-zen-metric">
+            <strong>42 Ha</strong>
+            <span>Rừng Thông &amp; Bờ Biển Riêng</span>
+          </div>
+          <div class="hero-zen-metric">
+            <strong>100%</strong>
+            <span>Biệt Thự Kiến Trúc Sinh Thái</span>
+          </div>
+          <div class="hero-zen-metric">
+            <strong>24/7</strong>
+            <span>Quản Gia Riêng Tận Tâm</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-arch-col">
+        <div class="hero-arch-frame">
+          <div class="hero-arch-inner">
+            <img src="image/hero-resort.jpg" alt="An Nhiên Retreat Sanctuary">
+          </div>
+          <div class="hero-sanctuary-seal">
+            <span>Six Senses Inspired Sanctuary</span>
+            <strong>Vịnh Biển &amp; Đồi Thông Nguyên Sinh</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMART FLOATING BOOKING FILTER BAR (SUNLIT CONCIERGE DOCK) -->
+    <div class="booking-filter-card">
+      <div class="filter-grid-resort">
+        <div class="filter-field">
+          <label>📅 Ngày Nhận Phòng</label>
+          <input type="date" id="checkInDate" required>
+        </div>
+
+        <div class="filter-field">
+          <label>📅 Ngày Trả Phòng</label>
+          <input type="date" id="checkOutDate" required>
+        </div>
+
+        <div class="filter-field">
+          <label>👥 Số Lượng Khách</label>
+          <select id="guestCount">
+            <option value="2">2 Người Lớn (Cặp đôi)</option>
+            <option value="4">Gia đình (4 Người lớn + Trẻ em)</option>
+            <option value="6">Nhóm bạn (Villa 6 - 8 Người)</option>
+          </select>
+        </div>
+
+        <div class="filter-field">
+          <label>🏡 Hạng Phòng Ưa Thích</label>
+          <select id="preferredRoom">
+            <option value="all">Tất cả hạng phòng &amp; Villa</option>
+            <option value="pool-villa">Oceanfront Pool Villa (Hồ bơi riêng)</option>
+            <option value="bungalow">Pine Forest Valley Bungalow (Đồi thông)</option>
+            <option value="suite">Grand Panorama Ocean Suite (View biển 180°)</option>
+            <option value="glamping">Luxury Safari Glamping Tent (Lều sang trọng)</option>
+          </select>
+        </div>
+
+        <button class="btn-gold" style="height: 52px; padding: 0 28px;" onclick="applyBookingSearch()">
+          <span>🔍 Tìm Phòng</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 RESORT HIGHLIGHTS -->
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-icon">🏊‍♂️</div>
+      <h4>Hồ Bơi Vô Cực Nước Ấm</h4>
+      <p>Hồ bơi tràn bờ nước ấm bốn mùa hướng thẳng ra biển, ngắm trọn hoàng hôn tráng lệ.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-icon">♨️</div>
+      <h4>Suối Khoáng Nóng Onsen</h4>
+      <p>Khu tắm khoáng Nhật Bản ngâm lá thảo mộc tự nhiên phục hồi năng lượng và thải độc.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-icon">🥗</div>
+      <h4>Ẩm Thực Farm-To-Table</h4>
+      <p>Rau củ hữu cơ thu hoạch trong ngày từ nông trại riêng, chế biến bởi bếp trưởng 5 sao.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-icon">🛶</div>
+      <h4>Trải Nghiệm Đặc Quyền</h4>
+      <p>Chèo SUP đón bình minh, lớp Yoga sớm giữa rừng thông và tiệc BBQ lửa trại lãng mạn.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 1: BỘ SƯU TẬP HẠNG PHÒNG & BIỆT THỰ -->
+  <section class="section-wrap" id="rooms">
+    <div class="section-header">
+      <div class="section-tag">Không Gian Lưu Trú</div>
+      <h3 class="section-heading">Tuyệt Tác Biệt Thự &amp; Phòng Nghỉ Biệt Lập</h3>
+      <p class="section-desc">Mỗi căn phòng là một tác phẩm kiến trúc hòa quyện cùng thiên nhiên, mang lại sự riêng tư tuyệt đối</p>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="room-filter-tabs">
+      <button class="room-tab-btn active" onclick="filterRooms('all', this)">Tất Cả Hạng Phòng</button>
+      <button class="room-tab-btn" onclick="filterRooms('pool-villa', this)">Villa Hồ Bơi Riêng</button>
+      <button class="room-tab-btn" onclick="filterRooms('bungalow', this)">Bungalow Đồi Thông</button>
+      <button class="room-tab-btn" onclick="filterRooms('suite', this)">Suite Hướng Biển 180°</button>
+      <button class="room-tab-btn" onclick="filterRooms('glamping', this)">Glamping Sang Trọng</button>
+    </div>
+
+    <div class="rooms-grid">
+      <!-- PHÒNG 1: POOL VILLA -->
+      <div class="room-card" data-cat="pool-villa">
+        <div class="room-img-wrap">
+          <span class="room-badge-tag">Hồ Bơi Riêng</span>
+          <img src="image/villa-pool.jpg" alt="Oceanfront Pool Villa">
+        </div>
+        <div class="room-body">
+          <div class="room-specs">
+            <span>📐 180m²</span>
+            <span>👥 4 - 6 Khách</span>
+            <span>🌊 View Trực Diện Biển</span>
+          </div>
+          <h4 class="room-title">Oceanfront Pool Villa</h4>
+          <p class="room-desc">Biệt thự 2 phòng ngủ sát biển sở hữu hồ bơi vô cực riêng biệt, sân tắm nắng rộng rãi và bồn tắm đá lộ thiên giữa vườn nhiệt đới.</p>
+          <ul class="room-perks">
+            <li><span>✔</span> Miễn phí Bữa sáng nổi (Floating Breakfast)</li>
+            <li><span>✔</span> Quản gia riêng 24/7 &amp; Xe điện đưa đón</li>
+            <li><span>✔</span> Tặng 01 chai vang cao cấp khi nhận phòng</li>
+          </ul>
+          <div class="room-bottom">
+            <div class="room-price-box">
+              <span>Giá từ / đêm</span>
+              <span>6.800.000đ</span>
+            </div>
+            <button class="btn-gold" style="padding: 9px 18px; font-size: 0.8rem;" onclick="bookRoomDirect('Oceanfront Pool Villa (Hồ bơi riêng)', '6.800.000đ')">Đặt Phòng</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHÒNG 2: BUNGALOW ĐỒI THÔNG -->
+      <div class="room-card" data-cat="bungalow">
+        <div class="room-img-wrap">
+          <span class="room-badge-tag">Thung Lũng Mây</span>
+          <img src="image/bungalow-forest.jpg" alt="Pine Forest Valley Bungalow">
+        </div>
+        <div class="room-body">
+          <div class="room-specs">
+            <span>📐 75m²</span>
+            <span>👥 2 Khách</span>
+            <span>🌲 View Rừng Thông</span>
+          </div>
+          <h4 class="room-title">Pine Forest Bungalow</h4>
+          <p class="room-desc">Bungalow dựng từ gỗ mộc tự nhiên nép mình dưới tán thông cổ thụ, có ban công uống trà ngắm sương mù và lò sưởi ấm áp.</p>
+          <ul class="room-perks">
+            <li><span>✔</span> Bồn tắm gỗ Hinoki thơm ngát ngắm rừng</li>
+            <li><span>✔</span> Miễn phí tiệc trà chiều hoàng hôn</li>
+            <li><span>✔</span> Xe đưa đón nội khu không giới hạn</li>
+          </ul>
+          <div class="room-bottom">
+            <div class="room-price-box">
+              <span>Giá từ / đêm</span>
+              <span>2.900.000đ</span>
+            </div>
+            <button class="btn-gold" style="padding: 9px 18px; font-size: 0.8rem;" onclick="bookRoomDirect('Pine Forest Bungalow (Đồi thông)', '2.900.000đ')">Đặt Phòng</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHÒNG 3: GRAND SUITE VIEW BIỂN -->
+      <div class="room-card" data-cat="suite">
+        <div class="room-img-wrap">
+          <span class="room-badge-tag">Panorama 180°</span>
+          <img src="image/suite-bedroom.jpg" alt="Grand Panorama Ocean Suite">
+        </div>
+        <div class="room-body">
+          <div class="room-specs">
+            <span>📐 95m²</span>
+            <span>👥 2 - 3 Khách</span>
+            <span>🌅 View Bình Minh</span>
+          </div>
+          <h4 class="room-title">Grand Ocean Suite</h4>
+          <p class="room-desc">Cửa kính chạm trần ôm trọn đại dương xanh ngắt, giường ngủ lông vũ King-size và bồn sục Jacuzzi đôi đặt ngoài ban công kính.</p>
+          <ul class="room-perks">
+            <li><span>✔</span> Buffet sáng quốc tế thượng hạng</li>
+            <li><span>✔</span> Miễn phí 60 phút massage thảo mộc</li>
+            <li><span>✔</span> Check-in sớm &amp; Check-out trễ tùy phòng trống</li>
+          </ul>
+          <div class="room-bottom">
+            <div class="room-price-box">
+              <span>Giá từ / đêm</span>
+              <span>4.200.000đ</span>
+            </div>
+            <button class="btn-gold" style="padding: 9px 18px; font-size: 0.8rem;" onclick="bookRoomDirect('Grand Ocean Suite (View biển 180°)', '4.200.000đ')">Đặt Phòng</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHÒNG 4: GLAMPING LỀU SANG TRỌNG -->
+      <div class="room-card" data-cat="glamping">
+        <div class="room-img-wrap">
+          <span class="room-badge-tag">Trải Nghiệm Độc Đáo</span>
+          <img src="image/glamping-tent.jpg" alt="Luxury Safari Glamping Tent">
+        </div>
+        <div class="room-body">
+          <div class="room-specs">
+            <span>📐 60m²</span>
+            <span>👥 2 Khách</span>
+            <span>⛺ Khu Vực Bãi Cỏ Riêng</span>
+          </div>
+          <h4 class="room-title">Safari Glamping Tent</h4>
+          <p class="room-desc">Lều du mục phong cách hoàng gia đầy đủ điều hòa hai chiều, nệm cao cấp, khu đốt lửa trại ngắm sao và rạp chiếu phim ngoài trời.</p>
+          <ul class="room-perks">
+            <li><span>✔</span> Tặng set nướng BBQ thịt cừu &amp; hải sản</li>
+            <li><span>✔</span> Trải nghiệm ngắm kính viễn vọng thiên văn</li>
+            <li><span>✔</span> Miễn phí vé chèo thuyền Kayak</li>
+          </ul>
+          <div class="room-bottom">
+            <div class="room-price-box">
+              <span>Giá từ / đêm</span>
+              <span>1.850.000đ</span>
+            </div>
+            <button class="btn-gold" style="padding: 9px 18px; font-size: 0.8rem;" onclick="bookRoomDirect('Safari Glamping Tent (Lều sang trọng)', '1.850.000đ')">Đặt Phòng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: TOUR THỰC TẾ ẢO ĐỔI GÓC NHÌN (INTERACTIVE TOUR) -->
+  <section class="tour-section" id="tour">
+    <div class="tour-container">
+      <div>
+        <div class="section-tag">Trải Nghiệm Thị Giác</div>
+        <h3 class="tour-heading">
+          Khám Phá Các Góc Nghỉ Dưỡng
+          <span>Nguyên Bản &amp; Độc Bản</span>
+        </h3>
+        <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.7; margin-bottom: 10px;">
+          Bấm chọn từng góc không gian bên dưới để chiêm ngưỡng vẻ đẹp tinh tế của khu nghỉ dưỡng trước khi đặt chân tới:
+        </p>
+
+        <div class="tour-view-options">
+          <div class="tour-opt-btn active" onclick="switchTourView('pool', this)">
+            <span style="font-size: 1.6rem;">🏊‍♂️</span>
+            <div>
+              <h5>Hồ Bơi Vô Cực Nước Ấm &amp; Bữa Sáng Nổi</h5>
+              <p>Khung cảnh lãng mạn bậc nhất lúc bình minh trên biển</p>
+            </div>
+          </div>
+
+          <div class="tour-opt-btn" onclick="switchTourView('bedroom', this)">
+            <span style="font-size: 1.6rem;">🛏️</span>
+            <div>
+              <h5>Phòng Ngủ Master Kính Panorama 180°</h5>
+              <p>Thức giấc giữa thảm mây trắng và đại dương bao la</p>
+            </div>
+          </div>
+
+          <div class="tour-opt-btn" onclick="switchTourView('onsen', this)">
+            <span style="font-size: 1.6rem;">♨️</span>
+            <div>
+              <h5>Khu Tắm Khoáng Nóng Onsen Nhật Bản</h5>
+              <p>Ngâm mình thư giãn phục hồi trong làn nước giàu khoáng chất</p>
+            </div>
+          </div>
+
+          <div class="tour-opt-btn" onclick="switchTourView('dining', this)">
+            <span style="font-size: 1.6rem;">🕯️</span>
+            <div>
+              <h5>Bữa Tối Lãng Mạn Bên Bờ Biển</h5>
+              <p>Thưởng thức hải sản tươi sống dưới ánh nến và tiếng sóng vỗ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-display-box">
+        <img src="image/floating-breakfast.jpg" id="tourMainImg" alt="Góc nghỉ dưỡng An Nhiên">
+        <div class="tour-floating-tag">
+          <p id="tourTagTitle" class="tour-floating-title">Hồ Bơi Vô Cực &amp; Bữa Sáng Nổi</p>
+          <p id="tourTagDesc" class="tour-floating-desc">Góc check-in được yêu thích nhất 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: BẢNG TÍNH DỰ TOÁN KỲ NGHỈ REALTIME (PRIVATE BUTLER ITINERARY PLANNER) -->
+  <section class="calculator-section" id="calculator">
+    <div class="calculator-card">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <div class="section-tag">Công Cụ Ước Tính Chi Phí</div>
+        <h3 class="section-heading" style="font-size: 2.35rem;">Dự Toán Chi Phí Kỳ Nghỉ Trọn Gói</h3>
+        <p class="section-desc">Minh bạch giá phòng &amp; dịch vụ - Tự động áp dụng chiết khấu ưu đãi đặt trước</p>
+      </div>
+
+      <div class="calc-grid">
+        <div>
+          <div class="calc-field">
+            <label>1. Chọn Hạng Phòng / Biệt Thự</label>
+            <select id="calcRoomType" onchange="calculateVacation()">
+              <option value="6800000">Oceanfront Pool Villa (Hồ bơi riêng) - 6.800.000đ/đêm</option>
+              <option value="2900000" selected>Pine Forest Valley Bungalow - 2.900.000đ/đêm</option>
+              <option value="4200000">Grand Panorama Ocean Suite - 4.200.000đ/đêm</option>
+              <option value="1850000">Safari Glamping Tent - 1.850.000đ/đêm</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label>2. Số Đêm Lưu Trú Dự Kiến</label>
+            <select id="calcNights" onchange="calculateVacation()">
+              <option value="1">1 Đêm (Nghỉ ngơi cuối tuần)</option>
+              <option value="2" selected>2 Đêm (Trọn vẹn 3 ngày 2 đêm - Giảm 15%)</option>
+              <option value="3">3 Đêm (Kỳ nghỉ thư giãn sâu - Giảm 20%)</option>
+              <option value="5">5 Đêm (Kỳ nghỉ dài ngày thượng lưu - Giảm 30%)</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label>3. Gói Dịch Vụ Gia Tăng</label>
+            <select id="calcService" onchange="calculateVacation()">
+              <option value="0">Tiêu chuẩn: Bữa sáng buffet + Đưa đón sân bay (Miễn phí)</option>
+              <option value="800000">Trọn gói ăn 3 bữa cao cấp Farm-to-Table (+800.000đ/ngày)</option>
+              <option value="1200000">Trọn gói ăn 3 bữa + 01 Liệu trình Onsen Spa Thảo Mộc (+1.200.000đ/ngày)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-result-box">
+          <div style="font-size: 0.76rem; color: var(--accent-gold); text-transform: uppercase; font-weight: 800; letter-spacing: 1.4px;">Tổng Chi Phí Dự Kiến</div>
+          <div class="calc-final-price" id="resTotalPrice">4.930.000đ</div>
+          <div style="font-size: 0.86rem; color: var(--primary-emerald); font-weight: 700; margin-bottom: 8px;" id="resDiscountText">
+            Đã tiết kiệm: 870.000đ (Ưu đãi đặt sớm -15%)
+          </div>
+          <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 22px;">
+            Bao gồm: Thuế VAT, phí dịch vụ 5%, xe đưa đón và bữa sáng
+          </div>
+          <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="bookFromCalculator()">
+            <span>Giữ Phòng Giá Này Ngay</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FORM ĐẶT PHÒNG VIP -->
+  <section class="booking-section" id="booking">
+    <div>
+      <div class="section-tag">Đặt Phòng Trực Tuyến</div>
+      <h3 style="font-family: var(--font-serif); font-size: 2.55rem; font-weight: 600; line-height: 1.18; color: var(--text-white); margin-bottom: 16px;">
+        Giữ Chỗ Kỳ Nghỉ Của Bạn
+        <span style="color: var(--accent-gold); font-style: italic; display: block;">Tại Website Chính Thức</span>
+      </h3>
+      <p style="color: var(--text-body); font-size: 0.96rem; line-height: 1.7; margin-bottom: 24px;">
+        Đặt phòng trực tiếp trên website chính thức để nhận ngay cam kết giá tốt nhất và các đặc quyền miễn phí:
+      </p>
+
+      <div class="booking-privilege-list">
+        <div class="booking-privilege-item">
+          <span>✓</span>
+          Miễn phí hủy phòng trước 48 giờ (Không phạt phí).
+        </div>
+        <div class="booking-privilege-item">
+          <span>✓</span>
+          Tặng Voucher 500.000đ sử dụng dịch vụ ăn uống và Spa tại Resort.
+        </div>
+        <div class="booking-privilege-item">
+          <span>✓</span>
+          Xác nhận phòng tức thì &amp; Hỗ trợ thanh toán linh hoạt khi nhận phòng.
+        </div>
+      </div>
+
+      <div class="booking-hotline-card">
+        <p style="font-size: 0.76rem; color: #F5CBA7; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Bộ Phận Đặt Phòng 24/7</p>
+        <p style="font-size: 1.65rem; font-weight: 700; color: #FFFDF9; font-family: var(--font-serif);">1800 8926</p>
+      </div>
+    </div>
+
+    <div class="booking-form-card">
+      <h4 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--text-white); margin-bottom: 4px;">Phiếu Đăng Ký Đặt Phòng</h4>
+      <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 22px;">Lễ tân sẽ liên hệ xác nhận thông tin và gửi mã vé đặt phòng</p>
+
+      <form onsubmit="handleHotelBooking(event)">
+        <div class="form-group-hotel">
+          <label>Họ Và Tên Quý Khách</label>
+          <input type="text" id="custName" placeholder="Ví dụ: Hoàng Minh Trí" required>
+        </div>
+
+        <div class="form-group-hotel">
+          <label>Số Điện Thoại Nhận Xác Nhận</label>
+          <input type="tel" id="custPhone" placeholder="090x xxx xxx" required>
+        </div>
+
+        <div class="form-group-hotel">
+          <label>Hạng Phòng Muốn Đặt</label>
+          <select id="custRoomChoice">
+            <option value="Oceanfront Pool Villa (Hồ bơi riêng)">Oceanfront Pool Villa (Hồ bơi riêng)</option>
+            <option value="Pine Forest Bungalow (Đồi thông)">Pine Forest Bungalow (Đồi thông)</option>
+            <option value="Grand Ocean Suite (View biển 180°)">Grand Ocean Suite (View biển 180°)</option>
+            <option value="Safari Glamping Tent (Lều sang trọng)">Safari Glamping Tent (Lều sang trọng)</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group-hotel">
+            <label>Ngày Check-in</label>
+            <input type="date" id="custCheckIn" required>
+          </div>
+          <div class="form-group-hotel">
+            <label>Số Đêm Nghỉ</label>
+            <select id="custNightCount">
+              <option value="1 đêm">1 Đêm</option>
+              <option value="2 đêm (3N2Đ)" selected>2 Đêm (3N2Đ)</option>
+              <option value="3 đêm (4N3Đ)">3 Đêm (4N3Đ)</option>
+              <option value="5 đêm">5 Đêm</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 14px; margin-top: 10px;">
+          <span>🛎️ Xác Nhận Đặt Phòng Trực Tuyến</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER CHUẨN ĐỒNG BỘ PAT TECH PHẠM ANH TUẤN -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+          <div class="logo-emblem" style="width: 36px; height: 36px; font-size: 1.1rem;">🌿</div>
+          <span style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; color: #FFFDF9;">AN NHIÊN RETREAT</span>
+        </div>
+        <p style="font-size: 0.85rem; color: rgba(255, 253, 249, 0.72); line-height: 1.65; margin-bottom: 16px;">
+          Khu nghỉ dưỡng sinh thái cao cấp &amp; Biệt thự nghỉ dưỡng 5 sao. Nơi kết nối con người với thiên nhiên nguyên bản, nâng niu sức khỏe và tinh thần.
+        </p>
+        <p style="font-size: 0.82rem; color: #F5CBA7;">
+          📍 Bãi Dài, Bán đảo Cam Ranh, Khánh Hòa &amp; Thung lũng Tuyền Lâm, Đà Lạt.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hạng Phòng &amp; Villa</h4>
+        <ul class="footer-links">
+          <li><a href="#rooms">Oceanfront Pool Villa</a></li>
+          <li><a href="#rooms">Pine Forest Bungalow</a></li>
+          <li><a href="#rooms">Grand Ocean Suite 180°</a></li>
+          <li><a href="#rooms">Safari Glamping Tent</a></li>
+          <li><a href="#tour">Tham quan thực tế ảo 360°</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Dịch Vụ &amp; Tiện Ích</h4>
+        <ul class="footer-links">
+          <li><a href="#">Hồ bơi vô cực nước ấm</a></li>
+          <li><a href="#">Khu khoáng nóng Onsen thảo mộc</a></li>
+          <li><a href="#">Nhà hàng hữu cơ Farm-to-Table</a></li>
+          <li><a href="#">Đưa đón Limousine sân bay</a></li>
+          <li><a href="#">Chèo thuyền Kayak &amp; Yoga sớm</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Liên Hệ Đặt Chỗ</h4>
+        <p style="font-size: 0.82rem; color: rgba(255, 253, 249, 0.72); line-height: 1.6; margin-bottom: 8px;">
+          • Email tiếp nhận: reservation@annhienretreat.com
+        </p>
+        <p style="font-size: 0.82rem; color: rgba(255, 253, 249, 0.72); line-height: 1.6; margin-bottom: 12px;">
+          • Lễ tân tiếp đón: Phục vụ 24/7 không ngày nghỉ.
+        </p>
+        <div style="background: rgba(255,253,249,0.06); border: 1px solid rgba(200, 138, 75, 0.35); border-radius: 14px; padding: 14px;">
+          <div style="font-size: 0.74rem; color: #F5CBA7; text-transform: uppercase; font-weight: 700;">Hotline Đặt Phòng Toàn Quốc</div>
+          <div style="font-size: 1.35rem; font-weight: 700; color: #FFFDF9; font-family: var(--font-serif);">1800 8926</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BẢN QUYỀN ĐỒNG BỘ PHẠM ANH TUẤN - PAT TECH -->
+    <div class="footer-bottom">
+      <p>© 2026 PAT TECH (Phạm Anh Tuấn). Toàn bộ bản quyền giao diện và hệ thống được bảo lưu.</p>
+      <p>Thiết kế &amp; Phát triển độc quyền bởi <a href="../../index.html" style="color: #F5CBA7; text-decoration: none; font-weight: 700;">PAT TECH - Phạm Anh Tuấn</a>.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL XÁC NHẬN ĐẶT PHÒNG TICKET -->
+  <div class="modal-overlay" id="ticketModal">
+    <div class="ticket-modal">
+      <div style="display: inline-block; background: var(--gold-gradient); color: #FFFDF9; font-weight: 800; font-size: 0.74rem; letter-spacing: 2px; padding: 5px 16px; border-radius: 999px; text-transform: uppercase; margin-bottom: 14px;">
+        Phiếu Đặt Phòng Đã Xác Nhận
+      </div>
+      <div style="font-size: 2.6rem; margin-bottom: 10px;">🛎️</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--text-white); margin-bottom: 8px; font-weight: 700;">
+        Đặt Phòng Thành Công!
+      </h3>
+      <p style="font-size: 0.88rem; color: var(--text-body); margin-bottom: 20px;">
+        Bộ phận lễ tân của An Nhiên Retreat đã ghi nhận thông tin và giữ phòng ưu tiên cho quý khách:
+      </p>
+
+      <div style="background: var(--bg-dark); border: 1.5px dashed var(--teak-wood); border-radius: 18px; padding: 20px; margin-bottom: 24px; text-align: left;">
+        <div style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 8px;">Quý khách: <strong id="modalCustName" style="color: var(--text-white);"></strong></div>
+        <div style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 8px;">Hạng phòng: <strong id="modalCustRoom" style="color: var(--accent-gold);"></strong></div>
+        <div style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 8px;">Thời gian: <strong id="modalCustTime" style="color: var(--text-white);"></strong></div>
+        <div style="font-size: 0.84rem; color: var(--text-muted);">Mã Đặt Chỗ VIP: <strong id="modalBookingCode" style="color: var(--emerald-dark); font-size: 1.15rem; letter-spacing: 2px;"></strong></div>
+      </div>
+
+      <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="closeModal()">
+        Hoàn Tất &amp; Đóng
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Set default check-in date (Friday next week)
+    const today = new Date();
+    const inDate = new Date();
+    inDate.setDate(today.getDate() + 3);
+    const outDate = new Date();
+    outDate.setDate(today.getDate() + 5);
+
+    document.getElementById('checkInDate').value = inDate.toISOString().split('T')[0];
+    document.getElementById('checkOutDate').value = outDate.toISOString().split('T')[0];
+    document.getElementById('custCheckIn').value = inDate.toISOString().split('T')[0];
+
+    // Filter rooms tabs
+    function filterRooms(cat, btn) {
+      document.querySelectorAll('.room-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.room-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Direct booking helper
+    function bookRoomDirect(roomName, price) {
+      const select = document.getElementById('custRoomChoice');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.includes(roomName) || roomName.includes(select.options[i].value.split(' (')[0])) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Interactive Tour Switcher
+    function switchTourView(type, btn) {
+      document.querySelectorAll('.tour-opt-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const img = document.getElementById('tourMainImg');
+      const title = document.getElementById('tourTagTitle');
+      const desc = document.getElementById('tourTagDesc');
+
+      if (type === 'pool') {
+        img.src = 'image/floating-breakfast.jpg';
+        title.innerText = 'Hồ Bơi Vô Cực & Bữa Sáng Nổi';
+        desc.innerText = 'Góc check-in được yêu thích nhất 2026';
+      } else if (type === 'bedroom') {
+        img.src = 'image/suite-bedroom.jpg';
+        title.innerText = 'Phòng Ngủ Master Kính Panorama 180°';
+        desc.innerText = 'Thức giấc giữa thung lũng mây bay và đại dương';
+      } else if (type === 'onsen') {
+        img.src = 'image/onsen-spa.jpg';
+        title.innerText = 'Khu Tắm Khoáng Nóng Onsen Tự Nhiên';
+        desc.innerText = 'Liệu pháp ngâm khoáng và thảo mộc thư giãn sâu';
+      } else {
+        img.src = 'image/sunset-dining.jpg';
+        title.innerText = 'Bữa Tối Lãng Mạn Bên Bờ Biển';
+        desc.innerText = 'Ẩm thực nướng hải sản cao cấp dưới ánh nến';
+      }
+    }
+
+    // Apply Booking Search Filter
+    function applyBookingSearch() {
+      const room = document.getElementById('preferredRoom').value;
+      const guests = document.getElementById('guestCount').options[document.getElementById('guestCount').selectedIndex].text;
+      alert(`Đang tìm kiếm phòng trống phù hợp:\n- Số lượng: ${guests}\n- Hạng phòng: ${room}\n\nHệ thống đã tìm thấy 4 phòng trống với giá ưu đãi tốt nhất!`);
+      document.getElementById('rooms').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Vacation Cost Calculator
+    function calculateVacation() {
+      const roomPrice = parseInt(document.getElementById('calcRoomType').value);
+      const nights = parseInt(document.getElementById('calcNights').value);
+      const addon = parseInt(document.getElementById('calcService').value);
+
+      let discountRate = 0;
+      let discountLabel = 'Ưu đãi thường';
+
+      if (nights === 2) { discountRate = 0.15; discountLabel = 'Ưu đãi đặt sớm (-15%)'; }
+      else if (nights === 3) { discountRate = 0.20; discountLabel = 'Ưu đãi kỳ nghỉ dài (-20%)'; }
+      else if (nights >= 5) { discountRate = 0.30; discountLabel = 'Ưu đãi thượng lưu (-30%)'; }
+
+      const rawTotal = (roomPrice + addon) * nights;
+      const discountAmount = rawTotal * discountRate;
+      const finalTotal = rawTotal - discountAmount;
+
+      document.getElementById('resTotalPrice').innerText = finalTotal.toLocaleString('vi-VN') + 'đ';
+      if (discountAmount > 0) {
+        document.getElementById('resDiscountText').innerText = `Đã tiết kiệm: ${discountAmount.toLocaleString('vi-VN')}đ (${discountLabel})`;
+      } else {
+        document.getElementById('resDiscountText').innerText = 'Đặt từ 2 đêm để nhận giảm thêm đến 30%';
+      }
+    }
+
+    function bookFromCalculator() {
+      const roomSelect = document.getElementById('calcRoomType');
+      const roomName = roomSelect.options[roomSelect.selectedIndex].text.split(' - ')[0];
+      bookRoomDirect(roomName, '');
+    }
+
+    // Booking Submit Handler
+    function handleHotelBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const room = document.getElementById('custRoomChoice').value;
+      const checkIn = document.getElementById('custCheckIn').value;
+      const nights = document.getElementById('custNightCount').value;
+
+      const code = 'AN-RESORT-' + Math.floor(1000 + Math.random() * 9000);
+
+      document.getElementById('modalCustName').innerText = `${name} (${phone})`;
+      document.getElementById('modalCustRoom').innerText = room;
+      document.getElementById('modalCustTime').innerText = `Check-in: ${checkIn} • Thời gian: ${nights}`;
+      document.getElementById('modalBookingCode').innerText = code;
+
+      document.getElementById('ticketModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('ticketModal').classList.remove('open');
+      document.querySelector('.booking-form-card form').reset();
+    }
+
+    // Init calculation
+    calculateVacation();
+  </script>
+</body>
+</html>
