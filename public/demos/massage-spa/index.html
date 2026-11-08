@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DƯỠNG TÂM CÁC (養心閣) - Viện Massage & Trị Liệu Dưỡng Sinh Cổ Truyền</title>
+  <meta name="description" content="Chốn bình yên hồi sinh năng lượng giữa lòng phố thị. Bấm huyệt đả thông kinh lạc, massage đá nóng bazan ngàn năm và bài thuốc ngâm tắm thảo mộc Dao Đỏ.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #120805;
+      --bg-dark: #1b0d08;
+      --bg-wood: #26130b;
+      --bg-card: #2e170e;
+      --bg-card-hover: #381d12;
+      --crimson-royal: #991b1b;
+      --crimson-bright: #b91c1c;
+      --gold-primary: #d4af37;
+      --gold-amber: #e6a73c;
+      --gold-glow: #f59e0b;
+      --gold-light: #fbe3a9;
+      --gold-gradient: linear-gradient(135deg, #fbe3a9 0%, #d4af37 50%, #9a7319 100%);
+      --amber-gradient: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+      --cinnabar-gradient: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+      --silk-white: #ffffff;
+      --silk-cream: #faf5ed;
+      --silk-muted: #d6c6b7;
+      --silk-dim: #9c8a7d;
+      --border-gold: rgba(212, 175, 55, 0.35);
+      --border-amber: rgba(230, 167, 60, 0.25);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --font-display: 'Cinzel', serif;
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--silk-cream);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(185, 28, 28, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 60%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(153, 27, 27, 0.06) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    /* Utilites */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .text-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .seal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(185, 28, 28, 0.18);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--gold-light);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--gold-gradient);
+      color: #1a0a05;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1px solid #fbe3a9;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+      filter: brightness(1.05);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--silk-cream);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 50px;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold-amber);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.35rem;
+      color: var(--silk-white);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+    }
+
+    .section-desc {
+      color: var(--silk-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: linear-gradient(90deg, #1b0704 0%, #3a0d06 50%, #1b0704 100%);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 7px 0;
+      font-size: 0.8rem;
+      color: var(--silk-cream);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .top-bar-notice {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .top-bar-badge {
+      background: var(--crimson-royal);
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .top-link {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .top-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Ambient Audio Player Pill */
+    .ambient-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      padding: 3px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: all 0.25s;
+    }
+
+    .ambient-btn:hover {
+      background: rgba(212, 175, 55, 0.2);
+    }
+
+    .ambient-indicator {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    .ambient-btn.paused .ambient-indicator {
+      background: #6b7280;
+      box-shadow: none;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 8, 5, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--silk-white);
+    }
+
+    .brand-emblem {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #3f1109 0%, #170703 100%);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--gold-amber);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--silk-cream);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--gold-amber);
+    }
+
+    .nav-link.active {
+      color: var(--gold-light);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    /* Mobile Nav Drawer */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 82%;
+      max-width: 340px;
+      height: 100vh;
+      background: #170a06;
+      border-left: 1px solid var(--border-gold);
+      z-index: 1000;
+      padding: 30px 24px;
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -15px 0 35px rgba(0, 0, 0, 0.8);
+      flex-direction: column;
+    }
+
+    .mobile-drawer.open {
+      right: 0;
+    }
+
+    .mobile-drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .mobile-drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      list-style: none;
+    }
+
+    .mobile-drawer-link {
+      color: var(--silk-cream);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    }
+
+    .drawer-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+    }
+
+    .drawer-overlay.active {
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 0 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('image/hero-lounge.jpg');
+      background-size: cover;
+      background-position: center center;
+      filter: brightness(0.42) saturate(1.15);
+      transform: scale(1.02);
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, 
+        rgba(18, 8, 5, 0.85) 0%, 
+        rgba(27, 13, 8, 0.7) 40%, 
+        rgba(18, 8, 5, 0.95) 100%),
+        radial-gradient(circle at 75% 30%, rgba(217, 119, 6, 0.25) 0%, transparent 60%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 780px;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold-amber);
+      font-size: 1.25rem;
+      margin: 18px 0 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 3.4rem;
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--silk-white);
+      margin-bottom: 22px;
+      letter-spacing: -1px;
+    }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--silk-cream);
+      line-height: 1.8;
+      margin-bottom: 34px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 45px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--silk-muted);
+      margin-top: 4px;
+    }
+
+    /* Floating Lantern Accents */
+    .lantern-glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Section 2: USPs & Philosophy */
+    .philosophy {
+      padding: 90px 0;
+      background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-wood) 50%, var(--bg-deep) 100%);
+      position: relative;
+    }
+
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .usp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-amber);
+      border-radius: 16px;
+      padding: 32px 24px;
+      position: relative;
+      transition: all 0.35s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .usp-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .usp-card:hover {
+      transform: translateY(-6px);
+      background: var(--bg-card-hover);
+      border-color: var(--gold-primary);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .usp-card:hover::before {
+      opacity: 1;
+    }
+
+    .usp-icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: rgba(185, 28, 28, 0.15);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .usp-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--silk-white);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .usp-text {
+      color: var(--silk-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    /* Section 3: Services Menu */
+    .services-section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 45px;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-amber);
+      color: var(--silk-muted);
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    .tab-btn.active {
+      background: var(--gold-gradient);
+      color: #1a0a05;
+      border-color: #fbe3a9;
+      font-weight: 700;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s ease;
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-gold);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-thumb {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card:hover .service-img {
+      transform: scale(1.08);
+    }
+
+    .service-badge-sale {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--crimson-royal);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-duration-badge {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(18, 8, 5, 0.85);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+      backdrop-filter: blur(8px);
+    }
+
+    .service-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--silk-white);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .service-summary {
+      color: var(--silk-muted);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .service-steps {
+      list-style: none;
+      margin-bottom: 22px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+      padding-top: 14px;
+    }
+
+    .service-step-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--silk-cream);
+      margin-bottom: 6px;
+    }
+
+    .step-dot {
+      color: var(--gold-amber);
+      font-weight: 700;
+    }
+
+    .service-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .price-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-current {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold-amber);
+    }
+
+    .price-original {
+      font-size: 0.82rem;
+      color: var(--silk-dim);
+      text-decoration: line-through;
+    }
+
+    .btn-book-service {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      padding: 9px 18px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-book-service:hover {
+      background: var(--gold-gradient);
+      color: #1a0a05;
+      border-color: #fbe3a9;
+      transform: translateY(-2px);
+    }
+
+    /* Section 4: AI Diagnostic - Bắt Bệnh Đau Mỏi */
+    .diagnostic-section {
+      padding: 85px 0;
+      background: linear-gradient(135deg, #240f09 0%, #150804 100%);
+      position: relative;
+      border-top: 1px solid var(--border-amber);
+      border-bottom: 1px solid var(--border-amber);
+    }
+
+    .diagnostic-box {
+      background: rgba(18, 8, 5, 0.85);
+      border: 1.5px solid var(--border-gold);
+      border-radius: 24px;
+      padding: 45px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diagnostic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .diagnostic-options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .diag-option {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .diag-option:hover {
+      border-color: var(--gold-amber);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .diag-option.selected {
+      border-color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.16);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .diag-radio {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .diag-option.selected .diag-radio::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+    }
+
+    .diag-text h4 {
+      font-size: 0.98rem;
+      color: var(--silk-white);
+      margin-bottom: 2px;
+    }
+
+    .diag-text p {
+      font-size: 0.82rem;
+      color: var(--silk-muted);
+    }
+
+    .diagnostic-result {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 18px;
+      padding: 32px;
+      position: relative;
+    }
+
+    .diag-plan-badge {
+      display: inline-block;
+      background: var(--crimson-royal);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .diag-plan-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--silk-white);
+      margin-bottom: 12px;
+    }
+
+    .diag-plan-desc {
+      font-size: 0.92rem;
+      color: var(--silk-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .diag-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 14px;
+      border-radius: 10px;
+    }
+
+    .diag-detail-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .diag-detail-lbl {
+      font-size: 0.75rem;
+      color: var(--silk-dim);
+    }
+
+    .diag-detail-val {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--gold-light);
+    }
+
+    /* Section 5: Private Rooms Showcase */
+    .rooms-section {
+      padding: 90px 0;
+    }
+
+    .room-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 35px;
+    }
+
+    .room-tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-amber);
+      color: var(--silk-muted);
+      padding: 12px 26px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .room-tab-btn.active {
+      background: var(--gold-gradient);
+      color: #1b0a05;
+      border-color: #fbe3a9;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .room-display {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 24px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .room-image-wrap {
+      min-height: 440px;
+      position: relative;
+    }
+
+    .room-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .room-info {
+      padding: 45px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .room-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold-amber);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .room-name {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--silk-white);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .room-desc {
+      color: var(--silk-muted);
+      font-size: 0.96rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .room-amenities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .amenity-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--silk-cream);
+    }
+
+    .amenity-icon {
+      color: var(--gold-primary);
+    }
+
+    /* Section 6: Testimonials */
+    .testimonials {
+      padding: 85px 0;
+      background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-wood) 100%);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-amber);
+      border-radius: 18px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .testi-stars {
+      color: #fbbf24;
+      font-size: 1rem;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .testi-quote {
+      font-style: italic;
+      color: var(--silk-cream);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 16px;
+    }
+
+    .author-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--crimson-royal);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: 1.5px solid var(--gold-primary);
+    }
+
+    .author-info h4 {
+      font-size: 0.95rem;
+      color: var(--silk-white);
+      margin-bottom: 2px;
+    }
+
+    .author-info span {
+      font-size: 0.78rem;
+      color: var(--silk-dim);
+    }
+
+    /* Section 7: Booking Form */
+    .booking-section {
+      padding: 90px 0;
+      position: relative;
+      background: radial-gradient(circle at 50% 50%, rgba(185, 28, 28, 0.12) 0%, transparent 70%);
+    }
+
+    .booking-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-gold);
+      border-radius: 26px;
+      padding: 48px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .booking-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .booking-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--silk-cream);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .form-control {
+      background: rgba(18, 8, 5, 0.7);
+      border: 1px solid var(--border-amber);
+      border-radius: 12px;
+      padding: 13px 16px;
+      color: var(--silk-white);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+
+    .form-control:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+      background: rgba(18, 8, 5, 0.95);
+    }
+
+    .form-control option {
+      background: #1e0f09;
+      color: #fff;
+    }
+
+    .booking-notice {
+      grid-column: span 2;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px dashed var(--border-gold);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 0.85rem;
+      color: var(--silk-cream);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-submit-booking {
+      grid-column: span 2;
+      padding: 16px;
+      font-size: 1.05rem;
+    }
+
+    /* Modal Booking Confirmation */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #1f0f09;
+      border: 2px solid var(--gold-primary);
+      border-radius: 24px;
+      max-width: 540px;
+      width: 100%;
+      padding: 40px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.3);
+      text-align: center;
+      position: relative;
+      animation: modalFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalFadeIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: transparent;
+      border: none;
+      color: var(--silk-dim);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-pass-code {
+      display: inline-block;
+      background: var(--bg-deep);
+      border: 1px dashed var(--gold-primary);
+      color: var(--gold-light);
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 10px;
+      margin: 18px 0;
+      letter-spacing: 2px;
+    }
+
+    .modal-details {
+      text-align: left;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--silk-muted);
+    }
+
+    .modal-details strong {
+      color: var(--silk-cream);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0d0503;
+      border-top: 1px solid var(--border-amber);
+      padding: 70px 0 35px;
+      color: var(--silk-muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-serif);
+      color: var(--silk-white);
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background: var(--gold-primary);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--silk-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 25px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--silk-dim);
+    }
+
+    /* Mobile Sticky Bottom CTA Bar */
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(18, 8, 5, 0.96);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border-gold);
+      padding: 10px 16px;
+      z-index: 998;
+      box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    .mobile-bar-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .mobile-call-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      padding: 11px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .mobile-book-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--gold-gradient);
+      color: #1a0a05;
+      padding: 11px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .usp-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .testi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .room-display {
+        grid-template-columns: 1fr;
+      }
+      .room-image-wrap {
+        min-height: 320px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions .btn-gold {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .diagnostic-grid {
+        grid-template-columns: 1fr;
+      }
+      .diagnostic-box {
+        padding: 24px 18px;
+      }
+      .booking-wrapper {
+        padding: 28px 20px;
+      }
+      .booking-form {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .booking-notice, .btn-submit-booking {
+        grid-column: span 1;
+      }
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+      .usp-grid {
+        grid-template-columns: 1fr;
+      }
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .mobile-sticky-bar {
+        display: block;
+      }
+      body {
+        padding-bottom: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-notice">
+        <span class="top-bar-badge">ƯU ĐÃI THÁNG</span>
+        <span>Giảm ngay <strong>35%</strong> cho khách đặt trước liệu trình Đông Y Hoàng Cung hôm nay</span>
+      </div>
+      <div class="top-bar-right">
+        <button class="ambient-btn" id="ambientToggleBtn" title="Bật/Tắt nhạc thiền thư giãn">
+          <span class="ambient-indicator"></span>
+          <span id="ambientText">🎵 Nhạc Thiền: Đang Phát</span>
+        </button>
+        <span style="opacity: 0.3;">|</span>
+        <a href="tel:0988789268" class="top-link">📞 Hotline: 0988.789.268</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-emblem">🏮</div>
+        <div class="brand-text">
+          <span class="brand-title">DƯỠNG TÂM CÁC</span>
+          <span class="brand-sub">養心閣 • Massage & Trị Liệu Cung Đình</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#philosophy" class="nav-link">Tinh Hoa</a></li>
+        <li><a href="#services" class="nav-link">Bảng Dịch Vụ</a></li>
+        <li><a href="#diagnostic" class="nav-link">Bắt Bệnh AI</a></li>
+        <li><a href="#rooms" class="nav-link">Không Gian VIP</a></li>
+        <li><a href="#testimonials" class="nav-link">Đánh Giá</a></li>
+        <li><a href="#booking" class="nav-link">Đặt Chỗ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#booking" class="btn-gold" style="padding: 10px 22px; font-size: 0.88rem;">
+          <span>Đặt Phòng Nhận 35%</span>
+          <span>⟶</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-emblem" style="width: 38px; height: 38px; font-size: 1.3rem;">🏮</div>
+        <div class="brand-text">
+          <span class="brand-title" style="font-size: 1.1rem;">DƯỠNG TÂM CÁC</span>
+          <span class="brand-sub" style="font-size: 0.65rem;">養心閣 DƯỠNG SINH</span>
+        </div>
+      </div>
+      <button id="closeDrawerBtn" style="background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer;">&times;</button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="#philosophy" class="mobile-drawer-link"><span>🌿 Tinh Hoa Đông Y</span> <span>⟶</span></a></li>
+      <li><a href="#services" class="mobile-drawer-link"><span>📋 Bảng Menu Dịch Vụ</span> <span>⟶</span></a></li>
+      <li><a href="#diagnostic" class="mobile-drawer-link"><span>🤖 Bắt Bệnh Đau Mỏi AI</span> <span>⟶</span></a></li>
+      <li><a href="#rooms" class="mobile-drawer-link"><span>🛋️ Không Gian Phòng VIP</span> <span>⟶</span></a></li>
+      <li><a href="#testimonials" class="mobile-drawer-link"><span>⭐ Khách Hàng Review</span> <span>⟶</span></a></li>
+      <li><a href="#booking" class="mobile-drawer-link"><span>🎟️ Đặt Chỗ Nhận Giảm 35%</span> <span>⟶</span></a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 20px;">
+      <a href="tel:0988789268" class="btn-gold" style="width: 100%; justify-content: center; margin-bottom: 10px;">
+        📞 Gọi Hotline 0988.789.268
+      </a>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="seal-badge">
+        <span>🪷</span>
+        <span>NGỰ DƯỢC HOÀNG GIA • THẢO MỘC DAO ĐỎ NGUYÊN BẢN</span>
+      </div>
+      <div class="hero-tagline">Chốn an nhiên nuôi dưỡng thân - tâm - trí</div>
+      <h1 class="hero-title">
+        HỒI SINH NĂNG LƯỢNG <br>
+        <span class="text-gold">VỚI TINH HOA DƯỠNG SINH CỔ TRUYỀN</span>
+      </h1>
+      <p class="hero-desc">
+        Khép lại bộn bề phố thị để đắm mình trong hương thơm thảo dược, ánh đèn lồng trầm ấm và tiếng suối róc rách. 
+        Kỹ thuật bấm huyệt ngự y đả thông 108 huyệt đạo kinh lạc kết hợp ngâm tắm gỗ pơ-mu độc bản giúp giải tỏa căng cơ, dứt điểm đau vai gáy và tái tạo giấc ngủ sâu.
+      </p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn-gold">
+          <span>Khám Phá Ưu Đãi 35%</span>
+          <span>👉</span>
+        </a>
+        <a href="#services" class="btn-outline">
+          <span>Xem 6 Liệu Trình Trọng Điểm</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">15.000+</span>
+          <span class="stat-label">Khách Hàng Đã Phục Hồi</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">KTV Chứng Chỉ Y Cổ Truyền</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">18 Vị</span>
+          <span class="stat-label">Thảo Dược Tự Nhiên Tây Bắc</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Phòng VIP Riêng Biệt 5 Sao</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: USPs & Philosophy -->
+  <section class="philosophy" id="philosophy">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Gìn Giữ Tinh Hoa Thuốc Nam & Bí Truyền Cung Đình</span>
+        <h2 class="section-title">4 Trụ Cột Dưỡng Tâm Độc Bản</h2>
+        <p class="section-desc">Không chỉ là thư giãn tức thời, mỗi phút giây tại Dưỡng Tâm Các đều hướng đến sự hồi phục năng lượng sâu từ bên trong tạng phủ.</p>
+      </div>
+
+      <div class="usp-grid">
+        <div class="usp-card">
+          <div class="usp-icon-wrap">🌿</div>
+          <h3 class="usp-title">Thảo Dược Tươi Thượng Hạng</h3>
+          <p class="usp-text">100% lá thuốc người Dao Đỏ, ngải cứu nhung, gừng gió, quế khâu và trầm hương tự nhiên thu hái tại vùng dược liệu sạch Sapa & Tây Bắc.</p>
+        </div>
+
+        <div class="usp-card">
+          <div class="usp-icon-wrap">👐</div>
+          <h3 class="usp-title">Bấm Huyệt Đả Thông Kinh Lạc</h3>
+          <p class="usp-text">Trị liệu tận gốc các điểm tắc nghẽn vùng cổ vai gáy, lưng eo theo thủ pháp Ngự Y, khơi thông khí huyết và giải trừ tà khí hàn lạnh.</p>
+        </div>
+
+        <div class="usp-card">
+          <div class="usp-icon-wrap">🏮</div>
+          <h3 class="usp-title">Không Gian Thiền Tịnh Hoàng Cung</h3>
+          <p class="usp-text">Vách gỗ trầm hương, ánh đèn lồng dịu ấm và phòng cách âm tuyệt đối. Đầy đủ phòng đơn, phòng đôi và phòng VIP có bồn tắm pơ-mu riêng.</p>
+        </div>
+
+        <div class="usp-card">
+          <div class="usp-icon-wrap">🍵</div>
+          <h3 class="usp-title">Thực Dưỡng Trà Đạo Miễn Phí</h3>
+          <p class="usp-text">Sau mỗi buổi trị liệu, quý khách được thưởng trà đông trùng hạ thảo, bánh đậu xanh cung đình và chè dưỡng nhan bổ khí huyết độc quyền.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Services Menu -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Nghệ Thuật Trị Liệu Tinh Tuyển</span>
+        <h2 class="section-title">Bảng Dịch Vụ Hoàng Cung</h2>
+        <p class="section-desc">Chọn phác đồ phù hợp để chăm sóc cơ thể bạn một cách trọn vẹn nhất hôm nay.</p>
+      </div>
+
+      <!-- Menu Tabs -->
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-filter="all">Tất Cả Liệu Trình</button>
+        <button class="tab-btn" data-filter="vai-gay">Trị Liệu Cổ Vai Gáy</button>
+        <button class="tab-btn" data-filter="toan-than">Massage Đá Nóng Toàn Thân</button>
+        <button class="tab-btn" data-filter="duong-sinh">Gội Đầu & Tắm Dưỡng Sinh</button>
+        <button class="tab-btn" data-filter="combo">Combo Thượng Uyển</button>
+      </div>
+
+      <!-- Service Grid -->
+      <div class="service-grid">
+
+        <!-- Service 1 -->
+        <article class="service-card" data-category="vai-gay">
+          <div class="service-thumb">
+            <img src="image/hot-stone.jpg" alt="Trị liệu cổ vai gáy chuyên sâu" class="service-img">
+            <span class="service-badge-sale">HOT - GIẢM 35%</span>
+            <span class="service-duration-badge">⏱️ 75 Phút</span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Đả Thông Kinh Lạc Vai Gáy Thần Tốc</h3>
+            <p class="service-summary">Đặc trị đau mỏi đốt sống cổ, tê bì cánh tay, căng cứng cơ cổ do ngồi máy tính lâu năm.</p>
+            <ul class="service-steps">
+              <li class="service-step-item"><span class="step-dot">①</span> Ngâm chân nước thuốc bắc bồn gỗ sồi</li>
+              <li class="service-step-item"><span class="step-dot">②</span> Bấm huyệt đả thông Phong Trì, Kiên Tỉnh</li>
+              <li class="service-step-item"><span class="step-dot">③</span> Đi đá nóng bazan hút độc tố vùng lưng</li>
+              <li class="service-step-item"><span class="step-dot">④</span> Đắp cao thảo dược ngải nhung làm ấm phổi</li>
+            </ul>
+            <div class="service-footer">
+              <div class="price-group">
+                <span class="price-current">299.000đ</span>
+                <span class="price-original">460.000đ</span>
+              </div>
+              <button class="btn-book-service" onclick="selectService('Đả Thông Kinh Lạc Vai Gáy Thần Tốc (75P - 299k)')">Đặt Lịch ⟶</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="service-card" data-category="toan-than">
+          <div class="service-thumb">
+            <img src="image/vip-room.jpg" alt="Massage toàn thân đá nóng" class="service-img">
+            <span class="service-badge-sale">KHUYÊN DÙNG</span>
+            <span class="service-duration-badge">⏱️ 90 Phút</span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Massage Đá Nóng Bazan Núi Lửa & Trầm Hương</h3>
+            <p class="service-summary">Kỹ thuật vuốt miết cơ bắp kết hợp nhiệt lượng khoáng chất bazan giúp hồi sinh cơ thể kiệt sức.</p>
+            <ul class="service-steps">
+              <li class="service-step-item"><span class="step-dot">①</span> Khởi động huyệt đạo & xoa bóp tinh dầu trầm</li>
+              <li class="service-step-item"><span class="step-dot">②</span> Trượt đá nóng dọc cột sống thắt lưng</li>
+              <li class="service-step-item"><span class="step-dot">③</span> Massage chuyên sâu bàn chân & đùi</li>
+              <li class="service-step-item"><span class="step-dot">④</span> Giãn cơ kiểu Thái êm dịu, thả lỏng toàn thân</li>
+            </ul>
+            <div class="service-footer">
+              <div class="price-group">
+                <span class="price-current">399.000đ</span>
+                <span class="price-original">620.000đ</span>
+              </div>
+              <button class="btn-book-service" onclick="selectService('Massage Đá Nóng Bazan & Trầm Hương (90P - 399k)')">Đặt Lịch ⟶</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="service-card" data-category="duong-sinh">
+          <div class="service-thumb">
+            <img src="image/herbal-head.jpg" alt="Gội đầu dưỡng sinh thảo dược" class="service-img">
+            <span class="service-badge-sale">THƯ GIÃN</span>
+            <span class="service-duration-badge">⏱️ 60 Phút</span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Gội Đầu Dưỡng Sinh Bát Vị & Đắp Mặt Nạ Ngũ Hoa</h3>
+            <p class="service-summary">Nấu nước bồ kết, vỏ bưởi, hà thủ ô tươi tại chỗ. Kèm massage bấm huyệt vùng đầu xua tan stress.</p>
+            <ul class="service-steps">
+              <li class="service-step-item"><span class="step-dot">①</span> Khai thông huyệt bách hội & vùng trán</li>
+              <li class="service-step-item"><span class="step-dot">②</span> Gội 2 lần bằng nước thảo mộc ấm nóng</li>
+              <li class="service-step-item"><span class="step-dot">③</span> Đắp mặt nạ hạt ngũ hoa hạ nhiệt giải độc da</li>
+              <li class="service-step-item"><span class="step-dot">④</span> Xông sương thảo dược & sấy dưỡng tóc óng ả</li>
+            </ul>
+            <div class="service-footer">
+              <div class="price-group">
+                <span class="price-current">229.000đ</span>
+                <span class="price-original">350.000đ</span>
+              </div>
+              <button class="btn-book-service" onclick="selectService('Gội Đầu Dưỡng Sinh Bát Vị (60P - 229k)')">Đặt Lịch ⟶</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="service-card" data-category="duong-sinh">
+          <div class="service-thumb">
+            <img src="image/herbal-bath.jpg" alt="Tắm thảo dược lá Dao Đỏ" class="service-img">
+            <span class="service-badge-sale">ĐỘC BẢN DAO ĐỎ</span>
+            <span class="service-duration-badge">⏱️ 60 Phút</span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Ngâm Tắm Thuốc Bắc Bồn Gỗ Pơ-Mu & Xông Hơi</h3>
+            <p class="service-summary">Bài thuốc cổ truyền ngâm mình thải độc tố qua lỗ chân lông, giải cảm lạnh và nuôi dưỡng khí huyết.</p>
+            <ul class="service-steps">
+              <li class="service-step-item"><span class="step-dot">①</span> Xông hơi ướt tinh dầu quế & hồi rừng</li>
+              <li class="service-step-item"><span class="step-dot">②</span> Ngâm bồn gỗ sồi thảo mộc Dao Đỏ ấm 40°C</li>
+              <li class="service-step-item"><span class="step-dot">③</span> Thư giãn thưởng trà hoa cúc dưỡng nhan</li>
+              <li class="service-step-item"><span class="step-dot">④</span> Thoa kem tinh chất giữ ẩm thảo dược</li>
+            </ul>
+            <div class="service-footer">
+              <div class="price-group">
+                <span class="price-current">320.000đ</span>
+                <span class="price-original">490.000đ</span>
+              </div>
+              <button class="btn-book-service" onclick="selectService('Ngâm Tắm Thuốc Dao Đỏ Bồn Gỗ Pơ-Mu (60P - 320k)')">Đặt Lịch ⟶</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 5 -->
+        <article class="service-card" data-category="combo">
+          <div class="service-thumb">
+            <img src="image/couple-room.jpg" alt="Combo Thượng Uyển Hoàng Cung" class="service-img">
+            <span class="service-badge-sale">BEST SELLER</span>
+            <span class="service-duration-badge">⏱️ 120 Phút</span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Combo Thượng Uyển: Trị Liệu + Massage + Gội Đầu VIP</h3>
+            <p class="service-summary">Trọn vẹn liệu trình hoàng gia cao cấp nhất: Toàn thân đá nóng + Phục hồi vai gáy + Gội đầu thảo dược.</p>
+            <ul class="service-steps">
+              <li class="service-step-item"><span class="step-dot">①</span> 50P Massage toàn thân đá nóng bazan</li>
+              <li class="service-step-item"><span class="step-dot">②</span> 35P Chuyên sâu cổ vai gáy & ngâm chân</li>
+              <li class="service-step-item"><span class="step-dot">③</span> 35P Gội đầu dưỡng sinh & đắp ngải nhung</li>
+              <li class="service-step-item"><span class="step-dot">④</span> Tặng set yến chưng đông trùng hạ thảo</li>
+            </ul>
+            <div class="service-footer">
+              <div class="price-group">
+                <span class="price-current">580.000đ</span>
+                <span class="price-original">890.000đ</span>
+              </div>
+              <button class="btn-book-service" onclick="selectService('Combo Thượng Uyển 120P VIP (580k)')">Đặt Lịch ⟶</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 6 -->
+        <article class="service-card" data-category="vai-gay">
+          <div class="service-thumb">
+            <img src="image/hero-lounge.jpg" alt="Liệu trình an thần mất ngủ" class="service-img">
+            <span class="service-badge-sale">CHUYÊN SÂU</span>
+            <span class="service-duration-badge">⏱️ 80 Phút</span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">An Thần Trị Liệu: Dứt Điểm Mất Ngủ & Đau Nửa Đầu</h3>
+            <p class="service-summary">Tác động sâu vào hệ thần kinh giao cảm giúp giải tỏa âu lo, mang lại giấc ngủ sâu tự nhiên không dùng thuốc.</p>
+            <ul class="service-steps">
+              <li class="service-step-item"><span class="step-dot">①</span> Xoa bóp huyệt bách hội, phong trì, thái dương</li>
+              <li class="service-step-item"><span class="step-dot">②</span> Trị liệu chuông xoay Tây Tạng định tâm</li>
+              <li class="service-step-item"><span class="step-dot">③</span> Đắp mắt thảo dược ấm chống mỏi mắt</li>
+              <li class="service-step-item"><span class="step-dot">④</span> Thưởng trà hoa cúc táo đỏ an thần</li>
+            </ul>
+            <div class="service-footer">
+              <div class="price-group">
+                <span class="price-current">380.000đ</span>
+                <span class="price-original">580.000đ</span>
+              </div>
+              <button class="btn-book-service" onclick="selectService('An Thần Trị Liệu Mất Ngủ (80P - 380k)')">Đặt Lịch ⟶</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: AI Diagnostic - Bắt Bệnh Đau Mỏi AI -->
+  <section class="diagnostic-section" id="diagnostic">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Ứng Dụng Y Học Cổ Truyền Trực Tuyến</span>
+        <h2 class="section-title">Bắt Bệnh Đau Mỏi & Đề Xuất Phác Đồ AI</h2>
+        <p class="section-desc">Chọn ngay tình trạng cơ thể bạn đang gặp phải để hệ thống phân tích và chỉ định phương pháp điều hòa kinh lạc tối ưu nhất.</p>
+      </div>
+
+      <div class="diagnostic-box">
+        <div class="diagnostic-grid">
+          <div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #fff; margin-bottom: 6px;">Vị Trí Hoặc Cảm Giác Khó Chịu Nhất:</h3>
+            <p style="font-size: 0.88rem; color: var(--silk-dim);">Nhấp vào 1 trong 4 tình trạng phổ biến bên dưới:</p>
+            
+            <div class="diagnostic-options" id="diagnosticList">
+              <div class="diag-option selected" data-plan="vaigay">
+                <div class="diag-radio"></div>
+                <div class="diag-text">
+                  <h4>1. Cổ vai gáy đau nhức, co cứng cơ, tê mỏi bả vai</h4>
+                  <p>Phổ biến ở người làm việc văn phòng, lái xe, dùng máy tính nhiều</p>
+                </div>
+              </div>
+
+              <div class="diag-option" data-plan="matngu">
+                <div class="diag-radio"></div>
+                <div class="diag-text">
+                  <h4>2. Khó ngủ, ngủ chập chờn, hay giật mình, đau nửa đầu</h4>
+                  <p>Do suy nghĩ căng thẳng, stress kéo dài, khí huyết ứ trệ lên não</p>
+                </div>
+              </div>
+
+              <div class="diag-option" data-plan="daulung">
+                <div class="diag-radio"></div>
+                <div class="diag-text">
+                  <h4>3. Đau lưng eo thắt lưng, mỏi gối, nhức mỏi sống lưng</h4>
+                  <p>Thận khí suy giảm, cơ thắt lưng chịu áp lực kéo dài</p>
+                </div>
+              </div>
+
+              <div class="diag-option" data-plan="nhiemhan">
+                <div class="diag-radio"></div>
+                <div class="diag-text">
+                  <h4>4. Người hay lạnh, sợ gió, dễ trúng gió cảm mạo, uể oải</h4>
+                  <p>Cơ thể nhiễm hàn ẩm, tỳ vị yếu, tuần hoàn máu kém</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Result Display -->
+          <div class="diagnostic-result" id="diagResultBox">
+            <span class="diag-plan-badge" id="resBadge">PHÁC ĐỒ ĐÔNG Y ĐỀ XUẤT</span>
+            <h4 class="diag-plan-title" id="resTitle">Liệu Trình: Đả Thông Kinh Lạc Vai Gáy Cổ Truyền</h4>
+            <p class="diag-plan-desc" id="resDesc">
+              Tập trung giải phóng các bó cơ bó chặt tại vùng phong trì, kiên tỉnh và kiên trung du. Bổ sung nhiệt năng bazan để làm giãn mạch máu nuôi não.
+            </p>
+            <div class="diag-details">
+              <div class="diag-detail-item">
+                <span class="diag-detail-lbl">Thời gian khuyến nghị:</span>
+                <span class="diag-detail-val" id="resDuration">75 - 90 Phút</span>
+              </div>
+              <div class="diag-detail-item">
+                <span class="diag-detail-lbl">Dược liệu phù hợp:</span>
+                <span class="diag-detail-val" id="resHerbs">Ngải nhung, Gừng gió, Quế</span>
+              </div>
+              <div class="diag-detail-item">
+                <span class="diag-detail-lbl">Hiệu quả cải thiện:</span>
+                <span class="diag-detail-val" id="resEffect">Nhẹ gáy ngay sau 1 buổi (85%)</span>
+              </div>
+              <div class="diag-detail-item">
+                <span class="diag-detail-lbl">Giá trải nghiệm:</span>
+                <span class="diag-detail-val" id="resPrice" style="color: var(--gold-amber);">299.000đ</span>
+              </div>
+            </div>
+            <button class="btn-gold" id="btnApplyDiagnostic" style="width: 100%;">
+              <span>Áp Dụng Phác Đồ Này Đặt Lịch</span>
+              <span>⟶</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Private Rooms Showcase -->
+  <section class="rooms-section" id="rooms">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Chốn Riêng Tư Yên Tĩnh Tuyệt Đối</span>
+        <h2 class="section-title">Không Gian Thư Giãn Chuẩn 5 Sao</h2>
+        <p class="section-desc">Mỗi gian phòng tại Dưỡng Tâm Các đều được thiết kế biệt lập, cách âm trọn vẹn, ngập tràn mùi hương tinh dầu thiên nhiên.</p>
+      </div>
+
+      <!-- Room Navigation Tabs -->
+      <div class="room-tabs">
+        <button class="room-tab-btn active" data-room="vip">Phòng VIP Hoàng Cung</button>
+        <button class="room-tab-btn" data-room="couple">Phòng Đôi Tri Kỷ</button>
+        <button class="room-tab-btn" data-room="single">Phòng Đơn Thanh Tịnh</button>
+      </div>
+
+      <!-- Room Display Box -->
+      <div class="room-display" id="roomDisplayBox">
+        <div class="room-image-wrap">
+          <img src="image/vip-room.jpg" alt="Phòng VIP Hoàng Cung" class="room-image" id="roomImg">
+        </div>
+        <div class="room-info">
+          <span class="room-badge" id="roomTag">ĐẲNG CẤP THƯỢNG LƯU</span>
+          <h3 class="room-name" id="roomHeading">Phòng VIP Hoàng Cung Thượng Uyển</h3>
+          <p class="room-desc" id="roomText">
+            Gian phòng cao cấp nhất được bao bọc bởi gỗ tự nhiên, trang bị bồn sục pơ-mu ngâm thảo dược người Dao Đỏ, buồng xông hơi đá muối Himalaya riêng biệt và giường massage đệm tơ tằm nhập khẩu.
+          </p>
+          <div class="room-amenities" id="roomAmenities">
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Bồn sục gỗ pơ-mu ngâm thuốc riêng</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Xông hơi đá muối Himalaya khép kín</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Trà đạo & bánh ngọt cung đình đón khách</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Điều hòa lọc khí ion âm & âm thanh thiền</div>
+          </div>
+          <div>
+            <a href="#booking" class="btn-gold" onclick="selectRoom('Phòng VIP Hoàng Cung')">
+              <span>Đặt Phòng Này Ngay</span>
+              <span>⟶</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Lời Khen Từ Khách Quý</span>
+        <h2 class="section-title">Hơn 15.000 Khách Hàng Tin Yêu</h2>
+        <p class="section-desc">Cảm nhận chân thực của khách hàng sau khi trải nghiệm liệu pháp trị liệu cổ truyền tại Dưỡng Tâm Các.</p>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">
+            "Mình bị đau vai gáy hành hạ suốt 2 năm vì ngồi văn phòng 10 tiếng mỗi ngày. Thử qua nhiều nơi chỉ đỡ lúc đó. Sang Dưỡng Tâm Các làm gói đả thông vai gáy 75 phút, bạn KTV bấm đúng huyệt đau, chườm ngải nhung ấm lựng, cổ nhẹ bẫng như trút được tảng đá."
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar">L</div>
+            <div class="author-info">
+              <h4>Chị Lan Hương</h4>
+              <span>Giám Đốc Marketing - Q. Hoàn Kiếm</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">
+            "Không gian cổ phong đẹp mê hồn, ánh đèn lồng vàng ấm áp như bước vào phim trường hoàng cung. Hai vợ chồng mình đặt phòng đôi VIP dịp kỷ niệm, tắm lá Dao Đỏ xong người thơm nức, sảng khoái và ngủ ngon trọn vẹn tới sáng."
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar">T</div>
+            <div class="author-info">
+              <h4>Anh Tuấn Anh & Vợ</h4>
+              <span>Kiến Trúc Sư - Cầu Giấy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">
+            "Thích nhất là sự chỉn chu và tuyệt đối không chèo kéo mua gói hay vòi tip như những chỗ khác. Kỹ thuật viên lễ phép, phục vụ trà yến chu đáo. Mức giá giảm 35% quá hời so với chất lượng phục vụ 5 sao như thế này!"
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <h4>Bác Minh Đức (58 Tuổi)</h4>
+              <span>Cán Bộ Về Hưu - Q. Đống Đa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Booking Form -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="booking-wrapper">
+        <div class="booking-header">
+          <div class="seal-badge" style="margin-bottom: 12px;">
+            <span>🎟️</span>
+            <span>PHIẾU ĐẶT CHỖ HOÀNG GIA - GIẢM 35%</span>
+          </div>
+          <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: #fff; margin-bottom: 8px;">
+            Đặt Lịch Giữ Chỗ & Phòng VIP
+          </h2>
+          <p style="color: var(--silk-muted); font-size: 0.95rem;">
+            Vui lòng điền thông tin để Dưỡng Tâm Các chuẩn bị nước thảo dược tươi và buồng phòng chu đáo nhất cho quý khách.
+          </p>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <div class="form-group">
+            <label class="form-label" for="clientName">👤 Họ và Tên Quý Khách (*)</label>
+            <input type="text" id="clientName" class="form-control" placeholder="Ví dụ: Nguyễn Văn An" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="clientPhone">📱 Số Điện Thoại Nhận Mã (*)</label>
+            <input type="tel" id="clientPhone" class="form-control" placeholder="Ví dụ: 0912 345 678" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bookingService">🌿 Gói Dịch Vụ Lựa Chọn (*)</label>
+            <select id="bookingService" class="form-control" required>
+              <option value="Đả Thông Kinh Lạc Vai Gáy Thần Tốc (75P - 299k)">Đả Thông Kinh Lạc Vai Gáy Thần Tốc (75P - 299k)</option>
+              <option value="Massage Đá Nóng Bazan & Trầm Hương (90P - 399k)">Massage Đá Nóng Bazan Núi Lửa & Trầm Hương (90P - 399k)</option>
+              <option value="Gội Đầu Dưỡng Sinh Bát Vị (60P - 229k)">Gội Đầu Dưỡng Sinh Bát Vị & Đắp Mặt Nạ (60P - 229k)</option>
+              <option value="Ngâm Tắm Thuốc Dao Đỏ Bồn Gỗ Pơ-Mu (60P - 320k)">Ngâm Tắm Thuốc Dao Đỏ Bồn Gỗ Pơ-Mu (60P - 320k)</option>
+              <option value="Combo Thượng Uyển 120P VIP (580k)" selected>Combo Thượng Uyển 120P VIP (580k - Best Seller)</option>
+              <option value="An Thần Trị Liệu Mất Ngủ (80P - 380k)">An Thần Trị Liệu Mất Ngủ & Đau Nửa Đầu (80P - 380k)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bookingRoom">🛋️ Loại Không Gian Phòng (*)</label>
+            <select id="bookingRoom" class="form-control">
+              <option value="Phòng VIP Hoàng Cung">Phòng VIP Hoàng Cung (Có bồn sục pơ-mu & xông hơi riêng)</option>
+              <option value="Phòng Đôi Tri Kỷ">Phòng Đôi Tri Kỷ (Dành cho 2 người)</option>
+              <option value="Phòng Đơn Thanh Tịnh">Phòng Đơn Thanh Tịnh (Yên tĩnh 1 mình)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bookingDate">📅 Ngày Hẹn Trải Nghiệm (*)</label>
+            <input type="date" id="bookingDate" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bookingTime">⏰ Khung Giờ Đến (*)</label>
+            <select id="bookingTime" class="form-control" required>
+              <option value="09:30 - 11:00">09:30 - 11:00 (Yên tĩnh đầu ngày)</option>
+              <option value="11:30 - 13:00">11:30 - 13:00 (Nghỉ trưa công sở)</option>
+              <option value="14:00 - 15:30">14:00 - 15:30 (Trà chiều thư giãn)</option>
+              <option value="16:00 - 17:30">16:00 - 17:30 (Giải tỏa cuối giờ làm)</option>
+              <option value="18:00 - 19:30">18:00 - 19:30 (Giờ vàng VIP)</option>
+              <option value="19:30 - 21:00" selected>19:30 - 21:00 (Thư giãn tối phục hồi)</option>
+              <option value="21:00 - 22:30">21:00 - 22:30 (Giúp ngủ sâu)</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label" for="clientNote">📝 Ghi Chú Đặc Biệt Về Vùng Đau / Yêu Cầu Riêng</label>
+            <textarea id="clientNote" class="form-control" rows="2" placeholder="Ví dụ: Đau mỏi cổ bên phải nhiều, nhờ kỹ thuật viên dùng lực ấn vừa phải..."></textarea>
+          </div>
+
+          <div class="booking-notice">
+            <span>🛡️</span>
+            <span>Cam kết giữ phòng trước 15 phút. Miễn phí đổi lịch nếu có việc đột xuất. Không thu phụ phí TIP.</span>
+          </div>
+
+          <button type="submit" class="btn-gold btn-submit-booking">
+            <span>XÁC NHẬN ĐẶT PHÒNG NHẬN VOUCHER 35%</span>
+            <span>⟶</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Booking Confirmation -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeModalBtn">&times;</button>
+      <div style="font-size: 3rem; margin-bottom: 10px;">🏮</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; margin-bottom: 6px;">
+        ĐẶT PHÒNG THÀNH CÔNG!
+      </h3>
+      <p style="color: var(--silk-muted); font-size: 0.9rem;">
+        Dưỡng Tâm Các đã ghi nhận lịch hẹn và giữ phòng VIP cho quý khách:
+      </p>
+
+      <div class="modal-pass-code" id="modalPassCode">
+        VIP-DTC-8899
+      </div>
+
+      <div class="modal-details" id="modalBookingInfo">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-gold" id="btnCopyBooking">
+          <span>📋 Sao Chép Thông Tin Hẹn</span>
+        </button>
+        <a href="tel:0988789268" class="btn-outline">
+          <span>📞 Gọi Ngay Hotline</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-emblem">🏮</div>
+            <div class="brand-text">
+              <span class="brand-title">DƯỠNG TÂM CÁC</span>
+              <span class="brand-sub">養心閣 • Y HỌC CỔ TRUYỀN</span>
+            </div>
+          </div>
+          <p style="line-height: 1.7; margin-bottom: 16px; font-size: 0.9rem;">
+            Không gian massage và trị liệu dưỡng sinh Đông Y hoàng gia. Nơi cân bằng thân - tâm - trí với thảo dược tươi và thủ pháp ngự y bí truyền.
+          </p>
+          <div style="color: var(--gold-amber); font-weight: 600; font-size: 0.85rem;">
+            ⏰ Giờ mở cửa: 09:00 - 23:30 (Mở cửa tất cả các ngày)
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hệ Thống Cơ Sở</h4>
+          <ul class="footer-links">
+            <li>📍 <strong>Cơ Sở 1:</strong> 68 Phố Huế, Q. Hoàn Kiếm, Hà Nội</li>
+            <li>📍 <strong>Cơ Sở 2:</strong> 128 Nguyễn Trãi, Q. Thanh Xuân, Hà Nội</li>
+            <li>📍 <strong>Cơ Sở 3:</strong> 86 Cách Mạng Tháng 8, P. 6, Q. 3, TP.HCM</li>
+            <li>📞 Hotline: <strong>0988.789.268</strong></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Dịch Vụ Nổi Bật</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Trị Liệu Cổ Vai Gáy Thần Tốc</a></li>
+            <li><a href="#services">Massage Đá Nóng Núi Lửa & Trầm Hương</a></li>
+            <li><a href="#services">Gội Đầu Dưỡng Sinh Bát Vị Thảo Dược</a></li>
+            <li><a href="#services">Ngâm Tắm Thuốc Dao Đỏ Bồn Pơ-Mu</a></li>
+            <li><a href="#services">Combo Thượng Uyển Hoàng Gia 120P</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Chính Sách & Cam Kết</h4>
+          <ul class="footer-links">
+            <li>🛡️ 100% Kỹ thuật viên đào tạo bài bản y học</li>
+            <li>🛡️ Tuyệt đối KHÔNG xin tiền TIP, vòi vĩnh</li>
+            <li>🛡️ Dụng cụ tiệt trùng vô khuẩn sau mỗi lượt khách</li>
+            <li>🛡️ Đổi phòng hoặc hoàn tiền nếu không hài lòng</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 DƯỠNG TÂM CÁC (養心閣). Bản quyền thuộc về Hệ thống Viện Dưỡng Sinh Cổ Truyền. Giao diện mẫu thiết kế độc quyền tại <a href="https://webgiatot.me" style="color: var(--gold-light); text-decoration: none;">WebGiaTot.me</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Bottom CTA Bar -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-bar-inner">
+      <a href="tel:0988789268" class="mobile-call-btn">
+        <span>📞</span>
+        <span>Gọi Điện</span>
+      </a>
+      <a href="#booking" class="mobile-book-btn">
+        <span>🎟️</span>
+        <span>Đặt Phòng (Giảm 35%)</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Engine -->
+  <script>
+    // 1. Web Audio API Zen Ambient Chimes
+    let audioCtx = null;
+    let isPlayingAudio = true;
+    let ambientInterval = null;
+
+    function initZenAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playZenBell(freq = 528) {
+      if (!audioCtx || audioCtx.state === 'suspended') return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        
+        gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.1);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 3.5);
+        
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        osc.start();
+        osc.stop(audioCtx.currentTime + 3.6);
+      } catch(e) {}
+    }
+
+    function startAmbientChimes() {
+      if (ambientInterval) clearInterval(ambientInterval);
+      const pentatonic = [392, 440, 523.25, 587.33, 659.25, 783.99]; // G4, A4, C5, D5, E5, G5
+      ambientInterval = setInterval(() => {
+        if (isPlayingAudio && audioCtx && audioCtx.state === 'running') {
+          const note = pentatonic[Math.floor(Math.random() * pentatonic.length)];
+          playZenBell(note);
+        }
+      }, 3500);
+    }
+
+    const ambientBtn = document.getElementById('ambientToggleBtn');
+    const ambientText = document.getElementById('ambientText');
+
+    function toggleAudio() {
+      initZenAudio();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      isPlayingAudio = !isPlayingAudio;
+      if (isPlayingAudio) {
+        ambientBtn.classList.remove('paused');
+        ambientText.innerText = '🎵 Nhạc Thiền: Đang Phát';
+        startAmbientChimes();
+        playZenBell(528);
+      } else {
+        ambientBtn.classList.add('paused');
+        ambientText.innerText = '🔇 Nhạc Thiền: Đã Tắt';
+        if (ambientInterval) clearInterval(ambientInterval);
+      }
+    }
+
+    ambientBtn.addEventListener('click', toggleAudio);
+
+    // Auto wake audio on first user touch / click
+    document.addEventListener('click', function unlockAudio() {
+      initZenAudio();
+      if (isPlayingAudio && audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+        startAmbientChimes();
+      }
+      document.removeEventListener('click', unlockAudio);
+    }, { once: true });
+
+    // 2. Mobile Menu Drawer
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+
+    function openDrawer() {
+      mobileDrawer.classList.add('open');
+      drawerOverlay.classList.add('active');
+    }
+
+    function closeDrawer() {
+      mobileDrawer.classList.remove('open');
+      drawerOverlay.classList.remove('active');
+    }
+
+    mobileMenuBtn.addEventListener('click', openDrawer);
+    closeDrawerBtn.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    document.querySelectorAll('.mobile-drawer-link').forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+
+    // 3. Service Filter Tabs
+    const filterButtons = document.querySelectorAll('.tab-btn');
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        serviceCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Function to pre-select service into form
+    function selectService(serviceName) {
+      const select = document.getElementById('bookingService');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === serviceName || select.options[i].text.includes(serviceName)) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      const bookingSection = document.getElementById('booking');
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Function to pre-select room into form
+    function selectRoom(roomName) {
+      const select = document.getElementById('bookingRoom');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.includes(roomName) || select.options[i].text.includes(roomName)) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    // 4. AI Diagnostic Options Switching
+    const diagnosticData = {
+      vaigay: {
+        badge: 'PHÁC ĐỒ ĐÔNG Y ĐỀ XUẤT',
+        title: 'Liệu Trình: Đả Thông Kinh Lạc Vai Gáy Thần Tốc',
+        desc: 'Tập trung giải phóng các bó cơ tắc nghẽn tại vùng phong trì, kiên tỉnh và kiên trung du. Bổ sung nhiệt năng đá núi lửa bazan giúp giãn nở mạch máu nuôi não.',
+        duration: '75 - 90 Phút',
+        herbs: 'Ngải nhung, Gừng gió, Quế khâu',
+        effect: 'Nhẹ gáy ngay sau 1 buổi (85%)',
+        price: '299.000đ',
+        serviceTarget: 'Đả Thông Kinh Lạc Vai Gáy Thần Tốc (75P - 299k)'
+      },
+      matngu: {
+        badge: 'PHÁC ĐỒ AN THẦN ĐẶC BIỆT',
+        title: 'Liệu Trình: An Thần Trị Liệu & Chuông Xoay Tây Tạng',
+        desc: 'Giải tỏa ứ trệ kinh lạc vùng đầu và thần kinh thị giác. Kỹ thuật xoa bóp bách hội và đắp thảo dược ấm giúp hạ hỏa tâm can, đưa cơ thể vào trạng thái thư giãn tột đỉnh.',
+        duration: '80 Phút',
+        herbs: 'Trầm hương, Tâm sen, Hoa cúc trắng',
+        effect: 'Đi vào giấc ngủ sâu nhanh hơn',
+        price: '380.000đ',
+        serviceTarget: 'An Thần Trị Liệu Mất Ngủ (80P - 380k)'
+      },
+      daulung: {
+        badge: 'PHÁC ĐỒ CỘT SỐNG & THẮN LƯNG',
+        title: 'Liệu Trình: Massage Đá Nóng Bazan & Bấm Huyệt Thắt Lưng',
+        desc: 'Tác động sâu vào thận du, đại trường du và vùng cột sống thắt lưng. Kéo giãn cơ lưng an toàn giúp giảm áp lực đĩa đệm và chấm dứt cảm giác mỏi buốt lưng eo.',
+        duration: '90 Phút',
+        herbs: 'Cốt toái bổ, Thiên niên kiện, Rễ cỏ xước',
+        effect: 'Linh hoạt cột sống lưng eo',
+        price: '399.000đ',
+        serviceTarget: 'Massage Đá Nóng Bazan & Trầm Hương (90P - 399k)'
+      },
+      nhiemhan: {
+        badge: 'PHÁC ĐỒ TỐNG HÀN KHÍ THẢO DƯỢC',
+        title: 'Liệu Trình: Ngâm Tắm Dao Đỏ Bồn Gỗ Pơ-Mu & Xông Hơi',
+        desc: 'Nấu sôi 18 vị lá thuốc tươi vùng núi cao Tây Bắc giúp giãn nở 2 triệu lỗ chân lông, đào thải khí lạnh tích tụ sâu trong gân cốt, bồi bổ nguyên khí sau cảm sốt mệt mỏi.',
+        duration: '60 Phút',
+        herbs: '18 Vị thảo dược người Dao Đỏ',
+        effect: 'Thân nhiệt ấm lên, nhẹ nhõm toàn thân',
+        price: '320.000đ',
+        serviceTarget: 'Ngâm Tắm Thuốc Dao Đỏ Bồn Gỗ Pơ-Mu (60P - 320k)'
+      }
+    };
+
+    let currentSelectedPlan = 'vaigay';
+
+    document.querySelectorAll('.diag-option').forEach(option => {
+      option.addEventListener('click', () => {
+        document.querySelectorAll('.diag-option').forEach(o => o.classList.remove('selected'));
+        option.classList.add('selected');
+        const planKey = option.getAttribute('data-plan');
+        currentSelectedPlan = planKey;
+        const data = diagnosticData[planKey];
+
+        document.getElementById('resBadge').innerText = data.badge;
+        document.getElementById('resTitle').innerText = data.title;
+        document.getElementById('resDesc').innerText = data.desc;
+        document.getElementById('resDuration').innerText = data.duration;
+        document.getElementById('resHerbs').innerText = data.herbs;
+        document.getElementById('resEffect').innerText = data.effect;
+        document.getElementById('resPrice').innerText = data.price;
+      });
+    });
+
+    document.getElementById('btnApplyDiagnostic').addEventListener('click', () => {
+      const data = diagnosticData[currentSelectedPlan];
+      selectService(data.serviceTarget);
+    });
+
+    // 5. Room Showcase Tabs
+    const roomData = {
+      vip: {
+        img: 'image/vip-room.jpg',
+        badge: 'ĐẲNG CẤP THƯỢNG LƯU',
+        name: 'Phòng VIP Hoàng Cung Thượng Uyển',
+        desc: 'Gian phòng cao cấp nhất được bao bọc bởi gỗ tự nhiên, trang bị bồn sục pơ-mu ngâm thảo dược người Dao Đỏ, buồng xông hơi đá muối Himalaya riêng biệt và giường massage đệm tơ tằm nhập khẩu.',
+        amenities: [
+          'Bồn sục gỗ pơ-mu ngâm thuốc riêng',
+          'Xông hơi đá muối Himalaya khép kín',
+          'Trà đạo & bánh ngọt cung đình đón khách',
+          'Điều hòa lọc khí ion âm & âm thanh thiền'
+        ],
+        targetSelect: 'Phòng VIP Hoàng Cung'
+      },
+      couple: {
+        img: 'image/couple-room.jpg',
+        badge: 'KHÔNG GIAN LÃNG MẠN TRI KỶ',
+        name: 'Phòng Đôi Tri Kỷ (Dành Cho 2 Người)',
+        desc: 'Thiết kế tinh tế dành riêng cho các cặp đôi, vợ chồng hoặc đôi bạn thân muốn cùng nhau tận hưởng khoảnh khắc thư thái cuối tuần bên ánh nến lung linh và mùi tinh dầu quế ngọt ngào.',
+        amenities: [
+          '2 Giường trị liệu song song trang trọng',
+          '2 Bồn ngâm chân gỗ bách thơm lừng',
+          'Không gian riêng tư kín đáo tuyệt đối',
+          'Set trà hoa đôi và trái cây tráng miệng'
+        ],
+        targetSelect: 'Phòng Đôi Tri Kỷ'
+      },
+      single: {
+        img: 'image/hero-lounge.jpg',
+        badge: 'THANH TỊNH AN YÊN',
+        name: 'Phòng Đơn Thanh Tịnh (Dành Cho 1 Người)',
+        desc: 'Nơi chốn hoàn hảo cho những ai muốn "trốn" khỏi ồn ào phố thị để một mình tĩnh dưỡng. Tận hưởng sự chăm sóc chu đáo, nhẹ nhàng từ kỹ thuật viên chuyên nghiệp mà không bị xao nhãng.',
+        amenities: [
+          'Phòng cách âm tiêu chuẩn thiền thất',
+          'Đệm massage sưởi ấm thảo mộc tự nhiên',
+          'Khăn bông & áo choàng lụa tơ tằm khử khuẩn',
+          'Đèn vàng dịu mắt điều chỉnh theo ý thích'
+        ],
+        targetSelect: 'Phòng Đơn Thanh Tịnh'
+      }
+    };
+
+    const roomButtons = document.querySelectorAll('.room-tab-btn');
+    roomButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        roomButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const roomKey = btn.getAttribute('data-room');
+        const info = roomData[roomKey];
+
+        document.getElementById('roomImg').src = info.img;
+        document.getElementById('roomTag').innerText = info.badge;
+        document.getElementById('roomHeading').innerText = info.name;
+        document.getElementById('roomText').innerText = info.desc;
+
+        const amenityContainer = document.getElementById('roomAmenities');
+        amenityContainer.innerHTML = info.amenities.map(a => `
+          <div class="amenity-item"><span class="amenity-icon">✓</span> ${a}</div>
+        `).join('');
+      });
+    });
+
+    // 6. Set Default Booking Date (Today + 1)
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    document.getElementById('bookingDate').value = `${yyyy}-${mm}-${dd}`;
+    document.getElementById('bookingDate').min = `${yyyy}-${mm}-${dd}`;
+
+    // 7. Booking Form Handling & Modal Generation
+    const bookingForm = document.getElementById('bookingForm');
+    const confirmModal = document.getElementById('confirmModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalPassCode = document.getElementById('modalPassCode');
+    const modalBookingInfo = document.getElementById('modalBookingInfo');
+    const btnCopyBooking = document.getElementById('btnCopyBooking');
+
+    let currentBookingCopyText = '';
+
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const rawPhone = document.getElementById('clientPhone').value.trim();
+      const phone = rawPhone.replace(/[^0-9]/g, '');
+      const service = document.getElementById('bookingService').value;
+      const room = document.getElementById('bookingRoom').value;
+      const date = document.getElementById('bookingDate').value;
+      const time = document.getElementById('bookingTime').value;
+      const note = document.getElementById('clientNote').value.trim() || 'Không có';
+
+      if (!phone || phone.length < 9) {
+        alert('Vui lòng nhập số điện thoại hợp lệ để nhận mã xác nhận!');
+        document.getElementById('clientPhone').focus();
+        return;
+      }
+
+      // Generate random booking code
+      const randomCode = 'DTC-' + Math.floor(1000 + Math.random() * 9000);
+      modalPassCode.innerText = randomCode;
+
+      modalBookingInfo.innerHTML = `
+        <p><strong>Khách Hàng:</strong> ${name}</p>
+        <p><strong>Số Điện Thoại:</strong> ${phone}</p>
+        <p><strong>Dịch Vụ:</strong> ${service}</p>
+        <p><strong>Loại Phòng:</strong> ${room}</p>
+        <p><strong>Thời Gian:</strong> ${time} - Ngày ${date}</p>
+        <p><strong>Ưu Đãi Áp Dụng:</strong> Giảm 35% trên hóa đơn</p>
+        <p><strong>Ghi Chú:</strong> ${note}</p>
+      `;
+
+      currentBookingCopyText = `[ĐẶT PHÒNG DƯỠNG TÂM CÁC]\nMã hẹn: ${randomCode}\nKhách hàng: ${name} (${phone})\nDịch vụ: ${service}\nPhòng: ${room}\nThời gian: ${time} ngày ${date}\nGhi chú: ${note}\nƯu đãi: Giảm 35%`;
+
+      confirmModal.classList.add('active');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      confirmModal.classList.remove('active');
+    });
+
+    confirmModal.addEventListener('click', (e) => {
+      if (e.target === confirmModal) {
+        confirmModal.classList.remove('active');
+      }
+    });
+
+    btnCopyBooking.addEventListener('click', () => {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(currentBookingCopyText).then(() => {
+          btnCopyBooking.innerText = '✅ Đã Sao Chép!';
+          setTimeout(() => {
+            btnCopyBooking.innerHTML = '<span>📋 Sao Chép Thông Tin Hẹn</span>';
+          }, 2500);
+        });
+      } else {
+        alert('Đã lưu thông tin: \n\n' + currentBookingCopyText);
+      }
+    });
+  </script>
+</body>
+</html>

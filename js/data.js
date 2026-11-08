@@ -170,6 +170,25 @@ const templatesData = [
       "Đặt lịch tư vấn kín 1:1 cấp Mã Phiếu Tiếp Nhận Doanh Nghiệp VIP"
     ],
     demoUrl: "demos/doanh-nghiep/index.html"
+  },
+  {
+    id: "massage-spa",
+    name: "DƯỠNG TÂM CÁC (養心閣) - Viện Massage & Trị Liệu Dưỡng Sinh Cổ Truyền",
+    industry: "massage-spa",
+    industryName: "Massage / Dưỡng Sinh",
+    badge: "Dưỡng Sinh Hoàng Cung",
+    gradient: "linear-gradient(135deg, #c2410c 0%, #7c2d12 45%, #180905 100%)",
+    thumbImg: "demos/massage-spa/image/hero-lounge.jpg",
+    palette: ["#1B0D08", "#991B1B", "#D4AF37"],
+    icon: "🏮",
+    desc: "Tuyệt tác không gian thiền tịnh cổ truyền phong cách Hoàng Cung Á Đông: Đả thông 108 huyệt đạo kinh lạc, ngâm tắm lá thuốc Dao Đỏ bồn pơ-mu, bắt bệnh đau mỏi AI và đặt phòng VIP 1 chạm.",
+    highlights: [
+      "Không gian sảnh trà & phòng VIP cổ phong Á Đông trầm ấm, cách âm tuyệt đối",
+      "Kỹ thuật đả thông kinh lạc cổ vai gáy, lưng eo & massage đá nóng núi lửa",
+      "Trợ lý AI Bắt bệnh đau mỏi & tự động chỉ định phác đồ Đông Y theo thể trạng",
+      "Đặt phòng VIP nhận Phiếu hẹn Hoàng Cung giảm 35% & trà thực dưỡng miễn phí"
+    ],
+    demoUrl: "demos/massage-spa/index.html"
   }
 ];
 
@@ -184,7 +203,8 @@ const industriesList = [
   { id: "fnb-cafe", name: "Nhà Hàng / F&B", icon: "🍽️" },
   { id: "bat-dong-san", name: "Bất Động Sản", icon: "🏢" },
   { id: "ban-hang", name: "Thời Trang / Shop", icon: "👗" },
-  { id: "doanh-nghiep", name: "Doanh Nghiệp", icon: "💼" }
+  { id: "doanh-nghiep", name: "Doanh Nghiệp", icon: "💼" },
+  { id: "massage-spa", name: "Massage / Dưỡng Sinh", icon: "🏮" }
 ];
 
 // Bảng giá Combos
