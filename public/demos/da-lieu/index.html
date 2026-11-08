@@ -46,7 +46,11 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
     body {
       background-color: var(--bg-pure-white);
       background-image:
@@ -1394,6 +1398,10 @@
     }
 
     /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .nav-links { display: none; }
+      .navbar { margin: 10px 16px; padding: 12px 18px; gap: 12px; }
+    }
     @media (max-width: 1080px) {
       .navbar { margin: 10px 16px; padding: 12px 20px; }
       .hero { margin: 10px 16px 0; padding: 48px 32px 72px; }
@@ -1999,14 +2007,14 @@
           </select>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div class="form-group-med">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; box-sizing: border-box;">
+          <div class="form-group-med" style="min-width: 0;">
             <label>Ngày Khám</label>
-            <input type="date" id="patientDate" required>
+            <input type="date" id="patientDate" required style="width: 100%; box-sizing: border-box; min-width: 0;">
           </div>
-          <div class="form-group-med">
+          <div class="form-group-med" style="min-width: 0;">
             <label>Khung Giờ</label>
-            <select id="patientTime">
+            <select id="patientTime" style="width: 100%; box-sizing: border-box; min-width: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
               <option value="08:30 - 10:00 (Sáng)">08:30 - 10:00 (Sáng)</option>
               <option value="10:00 - 11:30 (Sáng)">10:00 - 11:30 (Sáng)</option>
               <option value="14:00 - 16:00 (Chiều)">14:00 - 16:00 (Chiều)</option>

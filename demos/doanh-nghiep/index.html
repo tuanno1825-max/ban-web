@@ -29,7 +29,11 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
     body {
       background-color: var(--bg-platinum);
       color: var(--text-primary);
@@ -1084,6 +1088,10 @@
     }
 
     /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .nav-links { display: none; }
+      .navbar { padding: 12px 20px; gap: 14px; }
+    }
     @media (max-width: 1024px) {
       .stats-grid, .services-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-container, .est-grid, .consult-section, .hologram-shell { grid-template-columns: 1fr; }
@@ -1603,25 +1611,25 @@
           <input type="text" id="corpName" placeholder="Ví dụ: Công ty Cổ phần Kỹ Thuật Môi Trường Lifetec" required>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div class="form-group-corp">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; box-sizing: border-box;">
+          <div class="form-group-corp" style="min-width: 0;">
             <label>Người Đại Diện Liên Hệ</label>
-            <input type="text" id="repName" placeholder="Họ và tên" required>
+            <input type="text" id="repName" placeholder="Họ và tên" required style="width: 100%; min-width: 0; box-sizing: border-box;">
           </div>
-          <div class="form-group-corp">
+          <div class="form-group-corp" style="min-width: 0;">
             <label>Chức Vụ</label>
-            <input type="text" id="repRole" placeholder="CEO / Giám đốc / Trưởng phòng" required>
+            <input type="text" id="repRole" placeholder="CEO / Giám đốc / Trưởng phòng" required style="width: 100%; min-width: 0; box-sizing: border-box;">
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div class="form-group-corp">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; box-sizing: border-box;">
+          <div class="form-group-corp" style="min-width: 0;">
             <label>Số Điện Thoại</label>
-            <input type="tel" id="repPhone" placeholder="090x xxx xxx" required>
+            <input type="tel" id="repPhone" placeholder="090x xxx xxx" required style="width: 100%; min-width: 0; box-sizing: border-box;">
           </div>
-          <div class="form-group-corp">
+          <div class="form-group-corp" style="min-width: 0;">
             <label>Email Công Việc</label>
-            <input type="email" id="repEmail" placeholder="ceo@company.com" required>
+            <input type="email" id="repEmail" placeholder="ceo@company.com" required style="width: 100%; min-width: 0; box-sizing: border-box;">
           </div>
         </div>
 

@@ -1140,6 +1140,8 @@
       padding: 48px;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
       position: relative;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .booking-header {
@@ -1149,18 +1151,22 @@
 
     .booking-form {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      min-width: 0;
     }
 
     .form-group.full-width {
       grid-column: span 2;
+      min-width: 0;
     }
 
     .form-label {
@@ -1182,6 +1188,16 @@
       outline: none;
       transition: all 0.25s ease;
       font-family: inherit;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    select.form-control {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     .form-control:focus {
@@ -1206,12 +1222,16 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      box-sizing: border-box;
+      min-width: 0;
     }
 
     .btn-submit-booking {
       grid-column: span 2;
       padding: 16px;
       font-size: 1.05rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     /* Modal Booking Confirmation */

@@ -37,7 +37,11 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
     body {
       background-color: var(--bg-dark);
       background-image:
@@ -406,9 +410,11 @@
     }
     .filter-grid-resort {
       display: grid;
-      grid-template-columns: 1.1fr 1.1fr 1.15fr 1.4fr auto;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr) minmax(0, 1.15fr) minmax(0, 1.4fr) auto;
       gap: 18px;
       align-items: center;
+      width: 100%;
+      box-sizing: border-box;
     }
     .filter-field {
       display: flex;
@@ -417,6 +423,16 @@
       text-align: left;
       padding-right: 16px;
       border-right: 1px solid #EAE2D3;
+      min-width: 0;
+    }
+    .filter-field select, .filter-field input {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
     .filter-field:nth-child(4) {
       border-right: none;
@@ -1071,6 +1087,10 @@
     }
 
     /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .nav-links { display: none; }
+      .navbar { padding: 12px 20px; gap: 14px; }
+    }
     @media (max-width: 1024px) {
       .hero-sanctuary-showcase {
         grid-template-columns: 1fr;
