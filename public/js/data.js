@@ -216,7 +216,7 @@ const pricingCombos = [
     priceStr: "1.500.000đ",
     unit: "Năm đầu tiên trọn gói",
     renewalPrice: "Chỉ ~350k/năm (Phí tên miền, Hosting 0đ trọn đời)",
-    popular: false,
+    popular: true,
     desc: "Dành cho cá nhân, shop nhỏ, chạy Ads cần web đẹp chốt đơn nhanh mà không tốn chi phí nuôi database.",
     features: [
       "Giao diện chuẩn UX/UI theo mẫu ngành nghề",
@@ -235,7 +235,7 @@ const pricingCombos = [
     priceStr: "3.900.000đ",
     unit: "Bao gồm Domain + Cloud Hosting năm đầu",
     renewalPrice: "800.000đ - 1.200.000đ / năm (~70k/tháng)",
-    popular: true,
+    popular: false,
     desc: "Lựa chọn hàng đầu cho các Shop & Doanh nghiệp vừa và nhỏ cần quản lý sản phẩm, đơn hàng và thống kê doanh thu.",
     features: [
       "Bao gồm TOÀN BỘ quyền lợi của Combo 1",
