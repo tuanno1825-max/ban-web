@@ -300,6 +300,44 @@ a {
   color: var(--text-muted);
 }
 
+.slogan-guarantee-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 1.5px solid #86efac;
+  border-radius: 16px;
+  padding: 13px 18px;
+  margin-top: 24px;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.08);
+}
+
+.guarantee-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.guarantee-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.guarantee-text strong {
+  font-size: 0.88rem;
+  color: #15803d;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.guarantee-text span {
+  font-size: 0.88rem;
+  color: #166534;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
 .hero-showcase-card {
   background: #ffffff;
   border: 1px solid var(--border);
@@ -376,13 +414,13 @@ a {
 }
 
 .quick-industry-list {
-  display: grid;
-  gap: 8px;
-  max-height: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 4px;
-  padding-bottom: 24px;
+  padding: 4px 6px 24px 2px;
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 transparent;
   box-sizing: border-box;
@@ -406,43 +444,45 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 12px;
-  border-radius: 13px;
-  background: #f8fafc;
-  border: 1px solid var(--border);
+  padding: 13px 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  gap: 8px;
+  gap: 12px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
 }
 
 .quick-industry-item:hover {
   background: #eef2ff;
   border-color: #a5b4fc;
-  transform: translateX(3px);
+  transform: translateX(4px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.08);
 }
 
 .quick-industry-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
   flex: 1;
   overflow: hidden;
 }
 
 .quick-industry-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
   box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
   display: grid;
   place-items: center;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
 }
 
@@ -453,29 +493,32 @@ a {
 }
 
 .quick-industry-name {
-  font-weight: 700;
-  font-size: 0.88rem;
+  font-weight: 800;
+  font-size: 0.94rem;
   color: #0f172a;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 2px;
 }
 
 .quick-industry-desc {
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.35;
 }
 
 .quick-view-btn {
   flex-shrink: 0;
-  padding: 6px 10px;
-  font-size: 0.78rem;
-  border-radius: 8px;
-  gap: 4px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  gap: 6px;
   white-space: nowrap;
+  font-weight: 700;
 }
 
 /* Section Headers */
@@ -1609,6 +1652,81 @@ a {
 
   .hide-on-mobile {
     display: none;
+  }
+
+  /* Tối ưu danh sách thanh demo rộng thoáng trên iPhone 14 Pro Max & Mobile */
+  .hero-showcase-card {
+    border-radius: 24px;
+    padding: 18px 16px;
+    margin-top: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+
+  .quick-industry-list {
+    gap: 14px;
+    max-height: 480px;
+    padding-bottom: 24px;
+  }
+
+  .quick-industry-item {
+    padding: 15px 16px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    margin-bottom: 2px;
+    min-height: 70px;
+    gap: 14px;
+  }
+
+  .quick-industry-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.45rem;
+    border-radius: 14px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+  }
+
+  .quick-industry-name {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 3px;
+    color: #0f172a;
+  }
+
+  .quick-industry-desc {
+    font-size: 0.78rem;
+    color: #64748b;
+  }
+
+  .quick-view-btn {
+    padding: 9px 15px;
+    font-size: 0.82rem;
+    border-radius: 12px;
+    font-weight: 800;
+    background: #eef2ff;
+    color: var(--primary);
+    border: 1.5px solid #c7d2fe;
+    box-shadow: 0 2px 6px rgba(79, 70, 229, 0.12);
+  }
+
+  .slogan-guarantee-badge {
+    padding: 12px 14px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+
+  .guarantee-icon {
+    font-size: 1.6rem;
+  }
+
+  .guarantee-text strong {
+    font-size: 0.82rem;
+  }
+
+  .guarantee-text span {
+    font-size: 0.78rem;
   }
 }
 

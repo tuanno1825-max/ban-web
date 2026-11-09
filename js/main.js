@@ -17,10 +17,15 @@ function switchPageTab(tabName) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Khởi tạo danh sách nhanh ở Hero section (hiển thị đầy đủ 9 ngành nghề, chống tràn và không bị che)
+// Khởi tạo danh sách nhanh ở Hero section (hiển thị đầy đủ các ngành nghề, thoáng mắt, dễ bấm trên mobile)
 function renderHeroQuickList() {
   const container = document.getElementById('heroQuickList');
   if (!container) return;
+
+  const demoCountBadge = document.getElementById('heroDemoCount');
+  if (demoCountBadge) {
+    demoCountBadge.textContent = templatesData.length + " Mẫu Demo";
+  }
 
   container.innerHTML = templatesData.map(tpl => `
     <div class="quick-industry-item" onclick="openLivePreview('${tpl.id}')" title="Nhấn để xem thử giao diện ${tpl.industryName}">
