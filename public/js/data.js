@@ -224,7 +224,7 @@ const pricingCombos = [
       "Nút gọi Hotline, Chat Zalo, Messenger gắn nổi",
       "Form đặt hàng / đặt lịch BẮN ĐƠN VỀ TELEGRAM trong 1s",
       "Tối ưu tốc độ tải trang cực nhanh (PageSpeed 90+)",
-      "Bàn giao toàn bộ mã nguồn HTML/CSS/JS"
+      "Bàn giao toàn bộ mã nguồn & quyền sở hữu 100%"
     ],
     note: "Duy trì từ năm 2: Server 0đ vĩnh viễn (chỉ đóng gia hạn tên miền)."
   },
