@@ -429,6 +429,16 @@ function openAndPasteChatbot() {
   }, 250);
 }
 
+// Toggle FAQ Accordion
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isActive = item.classList.contains('active');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+  if (!isActive) {
+    item.classList.add('active');
+  }
+}
+
 // Khởi chạy khi tải trang
 document.addEventListener('DOMContentLoaded', () => {
   renderHeroQuickList();
