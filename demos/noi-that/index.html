@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATELIER MỘC &amp; ĐÁ - Kiến Trúc &amp; Thi Công Nội Thất Trọn Gói</title>
+  <meta name="description" content="Thiết kế kiến trúc &amp; thi công nội thất trọn gói chìa khóa trao tay. Kéo xem thực tế Thô sang Hoàn thiện &amp; dự toán chi phí theo m2.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-travertine: #F5F1EB;
+      --bg-surface: #FFFFFF;
+      --bg-linen: #EDE6DC;
+      --walnut: #2B211A;
+      --gold-primary: #B68D4C;
+      --gold-bronze: #8A652E;
+      --gold-light: #DEC08A;
+      --champagne: #B68D4C;
+      --gold-gradient: linear-gradient(135deg, #C79F5D 0%, #9E7437 100%);
+      --text-main: #2B211A;
+      --text-body: #52443A;
+      --text-muted: #7C6E63;
+      --border: #E0D6C9;
+      --shadow-sm: 0 8px 22px rgba(43, 33, 26, 0.06);
+      --shadow-md: 0 24px 50px -14px rgba(43, 33, 26, 0.18);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg-travertine);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: 1220px; margin: 0 auto; padding: 0 22px; }
+
+    .top-strip {
+      background: var(--walnut);
+      color: #EFE8DE;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 8px 16px;
+    }
+    .top-strip strong { color: var(--gold-light); }
+
+    .arch-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(245, 241, 235, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 14px;
+    }
+    .brand-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .logo-emblem {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--walnut);
+      color: var(--gold-light);
+      border: 1px solid var(--gold-primary);
+      display: grid;
+      place-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .brand-text h1 {
+      font-size: 1.32rem;
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      color: var(--walnut);
+    }
+    .brand-text p {
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-bronze);
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+    .nav-links a { font-size: 0.88rem; font-weight: 600; color: var(--text-body); white-space: nowrap; }
+    .nav-links a:hover { color: var(--gold-bronze); }
+    .header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .mobile-menu-btn {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px 18px 16px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a { padding: 7px 0; font-weight: 600; border-bottom: 1px dashed var(--border); }
+
+    .btn-arch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.22s ease;
+    }
+    .btn-brass {
+      background: var(--gold-gradient);
+      color: #FFFFFF;
+      box-shadow: 0 8px 20px -6px rgba(138, 101, 46, 0.45);
+    }
+    .btn-brass:hover { transform: translateY(-2px); }
+    .btn-stone { background: var(--bg-surface); color: var(--walnut); border-color: var(--border); }
+    .btn-sm { padding: 8px 14px; font-size: 0.8rem; }
+
+    /* Hero */
+    .hero-section { padding: 52px 0 64px; overflow-x: clip; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; }
+    .hero-grid > * { min-width: 0; }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--bg-linen);
+      border: 1px solid var(--border);
+      color: var(--gold-bronze);
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+    .hero-title { font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: 1.12; margin-bottom: 16px; color: var(--walnut); }
+    .hero-title em { color: var(--gold-bronze); font-style: italic; }
+    .hero-desc { color: var(--text-body); font-size: 1rem; margin-bottom: 24px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .hero-stats > div { min-width: 0; }
+    .hero-stats strong { display: block; font-size: 1.45rem; color: var(--gold-bronze); }
+    .hero-stats span { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
+
+    .hero-frame {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 5px solid #FFFFFF;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 16 / 10;
+    }
+    .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+    .section { padding: 72px 0; overflow-x: clip; }
+    .section-linen { background: var(--bg-linen); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-head { text-align: center; max-width: 740px; margin: 0 auto 38px; }
+    .section-kicker {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-bronze);
+      margin-bottom: 8px;
+    }
+    .section-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.6rem); line-height: 1.16; margin-bottom: 10px; }
+    .section-head p { color: var(--text-muted); font-size: 0.96rem; }
+
+    /* Raw -> Finished Slider */
+    .transform-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; }
+    .transform-grid > * { min-width: 0; }
+    .ba-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 4px solid #FFFFFF;
+      box-shadow: var(--shadow-md);
+      --pos: 50%;
+    }
+    .ba-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ba-raw { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+    .ba-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--pos);
+      width: 2px;
+      background: #FFFFFF;
+      pointer-events: none;
+    }
+    .ba-knob {
+      position: absolute;
+      top: 50%;
+      left: var(--pos);
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--walnut);
+      color: var(--gold-light);
+      border: 2px solid #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      pointer-events: none;
+    }
+    .ba-tag {
+      position: absolute;
+      top: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      background: rgba(43, 33, 26, 0.82);
+      color: #FFFFFF;
+    }
+    .ba-tag.left { left: 14px; }
+    .ba-tag.right { right: 14px; background: var(--gold-primary); color: #fff; }
+    .ba-range-bar { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+    .ba-range-bar input { flex: 1; accent-color: var(--gold-primary); cursor: pointer; }
+
+    /* Style Projects */
+    .filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 28px; }
+    .filter-pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-body);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .filter-pill.active { background: var(--walnut); color: var(--gold-light); border-color: transparent; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
+    .proj-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .proj-img { aspect-ratio: 4 / 3; overflow: hidden; position: relative; }
+    .proj-img img { width: 100%; height: 100%; object-fit: cover; }
+    .proj-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(43, 33, 26, 0.86);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 11px;
+      border-radius: 999px;
+    }
+    .proj-body { padding: 18px 20px; display: flex; flex-direction: column; flex: 1; }
+    .proj-body h3 { font-size: 1.38rem; margin-bottom: 6px; }
+    .proj-body p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; }
+
+    /* m2 Cost Estimator */
+    .est-card {
+      background: var(--walnut);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+      box-shadow: var(--shadow-md);
+    }
+    .est-card > * { min-width: 0; }
+    .est-row { margin-bottom: 18px; }
+    .est-label { display: flex; justify-content: space-between; font-size: 0.86rem; color: #DFD5C9; margin-bottom: 8px; }
+    .est-label strong { color: var(--gold-light); }
+    .seg-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .seg-btn {
+      flex: 1;
+      min-width: 82px;
+      padding: 9px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .seg-btn.active { background: var(--gold-gradient); color: #FFFFFF; border-color: transparent; }
+    .est-result-panel {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(222, 192, 138, 0.35);
+      border-radius: 16px;
+      padding: 26px;
+      text-align: center;
+    }
+    .est-price-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin: 6px 0 14px;
+    }
+    .est-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 14px;
+      margin-bottom: 18px;
+      font-size: 0.84rem;
+    }
+
+    /* Booking */
+    .booking-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 32px; align-items: start; }
+    .booking-grid > * { min-width: 0; }
+    .booking-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .f-group { margin-bottom: 14px; min-width: 0; }
+    .f-group label { display: block; font-size: 0.84rem; font-weight: 700; margin-bottom: 5px; }
+    .f-input {
+      width: 100%;
+      background: var(--bg-travertine);
+      border: 1.5px solid var(--border);
+      padding: 11px 13px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .f-input:focus { outline: none; border-color: var(--gold-primary); background: #FFFFFF; }
+    .arch-ticket {
+      display: none;
+      background: var(--bg-linen);
+      border: 1.5px dashed var(--gold-primary);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .arch-ticket.visible { display: block; }
+
+    .arch-footer {
+      background: #1E1611;
+      color: #C7BBAE;
+      padding: 40px 0 24px;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links, .header-phone-desk { display: none; }
+      .mobile-menu-btn { display: grid; place-items: center; }
+      .hero-grid, .transform-grid, .est-card, .booking-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 16px; }
+      .header-inner { gap: 8px; }
+      .logo-emblem { width: 34px; height: 34px; font-size: 0.95rem; }
+      .brand-text h1 { font-size: 1rem; }
+      .brand-text p { font-size: 0.54rem; letter-spacing: 0.08em; }
+      .header-actions { gap: 6px; }
+      .header-actions .btn-sm { padding: 7px 10px; font-size: 0.74rem; }
+      .section { padding: 48px 0; }
+      .est-card, .booking-box { padding: 22px 16px; }
+      .form-2col, .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip">
+    ✦ Tặng ngay <strong>Bản Vẽ Phối Cảnh 3D trị giá 15 Triệu</strong> khi ký hợp đồng thi công nội thất trọn gói ✦
+  </div>
+
+  <header class="arch-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo">
+        <div class="logo-emblem">MĐ</div>
+        <div class="brand-text">
+          <h1>ATELIER MỘC &amp; ĐÁ</h1>
+          <p>Architecture &amp; Bespoke Interior</p>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#transform">Thô → Hoàn Thiện</a></li>
+        <li><a href="#projects">Phong Cách</a></li>
+        <li><a href="#interiorCalc">Dự Toán m²</a></li>
+        <li><a href="#booking">Khảo Sát 3D</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="tel:0387637982" class="btn-arch btn-stone btn-sm header-phone-desk">📞 0387.637.982</a>
+        <a href="#booking" class="btn-arch btn-brass btn-sm">📐 Khảo Sát 3D</a>
+        <button type="button" class="mobile-menu-btn" onclick="toggleArchMenu()" aria-label="Mở menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="archDrawer">
+      <a href="#transform" onclick="toggleArchMenu()">✨ Hiện Trạng Thô → Hoàn Thiện</a>
+      <a href="#projects" onclick="toggleArchMenu()">🛋️ Bộ Sưu Tập Phong Cách</a>
+      <a href="#interiorCalc" onclick="toggleArchMenu()">📐 Dự Toán Chi Phí Theo m²</a>
+      <a href="#booking" onclick="toggleArchMenu()">📋 Đăng Ký Khảo Sát Miễn Phí</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-pill"><span>🏛️</span> Xưởng Sản Xuất Trực Tiếp 2.000m²</div>
+          <h1 class="hero-title">May Đo <em>Không Gian Sống</em> Tinh Tế &amp; Chuẩn Bản Vẽ 99%</h1>
+          <p class="hero-desc">Từ căn hộ thô đến tổ ấm hoàn thiện chìa khóa trao tay trong 45 ngày — cam kết không phát sinh chi phí ngoài dự toán và bảo hành kết cấu 5 năm.</p>
+          <div class="hero-actions">
+            <a href="#interiorCalc" class="btn-arch btn-brass">📐 Dự Toán Chi Phí Theo m²</a>
+            <a href="#transform" class="btn-arch btn-stone">✨ Xem Thực Tế Thô → Hoàn Thiện</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>45 Ngày</strong><span>Bàn giao hoàn thiện</span></div>
+            <div><strong>350+</strong><span>Công trình đã bàn giao</span></div>
+            <div><strong>0%</strong><span>Phí trung gian xưởng</span></div>
+          </div>
+        </div>
+        <div class="hero-frame">
+          <img src="image/hero-interior.webp" alt="Phòng khách thiết kế nội thất Modern Luxury tại Atelier Mộc & Đá">
+        </div>
+      </div>
+    </section>
+
+    <!-- RAW TO FINISHED SLIDER -->
+    <section class="section section-linen" id="transform">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Kiểm Chứng Thực Tế Thi Công</span>
+          <h2>Từ Bàn Giao Thô Đến Tổ Ấm Hoàn Hảo</h2>
+          <p>Kéo thanh trượt để đối chiếu hiện trạng tường thô ban đầu và không gian nội thất sau 45 ngày thi công.</p>
+        </div>
+
+        <div class="transform-grid">
+          <div>
+            <div class="ba-stage" id="transformCompare">
+              <img loading="lazy" src="image/room-finished.webp" alt="Căn hộ sau khi hoàn thiện nội thất">
+              <img loading="lazy" src="image/room-raw.webp" alt="Hiện trạng bàn giao thô ban đầu" class="ba-raw">
+              <div class="ba-line"></div>
+              <div class="ba-knob">↔</div>
+              <span class="ba-tag left">HIỆN TRẠNG THÔ</span>
+              <span class="ba-tag right">HOÀN THIỆN 100%</span>
+            </div>
+            <div class="ba-range-bar">
+              <span style="font-size:0.8rem;font-weight:700;">Thô 100%</span>
+              <input type="range" min="5" max="95" value="50" oninput="document.getElementById('transformCompare').style.setProperty('--pos', this.value + '%')" aria-label="Kéo xem quá trình hoàn thiện">
+              <span style="font-size:0.8rem;font-weight:700;color:var(--gold-bronze);">Bàn giao</span>
+            </div>
+          </div>
+
+          <div style="display:grid;gap:14px;">
+            <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:18px;">
+              <strong style="display:block;font-size:1rem;margin-bottom:4px;">🪵 Gỗ An Cường &amp; Óc Chó Bắc Mỹ</strong>
+              <span style="font-size:0.86rem;color:var(--text-muted);">Cam kết đúng chủng loại vật liệu theo mẫu ký duyệt, có chứng thư xuất xưởng rõ ràng.</span>
+            </div>
+            <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:18px;">
+              <strong style="display:block;font-size:1rem;margin-bottom:4px;">⏱️ Phạt Tiến Độ 1%/Ngày Nếu Trễ Hẹn</strong>
+              <span style="font-size:0.86rem;color:var(--text-muted);">Hợp đồng quy định rõ từng mốc nghiệm thu thô, điện nước, sơn bả và lắp đặt đồ rời.</span>
+            </div>
+            <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:18px;">
+              <strong style="display:block;font-size:1rem;margin-bottom:4px;">🛡️ Bảo Hành 5 Năm • Bảo Trì Trọn Đời</strong>
+              <span style="font-size:0.86rem;color:var(--text-muted);">Đội kỹ thuật xử lý sự cố bản lề, đèn LED, đường nước trong vòng 24 giờ.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STYLE GALLERY -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Tuyển Tập Công Trình 2026</span>
+          <h2>Lựa Chọn Phong Cách Nội Thất Yêu Thích</h2>
+          <p>Mỗi công trình được cá nhân hóa theo thói quen sinh hoạt, ánh sáng tự nhiên và ngân sách của gia chủ.</p>
+        </div>
+
+        <div class="filter-pills">
+          <button type="button" class="filter-pill active" onclick="filterInterior('all', this)">Tất Cả</button>
+          <button type="button" class="filter-pill" onclick="filterInterior('luxury', this)">Modern Luxury</button>
+          <button type="button" class="filter-pill" onclick="filterInterior('indochine', this)">Indochine</button>
+          <button type="button" class="filter-pill" onclick="filterInterior('wabisabi', this)">Wabi-Sabi</button>
+        </div>
+
+        <div class="projects-grid" id="interiorProjectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- M2 COST ESTIMATOR -->
+    <section class="section" id="interiorCalc" style="padding-top: 10px;">
+      <div class="container">
+        <div class="est-card">
+          <div>
+            <span class="section-kicker" style="color:var(--gold-light);">Công Cụ Dự Toán Thông Minh</span>
+            <h2 style="font-size:clamp(1.85rem,3vw,2.45rem);margin-bottom:18px;color:#fff;">Dự Toán Chi Phí Thiết Kế &amp; Thi Công Theo m²</h2>
+
+            <div class="est-row">
+              <div class="est-label"><span>Loại hình công trình:</span><strong id="lblHouseType">Chung cư</strong></div>
+              <div class="seg-row" id="houseTypeBtns">
+                <button type="button" class="seg-btn active" onclick="setHouseType('chungcu', 'Chung cư', 1.0, this)">Chung cư</button>
+                <button type="button" class="seg-btn" onclick="setHouseType('nhapho', 'Nhà phố', 1.12, this)">Nhà phố</button>
+                <button type="button" class="seg-btn" onclick="setHouseType('bietthu', 'Biệt thự', 1.28, this)">Biệt thự</button>
+              </div>
+            </div>
+
+            <div class="est-row">
+              <div class="est-label"><span>Diện tích sàn cần làm:</span><strong id="lblArea">85 m²</strong></div>
+              <input type="range" id="areaRange" style="width:100%;accent-color:var(--gold-light);cursor:pointer;" min="35" max="350" step="5" value="85" oninput="calcInteriorCost()">
+            </div>
+
+            <div class="est-row">
+              <div class="est-label"><span>Phong cách thiết kế:</span><strong id="lblStyle">Modern Luxury</strong></div>
+              <div class="seg-row" id="styleBtns">
+                <button type="button" class="seg-btn" onclick="setArchStyle('Tối giản', 4.2, this)">Tối giản</button>
+                <button type="button" class="seg-btn" onclick="setArchStyle('Indochine', 5.2, this)">Indochine</button>
+                <button type="button" class="seg-btn active" onclick="setArchStyle('Modern Luxury', 5.8, this)">Modern Luxury</button>
+              </div>
+            </div>
+
+            <div class="est-row" style="margin-bottom:0;">
+              <div class="est-label"><span>Phạm vi gói triển khai:</span><strong id="lblPackage">Trọn gói chìa khóa trao tay</strong></div>
+              <div class="seg-row" id="pkgBtns">
+                <button type="button" class="seg-btn" onclick="setArchPkg('design', 'Chỉ thiết kế 3D', this)">Thiết kế 3D</button>
+                <button type="button" class="seg-btn" onclick="setArchPkg('build', 'Thi công hoàn thiện', this)">Thi công</button>
+                <button type="button" class="seg-btn active" onclick="setArchPkg('turnkey', 'Trọn gói chìa khóa trao tay', this)">Trọn gói</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="est-result-panel">
+            <div style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#DFD5C9;">Tổng dự toán tham khảo</div>
+            <div class="est-price-big" id="resTotalEst">493.000.000đ</div>
+            <div class="est-meta">
+              <div><span style="color:#C7BBAE;display:block;">Phí thiết kế 3D</span><strong id="resDesignFee" style="color:#6EE7B7;">Miễn phí 100%</strong></div>
+              <div><span style="color:#C7BBAE;display:block;">Thời gian dự kiến</span><strong id="resDuration" style="color:#fff;">40 – 45 ngày</strong></div>
+            </div>
+            <button type="button" class="btn-arch btn-brass" style="width:100%;" onclick="applyInteriorEst()">
+              📐 Nhận Báo Giá Chi Tiết Theo Diện Tích Này
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section section-linen" id="booking">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Khảo Sát Hiện Trạng Miễn Phí</span>
+          <h2>Đăng Ký Lên Concept 3D &amp; Báo Giá Xưởng</h2>
+          <p>Kiến trúc sư trưởng đến đo đạc trực tiếp bằng máy Laser 3D và tư vấn giải pháp công năng miễn phí.</p>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-box" style="background:var(--walnut);color:#fff;border-color:transparent;">
+            <h3 style="font-size:1.85rem;color:#fff;margin-bottom:12px;">Quy Trình 3 Bước Minh Bạch</h3>
+            <ul style="list-style:none;display:grid;gap:12px;font-size:0.88rem;color:#EFE8DE;margin-bottom:18px;">
+              <li><strong>01. Đo đạc Laser &amp; Lắng nghe:</strong> Lên layout bố trí mặt bằng công năng miễn phí trong 48 giờ.</li>
+              <li><strong>02. Phối cảnh 3D &amp; Chọn mẫu gỗ:</strong> Duyệt vật liệu thật tại Showroom hoặc tận nhà.</li>
+              <li><strong>03. Sản xuất &amp; Lắp đặt trọn gói:</strong> Thi công sạch sẽ, bàn giao đúng tiến độ cam kết.</li>
+            </ul>
+            <div style="background:rgba(255,255,255,0.08);padding:12px 14px;border-radius:12px;font-size:0.84rem;">
+              📍 Studio: Khu Biệt Thự An Phú, Thủ Đức &amp; Thảo Điền / Hà Nội<br>
+              📞 Hotline KTS: 0387.637.982
+            </div>
+          </div>
+
+          <div class="booking-box">
+            <form id="interiorBookingForm" onsubmit="submitInteriorForm(event)">
+              <div class="form-2col">
+                <div class="f-group">
+                  <label for="inName">Họ và Tên Gia Chủ *</label>
+                  <input type="text" id="inName" class="f-input" placeholder="Ví dụ: Anh Hoàng Nam" required>
+                </div>
+                <div class="f-group">
+                  <label for="inPhone">Số Điện Thoại / Zalo *</label>
+                  <input type="tel" id="inPhone" class="f-input" placeholder="0912.345.678" required>
+                </div>
+              </div>
+              <div class="f-group">
+                <label for="inProject">Dự Án / Loại Hình &amp; Phong Cách</label>
+                <select id="inProject" class="f-input">
+                  <option>Chung cư — Modern Luxury</option>
+                  <option>Chung cư — Indochine / Wabi-Sabi</option>
+                  <option>Nhà phố / Shophouse Trọn Gói</option>
+                  <option>Biệt thự Cao Cấp Chìa Khóa Trao Tay</option>
+                </select>
+              </div>
+              <div class="f-group">
+                <label for="inNote">Diện Tích &amp; Yêu Cầu Cụ Thể</label>
+                <textarea id="inNote" rows="2" class="f-input" placeholder="Ví dụ: Căn hộ 85m2 2PN bàn giao thô, cần nhận báo giá trọn gói..."></textarea>
+              </div>
+              <button type="submit" class="btn-arch btn-brass" style="width:100%;padding:14px;">
+                🚀 Gửi Yêu Cầu Khảo Sát &amp; Báo Giá
+              </button>
+            </form>
+
+            <div id="archTicket" class="arch-ticket">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <strong>✓ MÃ HỒ SƠ KIẾN TRÚC</strong>
+                <span id="archCode" style="background:var(--walnut);color:var(--gold-light);font-size:0.78rem;font-weight:800;padding:4px 10px;border-radius:999px;">#AMD-5521</span>
+              </div>
+              <div id="archTicketBody" style="font-size:0.88rem;display:grid;gap:6px;margin-bottom:14px;"></div>
+              <button type="button" class="btn-arch btn-stone btn-sm" style="width:100%;" onclick="resetInteriorForm()">Tạo Yêu Cầu Khảo Sát Khác</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="arch-footer">
+    <div class="container">
+      <p>© 2026 ATELIER MỘC &amp; ĐÁ — Giao diện mẫu ngành Kiến Trúc &amp; Nội Thất thực hiện bởi <a href="https://webgiatot.me/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);font-weight:700;">PAT TECH (webgiatot.me)</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const interiorProjects = [
+      { cat: 'luxury', tag: 'Modern Luxury • 115m²', name: 'Penthouse Metropole Thủ Thiêm', img: 'image/hero-interior.webp', desc: 'Gỗ óc chó tự nhiên kết hợp đá Marble Travertine và hệ đèn hắt ấm.' },
+      { cat: 'indochine', tag: 'Indochine • 140m²', name: 'Biệt Thự Phố Đông Dương Hoài Cổ', img: 'image/style-indochine.webp', desc: 'Đan mây thủ công, gỗ sẫm màu chạm khắc tinh tế cùng đèn đồng ấm áp.' },
+      { cat: 'wabisabi', tag: 'Wabi-Sabi • 90m²', name: 'Căn Hộ Thiền Tịnh Sơn Hiệu Ứng', img: 'image/style-wabisabi.webp', desc: 'Tường hiệu ứng vữa thô mộc mạc hòa quyện vải linen và gỗ sồi nhạt.' },
+      { cat: 'luxury', tag: 'Hoàn Thiện • 85m²', name: 'Căn Hộ Bàn Giao Thô Chìa Khóa Trao Tay', img: 'image/room-finished.webp', desc: 'Thi công trọn gói trong 42 ngày đúng phối cảnh 3D tới 99%.' }
+    ];
+
+    let activeInteriorCat = 'all';
+    let houseMult = 1.0;
+    let houseLabel = 'Chung cư';
+    let styleName = 'Modern Luxury';
+    let styleRateMil = 5.8;
+    let pkgType = 'turnkey';
+    let pkgLabel = 'Trọn gói chìa khóa trao tay';
+
+    function renderInteriorProjects() {
+      const grid = document.getElementById('interiorProjectsGrid');
+      const list = activeInteriorCat === 'all' ? interiorProjects : interiorProjects.filter(p => p.cat === activeInteriorCat);
+      grid.innerHTML = list.map(p => `
+        <article class="proj-card">
+          <div class="proj-img">
+            <img loading="lazy" src="${p.img}" alt="${p.name}">
+            <span class="proj-tag">${p.tag}</span>
+          </div>
+          <div class="proj-body">
+            <h3>${p.name}</h3>
+            <p>${p.desc}</p>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterInterior(cat, btn) {
+      activeInteriorCat = cat;
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderInteriorProjects();
+    }
+
+    function setHouseType(id, label, mult, btn) {
+      houseMult = mult;
+      houseLabel = label;
+      document.getElementById('lblHouseType').innerText = label;
+      document.querySelectorAll('#houseTypeBtns .seg-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      calcInteriorCost();
+    }
+
+    function setArchStyle(name, rateMil, btn) {
+      styleName = name;
+      styleRateMil = rateMil;
+      document.getElementById('lblStyle').innerText = name;
+      document.querySelectorAll('#styleBtns .seg-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      calcInteriorCost();
+    }
+
+    function setArchPkg(pkg, label, btn) {
+      pkgType = pkg;
+      pkgLabel = label;
+      document.getElementById('lblPackage').innerText = label;
+      document.querySelectorAll('#pkgBtns .seg-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      calcInteriorCost();
+    }
+
+    function calcInteriorCost() {
+      const area = parseInt(document.getElementById('areaRange').value, 10);
+      document.getElementById('lblArea').innerText = area + ' m²';
+
+      const designRatePerM2 = styleName === 'Modern Luxury' ? 280000 : 220000;
+      const designFee = area * designRatePerM2;
+      const buildTotal = Math.round(area * styleRateMil * 1000000 * houseMult);
+
+      let totalDisplay = buildTotal;
+      let designStr = 'Miễn phí 100%';
+      let durationStr = area > 160 ? '60 – 75 ngày' : '35 – 45 ngày';
+
+      if (pkgType === 'design') {
+        totalDisplay = designFee;
+        designStr = designFee.toLocaleString('vi-VN') + 'đ';
+        durationStr = '10 – 15 ngày';
+      } else if (pkgType === 'build') {
+        totalDisplay = Math.round(buildTotal * 0.94);
+        designStr = 'Đã có bản vẽ';
+      }
+
+      document.getElementById('resTotalEst').innerText = totalDisplay.toLocaleString('vi-VN') + 'đ';
+      document.getElementById('resDesignFee').innerText = designStr;
+      document.getElementById('resDuration').innerText = durationStr;
+    }
+
+    function applyInteriorEst() {
+      const area = document.getElementById('areaRange').value;
+      const total = document.getElementById('resTotalEst').innerText;
+      document.getElementById('inNote').value = `${houseLabel} ${area}m² • Phong cách ${styleName} • Gói ${pkgLabel} (Dự toán ${total}).`;
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitInteriorForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('inName').value.trim();
+      const phone = document.getElementById('inPhone').value.trim();
+      const proj = document.getElementById('inProject').value;
+      const note = document.getElementById('inNote').value.trim();
+      const code = '#AMD-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('archCode').innerText = code;
+      document.getElementById('archTicketBody').innerHTML = `
+        <div><strong>Gia chủ:</strong> ${name} (${phone})</div>
+        <div><strong>Công trình:</strong> ${proj}</div>
+        ${note ? `<div><strong>Chi tiết:</strong> ${note}</div>` : ''}
+      `;
+      document.getElementById('interiorBookingForm').style.display = 'none';
+      document.getElementById('archTicket').classList.add('visible');
+    }
+
+    function resetInteriorForm() {
+      document.getElementById('interiorBookingForm').style.display = 'block';
+      document.getElementById('archTicket').classList.remove('visible');
+    }
+
+    function toggleArchMenu() {
+      document.getElementById('archDrawer').classList.toggle('open');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderInteriorProjects();
+      calcInteriorCost();
+    });
+  </script>
+  <script src="/js/demo-bridge.js"></script>
+</body>
+</html>

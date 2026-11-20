@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX MOTOR LAB - Dán PPF TPU, Phủ Ceramic 9H &amp; Detailing Siêu Xe</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-carbon: #0B0D12;
+      --bg-surface: #141821;
+      --bg-elevated: #1B212E;
+      --border: rgba(255, 255, 255, 0.09);
+      --text-main: #F8FAFC;
+      --text-body: #CBD5E1;
+      --text-muted: #94A3B8;
+      --red-primary: #E11D48;
+      --red-hover: #BE123C;
+      --red-gradient: linear-gradient(135deg, #FB7185 0%, #E11D48 55%, #9F1239 100%);
+      --gold-light: #FDE68A;
+      --radius: 18px;
+      --shadow-md: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg-carbon);
+      color: var(--text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text-main);
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Top bar */
+    .top-strip {
+      background: linear-gradient(90deg, #161B26, #1F121B, #161B26);
+      border-bottom: 1px solid var(--border);
+      color: #E2E8F0;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .top-strip strong { color: var(--gold-light); }
+
+    /* Header */
+    .auto-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(11, 13, 18, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 16px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--red-gradient);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 8px 22px rgba(225, 29, 72, 0.35);
+    }
+    .brand-name { min-width: 0; }
+    .brand-name strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.08rem;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .brand-name small {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .nav-links a { color: var(--text-body); transition: color 0.2s; white-space: nowrap; }
+    .nav-links a:hover { color: var(--red-primary); }
+
+    .header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .btn-auto {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      font-family: inherit;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-auto:hover { transform: translateY(-2px); }
+    .btn-crimson {
+      background: var(--red-gradient);
+      color: #FFFFFF;
+      box-shadow: 0 10px 26px rgba(225, 29, 72, 0.3);
+    }
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--border);
+      color: #FFFFFF;
+    }
+    .btn-ghost:hover { border-color: var(--red-primary); }
+    .btn-sm { padding: 8px 15px; font-size: 0.8rem; }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 12px 24px 18px;
+      gap: 10px;
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a { padding: 6px 0; font-weight: 600; border-bottom: 1px solid var(--border); }
+
+    /* Hero */
+    .hero-section {
+      padding: 58px 0 72px;
+      background: radial-gradient(circle at 80% 15%, rgba(225, 29, 72, 0.16), transparent 48%),
+                  radial-gradient(circle at 12% 85%, rgba(56, 189, 248, 0.08), transparent 45%),
+                  var(--bg-carbon);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+    .hero-grid > * { min-width: 0; }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(225, 29, 72, 0.12);
+      border: 1px solid rgba(225, 29, 72, 0.35);
+      color: #FDA4AF;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: clamp(2.1rem, 4.2vw, 3.35rem);
+      margin-bottom: 18px;
+    }
+    .hero-title em {
+      font-style: normal;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FB7185 65%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text-body);
+      margin-bottom: 24px;
+      max-width: 540px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .spec-box strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      color: var(--gold-light);
+    }
+    .spec-box span { font-size: 0.78rem; color: var(--text-muted); }
+
+    .hero-visual { position: relative; }
+    .hero-frame {
+      aspect-ratio: 16 / 10;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow-md);
+      background: #0F172A;
+    }
+    .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-float-badge {
+      position: absolute;
+      left: 18px;
+      bottom: -16px;
+      right: 18px;
+      background: rgba(20, 24, 33, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* Section shared */
+    .section { padding: 72px 0; }
+    .section-alt { background: #10131B; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 40px; }
+    .section-kicker {
+      display: inline-block;
+      color: var(--red-primary);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-head h2 { font-size: clamp(1.75rem, 3.2vw, 2.55rem); margin-bottom: 10px; }
+    .section-head p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* Before/After Paint Gloss Slider */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .compare-grid > * { min-width: 0; }
+    .ba-stage {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: var(--shadow-md);
+      --pos: 52%;
+      user-select: none;
+    }
+    .ba-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ba-img-before {
+      clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+      filter: brightness(0.75) contrast(0.84) saturate(0.58) blur(0.45px);
+    }
+    .ba-img-after {
+      filter: contrast(1.08) saturate(1.12) brightness(1.04);
+    }
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--pos);
+      width: 2px;
+      background: #FFFFFF;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+      pointer-events: none;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 50%;
+      left: var(--pos);
+      transform: translate(-50%, -50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--red-gradient);
+      color: #FFFFFF;
+      border: 3px solid #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      pointer-events: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+    .ba-badge {
+      position: absolute;
+      top: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      background: rgba(11, 13, 18, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .ba-badge.left { left: 14px; }
+    .ba-badge.right { right: 14px; background: rgba(225, 29, 72, 0.9); }
+
+    .ba-slider-bar {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ba-slider-bar input[type="range"] { flex: 1; accent-color: var(--red-primary); cursor: pointer; }
+    .preset-stack { display: grid; gap: 12px; }
+    .preset-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      text-align: left;
+      font-family: inherit;
+      cursor: pointer;
+      color: var(--text-body);
+      transition: all 0.2s;
+    }
+    .preset-btn.active {
+      border-color: var(--red-primary);
+      background: rgba(225, 29, 72, 0.08);
+      box-shadow: 0 10px 26px rgba(225, 29, 72, 0.15);
+    }
+    .preset-btn strong { display: block; color: #FFFFFF; font-size: 0.96rem; margin-bottom: 4px; }
+    .preset-btn span { font-size: 0.84rem; color: var(--text-muted); }
+
+    /* Services Showcase */
+    .filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 28px; }
+    .filter-pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-body);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-pill.active { background: var(--red-gradient); color: #FFFFFF; border-color: transparent; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 20px;
+    }
+    .srv-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .srv-card:hover { transform: translateY(-4px); border-color: rgba(225, 29, 72, 0.45); }
+    .srv-img { aspect-ratio: 4 / 3; position: relative; overflow: hidden; }
+    .srv-img img { width: 100%; height: 100%; object-fit: cover; }
+    .srv-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(11, 13, 18, 0.88);
+      color: var(--gold-light);
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border: 1px solid rgba(253, 230, 138, 0.25);
+    }
+    .srv-body { padding: 18px 20px; display: flex; flex-direction: column; flex: 1; }
+    .srv-body h3 { font-size: 1.15rem; margin-bottom: 6px; }
+    .srv-body p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px; }
+    .srv-foot {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .srv-price { color: var(--gold-light); font-weight: 800; font-size: 1.02rem; }
+
+    /* Vehicle Segment & Package Configurator */
+    .config-card {
+      background: linear-gradient(145deg, #161B26, #10131B);
+      border: 1px solid rgba(225, 29, 72, 0.28);
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: start;
+      box-shadow: var(--shadow-md);
+    }
+    .config-card > * { min-width: 0; }
+    .seg-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 22px; }
+    .seg-btn {
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-body);
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    .seg-btn.active {
+      background: rgba(225, 29, 72, 0.16);
+      border-color: var(--red-primary);
+      color: #FFFFFF;
+    }
+    .seg-btn small { color: var(--gold-light); font-size: 0.76rem; }
+
+    .check-list { display: grid; gap: 10px; }
+    .check-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 11px 14px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .check-row:hover { border-color: rgba(255, 255, 255, 0.24); }
+    .check-left { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: #FFFFFF; font-weight: 600; min-width: 0; }
+    .check-left input { width: 17px; height: 17px; accent-color: var(--red-primary); flex-shrink: 0; }
+    .check-price { font-size: 0.84rem; font-weight: 800; color: var(--gold-light); white-space: nowrap; }
+
+    .config-summary {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 26px;
+    }
+    .est-big {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 3.2vw, 2.7rem);
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.1;
+      margin: 8px 0 6px;
+    }
+    .discount-pill {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      color: #6EE7B7;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .summary-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      margin-bottom: 18px;
+      font-size: 0.84rem;
+    }
+
+    /* Booking */
+    .booking-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 30px; align-items: start; }
+    .booking-grid > * { min-width: 0; }
+    .booking-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .f-group { margin-bottom: 14px; min-width: 0; }
+    .f-group label { display: block; font-size: 0.83rem; font-weight: 700; color: #E2E8F0; margin-bottom: 5px; }
+    .f-input {
+      width: 100%;
+      background: #0F131C;
+      border: 1.5px solid var(--border);
+      color: #FFFFFF;
+      padding: 11px 13px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .f-input:focus { outline: none; border-color: var(--red-primary); }
+    .auto-ticket {
+      display: none;
+      background: rgba(225, 29, 72, 0.08);
+      border: 1.5px dashed var(--red-primary);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .auto-ticket.visible { display: block; }
+
+    .auto-footer {
+      background: #07090D;
+      border-top: 1px solid var(--border);
+      padding: 36px 0 26px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links, .header-phone-desk { display: none; }
+      .mobile-menu-btn { display: grid; place-items: center; }
+      .hero-grid, .compare-grid, .config-card, .booking-grid { grid-template-columns: 1fr; }
+      .hero-float-badge { position: static; margin-top: 12px; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 16px; }
+      .header-inner { gap: 8px; }
+      .brand-mark { width: 34px; height: 34px; font-size: 0.88rem; }
+      .brand-name strong { font-size: 0.94rem; }
+      .brand-name small { font-size: 0.56rem; letter-spacing: 0.07em; }
+      .header-actions { gap: 6px; }
+      .header-actions .btn-sm { padding: 7px 10px; font-size: 0.74rem; }
+      .section { padding: 48px 0; }
+      .config-card, .booking-box { padding: 20px 16px; }
+      .form-2col, .seg-grid, .services-grid { grid-template-columns: 1fr; }
+      .hero-specs { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .spec-box strong { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip">
+    ✦ Tặng gói <strong>Vệ Sinh Khoang Máy &amp; Khử Mùi Ozone</strong> trị giá 1.500.000đ khi đặt lịch PPF / Ceramic online ✦
+  </div>
+
+  <header class="auto-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo">
+        <div class="brand-mark">AM</div>
+        <div class="brand-name">
+          <strong>APEX MOTOR LAB</strong>
+          <small>PPF • Ceramic • Luxury Detailing</small>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#gloss-section">So Sánh Sơn</a></li>
+        <li><a href="#services">Bảng Giá Detailing</a></li>
+        <li><a href="#autoCalc">Cấu Hình Theo Xe</a></li>
+        <li><a href="#booking">Đặt Cầu Nâng</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="tel:0387637982" class="btn-auto btn-ghost btn-sm header-phone-desk">📞 0387.637.982</a>
+        <a href="#booking" class="btn-auto btn-crimson btn-sm">⚡ Đặt Cầu Nâng</a>
+        <button type="button" class="mobile-menu-btn" onclick="toggleAutoMenu()" aria-label="Mở menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="autoDrawer">
+      <a href="#gloss-section" onclick="toggleAutoMenu()">✨ So Sánh Độ Bóng Sơn</a>
+      <a href="#services" onclick="toggleAutoMenu()">🛡️ Dán PPF &amp; Ceramic 9H</a>
+      <a href="#autoCalc" onclick="toggleAutoMenu()">🚘 Cấu Hình Combo Theo Xe</a>
+      <a href="#booking" onclick="toggleAutoMenu()">⚡ Đặt Lịch Cầu Nâng</a>
+      <a href="tel:0387637982">📞 Hotline: 0387.637.982</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-pill"><span>🏎️</span> Certified Studio • Bảo Hành Điện Tử</div>
+          <h1 class="hero-title">Bảo Vệ Sơn Zin &amp; Nâng Tầm <em>Độ Bóng Siêu Xe</em> Chuẩn Phòng Sạch</h1>
+          <p class="hero-desc">Thi công trong phòng kín kiểm soát bụi &amp; độ ẩm chuẩn Đức — dán PPF TPU tự phục hồi vết xước, phủ Ceramic 9H Pro, phim cách nhiệt 3M Crystalline và detailing nội thất da Nappa.</p>
+          <div class="hero-actions">
+            <a href="#autoCalc" class="btn-auto btn-crimson">🚘 Tính Giá Theo Dòng Xe</a>
+            <a href="#booking" class="btn-auto btn-ghost">⚡ Đặt Cầu Nâng VIP</a>
+          </div>
+          <div class="hero-specs">
+            <div class="spec-box"><strong>10 Năm</strong><span>Bảo hành điện tử PPF</span></div>
+            <div class="spec-box"><strong>100% CNC</strong><span>Cắt khuôn không chạm dao</span></div>
+            <div class="spec-box"><strong>Combo -10%</strong><span>Khi chọn từ 2 gói</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-frame">
+            <img src="image/hero-auto.webp" alt="Siêu xe Porsche 911 GT3 chăm sóc tại APEX MOTOR LAB">
+          </div>
+          <div class="hero-float-badge">
+            <div>
+              <strong style="display:block;font-size:0.88rem;color:#fff;">Phòng Thi Công Kín Dust-Free Bay</strong>
+              <span style="font-size:0.75rem;color:var(--text-muted);">Kiểm tra thông số dày sơn trước khi đánh bóng</span>
+            </div>
+            <span style="background:rgba(225,29,72,0.18);color:#FDA4AF;font-size:0.74rem;font-weight:800;padding:5px 10px;border-radius:999px;white-space:nowrap;">✓ Check Gốc Phim</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER PAINT GLOSS SLIDER -->
+    <section class="section section-alt" id="gloss-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Hiệu Chỉnh Sơn &amp; Phủ Bóng Gương</span>
+          <h2>Kéo Thanh Trượt Xem Bề Mặt Sơn Trước &amp; Sau Ceramic</h2>
+          <p>Loại bỏ 95% quầng xước mạng nhện dưới đèn LED và khóa lớp bảo vệ kỵ nước sâu bóng như gương.</p>
+        </div>
+
+        <div class="compare-grid">
+          <div>
+            <div class="ba-stage" id="glossCompare">
+              <img loading="lazy" src="image/detail-ceramic.webp" alt="Bề mặt sơn sau khi phủ Ceramic 9H" class="ba-img-after">
+              <img loading="lazy" src="image/detail-ceramic.webp" alt="Bề mặt sơn xỉn màu trước hiệu chỉnh" class="ba-img-before">
+              <div class="ba-divider"></div>
+              <div class="ba-handle">↔</div>
+              <span class="ba-badge left">TRƯỚC HIỆU CHỈNH</span>
+              <span class="ba-badge right">SAU CERAMIC 9H</span>
+            </div>
+            <div class="ba-slider-bar">
+              <span style="font-size:0.8rem;font-weight:700;">Sơn Mờ Xước</span>
+              <input type="range" id="glossRange" min="5" max="95" value="52" oninput="updateGlossCompare(this.value)" aria-label="Kéo so sánh độ bóng sơn">
+              <span style="font-size:0.8rem;font-weight:700;color:#FDA4AF;">Bóng Gương 9H</span>
+            </div>
+          </div>
+
+          <div class="preset-stack">
+            <button type="button" class="preset-btn active" onclick="selectGlossPreset(0, this)">
+              <strong>01. Xóa Xước Xoáy &amp; Hiệu Chỉnh Sơn 3 Bước</strong>
+              <span>Trả lại độ sâu màu sơn nguyên bản bằng xi đánh bóng gốc nước Rupes Ý, an toàn tuyệt đối cho lớp sơn bóng zin.</span>
+            </button>
+            <button type="button" class="preset-btn" onclick="selectGlossPreset(1, this)">
+              <strong>02. Phủ Ceramic 9H Pro Siêu Trượt Nước</strong>
+              <span>Tạo liên kết tinh thể chống tia UV, phân chim, nhựa cây và hiệu ứng lá sen giúp rửa xe nhanh sạch gấp đôi.</span>
+            </button>
+            <button type="button" class="preset-btn" onclick="selectGlossPreset(2, this)">
+              <strong>03. Dán PPF TPU Tự Phục Hồi Vết Xước</strong>
+              <span>Màng TPU dày 8.5 mil chống đá văng cao tốc và quẹt nhẹ — tự lành vết xước khi gặp nhiệt độ nắng hoặc máy sấy.</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES CATALOG -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Danh Mục Dịch Vụ Chính Hãng</span>
+          <h2>Các Gói Chăm Sóc &amp; Bảo Vệ Xe Toàn Diện</h2>
+          <p>Lựa chọn gói lẻ hoặc tick chọn nhiều dịch vụ ở bảng cấu hình bên dưới để nhận ngay ưu đãi Combo -10%.</p>
+        </div>
+
+        <div class="filter-pills">
+          <button type="button" class="filter-pill active" onclick="filterAutoServices('all', this)">Tất Cả</button>
+          <button type="button" class="filter-pill" onclick="filterAutoServices('ppf', this)">Dán PPF</button>
+          <button type="button" class="filter-pill" onclick="filterAutoServices('ceramic', this)">Ceramic 9H</button>
+          <button type="button" class="filter-pill" onclick="filterAutoServices('interior', this)">Nội Thất &amp; Phim</button>
+          <button type="button" class="filter-pill" onclick="filterAutoServices('detail', this)">Rửa Xe Detailing</button>
+        </div>
+
+        <div class="services-grid" id="autoServicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CONFIGURATOR -->
+    <section class="section section-alt" id="autoCalc">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Báo Giá Tự Động Theo Kích Thước Xe</span>
+          <h2>Bộ Cấu Hình Combo Detailing Theo Dòng Xe</h2>
+          <p>Chọn phân khúc xe của bạn và tick các hạng mục cần làm — tự động giảm 10% khi kết hợp từ 2 gói trở lên.</p>
+        </div>
+
+        <div class="config-card">
+          <div>
+            <div style="font-size:0.86rem;font-weight:700;color:#fff;margin-bottom:10px;">1. Chọn phân khúc xe của bạn:</div>
+            <div class="seg-grid" id="carSegmentBtns">
+              <button type="button" class="seg-btn" onclick="setCarSegment('Sedan / Hatch', 1.0, this)">
+                <span>Sedan / Hatch</span><small>1.0x</small>
+              </button>
+              <button type="button" class="seg-btn active" onclick="setCarSegment('CUV / SUV 5 chỗ', 1.15, this)">
+                <span>CUV / SUV 5 chỗ</span><small>1.15x</small>
+              </button>
+              <button type="button" class="seg-btn" onclick="setCarSegment('SUV 7 chỗ / MPV', 1.30, this)">
+                <span>SUV 7 chỗ / MPV</span><small>1.30x</small>
+              </button>
+              <button type="button" class="seg-btn" onclick="setCarSegment('Xe Sang / Siêu Xe', 1.45, this)">
+                <span>Xe Sang / Siêu Xe</span><small>1.45x</small>
+              </button>
+            </div>
+
+            <div style="font-size:0.86rem;font-weight:700;color:#fff;margin-bottom:10px;">2. Tick chọn các dịch vụ muốn thi công:</div>
+            <div class="check-list" id="autoServiceList">
+              <label class="check-row">
+                <span class="check-left"><input type="checkbox" data-id="ppf" data-name="Dán PPF TPU Full Xe" data-price="38000000" data-hours="36" onchange="calcAutoConfig()"> Dán PPF TPU Full Xe</span>
+                <span class="check-price">Từ 38.000.000đ</span>
+              </label>
+              <label class="check-row">
+                <span class="check-left"><input type="checkbox" data-id="ceramic" data-name="Phủ Ceramic 9H Pro 3 Lớp" data-price="11500000" data-hours="12" checked onchange="calcAutoConfig()"> Phủ Ceramic 9H Pro 3 Lớp</span>
+                <span class="check-price">Từ 11.500.000đ</span>
+              </label>
+              <label class="check-row">
+                <span class="check-left"><input type="checkbox" data-id="tint" data-name="Phim Cách Nhiệt 3M Crystalline" data-price="14500000" data-hours="4" onchange="calcAutoConfig()"> Phim Cách Nhiệt 3M Crystalline</span>
+                <span class="check-price">Từ 14.500.000đ</span>
+              </label>
+              <label class="check-row">
+                <span class="check-left"><input type="checkbox" data-id="interior" data-name="Detailing Nội Thất Da &amp; Ozone" data-price="2800000" data-hours="4" checked onchange="calcAutoConfig()"> Detailing Nội Thất Da &amp; Ozone</span>
+                <span class="check-price">Từ 2.800.000đ</span>
+              </label>
+              <label class="check-row">
+                <span class="check-left"><input type="checkbox" data-id="polish" data-name="Đánh Bóng Hiệu Chỉnh Sơn 3 Bước" data-price="4500000" data-hours="8" onchange="calcAutoConfig()"> Đánh Bóng Hiệu Chỉnh Sơn 3 Bước</span>
+                <span class="check-price">Từ 4.500.000đ</span>
+              </label>
+              <label class="check-row">
+                <span class="check-left"><input type="checkbox" data-id="wash" data-name="Rửa Xe Chi Tiết 14 Bước + Khoang Máy" data-price="1200000" data-hours="3" onchange="calcAutoConfig()"> Rửa Xe Chi Tiết 14 Bước + Khoang Máy</span>
+                <span class="check-price">Từ 1.200.000đ</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="config-summary">
+            <div style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Chi phí ước tính cho <strong id="lblCarSegment" style="color:#fff;">CUV / SUV 5 chỗ</strong></div>
+            <div class="est-big" id="resAutoTotal">14.800.500đ</div>
+            <span class="discount-pill" id="resAutoDiscount">✓ Đã giảm 1.644.500đ (Combo -10%)</span>
+
+            <div class="summary-meta">
+              <div><span style="color:var(--text-muted);display:block;">Thời gian hoàn thiện</span><strong id="resAutoTime" style="color:#fff;">~16 giờ (2 ngày)</strong></div>
+              <div><span style="color:var(--text-muted);display:block;">Bảo hành điện tử</span><strong id="resAutoWarranty" style="color:#6EE7B7;">5 Năm Chính Hãng</strong></div>
+            </div>
+
+            <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;" id="resAutoItems">
+              Gồm: Phủ Ceramic 9H Pro 3 Lớp + Detailing Nội Thất Da &amp; Ozone
+            </div>
+
+            <button type="button" class="btn-auto btn-crimson" style="width:100%;padding:14px;" onclick="applyAutoConfigToForm()">
+              ⚡ Đặt Cầu Nâng Theo Cấu Hình Này
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section" id="booking">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Đặt Lịch Vào Cầu Riêng</span>
+          <h2>Giữ Cầu Nâng Thi Công &amp; Kiểm Tra Sơn Miễn Phí</h2>
+          <p>Không phải xếp hàng chờ đợi — Kỹ thuật viên trưởng tiếp nhận xe ngay khi bạn đến và báo cáo tiến độ qua Zalo.</p>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-box" style="background:linear-gradient(155deg,#181C28,#11141D);border-color:rgba(225,29,72,0.28);">
+            <h3 style="font-size:1.75rem;margin-bottom:12px;">Đặc Quyền Chủ Xe Tại Lab</h3>
+            <ul style="list-style:none;display:grid;gap:11px;font-size:0.88rem;color:var(--text-body);margin-bottom:18px;">
+              <li>✓ Đo độ dày sơn từng chi tiết bằng máy chuyên dụng</li>
+              <li>✓ Xem trực tiếp máy thử thông số chống nóng (IRR/UVR)</li>
+              <li>✓ Xe gửi qua đêm bảo vệ 24/7 trong nhà xưởng điều hòa</li>
+              <li>✓ Xuất thẻ bảo hành điện tử theo biển số xe</li>
+            </ul>
+            <div style="background:rgba(255,255,255,0.04);padding:12px 14px;border-radius:12px;font-size:0.84rem;">
+              📍 CS1: 128 Nguyễn Văn Hưởng, Thảo Điền, Thủ Đức<br>
+              📍 CS2: 68 Lê Văn Lương, Thanh Xuân, Hà Nội
+            </div>
+          </div>
+
+          <div class="booking-box">
+            <form id="autoBookingForm" onsubmit="submitAutoBooking(event)">
+              <div class="form-2col">
+                <div class="f-group">
+                  <label for="auName">Tên Chủ Xe *</label>
+                  <input type="text" id="auName" class="f-input" placeholder="Ví dụ: Anh Quốc Tuấn" required>
+                </div>
+                <div class="f-group">
+                  <label for="auPhone">Số Điện Thoại / Zalo *</label>
+                  <input type="tel" id="auPhone" class="f-input" placeholder="0912.345.678" required>
+                </div>
+              </div>
+              <div class="form-2col">
+                <div class="f-group">
+                  <label for="auCarModel">Dòng Xe &amp; Biển Số *</label>
+                  <input type="text" id="auCarModel" class="f-input" placeholder="Ví dụ: Mercedes GLC 300 — 30K-888.88" required>
+                </div>
+                <div class="f-group">
+                  <label for="auDate">Ngày Nhận Xe *</label>
+                  <input type="date" id="auDate" class="f-input" required>
+                </div>
+              </div>
+              <div class="f-group">
+                <label for="auBay">Cơ Sở &amp; Khu Vực Cầu Nâng</label>
+                <select id="auBay" class="f-input">
+                  <option>Cơ sở TP.HCM — Cầu Clean Room PPF (Thảo Điền)</option>
+                  <option>Cơ sở Hà Nội — Cầu Detailing Pro (Lê Văn Lương)</option>
+                </select>
+              </div>
+              <div class="f-group">
+                <label for="auNote">Hạng Mục Cần Làm / Ghi Chú</label>
+                <textarea id="auNote" rows="2" class="f-input" placeholder="Ví dụ: Dán PPF Full xe + Phim cách nhiệt 3M..."></textarea>
+              </div>
+              <button type="submit" class="btn-auto btn-crimson" style="width:100%;padding:14px;">
+                🚀 Xác Nhận Giữ Cầu Nâng Thi Công
+              </button>
+            </form>
+
+            <div id="autoTicket" class="auto-ticket">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <strong style="color:#fff;">✓ PHIẾU TIẾP NHẬN CẦU NÂNG VIP</strong>
+                <span id="auTicketCode" style="background:var(--red-primary);color:#fff;font-size:0.78rem;font-weight:800;padding:4px 10px;border-radius:999px;">#APX-9021</span>
+              </div>
+              <div id="auTicketBody" style="font-size:0.88rem;display:grid;gap:6px;margin-bottom:14px;color:var(--text-body);"></div>
+              <button type="button" class="btn-auto btn-ghost btn-sm" style="width:100%;" onclick="resetAutoForm()">Đặt Lịch Thêm Xe Khác</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="auto-footer">
+    <div class="container">
+      <p>© 2026 APEX MOTOR LAB — Giao diện mẫu ngành Ô Tô &amp; Detailing thực hiện bởi <a href="https://webgiatot.me/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);font-weight:700;">PAT TECH (webgiatot.me)</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const autoServices = [
+      { cat: 'ppf', calcId: 'ppf', tag: 'Bảo Hành 10 Năm', name: 'Dán PPF TPU Tự Phục Hồi Vết Xước', price: 'Từ 38.000.000đ', img: 'image/detail-ppf.webp', desc: 'Màng TPU cao cấp độ dày 8.5 mil chống đá văng, giữ sơn zin 100%.' },
+      { cat: 'ceramic', calcId: 'ceramic', tag: 'Best Seller', name: 'Phủ Ceramic 9H Pro Siêu Bóng Gương', price: 'Từ 11.500.000đ', img: 'image/detail-ceramic.webp', desc: 'Tạo màng tinh thể kỵ nước lá sen, chống tia UV &amp; axit nhựa cây.' },
+      { cat: 'interior', calcId: 'interior', tag: 'Vệ Sinh Chuyên Sâu', name: 'Detailing Nội Thất Da Nappa &amp; Ozone', price: 'Từ 2.800.000đ', img: 'image/detail-interior.webp', desc: 'Làm sạch từng đường chỉ bằng hơi nước nóng và dưỡng da mờ không bóng dầu.' },
+      { cat: 'detail', calcId: 'wash', tag: '14 Bước Chi Tiết', name: 'Rửa Xe Detailing &amp; Dưỡng Khoang Máy', price: 'Từ 1.200.000đ', img: 'image/detail-wash.webp', desc: 'Bọt tuyết pH trung tính an toàn mọi bề mặt sơn mờ (Matte) và nhám.' },
+      { cat: 'ppf', calcId: 'tint', tag: 'Chống Nóng 97%', name: 'Phim Cách Nhiệt 3M Crystalline Mỹ', price: 'Từ 14.500.000đ', img: 'image/hero-auto.webp', desc: 'Cản 99.9% tia UV và 97% tia hồng ngoại, không cản sóng GPS/ePass.' }
+    ];
+
+    let activeAutoCat = 'all';
+    let carSegment = 'CUV / SUV 5 chỗ';
+    let segMult = 1.15;
+
+    function renderAutoServices() {
+      const grid = document.getElementById('autoServicesGrid');
+      const items = activeAutoCat === 'all' ? autoServices : autoServices.filter(s => s.cat === activeAutoCat);
+      grid.innerHTML = items.map(s => `
+        <article class="srv-card">
+          <div class="srv-img">
+            <img loading="lazy" src="${s.img}" alt="${s.name}">
+            <span class="srv-tag">${s.tag}</span>
+          </div>
+          <div class="srv-body">
+            <h3>${s.name}</h3>
+            <p>${s.desc}</p>
+            <div class="srv-foot">
+              <strong class="srv-price">${s.price}</strong>
+              <button type="button" class="btn-auto btn-crimson btn-sm" onclick="addServiceToConfig('${s.calcId}')">Chọn vào cấu hình +</button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterAutoServices(cat, btn) {
+      activeAutoCat = cat;
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderAutoServices();
+    }
+
+    function updateGlossCompare(val) {
+      document.getElementById('glossCompare').style.setProperty('--pos', val + '%');
+    }
+
+    function selectGlossPreset(idx, btn) {
+      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      const stops = [52, 74, 34];
+      const val = stops[idx] || 52;
+      document.getElementById('glossRange').value = val;
+      updateGlossCompare(val);
+    }
+
+    function setCarSegment(name, mult, btn) {
+      carSegment = name;
+      segMult = mult;
+      document.getElementById('lblCarSegment').innerText = name;
+      document.querySelectorAll('#carSegmentBtns .seg-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      calcAutoConfig();
+    }
+
+    function addServiceToConfig(calcId) {
+      const cb = document.querySelector(`#autoServiceList input[data-id="${calcId}"]`);
+      if (cb) {
+        cb.checked = true;
+        calcAutoConfig();
+      }
+      document.getElementById('autoCalc').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function calcAutoConfig() {
+      const checks = [...document.querySelectorAll('#autoServiceList input[type="checkbox"]:checked')];
+      if (!checks.length) {
+        document.getElementById('resAutoTotal').innerText = '0đ';
+        document.getElementById('resAutoDiscount').innerText = 'Chọn ít nhất 1 dịch vụ để xem báo giá';
+        document.getElementById('resAutoTime').innerText = '—';
+        document.getElementById('resAutoWarranty').innerText = 'Chính Hãng';
+        document.getElementById('resAutoItems').innerText = 'Chưa chọn hạng mục nào';
+        return;
+      }
+
+      let rawSum = 0;
+      let totalHours = 0;
+      const names = [];
+      let hasPpf = false;
+      let hasTint = false;
+      checks.forEach(cb => {
+        rawSum += parseInt(cb.getAttribute('data-price'), 10);
+        totalHours += parseInt(cb.getAttribute('data-hours'), 10);
+        names.push(cb.getAttribute('data-name'));
+        const id = cb.getAttribute('data-id');
+        if (id === 'ppf' || id === 'tint') hasPpf = true;
+        if (id === 'tint') hasTint = true;
+      });
+
+      const segAdjusted = Math.round(rawSum * segMult);
+      const isCombo = checks.length >= 2;
+      const discountAmt = isCombo ? Math.round(segAdjusted * 0.1) : 0;
+      const finalAmt = segAdjusted - discountAmt;
+
+      document.getElementById('resAutoTotal').innerText = finalAmt.toLocaleString('vi-VN') + 'đ';
+      document.getElementById('resAutoDiscount').innerText = isCombo
+        ? `✓ Tiết kiệm ${discountAmt.toLocaleString('vi-VN')}đ (Combo -10%)`
+        : 'Chọn thêm ≥ 1 gói nữa để giảm ngay 10%';
+      const days = Math.max(1, Math.ceil(totalHours / 8));
+      document.getElementById('resAutoTime').innerText = totalHours >= 10 ? `~${totalHours} giờ (${days} ngày)` : `~${totalHours} giờ`;
+      document.getElementById('resAutoWarranty').innerText = hasPpf ? (hasTint ? '10 Năm 3M / PPF' : '10 Năm Chính Hãng') : '5 Năm Ceramic';
+      document.getElementById('resAutoItems').innerText = 'Gồm: ' + names.join(' + ');
+    }
+
+    function applyAutoConfigToForm() {
+      const total = document.getElementById('resAutoTotal').innerText;
+      const items = document.getElementById('resAutoItems').innerText;
+      document.getElementById('auNote').value = `${carSegment} • ${items} • Dự toán: ${total}.`;
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitAutoBooking(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const name = document.getElementById('auName').value.trim();
+      const phone = document.getElementById('auPhone').value.trim();
+      const carModel = document.getElementById('auCarModel').value.trim();
+      const bay = document.getElementById('auBay').value;
+      const date = document.getElementById('auDate').value;
+      const note = document.getElementById('auNote').value.trim();
+
+      const code = '#APX-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('auTicketCode').innerText = code;
+      document.getElementById('auTicketBody').innerHTML = `
+        <div><strong>Chủ xe:</strong> ${name} (${phone})</div>
+        <div><strong>Dòng xe:</strong> ${carModel}</div>
+        <div><strong>Cầu nâng &amp; Ngày:</strong> ${bay} • ${date}</div>
+        ${note ? `<div><strong>Cấu hình:</strong> ${note}</div>` : ''}
+      `;
+      document.getElementById('autoBookingForm').style.display = 'none';
+      document.getElementById('autoTicket').classList.add('visible');
+
+      if (typeof window.patEmitDemoOrder === 'function') {
+        window.patEmitDemoOrder({
+          name,
+          phone,
+          service: `${carModel} • ${bay} (${date})`,
+          note: note || 'Đặt lịch chăm sóc & nâng cấp xe tại Lab'
+        });
+      }
+    }
+
+    function resetAutoForm() {
+      document.getElementById('autoBookingForm').style.display = 'block';
+      document.getElementById('autoTicket').classList.remove('visible');
+    }
+
+    function toggleAutoMenu() {
+      document.getElementById('autoDrawer').classList.toggle('open');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAutoServices();
+      calcAutoConfig();
+      const d = document.getElementById('auDate');
+      if (d) d.value = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+    });
+  </script>
+  <script src="/js/demo-bridge.js"></script>
+</body>
+</html>

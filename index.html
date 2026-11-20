@@ -57,11 +57,6 @@
           "addressCountry": "VN"
         },
         "areaServed": "VN",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "86"
-        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Các Gói Combo Thiết Kế Website",
@@ -134,8 +129,8 @@
   </script>
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/jpeg" href="image/avatar.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -152,27 +147,28 @@
 
       <!-- Main Navigation Tabs: Giới thiệu, Kho giao diện, Bảng giá Combo -->
       <nav class="main-tabs">
-        <button class="main-tab-btn active" data-target="home" onclick="switchPageTab('home')">
+        <button type="button" class="main-tab-btn active" data-target="home" onclick="switchPageTab('home')">
           <span>✨</span> Giới Thiệu
         </button>
-        <button class="main-tab-btn" data-target="templates" onclick="switchPageTab('templates')">
+        <button type="button" class="main-tab-btn" data-target="templates" onclick="switchPageTab('templates')">
           <span>🎨</span> Kho Giao Diện Ngành Nghề
         </button>
-        <button class="main-tab-btn" data-target="pricing" onclick="switchPageTab('pricing')">
+        <button type="button" class="main-tab-btn" data-target="pricing" onclick="switchPageTab('pricing')">
           <span>💎</span> Bảng Giá Combo
         </button>
       </nav>
 
       <div class="header-cta">
-        <button class="btn btn-primary btn-sm" onclick="openOrderModal('', '', true)">
-          <span>📋</span> Đăng Ký Tư Vấn
-        </button>
+        <a href="https://zalo.me/0387637982" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <span>💬</span> Chat Zalo
+        </a>
       </div>
     </div>
   </header>
 
+  <main id="main-content">
   <!-- ================= TAB 1: TRANG GIỚI THIỆU (HOME) ================= -->
-  <main id="tab-home" class="page-view active">
+  <div id="tab-home" class="page-view active">
     <!-- Hero Section -->
     <section class="hero">
       <div class="container hero-grid">
@@ -229,7 +225,7 @@
               <span class="showcase-fire">🔥</span>
               <span class="showcase-title">Trải nghiệm theo ngành:</span>
             </div>
-            <span class="hero-showcase-badge" id="heroDemoCount">10 Mẫu Demo</span>
+            <span class="hero-showcase-badge" id="heroDemoCount">16 Mẫu Demo</span>
           </div>
           <div class="quick-industry-list" id="heroQuickList">
             <!-- Render via JS -->
@@ -251,6 +247,9 @@
             <div class="feature-icon">⚡</div>
             <h3>Bắn Đơn Tức Thì Về Telegram</h3>
             <p>Khách hàng điền thông tin đặt hàng hoặc đặt lịch, tin nhắn báo về điện thoại của bạn trong 1 giây. Không lo bỏ sót khách.</p>
+            <button type="button" class="btn btn-outline btn-sm" style="margin-top: 14px;" onclick="triggerSampleTelegramSim()">
+              <span>🔔</span> Xem Thử Bắn Đơn 1s
+            </button>
           </div>
           <div class="feature-card">
             <div class="feature-icon">💰</div>
@@ -359,7 +358,7 @@
       </div>
     </section>
 
-    <!-- SECTION 11 NGÀNH NGHỀ CHUYÊN SÂU (SEO TOPIC CLUSTERS VIẾT NỔI) -->
+    <!-- SECTION 16 NGÀNH NGHỀ CHUYÊN SÂU (SEO TOPIC CLUSTERS VIẾT NỔI) -->
     <section class="section" style="padding-top: 20px;">
       <div class="container">
         <div class="section-header">
@@ -522,6 +521,76 @@
             </div>
             <div class="seo-industry-action"><span>Xem landing page Cá Nhân</span> →</div>
           </a>
+
+          <a href="/thiet-ke-web-nha-khoa/" class="seo-industry-card">
+            <div>
+              <div class="seo-industry-top">
+                <div class="seo-industry-icon">🦷</div>
+                <div>
+                  <h3>Web Nha Khoa Thẩm Mỹ</h3>
+                  <span style="font-size: 0.75rem; color: var(--accent); font-weight: 600;">Xem Chi Tiết Dịch Vụ →</span>
+                </div>
+              </div>
+              <p>Giao diện nha khoa chuẩn Thụy Sĩ tích hợp thanh kéo Before/After nụ cười, máy tính trả góp 0% và đặt lịch chụp CT 3D bắn Telegram 1s.</p>
+            </div>
+            <div class="seo-industry-action"><span>Xem landing page Nha Khoa</span> →</div>
+          </a>
+
+          <a href="/thiet-ke-web-noi-that/" class="seo-industry-card">
+            <div>
+              <div class="seo-industry-top">
+                <div class="seo-industry-icon">🛋️</div>
+                <div>
+                  <h3>Web Nội Thất &amp; Kiến Trúc</h3>
+                  <span style="font-size: 0.75rem; color: var(--accent); font-weight: 600;">Xem Chi Tiết Dịch Vụ →</span>
+                </div>
+              </div>
+              <p>Thiết kế web công ty nội thất, xây nhà trọn gói. Kéo so sánh Hiện trạng thô → Hoàn thiện 100% và công cụ dự toán chi phí theo m².</p>
+            </div>
+            <div class="seo-industry-action"><span>Xem landing page Nội Thất</span> →</div>
+          </a>
+
+          <a href="/thiet-ke-web-tra-sua-cafe/" class="seo-industry-card">
+            <div>
+              <div class="seo-industry-top">
+                <div class="seo-industry-icon">🧋</div>
+                <div>
+                  <h3>Web Trà Sữa &amp; Cafe Order</h3>
+                  <span style="font-size: 0.75rem; color: var(--accent); font-weight: 600;">Xem Chi Tiết Dịch Vụ →</span>
+                </div>
+              </div>
+              <p>Website order đồ uống giữ lại 100% doanh thu không qua app trung gian. Chọn Size, Đường, Đá, Topping và bắn đơn bếp Telegram trong 1 giây.</p>
+            </div>
+            <div class="seo-industry-action"><span>Xem landing page Trà Sữa</span> →</div>
+          </a>
+
+          <a href="/thiet-ke-web-o-to-detailing/" class="seo-industry-card">
+            <div>
+              <div class="seo-industry-top">
+                <div class="seo-industry-icon">🚗</div>
+                <div>
+                  <h3>Web Ô Tô &amp; Auto Detailing</h3>
+                  <span style="font-size: 0.75rem; color: var(--accent); font-weight: 600;">Xem Chi Tiết Dịch Vụ →</span>
+                </div>
+              </div>
+              <p>Giao diện Showroom &amp; Garage chăm sóc xe phong cách Dark Carbon. Cấu hình giá PPF TPU / Ceramic 9H theo dòng xe và đặt cầu nâng 1 chạm.</p>
+            </div>
+            <div class="seo-industry-action"><span>Xem landing page Ô Tô</span> →</div>
+          </a>
+
+          <a href="/thiet-ke-web-thiep-cuoi/" class="seo-industry-card">
+            <div>
+              <div class="seo-industry-top">
+                <div class="seo-industry-icon">💍</div>
+                <div>
+                  <h3>Web Thiệp Cưới &amp; Studio Cưới</h3>
+                  <span style="font-size: 0.75rem; color: var(--accent); font-weight: 600;">Xem Chi Tiết Dịch Vụ →</span>
+                </div>
+              </div>
+              <p>Thiệp cưới online lưu giữ trọn đời tích hợp RSVP đếm khách dự tiệc báo Telegram 1s, Album WebP nét căng, Sổ lưu bút &amp; Hộp Mừng Cưới QR.</p>
+            </div>
+            <div class="seo-industry-action"><span>Xem landing page Thiệp Cưới</span> →</div>
+          </a>
         </div>
       </div>
     </section>
@@ -603,10 +672,10 @@
         </div>
       </div>
     </section>
-  </main>
+  </div>
 
   <!-- ================= TAB 2: KHO GIAO DIỆN CÁC NGÀNH NGHỀ ================= -->
-  <main id="tab-templates" class="page-view">
+  <div id="tab-templates" class="page-view">
     <div class="container" style="padding-top: 48px; padding-bottom: 80px;">
       <div class="section-header">
         <div class="pill-tag"><span>🎨</span> Trải Nghiệm Thực Tế 100%</div>
@@ -625,7 +694,7 @@
         <div class="industry-mobile-menu" id="industryMobileMenu">
           <div class="mobile-filter-header">
             <span class="mobile-filter-label">📂 Chọn nhanh ngành của bạn:</span>
-            <span class="mobile-filter-count" id="mobileFilterCount">9 Mẫu Sẵn Sàng</span>
+            <span class="mobile-filter-count" id="mobileFilterCount">16 Mẫu Sẵn Sàng</span>
           </div>
           <div class="mobile-select-custom-wrap">
             <select class="mobile-industry-select" id="mobileIndustrySelect" onchange="filterByIndustry(this.value)">
@@ -636,15 +705,35 @@
         </div>
       </div>
 
-      <!-- Grid các thẻ mẫu web -->
-      <div class="templates-grid" id="templatesContainer">
+      <!-- Bộ lọc phong cách thiết kế -->
+      <div class="style-filter-bar" id="styleFilterBar">
         <!-- Render via JS -->
       </div>
+
+      <!-- Grid các thẻ mẫu web (có sẵn fallback tĩnh cho SEO trước khi JS hydrate) -->
+      <div class="templates-grid" id="templatesContainer">
+        <article class="template-card"><div class="template-body"><h3>LUMIÈRE AESTHETIC & SPA - Thẩm Mỹ Viện & Spa Công Nghệ Cao</h3><p>Giao diện thẩm mỹ viện & spa đặt lịch liệu trình thông minh.</p><a href="demos/spa-beauty/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Spa</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>ATELIER NOIR - Thời Trang Thiết Kế & Boutique</h3><p>Lookbook thời trang cao cấp, đo size thông minh & giỏ hàng nhanh.</p><a href="demos/ban-hang/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Thời Trang</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>The History of Whoo - Mỹ Phẩm Hoàng Cung</h3><p>Thương hiệu mỹ phẩm cao cấp & trợ lý soi da nhận hộp quà.</p><a href="demos/my-pham/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Mỹ Phẩm</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>PAT DERMA - Phòng Khám Chuyên Khoa Da Liễu</h3><p>Đặt lịch khám 1:1, ảnh Before/After & dự toán phác đồ.</p><a href="demos/da-lieu/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Da Liễu</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>PAT ACADEMY - Học Viện Đào Tạo Kỹ Năng Số</h3><p>Giới thiệu khóa học, trắc nghiệm nghề nghiệp & săn học bổng.</p><a href="demos/giao-duc/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Giáo Dục</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>An Nhiên Retreat - Resort & Khách Sạn 5 Sao</h3><p>Đặt phòng nghỉ dưỡng, tour 360° & dự toán chi phí kỳ nghỉ.</p><a href="demos/khach-san/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Khách Sạn</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>Hoàng (黃) - Blog Du Học Sinh & Góc Donate</h3><p>Thương hiệu cá nhân Polaroid, chia sẻ kinh nghiệm & QR Donate.</p><a href="demos/ca-nhan/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Cá Nhân</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>Huff &amp; Puff - Ẩm Thực Fine Dining &amp; F&amp;B</h3><p>Thực đơn tương tác, chọn món trước & đặt bàn VIP.</p><a href="demos/fnb-cafe/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo F&amp;B</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>Vinhomes Elite Residence - Bất Động Sản</h3><p>Phân khúc dự án hạng sang & tính lãi suất vay ngân hàng.</p><a href="demos/bat-dong-san/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Bất Động Sản</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>LIFETEC &amp; PARTNERS - Doanh Nghiệp &amp; B2B</h3><p>Hồ sơ năng lực B2B, pháp lý FDI & đặt lịch tư vấn 1:1.</p><a href="demos/doanh-nghiep/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Doanh Nghiệp</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>DƯỠNG TÂM CÁC - Massage &amp; Dưỡng Sinh Cổ Truyền</h3><p>Gội đầu dưỡng sinh Đông y, trị liệu kinh lạc & đặt phòng VIP.</p><a href="demos/massage-spa/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Massage</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>AURORA DENTAL LAB - Nha Khoa Thẩm Mỹ 3D</h3><p>Before/After nụ cười, máy tính trả góp 0% &amp; đặt lịch CT 3D.</p><a href="demos/nha-khoa/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Nha Khoa</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>ATELIER MỘC &amp; ĐÁ - Kiến Trúc &amp; Nội Thất</h3><p>So sánh Thô → Hoàn thiện, dự toán theo m² &amp; khảo sát 3D.</p><a href="demos/noi-that/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Nội Thất</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>SƠN TRÀ BREW - Trà Sữa &amp; Cafe Order Topping</h3><p>Chọn Size, Đường, Đá, Topping &amp; bắn hóa đơn bếp 1 giây.</p><a href="demos/tra-sua-cafe/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Trà Sữa</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>APEX MOTOR LAB - Ô Tô &amp; Detailing PPF/Ceramic</h3><p>So sánh bóng sơn 9H, cấu hình giá theo dòng xe &amp; đặt cầu nâng.</p><a href="demos/o-to-detailing/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Ô Tô</a></div></article>
+        <article class="template-card"><div class="template-body"><h3>MINH QUÂN &amp; KHÁNH LINH - Thiệp Cưới Online &amp; Studio</h3><p>Đếm ngược, Album Lightbox, RSVP báo Telegram &amp; Hộp Mừng Cưới QR.</p><a href="demos/thiep-cuoi-studio/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Xem Demo Thiệp Cưới</a></div></article>
+      </div>
     </div>
-  </main>
+  </div>
 
   <!-- ================= TAB 3: BẢNG GIÁ COMBO & CHATBOT ================= -->
-  <main id="tab-pricing" class="page-view">
+  <div id="tab-pricing" class="page-view">
     <div class="container" style="padding-top: 48px; padding-bottom: 80px;">
       <div class="section-header">
         <div class="pill-tag"><span>💎</span> Chi Phí Minh Bạch - Không Phát Sinh</div>
@@ -652,9 +741,30 @@
         <p>Lựa chọn gói phù hợp với quy mô kinh doanh của bạn. Dễ dàng nâng cấp khi phát triển.</p>
       </div>
 
-      <!-- 3 Thẻ Combo -->
+      <!-- 3 Thẻ Combo (có sẵn fallback tĩnh cho SEO trước khi JS hydrate) -->
       <div class="pricing-grid" id="pricingGrid">
-        <!-- Render via JS -->
+        <div class="combo-card popular">
+          <div class="popular-ribbon">⭐ Bán chạy nhất</div>
+          <div class="combo-tier">Combo 1</div>
+          <h3>Tinh Gọn (Landing Page)</h3>
+          <p class="combo-desc">Dành cho cá nhân, shop nhỏ, chạy Ads cần web đẹp chốt đơn nhanh mà không tốn chi phí nuôi database.</p>
+          <div class="combo-price"><div class="amount">1.500.000đ</div><span class="unit">Năm đầu tiên trọn gói</span></div>
+          <div class="combo-renewal-box"><span class="combo-renewal-label">🔄 Duy trì từ năm 2:</span><br><span class="combo-renewal-val">Chỉ ~350k/năm (Hosting 0đ trọn đời)</span></div>
+        </div>
+        <div class="combo-card">
+          <div class="combo-tier">Combo 2</div>
+          <h3>Quản Trị Chuyên Nghiệp</h3>
+          <p class="combo-desc">Shop &amp; Doanh nghiệp vừa và nhỏ cần trang Admin quản trị sản phẩm, đơn hàng và thống kê doanh thu.</p>
+          <div class="combo-price"><div class="amount">3.900.000đ</div><span class="unit">Bao gồm Domain + Cloud Hosting năm đầu</span></div>
+          <div class="combo-renewal-box"><span class="combo-renewal-label">🔄 Duy trì từ năm 2:</span><br><span class="combo-renewal-val">800.000đ - 1.200.000đ / năm</span></div>
+        </div>
+        <div class="combo-card">
+          <div class="combo-tier">Combo 3</div>
+          <h3>Toàn Diện &amp; Tự Động Hóa</h3>
+          <p class="combo-desc">Thương hiệu lớn cần thanh toán VietQR tự khớp đơn 24/7, tích điểm, voucher và thiết kế độc quyền 100%.</p>
+          <div class="combo-price"><div class="amount">Từ 7.900.000đ</div><span class="unit">Hệ thống cao cấp theo yêu cầu</span></div>
+          <div class="combo-renewal-box"><span class="combo-renewal-label">🔄 Duy trì từ năm 2:</span><br><span class="combo-renewal-val">1.500.000đ - 2.000.000đ / năm</span></div>
+        </div>
       </div>
 
       <!-- Add-on Chatbot Banner -->
@@ -680,16 +790,17 @@
             <span>Phí duy trì từ tháng 2:</span>
             <strong>300.000đ<small>/th</small></strong>
           </div>
-          <button class="btn btn-primary" style="width: 100%;" onclick="openOrderModal('', '', true)">
+          <button type="button" class="btn btn-primary" style="width: 100%;" onclick="openOrderModal('', '', true)">
             <span>⚡</span> Đăng Ký Gắn Chatbot
           </button>
         </div>
       </div>
     </div>
+  </div>
   </main>
 
   <!-- ================= MODAL XEM LIVE PREVIEW (CHUYỂN DESKTOP / MOBILE) ================= -->
-  <div class="preview-modal" id="previewModal">
+  <div class="preview-modal" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="previewModalTitle">
     <div class="preview-topbar">
       <div class="preview-left">
         <button class="btn btn-outline btn-sm" onclick="closePreviewModal()">
@@ -705,16 +816,48 @@
       </div>
 
       <div class="preview-actions-bar">
-        <button class="btn btn-outline btn-sm" id="btnOpenDirectTab" onclick="openDirectTemplateTab()" title="Mở trang web này ở tab độc lập">
+        <button type="button" class="btn btn-outline btn-sm" id="btnToggleCustomizer" onclick="toggleBrandCustomizer()" title="Thử gõ tên thương hiệu & đổi màu trực tiếp vào giao diện">
+          <span>✨</span> <span class="hide-on-mobile">Thử Tên Shop</span>
+        </button>
+        <button type="button" class="btn btn-outline btn-sm" id="btnTestTelegramSim" onclick="triggerSampleTelegramSim(true)" title="Xem mô phỏng thông báo đơn hàng bắn về Telegram trong 1s">
+          <span>🔔</span> <span class="hide-on-mobile">Test Đơn 1s</span>
+        </button>
+        <button type="button" class="btn btn-outline btn-sm" id="btnOpenDirectTab" onclick="openDirectTemplateTab()" title="Mở trang web này ở tab độc lập">
           <span>🔗</span> <span class="hide-on-mobile">Mở Tab Riêng</span>
         </button>
-        <button class="btn btn-outline btn-sm" id="btnCopyDemoLink" onclick="copyDemoLink()" title="Sao chép link trực tiếp của mẫu này">
+        <button type="button" class="btn btn-outline btn-sm" id="btnCopyDemoLink" onclick="copyDemoLink()" title="Sao chép link trực tiếp của mẫu này">
           <span id="copyLinkIcon">📋</span> <span id="copyLinkText" class="hide-on-mobile">Copy Link</span>
         </button>
-        <button class="btn btn-primary btn-sm" id="btnBuyThisTemplate">
+        <button type="button" class="btn btn-primary btn-sm" id="btnBuyThisTemplate">
           <span>🛒</span> Báo Giá
         </button>
       </div>
+    </div>
+
+    <!-- Thanh Live Brand Customizer -->
+    <div class="brand-customizer-bar" id="brandCustomizerBar">
+      <div class="customizer-field">
+        <label for="customBrandInput">🏷️ Tên Shop / Thương hiệu:</label>
+        <input type="text" id="customBrandInput" class="customizer-input" placeholder="VD: Ngọc Lan Luxury" oninput="updateBrandCustomizer()">
+      </div>
+      <div class="customizer-field">
+        <label for="customPhoneInput">📞 Hotline:</label>
+        <input type="tel" id="customPhoneInput" class="customizer-input customizer-input-sm" placeholder="0988.xxx.xxx" oninput="updateBrandCustomizer()">
+      </div>
+      <div class="customizer-field customizer-colors-wrap">
+        <span class="customizer-label">🎨 Màu nhấn:</span>
+        <div class="palette-swatches" id="customPaletteSwatches">
+          <button type="button" class="palette-swatch-btn active" data-palette="default" onclick="selectCustomPalette('default')" title="Màu gốc của mẫu" style="background: conic-gradient(#4f46e5, #06b6d4, #f59e0b, #4f46e5);"></button>
+          <button type="button" class="palette-swatch-btn" data-palette="royal-gold" onclick="selectCustomPalette('royal-gold')" title="Vàng Hoàng Kim" style="background: #C59B27;"></button>
+          <button type="button" class="palette-swatch-btn" data-palette="emerald-zen" onclick="selectCustomPalette('emerald-zen')" title="Xanh Ngọc Zen" style="background: #10B981;"></button>
+          <button type="button" class="palette-swatch-btn" data-palette="ocean-pro" onclick="selectCustomPalette('ocean-pro')" title="Xanh Đại Dương" style="background: #0284C7;"></button>
+          <button type="button" class="palette-swatch-btn" data-palette="rose-luxe" onclick="selectCustomPalette('rose-luxe')" title="Hồng Champagne" style="background: #B76E79;"></button>
+          <button type="button" class="palette-swatch-btn" data-palette="crimson-vip" onclick="selectCustomPalette('crimson-vip')" title="Đỏ Ruby VIP" style="background: #E11D48;"></button>
+        </div>
+      </div>
+      <button type="button" class="btn btn-outline btn-sm customizer-reset-btn" onclick="resetBrandCustomizer()">
+        ↺ Mặc định
+      </button>
     </div>
     <div class="preview-stage" id="previewStage">
       <iframe id="previewIframe" src="about:blank" title="Live Preview"></iframe>
@@ -723,10 +866,10 @@
 
   <!-- ================= MODAL FORM ĐẶT HÀNG / BÁO GIÁ NHANH ================= -->
   <div class="order-modal-backdrop" id="orderModalBackdrop" onclick="if(event.target === this) closeOrderModal()">
-    <div class="order-modal">
+    <div class="order-modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
       <div class="order-modal-header">
         <div>
-          <h3 style="font-size: 1.35rem; margin-bottom: 4px;">Đăng Ký Tư Vấn & Báo Giá</h3>
+          <h3 id="orderModalTitle" style="font-size: 1.35rem; margin-bottom: 4px;">Đăng Ký Tư Vấn & Báo Giá</h3>
           <p style="font-size: 0.85rem; color: var(--text-muted);">Chúng tôi sẽ liên hệ lại qua Zalo/SĐT trong 5 phút</p>
         </div>
         <button class="close-modal-btn" onclick="closeOrderModal()">✕</button>
@@ -857,6 +1000,10 @@
     </div>
   </footer>
 
+  <!-- Popup Mô phỏng Bắn Đơn Telegram 1 Giây -->
+  <div id="tgSimToast" class="tg-sim-toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
   <!-- Widget Trợ Lý AI Chatbot PAT TECH -->

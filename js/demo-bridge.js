@@ -1,0 +1,350 @@
+// ==========================================================
+// PAT TECH - Cầu nối Live Brand Customizer & Telegram 1s Sim
+// Dùng chung cho toàn bộ các trang Demo độc lập (/demos/*/)
+// ==========================================================
+(function () {
+  if (window.__PAT_DEMO_BRIDGE_LOADED__) return;
+  window.__PAT_DEMO_BRIDGE_LOADED__ = true;
+
+  const COLOR_VARS = [
+    '--gold-primary', '--gold-bronze', '--gold-light', '--gold-gradient',
+    '--champagne', '--rose-gold', '--rose-deep', '--champagne-gold',
+    '--accent-cerulean', '--accent-cobalt', '--accent-emerald', '--accent-teal',
+    '--red-primary', '--red-hover', '--red-gradient',
+    '--brand-indigo', '--brand-blue',
+    '--primary-emerald', '--emerald-light', '--emerald-dark', '--emerald-gradient',
+    '--crimson-royal', '--crimson-bright',
+    '--cinnabar-red', '--cinnabar-bright',
+    '--terracotta', '--boba-amber'
+  ];
+
+  const PALETTES = {
+    'royal-gold': {
+      primary: '#C59B27',
+      dark: '#8E6B13',
+      light: '#E8CF82',
+      gradient: 'linear-gradient(135deg, #D9B44A 0%, #C59B27 55%, #8E6B13 100%)'
+    },
+    'emerald-zen': {
+      primary: '#10B981',
+      dark: '#047857',
+      light: '#A7F3D0',
+      gradient: 'linear-gradient(135deg, #34D399 0%, #059669 55%, #065F46 100%)'
+    },
+    'ocean-pro': {
+      primary: '#0284C7',
+      dark: '#0369A1',
+      light: '#BAE6FD',
+      gradient: 'linear-gradient(135deg, #38BDF8 0%, #0284C7 55%, #1D4ED8 100%)'
+    },
+    'rose-luxe': {
+      primary: '#B76E79',
+      dark: '#964E59',
+      light: '#F3D5D9',
+      gradient: 'linear-gradient(135deg, #D18A94 0%, #B76E79 55%, #964E59 100%)'
+    },
+    'crimson-vip': {
+      primary: '#E11D48',
+      dark: '#9F1239',
+      light: '#FECDD3',
+      gradient: 'linear-gradient(135deg, #FB7185 0%, #E11D48 55%, #9F1239 100%)'
+    }
+  };
+
+  let origTitle = document.title;
+  const phoneTextNodeMap = new Map();
+  let audioCtx = null;
+
+  function getBrandTarget() {
+    return (
+      document.querySelector('.brand-logo h1') ||
+      document.querySelector('.brand-logo .brand-name strong') ||
+      document.querySelector('.brand-logo .brand-title') ||
+      document.querySelector('a.brand-logo')
+    );
+  }
+
+  function getInitials(name) {
+    const words = name.trim().split(/\s+/).filter(Boolean);
+    if (!words.length) return '';
+    if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+  }
+
+  function collectPhoneTextNodes() {
+    if (phoneTextNodeMap.size > 0) return;
+    const containers = document.querySelectorAll('header, footer, .top-bar, .navbar, .branch-hours, .booking-features, .booking-perks-card, .concierge-box');
+    const phoneRegex = /\b(?:\+?84|0)(?:[\s.]?\d){8,10}\b|\b1[89]00(?:[\s.]?\d){4,6}\b/;
+    containers.forEach(root => {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+      let node;
+      while ((node = walker.nextNode())) {
+        if (node.parentElement && node.parentElement.closest('a[href^="tel:"]')) continue;
+        if (phoneRegex.test(node.nodeValue || '')) {
+          phoneTextNodeMap.set(node, node.nodeValue);
+        }
+      }
+    });
+  }
+
+  function applyBrandPreview(payload) {
+    const brandName = (payload && payload.brandName ? String(payload.brandName) : '').trim();
+    const phone = (payload && payload.phone ? String(payload.phone) : '').trim();
+    const paletteKey = (payload && payload.palette) ? String(payload.palette) : 'default';
+
+    // 1. Brand Name & Emblem
+    const brandEl = getBrandTarget();
+    if (brandEl) {
+      if (brandEl.dataset.patOrigHtml === undefined) {
+        brandEl.dataset.patOrigHtml = brandEl.innerHTML;
+      }
+      if (brandName) {
+        brandEl.textContent = brandName;
+      } else {
+        brandEl.innerHTML = brandEl.dataset.patOrigHtml;
+      }
+    }
+
+    const emblemEl = document.querySelector('.brand-logo .logo-emblem, .brand-logo .brand-mark');
+    if (emblemEl) {
+      if (emblemEl.dataset.patOrigEmblem === undefined) {
+        emblemEl.dataset.patOrigEmblem = emblemEl.textContent.trim();
+      }
+      const origEmblem = emblemEl.dataset.patOrigEmblem;
+      if (/^[A-Za-z0-9&]{1,3}$/.test(origEmblem)) {
+        emblemEl.textContent = brandName ? getInitials(brandName) : origEmblem;
+      }
+    }
+
+    document.title = brandName ? `${brandName} — Live Preview | PAT TECH` : origTitle;
+
+    // 2. Phone / Hotline
+    const telPattern = /\b(?:\+?84|0|1[89]00)[\d.\s]{4,}/;
+    document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+      if (a.dataset.patOrigHref === undefined) {
+        a.dataset.patOrigHref = a.getAttribute('href') || '';
+        a.dataset.patOrigHtml = a.innerHTML;
+      }
+      if (phone) {
+        const digits = phone.replace(/[^0-9+]/g, '') || phone;
+        a.setAttribute('href', `tel:${digits}`);
+        a.innerHTML = a.dataset.patOrigHtml;
+        let replaced = false;
+        const walker = document.createTreeWalker(a, NodeFilter.SHOW_TEXT, null);
+        let tNode;
+        while ((tNode = walker.nextNode())) {
+          if (telPattern.test(tNode.nodeValue || '')) {
+            tNode.nodeValue = tNode.nodeValue.replace(telPattern, phone);
+            replaced = true;
+          }
+        }
+        if (!replaced) {
+          a.textContent = phone;
+        }
+      } else {
+        a.setAttribute('href', a.dataset.patOrigHref);
+        a.innerHTML = a.dataset.patOrigHtml;
+      }
+    });
+
+    collectPhoneTextNodes();
+    phoneTextNodeMap.forEach((origText, node) => {
+      if (phone) {
+        node.nodeValue = origText.replace(/\b(?:\+?84|0)(?:[\s.]?\d){8,10}\b|\b1[89]00(?:[\s.]?\d){4,6}\b/g, phone);
+      } else {
+        node.nodeValue = origText;
+      }
+    });
+
+    // 3. Accent Palette
+    const rootStyle = document.documentElement.style;
+    if (!paletteKey || paletteKey === 'default' || !PALETTES[paletteKey]) {
+      COLOR_VARS.forEach(v => rootStyle.removeProperty(v));
+    } else {
+      const p = PALETTES[paletteKey];
+      const varMap = {
+        '--gold-primary': p.primary,
+        '--gold-bronze': p.dark,
+        '--gold-light': p.light,
+        '--gold-gradient': p.gradient,
+        '--champagne': p.primary,
+        '--rose-gold': p.primary,
+        '--rose-deep': p.dark,
+        '--champagne-gold': p.light,
+        '--accent-cerulean': p.primary,
+        '--accent-cobalt': p.dark,
+        '--accent-emerald': p.primary,
+        '--accent-teal': p.dark,
+        '--red-primary': p.primary,
+        '--red-hover': p.dark,
+        '--red-gradient': p.gradient,
+        '--brand-indigo': p.primary,
+        '--brand-blue': p.dark,
+        '--primary-emerald': p.primary,
+        '--emerald-light': p.light,
+        '--emerald-dark': p.dark,
+        '--emerald-gradient': p.gradient,
+        '--crimson-royal': p.primary,
+        '--crimson-bright': p.dark,
+        '--cinnabar-red': p.primary,
+        '--cinnabar-bright': p.dark,
+        '--terracotta': p.primary,
+        '--boba-amber': p.light
+      };
+      Object.entries(varMap).forEach(([k, val]) => {
+        rootStyle.setProperty(k, val);
+      });
+    }
+  }
+
+  // Soft Telegram "ting!" chime via Web Audio API
+  function playChime() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      if (!audioCtx) audioCtx = new AudioCtx();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume().catch(() => {});
+      }
+      const now = audioCtx.currentTime;
+      const notes = [880, 1174.66];
+      notes.forEach((freq, idx) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+        gain.gain.setValueAtTime(0.001, now + idx * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.08, now + idx * 0.08 + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.28);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + idx * 0.08);
+        osc.stop(now + idx * 0.08 + 0.3);
+      });
+    } catch (e) {}
+  }
+
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function showStandaloneTgToast(order) {
+    playChime();
+    let toast = document.getElementById('patDemoTgToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'patDemoTgToast';
+      toast.style.cssText = [
+        'position:fixed', 'top:16px', 'right:16px', 'z-index:99999',
+        'width:min(360px, calc(100vw - 24px))',
+        'background:rgba(15, 23, 42, 0.96)', 'color:#f8fafc',
+        'border:1px solid rgba(56, 189, 248, 0.45)', 'border-radius:16px',
+        'padding:14px 16px', 'box-shadow:0 20px 45px rgba(2, 6, 23, 0.45)',
+        'font-family:"Plus Jakarta Sans", -apple-system, sans-serif',
+        'backdrop-filter:blur(14px)', '-webkit-backdrop-filter:blur(14px)',
+        'transition:opacity 0.25s ease, transform 0.25s ease'
+      ].join(';');
+      document.body.appendChild(toast);
+    }
+
+    toast.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="width:26px;height:26px;border-radius:8px;background:#229ED9;color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px;">✈</span>
+          <div>
+            <div style="font-size:12px;font-weight:800;color:#38bdf8;letter-spacing:0.03em;">TELEGRAM BOT • VỪA XONG (0.8s)</div>
+            <div style="font-size:11px;color:#94a3b8;">Thông báo từ web ${escapeHtml(order.brand)}</div>
+          </div>
+        </div>
+        <button type="button" aria-label="Đóng" style="background:rgba(255,255,255,0.1);border:none;color:#cbd5e1;width:24px;height:24px;border-radius:50%;cursor:pointer;font-size:12px;" onclick="this.closest('#patDemoTgToast').style.display='none'">✕</button>
+      </div>
+      <div style="font-size:12.5px;line-height:1.5;background:rgba(255,255,255,0.06);border-radius:10px;padding:10px 12px;">
+        <div><strong>🔥 ĐƠN HÀNG MỚI!</strong></div>
+        <div>👤 Khách: <strong>${escapeHtml(order.name)}</strong> — 📞 <strong>${escapeHtml(order.phone)}</strong></div>
+        <div>📌 Quan tâm: ${escapeHtml(order.service)}</div>
+        ${order.note ? `<div style="color:#cbd5e1;">📝 ${escapeHtml(order.note)}</div>` : ''}
+      </div>
+    `;
+    toast.style.display = 'block';
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateY(0)';
+
+    clearTimeout(window.__patToastTimer);
+    window.__patToastTimer = setTimeout(() => {
+      if (toast) toast.style.display = 'none';
+    }, 6000);
+  }
+
+  function extractOrderFromForm(form) {
+    const brandEl = getBrandTarget();
+    const brand = (brandEl ? brandEl.textContent.trim() : '') || origTitle.split('-')[0].trim() || 'PAT TECH';
+
+    const nameInput = form.querySelector('input[id*="Name" i], input[name*="name" i], input[placeholder*="Tên" i], input[type="text"]');
+    const phoneInput = form.querySelector('input[type="tel"], input[id*="Phone" i], input[name*="phone" i], input[placeholder*="SĐT" i]');
+    const serviceInput = form.querySelector('select');
+    const noteInput = form.querySelector('textarea, input[id*="Note" i], input[id*="Addr" i]');
+
+    let serviceText = origTitle.split('-')[0].trim();
+    if (serviceInput && serviceInput.options && serviceInput.selectedIndex >= 0) {
+      serviceText = serviceInput.options[serviceInput.selectedIndex].text;
+    }
+
+    return {
+      brand,
+      name: (nameInput && nameInput.value.trim()) || 'Khách hàng trải nghiệm',
+      phone: (phoneInput && phoneInput.value.trim()) || '0912.345.678',
+      service: serviceText,
+      note: (noteInput && noteInput.value.trim()) || ''
+    };
+  }
+
+  window.patEmitDemoOrder = function (orderObj) {
+    const brandEl = getBrandTarget();
+    const order = Object.assign({
+      brand: (brandEl ? brandEl.textContent.trim() : '') || 'PAT TECH',
+      name: 'Khách hàng mới',
+      phone: '0912.345.678',
+      service: origTitle.split('-')[0].trim(),
+      note: ''
+    }, orderObj || {});
+
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'PAT_TELEGRAM_SIM', order }, '*');
+    } else {
+      showStandaloneTgToast(order);
+    }
+  };
+
+  // Listen to parent Live Preview customizer messages
+  window.addEventListener('message', (event) => {
+    const data = event && event.data;
+    if (!data || typeof data !== 'object') return;
+    if (data.type === 'PAT_BRAND_PREVIEW') {
+      applyBrandPreview(data);
+    }
+  });
+
+  // Listen to any form submission inside demo without blocking existing handlers
+  document.addEventListener('submit', (event) => {
+    const form = event.target;
+    if (!form || form.tagName !== 'FORM') return;
+    const order = extractOrderFromForm(form);
+    window.patEmitDemoOrder(order);
+  });
+
+  function notifyParentReady() {
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'PAT_DEMO_READY', title: origTitle }, '*');
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', notifyParentReady);
+  } else {
+    notifyParentReady();
+  }
+})();

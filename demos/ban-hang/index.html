@@ -892,6 +892,9 @@
       color: var(--ink-muted);
     }
 
+    .lookbook-container > * {
+      min-width: 0;
+    }
     .look-display-box {
       position: relative;
       width: 100%;
@@ -919,6 +922,131 @@
       padding: 16px 24px;
       border-radius: 0px;
       box-shadow: 6px 6px 0px var(--ink-noir);
+      z-index: 3;
+    }
+    .look-hotspots-layer {
+      position: absolute;
+      inset: 14px;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .hotspot-pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(17, 17, 17, 0.88);
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      pointer-events: auto;
+      display: grid;
+      place-items: center;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .hotspot-pin::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.75);
+      animation: hotspotPulse 2s infinite;
+    }
+    @keyframes hotspotPulse {
+      0% { transform: scale(0.9); opacity: 0.9; }
+      70% { transform: scale(1.35); opacity: 0; }
+      100% { transform: scale(1.35); opacity: 0; }
+    }
+    .hotspot-pin:hover,
+    .hotspot-pin.active {
+      background: var(--champagne);
+      transform: translate(-50%, -50%) scale(1.12);
+    }
+    .look-hotspot-popover {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      width: 265px;
+      max-width: calc(100% - 24px);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border: 1.5px solid var(--ink-noir);
+      padding: 14px 16px;
+      box-shadow: 6px 6px 0px var(--ink-noir);
+      z-index: 8;
+      display: none;
+    }
+    .look-hotspot-popover.open {
+      display: block;
+      animation: popIn 0.2s ease;
+    }
+    .hotspot-pop-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .hotspot-pop-title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink-noir);
+      line-height: 1.25;
+    }
+    .hotspot-pop-close {
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      color: var(--ink-muted);
+    }
+    .hotspot-pop-price {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--champagne);
+      margin-bottom: 10px;
+    }
+    .hotspot-size-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .hotspot-size-btn {
+      flex: 1;
+      padding: 4px 0;
+      background: var(--bg-ivory);
+      border: 1px solid var(--ink-noir);
+      font-size: 0.72rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .hotspot-size-btn.active {
+      background: var(--ink-noir);
+      color: #FFFFFF;
+    }
+    .fashion-toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 950;
+      width: min(330px, calc(100vw - 24px));
+      background: var(--ink-noir);
+      color: var(--bg-ivory);
+      border: 1px solid var(--champagne);
+      padding: 14px 16px;
+      box-shadow: 8px 8px 0px var(--champagne);
+      display: none;
+      font-size: 0.84rem;
+    }
+    .fashion-toast.open {
+      display: block;
+      animation: popIn 0.22s ease;
     }
 
     /* SECTION 4: FORM ĐẶT HÀNG NHANH GIAO TẬN NHÀ (BESPOKE CONCIERGE) */
@@ -1134,6 +1262,7 @@
       .size-card, .order-card { padding: 24px 16px; box-shadow: 6px 6px 0px var(--ink-noir); }
       .look-display-box { height: 380px; box-shadow: 6px 6px 0px var(--ink-noir); }
       .look-floating-tag { left: 12px; right: 12px; bottom: 12px; padding: 12px 16px; }
+      .look-hotspot-popover { left: 12px; right: 12px; bottom: 12px; width: auto; }
       .concierge-box { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px; }
       .order-card form > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
       .order-modal { padding: 24px 16px; box-shadow: 8px 8px 0px var(--champagne); }
@@ -1141,6 +1270,8 @@
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
 </head>
 <body>
 
@@ -1237,7 +1368,7 @@
       <!-- RIGHT ASYMMETRIC LOOKBOOK PLATE -->
       <div class="hero-visual-col">
         <div class="hero-frame-wrap">
-          <img src="image/hero-fashion.jpg" alt="Atelier Noir Editorial Lookbook 2026">
+          <img src="image/hero-fashion.webp" alt="Atelier Noir Editorial Lookbook 2026">
           <div class="hero-vertical-tag">SILHOUETTE N°01 • TAILORED</div>
           <div class="hero-caption-card">
             <div class="cap-no">LOOK N° 01 / RUNWAY ARCHIVE</div>
@@ -1323,7 +1454,7 @@
         <div class="product-img-wrap">
           <span class="product-tag">Bán Chạy Nhất</span>
           <span class="product-index-no">N° 01</span>
-          <img src="image/blazer-black.jpg" alt="Tailored Oversized Blazer">
+          <img loading="lazy" src="image/blazer-black.webp" alt="Tailored Oversized Blazer">
         </div>
         <div class="product-body">
           <div class="product-color-dots">
@@ -1348,7 +1479,7 @@
         <div class="product-img-wrap">
           <span class="product-tag">Limited Edition</span>
           <span class="product-index-no">N° 02</span>
-          <img src="image/dress-silk.jpg" alt="Mulberry Silk Slip Dress">
+          <img loading="lazy" src="image/dress-silk.webp" alt="Mulberry Silk Slip Dress">
         </div>
         <div class="product-body">
           <div class="product-color-dots">
@@ -1373,7 +1504,7 @@
         <div class="product-img-wrap">
           <span class="product-tag">Hè Thoáng Mát</span>
           <span class="product-index-no">N° 03</span>
-          <img src="image/shirt-linen.jpg" alt="Relaxed French Linen Shirt">
+          <img loading="lazy" src="image/shirt-linen.webp" alt="Relaxed French Linen Shirt">
         </div>
         <div class="product-body">
           <div class="product-color-dots">
@@ -1398,7 +1529,7 @@
         <div class="product-img-wrap">
           <span class="product-tag">Hack Dáng 5cm</span>
           <span class="product-index-no">N° 04</span>
-          <img src="image/pants-wide.jpg" alt="High-Waist Tailored Trousers">
+          <img loading="lazy" src="image/pants-wide.webp" alt="High-Waist Tailored Trousers">
         </div>
         <div class="product-body">
           <div class="product-color-dots">
@@ -1423,7 +1554,7 @@
         <div class="product-img-wrap">
           <span class="product-tag">Da Bò Thật 100%</span>
           <span class="product-index-no">N° 05</span>
-          <img src="image/leather-bag.jpg" alt="Noir Leather Crossbody Bag">
+          <img loading="lazy" src="image/leather-bag.webp" alt="Noir Leather Crossbody Bag">
         </div>
         <div class="product-body">
           <div class="product-color-dots">
@@ -1447,7 +1578,7 @@
         <div class="product-img-wrap">
           <span class="product-tag">Combo Tiết Kiệm</span>
           <span class="product-index-no">N° 06</span>
-          <img src="image/lookbook-office.jpg" alt="Office Chic Outfit Set">
+          <img loading="lazy" src="image/lookbook-office.webp" alt="Office Chic Outfit Set">
         </div>
         <div class="product-body">
           <div class="product-color-dots">
@@ -1563,10 +1694,12 @@
       </div>
 
       <div class="look-display-box">
-        <img src="image/lookbook-office.jpg" id="lookMainImg" alt="Outfit phối đồ">
+        <img loading="lazy" src="image/lookbook-office.webp" id="lookMainImg" alt="Outfit phối đồ">
+        <div class="look-hotspots-layer" id="lookHotspotsLayer"></div>
+        <div class="look-hotspot-popover" id="lookHotspotPopover" aria-live="polite"></div>
         <div class="look-floating-tag">
           <p id="lookTagTitle" style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: var(--ink-noir); margin-bottom: 2px;">Office Chic Collection</p>
-          <p id="lookTagDesc" style="font-size: 0.72rem; color: var(--champagne); font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em;">Combo 3 món giảm thêm 15%</p>
+          <p id="lookTagDesc" style="font-size: 0.72rem; color: var(--champagne); font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em;">Combo 3 món giảm thêm 15% • Chạm ghim + để mua từng món</p>
         </div>
       </div>
     </div>
@@ -1756,26 +1889,52 @@
     </div>
   </div>
 
+  <div id="fashionToast" class="fashion-toast" role="status" aria-live="polite"></div>
+
   <script>
     // CART STATE
     let cartItems = [];
+    let fashionToastTimer = null;
+
+    function showFashionToast(htmlContent) {
+      const toast = document.getElementById('fashionToast');
+      if (!toast) return;
+      toast.innerHTML = htmlContent;
+      toast.classList.add('open');
+      clearTimeout(fashionToastTimer);
+      fashionToastTimer = setTimeout(() => toast.classList.remove('open'), 3200);
+    }
 
     function addToCartItem(name, price) {
       cartItems.push({ name, price });
-      document.getElementById('cartCount').innerText = cartItems.length;
-      alert(`Đã thêm vào giỏ hàng:\n✨ ${name} (${price})\n\nTổng số món trong giỏ: ${cartItems.length}`);
+      const countEl = document.getElementById('cartCount');
+      countEl.innerText = cartItems.length;
+      showFashionToast(`
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <strong style="color:var(--champagne-light);">✓ ĐÃ THÊM VÀO TÚI ĐỒ</strong>
+          <button type="button" onclick="document.getElementById('fashionToast').classList.remove('open')" style="background:none;border:none;color:#9E968B;cursor:pointer;font-weight:700;">✕</button>
+        </div>
+        <div>✨ <strong>${name}</strong> (${price})</div>
+        <div style="font-size:0.76rem;color:#C4BDB3;margin-top:4px;">Tổng trong túi: ${cartItems.length} thiết kế • <a href="#order" style="color:var(--champagne-light);text-decoration:underline;">Đặt hàng ngay →</a></div>
+      `);
     }
 
     function openCartDetails() {
       if (cartItems.length === 0) {
-        alert("Giỏ hàng của bạn đang trống.\nHãy chọn các thiết kế ưng ý từ bộ sưu tập để đặt hàng!");
+        showFashionToast(`
+          <div style="font-weight:700;color:var(--champagne-light);margin-bottom:4px;">TÚI ĐỒ ĐANG TRỐNG</div>
+          <div>Hãy chạm vào nút <strong>+</strong> trên sản phẩm hoặc ghim Lookbook để thêm món yêu thích!</div>
+        `);
       } else {
-        let msg = "GIỎ HÀNG THỜI TRANG CỦA BẠN:\n";
-        cartItems.forEach((item, idx) => {
-          msg += `${idx + 1}. ${item.name} - ${item.price}\n`;
-        });
-        msg += "\nNhân viên sẽ liên hệ để xác nhận màu sắc, size và giao hàng hỏa tốc tận nhà!";
-        alert(msg);
+        const listHtml = cartItems.map((item, idx) => `<div>${idx + 1}. ${item.name} — <strong>${item.price}</strong></div>`).join('');
+        showFashionToast(`
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <strong style="color:var(--champagne-light);">TÚI ĐỒ (${cartItems.length} MÓN)</strong>
+            <button type="button" onclick="document.getElementById('fashionToast').classList.remove('open')" style="background:none;border:none;color:#9E968B;cursor:pointer;font-weight:700;">✕</button>
+          </div>
+          <div style="display:grid;gap:3px;margin-bottom:8px;">${listHtml}</div>
+          <a href="#order" onclick="document.getElementById('fashionToast').classList.remove('open')" style="display:inline-block;background:var(--champagne);color:#fff;padding:6px 12px;font-size:0.76rem;font-weight:700;text-decoration:none;">Tiến Hành Đặt Giao Hỏa Tốc →</a>
+        `);
       }
     }
 
@@ -1826,29 +1985,112 @@
       document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // LOOKBOOK SWITCHER
+    // SHOPPABLE LOOKBOOK HOTSPOTS & SWITCHER
+    const lookHotspotsMap = {
+      office: [
+        { name: 'Oversized Noir Blazer', price: '1.290.000đ', x: 52, y: 34 },
+        { name: 'French Linen Shirt', price: '690.000đ', x: 46, y: 48 },
+        { name: 'High-Waist Trousers', price: '790.000đ', x: 54, y: 70 }
+      ],
+      street: [
+        { name: 'French Linen Shirt', price: '690.000đ', x: 50, y: 35 },
+        { name: 'High-Waist Trousers', price: '790.000đ', x: 47, y: 66 },
+        { name: 'Minimalist Leather Bag', price: '1.150.000đ', x: 64, y: 50 }
+      ],
+      party: [
+        { name: 'Mulberry Silk Slip Dress', price: '1.450.000đ', x: 51, y: 45 },
+        { name: 'Minimalist Leather Bag', price: '1.150.000đ', x: 66, y: 58 },
+        { name: 'Champagne Silk Shawl', price: '490.000đ', x: 41, y: 30 }
+      ]
+    };
+
+    let currentLookType = 'office';
+    let selectedHotspotSize = 'M';
+
+    function renderLookHotspots(type) {
+      const layer = document.getElementById('lookHotspotsLayer');
+      if (!layer) return;
+      const items = lookHotspotsMap[type] || lookHotspotsMap.office;
+      layer.innerHTML = items.map((item, idx) => `
+        <button type="button" class="hotspot-pin" style="left:${item.x}%; top:${item.y}%;" onclick="openHotspotPopover('${type}', ${idx}, this)" aria-label="Xem ${item.name}">+</button>
+      `).join('');
+    }
+
+    function openHotspotPopover(type, idx, btn) {
+      const items = lookHotspotsMap[type] || lookHotspotsMap.office;
+      const item = items[idx];
+      const popover = document.getElementById('lookHotspotPopover');
+      if (!item || !popover) return;
+
+      document.querySelectorAll('.hotspot-pin').forEach(p => p.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      selectedHotspotSize = 'M';
+      popover.innerHTML = `
+        <div class="hotspot-pop-head">
+          <div class="hotspot-pop-title">${item.name}</div>
+          <button type="button" class="hotspot-pop-close" onclick="closeHotspotPopover()" aria-label="Đóng">✕</button>
+        </div>
+        <div class="hotspot-pop-price">${item.price}</div>
+        <div class="hotspot-size-row">
+          <button type="button" class="hotspot-size-btn" onclick="pickHotspotSize('S', this)">S</button>
+          <button type="button" class="hotspot-size-btn active" onclick="pickHotspotSize('M', this)">M</button>
+          <button type="button" class="hotspot-size-btn" onclick="pickHotspotSize('L', this)">L</button>
+        </div>
+        <button type="button" class="btn-gold" style="width:100%;justify-content:center;padding:9px 12px;font-size:0.74rem;" onclick="addHotspotItemToCart('${item.name}', '${item.price}')">
+          ＋ Thêm Vào Túi Đồ
+        </button>
+      `;
+      popover.classList.add('open');
+    }
+
+    function pickHotspotSize(sz, btn) {
+      selectedHotspotSize = sz;
+      document.querySelectorAll('.hotspot-size-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    function addHotspotItemToCart(name, price) {
+      addToCartItem(`${name} (Size ${selectedHotspotSize})`, price);
+      closeHotspotPopover();
+    }
+
+    function closeHotspotPopover() {
+      const popover = document.getElementById('lookHotspotPopover');
+      if (popover) popover.classList.remove('open');
+      document.querySelectorAll('.hotspot-pin').forEach(p => p.classList.remove('active'));
+    }
+
     function switchLook(type, btn) {
+      currentLookType = type;
       document.querySelectorAll('.look-opt-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      closeHotspotPopover();
 
       const img = document.getElementById('lookMainImg');
       const title = document.getElementById('lookTagTitle');
       const desc = document.getElementById('lookTagDesc');
 
       if (type === 'office') {
-        img.src = 'image/lookbook-office.jpg';
+        img.src = 'image/lookbook-office.webp';
         title.innerText = 'Office Chic Collection';
-        desc.innerText = 'Combo 3 món giảm thêm 15%';
+        desc.innerText = 'Combo 3 món giảm thêm 15% • Chạm ghim + để mua từng món';
       } else if (type === 'street') {
-        img.src = 'image/lookbook-street.jpg';
+        img.src = 'image/lookbook-street.webp';
         title.innerText = 'Weekend Street Style';
-        desc.innerText = 'Phóng khoáng & Thoải mái dạo phố';
+        desc.innerText = 'Phóng khoáng dạo phố • Chạm ghim + để chọn món';
       } else {
-        img.src = 'image/lookbook-party.jpg';
+        img.src = 'image/lookbook-party.webp';
         title.innerText = 'Night Glamour Party Dress';
-        desc.innerText = 'Quyến rũ & Thu hút mọi ánh nhìn';
+        desc.innerText = 'Quyến rũ dạ tiệc • Chạm ghim + để mua nhanh';
       }
+
+      renderLookHotspots(type);
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderLookHotspots(currentLookType);
+    });
 
     // ORDER FORM SUBMIT
     function handleFashionOrder(e) {
@@ -1874,5 +2116,6 @@
       document.querySelector('.order-card form').reset();
     }
   </script>
+  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>

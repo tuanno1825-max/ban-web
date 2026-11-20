@@ -199,7 +199,7 @@
       min-height: 740px;
       padding: 96px 48px 136px;
       background: linear-gradient(180deg, rgba(7, 28, 36, 0.72) 0%, rgba(7, 28, 36, 0.88) 70%, #071C24 100%),
-                  url('image/hero-villa.jpg') center/cover no-repeat;
+                  url('image/hero-villa.webp') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -817,7 +817,7 @@
     .consult-section {
       padding: 96px 48px;
       background: linear-gradient(180deg, rgba(7, 28, 36, 0.84) 0%, rgba(7, 28, 36, 0.94) 100%),
-                  url('image/interior-penthouse.jpg') center/cover no-repeat;
+                  url('image/interior-penthouse.webp') center/cover no-repeat;
       border-top: 1px solid var(--border-marble);
     }
     .consult-container {
@@ -1001,6 +1001,310 @@
       margin: 18px 0;
     }
 
+    /* SKY PENTHOUSE 3D FLOOR EXPLORER (FLAGSHIP SAMANA STYLE) */
+    .sky-tour-section {
+      background: linear-gradient(180deg, #041218 0%, #071C24 60%, #041218 100%);
+      border-top: 2px solid var(--gold-primary);
+      border-bottom: 2px solid var(--gold-primary);
+      padding: 82px 48px;
+      color: #FFFFFF;
+      overflow-x: clip;
+    }
+    .sky-tour-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .sky-tour-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .sky-lighting-toggle {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
+    }
+    .sky-light-btn {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .sky-light-btn.active {
+      background: var(--gold-gradient);
+      color: #041218;
+      box-shadow: 0 4px 14px rgba(197, 155, 39, 0.4);
+    }
+    .sky-explorer-layout {
+      display: grid;
+      grid-template-columns: 1.45fr 0.78fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+    .sky-explorer-layout > * {
+      min-width: 0;
+    }
+    .sky-stage-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 0;
+    }
+    .sky-explorer-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      min-height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(197, 155, 39, 0.5);
+      background: #020a0e;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6);
+    }
+    .sky-scene-layer {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: scale(1.06);
+      transition: opacity 0.65s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+      pointer-events: none;
+    }
+    .sky-scene-layer.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .sky-scene-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .sky-explorer-stage[data-lighting="day"] .sky-scene-layer img {
+      filter: brightness(1.16) saturate(1.06) contrast(1.02);
+    }
+    .sky-lighting-tint {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      transition: background 0.6s ease;
+      background: linear-gradient(180deg, rgba(4, 18, 24, 0.08) 0%, rgba(4, 18, 24, 0.55) 100%);
+    }
+    .sky-explorer-stage[data-lighting="day"] .sky-lighting-tint {
+      background: linear-gradient(180deg, rgba(186, 230, 253, 0.14) 0%, rgba(7, 28, 36, 0.28) 100%);
+    }
+    .sky-stage-arrows {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 8px;
+      z-index: 5;
+    }
+    .sky-arrow-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(4, 18, 24, 0.72);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(232, 207, 130, 0.45);
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all 0.2s ease;
+    }
+    .sky-arrow-btn:hover {
+      background: var(--gold-primary);
+      color: #041218;
+    }
+    .sky-room-hud {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      max-width: 420px;
+      background: rgba(4, 18, 24, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(232, 207, 130, 0.42);
+      border-radius: 14px;
+      padding: 16px 18px;
+      z-index: 4;
+      color: #FFFFFF;
+    }
+    .sky-room-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+    .sky-room-hud h3 {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .sky-room-hud p {
+      font-size: 0.82rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+    }
+    .sky-steps-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .sky-step-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: left;
+      color: #CBD5E1;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      min-width: 0;
+    }
+    .sky-step-btn strong {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--gold-light);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .sky-step-btn span {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sky-step-btn.active {
+      background: rgba(197, 155, 39, 0.18);
+      border-color: var(--gold-primary);
+      box-shadow: 0 6px 18px rgba(197, 155, 39, 0.2);
+    }
+    .sky-floor-hud {
+      background: rgba(11, 40, 51, 0.76);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(197, 155, 39, 0.45);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
+    }
+    .floor-pills-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .floor-pill-btn {
+      flex: 1;
+      min-width: 44px;
+      padding: 9px 6px;
+      border-radius: 8px;
+      background: rgba(4, 18, 24, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #CBD5E1;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .floor-pill-btn.active {
+      background: var(--gold-gradient);
+      color: #041218;
+      border-color: var(--gold-light);
+    }
+    .floor-number-display {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(197, 155, 39, 0.28);
+      padding-bottom: 14px;
+    }
+    .floor-num-big {
+      font-family: var(--font-serif);
+      font-size: 3.1rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gold-light);
+    }
+    .floor-status-chip {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #6EE7B7;
+      white-space: nowrap;
+    }
+    .floor-specs-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .floor-spec-box {
+      background: rgba(4, 18, 24, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .floor-spec-box span {
+      display: block;
+      font-size: 0.7rem;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .floor-spec-box strong {
+      display: block;
+      font-size: 0.96rem;
+      color: #FFFFFF;
+      margin-top: 2px;
+    }
+    .filter-status-toast {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: #ECFDF5;
+      border: 1px solid #86EFAC;
+      color: #065F46;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-align: left;
+    }
+    .filter-status-toast.visible {
+      display: block;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1200px) {
       .nav-links { display: none; }
@@ -1010,6 +1314,7 @@
       .top-bar { padding: 8px 24px; }
       .navbar { padding: 14px 24px; }
       .pillar-grid { grid-template-columns: 1fr; }
+      .sky-explorer-layout { grid-template-columns: 1fr; }
       .calc-container { grid-template-columns: 1fr; }
       .amenities-grid { grid-template-columns: repeat(2, 1fr); }
       .consult-container { grid-template-columns: 1fr; }
@@ -1027,6 +1332,11 @@
       .search-filter-card { padding: 20px 16px; }
       .filter-inputs-grid { grid-template-columns: 1fr; }
       .pillar-section { padding: 0 16px 48px; margin-top: -24px; }
+      .sky-tour-section { padding: 48px 16px; }
+      .sky-explorer-stage { aspect-ratio: 16 / 10; min-height: 220px; }
+      .sky-room-hud { position: static; max-width: 100%; border-radius: 12px; margin-top: 2px; }
+      .sky-steps-bar { grid-template-columns: repeat(2, 1fr); }
+      .sky-floor-hud { padding: 18px 16px; }
       .section-wrap, .calculator-section, .consult-section, .footer { padding: 48px 16px; }
       .properties-grid { grid-template-columns: 1fr; }
       .prop-specs { flex-wrap: wrap; gap: 10px; }
@@ -1035,6 +1345,8 @@
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
 </head>
 <body>
 
@@ -1065,8 +1377,8 @@
 
     <ul class="nav-links">
       <li><a href="#hero" class="active">Trang Chủ</a></li>
-      <li><a href="#phan-khuc">BĐS Mở Bán</a></li>
-      <li><a href="#phan-khuc">BĐS Cho Thuê</a></li>
+      <li><a href="#phan-khuc">Phân Khúc VIP</a></li>
+      <li><a href="#sky-tour">Sky Tour 3D</a></li>
       <li><a href="#du-an">Bộ Sưu Tập Dinh Thự</a></li>
       <li><a href="#tinh-vay">Private Banking</a></li>
       <li><a href="#tien-ich">Đặc Quyền 5 Sao</a></li>
@@ -1138,6 +1450,7 @@
           <span>🔍</span> Tìm Kiếm (68 Căn)
         </button>
       </div>
+      <div id="filterStatusToast" class="filter-status-toast" role="status" aria-live="polite"></div>
     </div>
   </section>
 
@@ -1148,7 +1461,7 @@
       <!-- Card 1: Bất Động Sản Bán -->
       <div class="pillar-card">
         <div class="pillar-img-wrap">
-          <img src="image/shophouse-complex.jpg" alt="Bất Động Sản Bán">
+          <img src="image/shophouse-complex.webp" alt="Bất Động Sản Bán">
           <div class="pillar-badge-float">🏛️ SỔ HỒNG TRAO TAY</div>
         </div>
         <div class="pillar-content">
@@ -1166,7 +1479,7 @@
       <!-- Card 2: Bất Động Sản Cho Thuê -->
       <div class="pillar-card">
         <div class="pillar-img-wrap">
-          <img src="image/interior-penthouse.jpg" alt="Bất Động Sản Cho Thuê">
+          <img loading="lazy" src="image/interior-penthouse.webp" alt="Bất Động Sản Cho Thuê">
           <div class="pillar-badge-float">🔑 FULL NỘI THẤT Ý</div>
         </div>
         <div class="pillar-content">
@@ -1184,7 +1497,7 @@
       <!-- Card 3: Chính Sách & Ưu Đãi Đợt 1 -->
       <div class="pillar-card">
         <div class="pillar-img-wrap">
-          <img src="image/island-villa.jpg" alt="Chính Sách &amp; Ưu Đãi">
+          <img loading="lazy" src="image/island-villa.webp" alt="Chính Sách &amp; Ưu Đãi">
           <div class="pillar-badge-float">💎 ĐẶC QUYỀN ĐỢT 1</div>
         </div>
         <div class="pillar-content">
@@ -1199,6 +1512,127 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- FLAGSHIP INTERACTIVE SKY PENTHOUSE & FLOOR EXPLORER -->
+  <section class="sky-tour-section" id="sky-tour">
+    <div class="sky-tour-inner">
+      <div class="sky-tour-topbar">
+        <div>
+          <div class="section-tag" style="color: var(--gold-light); margin-bottom: 6px;">FLAGSHIP INTERACTIVE WALKTHROUGH • TẦNG 11 – 15</div>
+          <h2 class="section-heading" style="color: #FFFFFF; text-align: left; margin-bottom: 6px;">Khám Phá Sky Penthouse &amp; Chọn Tầng Trực Quan</h2>
+          <p style="color: #CBD5E1; font-size: 0.94rem; max-width: 680px;">Chuyển đổi từng không gian từ mặt tiền tòa tháp ven vịnh vào hồ bơi vô cực, phòng khách trần cao và phòng ngủ Master kết hợp chọn tầng thời gian thực.</p>
+        </div>
+
+        <div class="sky-lighting-toggle" role="group" aria-label="Chế độ ánh sáng">
+          <button type="button" class="sky-light-btn active" data-mode="twilight" onclick="toggleLightingMode('twilight', this)">🌙 Hoàng Hôn &amp; Đêm</button>
+          <button type="button" class="sky-light-btn" data-mode="day" onclick="toggleLightingMode('day', this)">☀️ Ban Ngày</button>
+        </div>
+      </div>
+
+      <div class="sky-explorer-layout">
+        <div class="sky-stage-col">
+          <div class="sky-explorer-stage" id="skyExplorerStage" data-lighting="twilight">
+            <div class="sky-scene-layer active" data-scene="0">
+              <img loading="lazy" src="image/penthouse-tower.webp" alt="Toàn cảnh tòa tháp ven vịnh và các tầng Penthouse 11-15">
+            </div>
+            <div class="sky-scene-layer" data-scene="1">
+              <img loading="lazy" src="image/penthouse-pool.webp" alt="Hồ bơi vô cực và sân thượng Sky Penthouse">
+            </div>
+            <div class="sky-scene-layer" data-scene="2">
+              <img loading="lazy" src="image/interior-penthouse.webp" alt="Phòng khách Penthouse trần cao 4.2m">
+            </div>
+            <div class="sky-scene-layer" data-scene="3">
+              <img loading="lazy" src="image/penthouse-bedroom.webp" alt="Phòng ngủ Master Panorama 270 độ">
+            </div>
+
+            <div class="sky-lighting-tint"></div>
+
+            <div class="sky-stage-arrows">
+              <button type="button" class="sky-arrow-btn" onclick="stepSkyScene(-1)" aria-label="Không gian trước">←</button>
+              <button type="button" class="sky-arrow-btn" onclick="stepSkyScene(1)" aria-label="Không gian tiếp theo">→</button>
+            </div>
+
+            <div class="sky-room-hud" id="skyRoomHudDesktop">
+              <div class="sky-room-eyebrow" id="skyRoomTag">01 • WATERFRONT ICON</div>
+              <h3 id="skyRoomTitle">Tower Exterior &amp; Marina</h3>
+              <p id="skyRoomDesc">Mặt tiền kính Low-E 3 lớp hướng thẳng bến du thuyền, hệ đèn kiến trúc hắt vàng nổi bật toàn bộ tầng Penthouse 11–15.</p>
+            </div>
+          </div>
+
+          <div class="sky-steps-bar">
+            <button type="button" class="sky-step-btn active" data-step="0" onclick="selectSkyScene(0)">
+              <strong>01 • Mặt Tiền</strong>
+              <span>Tower Exterior</span>
+            </button>
+            <button type="button" class="sky-step-btn" data-step="1" onclick="selectSkyScene(1)">
+              <strong>02 • Sân Thượng</strong>
+              <span>Infinity Terrace</span>
+            </button>
+            <button type="button" class="sky-step-btn" data-step="2" onclick="selectSkyScene(2)">
+              <strong>03 • Nội Thất</strong>
+              <span>The Living Room</span>
+            </button>
+            <button type="button" class="sky-step-btn" data-step="3" onclick="selectSkyScene(3)">
+              <strong>04 • Nghỉ Dưỡng</strong>
+              <span>Master Bedroom</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT: GLASSMORPHISM FLOOR HUD (11 - 15) -->
+        <aside class="sky-floor-hud">
+          <div>
+            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 10px;">
+              CHỌN TẦNG ĐANG MỞ BÁN
+            </div>
+            <div class="floor-pills-row">
+              <button type="button" class="floor-pill-btn active" onclick="selectSkyFloor(11, this)">F11</button>
+              <button type="button" class="floor-pill-btn" onclick="selectSkyFloor(12, this)">F12</button>
+              <button type="button" class="floor-pill-btn" onclick="selectSkyFloor(13, this)">F13</button>
+              <button type="button" class="floor-pill-btn" onclick="selectSkyFloor(14, this)">F14</button>
+              <button type="button" class="floor-pill-btn" onclick="selectSkyFloor(15, this)">F15</button>
+            </div>
+          </div>
+
+          <div class="floor-number-display">
+            <div>
+              <div style="font-size: 0.78rem; color: #94A3B8;">TẦNG ĐƯỢC CHỌN</div>
+              <div class="floor-num-big" id="hudFloorLabel">Floor 11</div>
+            </div>
+            <span class="floor-status-chip" id="hudFloorStatus">Còn 1 căn VIP</span>
+          </div>
+
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: #FFFFFF; margin-bottom: 4px;" id="hudFloorName">Sky Residence — Panorama Bay</div>
+            <p style="font-size: 0.82rem; color: #CBD5E1;" id="hudFloorNote">Ban công kính vô cực 270°, bàn giao hoàn thiện nội thất Ý nhập khẩu.</p>
+          </div>
+
+          <div class="floor-specs-list">
+            <div class="floor-spec-box">
+              <span>Độ cao trần / cốt</span>
+              <strong id="hudFloorHeight">+52m • 3.8m</strong>
+            </div>
+            <div class="floor-spec-box">
+              <span>Diện tích thông thủy</span>
+              <strong id="hudFloorArea">185 m² • 3PN</strong>
+            </div>
+            <div class="floor-spec-box">
+              <span>Hướng tầm nhìn</span>
+              <strong id="hudFloorView">Vịnh Du Thuyền</strong>
+            </div>
+            <div class="floor-spec-box">
+              <span>Giá giao dịch Đợt 1</span>
+              <strong style="color: var(--gold-light);" id="hudFloorPrice">16.8 Tỷ</strong>
+            </div>
+          </div>
+
+          <button type="button" class="btn-gold" style="width: 100%; justify-content: center;" onclick="selectFloorForConsult()">
+            <span>📅</span> Đặt Lịch Xem Tầng Này →
+          </button>
+        </aside>
+      </div>
     </div>
   </section>
 
@@ -1223,7 +1657,7 @@
       <!-- Item 1 -->
       <div class="property-card" data-cat="villa">
         <div class="prop-img-container">
-          <img src="image/island-villa.jpg" alt="Biệt thự đảo The Horizon">
+          <img loading="lazy" src="image/island-villa.webp" alt="Biệt thự đảo The Horizon">
           <span class="prop-status-tag">HOT - CHỈ CÒN 2 CĂN</span>
         </div>
         <div class="prop-body">
@@ -1244,7 +1678,7 @@
       <!-- Item 2 -->
       <div class="property-card" data-cat="penthouse">
         <div class="prop-img-container">
-          <img src="image/interior-penthouse.jpg" alt="Sky Penthouse Horizon">
+          <img loading="lazy" src="image/interior-penthouse.webp" alt="Sky Penthouse Horizon">
           <span class="prop-status-tag">FULL NỘI THẤT CAO CẤP</span>
         </div>
         <div class="prop-body">
@@ -1265,7 +1699,7 @@
       <!-- Item 3 -->
       <div class="property-card" data-cat="shophouse">
         <div class="prop-img-container">
-          <img src="image/shophouse-complex.jpg" alt="Shophouse Broadway">
+          <img loading="lazy" src="image/shophouse-complex.webp" alt="Shophouse Broadway">
           <span class="prop-status-tag">SẴN HỢP ĐỒNG THUÊ 80TR</span>
         </div>
         <div class="prop-body">
@@ -1509,14 +1943,131 @@
       btn.classList.add('active');
     }
 
-    // Apply Filter Search
+    // Apply Filter Search (no jarring native alert)
     function applySearchFilter() {
-      const loc = document.getElementById('filterLocation').value;
-      const type = document.getElementById('filterType').value;
-      const budget = document.getElementById('filterBudget').value;
-      alert(`Đang lọc giỏ hàng BĐS phù hợp:\n- Vị trí: ${loc}\n- Loại hình: ${type}\n- Ngân sách: ${budget}\n\nĐã tìm thấy 68 căn phù hợp! Hệ thống đang tải danh sách...`);
+      const locSelect = document.getElementById('filterLocation');
+      const typeSelect = document.getElementById('filterType');
+      const budgetSelect = document.getElementById('filterBudget');
+      const loc = locSelect.options[locSelect.selectedIndex].text;
+      const type = typeSelect.options[typeSelect.selectedIndex].text;
+      const budget = budgetSelect.options[budgetSelect.selectedIndex].text;
+      const toast = document.getElementById('filterStatusToast');
+      if (toast) {
+        toast.innerHTML = `✓ Đã lọc giỏ hàng: <strong>${loc}</strong> • <strong>${type}</strong> • <strong>${budget}</strong> — Đang hiển thị các căn tiêu biểu bên dưới.`;
+        toast.classList.add('visible');
+      }
       document.getElementById('du-an').scrollIntoView({ behavior: 'smooth' });
     }
+
+    // SKY PENTHOUSE WALKTHROUGH & FLOOR HUD (11 - 15)
+    const skyScenesData = [
+      {
+        tag: '01 • WATERFRONT ICON',
+        title: 'Tower Exterior & Marina',
+        desc: 'Mặt tiền kính Low-E 3 lớp hướng thẳng bến du thuyền, hệ đèn kiến trúc hắt vàng nổi bật toàn bộ tầng Penthouse 11–15.'
+      },
+      {
+        tag: '02 • SKY INFINITY POOL',
+        title: 'Infinity Pool Terrace',
+        desc: 'Hồ bơi nước ấm tràn bờ ngay hiên căn hộ kết nối thẳng cửa kính trượt tự động dẫn vào phòng khách.'
+      },
+      {
+        tag: '03 • GRAND SALON',
+        title: 'The Living Room',
+        desc: 'Không gian tiếp khách thông tầng cao 4.2m lát đá Marble Champagne nguyên tấm và đèn chùm pha lê thủ công.'
+      },
+      {
+        tag: '04 • PRIVATE SUITE',
+        title: 'Master Bedroom 270°',
+        desc: 'Phòng ngủ Master ốp gỗ sồi xẻ rãnh với ban công kính toàn cảnh ôm trọn vịnh biển về đêm.'
+      }
+    ];
+
+    const skyFloorsData = {
+      11: { name: 'Sky Residence — Panorama Bay', status: 'Còn 1 căn VIP', note: 'Ban công kính vô cực 270°, bàn giao hoàn thiện nội thất Ý nhập khẩu.', height: '+52m • 3.8m', area: '185 m² • 3PN', view: 'Vịnh Du Thuyền', price: '16.8 Tỷ' },
+      12: { name: 'Horizon Suite — Corner Glass', status: 'Còn 2 căn', note: 'Căn góc 2 mặt thoáng đón gió biển trực tiếp, thang máy riêng quẹt thẻ.', height: '+56m • 3.8m', area: '205 m² • 3PN+', view: 'Đông Nam Biển', price: '18.5 Tỷ' },
+      13: { name: 'Atelier Sky Duplex', status: 'Sắp hết hàng', note: 'Thiết kế thông tầng kèm hầm rượu vang riêng và hệ điều khiển Smarthome.', height: '+60m • 4.2m', area: '240 m² • 4PN', view: 'Toàn Cảnh Vịnh', price: '22.9 Tỷ' },
+      14: { name: 'Royal Pool Penthouse', status: 'Còn 1 căn', note: 'Sở hữu hồ bơi muối khoáng vô cực riêng dài 12m ngay ngoài hiên phòng khách.', height: '+64m • 4.2m', area: '275 m² • 4PN', view: 'Bến Du Thuyền', price: '27.4 Tỷ' },
+      15: { name: 'The Crown Sky Villa (Độc Bản)', status: 'Độc Bản Tầng Đỉnh', note: 'Tuyệt tác tầng cao nhất với sân vườn trên không, bể sục Jacuzzi & quản gia 24/7.', height: '+68m • 4.6m', area: '320 m² • 5PN', view: 'Panorama 360°', price: '34.5 Tỷ' }
+    };
+
+    let currentSkyScene = 0;
+    let currentSkyFloor = 11;
+
+    function selectSkyScene(idx) {
+      currentSkyScene = (idx + skyScenesData.length) % skyScenesData.length;
+      document.querySelectorAll('.sky-scene-layer').forEach((el, i) => {
+        el.classList.toggle('active', i === currentSkyScene);
+      });
+      document.querySelectorAll('.sky-step-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i === currentSkyScene);
+      });
+      const data = skyScenesData[currentSkyScene];
+      document.getElementById('skyRoomTag').innerText = data.tag;
+      document.getElementById('skyRoomTitle').innerText = data.title;
+      document.getElementById('skyRoomDesc').innerText = data.desc;
+    }
+
+    function stepSkyScene(delta) {
+      selectSkyScene(currentSkyScene + delta);
+    }
+
+    function toggleLightingMode(mode, btn) {
+      const stage = document.getElementById('skyExplorerStage');
+      if (stage) stage.setAttribute('data-lighting', mode);
+      document.querySelectorAll('.sky-light-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    function selectSkyFloor(floorNum, btn) {
+      currentSkyFloor = floorNum;
+      document.querySelectorAll('.floor-pill-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const info = skyFloorsData[floorNum];
+      document.getElementById('hudFloorLabel').innerText = `Floor ${floorNum}`;
+      document.getElementById('hudFloorStatus').innerText = info.status;
+      document.getElementById('hudFloorName').innerText = info.name;
+      document.getElementById('hudFloorNote').innerText = info.note;
+      document.getElementById('hudFloorHeight').innerText = info.height;
+      document.getElementById('hudFloorArea').innerText = info.area;
+      document.getElementById('hudFloorView').innerText = info.view;
+      document.getElementById('hudFloorPrice').innerText = info.price;
+    }
+
+    function selectFloorForConsult() {
+      const info = skyFloorsData[currentSkyFloor];
+      document.getElementById('custInterest').value = 'Sky Penthouse Horizon 360°';
+      document.getElementById('custNote').value = `Quan tâm Floor ${currentSkyFloor} (${info.name} - ${info.area} - Giá ${info.price}), muốn đặt lịch xem thực tế.`;
+      document.getElementById('lien-he').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Subtle scroll-linked depth zoom when user scrolls through #sky-tour
+    (function initSkyScrollDepth() {
+      const stage = document.getElementById('skyExplorerStage');
+      if (!stage || typeof IntersectionObserver === 'undefined') return;
+      let isVisible = false;
+      let rafPending = false;
+      const obs = new IntersectionObserver(entries => {
+        isVisible = entries.some(e => e.isIntersecting);
+      }, { threshold: 0.05 });
+      obs.observe(stage);
+
+      window.addEventListener('scroll', () => {
+        if (!isVisible || rafPending) return;
+        rafPending = true;
+        requestAnimationFrame(() => {
+          const rect = stage.getBoundingClientRect();
+          const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
+          const activeLayer = stage.querySelector('.sky-scene-layer.active');
+          if (activeLayer) {
+            const zoom = 1 + progress * 0.055;
+            activeLayer.style.transform = `scale(${zoom.toFixed(3)})`;
+          }
+          rafPending = false;
+        });
+      }, { passive: true });
+    })();
 
     // Filter project tabs
     function filterProjects(cat, btn) {
@@ -1597,5 +2148,6 @@
     // Init
     updateCalculator();
   </script>
+  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>

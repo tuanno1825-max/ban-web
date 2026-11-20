@@ -1133,6 +1133,8 @@
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
 </head>
 <body>
 
@@ -1211,7 +1213,7 @@
       <div class="hero-arch-col">
         <div class="hero-arch-frame">
           <div class="hero-arch-inner">
-            <img src="image/hero-resort.jpg" alt="An Nhiên Retreat Sanctuary">
+            <img src="image/hero-resort.webp" alt="An Nhiên Retreat Sanctuary">
           </div>
           <div class="hero-sanctuary-seal">
             <span>Six Senses Inspired Sanctuary</span>
@@ -1310,7 +1312,7 @@
       <div class="room-card" data-cat="pool-villa">
         <div class="room-img-wrap">
           <span class="room-badge-tag">Hồ Bơi Riêng</span>
-          <img src="image/villa-pool.jpg" alt="Oceanfront Pool Villa">
+          <img loading="lazy" src="image/villa-pool.webp" alt="Oceanfront Pool Villa">
         </div>
         <div class="room-body">
           <div class="room-specs">
@@ -1339,7 +1341,7 @@
       <div class="room-card" data-cat="bungalow">
         <div class="room-img-wrap">
           <span class="room-badge-tag">Thung Lũng Mây</span>
-          <img src="image/bungalow-forest.jpg" alt="Pine Forest Valley Bungalow">
+          <img loading="lazy" src="image/bungalow-forest.webp" alt="Pine Forest Valley Bungalow">
         </div>
         <div class="room-body">
           <div class="room-specs">
@@ -1368,7 +1370,7 @@
       <div class="room-card" data-cat="suite">
         <div class="room-img-wrap">
           <span class="room-badge-tag">Panorama 180°</span>
-          <img src="image/suite-bedroom.jpg" alt="Grand Panorama Ocean Suite">
+          <img loading="lazy" src="image/suite-bedroom.webp" alt="Grand Panorama Ocean Suite">
         </div>
         <div class="room-body">
           <div class="room-specs">
@@ -1397,7 +1399,7 @@
       <div class="room-card" data-cat="glamping">
         <div class="room-img-wrap">
           <span class="room-badge-tag">Trải Nghiệm Độc Đáo</span>
-          <img src="image/glamping-tent.jpg" alt="Luxury Safari Glamping Tent">
+          <img loading="lazy" src="image/glamping-tent.webp" alt="Luxury Safari Glamping Tent">
         </div>
         <div class="room-body">
           <div class="room-specs">
@@ -1473,7 +1475,7 @@
       </div>
 
       <div class="tour-display-box">
-        <img src="image/floating-breakfast.jpg" id="tourMainImg" alt="Góc nghỉ dưỡng An Nhiên">
+        <img loading="lazy" src="image/floating-breakfast.webp" id="tourMainImg" alt="Góc nghỉ dưỡng An Nhiên">
         <div class="tour-floating-tag">
           <p id="tourTagTitle" class="tour-floating-title">Hồ Bơi Vô Cực &amp; Bữa Sáng Nổi</p>
           <p id="tourTagDesc" class="tour-floating-desc">Góc check-in được yêu thích nhất 2026</p>
@@ -1757,19 +1759,19 @@
       const desc = document.getElementById('tourTagDesc');
 
       if (type === 'pool') {
-        img.src = 'image/floating-breakfast.jpg';
+        img.src = 'image/floating-breakfast.webp';
         title.innerText = 'Hồ Bơi Vô Cực & Bữa Sáng Nổi';
         desc.innerText = 'Góc check-in được yêu thích nhất 2026';
       } else if (type === 'bedroom') {
-        img.src = 'image/suite-bedroom.jpg';
+        img.src = 'image/suite-bedroom.webp';
         title.innerText = 'Phòng Ngủ Master Kính Panorama 180°';
         desc.innerText = 'Thức giấc giữa thung lũng mây bay và đại dương';
       } else if (type === 'onsen') {
-        img.src = 'image/onsen-spa.jpg';
+        img.src = 'image/onsen-spa.webp';
         title.innerText = 'Khu Tắm Khoáng Nóng Onsen Tự Nhiên';
         desc.innerText = 'Liệu pháp ngâm khoáng và thảo mộc thư giãn sâu';
       } else {
-        img.src = 'image/sunset-dining.jpg';
+        img.src = 'image/sunset-dining.webp';
         title.innerText = 'Bữa Tối Lãng Mạn Bên Bờ Biển';
         desc.innerText = 'Ẩm thực nướng hải sản cao cấp dưới ánh nến';
       }
@@ -1841,5 +1843,6 @@
     // Init calculation
     calculateVacation();
   </script>
+  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 3000;
-const PUBLIC_DIR = __dirname;
+const PUBLIC_DIR = path.resolve(__dirname);
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
@@ -24,16 +24,37 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  let decodedUrl = decodeURIComponent(req.url.split('?')[0]);
+  let decodedUrl;
+  try {
+    decodedUrl = decodeURIComponent(req.url.split('?')[0]);
+  } catch (err) {
+    res.writeHead(400, { 'Content-Type': 'text/plain; charset=UTF-8' });
+    res.end('400 Bad Request');
+    return;
+  }
+
   if (decodedUrl === '/') {
     decodedUrl = '/index.html';
   }
 
-  let filePath = path.join(PUBLIC_DIR, decodedUrl);
+  // Bảo vệ chống Path Traversal ngoài thư mục PUBLIC_DIR
+  const relPath = decodedUrl.replace(/^\/+/, '');
+  let filePath = path.resolve(PUBLIC_DIR, relPath);
 
-  // If path is a directory, look for index.html
+  if (filePath !== PUBLIC_DIR && !filePath.startsWith(PUBLIC_DIR + path.sep)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain; charset=UTF-8' });
+    res.end('403 Forbidden');
+    return;
+  }
+
+  // Nếu là thư mục, phục vụ index.html bên trong (sau khi vẫn đảm bảo nằm trong PUBLIC_DIR)
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-    filePath = path.join(filePath, 'index.html');
+    filePath = path.resolve(filePath, 'index.html');
+    if (!filePath.startsWith(PUBLIC_DIR + path.sep)) {
+      res.writeHead(403, { 'Content-Type': 'text/plain; charset=UTF-8' });
+      res.end('403 Forbidden');
+      return;
+    }
   }
 
   fs.stat(filePath, (err, stats) => {
@@ -56,5 +77,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
   console.log(`Local server is running at http://localhost:${PORT}/`);
-  console.log(`Massage Spa Demo: http://localhost:${PORT}/demos/massage-spa/`);
+  console.log(`Spa Beauty Demo: http://localhost:${PORT}/demos/spa-beauty/`);
 });

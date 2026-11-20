@@ -8,3 +8,7 @@ $RECYCLE.BIN/
 # Temporary & Log files
 *.log
 node_modules/
+
+# Large marketing videos (do not commit to GitHub Pages)
+video/*.mp4
+video/*.mov

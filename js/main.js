@@ -1,66 +1,104 @@
 // Quản lý chuyển đổi Tab chính (Giới thiệu, Kho giao diện, Bảng giá)
-function switchPageTab(tabName) {
-  // Active nút tab trên header
+const VALID_TABS = new Set(['home', 'templates', 'pricing']);
+
+function getCleanBasePath() {
+  let cleanPath = window.location.pathname.replace(/\/public\/?/, '/');
+  if (!cleanPath.endsWith('/')) cleanPath += '/';
+  return cleanPath;
+}
+
+function switchPageTab(tabName, updateHash = true) {
+  const safeTab = VALID_TABS.has(tabName) ? tabName : 'home';
+
   document.querySelectorAll('.main-tab-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-target') === tabName);
+    btn.classList.toggle('active', btn.getAttribute('data-target') === safeTab);
   });
 
-  // Hiển thị nội dung tương ứng
   document.querySelectorAll('.page-view').forEach(view => {
     view.classList.remove('active');
   });
-  const targetView = document.getElementById(`tab-home`);
-  if (tabName === 'home') document.getElementById('tab-home').classList.add('active');
-  if (tabName === 'templates') document.getElementById('tab-templates').classList.add('active');
-  if (tabName === 'pricing') document.getElementById('tab-pricing').classList.add('active');
+  const activeView = document.getElementById(`tab-${safeTab}`);
+  if (activeView) {
+    activeView.classList.add('active');
+  }
+
+  if (updateHash) {
+    try {
+      const basePath = getCleanBasePath();
+      const targetUrl = safeTab === 'home' ? basePath : `${basePath}#${safeTab}`;
+      history.replaceState(null, '', targetUrl);
+    } catch (e) {}
+  }
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Khởi tạo danh sách nhanh ở Hero section (hiển thị đầy đủ các ngành nghề, thoáng mắt, dễ bấm trên mobile)
+function handleCardKeydown(event, callback) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    callback();
+  }
+}
+
+function escapeHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Khởi tạo danh sách nhanh ở Hero section
 function renderHeroQuickList() {
   const container = document.getElementById('heroQuickList');
   if (!container) return;
 
   const demoCountBadge = document.getElementById('heroDemoCount');
   if (demoCountBadge) {
-    demoCountBadge.textContent = templatesData.length + " Mẫu Demo";
+    demoCountBadge.textContent = `${templatesData.length} Mẫu Demo`;
   }
 
   container.innerHTML = templatesData.map(tpl => `
-    <div class="quick-industry-item" onclick="openLivePreview('${tpl.id}')" title="Nhấn để xem thử giao diện ${tpl.industryName}">
+    <div class="quick-industry-item ${tpl.flagship ? 'is-flagship' : ''}" role="button" tabindex="0" onclick="openLivePreview('${tpl.id}')" onkeydown="handleCardKeydown(event, () => openLivePreview('${tpl.id}'))" title="Nhấn để xem thử giao diện ${tpl.industryName}">
       <div class="quick-industry-info">
         <div class="quick-industry-icon">${tpl.icon}</div>
         <div class="quick-industry-text">
-          <div class="quick-industry-name">${tpl.industryName}</div>
+          <div class="quick-industry-name">${tpl.industryName}${tpl.flagship ? '<span class="quick-flagship-tag">3D VIP</span>' : ''}</div>
           <div class="quick-industry-desc">${tpl.name}</div>
         </div>
       </div>
-      <button class="btn btn-outline btn-sm quick-view-btn" style="pointer-events: none;">
+      <span class="btn btn-outline btn-sm quick-view-btn" aria-hidden="true">
         <span>Xem thử</span> 👁️
-      </button>
+      </span>
     </div>
   `).join('');
 }
 
-// Khởi tạo các Sub-tabs lọc ngành nghề ở Kho giao diện (đồng bộ cả Desktop Tabs & Mobile Dropdown Menu)
+// Bộ lọc Ngành Nghề + Phong Cách Thiết Kế
 let currentIndustryFilter = 'all';
+let currentStyleFilter = 'all';
+
+function getFilteredTemplates() {
+  return templatesData.filter(t => {
+    const matchIndustry = currentIndustryFilter === 'all' || t.industry === currentIndustryFilter;
+    const matchStyle = currentStyleFilter === 'all' || t.styleGroup === currentStyleFilter;
+    return matchIndustry && matchStyle;
+  });
+}
 
 function renderIndustryFilterTabs() {
   const tabsContainer = document.getElementById('industryFilterTabs');
   const mobileSelect = document.getElementById('mobileIndustrySelect');
   const countEl = document.getElementById('mobileFilterCount');
 
-  // Render thanh pills trên Desktop
   if (tabsContainer) {
     tabsContainer.innerHTML = industriesList.map(ind => `
-      <button class="industry-tab ${ind.id === currentIndustryFilter ? 'active' : ''}" onclick="filterByIndustry('${ind.id}')">
+      <button type="button" class="industry-tab ${ind.id === currentIndustryFilter ? 'active' : ''}" onclick="filterByIndustry('${ind.id}')">
         <span>${ind.icon}</span> ${ind.name}
       </button>
     `).join('');
   }
 
-  // Render menu chọn dropdown trên Mobile
   if (mobileSelect) {
     mobileSelect.innerHTML = industriesList.map(ind => `
       <option value="${ind.id}" ${ind.id === currentIndustryFilter ? 'selected' : ''}>
@@ -69,17 +107,39 @@ function renderIndustryFilterTabs() {
     `).join('');
   }
 
-  // Cập nhật số lượng mẫu tương ứng
   if (countEl) {
-    const count = currentIndustryFilter === 'all' 
-      ? templatesData.length 
-      : templatesData.filter(t => t.industry === currentIndustryFilter).length;
-    countEl.innerText = `${count} Mẫu`;
+    countEl.innerText = `${getFilteredTemplates().length} Mẫu`;
   }
+}
+
+function renderStyleFilterBar() {
+  const bar = document.getElementById('styleFilterBar');
+  if (!bar || typeof styleFiltersList === 'undefined') return;
+
+  bar.innerHTML = styleFiltersList.map(st => `
+    <button type="button" class="style-pill ${st.id === currentStyleFilter ? 'active' : ''}" onclick="filterByStyle('${st.id}')">
+      <span>${st.icon}</span> ${st.name}
+    </button>
+  `).join('');
 }
 
 function filterByIndustry(industryId) {
   currentIndustryFilter = industryId;
+  renderIndustryFilterTabs();
+  renderTemplatesGrid();
+}
+
+function filterByStyle(styleId) {
+  currentStyleFilter = styleId;
+  renderStyleFilterBar();
+  renderIndustryFilterTabs();
+  renderTemplatesGrid();
+}
+
+function resetAllFilters() {
+  currentIndustryFilter = 'all';
+  currentStyleFilter = 'all';
+  renderStyleFilterBar();
   renderIndustryFilterTabs();
   renderTemplatesGrid();
 }
@@ -89,17 +149,26 @@ function renderTemplatesGrid() {
   const container = document.getElementById('templatesContainer');
   if (!container) return;
 
-  const filtered = currentIndustryFilter === 'all' 
-    ? templatesData 
-    : templatesData.filter(t => t.industry === currentIndustryFilter);
+  const filtered = getFilteredTemplates();
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="templates-empty-box">
+        <p style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">Chưa có mẫu trùng khớp đồng thời ngành và phong cách này</p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">Bạn có thể đặt thiết kế may đo theo đúng gu riêng hoặc xem lại toàn bộ ${templatesData.length} mẫu sẵn có.</p>
+        <button type="button" class="btn btn-primary btn-sm" onclick="resetAllFilters()">✨ Xem Tất Cả ${templatesData.length} Mẫu</button>
+      </div>
+    `;
+    return;
+  }
 
   container.innerHTML = filtered.map(t => `
-    <div class="template-card">
-      <div class="template-thumb" style="background: ${t.gradient};" onclick="openLivePreview('${t.id}')">
+    <div class="template-card ${t.flagship ? 'is-flagship' : ''}">
+      <div class="template-thumb" role="button" tabindex="0" style="background: ${t.gradient};" onclick="openLivePreview('${t.id}')" onkeydown="handleCardKeydown(event, () => openLivePreview('${t.id}'))">
         ${t.thumbImg ? `<img src="${t.thumbImg}" alt="${t.name}" class="template-thumb-img" loading="lazy">` : ''}
         <div class="template-thumb-overlay"></div>
         <div class="template-thumb-top">
-          <span class="template-badge">${t.icon} ${t.badge}</span>
+          <span class="template-badge">${t.flagship ? t.badge : `${t.icon} ${t.badge}`}</span>
           ${t.palette ? `
             <div class="template-palette" title="Bảng màu chủ đạo của giao diện">
               ${t.palette.map(color => `<span class="palette-dot" style="background:${color}"></span>`).join('')}
@@ -120,13 +189,13 @@ function renderTemplatesGrid() {
           ${t.highlights.map(h => `<li>${h}</li>`).join('')}
         </ul>
         <div class="template-actions">
-          <button class="btn btn-outline btn-sm" onclick="openLivePreview('${t.id}')">
+          <button type="button" class="btn btn-outline btn-sm" onclick="openLivePreview('${t.id}')">
             <span>👁️</span> Trải Nghiệm
           </button>
-          <a href="${t.demoUrl}" target="_blank" class="btn btn-outline btn-sm btn-icon-only" title="Mở trang web độc lập (Tab mới)">
+          <a href="${t.demoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm btn-icon-only" title="Mở trang web độc lập (Tab mới)">
             <span>🔗</span>
           </a>
-          <button class="btn btn-primary btn-sm" onclick="openOrderModal('${t.id}')">
+          <button type="button" class="btn btn-primary btn-sm" onclick="openOrderModal('${t.id}')">
             <span>🛒</span> Báo Giá
           </button>
         </div>
@@ -163,12 +232,171 @@ function renderPricingCombos() {
         `).join('')}
       </ul>
       <div class="combo-note">${c.note}</div>
-      <button class="btn ${c.popular ? 'btn-primary' : 'btn-outline'}" onclick="openOrderModal('', '${c.tier}')">
+      <button type="button" class="btn ${c.popular ? 'btn-primary' : 'btn-outline'}" onclick="openOrderModal('', '${c.tier}')">
         <span>⚡</span> Chọn Gói Này
       </button>
     </div>
   `).join('');
 }
+
+// ==========================================================
+// LIVE BRAND CUSTOMIZER (POSTMESSAGE) & TELEGRAM 1S SIMULATOR
+// ==========================================================
+const customizerState = {
+  brandName: '',
+  phone: '',
+  palette: 'default'
+};
+
+function toggleBrandCustomizer() {
+  const bar = document.getElementById('brandCustomizerBar');
+  const btn = document.getElementById('btnToggleCustomizer');
+  if (!bar) return;
+  const isOpen = bar.classList.toggle('open');
+  if (btn) btn.classList.toggle('is-active-tool', isOpen);
+}
+
+function updateBrandCustomizer() {
+  const brandInput = document.getElementById('customBrandInput');
+  const phoneInput = document.getElementById('customPhoneInput');
+  customizerState.brandName = brandInput ? brandInput.value : '';
+  customizerState.phone = phoneInput ? phoneInput.value : '';
+  pushCustomizerToIframe();
+}
+
+function selectCustomPalette(paletteId) {
+  customizerState.palette = paletteId || 'default';
+  document.querySelectorAll('.palette-swatch-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-palette') === customizerState.palette);
+  });
+  pushCustomizerToIframe();
+}
+
+function resetBrandCustomizer() {
+  customizerState.brandName = '';
+  customizerState.phone = '';
+  customizerState.palette = 'default';
+
+  const brandInput = document.getElementById('customBrandInput');
+  const phoneInput = document.getElementById('customPhoneInput');
+  if (brandInput) brandInput.value = '';
+  if (phoneInput) phoneInput.value = '';
+
+  document.querySelectorAll('.palette-swatch-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-palette') === 'default');
+  });
+
+  pushCustomizerToIframe();
+}
+
+function pushCustomizerToIframe() {
+  const iframe = document.getElementById('previewIframe');
+  if (!iframe || !iframe.contentWindow) return;
+  iframe.contentWindow.postMessage({
+    type: 'PAT_BRAND_PREVIEW',
+    brandName: customizerState.brandName,
+    phone: customizerState.phone,
+    palette: customizerState.palette
+  }, '*');
+}
+
+let tgAudioCtx = null;
+let tgToastTimer = null;
+
+function playTelegramChime() {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+    if (!tgAudioCtx) tgAudioCtx = new AudioCtx();
+    if (tgAudioCtx.state === 'suspended') {
+      tgAudioCtx.resume().catch(() => {});
+    }
+    const now = tgAudioCtx.currentTime;
+    [880, 1174.66].forEach((freq, idx) => {
+      const osc = tgAudioCtx.createOscillator();
+      const gain = tgAudioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+      gain.gain.setValueAtTime(0.001, now + idx * 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.08, now + idx * 0.08 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.28);
+      osc.connect(gain);
+      gain.connect(tgAudioCtx.destination);
+      osc.start(now + idx * 0.08);
+      osc.stop(now + idx * 0.08 + 0.3);
+    });
+  } catch (e) {}
+}
+
+function hideTelegramSimToast() {
+  const toast = document.getElementById('tgSimToast');
+  if (!toast) return;
+  toast.classList.remove('open');
+  clearTimeout(tgToastTimer);
+}
+
+function showTelegramSimToast(order) {
+  const toast = document.getElementById('tgSimToast');
+  if (!toast) return;
+
+  playTelegramChime();
+
+  const brand = order && order.brand ? order.brand : 'PAT TECH';
+  const name = order && order.name ? order.name : 'Nguyễn Minh Anh';
+  const phone = order && order.phone ? order.phone : '0912.345.678';
+  const service = order && order.service ? order.service : 'Đăng ký tư vấn dịch vụ';
+  const note = order && order.note ? order.note : '';
+
+  toast.innerHTML = `
+    <div class="tg-toast-head">
+      <div class="tg-toast-app">
+        <div class="tg-toast-icon">✈</div>
+        <div>
+          <div class="tg-toast-title">TELEGRAM BOT • BÁO ĐƠN 0.8s</div>
+          <div class="tg-toast-sub">Nguồn: Website ${escapeHtml(brand)}</div>
+        </div>
+      </div>
+      <button type="button" class="tg-toast-close" onclick="hideTelegramSimToast()" aria-label="Đóng thông báo">✕</button>
+    </div>
+    <div class="tg-toast-body">
+      <span class="tg-toast-badge">⚡ KHÁCH HÀNG MỚI ĐẶT LỊCH / ĐẶT HÀNG</span>
+      <div>👤 <strong>${escapeHtml(name)}</strong> — 📞 <strong>${escapeHtml(phone)}</strong></div>
+      <div>📌 ${escapeHtml(service)}</div>
+      ${note ? `<div style="color:#cbd5e1;">📝 ${escapeHtml(note)}</div>` : ''}
+    </div>
+  `;
+
+  toast.classList.add('open');
+  clearTimeout(tgToastTimer);
+  tgToastTimer = setTimeout(hideTelegramSimToast, 6500);
+}
+
+function triggerSampleTelegramSim(fromPreview = false) {
+  const activeBrand = customizerState.brandName.trim()
+    || (fromPreview && currentPreviewTemplate ? currentPreviewTemplate.name.split(' - ')[0].trim() : 'PAT TECH Demo');
+  const activePhone = customizerState.phone.trim() || '0988.686.999';
+  const activeService = (fromPreview && currentPreviewTemplate)
+    ? `Trải nghiệm ${currentPreviewTemplate.industryName}`
+    : 'Gói Combo 1 Tinh Gọn (1.500.000đ)';
+
+  showTelegramSimToast({
+    brand: activeBrand,
+    name: 'Trần Minh Khôi (Demo)',
+    phone: activePhone,
+    service: activeService,
+    note: 'Tin nhắn bắn về điện thoại chủ shop trong 1 giây!'
+  });
+}
+
+window.addEventListener('message', (event) => {
+  const data = event && event.data;
+  if (!data || typeof data !== 'object') return;
+  if (data.type === 'PAT_DEMO_READY') {
+    pushCustomizerToIframe();
+  } else if (data.type === 'PAT_TELEGRAM_SIM') {
+    showTelegramSimToast(data.order || {});
+  }
+});
 
 // Live Preview Modal & Quản lý Link Riêng
 let currentPreviewTemplate = null;
@@ -189,44 +417,47 @@ function openLivePreview(templateId) {
     openOrderModal(template.id);
   };
 
-  // Cập nhật URL sạch trên trình duyệt (tự động xóa bỏ chữ /public/ nếu còn sót lại trong lịch sử)
   try {
-    let cleanPath = window.location.pathname.replace(/\/public\/?/, '/');
-    if (!cleanPath.endsWith('/')) cleanPath += '/';
-    history.replaceState(null, '', cleanPath + '#demo=' + template.id);
+    history.replaceState(null, '', `${getCleanBasePath()}#demo=${template.id}`);
   } catch (e) {}
 
   setDeviceView('desktop');
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  if (typeof trackEvent === 'function') {
+    trackEvent('demo_preview', { demo_id: template.id, industry: template.industryName });
+  }
 }
 
-function closePreviewModal() {
+function closePreviewModal(restoreHash = true) {
   const modal = document.getElementById('previewModal');
   const iframe = document.getElementById('previewIframe');
+  if (!modal || !modal.classList.contains('open')) return;
+
   modal.classList.remove('open');
   iframe.src = 'about:blank';
   document.body.style.overflow = '';
 
-  // Xóa hash trên URL khi đóng modal và chuẩn hóa đường dẫn sạch
-  try {
-    let cleanPath = window.location.pathname.replace(/\/public\/?/, '/');
-    if (!cleanPath.endsWith('/')) cleanPath += '/';
-    history.replaceState(null, '', cleanPath);
-  } catch (e) {}
-}
-
-// Mở trang web độc lập ở tab mới
-function openDirectTemplateTab() {
-  if (currentPreviewTemplate && currentPreviewTemplate.demoUrl) {
-    window.open(currentPreviewTemplate.demoUrl, '_blank');
+  if (restoreHash) {
+    try {
+      const activeBtn = document.querySelector('.main-tab-btn.active');
+      const activeTab = activeBtn ? activeBtn.getAttribute('data-target') : 'home';
+      const basePath = getCleanBasePath();
+      const targetUrl = activeTab && activeTab !== 'home' ? `${basePath}#${activeTab}` : basePath;
+      history.replaceState(null, '', targetUrl);
+    } catch (e) {}
   }
 }
 
-// Sao chép link trực tiếp của mẫu web này
+function openDirectTemplateTab() {
+  if (currentPreviewTemplate && currentPreviewTemplate.demoUrl) {
+    window.open(currentPreviewTemplate.demoUrl, '_blank', 'noopener,noreferrer');
+  }
+}
+
 function copyDemoLink() {
   if (!currentPreviewTemplate) return;
-  // Tạo link tuyệt đối trực tiếp của file demo (ví dụ: https://webgiatot.me/demos/ca-nhan/index.html)
   const directUrl = new URL(currentPreviewTemplate.demoUrl, window.location.href).href;
   const btnText = document.getElementById('copyLinkText');
   const btnIcon = document.getElementById('copyLinkIcon');
@@ -258,26 +489,27 @@ function openOrderModal(templateId = '', comboTier = '', isChatbotOnly = false) 
   const templateSelect = document.getElementById('orderTemplateSelect');
   const comboSelect = document.getElementById('orderComboSelect');
   const chatbotCheckbox = document.getElementById('orderAddonChatbot');
+  const orderForm = document.getElementById('orderForm');
+  const successBox = document.getElementById('orderSuccessBox');
 
-  // Populate template select
+  if (orderForm) orderForm.style.display = 'block';
+  if (successBox) successBox.style.display = 'none';
+
   templateSelect.innerHTML = `
     <option value="">-- Tôi muốn tư vấn chọn mẫu sau --</option>
     ${templatesData.map(t => `<option value="${t.id}">${t.icon} ${t.name} (${t.industryName})</option>`).join('')}
   `;
 
-  if (templateId) {
-    templateSelect.value = templateId;
-  }
+  templateSelect.value = templateId || '';
 
+  let comboValue = '1500000';
   if (comboTier) {
-    if (comboTier.includes('Combo 1')) comboSelect.value = '1500000';
-    if (comboTier.includes('Combo 2')) comboSelect.value = '3900000';
-    if (comboTier.includes('Combo 3')) comboSelect.value = '7900000';
+    if (comboTier.includes('Combo 2')) comboValue = '3900000';
+    else if (comboTier.includes('Combo 3')) comboValue = '7900000';
   }
+  comboSelect.value = comboValue;
 
-  if (isChatbotOnly) {
-    chatbotCheckbox.checked = true;
-  }
+  chatbotCheckbox.checked = Boolean(isChatbotOnly);
 
   calculateTotalEstimate();
   backdrop.classList.add('open');
@@ -285,9 +517,11 @@ function openOrderModal(templateId = '', comboTier = '', isChatbotOnly = false) 
 }
 
 function closeOrderModal() {
-  document.getElementById('orderModalBackdrop').classList.remove('open');
+  const backdrop = document.getElementById('orderModalBackdrop');
+  if (!backdrop || !backdrop.classList.contains('open')) return;
+
+  backdrop.classList.remove('open');
   document.body.style.overflow = '';
-  // Đặt lại hiển thị form ban đầu
   setTimeout(() => {
     const orderForm = document.getElementById('orderForm');
     const successBox = document.getElementById('orderSuccessBox');
@@ -308,17 +542,10 @@ function calculateTotalEstimate() {
   const total = comboPrice + chatbotPrice;
 
   estComboVal.innerText = comboPrice.toLocaleString('vi-VN') + 'đ';
-  
-  if (chatbotCheckbox.checked) {
-    estChatbotRow.style.display = 'flex';
-  } else {
-    estChatbotRow.style.display = 'none';
-  }
-
+  estChatbotRow.style.display = chatbotCheckbox.checked ? 'flex' : 'none';
   estTotalVal.innerText = total.toLocaleString('vi-VN') + 'đ' + (comboSelect.value === '7900000' ? ' (Từ)' : '');
 }
 
-// Biến lưu trữ văn bản đơn hàng hiện tại
 let compiledOrderMessage = '';
 
 function handleFormSubmit(e) {
@@ -326,40 +553,53 @@ function handleFormSubmit(e) {
   const name = document.getElementById('custName').value.trim();
   const phone = document.getElementById('custPhone').value.trim();
   const templateSelect = document.getElementById('orderTemplateSelect');
-  const templateName = templateSelect.options[templateSelect.selectedIndex].text;
+  const selectedTpl = templatesData.find(t => t.id === templateSelect.value);
   const comboSelect = document.getElementById('orderComboSelect');
   const comboName = comboSelect.options[comboSelect.selectedIndex].text;
   const hasChatbot = document.getElementById('orderAddonChatbot').checked;
   const note = document.getElementById('custNote').value.trim();
   const total = document.getElementById('estTotalVal').innerText;
 
-  // 1. Chuẩn hóa số điện thoại: Lọc sạch chỉ giữ lại đúng 10 chữ số liền mạch (chống lỗi regex của Bot)
   let cleanPhone = phone.replace(/[^0-9]/g, '');
   if (cleanPhone.startsWith('84') && cleanPhone.length === 11) {
     cleanPhone = '0' + cleanPhone.slice(2);
   }
 
-  // 2. Lấy tên mẫu web gọn gàng
-  let shortTemplate = templateName.replace(/^[👗👑🩺🎓🏖️🧋🍽️🏰📊\s]+/, '').split('-')[0].trim();
-  if (!shortTemplate || shortTemplate.includes('chọn mẫu')) {
-    shortTemplate = 'Theo tư vấn kỹ thuật';
-  }
+  const shortTemplate = selectedTpl
+    ? selectedTpl.name.split(' - ')[0].trim()
+    : 'Theo tư vấn kỹ thuật';
 
-  // 3. Soạn tin nhắn tự nhiên chuẩn "Lead Capture" để AI nhận diện và bắn Telegram 100%
   compiledOrderMessage = `Chào bạn, tôi muốn đăng ký làm website mẫu: ${shortTemplate} (${comboName}${hasChatbot ? ' + Chatbot AI' : ''}). Tên tôi là ${name}, số điện thoại của tôi là: ${cleanPhone}. Dự toán tổng phí: ${total}. Ghi chú: ${note || 'Tư vấn triển khai sớm giúp tôi'}. Bạn tiếp nhận và duyệt đơn giúp tôi nhé!`;
 
-  // Hiển thị khung thành công & hướng dẫn gửi chatbot
   document.getElementById('orderCompiledText').innerText = compiledOrderMessage;
   document.getElementById('orderForm').style.display = 'none';
   document.getElementById('orderSuccessBox').style.display = 'block';
 
-  // Tự động copy vào clipboard ngay nếu trình duyệt cho phép
+  if (typeof trackEvent === 'function') {
+    trackEvent('order_submit', {
+      template: shortTemplate,
+      combo: comboName,
+      chatbot: hasChatbot
+    });
+  }
+  if (typeof sendOrderWebhook === 'function') {
+    sendOrderWebhook({
+      name,
+      phone: cleanPhone,
+      template: shortTemplate,
+      combo: comboName,
+      chatbot: hasChatbot,
+      total,
+      note,
+      message: compiledOrderMessage
+    });
+  }
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(compiledOrderMessage).catch(() => {});
   }
 }
 
-// Hàm bấm copy toàn bộ thông tin
 function copyOrderDetails() {
   if (!compiledOrderMessage) return;
   const btnText = document.getElementById('copyBtnText');
@@ -373,7 +613,6 @@ function copyOrderDetails() {
       btnIcon.innerText = '📋';
     }, 2500);
   }).catch(() => {
-    // Fallback nếu clipboard API bị chặn
     const pre = document.getElementById('orderCompiledText');
     const range = document.createRange();
     range.selectNodeContents(pre);
@@ -390,20 +629,15 @@ function copyOrderDetails() {
   });
 }
 
-// Hàm mở Chatbot và dán tự động vào ô input, đồng thời tự bấm gửi luôn
 function openAndPasteChatbot() {
   copyOrderDetails();
-
-  // Đóng modal đăng ký để lộ rõ chatbot
   closeOrderModal();
 
-  // Tìm các phần tử của widget Chatbot
   const chatWindow = document.getElementById('pat-ai-chat-window');
   const widgetBtn = document.getElementById('pat-ai-widget-btn');
   const inputText = document.getElementById('pat-ai-input-text');
   const sendBtn = document.getElementById('pat-ai-send-btn');
 
-  // Mở khung chat nếu đang đóng
   if (chatWindow && (chatWindow.style.display === 'none' || chatWindow.style.display === '')) {
     if (widgetBtn) {
       widgetBtn.click();
@@ -412,14 +646,12 @@ function openAndPasteChatbot() {
     }
   }
 
-  // Tự động điền nội dung vào ô nhập liệu của Chatbot và bấm Gửi luôn
   setTimeout(() => {
     if (inputText) {
       inputText.value = compiledOrderMessage;
       inputText.dispatchEvent(new Event('input', { bubbles: true }));
       inputText.focus();
 
-      // Tự động kích hoạt nút Gửi sau 300ms để khách không cần phải bấm Enter
       setTimeout(() => {
         if (sendBtn && !sendBtn.disabled) {
           sendBtn.click();
@@ -429,7 +661,6 @@ function openAndPasteChatbot() {
   }, 250);
 }
 
-// Toggle FAQ Accordion
 function toggleFaq(btn) {
   const item = btn.closest('.faq-item');
   const isActive = item.classList.contains('active');
@@ -439,19 +670,51 @@ function toggleFaq(btn) {
   }
 }
 
-// Khởi chạy khi tải trang
+function syncStateFromHash() {
+  const hash = window.location.hash || '';
+
+  if (hash.startsWith('#demo=')) {
+    const demoId = hash.slice('#demo='.length).split('&')[0];
+    if (demoId) {
+      openLivePreview(demoId);
+    }
+    return;
+  }
+
+  closePreviewModal(false);
+
+  if (hash === '#templates') {
+    switchPageTab('templates', false);
+  } else if (hash === '#pricing') {
+    switchPageTab('pricing', false);
+  } else if (hash === '#home' || hash === '') {
+    switchPageTab('home', false);
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  const orderBackdrop = document.getElementById('orderModalBackdrop');
+  const previewModal = document.getElementById('previewModal');
+  if (orderBackdrop && orderBackdrop.classList.contains('open')) {
+    closeOrderModal();
+  } else if (previewModal && previewModal.classList.contains('open')) {
+    closePreviewModal();
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   renderHeroQuickList();
+  renderStyleFilterBar();
   renderIndustryFilterTabs();
   renderTemplatesGrid();
   renderPricingCombos();
 
-  // Kiểm tra nếu đường dẫn có mã demo (ví dụ: #demo=fnb-cafe) thì tự động mở xem thử mẫu đó luôn
-  const hash = window.location.hash;
-  if (hash && hash.includes('demo=')) {
-    const demoId = hash.split('demo=')[1]?.split('&')[0];
-    if (demoId) {
-      setTimeout(() => openLivePreview(demoId), 300);
-    }
+  if (typeof initAnalytics === 'function') {
+    initAnalytics();
   }
+
+  syncStateFromHash();
 });
+
+window.addEventListener('hashchange', syncStateFromHash);

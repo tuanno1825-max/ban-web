@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURORA DENTAL LAB - Viện Nha Khoa Thẩm Mỹ &amp; Chỉnh Nha Chuẩn Thụy Sĩ</title>
+  <meta name="description" content="Viện Nha Khoa Thẩm Mỹ Aurora Dental Lab: Dán sứ Veneer, Niềng răng Invisalign, Cấy ghép Implant 3D, Thanh kéo Before/After &amp; Trả góp 0% lãi suất.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-pearl: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-ice: #EEF6F6;
+      --deep-teal: #0B3B3C;
+      --accent-teal: #0F766E;
+      --accent-emerald: #14B8A6;
+      --gold-primary: #C9A45C;
+      --gold-light: #E8D5A7;
+      --gold-gradient: linear-gradient(135deg, #0F766E 0%, #0B3B3C 100%);
+      --text-main: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --shadow-sm: 0 6px 20px rgba(11, 59, 60, 0.06);
+      --shadow-md: 0 22px 48px -14px rgba(11, 59, 60, 0.16);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-pearl);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: 1220px; margin: 0 auto; padding: 0 22px; }
+
+    .top-strip {
+      background: var(--deep-teal);
+      color: #E2F1F0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 8px 16px;
+    }
+    .top-strip strong { color: var(--gold-light); }
+
+    /* Header */
+    .dental-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 14px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--gold-gradient);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(15, 118, 110, 0.28);
+    }
+    .brand-name { display: flex; flex-direction: column; line-height: 1.12; }
+    .brand-name strong {
+      font-size: 1.18rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--deep-teal);
+    }
+    .brand-name small {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-body);
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent-teal); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .mobile-menu-btn {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px 18px 16px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a { padding: 7px 0; font-weight: 600; border-bottom: 1px dashed var(--border); }
+
+    /* Buttons */
+    .btn-dental {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.22s ease;
+    }
+    .btn-teal {
+      background: var(--gold-gradient);
+      color: #FFFFFF;
+      box-shadow: 0 8px 22px -6px rgba(15, 118, 110, 0.45);
+    }
+    .btn-teal:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(15, 118, 110, 0.58); }
+    .btn-pearl {
+      background: var(--bg-surface);
+      color: var(--deep-teal);
+      border-color: var(--border);
+    }
+    .btn-pearl:hover { border-color: var(--accent-teal); color: var(--accent-teal); }
+    .btn-sm { padding: 8px 14px; font-size: 0.82rem; border-radius: 10px; }
+
+    /* Hero */
+    .hero-section {
+      padding: 52px 0 64px;
+      background: radial-gradient(circle at 85% 15%, rgba(20, 184, 166, 0.1) 0%, transparent 45%);
+      overflow-x: clip;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+    .hero-grid > * { min-width: 0; }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--bg-ice);
+      border: 1px solid rgba(15, 118, 110, 0.25);
+      color: var(--accent-teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+      max-width: 100%;
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 4.2vw, 3.45rem);
+      line-height: 1.12;
+      color: var(--deep-teal);
+      margin-bottom: 16px;
+    }
+    .hero-title em { color: var(--accent-teal); font-style: italic; }
+    .hero-desc { font-size: 1rem; color: var(--text-body); margin-bottom: 24px; max-width: 540px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-metrics > div { min-width: 0; }
+    .hero-metrics strong { display: block; font-size: 1.45rem; font-weight: 800; color: var(--accent-teal); }
+    .hero-metrics span { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
+
+    .hero-visual { position: relative; min-width: 0; }
+    .hero-card-img {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 5px solid #FFFFFF;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 16 / 10;
+    }
+    .hero-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-cert-chip {
+      position: absolute;
+      bottom: -16px;
+      left: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Section Commons */
+    .section { padding: 72px 0; overflow-x: clip; }
+    .section-ice { background: var(--bg-ice); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-head { text-align: center; max-width: 740px; margin: 0 auto 38px; }
+    .section-kicker {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      margin-bottom: 8px;
+    }
+    .section-head h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.65rem);
+      line-height: 1.16;
+      color: var(--deep-teal);
+      margin-bottom: 10px;
+    }
+    .section-head p { color: var(--text-muted); font-size: 0.96rem; }
+
+    /* Before/After Smile Compare */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .compare-grid > * { min-width: 0; }
+    .ba-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 4px solid #FFFFFF;
+      box-shadow: var(--shadow-md);
+      --pos: 52%;
+      user-select: none;
+    }
+    .ba-img-after,
+    .ba-img-before {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ba-img-before {
+      clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+    }
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--pos);
+      width: 2px;
+      background: #FFFFFF;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
+      pointer-events: none;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 50%;
+      left: var(--pos);
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-teal);
+      color: #FFFFFF;
+      border: 3px solid #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+    }
+    .ba-badge {
+      position: absolute;
+      top: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      background: rgba(15, 23, 42, 0.76);
+      color: #FFFFFF;
+    }
+    .ba-badge.left { left: 14px; }
+    .ba-badge.right { right: 14px; background: rgba(15, 118, 110, 0.9); }
+
+    .ba-slider-control {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ba-slider-control input[type="range"] {
+      flex: 1;
+      accent-color: var(--accent-teal);
+      cursor: pointer;
+    }
+    .case-tabs { display: grid; gap: 12px; }
+    .case-btn {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .case-btn.active {
+      border-color: var(--accent-teal);
+      background: #FFFFFF;
+      box-shadow: 0 10px 26px rgba(15, 118, 110, 0.12);
+    }
+    .case-btn strong { display: block; font-size: 0.98rem; color: var(--deep-teal); margin-bottom: 4px; }
+    .case-btn span { font-size: 0.84rem; color: var(--text-muted); }
+
+    /* Services Catalog */
+    .filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 30px; }
+    .filter-pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-body);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-pill.active { background: var(--gold-gradient); color: #FFFFFF; border-color: transparent; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 22px;
+    }
+    .srv-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      min-width: 0;
+    }
+    .srv-img { aspect-ratio: 4 / 3; overflow: hidden; position: relative; }
+    .srv-img img { width: 100%; height: 100%; object-fit: cover; }
+    .srv-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--deep-teal);
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+    .srv-body { padding: 18px 20px; display: flex; flex-direction: column; flex: 1; }
+    .srv-body h3 { font-size: 1.38rem; color: var(--deep-teal); margin-bottom: 6px; }
+    .srv-body p { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 14px; }
+    .srv-foot {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .srv-price { font-size: 1.08rem; font-weight: 800; color: var(--accent-teal); }
+
+    /* Installment 0% Calculator */
+    .calc-card {
+      background: var(--deep-teal);
+      color: #FFFFFF;
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+      box-shadow: var(--shadow-md);
+    }
+    .calc-card > * { min-width: 0; }
+    .calc-group { margin-bottom: 20px; }
+    .calc-label-row { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 8px; color: #CBD5E1; }
+    .calc-label-row strong { color: var(--gold-light); font-size: 1rem; }
+    .calc-range { width: 100%; accent-color: var(--accent-emerald); cursor: pointer; }
+    .seg-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .seg-btn {
+      flex: 1;
+      min-width: 64px;
+      padding: 9px 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.84rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .seg-btn.active { background: var(--accent-emerald); color: #042F2E; border-color: transparent; }
+    .calc-result-panel {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(232, 213, 167, 0.35);
+      border-radius: 18px;
+      padding: 26px;
+      text-align: center;
+    }
+    .calc-monthly-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.1;
+      margin: 6px 0 14px;
+    }
+    .calc-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 14px;
+      margin-bottom: 18px;
+      font-size: 0.84rem;
+    }
+
+    /* Booking */
+    .booking-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 32px; align-items: start; }
+    .booking-grid > * { min-width: 0; }
+    .booking-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .f-group { margin-bottom: 14px; min-width: 0; }
+    .f-group label { display: block; font-size: 0.84rem; font-weight: 700; margin-bottom: 5px; }
+    .f-input {
+      width: 100%;
+      background: var(--bg-pearl);
+      border: 1.5px solid var(--border);
+      padding: 11px 13px;
+      border-radius: 11px;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .f-input:focus { outline: none; border-color: var(--accent-teal); background: #FFFFFF; }
+    .dental-ticket {
+      display: none;
+      background: var(--bg-ice);
+      border: 1.5px dashed var(--accent-teal);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .dental-ticket.visible { display: block; }
+
+    .dental-footer {
+      background: #072627;
+      color: #CBD5E1;
+      padding: 40px 0 24px;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links, .header-phone-desk { display: none; }
+      .mobile-menu-btn { display: grid; place-items: center; }
+      .hero-grid, .compare-grid, .calc-card, .booking-grid { grid-template-columns: 1fr; }
+      .hero-cert-chip { position: static; margin-top: 12px; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 16px; }
+      .header-inner { gap: 8px; }
+      .brand-mark { width: 34px; height: 34px; font-size: 1.15rem; }
+      .brand-name strong { font-size: 0.96rem; }
+      .brand-name small { font-size: 0.54rem; letter-spacing: 0.08em; }
+      .header-actions { gap: 6px; }
+      .header-actions .btn-sm { padding: 7px 10px; font-size: 0.74rem; }
+      .section { padding: 48px 0; }
+      .calc-card, .booking-box { padding: 22px 16px; }
+      .form-2col, .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip">
+    ✦ Tặng gói <strong>Chụp CT ConeBeam 3D &amp; Thiết Kế Nụ Cười Digital</strong> trị giá 1.500.000đ khi đặt lịch online ✦
+  </div>
+
+  <header class="dental-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo">
+        <div class="brand-mark">A</div>
+        <div class="brand-name">
+          <strong>AURORA DENTAL</strong>
+          <small>Swiss Implant &amp; Orthodontics</small>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#smile-check">Before / After</a></li>
+        <li><a href="#services">Bảng Giá Nha Khoa</a></li>
+        <li><a href="#installmentCalc">Trả Góp 0%</a></li>
+        <li><a href="#booking">Đặt Lịch CT 3D</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="tel:0387637982" class="btn-dental btn-pearl btn-sm header-phone-desk">📞 0387.637.982</a>
+        <a href="#booking" class="btn-dental btn-teal btn-sm">📅 Đặt Lịch 3D</a>
+        <button type="button" class="mobile-menu-btn" onclick="toggleDentalMenu()" aria-label="Mở menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="dentalDrawer">
+      <a href="#smile-check" onclick="toggleDentalMenu()">✨ So Sánh Trước &amp; Sau</a>
+      <a href="#services" onclick="toggleDentalMenu()">🦷 Dịch Vụ &amp; Bảng Giá</a>
+      <a href="#installmentCalc" onclick="toggleDentalMenu()">💳 Máy Tính Trả Góp 0%</a>
+      <a href="#booking" onclick="toggleDentalMenu()">📅 Đặt Lịch Chụp CT 3D</a>
+      <a href="tel:0387637982">📞 Hotline: 0387.637.982</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-pill"><span>🇨🇭</span> Nha Khoa Chuẩn Y Khoa Thụy Sĩ</div>
+          <h1 class="hero-title">Kiến Tạo <em>Nụ Cười Tự Tin</em> Không Đau &amp; Bảo Hành Trọn Đời</h1>
+          <p class="hero-desc">Ứng dụng máy quét dấu răng iTero 5D và công nghệ CT ConeBeam 3D chuẩn đoán chính xác từng milimet — dán sứ Veneer bảo tồn răng thật, niềng Invisalign và Implant tức thì.</p>
+          <div class="hero-actions">
+            <a href="#booking" class="btn-dental btn-teal">📅 Đặt Lịch Quét Răng 3D Miễn Phí</a>
+            <a href="#installmentCalc" class="btn-dental btn-pearl">💳 Tính Trả Góp 0%</a>
+          </div>
+          <div class="hero-metrics">
+            <div><strong>100%</strong><span>Bác sĩ ĐH Y Dược</span></div>
+            <div><strong>0% Lãi</strong><span>Trả góp tới 24 tháng</span></div>
+            <div><strong>15 Năm</strong><span>Thẻ bảo hành sứ</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-img">
+            <img src="image/hero-dental.webp" alt="Phòng khám nha khoa thẩm mỹ Aurora Dental Lab">
+          </div>
+          <div class="hero-cert-chip">
+            <div>
+              <strong style="font-size:0.86rem;display:block;">Vô Khuẩn Tuyệt Đối 1 Khách / 1 Phòng</strong>
+              <span style="font-size:0.75rem;color:var(--text-muted);">Hệ thống tiệt trùng chuẩn Châu Âu Class B</span>
+            </div>
+            <span style="background:var(--bg-ice);color:var(--accent-teal);font-size:0.74rem;font-weight:800;padding:5px 10px;border-radius:999px;white-space:nowrap;">✓ FDA Approved</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER SMILE SLIDER -->
+    <section class="section section-ice" id="smile-check">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Kết Quả Lâm Sàng Thực Tế</span>
+          <h2>Kéo Thanh Trượt Xem Nụ Cười Trước &amp; Sau</h2>
+          <p>Trực quan hóa sự thay đổi của hàm răng sau khi thiết kế nụ cười chuẩn tỷ lệ khuôn mặt.</p>
+        </div>
+
+        <div class="compare-grid">
+          <div>
+            <div class="ba-stage" id="smileCompare">
+              <img loading="lazy" src="image/smile-after.webp" alt="Nụ cười sau điều trị" class="ba-img-after">
+              <img loading="lazy" src="image/smile-before.webp" alt="Nụ cười trước điều trị" class="ba-img-before">
+              <div class="ba-divider"></div>
+              <div class="ba-handle">↔</div>
+              <span class="ba-badge left">TRƯỚC</span>
+              <span class="ba-badge right">SAU ĐIỀU TRỊ</span>
+            </div>
+            <div class="ba-slider-control">
+              <span style="font-size:0.8rem;font-weight:700;">Trước</span>
+              <input type="range" id="baRange" min="5" max="95" value="52" oninput="updateSmileCompare(this.value)" aria-label="Kéo so sánh trước sau">
+              <span style="font-size:0.8rem;font-weight:700;color:var(--accent-teal);">Sau</span>
+            </div>
+          </div>
+
+          <div class="case-tabs">
+            <button type="button" class="case-btn active" onclick="selectDentalCase(0, this)">
+              <strong>01. Dán Sứ Veneer Emax Siêu Mỏng 0.3mm</strong>
+              <span>Khắc phục răng nhiễm màu, thưa kẽ — bảo tồn tối đa mô răng thật trong 48 giờ.</span>
+            </button>
+            <button type="button" class="case-btn" onclick="selectDentalCase(1, this)">
+              <strong>02. Niềng Răng Trong Suốt Invisalign Hoa Kỳ</strong>
+              <span>Chỉnh khấp khểnh, hô nhẹ không lộ mắc cài — xem trước kết quả nụ cười bằng ClinCheck 3D.</span>
+            </button>
+            <button type="button" class="case-btn" onclick="selectDentalCase(2, this)">
+              <strong>03. Cấy Ghép Implant Straumann Thụy Sĩ</strong>
+              <span>Khôi phục răng mất ăn nhai chắc khỏe như răng thật chỉ với 15 phút đặt trụ không sưng đau.</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES CATALOG -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Bảng Giá Niêm Yết Minh Bạch</span>
+          <h2>Dịch Vụ Nha Khoa Chuyên Sâu</h2>
+          <p>Không phát sinh chi phí ẩn trong suốt quá trình điều trị. Bấm chọn dịch vụ để tính ngay mức trả góp 0%.</p>
+        </div>
+
+        <div class="filter-pills">
+          <button type="button" class="filter-pill active" onclick="filterDental('all', this)">Tất Cả</button>
+          <button type="button" class="filter-pill" onclick="filterDental('ortho', this)">Niềng Răng</button>
+          <button type="button" class="filter-pill" onclick="filterDental('veneer', this)">Răng Sứ Veneer</button>
+          <button type="button" class="filter-pill" onclick="filterDental('implant', this)">Trồng Implant</button>
+        </div>
+
+        <div class="services-grid" id="dentalServicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- 0% INSTALLMENT CALCULATOR -->
+    <section class="section" id="installmentCalc" style="padding-top: 10px;">
+      <div class="container">
+        <div class="calc-card">
+          <div>
+            <span class="section-kicker" style="color:var(--gold-light);">Hỗ Trợ Tài Chính 0% Lãi Suất</span>
+            <h2 style="font-size:clamp(1.85rem,3vw,2.45rem);margin-bottom:18px;color:#fff;">Máy Tính Trả Góp Nha Khoa 0%</h2>
+
+            <div class="calc-group">
+              <div class="calc-label-row"><span>Tổng chi phí dự kiến:</span><strong id="lblTotalCost">36.000.000đ</strong></div>
+              <input type="range" id="costRange" class="calc-range" min="10" max="120" step="2" value="36" oninput="calcDentalInstallment()">
+            </div>
+
+            <div class="calc-group">
+              <div class="calc-label-row"><span>Trả trước tại phòng khám:</span><strong id="lblDownPct">30%</strong></div>
+              <div class="seg-row" id="downPctBtns">
+                <button type="button" class="seg-btn" onclick="setDownPct(20, this)">20%</button>
+                <button type="button" class="seg-btn active" onclick="setDownPct(30, this)">30%</button>
+                <button type="button" class="seg-btn" onclick="setDownPct(50, this)">50%</button>
+              </div>
+            </div>
+
+            <div class="calc-group" style="margin-bottom:0;">
+              <div class="calc-label-row"><span>Kỳ hạn trả góp (Lãi 0%):</span><strong id="lblMonths">12 Tháng</strong></div>
+              <div class="seg-row" id="monthBtns">
+                <button type="button" class="seg-btn" onclick="setMonths(6, this)">6 Tháng</button>
+                <button type="button" class="seg-btn active" onclick="setMonths(12, this)">12 Tháng</button>
+                <button type="button" class="seg-btn" onclick="setMonths(18, this)">18 Tháng</button>
+                <button type="button" class="seg-btn" onclick="setMonths(24, this)">24 Tháng</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-result-panel">
+            <div style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#CBD5E1;">Mỗi tháng chỉ cần thanh toán</div>
+            <div class="calc-monthly-big" id="resMonthly">2.100.000đ</div>
+            <div class="calc-meta-grid">
+              <div><span style="color:#94A3B8;display:block;">Trả trước</span><strong id="resDownAmt" style="color:#fff;">10.800.000đ</strong></div>
+              <div><span style="color:#94A3B8;display:block;">Lãi suất áp dụng</span><strong style="color:#6EE7B7;">0% / năm</strong></div>
+            </div>
+            <button type="button" class="btn-dental btn-pearl" style="width:100%;" onclick="applyInstallmentToForm()">
+              ✨ Giữ Suất Trả Góp 0% Này
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section section-ice" id="booking">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Đặt Lịch Khám Ưu Tiên</span>
+          <h2>Nhận Suất Chụp CT 3D &amp; Tư Vấn Bác Sĩ CKI</h2>
+          <p>Không phải chờ đợi tại quầy — thông tin đặt lịch được bảo mật và gửi xác nhận ngay trong 1 giây.</p>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-box" style="background:var(--deep-teal);color:#fff;border-color:transparent;">
+            <h3 style="font-size:1.85rem;color:#fff;margin-bottom:12px;">Quyền Lợi Khám Lần Đầu</h3>
+            <p style="color:#CBD5E1;font-size:0.9rem;margin-bottom:18px;">Mỗi ca điều trị đều được Hội đồng Bác sĩ lập phác đồ trực quan bằng hình ảnh 3D trước khi thực hiện.</p>
+            <ul style="list-style:none;display:grid;gap:10px;font-size:0.88rem;color:#E2F1F0;margin-bottom:18px;">
+              <li>✓ Miễn phí chụp phim CT ConeBeam 3D toàn hàm</li>
+              <li>✓ Miễn phí quét mẫu răng iTero &amp; mô phỏng nụ cười</li>
+              <li>✓ Ký hợp đồng cam kết bảo hành sứ/Implant bằng văn bản</li>
+            </ul>
+            <div style="background:rgba(255,255,255,0.08);padding:12px 14px;border-radius:12px;font-size:0.84rem;">
+              📍 68 Tràng Thi, Hoàn Kiếm, Hà Nội &amp; 190 Nguyễn Đình Chiểu, Q.3, TP.HCM<br>
+              ⏱️ 08:30 – 20:00 (Cả Thứ 7 &amp; Chủ Nhật)
+            </div>
+          </div>
+
+          <div class="booking-box">
+            <form id="dentalBookingForm" onsubmit="submitDentalBooking(event)">
+              <div class="form-2col">
+                <div class="f-group">
+                  <label for="dnName">Họ và Tên *</label>
+                  <input type="text" id="dnName" class="f-input" placeholder="Ví dụ: Phạm Gia Huy" required>
+                </div>
+                <div class="f-group">
+                  <label for="dnPhone">Số Điện Thoại / Zalo *</label>
+                  <input type="tel" id="dnPhone" class="f-input" placeholder="0912.345.678" required>
+                </div>
+              </div>
+              <div class="form-2col">
+                <div class="f-group">
+                  <label for="dnBranch">Chọn Cơ Sở Khám</label>
+                  <select id="dnBranch" class="f-input">
+                    <option>Cơ sở Hà Nội (68 Tràng Thi)</option>
+                    <option>Cơ sở TP.HCM (190 Nguyễn Đình Chiểu)</option>
+                  </select>
+                </div>
+                <div class="f-group">
+                  <label for="dnDate">Ngày Khám Dự Kiến *</label>
+                  <input type="date" id="dnDate" class="f-input" required>
+                </div>
+              </div>
+              <div class="f-group">
+                <label for="dnService">Dịch Vụ Quan Tâm *</label>
+                <select id="dnService" class="f-input">
+                  <option>Dán Sứ Veneer Emax Thụy Sĩ</option>
+                  <option>Niềng Răng Trong Suốt Invisalign</option>
+                  <option>Cấy Ghép Implant Straumann 3D</option>
+                  <option>Tẩy Trắng Răng Laser Zoom White</option>
+                </select>
+              </div>
+              <div class="f-group">
+                <label for="dnNote">Tình Trạng Răng / Ghi Chú</label>
+                <textarea id="dnNote" rows="2" class="f-input" placeholder="Ví dụ: Muốn tư vấn niềng trong suốt trả góp 0%..."></textarea>
+              </div>
+              <button type="submit" class="btn-dental btn-teal" style="width:100%;padding:14px;">
+                🚀 Xác Nhận Đặt Lịch Chụp CT 3D
+              </button>
+            </form>
+
+            <div id="dentalTicket" class="dental-ticket">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <strong style="color:var(--deep-teal);">✓ PHIẾU KHÁM ƯU TIÊN CT 3D</strong>
+                <span id="dnTicketCode" style="background:var(--accent-teal);color:#fff;font-size:0.78rem;font-weight:800;padding:4px 10px;border-radius:999px;">#AUR-3041</span>
+              </div>
+              <div id="dnTicketBody" style="font-size:0.88rem;display:grid;gap:6px;margin-bottom:14px;"></div>
+              <button type="button" class="btn-dental btn-pearl btn-sm" style="width:100%;" onclick="resetDentalForm()">Đặt Lịch Hẹn Khác</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dental-footer">
+    <div class="container">
+      <p>© 2026 AURORA DENTAL LAB — Giao diện mẫu ngành Nha Khoa Thẩm Mỹ thiết kế bởi <a href="https://webgiatot.me/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);font-weight:700;">PAT TECH (webgiatot.me)</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const dentalServices = [
+      { cat: 'veneer', tag: 'Phổ Biến Nhất', name: 'Dán Sứ Veneer Emax Press Đức', priceNum: 36, priceStr: '6.000.000đ / răng', img: 'image/smile-after.webp', desc: 'Siêu mỏng 0.3mm không mài nhỏ răng thật, màu trắng trong tự nhiên.' },
+      { cat: 'ortho', tag: 'Trả Góp 0%', name: 'Niềng Răng Trong Suốt Invisalign', priceNum: 68, priceStr: 'Từ 48.000.000đ', img: 'image/invisalign-care.webp', desc: 'Khay niềng trong suốt tháo lắp linh hoạt, biết trước kết quả 3D.' },
+      { cat: 'implant', tag: 'Bảo Hành Trọn Đời', name: 'Cấy Ghép Implant Straumann Thụy Sĩ', priceNum: 28, priceStr: 'Từ 24.000.000đ / trụ', img: 'image/implant-suite.webp', desc: 'Tích hợp xương siêu nhanh trong 3 tuần bằng công nghệ SLActive.' },
+      { cat: 'ortho', tag: 'Tiết Kiệm', name: 'Niềng Mắc Cài Sứ Tự Buộc 3M', priceNum: 34, priceStr: 'Từ 34.000.000đ', img: 'image/hero-dental.webp', desc: 'Lực kéo ổn định, rút ngắn thời gian chỉnh nha tới 6 tháng.' }
+    ];
+
+    let activeCat = 'all';
+    let downPct = 30;
+    let months = 12;
+
+    function renderDentalServices() {
+      const grid = document.getElementById('dentalServicesGrid');
+      const items = activeCat === 'all' ? dentalServices : dentalServices.filter(s => s.cat === activeCat);
+      grid.innerHTML = items.map(s => `
+        <article class="srv-card">
+          <div class="srv-img">
+            <img loading="lazy" src="${s.img}" alt="${s.name}">
+            <span class="srv-tag">${s.tag}</span>
+          </div>
+          <div class="srv-body">
+            <h3>${s.name}</h3>
+            <p>${s.desc}</p>
+            <div class="srv-foot">
+              <strong class="srv-price">${s.priceStr}</strong>
+              <button type="button" class="btn-dental btn-teal btn-sm" onclick="jumpToInstallment(${s.priceNum})">Tính Trả Góp →</button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterDental(cat, btn) {
+      activeCat = cat;
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderDentalServices();
+    }
+
+    function updateSmileCompare(val) {
+      document.getElementById('smileCompare').style.setProperty('--pos', val + '%');
+    }
+
+    function selectDentalCase(idx, btn) {
+      document.querySelectorAll('.case-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      const positions = [52, 68, 38];
+      const pos = positions[idx] || 52;
+      document.getElementById('baRange').value = pos;
+      updateSmileCompare(pos);
+    }
+
+    function setDownPct(pct, btn) {
+      downPct = pct;
+      document.querySelectorAll('#downPctBtns .seg-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      calcDentalInstallment();
+    }
+
+    function setMonths(m, btn) {
+      months = m;
+      document.querySelectorAll('#monthBtns .seg-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      calcDentalInstallment();
+    }
+
+    function calcDentalInstallment() {
+      const totalMil = parseInt(document.getElementById('costRange').value, 10);
+      const totalVnd = totalMil * 1000000;
+      const downAmt = Math.round(totalVnd * (downPct / 100));
+      const monthly = Math.round((totalVnd - downAmt) / months);
+
+      document.getElementById('lblTotalCost').innerText = totalVnd.toLocaleString('vi-VN') + 'đ';
+      document.getElementById('lblDownPct').innerText = downPct + '%';
+      document.getElementById('lblMonths').innerText = months + ' Tháng';
+      document.getElementById('resDownAmt').innerText = downAmt.toLocaleString('vi-VN') + 'đ';
+      document.getElementById('resMonthly').innerText = monthly.toLocaleString('vi-VN') + 'đ';
+    }
+
+    function jumpToInstallment(mil) {
+      document.getElementById('costRange').value = mil;
+      calcDentalInstallment();
+      document.getElementById('installmentCalc').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function applyInstallmentToForm() {
+      const total = document.getElementById('lblTotalCost').innerText;
+      const monthly = document.getElementById('resMonthly').innerText;
+      document.getElementById('dnNote').value = `Đăng ký giữ suất trả góp 0% (${months} tháng, mỗi tháng ${monthly} trên tổng ${total}).`;
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitDentalBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('dnName').value.trim();
+      const phone = document.getElementById('dnPhone').value.trim();
+      const branch = document.getElementById('dnBranch').value;
+      const date = document.getElementById('dnDate').value;
+      const service = document.getElementById('dnService').value;
+      const code = '#AUR-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('dnTicketCode').innerText = code;
+      document.getElementById('dnTicketBody').innerHTML = `
+        <div><strong>Khách hàng:</strong> ${name} (${phone})</div>
+        <div><strong>Dịch vụ:</strong> ${service}</div>
+        <div><strong>Cơ sở &amp; Ngày:</strong> ${branch} • ${date}</div>
+      `;
+      document.getElementById('dentalBookingForm').style.display = 'none';
+      document.getElementById('dentalTicket').classList.add('visible');
+    }
+
+    function resetDentalForm() {
+      document.getElementById('dentalBookingForm').style.display = 'block';
+      document.getElementById('dentalTicket').classList.remove('visible');
+    }
+
+    function toggleDentalMenu() {
+      document.getElementById('dentalDrawer').classList.toggle('open');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderDentalServices();
+      calcDentalInstallment();
+      const d = document.getElementById('dnDate');
+      if (d) d.value = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+    });
+  </script>
+  <script src="/js/demo-bridge.js"></script>
+</body>
+</html>

@@ -428,7 +428,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('image/hero-lounge.jpg');
+      background-image: url('image/hero-lounge.webp');
       background-size: cover;
       background-position: center center;
       filter: brightness(0.42) saturate(1.15);
@@ -1503,6 +1503,8 @@
       }
     }
   </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
 </head>
 <body>
 
@@ -1691,7 +1693,7 @@
         <!-- Service 1 -->
         <article class="service-card" data-category="vai-gay">
           <div class="service-thumb">
-            <img src="image/hot-stone.jpg" alt="Trị liệu cổ vai gáy chuyên sâu" class="service-img">
+            <img src="image/hot-stone.webp" alt="Trị liệu cổ vai gáy chuyên sâu" class="service-img">
             <span class="service-badge-sale">HOT - GIẢM 35%</span>
             <span class="service-duration-badge">⏱️ 75 Phút</span>
           </div>
@@ -1717,7 +1719,7 @@
         <!-- Service 2 -->
         <article class="service-card" data-category="toan-than">
           <div class="service-thumb">
-            <img src="image/vip-room.jpg" alt="Massage toàn thân đá nóng" class="service-img">
+            <img loading="lazy" src="image/vip-room.webp" alt="Massage toàn thân đá nóng" class="service-img">
             <span class="service-badge-sale">KHUYÊN DÙNG</span>
             <span class="service-duration-badge">⏱️ 90 Phút</span>
           </div>
@@ -1743,7 +1745,7 @@
         <!-- Service 3 -->
         <article class="service-card" data-category="duong-sinh">
           <div class="service-thumb">
-            <img src="image/herbal-head.jpg" alt="Gội đầu dưỡng sinh thảo dược" class="service-img">
+            <img loading="lazy" src="image/herbal-head.webp" alt="Gội đầu dưỡng sinh thảo dược" class="service-img">
             <span class="service-badge-sale">THƯ GIÃN</span>
             <span class="service-duration-badge">⏱️ 60 Phút</span>
           </div>
@@ -1769,7 +1771,7 @@
         <!-- Service 4 -->
         <article class="service-card" data-category="duong-sinh">
           <div class="service-thumb">
-            <img src="image/herbal-bath.jpg" alt="Tắm thảo dược lá Dao Đỏ" class="service-img">
+            <img loading="lazy" src="image/herbal-bath.webp" alt="Tắm thảo dược lá Dao Đỏ" class="service-img">
             <span class="service-badge-sale">ĐỘC BẢN DAO ĐỎ</span>
             <span class="service-duration-badge">⏱️ 60 Phút</span>
           </div>
@@ -1795,7 +1797,7 @@
         <!-- Service 5 -->
         <article class="service-card" data-category="combo">
           <div class="service-thumb">
-            <img src="image/couple-room.jpg" alt="Combo Thượng Uyển Hoàng Cung" class="service-img">
+            <img loading="lazy" src="image/couple-room.webp" alt="Combo Thượng Uyển Hoàng Cung" class="service-img">
             <span class="service-badge-sale">BEST SELLER</span>
             <span class="service-duration-badge">⏱️ 120 Phút</span>
           </div>
@@ -1821,7 +1823,7 @@
         <!-- Service 6 -->
         <article class="service-card" data-category="vai-gay">
           <div class="service-thumb">
-            <img src="image/hero-lounge.jpg" alt="Liệu trình an thần mất ngủ" class="service-img">
+            <img loading="lazy" src="image/hero-lounge.webp" alt="Liệu trình an thần mất ngủ" class="service-img">
             <span class="service-badge-sale">CHUYÊN SÂU</span>
             <span class="service-duration-badge">⏱️ 80 Phút</span>
           </div>
@@ -1952,7 +1954,7 @@
       <!-- Room Display Box -->
       <div class="room-display" id="roomDisplayBox">
         <div class="room-image-wrap">
-          <img src="image/vip-room.jpg" alt="Phòng VIP Hoàng Cung" class="room-image" id="roomImg">
+          <img loading="lazy" src="image/vip-room.webp" alt="Phòng VIP Hoàng Cung" class="room-image" id="roomImg">
         </div>
         <div class="room-info">
           <span class="room-badge" id="roomTag">ĐẲNG CẤP THƯỢNG LƯU</span>
@@ -2439,7 +2441,7 @@
     // 5. Room Showcase Tabs
     const roomData = {
       vip: {
-        img: 'image/vip-room.jpg',
+        img: 'image/vip-room.webp',
         badge: 'ĐẲNG CẤP THƯỢNG LƯU',
         name: 'Phòng VIP Hoàng Cung Thượng Uyển',
         desc: 'Gian phòng cao cấp nhất được bao bọc bởi gỗ tự nhiên, trang bị bồn sục pơ-mu ngâm thảo dược người Dao Đỏ, buồng xông hơi đá muối Himalaya riêng biệt và giường massage đệm tơ tằm nhập khẩu.',
@@ -2452,7 +2454,7 @@
         targetSelect: 'Phòng VIP Hoàng Cung'
       },
       couple: {
-        img: 'image/couple-room.jpg',
+        img: 'image/couple-room.webp',
         badge: 'KHÔNG GIAN LÃNG MẠN TRI KỶ',
         name: 'Phòng Đôi Tri Kỷ (Dành Cho 2 Người)',
         desc: 'Thiết kế tinh tế dành riêng cho các cặp đôi, vợ chồng hoặc đôi bạn thân muốn cùng nhau tận hưởng khoảnh khắc thư thái cuối tuần bên ánh nến lung linh và mùi tinh dầu quế ngọt ngào.',
@@ -2465,7 +2467,7 @@
         targetSelect: 'Phòng Đôi Tri Kỷ'
       },
       single: {
-        img: 'image/hero-lounge.jpg',
+        img: 'image/hero-lounge.webp',
         badge: 'THANH TỊNH AN YÊN',
         name: 'Phòng Đơn Thanh Tịnh (Dành Cho 1 Người)',
         desc: 'Nơi chốn hoàn hảo cho những ai muốn "trốn" khỏi ồn ào phố thị để một mình tĩnh dưỡng. Tận hưởng sự chăm sóc chu đáo, nhẹ nhàng từ kỹ thuật viên chuyên nghiệp mà không bị xao nhãng.',
@@ -2576,5 +2578,6 @@
       }
     });
   </script>
+  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>
