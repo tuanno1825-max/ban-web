@@ -1774,10 +1774,23 @@ a {
   }
 
   .quick-industry-name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3px 6px;
+    white-space: normal;
+    overflow: visible;
     font-size: 0.92rem;
     font-weight: 800;
     margin-bottom: 2px;
     color: #0f172a;
+  }
+
+  .quick-flagship-tag {
+    margin-left: 0;
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    padding: 1px 6px;
   }
 
   .quick-industry-desc {

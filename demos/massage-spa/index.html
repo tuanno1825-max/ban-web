@@ -1430,22 +1430,22 @@
     /* Responsive */
     @media (max-width: 1024px) {
       .usp-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .service-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .testi-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .room-display {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .room-image-wrap {
         min-height: 320px;
       }
       .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1458,15 +1458,47 @@
         align-items: center;
         justify-content: center;
       }
+      .hero-bg {
+        transform: none;
+      }
+      .room-tabs {
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 100%;
+      }
+      .room-tab-btn {
+        flex: 1 1 auto;
+        padding: 10px 14px;
+        font-size: 0.84rem;
+        max-width: 100%;
+        text-align: center;
+      }
+      .room-display > *,
+      .booking-form > *,
+      .diagnostic-grid > *,
+      .service-grid > *,
+      .usp-grid > *,
+      .testi-grid > *,
+      .footer-grid > * {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .btn-submit-booking,
+      .booking-wrapper .btn-gold {
+        white-space: normal;
+        text-align: center;
+        max-width: 100%;
+        line-height: 1.35;
+      }
       .hero-title {
         font-size: 2.25rem;
       }
       .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
       }
       .diagnostic-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .diagnostic-box {
         padding: 24px 18px;
@@ -1475,7 +1507,7 @@
         padding: 28px 20px;
       }
       .booking-form {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .form-group.full-width {
         grid-column: span 1;
@@ -1484,16 +1516,16 @@
         grid-column: span 1;
       }
       .service-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .usp-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .testi-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .mobile-sticky-bar {
         display: block;

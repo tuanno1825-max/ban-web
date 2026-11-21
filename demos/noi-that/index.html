@@ -399,19 +399,22 @@
     @media (max-width: 900px) {
       .nav-links, .header-phone-desk { display: none; }
       .mobile-menu-btn { display: grid; place-items: center; }
-      .hero-grid, .transform-grid, .est-card, .booking-grid { grid-template-columns: 1fr; }
+      .hero-grid, .transform-grid, .est-card, .booking-grid { grid-template-columns: minmax(0, 1fr); }
     }
     @media (max-width: 600px) {
-      .container { padding: 0 16px; }
+      .container { padding: 0 14px; }
       .header-inner { gap: 8px; }
-      .logo-emblem { width: 34px; height: 34px; font-size: 0.95rem; }
-      .brand-text h1 { font-size: 1rem; }
-      .brand-text p { font-size: 0.54rem; letter-spacing: 0.08em; }
-      .header-actions { gap: 6px; }
-      .header-actions .btn-sm { padding: 7px 10px; font-size: 0.74rem; }
+      .brand-logo { flex-shrink: 1; min-width: 0; flex: 1; gap: 8px; }
+      .logo-emblem { width: 32px; height: 32px; font-size: 0.88rem; flex-shrink: 0; }
+      .brand-text { min-width: 0; overflow: hidden; }
+      .brand-text h1 { font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .brand-text p { display: none; }
+      .header-actions { gap: 6px; flex-shrink: 0; }
+      .header-actions .btn-sm { padding: 7px 9px; font-size: 0.72rem; white-space: nowrap; }
+      .mobile-menu-btn { width: 36px; height: 36px; flex-shrink: 0; }
       .section { padding: 48px 0; }
       .est-card, .booking-box { padding: 22px 16px; }
-      .form-2col, .projects-grid { grid-template-columns: 1fr; }
+      .form-2col, .projects-grid { grid-template-columns: minmax(0, 1fr); }
     }
   </style>
 </head>

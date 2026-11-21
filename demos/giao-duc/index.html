@@ -1233,10 +1233,10 @@
       .navbar { padding: 12px 20px; gap: 14px; }
     }
     @media (max-width: 1024px) {
-      .hero-bento-container { grid-template-columns: 1fr; }
-      .stats-grid, .courses-grid, .roadmap-grid, .alumni-grid { grid-template-columns: repeat(2, 1fr); }
-      .scholarship-section, .quiz-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-bento-container { grid-template-columns: minmax(0, 1fr); }
+      .stats-grid, .courses-grid, .roadmap-grid, .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .scholarship-section, .quiz-grid { grid-template-columns: minmax(0, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 768px) {
       .top-bar { display: none; }
@@ -1251,21 +1251,54 @@
       .countdown-card { padding: 12px 14px; width: 100%; justify-content: center; }
       .timer-units { width: 100%; justify-content: space-between; }
       .timer-box { flex: 1; min-width: 0; padding: 6px 4px; }
-      .hero-cta-group { flex-direction: column; align-items: stretch; }
-      .hero-cta-group .btn-brand, .hero-cta-group .btn-outline { width: 100%; }
-      .hero-bento-right { grid-template-columns: 1fr; }
+      .hero-cta-group, .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-cta-group .btn-brand, .hero-cta-group .btn-outline,
+      .hero-actions .btn-brand, .hero-actions .btn-gold-pill { width: 100%; justify-content: center; white-space: normal; text-align: center; }
+      .hero-bento-container > *,
+      .scholarship-section > *,
+      .quiz-grid > *,
+      .hero-bento-right > *,
+      .stats-grid > *,
+      .courses-grid > *,
+      .roadmap-grid > *,
+      .alumni-grid > *,
+      .footer-grid > * {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .quiz-card .btn-brand,
+      .scholarship-card .btn-brand,
+      .scholarship-info .btn-brand,
+      .scholar-modal .btn-brand {
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        max-width: 100%;
+        line-height: 1.35;
+        padding: 12px 16px !important;
+      }
+      .hero-bento-right { grid-template-columns: minmax(0, 1fr); }
       .bento-Visual-main { min-height: 240px; }
       .bento-sticker-top, .bento-sticker-bottom { font-size: 0.68rem; padding: 6px 10px; max-width: calc(100% - 20px); }
       .bento-sticker-top { left: 10px; right: auto; }
       .bento-sticker-bottom { left: auto; right: 10px; }
-      .stats-grid { grid-template-columns: 1fr; padding: 0 16px; margin-top: 20px; margin-bottom: 40px; }
+      .stats-grid { grid-template-columns: minmax(0, 1fr); padding: 0 16px; margin-top: 20px; margin-bottom: 40px; }
       .section-wrap, .roadmap-section, .scholarship-section, .footer { padding: 48px 16px; }
       .quiz-card { padding: 36px 16px 20px; }
       .quiz-card::before { margin: -36px -16px 24px -16px; padding: 10px 16px; font-size: 0.68rem; }
       .scholarship-info, .scholarship-card, .scholar-modal { padding: 24px 16px; }
-      .courses-grid, .roadmap-grid, .alumni-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .courses-grid, .roadmap-grid, .alumni-grid { grid-template-columns: minmax(0, 1fr); }
+      .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .navbar { padding: 10px 12px; gap: 8px; }
+      .brand-logo { min-width: 0; flex: 1; gap: 8px; }
+      .logo-emblem { width: 34px; height: 34px; font-size: 1rem; flex-shrink: 0; }
+      .brand-text { min-width: 0; }
+      .brand-text h1 { font-size: 0.94rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .brand-text p { display: none; }
+      .navbar .btn-brand { padding: 8px 10px; font-size: 0.72rem; white-space: nowrap; flex-shrink: 0; }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">

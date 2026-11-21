@@ -207,6 +207,8 @@
       @media (max-width: 768px) {
         input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="date"], select, textarea {
           font-size: max(16px, 1em) !important;
+          max-width: 100%;
+          box-sizing: border-box;
         }
       }
       @keyframes patTgRingPulse {

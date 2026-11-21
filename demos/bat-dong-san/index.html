@@ -1313,13 +1313,13 @@
     @media (max-width: 1024px) {
       .top-bar { padding: 8px 24px; }
       .navbar { padding: 14px 24px; }
-      .pillar-grid { grid-template-columns: 1fr; }
-      .sky-explorer-layout { grid-template-columns: 1fr; }
-      .calc-container { grid-template-columns: 1fr; }
-      .amenities-grid { grid-template-columns: repeat(2, 1fr); }
-      .consult-container { grid-template-columns: 1fr; }
-      .footer-container { grid-template-columns: 1fr 1fr; }
-      .filter-inputs-grid { grid-template-columns: 1fr 1fr; }
+      .pillar-grid { grid-template-columns: minmax(0, 1fr); }
+      .sky-explorer-layout { grid-template-columns: minmax(0, 1fr); }
+      .calc-container { grid-template-columns: minmax(0, 1fr); }
+      .amenities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .consult-container { grid-template-columns: minmax(0, 1fr); }
+      .footer-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .filter-inputs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 768px) {
       .top-bar { display: none; }
@@ -1330,17 +1330,49 @@
       .navbar .btn-gold { padding: 8px 12px; font-size: 0.75rem; }
       .hero { padding: 48px 16px 64px; min-height: auto; }
       .search-filter-card { padding: 20px 16px; }
-      .filter-inputs-grid { grid-template-columns: 1fr; }
+      .filter-inputs-grid { grid-template-columns: minmax(0, 1fr); }
+      .filter-inputs-grid > *,
+      .calc-container > *,
+      .consult-container > *,
+      .form-row > *,
+      .calc-breakdown > *,
+      .pillar-grid > *,
+      .sky-explorer-layout > *,
+      .properties-grid > *,
+      .amenities-grid > *,
+      .footer-container > * {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .calc-container .btn-gold,
+      .consult-container .btn-gold,
+      .search-filter-card .btn-gold,
+      .vip-modal-box .btn-gold {
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        max-width: 100%;
+        line-height: 1.35;
+        padding: 12px 16px;
+      }
+      .slider-head { flex-wrap: wrap; gap: 4px 10px; }
+      .form-control,
+      .filter-field select,
+      .filter-field input {
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+      }
       .pillar-section { padding: 0 16px 48px; margin-top: -24px; }
       .sky-tour-section { padding: 48px 16px; }
       .sky-explorer-stage { aspect-ratio: 16 / 10; min-height: 220px; }
       .sky-room-hud { position: static; max-width: 100%; border-radius: 12px; margin-top: 2px; }
-      .sky-steps-bar { grid-template-columns: repeat(2, 1fr); }
+      .sky-steps-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .sky-floor-hud { padding: 18px 16px; }
       .section-wrap, .calculator-section, .consult-section, .footer { padding: 48px 16px; }
-      .properties-grid { grid-template-columns: 1fr; }
+      .properties-grid { grid-template-columns: minmax(0, 1fr); }
       .prop-specs { flex-wrap: wrap; gap: 10px; }
-      .amenities-grid, .footer-container, .form-row, .calc-breakdown { grid-template-columns: 1fr; }
+      .amenities-grid, .footer-container, .form-row, .calc-breakdown { grid-template-columns: minmax(0, 1fr); }
       .calc-container, .consult-container, .vip-modal-box { padding: 24px 16px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }

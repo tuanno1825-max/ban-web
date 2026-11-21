@@ -1227,13 +1227,13 @@
     @media (max-width: 1200px) {
       .navbar { padding: 12px 20px; gap: 14px; }
       .nav-links { display: none; }
-      .hero-spread { grid-template-columns: 1fr; }
+      .hero-spread { grid-template-columns: minmax(0, 1fr); }
       .hero-content { border-right: none; border-bottom: 1px solid var(--border-hairline); padding: 48px 32px; }
-      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .val-card { border-bottom: 1px solid var(--border-soft); }
-      .products-grid { grid-template-columns: repeat(2, 1fr); }
-      .size-grid, .lookbook-container, .order-section { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .size-grid, .lookbook-container, .order-section { grid-template-columns: minmax(0, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 768px) {
       .top-bar { display: none; }
@@ -1254,7 +1254,34 @@
       .hero-frame-wrap { height: 360px; }
       .hero-vertical-tag { right: 0; top: 12px; }
       .hero-caption-card { left: 8px; right: 8px; bottom: 12px; max-width: calc(100% - 16px); padding: 14px 16px; box-shadow: 4px 4px 0px var(--ink-noir); }
-      .values-grid, .products-grid { grid-template-columns: 1fr; }
+      .values-grid, .products-grid { grid-template-columns: minmax(0, 1fr); }
+      .size-grid > *,
+      .lookbook-container > *,
+      .order-section > *,
+      .hero-spread > *,
+      .values-grid > *,
+      .products-grid > *,
+      .footer-grid > * {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .look-opt-btn,
+      .look-opt-btn:hover,
+      .look-opt-btn.active {
+        transform: none;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .size-card .btn-gold,
+      .order-card .btn-gold,
+      .hero-cta-group .btn-gold,
+      .order-modal .btn-gold {
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        max-width: 100%;
+        line-height: 1.35;
+      }
       .category-tabs { width: 100%; }
       .cat-btn { flex: 1 1 45%; padding: 10px 12px; font-size: 0.72rem; border-bottom: 1px solid var(--ink-noir); }
       .section-wrap, .size-finder-section, .order-section, .footer { padding: 48px 16px; }
@@ -1264,9 +1291,9 @@
       .look-floating-tag { left: 12px; right: 12px; bottom: 12px; padding: 12px 16px; }
       .look-hotspot-popover { left: 12px; right: 12px; bottom: 12px; width: auto; }
       .concierge-box { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px; }
-      .order-card form > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .order-card form > div[style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; }
       .order-modal { padding: 24px 16px; box-shadow: 8px 8px 0px var(--champagne); }
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
     @media (max-width: 600px) {
