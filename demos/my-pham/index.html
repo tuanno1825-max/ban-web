@@ -1404,6 +1404,18 @@
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
+    @media (max-width: 600px) {
+      .navbar { padding: 10px 14px; gap: 8px; }
+      .brand-logo { min-width: 0; flex: 1; gap: 8px; }
+      .brand-emblem { width: 34px; height: 34px; font-size: 1rem; flex-shrink: 0; }
+      .brand-title { min-width: 0; }
+      .brand-title span { display: none; }
+      .brand-title h1 { font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .nav-actions { gap: 6px; flex-shrink: 0; }
+      .cart-pill { padding: 7px 10px; font-size: 0.74rem; gap: 5px; }
+      .cart-pill span:nth-child(2) { display: none; }
+      .navbar .btn-gold { padding: 8px 11px; font-size: 0.72rem; white-space: nowrap; flex-shrink: 0; }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">

@@ -303,7 +303,9 @@ function pushCustomizerToIframe() {
 let tgAudioCtx = null;
 let tgToastTimer = null;
 
-function playTelegramChime() {
+const TELEGRAM_PAPER_PLANE_SVG = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M21.2 4.4L2.9 11.4c-.9.3-.9 1.6.1 1.9l4.5 1.4 1.7 5.4c.3.8 1.3 1.1 1.9.5l2.6-2.5 4.9 3.6c.8.6 1.9.1 2.1-.8l2.5-14.7c.2-1.1-.8-2.1-2-1.8z" fill="#fff"/><path d="M9.7 14.3l8.6-7.7-6.6 8.9-.3 3.7-1.7-4.9z" fill="#dbeafe" opacity=".55"/></svg>`;
+
+function unlockTgAudioOnce() {
   try {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     if (!AudioCtx) return;
@@ -311,20 +313,41 @@ function playTelegramChime() {
     if (tgAudioCtx.state === 'suspended') {
       tgAudioCtx.resume().catch(() => {});
     }
-    const now = tgAudioCtx.currentTime;
-    [880, 1174.66].forEach((freq, idx) => {
-      const osc = tgAudioCtx.createOscillator();
-      const gain = tgAudioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, now + idx * 0.08);
-      gain.gain.setValueAtTime(0.001, now + idx * 0.08);
-      gain.gain.exponentialRampToValueAtTime(0.08, now + idx * 0.08 + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.28);
-      osc.connect(gain);
-      gain.connect(tgAudioCtx.destination);
-      osc.start(now + idx * 0.08);
-      osc.stop(now + idx * 0.08 + 0.3);
-    });
+  } catch (e) {}
+}
+
+document.addEventListener('pointerdown', unlockTgAudioOnce, { once: true, passive: true });
+
+function playTelegramChime() {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+    if (!tgAudioCtx) tgAudioCtx = new AudioCtx();
+
+    const playNotes = () => {
+      try {
+        const now = tgAudioCtx.currentTime;
+        [880, 1174.66].forEach((freq, idx) => {
+          const osc = tgAudioCtx.createOscillator();
+          const gain = tgAudioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+          gain.gain.setValueAtTime(0.001, now + idx * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.08, now + idx * 0.08 + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.28);
+          osc.connect(gain);
+          gain.connect(tgAudioCtx.destination);
+          osc.start(now + idx * 0.08);
+          osc.stop(now + idx * 0.08 + 0.3);
+        });
+      } catch (e) {}
+    };
+
+    if (tgAudioCtx.state === 'suspended') {
+      tgAudioCtx.resume().then(playNotes).catch(() => {});
+    } else {
+      playNotes();
+    }
   } catch (e) {}
 }
 
@@ -346,26 +369,27 @@ function showTelegramSimToast(order) {
   const phone = order && order.phone ? order.phone : '0912.345.678';
   const service = order && order.service ? order.service : 'Đăng ký tư vấn dịch vụ';
   const note = order && order.note ? order.note : '';
+  const detailLine = note ? `${service} — ${note}` : service;
 
+  toast.classList.remove('open');
   toast.innerHTML = `
-    <div class="tg-toast-head">
-      <div class="tg-toast-app">
-        <div class="tg-toast-icon">✈</div>
-        <div>
-          <div class="tg-toast-title">TELEGRAM BOT • BÁO ĐƠN 0.8s</div>
-          <div class="tg-toast-sub">Nguồn: Website ${escapeHtml(brand)}</div>
+    <div class="tg-toast-row">
+      <div class="tg-toast-icon">${TELEGRAM_PAPER_PLANE_SVG}</div>
+      <div class="tg-toast-content">
+        <div class="tg-toast-meta">
+          <span class="tg-toast-title">Telegram Bot</span>
+          <span class="tg-toast-speed">• 0.8s</span>
+          <span class="tg-toast-sub">${escapeHtml(brand)}</span>
         </div>
+        <div class="tg-toast-line1">🔥 ${escapeHtml(name)} — ${escapeHtml(phone)}</div>
+        <div class="tg-toast-line2">${escapeHtml(detailLine)}</div>
       </div>
       <button type="button" class="tg-toast-close" onclick="hideTelegramSimToast()" aria-label="Đóng thông báo">✕</button>
     </div>
-    <div class="tg-toast-body">
-      <span class="tg-toast-badge">⚡ KHÁCH HÀNG MỚI ĐẶT LỊCH / ĐẶT HÀNG</span>
-      <div>👤 <strong>${escapeHtml(name)}</strong> — 📞 <strong>${escapeHtml(phone)}</strong></div>
-      <div>📌 ${escapeHtml(service)}</div>
-      ${note ? `<div style="color:#cbd5e1;">📝 ${escapeHtml(note)}</div>` : ''}
-    </div>
+    <div class="tg-toast-progress" key="${Date.now()}"></div>
   `;
 
+  void toast.offsetWidth;
   toast.classList.add('open');
   clearTimeout(tgToastTimer);
   tgToastTimer = setTimeout(hideTelegramSimToast, 6500);

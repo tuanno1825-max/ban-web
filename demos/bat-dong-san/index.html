@@ -1344,6 +1344,16 @@
       .calc-container, .consult-container, .vip-modal-box { padding: 24px 16px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
+    @media (max-width: 600px) {
+      .hide-xs { display: none; }
+      .navbar { padding: 10px 14px; gap: 8px; }
+      .brand-logo { min-width: 0; flex: 1; gap: 8px; }
+      .logo-symbol { width: 34px; height: 34px; flex-shrink: 0; }
+      .logo-text { min-width: 0; }
+      .logo-text h1 { font-size: 0.96rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .logo-text p { display: none; }
+      .navbar .btn-gold { padding: 8px 11px; font-size: 0.72rem; white-space: nowrap; flex-shrink: 0; }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1385,7 +1395,7 @@
     </ul>
 
     <button class="btn-gold" onclick="openBrochureModal()">
-      <span>📥</span> Tải Bảng Giá &amp; Mặt Bằng
+      <span>📥</span> Tải Bảng Giá<span class="hide-xs"> &amp; Mặt Bằng</span>
     </button>
   </header>
 

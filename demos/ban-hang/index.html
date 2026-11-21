@@ -1269,6 +1269,17 @@
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
+    @media (max-width: 600px) {
+      .navbar { padding: 10px 12px; gap: 8px; }
+      .brand-logo { min-width: 0; flex: 1; gap: 8px; }
+      .logo-emblem { width: 32px; height: 32px; font-size: 1rem; flex-shrink: 0; }
+      .brand-text { min-width: 0; }
+      .brand-text h1 { font-size: 0.96rem; letter-spacing: 0.06em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .brand-text p { display: none; }
+      .nav-actions { gap: 6px !important; flex-shrink: 0; }
+      .cart-pill { padding: 7px 10px; font-size: 0.72rem; gap: 5px; white-space: nowrap; }
+      .navbar .btn-gold { padding: 8px 10px; font-size: 0.7rem; white-space: nowrap; flex-shrink: 0; }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">

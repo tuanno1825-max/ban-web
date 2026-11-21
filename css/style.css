@@ -1554,20 +1554,33 @@ a {
 
   .main-tab-btn {
     flex: 1 1 auto;
-    padding: 7px 6px;
-    font-size: 0.74rem;
-    gap: 4px;
-    white-space: normal;
+    padding: 8px 6px;
+    font-size: 0.78rem;
+    gap: 5px;
+    white-space: nowrap;
     text-align: center;
     line-height: 1.2;
   }
 
+  .hide-xs {
+    display: none;
+  }
+
   .hero {
-    padding: 36px 0 40px;
+    padding: 30px 0 38px;
   }
 
   .section {
-    padding: 48px 0;
+    padding: 44px 0;
+  }
+
+  .form-control,
+  .mobile-industry-select {
+    font-size: 16px;
+  }
+
+  .footer {
+    padding-bottom: 86px;
   }
 
   /* Ẩn hoàn toàn thanh lướt ngang khó bấm trên Mobile */
@@ -1666,68 +1679,116 @@ a {
   }
 
   .preview-topbar {
-    padding: 8px 12px;
+    flex-wrap: wrap;
+    padding: calc(8px + env(safe-area-inset-top, 0px)) 12px 10px;
+    gap: 8px;
+  }
+
+  .preview-left {
+    order: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .preview-back-btn {
+    padding: 7px 11px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .preview-back-btn .back-label-full {
+    display: none;
+  }
+
+  .preview-back-btn .back-label-short {
+    display: inline;
   }
 
   .preview-title {
-    display: none;
+    display: block;
+    font-size: 0.84rem;
+    min-width: 0;
   }
 
-  .hide-on-mobile {
-    display: none;
+  .preview-buy-btn {
+    order: 2;
+    padding: 7px 13px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .preview-actions-bar {
+    order: 3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .preview-actions-bar .btn-sm {
+    width: 100%;
+    padding: 7px 4px;
+    font-size: 0.73rem;
+    gap: 4px;
+    white-space: nowrap;
+    border-radius: 9px;
+    justify-content: center;
   }
 
   /* Tối ưu danh sách thanh demo rộng thoáng trên iPhone 14 Pro Max & Mobile */
   .hero-showcase-card {
-    border-radius: 24px;
-    padding: 18px 16px;
-    margin-top: 18px;
+    border-radius: 22px;
+    padding: 16px 14px;
+    margin-top: 16px;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   }
 
   .quick-industry-list {
-    gap: 14px;
-    max-height: 480px;
-    padding-bottom: 24px;
+    gap: 10px;
+    max-height: 460px;
+    padding-bottom: 18px;
   }
 
   .quick-industry-item {
-    padding: 15px 16px;
-    border-radius: 18px;
+    padding: 12px 12px;
+    border-radius: 16px;
     background: #ffffff;
     border: 1.5px solid #e2e8f0;
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
     margin-bottom: 2px;
-    min-height: 72px;
+    min-height: 62px;
     flex-shrink: 0;
-    gap: 14px;
+    gap: 10px;
   }
 
   .quick-industry-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 1.45rem;
-    border-radius: 14px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    border-radius: 12px;
     background: #f8fafc;
     border: 1.5px solid #e2e8f0;
   }
 
   .quick-industry-name {
-    font-size: 1rem;
+    font-size: 0.92rem;
     font-weight: 800;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     color: #0f172a;
   }
 
   .quick-industry-desc {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: #64748b;
   }
 
   .quick-view-btn {
-    padding: 9px 15px;
-    font-size: 0.82rem;
-    border-radius: 12px;
+    padding: 7px 11px;
+    font-size: 0.78rem;
+    border-radius: 10px;
     font-weight: 800;
     background: #eef2ff;
     color: var(--primary);
@@ -1769,6 +1830,15 @@ a {
     font-size: 0.78rem;
     padding: 8px 8px;
     gap: 4px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
 
   .hero-stats {
@@ -2015,6 +2085,7 @@ a {
 @media (max-width: 768px) {
   .seo-comparison-wrap {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .seo-comparison-table {
     min-width: 620px;
@@ -2111,6 +2182,16 @@ a {
   border-radius: 20px;
 }
 
+.back-label-short {
+  display: none;
+}
+
+.preview-back-btn,
+.preview-buy-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* Live Brand Customizer Bar inside Preview Modal */
 .brand-customizer-bar {
   display: none;
@@ -2201,135 +2282,205 @@ a {
 .customizer-reset-btn {
   padding: 6px 12px;
   font-size: 0.78rem;
+  white-space: nowrap;
 }
 
-/* Global Telegram 1s Simulation Toast */
+/* Global Telegram 1s Simulation Toast — Native iOS Push Notification Style */
+@keyframes tgRingPulse {
+  0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+}
+
+@keyframes tgToastProgress {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
 .tg-sim-toast {
   position: fixed;
-  top: 18px;
-  right: 18px;
+  top: 16px;
+  right: 16px;
   z-index: 10050;
-  width: min(370px, calc(100vw - 24px));
-  background: rgba(15, 23, 42, 0.96);
+  width: 356px;
+  max-width: calc(100vw - 24px);
+  background: rgba(15, 23, 42, 0.94);
   color: #f8fafc;
-  border: 1px solid rgba(56, 189, 248, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 18px;
-  padding: 15px 16px;
-  box-shadow: 0 24px 54px -10px rgba(2, 6, 23, 0.55);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  display: none;
-  transform: translateY(-10px);
+  padding: 12px 14px 14px;
+  box-shadow: 0 20px 48px -8px rgba(2, 6, 23, 0.52);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
   opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(-18px) scale(0.96);
+  transition: opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1), transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.28s;
 }
 
 .tg-sim-toast.open {
-  display: block;
+  visibility: visible;
+  pointer-events: auto;
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
-.tg-toast-head {
+.tg-toast-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.tg-toast-app {
-  display: flex;
-  align-items: center;
-  gap: 9px;
+  gap: 11px;
 }
 
 .tg-toast-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
   background: linear-gradient(135deg, #38bdf8, #0284c7);
   color: #ffffff;
   display: grid;
   place-items: center;
-  font-size: 0.95rem;
-  font-weight: 900;
   flex-shrink: 0;
+  animation: tgRingPulse 1.8s ease-out 2;
+}
+
+.tg-toast-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.tg-toast-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  line-height: 1.25;
+  margin-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .tg-toast-title {
-  font-size: 0.76rem;
   font-weight: 800;
-  color: #38bdf8;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.tg-toast-sub {
-  font-size: 0.72rem;
-  color: #94a3b8;
-}
-
-.tg-toast-close {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #cbd5e1;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.tg-toast-close:hover {
-  background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
 
-.tg-toast-body {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 10px 12px;
-  font-size: 0.83rem;
-  line-height: 1.5;
-  display: grid;
-  gap: 4px;
-}
-
-.tg-toast-badge {
-  display: inline-block;
-  font-size: 0.72rem;
+.tg-toast-speed {
   font-weight: 800;
   color: #4ade80;
+}
+
+.tg-toast-sub {
+  color: #94a3b8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tg-toast-line1 {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.tg-toast-line2 {
+  font-size: 0.77rem;
+  color: #cbd5e1;
+  line-height: 1.35;
+  margin-top: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tg-toast-close {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #cbd5e1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.tg-toast-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+.tg-toast-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #38bdf8, #4ade80);
+  transform-origin: left center;
+}
+
+.tg-sim-toast.open .tg-toast-progress {
+  animation: tgToastProgress 6.5s linear forwards;
 }
 
 @media (max-width: 768px) {
   .brand-customizer-bar {
     padding: 10px 12px;
-    gap: 8px;
+    gap: 8px 10px;
   }
 
-  .customizer-field {
-    flex: 1 1 140px;
+  .brand-customizer-bar .customizer-field:nth-child(1),
+  .brand-customizer-bar .customizer-field:nth-child(2) {
+    flex: 1 1 calc(50% - 5px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .customizer-field label {
+    font-size: 0.74rem;
   }
 
   .customizer-input,
   .customizer-input-sm {
     width: 100%;
     min-width: 0;
-    font-size: 0.8rem;
-    padding: 5px 9px;
+    font-size: 16px;
+    padding: 7px 10px;
   }
 
   .customizer-colors-wrap {
     flex: 1 1 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .customizer-reset-btn {
+    padding: 6px 10px;
+    font-size: 0.74rem;
+    flex-shrink: 0;
   }
 
   .tg-sim-toast {
-    top: 12px;
+    left: 12px;
     right: 12px;
-    padding: 12px 14px;
+    top: calc(10px + env(safe-area-inset-top, 0px));
+    width: auto;
+    max-width: 406px;
+    margin: 0 auto;
+    padding: 11px 13px 13px;
   }
 }

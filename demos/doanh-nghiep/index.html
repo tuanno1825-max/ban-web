@@ -1128,6 +1128,17 @@
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
+    @media (max-width: 600px) {
+      .hide-xs { display: none; }
+      .navbar { padding: 10px 14px; gap: 8px; }
+      .brand-logo { min-width: 0; flex: 1; gap: 8px; }
+      .logo-emblem { width: 34px; height: 34px; font-size: 0.85rem; flex-shrink: 0; }
+      .brand-text { min-width: 0; }
+      .brand-text h1 { font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .brand-text p { display: none; }
+      .navbar .btn-cyan { padding: 8px 10px; font-size: 0.72rem; white-space: nowrap; flex-shrink: 0; }
+      .navbar .btn-cyan span:first-child { display: none; }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1172,7 +1183,7 @@
     <div style="display: flex; align-items: center; gap: 12px;">
       <a href="#consult" class="btn-cyan">
         <span>[01:01]</span>
-        <span>Họp Chiến Lược Cùng Partner</span>
+        <span>Họp Chiến Lược<span class="hide-xs"> Cùng Partner</span></span>
       </a>
     </div>
   </nav>
