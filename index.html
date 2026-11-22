@@ -831,13 +831,17 @@
     .tpl-thumb {
       border-radius: var(--r-md);
       overflow: hidden;
-      background-color: var(--bg-black);
+      background-color: var(--bg-surface);
     }
     .tpl-thumb img {
       width: 100%;
       aspect-ratio: 16 / 10;
       object-fit: cover;
-      transition: transform 500ms var(--ease-out-expo);
+      opacity: 0;
+      transition: transform 500ms var(--ease-out-expo), opacity 320ms var(--ease-out-expo);
+    }
+    .tpl-thumb img.is-loaded {
+      opacity: 1;
     }
     .tpl-card:hover .tpl-thumb img {
       transform: scale(1.03);
@@ -1512,6 +1516,10 @@
         transform: none;
         transition: none;
       }
+      .tpl-thumb img {
+        opacity: 1;
+        transition: none;
+      }
       .btn,
       .btn svg,
       .btn-hero-pill,
@@ -1602,7 +1610,7 @@
     <!-- Full-Bleed Dark Studio Hero -->
     <section class="hero" id="top">
       <div class="hero-bg-parallax" id="heroParallax">
-        <img src="./image/hero-studio-cinematic.png" alt="Tác phẩm ánh sáng thủy tinh tối giản trên nền đen PAT TECH" class="hero-bg-img" width="1408" height="768">
+        <img src="./image/hero-studio-cinematic.webp" alt="Tác phẩm ánh sáng thủy tinh tối giản trên nền đen PAT TECH" class="hero-bg-img" width="1408" height="768" decoding="async">
       </div>
       <div class="hero-scrim" aria-hidden="true"></div>
       <div class="container hero-inner">
@@ -1633,7 +1641,7 @@
         <div class="showcase-strip" aria-label="Các mẫu tiêu biểu mới cập nhật">
           <button type="button" class="strip-card" data-preview-url="demos/bat-dong-san/index.html" data-preview-title="Bất Động Sản · Elite Residence" data-template-id="bat-dong-san">
             <div class="strip-media">
-              <img src="demos/bat-dong-san/image/hero-cinematic.png" alt="Bản mẫu Bất động sản phong cách điện ảnh hoàng hôn">
+              <img src="demos/bat-dong-san/image/hero-cinematic.webp" alt="Bản mẫu Bất động sản phong cách điện ảnh hoàng hôn" decoding="async">
             </div>
             <div class="strip-body">
               <span class="caption-4" style="color: #818CF8;">Bất động sản</span>
@@ -1644,7 +1652,7 @@
 
           <button type="button" class="strip-card" data-preview-url="demos/spa-beauty/index.html" data-preview-title="Spa & Thẩm Mỹ Viện · Lumière" data-template-id="spa-beauty">
             <div class="strip-media">
-              <img src="demos/spa-beauty/image/hero-cinematic.png" alt="Bản mẫu Spa và Thẩm mỹ viện Lumière">
+              <img src="demos/spa-beauty/image/hero-cinematic.webp" alt="Bản mẫu Spa và Thẩm mỹ viện Lumière" decoding="async">
             </div>
             <div class="strip-body">
               <span class="caption-4 strip-meta">Spa & Thẩm mỹ</span>
@@ -1655,18 +1663,18 @@
 
           <button type="button" class="strip-card" data-preview-url="demos/ban-hang/index.html" data-preview-title="Thời Trang · Atelier Noir" data-template-id="ban-hang">
             <div class="strip-media">
-              <img src="demos/ban-hang/image/hero-fashion.webp" alt="Bản mẫu thời trang Atelier Noir">
+              <img src="demos/ban-hang/image/hero-fashion.webp" alt="Bản mẫu thời trang Atelier Noir" decoding="async">
             </div>
             <div class="strip-body">
               <span class="caption-4 strip-meta">Thời trang Boutique</span>
               <span class="title-3">Atelier Noir</span>
-              <span class="caption-2 strip-meta">Lookbook gắn ghim mua trực tiếp trên ảnh</span>
+              <span class="caption-2 strip-meta">Giá treo 3D tương tác & xem cận cảnh chất liệu</span>
             </div>
           </button>
 
           <button type="button" class="strip-card" data-preview-url="demos/my-pham/index.html" data-preview-title="Mỹ Phẩm · Hoàng Cung" data-template-id="my-pham">
             <div class="strip-media">
-              <img src="demos/my-pham/image/hero-cinematic.png" alt="Bản mẫu mỹ phẩm cao cấp">
+              <img src="demos/my-pham/image/hero-cinematic.webp" alt="Bản mẫu mỹ phẩm cao cấp" decoding="async">
             </div>
             <div class="strip-body">
               <span class="caption-4 strip-meta">Mỹ phẩm cao cấp</span>
@@ -2477,7 +2485,7 @@
       }
 
       function getTargetThumb(tpl) {
-        return tpl.id === 'bat-dong-san' ? 'demos/bat-dong-san/image/hero-cinematic.png' : tpl.thumbImg;
+        return tpl.id === 'bat-dong-san' ? 'demos/bat-dong-san/image/hero-cinematic.webp' : tpl.thumbImg;
       }
 
       function populateConsultSelect() {
@@ -2522,7 +2530,7 @@
           card.innerHTML = `
             <div>
               <div class="tpl-thumb">
-                <img src="${getTargetThumb(tpl)}" alt="Giao diện ${cleanIndustry}: ${cleanName}" loading="lazy">
+                <img src="${getTargetThumb(tpl)}" alt="Giao diện ${cleanIndustry}: ${cleanName}" width="800" height="500" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="tpl-body">
@@ -2540,6 +2548,14 @@
               </div>
             </div>
           `;
+          const thumbImg = card.querySelector('.tpl-thumb img');
+          if (thumbImg) {
+            if (thumbImg.complete) thumbImg.classList.add('is-loaded');
+            else {
+              thumbImg.addEventListener('load', () => thumbImg.classList.add('is-loaded'), { once: true });
+              thumbImg.addEventListener('error', () => thumbImg.classList.add('is-loaded'), { once: true });
+            }
+          }
           templatesGrid.appendChild(card);
         });
       }
