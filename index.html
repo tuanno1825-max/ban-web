@@ -2815,5 +2815,263 @@
       });
     })();
   </script>
+
+  <!-- Custom Theme & Animations for PAT TECH AI Chatbot Widget -->
+  <style id="pat-ai-custom-theme">
+    #pat-ai-widget-container {
+      font-family: var(--font-sans, 'Manrope', sans-serif);
+    }
+
+    /* Floating Launcher Button with subtle pulse aura */
+    #pat-ai-widget-container #pat-ai-widget-btn {
+      position: relative;
+      width: 58px;
+      height: 58px;
+      background: linear-gradient(135deg, #4F46E5 0%, #6366F1 55%, #3B82F6 100%);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 10px 28px rgba(79, 70, 229, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      transition: transform 0.28s var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1)),
+                  box-shadow 0.28s ease;
+    }
+
+    #pat-ai-widget-container #pat-ai-widget-btn::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(99, 102, 241, 0.55);
+      animation: patBtnPulse 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      pointer-events: none;
+    }
+
+    #pat-ai-widget-container #pat-ai-widget-btn:hover {
+      transform: translateY(-3px) scale(1.06);
+      box-shadow: 0 16px 36px rgba(79, 70, 229, 0.62), 0 0 22px rgba(99, 102, 241, 0.4);
+    }
+
+    #pat-ai-widget-container #pat-ai-widget-btn:active {
+      transform: scale(0.96);
+    }
+
+    #pat-ai-widget-container #pat-ai-widget-btn svg {
+      width: 26px;
+      height: 26px;
+      transition: transform 0.3s var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1));
+    }
+
+    #pat-ai-widget-container #pat-ai-widget-btn:hover svg {
+      transform: rotate(-8deg) scale(1.08);
+    }
+
+    @keyframes patBtnPulse {
+      0% { transform: scale(1); opacity: 0.75; }
+      70% { transform: scale(1.28); opacity: 0; }
+      100% { transform: scale(1.28); opacity: 0; }
+    }
+
+    /* Dark Studio Glassmorphism Chat Window */
+    #pat-ai-widget-container #pat-ai-chat-window {
+      width: 390px;
+      height: 550px;
+      background: rgba(17, 17, 19, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.75),
+                  0 0 0 1px rgba(79, 70, 229, 0.18),
+                  0 0 40px rgba(79, 70, 229, 0.14);
+      animation: patChatSpring 0.32s var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1));
+      transform-origin: bottom right;
+    }
+
+    @keyframes patChatSpring {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.92);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Header */
+    #pat-ai-widget-container #pat-ai-chat-header {
+      background: linear-gradient(135deg, #1E1B4B 0%, #312E81 52%, #4F46E5 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 16px;
+    }
+
+    #pat-ai-widget-container .pat-header-avatar {
+      background: rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 0 14px rgba(99, 102, 241, 0.45);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    #pat-ai-widget-container .pat-header-title {
+      font-size: 14.5px;
+      letter-spacing: -0.01em;
+    }
+
+    #pat-ai-widget-container .pat-status-dot {
+      background: #4ADE80;
+      box-shadow: 0 0 8px rgba(74, 222, 128, 0.85);
+      animation: patDotBreath 2s ease-in-out infinite;
+    }
+
+    @keyframes patDotBreath {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.7; }
+    }
+
+    #pat-ai-widget-container #pat-ai-close-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: background 0.2s ease, transform 0.25s var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1));
+    }
+
+    #pat-ai-widget-container #pat-ai-close-btn:hover {
+      background: rgba(255, 255, 255, 0.24);
+      transform: rotate(90deg);
+    }
+
+    /* Messages Area */
+    #pat-ai-widget-container #pat-ai-messages {
+      background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.08), transparent 55%),
+                  #0B0B0E;
+      padding: 16px;
+      gap: 12px;
+      scrollbar-width: thin;
+      scrollbar-color: #27272A transparent;
+    }
+
+    #pat-ai-widget-container #pat-ai-messages::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    #pat-ai-widget-container #pat-ai-messages::-webkit-scrollbar-thumb {
+      background: #27272A;
+      border-radius: 999px;
+    }
+
+    #pat-ai-widget-container .pat-msg {
+      padding: 11px 14px;
+      border-radius: 16px;
+      font-size: 13.5px;
+      line-height: 1.5;
+      animation: patMsgSlideIn 0.26s var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1));
+    }
+
+    @keyframes patMsgSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    #pat-ai-widget-container .pat-msg-bot {
+      background: #18181B;
+      color: #F4F4F5;
+      border: 1px solid #27272A;
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    #pat-ai-widget-container .pat-msg-user {
+      background: linear-gradient(135deg, #4F46E5, #4338CA);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom-right-radius: 4px;
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.32);
+    }
+
+    /* Input Bar */
+    #pat-ai-widget-container #pat-ai-input-bar {
+      background: #121215;
+      border-top: 1px solid #27272A;
+      padding: 12px 14px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    #pat-ai-widget-container #pat-ai-input-text {
+      background: #1C1C21;
+      color: #FFFFFF;
+      border: 1px solid #2E2E36;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 13.5px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    #pat-ai-widget-container #pat-ai-input-text::placeholder {
+      color: #71717A;
+    }
+
+    #pat-ai-widget-container #pat-ai-input-text:focus {
+      background: #202027;
+      border-color: #6366F1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+
+    #pat-ai-widget-container #pat-ai-send-btn {
+      background: linear-gradient(135deg, #4F46E5, #6366F1);
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+      transition: transform 0.2s var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1)),
+                  box-shadow 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    #pat-ai-widget-container #pat-ai-send-btn:hover:not(:disabled) {
+      transform: scale(1.07);
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.55);
+    }
+
+    #pat-ai-widget-container #pat-ai-send-btn svg {
+      transition: transform 0.2s ease;
+    }
+
+    #pat-ai-widget-container #pat-ai-send-btn:hover:not(:disabled) svg {
+      transform: translate(1px, -1px);
+    }
+
+    @media (max-width: 480px) {
+      #pat-ai-widget-container {
+        bottom: 16px;
+        right: 16px;
+      }
+      #pat-ai-widget-container #pat-ai-chat-window {
+        right: 16px;
+        bottom: 84px;
+        width: calc(100vw - 32px);
+        height: min(520px, calc(100vh - 104px));
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #pat-ai-widget-container #pat-ai-widget-btn::before,
+      #pat-ai-widget-container .pat-status-dot,
+      #pat-ai-widget-container #pat-ai-chat-window,
+      #pat-ai-widget-container .pat-msg {
+        animation: none;
+      }
+      #pat-ai-widget-container #pat-ai-widget-btn,
+      #pat-ai-widget-container #pat-ai-close-btn,
+      #pat-ai-widget-container #pat-ai-send-btn {
+        transition: none;
+      }
+    }
+  </style>
+
+  <!-- Widget Trợ Lý AI Chatbot PAT TECH -->
+  <script src="https://patbot.dev/widget.js" data-biz-id="biz_1794066288440"></script>
 </body>
 </html>
