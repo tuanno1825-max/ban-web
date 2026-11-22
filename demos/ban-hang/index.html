@@ -3,665 +3,1524 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atelier Noir · Thời Trang Thiết Kế &amp; Lookbook Boutique</title>
-  <meta name="description" content="Bộ sưu tập thiết kế giới hạn bằng lụa tơ tằm và len mịn, gắn ghim mua trực tiếp trên Lookbook, đo size theo chiều cao cân nặng và đổi size miễn phí 7 ngày.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Atelier Noir · Thời Trang Thiết Kế &amp; Boutique">
-  <meta property="og:description" content="Trải nghiệm Lookbook chạm ghim đặt hàng nhanh, đo size thông minh và giỏ hàng đồng kiểm COD.">
-  <meta property="og:image" content="./image/hero-fashion.webp">
-  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <title>Atelier Noir | Virtual Showroom &amp; Thời Trang Thiết Kế 3D</title>
+  <meta name="description" content="Không gian trưng bày ảo Atelier Noir với giá treo tương tác 3D, xem cận cảnh từng chất liệu vải, gợi ý size thông minh và đặt hàng COD.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add('has-motion');</script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-ivory: #FAF8F4;
-      --bg-white: #FFFFFF;
-      --bg-stone: #ECE8E0;
-      --ink-black: #0E0E0E;
-      --ink-secondary: #4D4A45;
-      --ink-muted: #7C776F;
-      --border-sharp: #DDD8CE;
-      --border-dark: #0E0E0E;
-      --accent-camel: #8C6542;
-      --danger: #B91C1C;
-
-      --font-sans: 'Manrope', sans-serif;
+      --bg-gallery: #FFFFFF;
+      --bg-wall: #F5F5F2;
+      --bg-card: #FFFFFF;
+      --bg-ink: #111111;
+      --bg-ink-hover: #27272A;
+      --border-hairline: #E6E6E1;
+      --border-strong: #111111;
+      --text-primary: #111111;
+      --text-secondary: #5B5B56;
+      --text-muted: #8A8A83;
+      --accent-danger: #B91C1C;
+      --font-sans: 'Manrope', system-ui, sans-serif;
       --font-mono: 'Geist Mono', monospace;
-
-      --sp-0: 0px; --sp-50: 4px; --sp-75: 8px; --sp-100: 12px;
-      --sp-200: 16px; --sp-300: 24px; --sp-400: 32px; --sp-500: 40px; --sp-600: 48px;
-      --sp-700: 64px; --sp-800: 80px; --sp-900: 96px;
-
-      --r-xs: 2px; --r-sm: 4px;
-      --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-studio: cubic-bezier(0.22, 1, 0.36, 1);
+      --radius-xs: 4px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; background-color: var(--bg-ivory); color: var(--ink-black); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-    body { background-color: var(--bg-ivory); color: var(--ink-black); font-family: var(--font-sans); font-size: 16px; line-height: 24px; overflow-x: clip; }
-    img, svg { display: block; max-width: 100%; height: auto; }
-    button, input, select { font-family: inherit; color: inherit; }
-    a { color: inherit; text-decoration: none; }
-
-    .heading-1 { font-size: 56px; line-height: 58px; font-weight: 600; letter-spacing: -0.03em; text-wrap: balance; }
-    .heading-2 { font-size: 40px; line-height: 44px; font-weight: 600; letter-spacing: -0.025em; text-wrap: balance; }
-    .heading-3 { font-size: 32px; line-height: 38px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
-    .heading-5 { font-size: 20px; line-height: 28px; font-weight: 600; text-wrap: balance; }
-    .heading-6 { font-size: 18px; line-height: 26px; font-weight: 600; text-wrap: balance; }
-    .title-4 { font-size: 14px; line-height: 20px; font-weight: 500; }
-    .body-3 { font-size: 16px; line-height: 24px; font-weight: 400; text-wrap: pretty; }
-    .body-4 { font-size: 14px; line-height: 20px; font-weight: 600; text-wrap: pretty; }
-    .body-6 { font-size: 14px; line-height: 20px; font-weight: 400; text-wrap: pretty; }
-    .button-md { font-size: 15px; line-height: 22px; font-weight: 600; }
-    .button-sm { font-size: 13px; line-height: 18px; font-weight: 600; }
-    .caption-2 { font-size: 14px; line-height: 20px; font-weight: 400; }
-    .caption-3 { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
-    .caption-5 { font-size: 12px; line-height: 16px; font-weight: 400; }
-    .mono-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
-
-    @media (max-width: 767px) {
-      .heading-1 { font-size: 36px; line-height: 40px; }
-      .heading-2 { font-size: 28px; line-height: 34px; }
-      .heading-3 { font-size: 24px; line-height: 32px; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .skip-link { position: fixed; top: var(--sp-200); left: var(--sp-200); z-index: 200; padding: var(--sp-75) var(--sp-100); background: var(--ink-black); color: var(--bg-ivory); border-radius: var(--r-xs); transform: translateY(-160%); transition: transform 300ms var(--ease-out-expo); }
-    .skip-link:focus { transform: translateY(0); }
-    :focus-visible { outline: 2px solid var(--ink-black); outline-offset: 2px; }
-
-    .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 var(--sp-300); }
-    @media (max-width: 639px) { .container { padding: 0 var(--sp-200); } }
-    .section { padding: var(--sp-800) 0; }
-    .section-white { background-color: var(--bg-white); }
-    @media (max-width: 767px) { .section { padding: var(--sp-600) 0; } }
-    .hairline { width: 100%; height: 1px; background-color: var(--border-sharp); }
-    .section-head { max-width: 660px; display: flex; flex-direction: column; gap: var(--sp-100); margin-bottom: var(--sp-400); }
-    .section-head p { color: var(--ink-secondary); }
-
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-75); padding: var(--sp-100) var(--sp-200); border-radius: var(--r-xs); border: 1px solid transparent; cursor: pointer; white-space: nowrap; transition: background-color 250ms, border-color 250ms, color 250ms, transform 250ms; }
-    .btn:active { transform: scale(0.98); }
-    .btn-dark { background-color: var(--ink-black); color: var(--bg-ivory); }
-    .btn-dark:hover { background-color: var(--accent-camel); color: #FFFFFF; }
-    .btn-outline { background-color: transparent; color: var(--ink-black); border-color: var(--border-dark); }
-    .btn-outline:hover { background-color: var(--ink-black); color: var(--bg-ivory); }
-    .btn-sm { padding: var(--sp-75) var(--sp-100); }
-
-    /* Magazine Top Bar */
-    .boutique-header {
-      position: sticky; top: 0; z-index: 100; background-color: rgba(250, 248, 244, 0.94);
-      backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-sharp);
-    }
-    .header-inner {
-      max-width: 1320px; margin: 0 auto; padding: var(--sp-200) var(--sp-300);
-      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--sp-200);
-    }
-    @media (max-width: 639px) { .header-inner { padding: var(--sp-200); } }
-    .nav-left { display: flex; align-items: center; gap: var(--sp-300); color: var(--ink-secondary); }
-    .nav-left a:hover { color: var(--ink-black); }
-    .brand-wordmark { font-size: 18px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; }
-    .header-right { display: flex; align-items: center; justify-content: flex-end; gap: var(--sp-100); }
-    .menu-toggle { display: none; width: 38px; height: 38px; align-items: center; justify-content: center; border: 1px solid var(--border-sharp); background: var(--bg-white); border-radius: var(--r-xs); cursor: pointer; }
-    @media (max-width: 899px) {
-      .nav-left { display: none; }
-      .header-inner { grid-template-columns: auto 1fr auto; }
-      .brand-wordmark { text-align: left; font-size: 15px; }
-      .menu-toggle { display: inline-flex; }
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg-gallery);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
     }
 
-    .mobile-drawer { position: fixed; inset: 0; z-index: 95; background-color: var(--bg-ivory); display: flex; flex-direction: column; justify-content: space-between; padding: var(--sp-900) var(--sp-300) var(--sp-400); opacity: 0; pointer-events: none; transition: opacity 300ms var(--ease-out-expo); }
-    .mobile-drawer.is-open { opacity: 1; pointer-events: auto; }
-    .mobile-drawer-list { display: flex; flex-direction: column; gap: var(--sp-200); }
-
-    /* Editorial Triptych Cover Hero */
-    .cover-hero { padding: var(--sp-500) 0 var(--sp-700); border-bottom: 1px solid var(--border-sharp); }
-    .cover-grid { display: grid; grid-template-columns: 1fr 1.15fr 0.75fr; gap: var(--sp-300); align-items: end; }
-    .cover-copy { display: flex; flex-direction: column; gap: var(--sp-300); align-items: flex-start; padding-bottom: var(--sp-200); }
-    .cover-copy p { color: var(--ink-secondary); max-width: 400px; }
-    .cover-main-frame { border: 1px solid var(--border-sharp); border-radius: var(--r-sm); overflow: hidden; background: var(--bg-stone); }
-    .cover-main-frame img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform 900ms var(--ease-out-expo); }
-    .cover-side-frame { display: flex; flex-direction: column; gap: var(--sp-100); }
-    .cover-side-box { border: 1px solid var(--border-sharp); border-radius: var(--r-sm); overflow: hidden; background: var(--bg-stone); }
-    .cover-side-box img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
-    @media (max-width: 959px) {
-      .cover-grid { grid-template-columns: 1fr 1fr; }
-      .cover-copy { grid-column: span 2; }
-    }
-    @media (max-width: 599px) {
-      .cover-grid { grid-template-columns: 1fr; }
-      .cover-copy { grid-column: span 1; }
+    body {
+      background: var(--bg-gallery);
+      color: var(--text-primary);
+      line-height: 1.55;
+      overflow-x: clip;
     }
 
-    /* Shoppable Lookbook with Hotspots */
-    .lookbook-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: var(--sp-400); align-items: start; }
-    .lookbook-stage { position: relative; border: 1px solid var(--border-sharp); border-radius: var(--r-sm); overflow: hidden; background: var(--bg-stone); }
-    .lookbook-stage img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-    .hotspot-pin {
-      position: absolute; width: 32px; height: 32px; border-radius: 9999px; background-color: #FFFFFF; color: var(--ink-black);
-      border: 2px solid var(--ink-black); display: flex; align-items: center; justify-content: center; cursor: pointer;
-      transform: translate(-50%, -50%); transition: transform 250ms var(--ease-out-expo), background-color 250ms;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
-    .hotspot-pin:hover, .hotspot-pin.is-active { background-color: var(--ink-black); color: #FFFFFF; transform: translate(-50%, -50%) scale(1.12); }
-    .lookbook-panel { background-color: var(--bg-white); border: 1px solid var(--border-sharp); border-radius: var(--r-sm); padding: var(--sp-300); display: flex; flex-direction: column; gap: var(--sp-200); }
-    .look-switchers { display: flex; flex-wrap: wrap; gap: var(--sp-75); margin-bottom: var(--sp-300); }
-    .look-tab { padding: var(--sp-75) var(--sp-100); border: 1px solid var(--border-sharp); border-radius: var(--r-xs); background: var(--bg-white); cursor: pointer; }
-    .look-tab.is-active { background: var(--ink-black); color: var(--bg-ivory); border-color: var(--ink-black); }
-    @media (max-width: 899px) { .lookbook-grid { grid-template-columns: 1fr; } }
 
-    /* Product Catalog */
-    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-300); }
-    @media (max-width: 1023px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 599px) { .products-grid { grid-template-columns: 1fr; } }
-    .item-card { background: var(--bg-white); border: 1px solid var(--border-sharp); border-radius: var(--r-sm); display: flex; flex-direction: column; justify-content: space-between; }
-    .item-media { overflow: hidden; background: var(--bg-stone); border-bottom: 1px solid var(--border-sharp); }
-    .item-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 500ms var(--ease-out-expo); }
-    .item-card:hover .item-media img { transform: scale(1.03); }
-    .item-body { padding: var(--sp-200); display: flex; flex-direction: column; gap: var(--sp-200); }
-    .size-row { display: flex; align-items: center; gap: var(--sp-75); }
-    .size-chip { width: 32px; height: 32px; border: 1px solid var(--border-sharp); background: var(--bg-ivory); border-radius: var(--r-xs); cursor: pointer; font-size: 12px; font-weight: 600; }
-    .size-chip.is-active { background: var(--ink-black); color: var(--bg-ivory); border-color: var(--ink-black); }
+    button, input, select {
+      font-family: inherit;
+    }
 
-    /* Smart Size Guide Calculator */
-    .size-guide-box { background: var(--bg-white); border: 1px solid var(--border-sharp); border-radius: var(--r-sm); padding: var(--sp-400); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--sp-400); align-items: center; }
-    .range-input { width: 100%; accent-color: var(--ink-black); cursor: pointer; }
-    .size-output { background: var(--ink-black); color: var(--bg-ivory); padding: var(--sp-400); border-radius: var(--r-xs); display: flex; flex-direction: column; gap: var(--sp-100); }
-    @media (max-width: 899px) { .size-guide-box { grid-template-columns: 1fr; padding: var(--sp-300); } }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Studio Top Bar */
+    .studio-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      height: 68px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 0.9375rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-icon {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+    }
+
+    .header-sub {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      border-radius: var(--radius-xs);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background-color 0.2s var(--ease-studio), border-color 0.2s var(--ease-studio), color 0.2s var(--ease-studio), transform 0.2s var(--ease-studio);
+    }
+
+    .btn-dark {
+      background: var(--bg-ink);
+      color: #FFFFFF;
+    }
+
+    .btn-dark:hover {
+      background: var(--bg-ink-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border-color: var(--border-hairline);
+    }
+
+    .btn-light:hover {
+      border-color: var(--border-strong);
+    }
+
+    /* Interactive Virtual Stage */
+    .virtual-stage {
+      position: relative;
+      min-height: calc(100svh - 68px);
+      padding: 28px 24px 104px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-gallery);
+    }
+
+    /* View 1: 3D Hanging Rack */
+    .rack-view {
+      width: 100%;
+      max-width: 1280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: opacity 420ms var(--ease-studio), transform 460ms var(--ease-studio), visibility 420ms;
+    }
+
+    .rack-view.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      position: absolute;
+      transform: scale(0.96);
+    }
+
+    .rack-intro {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .rack-brand-hero {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      padding-bottom: 4px;
+    }
+
+    .rack-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-top: 6px;
+    }
+
+    .rack-viewport {
+      width: 100%;
+      position: relative;
+      padding: 20px 16px 20px;
+      overflow: hidden;
+    }
+
+    .rack-camera-track {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      transition: transform 680ms var(--ease-studio);
+    }
+
+    /* Horizontal matte black hanging bar threaded cleanly across top hook curves */
+    .rail-bar {
+      position: absolute;
+      top: 20px;
+      left: 3%;
+      right: 3%;
+      height: 4px;
+      border-radius: var(--radius-pill);
+      background: #18181B;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+      pointer-events: none;
+    }
+
+    .rail-end-cap {
+      position: absolute;
+      top: -4px;
+      width: 11px;
+      height: 12px;
+      border-radius: 3px;
+      background: #111111;
+    }
+
+    .rail-end-cap.left { left: -2px; }
+    .rail-end-cap.right { right: -2px; }
+
+    .rack-garments {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .garment-slot {
+      position: relative;
+      width: 210px;
+      margin: 0 -18px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      mix-blend-mode: multiply;
+      transform-origin: center top;
+      transition: transform 420ms var(--ease-studio), opacity 380ms var(--ease-studio), filter 380ms var(--ease-studio);
+    }
+
+    .garment-slot img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      filter: contrast(1.06) brightness(1.05);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .garment-shadow {
+      width: 64%;
+      height: 10px;
+      margin-top: 6px;
+      border-radius: 50%;
+      background: rgba(17, 17, 17, 0.08);
+      filter: blur(5px);
+      transition: transform 420ms var(--ease-studio), opacity 420ms var(--ease-studio);
+    }
+
+    .garment-slot.is-dimmed {
+      opacity: 0.24;
+      filter: grayscale(0.55);
+      transform: scale(0.92);
+    }
+
+    .garment-slot.is-hovered {
+      z-index: 25;
+      transform: translateY(-6px) scale(1.1);
+      opacity: 1;
+      filter: none;
+    }
+
+    .garment-slot.is-hovered .garment-shadow {
+      transform: scale(1.16);
+      opacity: 0.75;
+    }
+
+    .garment-slot.shift-left {
+      transform: translateX(-18px) scale(0.97);
+    }
+
+    .garment-slot.shift-right {
+      transform: translateX(18px) scale(0.97);
+    }
+
+    .rack-caption-bar {
+      margin-top: 10px;
+      min-height: 52px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .caption-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .caption-meta {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    /* View 2: Product Detail Close-Up View */
+    .detail-view {
+      width: 100%;
+      max-width: 1080px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      position: absolute;
+      transform: translateY(14px) scale(0.98);
+      transition: opacity 420ms var(--ease-studio), transform 460ms var(--ease-studio), visibility 420ms;
+    }
+
+    .detail-view.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      position: relative;
+      transform: translateY(0) scale(1);
+    }
+
+    .detail-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .detail-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .detail-visual-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 56px;
+      min-height: 460px;
+    }
+
+    .detail-visual-stage img {
+      max-height: 450px;
+      width: auto;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+      filter: contrast(1.03) brightness(1.02);
+    }
+
+    .arrow-circle {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hairline);
+      color: var(--text-primary);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+    }
+
+    .arrow-circle:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-ink);
+      color: #FFFFFF;
+    }
+
+    .arrow-circle.prev { left: 4px; }
+    .arrow-circle.next { right: 4px; }
+
+    .detail-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: 0 18px 40px rgba(17, 17, 17, 0.04);
+    }
+
+    .detail-code {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .detail-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .detail-price {
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .detail-desc {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+    }
+
+    .option-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .size-chips {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .size-chip {
+      height: 40px;
+      border-radius: var(--radius-xs);
+      border: 1px solid var(--border-hairline);
+      background: var(--bg-gallery);
+      font-weight: 700;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .size-chip.is-active {
+      background: var(--bg-ink);
+      border-color: var(--bg-ink);
+      color: #FFFFFF;
+    }
+
+    .qty-stepper {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-xs);
+      overflow: hidden;
+      width: fit-content;
+      background: var(--bg-gallery);
+    }
+
+    .stepper-btn {
+      width: 38px;
+      height: 38px;
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .stepper-btn:hover {
+      background: var(--border-hairline);
+    }
+
+    .stepper-val {
+      width: 44px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.9375rem;
+    }
+
+    /* Floating Bottom Pill Dock */
+    .bottom-dock {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 45;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-pill);
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 12px 32px rgba(17, 17, 17, 0.09);
+      max-width: calc(100vw - 24px);
+    }
+
+    .dock-pill {
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.22s var(--ease-studio), color 0.22s var(--ease-studio);
+    }
+
+    .dock-pill:hover {
+      color: var(--text-primary);
+    }
+
+    .dock-pill.is-active {
+      background: var(--bg-ink);
+      color: #FFFFFF;
+    }
+
+    /* Compact Showroom Footer */
+    .studio-footer {
+      border-top: 1px solid var(--border-hairline);
+      background: var(--bg-card);
+      padding: 28px 32px 104px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: inherit;
+      cursor: pointer;
+    }
+
+    .footer-link-btn:hover, .footer-links a:hover {
+      color: var(--text-primary);
+    }
 
     /* Slide Over Cart Drawer */
-    .drawer-backdrop { position: fixed; inset: 0; z-index: 160; background: rgba(14, 14, 14, 0.56); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 300ms var(--ease-out-expo), visibility 300ms var(--ease-out-expo); display: flex; justify-content: flex-end; }
-    .drawer-backdrop.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
-    .cart-drawer {
-      width: 100%; max-width: 440px; height: 100%; background: var(--bg-white); border-left: 1px solid var(--border-sharp);
-      display: flex; flex-direction: column; justify-content: space-between;
-      transform: translateX(100%); transition: transform 400ms var(--ease-out-expo);
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(17, 17, 17, 0.52);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 280ms var(--ease-studio), visibility 280ms var(--ease-studio);
+      display: flex;
+      justify-content: flex-end;
     }
-    .drawer-backdrop.is-open .cart-drawer { transform: translateX(0); }
-    .cart-head { padding: var(--sp-300); border-bottom: 1px solid var(--border-sharp); display: flex; justify-content: space-between; align-items: center; }
-    .cart-items { flex: 1; overflow-y: auto; padding: var(--sp-300); display: flex; flex-direction: column; gap: var(--sp-200); }
-    .cart-item-row { display: grid; grid-template-columns: 64px 1fr auto; gap: var(--sp-200); align-items: center; padding-bottom: var(--sp-200); border-bottom: 1px solid var(--border-sharp); }
-    .cart-item-row img { width: 64px; height: 80px; object-fit: cover; border-radius: var(--r-xs); }
-    .qty-controls { display: inline-flex; align-items: center; gap: var(--sp-75); margin-top: var(--sp-50); }
-    .qty-btn { width: 26px; height: 26px; border: 1px solid var(--border-sharp); background: var(--bg-ivory); cursor: pointer; }
-    .cart-foot { padding: var(--sp-300); border-top: 1px solid var(--border-sharp); background: var(--bg-ivory); display: flex; flex-direction: column; gap: var(--sp-200); }
 
-    .form-control { width: 100%; padding: var(--sp-100); border: 1px solid var(--border-sharp); border-radius: var(--r-xs); background: var(--bg-white); font-size: 14px; }
-    .form-control.is-invalid { border-color: var(--danger); }
-    .field-error { color: var(--danger); min-height: 16px; display: block; }
-    .order-msg { padding: var(--sp-100); border: 1px solid var(--border-dark); background: var(--bg-white); display: none; }
-    .order-msg.is-visible { display: block; }
+    .drawer-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
 
-    .site-footer { padding: var(--sp-600) 0; background-color: var(--bg-ivory); }
-    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-300); padding-top: var(--sp-400); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-300); color: var(--ink-secondary); }
-    .footer-link-btn { background: none; border: none; padding: var(--sp-50) 0; cursor: pointer; color: var(--ink-secondary); }
+    .cart-drawer {
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      background: var(--bg-card);
+      border-left: 1px solid var(--border-hairline);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translateX(100%);
+      transition: transform 360ms var(--ease-studio);
+    }
 
-    .modal-backdrop { position: fixed; inset: 0; z-index: 180; background: rgba(14, 14, 14, 0.56); display: none; align-items: center; justify-content: center; padding: var(--sp-200); }
-    .modal-backdrop.is-open { display: flex; }
-    .modal-box { width: 100%; max-width: 520px; background: var(--bg-white); border: 1px solid var(--border-sharp); border-radius: var(--r-sm); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .drawer-backdrop.is-open .cart-drawer {
+      transform: translateX(0);
+    }
 
-    .reveal-section { opacity: 0; transform: translateY(var(--sp-300)); transition: opacity 650ms var(--ease-out-expo), transform 650ms var(--ease-out-expo); }
-    .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
+    .cart-head {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-hairline);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-item-row {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .cart-item-row img {
+      width: 60px;
+      height: 78px;
+      object-fit: contain;
+      background: var(--bg-gallery);
+      border-radius: var(--radius-xs);
+    }
+
+    .cart-qty-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .cart-qty-btn {
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--border-hairline);
+      background: var(--bg-gallery);
+      border-radius: var(--radius-xs);
+      cursor: pointer;
+    }
+
+    .cart-foot {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border-hairline);
+      background: var(--bg-gallery);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 42px;
+      padding: 0 12px;
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-xs);
+      background: var(--bg-card);
+      font-size: 0.875rem;
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--border-strong);
+    }
+
+    .form-feedback {
+      padding: 12px;
+      border-radius: var(--radius-xs);
+      font-size: 0.8125rem;
+      display: none;
+    }
+
+    .form-feedback.is-error {
+      display: block;
+      background: #FEF2F2;
+      border: 1px solid var(--accent-danger);
+      color: var(--accent-danger);
+    }
+
+    .form-feedback.is-success {
+      display: block;
+      background: #ECFDF5;
+      border: 1px solid #065F46;
+      color: #065F46;
+    }
+
+    /* Size Guide Modal & Legal Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      background: rgba(17, 17, 17, 0.56);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 250ms var(--ease-studio), visibility 250ms var(--ease-studio);
+    }
+
+    .modal-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 520px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .range-input {
+      width: 100%;
+      accent-color: var(--bg-ink);
+      cursor: pointer;
+    }
+
+    .size-result-panel {
+      background: var(--bg-ink);
+      color: #FFFFFF;
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    @media (max-width: 960px) {
+      .studio-header {
+        padding: 0 16px;
+      }
+
+      .header-sub {
+        display: none;
+      }
+
+      .rack-viewport {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 24px 0;
+      }
+
+      .rack-camera-track {
+        width: max-content;
+        padding: 0 24px;
+        transform: none !important;
+      }
+
+      .rail-bar {
+        left: 16px;
+        right: 16px;
+      }
+
+      .garment-slot {
+        width: 168px;
+        margin: 0 2px;
+        scroll-snap-align: center;
+      }
+
+      .detail-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .detail-visual-stage {
+        min-height: 300px;
+        padding: 12px 44px;
+      }
+
+      .detail-visual-stage img {
+        max-height: 310px;
+      }
+
+      .detail-info-card {
+        padding: 22px;
+      }
+
+      .bottom-dock {
+        padding: 5px;
+      }
+
+      .dock-pill {
+        padding: 8px 13px;
+        font-size: 0.75rem;
+      }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .reveal-section { transition: none; opacity: 1; transform: none; }
-      .cart-drawer, .drawer-backdrop, .item-media img { transition: none; }
+      .rack-view,
+      .detail-view,
+      .rack-camera-track,
+      .garment-slot,
+      .garment-shadow,
+      .drawer-backdrop,
+      .cart-drawer,
+      .modal-backdrop,
+      .btn {
+        transition: none !important;
+      }
     }
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link button-sm">Chuyển đến nội dung chính</a>
+  <header class="studio-header">
+    <div class="header-left">
+      <a href="#top" class="brand-mark" id="brandHomeBtn">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4a2 2 0 0 1 2 2c0 1.2-1 1.7-2 2.4L3.5 14a1.5 1.5 0 0 0 .8 2.8h15.4a1.5 1.5 0 0 0 .8-2.8L12 8.4"></path>
+          </svg>
+        </span>
+        <span>ATELIER NOIR</span>
+      </a>
+      <span class="header-sub">VIRTUAL SHOWROOM · BỘ SƯU TẬP 2026</span>
+    </div>
 
-  <header class="boutique-header">
-    <div class="header-inner">
-      <nav class="nav-left caption-3" aria-label="Danh mục thời trang">
-        <a href="#lookbook">Lookbook</a>
-        <a href="#bo-suu-tap">Sản phẩm</a>
-        <a href="#do-size">Đo size</a>
-      </nav>
-      <a href="#top" class="brand-wordmark">ATELIER NOIR</a>
-      <div class="header-right">
-        <button type="button" class="btn btn-dark button-sm" id="openCartBtn">
-          <span>Túi đồ</span>
-          <span class="mono-num" id="cartCount">(0)</span>
-        </button>
-        <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Mở menu">
-          <svg width="18" height="18" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"><path d="M40 88H216"/><path d="M40 168H216"/></svg>
-        </button>
-      </div>
+    <div class="header-right">
+      <button type="button" class="btn btn-light" id="openSizeBtn">Đo size</button>
+      <button type="button" class="btn btn-dark" id="openCartBtn">
+        Túi đồ (<span id="cartCount">0</span>)
+      </button>
     </div>
   </header>
 
-  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-    <div class="mobile-drawer-list">
-      <a href="#lookbook" class="heading-3">Shoppable Lookbook</a>
-      <div class="hairline"></div>
-      <a href="#bo-suu-tap" class="heading-3">Sản phẩm may đo</a>
-      <div class="hairline"></div>
-      <a href="#do-size" class="heading-3">Đo size theo chiều cao</a>
-      <div class="hairline"></div>
-      <button type="button" class="btn btn-dark button-md" id="mobileCartBtn" style="margin-top: var(--sp-200);">Mở túi đồ</button>
-    </div>
-    <div class="caption-2" style="color: var(--ink-muted);">Atelier Noir Boutique · Đổi size miễn phí 7 ngày tận nhà</div>
-  </div>
+  <main id="top" class="virtual-stage">
+    <!-- View 1: 3D Hanging Rail -->
+    <section class="rack-view" id="rackView" aria-label="Giá treo sản phẩm tương tác 3D">
+      <div class="rack-intro">
+        <h1 class="rack-brand-hero">ATELIER NOIR</h1>
+        <p class="rack-tagline">Di chuột để soi chất liệu · Bấm chọn từng mẫu áo trên xà treo</p>
+      </div>
 
-  <main id="main-content">
-    <section class="cover-hero" id="top">
-      <div class="container">
-        <div class="cover-grid">
-          <div class="cover-copy">
-            <span class="caption-3" style="color: var(--accent-camel);">Bộ sưu tập Thu Đông</span>
-            <h1 class="heading-1">Đường cắt tối giản<br>chất liệu tơ tự nhiên</h1>
-            <p class="body-3">Dòng trang phục may đo giới hạn từ vải lụa tằm và len mịn, giữ phom đứng thanh thoát suốt cả ngày dài làm việc và dự tiệc tối.</p>
-            <a href="#lookbook" class="btn btn-dark button-md">Khám phá Lookbook</a>
+      <div class="rack-viewport" id="rackViewport">
+        <div class="rack-camera-track" id="rackCameraTrack">
+          <div class="rail-bar" aria-hidden="true">
+            <span class="rail-end-cap left"></span>
+            <span class="rail-end-cap right"></span>
           </div>
-          <div class="cover-main-frame">
-            <img src="./image/hero-fashion.webp" alt="Thiết kế áo blazer len và đầm lụa Atelier Noir">
-          </div>
-          <div class="cover-side-frame">
-            <div class="cover-side-box">
-              <img src="./image/lookbook-party.webp" alt="Trang phục dự tiệc tối Atelier Noir">
-            </div>
-            <span class="caption-5" style="color: var(--ink-muted);">Đổi size tận nhà trong 7 ngày · Đồng kiểm COD toàn quốc</span>
-          </div>
+          <div class="rack-garments" id="rackGarments"></div>
         </div>
+      </div>
+
+      <div class="rack-caption-bar" aria-live="polite">
+        <div class="caption-name" id="captionName">Chọn hoặc rê chuột lên áo trên xà treo</div>
+        <div class="caption-meta" id="captionMeta">6 thiết kế giới hạn mùa Thu Đông · Đổi size tận nhà trong 7 ngày</div>
       </div>
     </section>
 
-    <section class="section section-white reveal-section" id="lookbook">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="heading-3">Shoppable Lookbook · Chạm ghim trên ảnh để chọn món</h2>
-          <p class="body-3">Chuyển bối cảnh trang phục và bấm vào từng điểm đánh dấu trên ảnh để xem thông số chất liệu hoặc thêm nhanh vào túi đồ.</p>
-        </div>
-
-        <div class="look-switchers" role="tablist" aria-label="Chọn bối cảnh Lookbook">
-          <button type="button" class="look-tab button-sm is-active" data-look="office">Công sở tối giản</button>
-          <button type="button" class="look-tab button-sm" data-look="street">Dạo phố cuối tuần</button>
-          <button type="button" class="look-tab button-sm" data-look="party">Tiệc tối thanh lịch</button>
-        </div>
-
-        <div class="lookbook-grid">
-          <div class="lookbook-stage">
-            <img src="./image/lookbook-office.webp" alt="Lookbook trang phục công sở Atelier Noir" id="lookbookImg">
-            <button type="button" class="hotspot-pin is-active" id="pin1" style="top: 38%; left: 48%;" aria-label="Xem áo khoác trên ảnh">1</button>
-            <button type="button" class="hotspot-pin" id="pin2" style="top: 66%; left: 52%;" aria-label="Xem quần hoặc đầm trên ảnh">2</button>
-          </div>
-
-          <div class="lookbook-panel">
-            <span class="caption-3" style="color: var(--accent-camel);" id="pinTag">Điểm chạm 01</span>
-            <h3 class="heading-5" id="pinTitle">Áo khoác Blazer đen hai hàng khuy</h3>
-            <p class="body-6" id="pinDesc" style="color: var(--ink-secondary);">Dệt từ 100% len Merino nhẹ thoáng, cầu vai may lót mỏng giữ phom đứng tự nhiên không gây gò bó.</p>
-            <div class="hairline"></div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <strong class="heading-5 mono-num" id="pinPrice">2.650.000đ</strong>
-              <span class="caption-5" style="color: var(--ink-muted);">Còn size S · M · L</span>
-            </div>
-            <button type="button" class="btn btn-dark button-md" id="addFromPinBtn">Thêm món này vào túi</button>
-          </div>
-        </div>
+    <!-- View 2: Close-Up Detail Stage -->
+    <section class="detail-view" id="detailView" aria-label="Chi tiết sản phẩm đang chọn">
+      <div class="detail-top-bar">
+        <button type="button" class="btn btn-light" id="backToRackBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Quay lại giá treo
+        </button>
+        <span class="mono" id="detailIndexLabel" style="font-size: 0.75rem; color: var(--text-secondary);">MẪU 01 / 06</span>
       </div>
-    </section>
 
-    <section class="section reveal-section" id="bo-suu-tap">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="heading-3">Danh mục thiết kế giới hạn</h2>
-          <p class="body-3">Chọn kích cỡ phù hợp trước khi thêm vào túi đồ để kiểm tra đơn hàng ngay trên trang.</p>
+      <div class="detail-layout">
+        <div class="detail-visual-stage">
+          <button type="button" class="arrow-circle prev" id="prevGarmentBtn" aria-label="Xem mẫu trước">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <img id="detailImg" src="./image/rack-jacket-cobalt.jpg" alt="Chi tiết sản phẩm Atelier Noir" width="600" height="800">
+
+          <button type="button" class="arrow-circle next" id="nextGarmentBtn" aria-label="Xem mẫu tiếp theo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
-        <div class="products-grid" id="catalogGrid"></div>
-      </div>
-    </section>
 
-    <section class="section section-white reveal-section" id="do-size">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="heading-3">Đo size nhanh theo chiều cao và cân nặng</h2>
-          <p class="body-3">Kéo hai thông số cơ thể để nhận gợi ý kích cỡ chuẩn với bảng số đo may mặc của Atelier Noir.</p>
-        </div>
+        <div class="detail-info-card">
+          <span class="detail-code" id="detailCategoryLabel">OUTERWEAR · BỘ SƯU TẬP 2026</span>
+          <h2 class="detail-title" id="detailName">Áo Khoác Gió Kỹ Thuật Cobalt</h2>
+          <div class="detail-price" id="detailPrice">2.850.000 VNĐ</div>
+          <p class="detail-desc" id="detailDesc"></p>
 
-        <div class="size-guide-box">
-          <div style="display: flex; flex-direction: column; gap: var(--sp-300);">
-            <div style="display: flex; flex-direction: column; gap: var(--sp-75);">
-              <div style="display: flex; justify-content: space-between;"><label for="heightRange" class="title-4">Chiều cao</label><span class="body-4 mono-num" id="heightOut">162 cm</span></div>
-              <input type="range" id="heightRange" class="range-input" min="150" max="178" step="1" value="162">
-            </div>
-            <div style="display: flex; flex-direction: column; gap: var(--sp-75);">
-              <div style="display: flex; justify-content: space-between;"><label for="weightRange" class="title-4">Cân nặng</label><span class="body-4 mono-num" id="weightOut">51 kg</span></div>
-              <input type="range" id="weightRange" class="range-input" min="42" max="74" step="1" value="51">
+          <div>
+            <span class="option-label">Chọn kích cỡ vừa vặn</span>
+            <div class="size-chips" id="sizeChips">
+              <button type="button" class="size-chip" data-size="S">S</button>
+              <button type="button" class="size-chip is-active" data-size="M">M</button>
+              <button type="button" class="size-chip" data-size="L">L</button>
+              <button type="button" class="size-chip" data-size="XL">XL</button>
             </div>
           </div>
 
-          <div class="size-output">
-            <span class="caption-3" style="color: #C4BEB3;">Kích cỡ khuyên dùng</span>
-            <div class="heading-1 mono-num" id="recSizeOut">Size M</div>
-            <p class="body-6" id="recFitOut" style="color: #E2DDD4;">Phù hợp số đo ngực 84 đến 88 cm, eo 66 đến 70 cm. Miễn phí đổi size tại nhà trong 7 ngày nếu mặc chưa vừa ý.</p>
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div>
+              <span class="option-label">Số lượng</span>
+              <div class="qty-stepper">
+                <button type="button" class="stepper-btn" id="qtyMinusBtn" aria-label="Giảm số lượng">&minus;</button>
+                <span class="stepper-val" id="qtyValue">1</span>
+                <button type="button" class="stepper-btn" id="qtyPlusBtn" aria-label="Tăng số lượng">+</button>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-light" id="inlineSizeHelpBtn" style="height: 40px;">
+              Gợi ý chọn size theo số đo
+            </button>
           </div>
+
+          <button type="button" class="btn btn-dark" id="addToBagBtn" style="width: 100%; height: 48px; margin-top: 4px;">
+            Thêm vào túi đồ
+          </button>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="hairline"></div>
-      <div class="footer-inner">
-        <div class="caption-2" style="color: var(--ink-muted);">Atelier Noir · Bản demo giao diện thời trang của PAT TECH</div>
-        <div class="footer-links caption-2">
-          <button type="button" class="footer-link-btn" data-legal="privacy">Chính sách bảo mật</button>
-          <button type="button" class="footer-link-btn" data-legal="terms">Điều khoản sử dụng</button>
-          <a href="/" class="footer-link-btn">Quay lại trang chủ PAT TECH</a>
-        </div>
+  <!-- Floating Bottom Pill Dock -->
+  <nav class="bottom-dock" aria-label="Thanh chuyển danh mục giá treo">
+    <button type="button" class="dock-pill is-active" data-dock="all">Showroom</button>
+    <button type="button" class="dock-pill" data-dock="outerwear">Áo khoác</button>
+    <button type="button" class="dock-pill" data-dock="tailored">Công sở</button>
+    <button type="button" class="dock-pill" data-dock="size">Đo size</button>
+  </nav>
+
+  <footer class="studio-footer">
+    <div class="footer-inner">
+      <div>© 2026 Atelier Noir · Flagship Showroom 18 Đồng Khởi, Quận 1</div>
+      <div class="footer-links">
+        <button type="button" class="footer-link-btn" id="openLegalBtn">Chính sách đổi trả &amp; Vận chuyển COD</button>
+        <a href="/">Quay lại trang chủ PAT TECH</a>
       </div>
     </div>
   </footer>
 
-  <!-- Slide Over Cart Drawer -->
+  <!-- Slide-Over Cart Drawer -->
   <div class="drawer-backdrop" id="cartBackdrop" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
     <div class="cart-drawer">
       <div class="cart-head">
-        <h2 class="heading-5" id="cartTitle">Túi đồ của bạn</h2>
-        <button type="button" class="btn btn-outline button-sm" id="closeCartBtn">Đóng</button>
+        <strong id="cartTitle" style="font-size: 1rem;">Túi đồ của bạn</strong>
+        <button type="button" class="btn btn-light" id="closeCartBtn" style="padding: 6px 12px;">Đóng</button>
       </div>
-      <div class="cart-items" id="cartItemsContainer"></div>
+
+      <div class="cart-items" id="cartItems"></div>
+
       <form class="cart-foot" id="checkoutForm" novalidate>
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="body-4">Tạm tính đơn hàng</span>
-          <strong class="heading-5 mono-num" id="cartTotalOut">0đ</strong>
+        <div style="display: flex; align-items: baseline; justify-content: space-between;">
+          <span style="font-size: 0.875rem; color: var(--text-secondary);">Tạm tính đơn hàng</span>
+          <strong class="mono" id="cartTotalPrice" style="font-size: 1.125rem;">0 VNĐ</strong>
         </div>
-        <div>
-          <input type="text" id="custName" class="form-control" placeholder="Họ và tên người nhận" required>
-          <span class="caption-5 field-error" id="errCustName" role="alert"></span>
-        </div>
-        <div>
-          <input type="tel" id="custPhone" class="form-control" placeholder="Số điện thoại giao hàng (10 số)" required>
-          <span class="caption-5 field-error" id="errCustPhone" role="alert"></span>
-        </div>
-        <div class="order-msg caption-2" id="cartOrderMsg" role="status"></div>
-        <button type="submit" class="btn btn-dark button-md" style="width: 100%;">Đặt hàng thanh toán khi nhận (COD)</button>
+
+        <input class="form-input" id="custName" type="text" placeholder="Họ và tên người nhận" required>
+        <input class="form-input mono" id="custPhone" type="tel" inputmode="numeric" placeholder="Số điện thoại giao hàng (10 số)" required>
+        <input class="form-input" id="custAddress" type="text" placeholder="Địa chỉ nhận hàng (Tùy chọn)">
+
+        <button type="submit" class="btn btn-dark" style="width: 100%; height: 44px;">
+          Đặt hàng thanh toán khi nhận (COD)
+        </button>
+
+        <div class="form-feedback" id="checkoutFeedback" role="status" aria-live="polite"></div>
       </form>
     </div>
   </div>
 
-  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+  <!-- Smart Size Guide Modal -->
+  <div class="modal-backdrop" id="sizeModal" role="dialog" aria-modal="true" aria-labelledby="sizeTitle">
     <div class="modal-box">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2 class="heading-6" id="legalModalTitle">Thông tin</h2>
-        <button type="button" class="btn btn-outline button-sm" id="closeLegalBtn">Đóng</button>
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-hairline); padding-bottom: 12px;">
+        <h3 id="sizeTitle" style="font-size: 1.125rem; font-weight: 800;">Bảng gợi ý size theo số đo thực tế</h3>
+        <button type="button" class="btn btn-light" id="closeSizeBtn" style="padding: 6px 12px;">Đóng</button>
       </div>
-      <div class="hairline"></div>
-      <p class="body-6" id="legalModalBody" style="color: var(--ink-secondary);"></p>
+
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 6px;">
+          <span>Chiều cao (150 đến 185 cm)</span>
+          <strong class="mono" id="heightOut">168 cm</strong>
+        </div>
+        <input class="range-input" id="heightRange" type="range" min="150" max="185" value="168">
+      </div>
+
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 6px;">
+          <span>Cân nặng (42 đến 85 kg)</span>
+          <strong class="mono" id="weightOut">60 kg</strong>
+        </div>
+        <input class="range-input" id="weightRange" type="range" min="42" max="85" value="60">
+      </div>
+
+      <div class="size-result-panel">
+        <div>
+          <div class="mono" style="font-size: 0.75rem; opacity: 0.72;">KÍCH CỠ KHUYẾN NGHỊ</div>
+          <div id="recommendedFit" style="font-size: 0.875rem; margin-top: 2px;">Phom đứng tiêu chuẩn vừa vai</div>
+        </div>
+        <strong class="mono" id="recommendedSize" style="font-size: 2rem;">M</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Modal -->
+  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+    <div class="modal-box">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-hairline); padding-bottom: 12px;">
+        <h3 id="legalTitle" style="font-size: 1.125rem; font-weight: 800;">Chính sách đổi trả &amp; Vận chuyển COD</h3>
+        <button type="button" class="btn btn-light" id="closeLegalBtn" style="padding: 6px 12px;">Đóng</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: var(--text-secondary);">
+        <p>Khách hàng được đồng kiểm đường may, chất liệu vải và thử phom áo trực tiếp khi bưu tá giao hàng tận nơi trên toàn quốc.</p>
+        <p>Hỗ trợ đổi size miễn phí tận nhà trong vòng 7 ngày kể từ lúc nhận hàng với điều kiện sản phẩm còn nguyên tem mác giấy.</p>
+        <p>Thông tin tên và số điện thoại chỉ sử dụng cho mục đích xác nhận đơn đặt hàng COD tại Atelier Noir.</p>
+      </div>
     </div>
   </div>
 
   <script>
     (function () {
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const revealSections = document.querySelectorAll('.reveal-section');
-      if (reducedMotion || !('IntersectionObserver' in window)) { revealSections.forEach((el) => el.classList.add('is-visible')); }
-      else {
-        const obs = new IntersectionObserver((entries, o) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); o.unobserve(e.target); } }); }, { threshold: 0.1 });
-        revealSections.forEach((el) => obs.observe(el));
-      }
-
-      const menuToggle = document.getElementById('menuToggle');
-      const mobileDrawer = document.getElementById('mobileDrawer');
-      function setMenuOpen(open) {
-        menuToggle.setAttribute('aria-expanded', String(open));
-        mobileDrawer.setAttribute('aria-hidden', String(!open));
-        mobileDrawer.classList.toggle('is-open', open);
-      }
-      menuToggle.addEventListener('click', () => setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true'));
-      mobileDrawer.querySelectorAll('a').forEach((l) => l.addEventListener('click', () => setMenuOpen(false)));
-
-      const products = [
-        { id: 'blazer', name: 'Áo khoác Blazer đen hai hàng khuy', price: 2650000, img: './image/blazer-black.webp', desc: 'Len Merino dệt mịn đứng phom, lót lụa thoáng khí.' },
-        { id: 'dress', name: 'Đầm lụa tơ tằm cắt chéo thiên nhiên', price: 3290000, img: './image/dress-silk.webp', desc: 'Rũ mềm ôm nhẹ đường eo, phù hợp tiệc tối.' },
-        { id: 'pants', name: 'Quần âu ống suông xếp ly đôi', price: 1480000, img: './image/pants-wide.webp', desc: 'Vải tuyết mưa dày dặn ít nhăn suốt 8 tiếng.' },
-        { id: 'shirt', name: 'Áo sơ mi vải lanh Bỉ cổ trụ', price: 1320000, img: './image/shirt-linen.webp', desc: 'Sợi lanh thoáng mát xử lý làm mềm bề mặt.' },
-        { id: 'bag', name: 'Túi đeo vai da bê nguyên tấm', price: 3850000, img: './image/leather-bag.webp', desc: 'Khóa kim loại phay xước và dây đeo điều chỉnh độ dài.' },
-        { id: 'look', name: 'Set áo dệt kim và chân váy midi', price: 2420000, img: './image/lookbook-street.webp', desc: 'Phối sẵn cho cuối tuần dạo phố thanh lịch.' }
+      const catalog = [
+        {
+          id: 'cobalt-shell',
+          name: 'Áo Khoác Kỹ Thuật Cobalt Shell',
+          category: 'outerwear',
+          categoryLabel: 'OUTERWEAR · CHỐNG NƯỚC 3 LỚP',
+          price: 2850000,
+          hookOffset: -4,
+          img: './image/rack-jacket-cobalt.jpg',
+          desc: 'Chất liệu vải dù 3 lớp thoáng khí kết hợp đường ép seam chống thấm nhẹ, cổ mũ ôm gọn và khóa kéo ẩn đồng màu tối giản.'
+        },
+        {
+          id: 'terracotta-parka',
+          name: 'Áo Parka Kiến Trúc Terracotta',
+          category: 'outerwear',
+          categoryLabel: 'OUTERWEAR · BỘ SƯU TẬP ĐÔ THỊ',
+          price: 3450000,
+          hookOffset: -14,
+          img: './image/rack-coat-terracotta.jpg',
+          desc: 'Phom dáng hơi suông vai trễ từ chất liệu cotton pha nylon mịn lì, giữ ấm nhẹ nhàng cho những ngày giao mùa gió lạnh.'
+        },
+        {
+          id: 'sage-hooded',
+          name: 'Áo Khoác Dạ Mũ Trùm Sage Olive',
+          category: 'outerwear',
+          categoryLabel: 'OUTERWEAR · SỢI LEN DỆT MỊN',
+          price: 3150000,
+          hookOffset: -2,
+          img: './image/rack-parka-sage.jpg',
+          desc: 'Dệt từ lông cừu mịn nhẹ không xù bề mặt, phom đứng thanh lịch giúp dễ dàng phối cùng áo thun cổ tròn hoặc sơ mi công sở.'
+        },
+        {
+          id: 'ivory-trench',
+          name: 'Áo Khoác Dáng Dài Ivory Zip',
+          category: 'tailored',
+          categoryLabel: 'CÔNG SỞ CAO CẤP · DÁNG DÀI',
+          price: 4250000,
+          hookOffset: 10,
+          img: './image/rack-trench-ivory.jpg',
+          desc: 'Đường cắt chiết eo nhẹ làm nổi bật chiều cao kết hợp khóa kéo kim loại đen mờ tương phản trên nền vải dạ kem ngà tinh tế.'
+        },
+        {
+          id: 'navy-puffer',
+          name: 'Áo Phao Siêu Nhẹ Navy Charcoal',
+          category: 'outerwear',
+          categoryLabel: 'OUTERWEAR · GIỮ NHIỆT LÔNG VŨ',
+          price: 2950000,
+          hookOffset: 4,
+          img: './image/rack-puffer-navy.jpg',
+          desc: 'Thiết kế các đường chần ngang mỏng gọn tránh cồng kềnh, lõi lông vũ 80/20 nhẹ tênh cho những chuyến công tác vùng lạnh.'
+        },
+        {
+          id: 'onyx-blazer',
+          name: 'Blazer Len Dựng Phom Onyx Đen',
+          category: 'tailored',
+          categoryLabel: 'CÔNG SỞ CAO CẤP · MAY ĐO',
+          price: 3900000,
+          hookOffset: 2,
+          img: './image/rack-blazer-onyx.jpg',
+          desc: 'Dựng vai tự nhiên cùng ve áo bản vừa chuẩn mực trên nền vải wool twill đen tuyền, lót lụa tằm thoáng mát cả ngày.'
+        }
       ];
 
-      const lookData = {
-        office: {
-          img: './image/lookbook-office.webp',
-          alt: 'Lookbook công sở tối giản Atelier Noir',
-          pins: [
-            { id: 'blazer', top: '38%', left: '48%', title: 'Áo khoác Blazer đen hai hàng khuy', desc: 'Dệt từ 100% len Merino nhẹ thoáng, cầu vai may lót mỏng giữ phom đứng tự nhiên.', price: 2650000 },
-            { id: 'pants', top: '66%', left: '52%', title: 'Quần âu ống suông xếp ly đôi', desc: 'Cạp cao tôn dáng chân kết hợp nếp ly sâu thẳng tắp.', price: 1480000 }
-          ]
-        },
-        street: {
-          img: './image/lookbook-street.webp',
-          alt: 'Lookbook dạo phố cuối tuần Atelier Noir',
-          pins: [
-            { id: 'shirt', top: '42%', left: '46%', title: 'Áo sơ mi vải lanh Bỉ cổ trụ', desc: 'Sợi lanh tự nhiên thoáng mát cho những buổi cà phê cuối tuần.', price: 1320000 },
-            { id: 'bag', top: '60%', left: '62%', title: 'Túi đeo vai da bê nguyên tấm', desc: 'Phom hộp gọn gàng đựng vừa điện thoại và vật dụng thiết yếu.', price: 3850000 }
-          ]
-        },
-        party: {
-          img: './image/lookbook-party.webp',
-          alt: 'Lookbook tiệc tối Atelier Noir',
-          pins: [
-            { id: 'dress', top: '52%', left: '50%', title: 'Đầm lụa tơ tằm cắt chéo thiên nhiên', desc: 'Chất liệu lụa 19 momme bắt sáng dịu nhẹ dưới ánh đèn tiệc.', price: 3290000 },
-            { id: 'bag', top: '64%', left: '38%', title: 'Túi đeo vai da bê nguyên tấm', desc: 'Điểm nhấn tối giản đồng bộ cùng tông trang phục tiệc tối.', price: 3850000 }
-          ]
-        }
-      };
+      let activeDock = 'all';
+      let currentDetailIndex = 0;
+      let detailSize = 'M';
+      let detailQty = 1;
+      const cart = [];
 
-      let currentLook = 'office';
-      let currentPinIdx = 0;
+      const rackViewEl = document.getElementById('rackView');
+      const detailViewEl = document.getElementById('detailView');
+      const rackCameraTrackEl = document.getElementById('rackCameraTrack');
+      const rackGarmentsEl = document.getElementById('rackGarments');
+      const captionNameEl = document.getElementById('captionName');
+      const captionMetaEl = document.getElementById('captionMeta');
 
-      function renderLookPin() {
-        const look = lookData[currentLook];
-        const pin = look.pins[currentPinIdx];
-        document.getElementById('pin1').style.top = look.pins[0].top;
-        document.getElementById('pin1').style.left = look.pins[0].left;
-        document.getElementById('pin2').style.top = look.pins[1].top;
-        document.getElementById('pin2').style.left = look.pins[1].left;
-        document.getElementById('pin1').classList.toggle('is-active', currentPinIdx === 0);
-        document.getElementById('pin2').classList.toggle('is-active', currentPinIdx === 1);
-        document.getElementById('pinTag').textContent = `Điểm chạm 0${currentPinIdx + 1}`;
-        document.getElementById('pinTitle').textContent = pin.title;
-        document.getElementById('pinDesc').textContent = pin.desc;
-        document.getElementById('pinPrice').textContent = `${pin.price.toLocaleString('vi-VN')}đ`;
+      const detailIndexLabelEl = document.getElementById('detailIndexLabel');
+      const detailImgEl = document.getElementById('detailImg');
+      const detailCategoryLabelEl = document.getElementById('detailCategoryLabel');
+      const detailNameEl = document.getElementById('detailName');
+      const detailPriceEl = document.getElementById('detailPrice');
+      const detailDescEl = document.getElementById('detailDesc');
+      const qtyValueEl = document.getElementById('qtyValue');
+
+      const cartBackdropEl = document.getElementById('cartBackdrop');
+      const cartCountEl = document.getElementById('cartCount');
+      const cartItemsEl = document.getElementById('cartItems');
+      const cartTotalPriceEl = document.getElementById('cartTotalPrice');
+
+      function formatVnd(amount) {
+        return amount.toLocaleString('vi-VN') + ' VNĐ';
       }
 
-      document.querySelectorAll('.look-tab').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.look-tab').forEach((b) => b.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          currentLook = btn.dataset.look;
-          currentPinIdx = 0;
-          const img = document.getElementById('lookbookImg');
-          img.src = lookData[currentLook].img;
-          img.alt = lookData[currentLook].alt;
-          renderLookPin();
+      function renderRack() {
+        rackGarmentsEl.innerHTML = '';
+        catalog.forEach(function (item, idx) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'garment-slot';
+          btn.setAttribute('data-index', String(idx));
+          btn.setAttribute('data-category', item.category);
+          btn.setAttribute('aria-label', item.name + ' giá ' + formatVnd(item.price));
+          btn.style.marginTop = (item.hookOffset || 0) + 'px';
+          btn.innerHTML =
+            '<img src="' + item.img + '" alt="' + item.name + '" width="450" height="600">' +
+            '<span class="garment-shadow" aria-hidden="true"></span>';
+
+          btn.addEventListener('mouseenter', function () {
+            applyHoverPhysics(idx);
+          });
+          btn.addEventListener('focus', function () {
+            applyHoverPhysics(idx);
+          });
+          btn.addEventListener('click', function () {
+            openDetail(idx);
+          });
+
+          rackGarmentsEl.appendChild(btn);
+        });
+
+        rackGarmentsEl.addEventListener('mouseleave', clearHoverPhysics);
+      }
+
+      function applyHoverPhysics(hoveredIdx) {
+        const slots = rackGarmentsEl.querySelectorAll('.garment-slot');
+        slots.forEach(function (slot, idx) {
+          slot.classList.remove('is-hovered', 'shift-left', 'shift-right');
+          if (idx === hoveredIdx) {
+            slot.classList.add('is-hovered');
+          } else if (idx < hoveredIdx) {
+            slot.classList.add('shift-left');
+          } else {
+            slot.classList.add('shift-right');
+          }
+        });
+
+        const item = catalog[hoveredIdx];
+        captionNameEl.textContent = item.name;
+        captionMetaEl.textContent = formatVnd(item.price) + ' · Bấm để xem cận cảnh & chọn size';
+      }
+
+      function clearHoverPhysics() {
+        rackGarmentsEl.querySelectorAll('.garment-slot').forEach(function (slot) {
+          slot.classList.remove('is-hovered', 'shift-left', 'shift-right');
+        });
+        captionNameEl.textContent = 'Chọn hoặc rê chuột lên áo trên xà treo';
+        captionMetaEl.textContent = '6 thiết kế giới hạn mùa Thu Đông · Đổi size tận nhà trong 7 ngày';
+      }
+
+      function applyDockFilter(dockKey) {
+        activeDock = dockKey;
+        document.querySelectorAll('.dock-pill').forEach(function (pill) {
+          pill.classList.toggle('is-active', pill.getAttribute('data-dock') === dockKey);
+        });
+
+        // If viewing close-up detail, smoothly return to the rack when picking a filter
+        if (detailViewEl.classList.contains('is-active')) {
+          closeDetail();
+        }
+
+        const slots = rackGarmentsEl.querySelectorAll('.garment-slot');
+        slots.forEach(function (slot) {
+          const cat = slot.getAttribute('data-category');
+          const match = dockKey === 'all' || cat === dockKey;
+          slot.classList.toggle('is-dimmed', !match);
+        });
+
+        if (dockKey === 'outerwear') {
+          rackCameraTrackEl.style.transform = 'scale(1.1) translateX(6%)';
+          captionNameEl.textContent = 'Nhóm Áo Khoác Outerwear (4 mẫu)';
+          captionMetaEl.textContent = 'Thiết kế chống gió nước nhẹ & giữ nhiệt phom gọn';
+        } else if (dockKey === 'tailored') {
+          rackCameraTrackEl.style.transform = 'scale(1.12) translateX(-10%)';
+          captionNameEl.textContent = 'Nhóm Thiết Kế Công Sở Cao Cấp (2 mẫu)';
+          captionMetaEl.textContent = 'Đường cắt may đo dáng dài & Blazer len dựng vai';
+        } else {
+          rackCameraTrackEl.style.transform = 'scale(1) translateX(0)';
+          clearHoverPhysics();
+        }
+      }
+
+      function renderDetail() {
+        const item = catalog[currentDetailIndex];
+        detailIndexLabelEl.textContent = 'MẪU 0' + (currentDetailIndex + 1) + ' / 0' + catalog.length;
+        detailImgEl.src = item.img;
+        detailImgEl.alt = item.name;
+        detailCategoryLabelEl.textContent = item.categoryLabel;
+        detailNameEl.textContent = item.name;
+        detailPriceEl.textContent = formatVnd(item.price);
+        detailDescEl.textContent = item.desc;
+        qtyValueEl.textContent = String(detailQty);
+      }
+
+      function openDetail(index) {
+        currentDetailIndex = (index + catalog.length) % catalog.length;
+        detailQty = 1;
+        renderDetail();
+        rackViewEl.classList.add('is-hidden');
+        detailViewEl.classList.add('is-active');
+      }
+
+      function closeDetail() {
+        detailViewEl.classList.remove('is-active');
+        rackViewEl.classList.remove('is-hidden');
+      }
+
+      document.getElementById('backToRackBtn').addEventListener('click', closeDetail);
+      document.getElementById('brandHomeBtn').addEventListener('click', function (e) {
+        if (detailViewEl.classList.contains('is-active')) {
+          e.preventDefault();
+          closeDetail();
+        }
+      });
+
+      document.getElementById('prevGarmentBtn').addEventListener('click', function () {
+        openDetail(currentDetailIndex - 1);
+      });
+      document.getElementById('nextGarmentBtn').addEventListener('click', function () {
+        openDetail(currentDetailIndex + 1);
+      });
+
+      document.querySelectorAll('#sizeChips .size-chip').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          detailSize = chip.getAttribute('data-size');
+          document.querySelectorAll('#sizeChips .size-chip').forEach(function (c) {
+            c.classList.toggle('is-active', c === chip);
+          });
         });
       });
-      document.getElementById('pin1').addEventListener('click', () => { currentPinIdx = 0; renderLookPin(); });
-      document.getElementById('pin2').addEventListener('click', () => { currentPinIdx = 1; renderLookPin(); });
 
-      // Catalog Grid
-      const catalogGrid = document.getElementById('catalogGrid');
-      const selectedSizes = {};
-      products.forEach((p) => { selectedSizes[p.id] = 'M'; });
+      document.getElementById('qtyMinusBtn').addEventListener('click', function () {
+        if (detailQty > 1) {
+          detailQty -= 1;
+          qtyValueEl.textContent = String(detailQty);
+        }
+      });
+      document.getElementById('qtyPlusBtn').addEventListener('click', function () {
+        if (detailQty < 10) {
+          detailQty += 1;
+          qtyValueEl.textContent = String(detailQty);
+        }
+      });
 
-      function renderCatalog() {
-        catalogGrid.innerHTML = products.map((p) => `
-          <article class="item-card">
-            <div>
-              <div class="item-media"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
-              <div class="item-body">
-                <div>
-                  <h3 class="heading-6">${p.name}</h3>
-                  <p class="body-6" style="color: var(--ink-secondary); margin-top: var(--sp-50);">${p.desc}</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <strong class="body-4 mono-num">${p.price.toLocaleString('vi-VN')}đ</strong>
-                  <div class="size-row" data-prod-sizes="${p.id}">
-                    ${['S', 'M', 'L'].map((sz) => `<button type="button" class="size-chip ${sz === 'M' ? 'is-active' : ''}" data-size="${sz}">${sz}</button>`).join('')}
-                  </div>
-                </div>
-                <button type="button" class="btn btn-dark button-sm" data-add-cart="${p.id}" style="width: 100%;">Thêm vào túi đồ</button>
-              </div>
-            </div>
-          </article>
-        `).join('');
+      // Cart Drawer Management
+      function openCart() {
+        cartBackdropEl.classList.add('is-open');
       }
-      renderCatalog();
 
-      // Cart State
-      const cart = [];
-      const cartBackdrop = document.getElementById('cartBackdrop');
-      function openCart() { cartBackdrop.classList.add('is-open'); }
-      function closeCart() { cartBackdrop.classList.remove('is-open'); }
-
-      function addToCart(prodId, size) {
-        const prod = products.find((x) => x.id === prodId);
-        if (!prod) return;
-        const found = cart.find((c) => c.id === prodId && c.size === size);
-        if (found) found.qty += 1;
-        else cart.push({ id: prod.id, name: prod.name, price: prod.price, img: prod.img, size, qty: 1 });
-        renderCart();
-        openCart();
+      function closeCart() {
+        cartBackdropEl.classList.remove('is-open');
       }
 
       function renderCart() {
-        const count = cart.reduce((sum, i) => sum + i.qty, 0);
-        const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-        document.getElementById('cartCount').textContent = `(${count})`;
-        document.getElementById('cartTotalOut').textContent = `${total.toLocaleString('vi-VN')}đ`;
-        const wrap = document.getElementById('cartItemsContainer');
+        const totalCount = cart.reduce(function (sum, item) { return sum + item.qty; }, 0);
+        const totalVnd = cart.reduce(function (sum, item) { return sum + item.price * item.qty; }, 0);
+        cartCountEl.textContent = String(totalCount);
+        cartTotalPriceEl.textContent = formatVnd(totalVnd);
+
+        cartItemsEl.innerHTML = '';
         if (cart.length === 0) {
-          wrap.innerHTML = `<p class="body-6" style="color: var(--ink-muted);">Túi đồ hiện đang trống. Hãy chọn một thiết kế hoặc bấm ghim trên ảnh Lookbook để thêm sản phẩm.</p>`;
+          const empty = document.createElement('p');
+          empty.style.color = 'var(--text-secondary)';
+          empty.style.fontSize = '0.875rem';
+          empty.textContent = 'Túi đồ hiện đang trống. Hãy chọn một mẫu áo trên giá treo để thêm vào túi.';
+          cartItemsEl.appendChild(empty);
           return;
         }
-        wrap.innerHTML = cart.map((item, idx) => `
-          <div class="cart-item-row">
-            <img src="${item.img}" alt="${item.name}">
-            <div>
-              <div class="body-4">${item.name}</div>
-              <div class="caption-5" style="color: var(--ink-muted);">Size ${item.size} · ${item.price.toLocaleString('vi-VN')}đ</div>
-              <div class="qty-controls">
-                <button type="button" class="qty-btn" data-qty-idx="${idx}" data-delta="-1" aria-label="Giảm số lượng">&minus;</button>
-                <span class="caption-2 mono-num">${item.qty}</span>
-                <button type="button" class="qty-btn" data-qty-idx="${idx}" data-delta="1" aria-label="Tăng số lượng">+</button>
-              </div>
-            </div>
-            <button type="button" class="btn btn-outline button-sm" data-remove-idx="${idx}">Xóa</button>
-          </div>
-        `).join('');
+
+        cart.forEach(function (entry, idx) {
+          const row = document.createElement('div');
+          row.className = 'cart-item-row';
+          row.innerHTML =
+            '<img src="' + entry.img + '" alt="' + entry.name + '" width="60" height="78">' +
+            '<div>' +
+              '<div style="font-weight: 700; font-size: 0.875rem;">' + entry.name + '</div>' +
+              '<div class="mono" style="font-size: 0.75rem; color: var(--text-secondary);">Size ' + entry.size + ' · ' + formatVnd(entry.price) + '</div>' +
+              '<div class="cart-qty-row">' +
+                '<button type="button" class="cart-qty-btn dec" aria-label="Giảm">\u2212</button>' +
+                '<span class="mono" style="min-width: 22px; text-align: center; font-size: 0.875rem;">' + entry.qty + '</span>' +
+                '<button type="button" class="cart-qty-btn inc" aria-label="Tăng">+</button>' +
+              '</div>' +
+            '</div>' +
+            '<button type="button" class="btn btn-light del" style="padding: 6px 10px; font-size: 0.75rem;">Xóa</button>';
+
+          row.querySelector('.dec').addEventListener('click', function () {
+            if (entry.qty > 1) entry.qty -= 1;
+            else cart.splice(idx, 1);
+            renderCart();
+          });
+          row.querySelector('.inc').addEventListener('click', function () {
+            entry.qty += 1;
+            renderCart();
+          });
+          row.querySelector('.del').addEventListener('click', function () {
+            cart.splice(idx, 1);
+            renderCart();
+          });
+
+          cartItemsEl.appendChild(row);
+        });
       }
-      renderCart();
 
-      document.getElementById('addFromPinBtn').addEventListener('click', () => {
-        const pin = lookData[currentLook].pins[currentPinIdx];
-        addToCart(pin.id, 'M');
-      });
+      document.getElementById('addToBagBtn').addEventListener('click', function () {
+        const item = catalog[currentDetailIndex];
+        const existing = cart.find(function (c) {
+          return c.id === item.id && c.size === detailSize;
+        });
 
-      document.addEventListener('click', (e) => {
-        const sizeBtn = e.target.closest('.size-chip');
-        if (sizeBtn) {
-          const parent = sizeBtn.closest('[data-prod-sizes]');
-          parent.querySelectorAll('.size-chip').forEach((b) => b.classList.remove('is-active'));
-          sizeBtn.classList.add('is-active');
-          selectedSizes[parent.dataset.prodSizes] = sizeBtn.dataset.size;
-          return;
+        if (existing) {
+          existing.qty += detailQty;
+        } else {
+          cart.push({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            img: item.img,
+            size: detailSize,
+            qty: detailQty
+          });
         }
-        const addBtn = e.target.closest('[data-add-cart]');
-        if (addBtn) {
-          const id = addBtn.dataset.addCart;
-          addToCart(id, selectedSizes[id] || 'M');
-          return;
-        }
-        const qtyBtn = e.target.closest('[data-qty-idx]');
-        if (qtyBtn) {
-          const idx = parseInt(qtyBtn.dataset.qtyIdx, 10);
-          const delta = parseInt(qtyBtn.dataset.delta, 10);
-          cart[idx].qty += delta;
-          if (cart[idx].qty <= 0) cart.splice(idx, 1);
-          renderCart();
-          return;
-        }
-        const remBtn = e.target.closest('[data-remove-idx]');
-        if (remBtn) {
-          cart.splice(parseInt(remBtn.dataset.removeIdx, 10), 1);
-          renderCart();
-        }
+        renderCart();
+        openCart();
       });
 
       document.getElementById('openCartBtn').addEventListener('click', openCart);
-      document.getElementById('mobileCartBtn').addEventListener('click', () => { setMenuOpen(false); openCart(); });
       document.getElementById('closeCartBtn').addEventListener('click', closeCart);
-      cartBackdrop.addEventListener('click', (e) => { if (e.target === cartBackdrop) closeCart(); });
+      cartBackdropEl.addEventListener('click', function (e) {
+        if (e.target === cartBackdropEl) closeCart();
+      });
 
-      // Size Guide Calc
-      const heightRange = document.getElementById('heightRange');
-      const weightRange = document.getElementById('weightRange');
-      function updateSizeCalc() {
-        const h = parseInt(heightRange.value, 10);
-        const w = parseInt(weightRange.value, 10);
-        document.getElementById('heightOut').textContent = `${h} cm`;
-        document.getElementById('weightOut').textContent = `${w} kg`;
-        let sz = 'Size M';
-        let fit = 'Phù hợp số đo ngực 84 đến 88 cm, eo 66 đến 70 cm. Miễn phí đổi size tại nhà trong 7 ngày.';
-        if (w < 49 && h < 163) {
-          sz = 'Size S';
-          fit = 'Phù hợp số đo ngực 80 đến 84 cm, eo 62 đến 66 cm. Miễn phí đổi size tại nhà trong 7 ngày.';
-        } else if (w >= 57 || h >= 169) {
-          sz = 'Size L';
-          fit = 'Phù hợp số đo ngực 88 đến 93 cm, eo 70 đến 75 cm. Miễn phí đổi size tại nhà trong 7 ngày.';
-        }
-        document.getElementById('recSizeOut').textContent = sz;
-        document.getElementById('recFitOut').textContent = fit;
-      }
-      heightRange.addEventListener('input', updateSizeCalc);
-      weightRange.addEventListener('input', updateSizeCalc);
-
-      // Checkout Form Validation
+      // COD Checkout Form
       const checkoutForm = document.getElementById('checkoutForm');
-      checkoutForm.addEventListener('submit', (e) => {
+      const checkoutFeedback = document.getElementById('checkoutFeedback');
+
+      checkoutForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        const nameEl = document.getElementById('custName');
-        const phoneEl = document.getElementById('custPhone');
-        const errName = document.getElementById('errCustName');
-        const errPhone = document.getElementById('errCustPhone');
-        const msg = document.getElementById('cartOrderMsg');
-        errName.textContent = ''; errPhone.textContent = '';
-        nameEl.classList.remove('is-invalid'); phoneEl.classList.remove('is-invalid');
-        msg.classList.remove('is-visible');
-        const name = nameEl.value.trim();
-        const phone = phoneEl.value.trim().replace(/[\s.]/g, '');
-        let bad = false;
-        if (name.length < 2) { errName.textContent = 'Vui lòng nhập họ tên người nhận.'; nameEl.classList.add('is-invalid'); bad = true; }
-        if (!/^0\d{9}$/.test(phone)) { errPhone.textContent = 'Số điện thoại cần đủ 10 chữ số bắt đầu bằng số 0.'; phoneEl.classList.add('is-invalid'); bad = true; }
-        if (cart.length === 0) { msg.textContent = 'Túi đồ đang trống, hãy thêm ít nhất 1 sản phẩm.'; msg.classList.add('is-visible'); return; }
-        if (bad) return;
-        msg.textContent = `Đã tiếp nhận đơn COD trị giá ${document.getElementById('cartTotalOut').textContent} cho ${name}. Bộ phận đóng gói sẽ nhắn qua số ${phone}.`;
-        msg.classList.add('is-visible');
+        const name = document.getElementById('custName').value.trim();
+        const rawPhone = document.getElementById('custPhone').value.replace(/\s+/g, '');
+
+        if (cart.length === 0) {
+          checkoutFeedback.className = 'form-feedback is-error';
+          checkoutFeedback.textContent = 'Hãy thêm ít nhất 1 sản phẩm vào túi đồ trước khi đặt hàng.';
+          return;
+        }
+
+        if (!name) {
+          checkoutFeedback.className = 'form-feedback is-error';
+          checkoutFeedback.textContent = 'Vui lòng nhập họ tên người nhận để xuất phiếu giao COD.';
+          return;
+        }
+
+        if (!/^0\d{9}$/.test(rawPhone)) {
+          checkoutFeedback.className = 'form-feedback is-error';
+          checkoutFeedback.textContent = 'Số điện thoại giao hàng cần đúng 10 chữ số bắt đầu bằng số 0.';
+          return;
+        }
+
+        const orderCode = 'AN' + Math.floor(1000 + Math.random() * 9000);
+        const total = cartTotalPriceEl.textContent;
+        checkoutFeedback.className = 'form-feedback is-success';
+        checkoutFeedback.textContent =
+          'Đơn hàng COD mã ' + orderCode + ' cho ' + name + ' (' + total + ') đã được ghi nhận. Tổng đài sẽ gọi xác nhận tới số ' + rawPhone + '.';
+        cart.length = 0;
+        renderCart();
+        checkoutForm.reset();
+      });
+
+      // Dock Actions & Size Guide Modal
+      const sizeModalEl = document.getElementById('sizeModal');
+      const heightRangeEl = document.getElementById('heightRange');
+      const weightRangeEl = document.getElementById('weightRange');
+      const heightOutEl = document.getElementById('heightOut');
+      const weightOutEl = document.getElementById('weightOut');
+      const recommendedSizeEl = document.getElementById('recommendedSize');
+      const recommendedFitEl = document.getElementById('recommendedFit');
+
+      function updateSizeCalc() {
+        const h = parseInt(heightRangeEl.value, 10);
+        const w = parseInt(weightRangeEl.value, 10);
+        heightOutEl.textContent = h + ' cm';
+        weightOutEl.textContent = w + ' kg';
+
+        let size = 'M';
+        let fit = 'Phom đứng tiêu chuẩn vừa vai';
+        if (w < 53 && h < 164) {
+          size = 'S';
+          fit = 'Phom gọn thanh mảnh, tôn vai';
+        } else if (w >= 74 || h >= 178) {
+          size = 'XL';
+          fit = 'Phom rộng thoải mái khi khoác lớp ngoài';
+        } else if (w >= 65 || h >= 172) {
+          size = 'L';
+          fit = 'Phom vừa vặn cân đối phần thân trên';
+        }
+
+        recommendedSizeEl.textContent = size;
+        recommendedFitEl.textContent = fit;
+      }
+
+      heightRangeEl.addEventListener('input', updateSizeCalc);
+      weightRangeEl.addEventListener('input', updateSizeCalc);
+
+      function openSizeModal() {
+        sizeModalEl.classList.add('is-open');
+      }
+
+      document.getElementById('openSizeBtn').addEventListener('click', openSizeModal);
+      document.getElementById('inlineSizeHelpBtn').addEventListener('click', openSizeModal);
+      document.getElementById('closeSizeBtn').addEventListener('click', function () {
+        sizeModalEl.classList.remove('is-open');
+      });
+      sizeModalEl.addEventListener('click', function (e) {
+        if (e.target === sizeModalEl) sizeModalEl.classList.remove('is-open');
+      });
+
+      document.querySelectorAll('.dock-pill').forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          const target = pill.getAttribute('data-dock');
+          if (target === 'size') {
+            openSizeModal();
+            return;
+          }
+          applyDockFilter(target);
+        });
       });
 
       // Legal Modal
-      const legalModal = document.getElementById('legalModal');
-      const closeLegalBtn = document.getElementById('closeLegalBtn');
-      const legalText = {
-        privacy: 'Thông tin đặt đơn COD trên bản mẫu Atelier Noir được dùng để minh họa quy trình giỏ hàng nhanh.',
-        terms: 'Chính sách đổi size tận nhà trong 7 ngày áp dụng với sản phẩm còn nguyên tem mác.'
-      };
-      function closeLegal() { legalModal.classList.remove('is-open'); }
-      document.querySelectorAll('[data-legal]').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          document.getElementById('legalModalTitle').textContent = btn.dataset.legal === 'privacy' ? 'Chính sách bảo mật' : 'Điều khoản sử dụng';
-          document.getElementById('legalModalBody').textContent = legalText[btn.dataset.legal];
-          legalModal.classList.add('is-open');
-        });
+      const legalModalEl = document.getElementById('legalModal');
+      document.getElementById('openLegalBtn').addEventListener('click', function () {
+        legalModalEl.classList.add('is-open');
       });
-      closeLegalBtn.addEventListener('click', closeLegal);
-      legalModal.addEventListener('click', (e) => { if (e.target === legalModal) closeLegal(); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeCart(); closeLegal(); setMenuOpen(false); } });
+      document.getElementById('closeLegalBtn').addEventListener('click', function () {
+        legalModalEl.classList.remove('is-open');
+      });
+      legalModalEl.addEventListener('click', function (e) {
+        if (e.target === legalModalEl) legalModalEl.classList.remove('is-open');
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeCart();
+          sizeModalEl.classList.remove('is-open');
+          legalModalEl.classList.remove('is-open');
+        } else if (detailViewEl.classList.contains('is-active')) {
+          if (e.key === 'ArrowLeft') openDetail(currentDetailIndex - 1);
+          if (e.key === 'ArrowRight') openDetail(currentDetailIndex + 1);
+        }
+      });
+
+      renderRack();
+      renderCart();
+      updateSizeCalc();
     })();
   </script>
 </body>
