@@ -3,1528 +3,906 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUMIÈRE AESTHETIC &amp; SPA - Viện Thẩm Mỹ &amp; Spa Công Nghệ Cao 5 Sao</title>
-  <meta name="description" content="Lumière Aesthetic & Spa - Trẻ hóa da đa tầng, tắm trắng phi thuyền sinh học, triệt lông Diode Laser & phun xăm thẩm mỹ tự nhiên. Đặt lịch VIP ưu đãi 30%.">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <title>Lumière Aesthetic · Viện Thẩm Mỹ & Spa Công Nghệ Cao</title>
+  <meta name="description" content="Không gian trị liệu da chuyên sâu với phòng VIP tách biệt, liệu trình cá nhân hóa và bảng giá niêm yết rõ ràng tại Lumière Aesthetic.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lumière Aesthetic · Viện Thẩm Mỹ & Spa Công Nghệ Cao">
+  <meta property="og:description" content="Đặt lịch liệu trình chăm sóc da, Diode Laser và phòng VIP riêng tư cùng chuyên viên thẩm mỹ.">
+  <meta property="og:image" content="./image/hero-cinematic.png">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('has-motion');</script>
   <style>
     :root {
-      --bg-ivory: #FBF8F5;
-      --bg-surface: #FFFFFF;
-      --bg-blush: #F4ECE6;
-      --bg-champagne: #EFE3D5;
-      --rose-gold: #B76E79;
-      --rose-deep: #964E59;
-      --champagne-gold: #C69C6D;
-      --gold-dark: #8C6438;
-      --text-main: #23191B;
-      --text-body: #4F3E42;
-      --text-muted: #7C686C;
-      --border: #E8DCD3;
-      --shadow-sm: 0 6px 20px rgba(35, 25, 27, 0.05);
-      --shadow-md: 0 20px 44px -14px rgba(150, 78, 89, 0.16);
-      --radius: 20px;
+      --bg-base: #FFFFFF;
+      --bg-stone: #F7F6F3;
+      --bg-elevated: #EFECE6;
+      --ink-primary: #111111;
+      --ink-secondary: #525252;
+      --ink-muted: #737373;
+      --border-hairline: #E5E2DC;
+      --border-strong: #C9C3B8;
+      --accent: #8F5A63;
+      --accent-hover: #75464E;
+      --danger: #B91C1C;
+
+      --font-sans: 'Manrope', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --sp-0: 0px;
+      --sp-25: 2px;
+      --sp-50: 4px;
+      --sp-75: 8px;
+      --sp-100: 12px;
+      --sp-200: 16px;
+      --sp-300: 24px;
+      --sp-400: 32px;
+      --sp-500: 40px;
+      --sp-600: 48px;
+      --sp-700: 64px;
+      --sp-800: 80px;
+      --sp-900: 96px;
+
+      --r-sm: 4px;
+      --r-md: 8px;
+      --r-lg: 12px;
+      --r-xl: 16px;
+      --r-2xl: 24px;
+      --r-full: 9999px;
+
+      --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html {
       scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-ivory);
-      color: var(--text-main);
-      line-height: 1.65;
-      overflow-x: hidden;
+      background-color: var(--bg-base);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body {
+      background-color: var(--bg-base);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 24px;
+      overflow-x: clip;
+    }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    button, input, select, textarea { font-family: inherit; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Named Typography System */
+    .heading-1 { font-size: 60px; line-height: 60px; font-weight: 600; letter-spacing: -0.025em; text-wrap: balance; }
+    .heading-2 { font-size: 48px; line-height: 48px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+    .heading-3 { font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+    .heading-4 { font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.015em; text-wrap: balance; }
+    .heading-5 { font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+    .heading-6 { font-size: 20px; line-height: 28px; font-weight: 600; text-wrap: balance; }
+
+    .title-2 { font-size: 18px; line-height: 28px; font-weight: 500; }
+    .title-3 { font-size: 16px; line-height: 24px; font-weight: 500; }
+    .title-4 { font-size: 14px; line-height: 20px; font-weight: 500; }
+
+    .body-3 { font-size: 16px; line-height: 24px; font-weight: 400; text-wrap: pretty; }
+    .body-4 { font-size: 14px; line-height: 20px; font-weight: 600; text-wrap: pretty; }
+    .body-6 { font-size: 14px; line-height: 20px; font-weight: 400; text-wrap: pretty; }
+
+    .button-md { font-size: 16px; line-height: 24px; font-weight: 600; }
+    .button-sm { font-size: 14px; line-height: 20px; font-weight: 600; }
+
+    .caption-2 { font-size: 14px; line-height: 20px; font-weight: 400; }
+    .caption-3 { font-size: 12px; line-height: 16px; font-weight: 600; }
+    .caption-5 { font-size: 12px; line-height: 16px; font-weight: 400; }
+
+    .mono-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+    @media (max-width: 767px) {
+      .heading-1 { font-size: 36px; line-height: 40px; }
+      .heading-2 { font-size: 30px; line-height: 36px; }
+      .heading-3 { font-size: 24px; line-height: 32px; }
+      .heading-4 { font-size: 24px; line-height: 32px; }
     }
 
-    h1, h2, h3, .font-serif {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      letter-spacing: -0.01em;
+    .skip-link {
+      position: fixed; top: var(--sp-200); left: var(--sp-200); z-index: 200;
+      padding: var(--sp-75) var(--sp-100); background: var(--ink-primary); color: var(--bg-base);
+      border-radius: var(--r-md); transform: translateY(-160%); transition: transform 300ms var(--ease-out-expo);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 var(--sp-300); }
+    @media (max-width: 639px) { .container { padding: 0 var(--sp-200); } }
+
+    .section { padding: var(--sp-800) 0; }
+    .section-stone { background-color: var(--bg-stone); }
+    @media (max-width: 767px) { .section { padding: var(--sp-600) 0; } }
+    .hairline { width: 100%; height: 1px; background-color: var(--border-hairline); }
+
+    .section-head { max-width: 680px; display: flex; flex-direction: column; gap: var(--sp-100); margin-bottom: var(--sp-500); }
+    .section-head p { color: var(--ink-secondary); }
+
+    /* Buttons (B2: 8px 12px padding) */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-75);
+      padding: var(--sp-75) var(--sp-100); border-radius: var(--r-md); border: 1px solid transparent;
+      cursor: pointer; white-space: nowrap;
+      transition: background-color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo), color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo);
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background-color: var(--ink-primary); color: var(--bg-base); }
+    .btn-primary:hover { background-color: var(--accent); }
+    .btn-outline { background-color: var(--bg-base); color: var(--ink-primary); border-color: var(--border-hairline); }
+    .btn-outline:hover { background-color: var(--bg-stone); border-color: var(--border-strong); }
+    .btn[disabled] { opacity: 0.6; cursor: not-allowed; }
+    .btn-hero-pill svg, .btn svg { transition: transform 300ms var(--ease-out-expo); }
+    .btn-hero-pill:hover svg, .btn:hover svg { transform: translateX(4px); }
+
+    /* Transparent Hero Header morphing on scroll */
+    .nav-shell {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--sp-200) 0;
+      background-color: transparent; border-bottom: 1px solid transparent;
+      transition: background-color 400ms var(--ease-out-expo), border-color 400ms var(--ease-out-expo), backdrop-filter 400ms var(--ease-out-expo), opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo);
+    }
+    .nav-shell.is-scrolled {
+      background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: var(--border-hairline);
+    }
+    .floating-nav {
+      width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 var(--sp-300);
+      display: flex; align-items: center; justify-content: space-between; gap: var(--sp-300);
+    }
+    @media (max-width: 639px) { .floating-nav { padding: 0 var(--sp-200); } }
+    .brand-link { display: inline-flex; align-items: center; gap: var(--sp-75); color: #FFFFFF; transition: color 300ms var(--ease-out-expo); }
+    .nav-shell.is-scrolled .brand-link { color: var(--ink-primary); }
+    .nav-links { display: flex; align-items: center; gap: var(--sp-200); }
+    .nav-link { padding: var(--sp-50) var(--sp-75); border-radius: var(--r-md); color: rgba(255, 255, 255, 0.78); transition: color 300ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo); }
+    .nav-link:hover, .nav-link.is-active { color: #FFFFFF; background-color: rgba(255, 255, 255, 0.12); }
+    .nav-shell.is-scrolled .nav-link { color: var(--ink-secondary); }
+    .nav-shell.is-scrolled .nav-link:hover, .nav-shell.is-scrolled .nav-link.is-active { color: var(--ink-primary); background-color: var(--bg-stone); }
+    .nav-cta-desktop {
+      display: inline-flex; border-radius: var(--r-full); padding: var(--sp-75) var(--sp-200);
+      background-color: #FFFFFF; color: #111111;
+    }
+    .nav-cta-desktop:hover { background-color: #EFECE6; color: #111111; }
+    .nav-shell.is-scrolled .nav-cta-desktop { background-color: var(--ink-primary); color: var(--bg-base); }
+    .nav-shell.is-scrolled .nav-cta-desktop:hover { background-color: var(--accent); color: var(--bg-base); }
+
+    .menu-toggle {
+      display: none; width: 40px; height: 40px; align-items: center; justify-content: center;
+      background-color: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: var(--r-full); cursor: pointer;
+      transition: background-color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo);
+    }
+    .nav-shell.is-scrolled .menu-toggle { background-color: var(--bg-stone); border-color: var(--border-hairline); }
+    .menu-lines { width: 18px; height: 12px; position: relative; }
+    .menu-lines span { position: absolute; left: 0; width: 18px; height: 1.5px; background-color: #FFFFFF; transition: transform 500ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo); }
+    .nav-shell.is-scrolled .menu-lines span { background-color: var(--ink-primary); }
+    .menu-lines span:first-child { top: 2px; }
+    .menu-lines span:last-child { top: 8px; }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:first-child { transform: translateY(3px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:last-child { transform: translateY(-3px) rotate(-45deg); }
+    @media (max-width: 899px) {
+      .nav-links, .nav-cta-desktop { display: none; }
+      .menu-toggle { display: inline-flex; }
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 0 22px;
-    }
-
-    /* Top Announcement Strip */
-    .top-promo-bar {
-      background: linear-gradient(90deg, #23191B 0%, #4A2930 50%, #23191B 100%);
-      color: #F7EAE0;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-align: center;
-      padding: 8px 16px;
-      letter-spacing: 0.03em;
-    }
-    .top-promo-bar span {
-      color: #F3C6AE;
-      font-weight: 700;
-    }
-
-    /* Header */
-    .spa-header {
-      position: sticky;
-      top: 0;
-      z-index: 90;
-      background: rgba(251, 248, 245, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 74px;
-      gap: 16px;
-    }
-
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--rose-gold), var(--champagne-gold));
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      box-shadow: 0 6px 16px rgba(183, 110, 121, 0.3);
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .brand-name strong {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--text-main);
-    }
-
-    .brand-name small {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--rose-deep);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-body);
-      transition: color 0.2s;
-      white-space: nowrap;
-    }
-
-    .nav-links a:hover {
-      color: var(--rose-deep);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      color: var(--text-main);
-    }
-
+    /* Mobile Drawer */
     .mobile-drawer {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      padding: 14px 22px 18px;
-      border-top: 1px solid var(--border);
-      background: var(--bg-surface);
+      position: fixed; inset: 0; z-index: 95; background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      display: flex; flex-direction: column; justify-content: space-between;
+      padding: var(--sp-900) var(--sp-300) var(--sp-400);
+      opacity: 0; pointer-events: none; transition: opacity 400ms var(--ease-out-expo);
     }
+    .mobile-drawer.is-open { opacity: 1; pointer-events: auto; }
+    .mobile-drawer-list { display: flex; flex-direction: column; gap: var(--sp-200); }
+    .mobile-drawer-item { opacity: 0; transform: translateY(var(--sp-300)); transition: transform 500ms var(--ease-out-expo), opacity 500ms var(--ease-out-expo); }
+    .mobile-drawer.is-open .mobile-drawer-item { opacity: 1; transform: translateY(0); }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(1) { transition-delay: 60ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(2) { transition-delay: 120ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(3) { transition-delay: 180ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(4) { transition-delay: 240ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(5) { transition-delay: 300ms; }
+    .mobile-drawer-link { display: flex; justify-content: space-between; padding: var(--sp-100) 0; color: var(--ink-primary); }
 
-    .mobile-drawer.open {
-      display: flex;
+    /* Full-bleed 100svh Cinematic Hero */
+    .hero { position: relative; min-height: 100svh; background-color: #161314; display: flex; flex-direction: column; overflow: hidden; }
+    .hero-bg-parallax { position: absolute; inset: 0; will-change: transform; }
+    .hero-bg-img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center;
+      transition: transform 1200ms var(--ease-out-expo);
     }
-
-    .mobile-drawer a {
-      padding: 8px 0;
-      font-weight: 600;
-      color: var(--text-main);
-      border-bottom: 1px dashed var(--border);
-    }
-
-    /* Buttons */
-    .btn-spa {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.25s ease;
-    }
-
-    .btn-rose {
-      background: linear-gradient(135deg, var(--rose-gold) 0%, var(--rose-deep) 100%);
-      color: #fff;
-      box-shadow: 0 10px 24px -6px rgba(150, 78, 89, 0.42);
-    }
-
-    .btn-rose:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px -6px rgba(150, 78, 89, 0.55);
-    }
-
-    .btn-ivory {
-      background: var(--bg-surface);
-      color: var(--text-main);
-      border-color: var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-ivory:hover {
-      border-color: var(--rose-gold);
-      color: var(--rose-deep);
-    }
-
-    .btn-sm {
-      padding: 9px 18px;
-      font-size: 0.84rem;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      padding: 52px 0 64px;
+    .has-motion:not(.is-hero-ready) .hero-bg-img { transform: scale(1.07); }
+    .has-motion.is-hero-ready .hero-bg-img { transform: scale(1); }
+    .hero-scrim {
+      position: absolute; inset: 0; pointer-events: none;
       background:
-        radial-gradient(circle at 12% 18%, rgba(183, 110, 121, 0.1) 0%, transparent 45%),
-        radial-gradient(circle at 88% 80%, rgba(198, 156, 109, 0.12) 0%, transparent 45%);
-      overflow-x: clip;
+        linear-gradient(90deg, rgba(16, 13, 14, 0.78) 0%, rgba(16, 13, 14, 0.4) 48%, rgba(16, 13, 14, 0.08) 100%),
+        linear-gradient(180deg, rgba(16, 13, 14, 0.45) 0%, rgba(16, 13, 14, 0) 24%, rgba(16, 13, 14, 0) 70%, rgba(16, 13, 14, 0.62) 100%);
+    }
+    .hero-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding-top: var(--sp-900); padding-bottom: var(--sp-400); }
+    .hero-copy { max-width: 680px; margin: auto 0; padding: var(--sp-500) 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-300); }
+    .hero-title { padding-top: var(--sp-50); padding-bottom: var(--sp-75); color: #FFFFFF; }
+    .hero-sub { max-width: 520px; color: rgba(255, 255, 255, 0.84); }
+    .btn-hero-pill {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-75);
+      padding: var(--sp-75) var(--sp-200); border-radius: var(--r-full);
+      background-color: #FFFFFF; color: #111111; border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+      transition: background-color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo);
+    }
+    .btn-hero-pill:hover { background-color: #EFECE6; }
+    .btn-hero-pill:active { transform: scale(0.98); }
+    .hero-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-200); color: rgba(255, 255, 255, 0.74); }
+    @media (max-width: 767px) {
+      .hero-bg-img { object-position: 74% center; }
+      .hero-scrim {
+        background:
+          linear-gradient(90deg, rgba(16, 13, 14, 0.82) 0%, rgba(16, 13, 14, 0.48) 100%),
+          linear-gradient(180deg, rgba(16, 13, 14, 0.45) 0%, rgba(16, 13, 14, 0) 24%, rgba(16, 13, 14, 0.65) 100%);
+      }
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 44px;
-      align-items: center;
+    /* Bento Sanctuary Showcase */
+    .bento-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: var(--sp-300); align-items: stretch; }
+    .bento-stack { display: flex; flex-direction: column; gap: var(--sp-300); }
+    .bento-card {
+      background-color: var(--bg-stone); border: 1px solid var(--border-hairline); border-radius: var(--r-xl);
+      padding: var(--sp-75); display: flex; flex-direction: column; gap: var(--sp-200); height: 100%;
     }
+    .bento-card-media { border-radius: var(--r-md); overflow: hidden; background-color: var(--bg-elevated); }
+    .bento-card-wide .bento-card-media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .bento-card-side .bento-card-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .bento-card-body { padding: var(--sp-75) var(--sp-100) var(--sp-100); display: flex; flex-direction: column; gap: var(--sp-75); }
+    .bento-card-body p { color: var(--ink-secondary); }
+    @media (max-width: 899px) { .bento-grid { grid-template-columns: 1fr; } }
 
-    .hero-grid > * {
-      min-width: 0;
+    /* Tagline Reveal (B11) */
+    .tagline-section { padding: var(--sp-900) 0; background-color: var(--bg-base); }
+    .tagline-wrap { max-width: 680px; }
+    .reveal-word { opacity: 0.28; transition: opacity 500ms var(--ease-out-expo); }
+    .reveal-word.is-lit { opacity: 1; }
+
+    /* Treatment Catalog */
+    .catalog-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--sp-300); margin-bottom: var(--sp-400); }
+    .catalog-top .section-head { margin-bottom: 0; }
+    .filter-bar { display: flex; flex-wrap: wrap; gap: var(--sp-75); }
+    .filter-tab {
+      padding: var(--sp-75) var(--sp-100); border-radius: var(--r-md); border: 1px solid var(--border-hairline);
+      background-color: var(--bg-base); color: var(--ink-secondary); cursor: pointer;
+      transition: background-color 300ms var(--ease-out-expo), color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo);
     }
+    .filter-tab:hover { color: var(--ink-primary); border-color: var(--border-strong); }
+    .filter-tab:active { transform: scale(0.98); }
+    .filter-tab.is-active { background-color: var(--ink-primary); color: var(--bg-base); border-color: var(--ink-primary); }
 
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: var(--bg-blush);
-      border: 1px solid var(--border);
-      color: var(--rose-deep);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      max-width: 100%;
-    }
-
-    .hero-title {
-      font-size: clamp(2.25rem, 4.3vw, 3.55rem);
-      font-weight: 700;
-      line-height: 1.12;
-      color: var(--text-main);
-      margin-bottom: 18px;
-    }
-
-    .hero-title em {
-      color: var(--rose-deep);
-      font-style: italic;
-    }
-
-    .hero-desc {
-      font-size: 1.02rem;
-      color: var(--text-body);
-      margin-bottom: 26px;
-      max-width: 540px;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 30px;
-    }
-
-    .hero-trust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
-    }
-
-    .trust-stat {
-      min-width: 0;
-    }
-
-    .trust-stat strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--rose-deep);
-      line-height: 1.1;
-    }
-
-    .trust-stat span {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-width: 0;
-    }
-
-    .hero-frame {
-      border-radius: 26px;
-      overflow: hidden;
-      border: 6px solid #fff;
-      box-shadow: var(--shadow-md);
-      background: var(--bg-blush);
-      aspect-ratio: 16 / 11;
-    }
-
-    .hero-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-floating-badge {
-      position: absolute;
-      bottom: -18px;
-      left: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .badge-cert-text strong {
-      display: block;
-      font-size: 0.86rem;
-      color: var(--text-main);
-    }
-
-    .badge-cert-text span {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-    }
-
-    .badge-cert-tag {
-      background: var(--bg-blush);
-      color: var(--rose-deep);
-      font-size: 0.74rem;
-      font-weight: 800;
-      padding: 5px 11px;
-      border-radius: 999px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    /* Section Commons */
-    .section {
-      padding: 72px 0;
-      overflow-x: clip;
-    }
-
-    .section-soft {
-      background: linear-gradient(180deg, #F6EFE9 0%, #FBF8F5 100%);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 38px;
-    }
-
-    .section-kicker {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--rose-deep);
-      margin-bottom: 8px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(1.9rem, 3.2vw, 2.7rem);
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 10px;
-      line-height: 1.18;
-    }
-
-    .section-head p {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-    }
-
-    /* Service Category Tabs */
-    .service-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 34px;
-    }
-
-    .srv-tab-btn {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      color: var(--text-body);
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .srv-tab-btn:hover {
-      border-color: var(--rose-gold);
-      color: var(--rose-deep);
-    }
-
-    .srv-tab-btn.active {
-      background: linear-gradient(135deg, var(--rose-gold), var(--rose-deep));
-      color: #fff;
-      border-color: transparent;
-      box-shadow: 0 8px 18px -4px rgba(150, 78, 89, 0.35);
-    }
-
-    /* Treatments Grid */
-    .treatments-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 24px;
-    }
-
+    .treatments-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-300); }
+    @media (max-width: 899px) { .treatments-grid { grid-template-columns: 1fr; } }
     .treatment-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      min-width: 0;
+      background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl);
+      padding: var(--sp-75); display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-200);
     }
+    .treatment-media { border-radius: var(--r-md); overflow: hidden; background-color: var(--bg-stone); }
+    .treatment-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 500ms var(--ease-out-expo); }
+    .treatment-card:hover .treatment-media img { transform: scale(1.02); }
+    .treatment-body { padding: var(--sp-75) var(--sp-100) var(--sp-100); display: flex; flex-direction: column; gap: var(--sp-200); flex: 1; justify-content: space-between; }
+    .treatment-meta { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-100); }
+    .treatment-cat { color: var(--accent); }
+    .treatment-desc { color: var(--ink-secondary); }
+    .treatment-footer { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-200); padding-top: var(--sp-100); }
 
-    .treatment-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-      border-color: #DFC3C7;
-    }
+    .empty-state { border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-600) var(--sp-300); background-color: var(--bg-base); display: none; flex-direction: column; align-items: flex-start; gap: var(--sp-200); }
+    .empty-state.is-visible { display: flex; }
 
-    .treatment-img-wrap {
-      position: relative;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: var(--bg-blush);
-    }
+    /* Steps & Booking */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-300); }
+    @media (max-width: 899px) { .steps-grid { grid-template-columns: 1fr; } }
+    .step-card { border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-300); background-color: var(--bg-base); display: flex; flex-direction: column; gap: var(--sp-100); }
+    .step-num { color: var(--accent); }
+    .step-card p { color: var(--ink-secondary); }
 
-    .treatment-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.45s ease;
-    }
-
-    .treatment-card:hover .treatment-img-wrap img {
-      transform: scale(1.05);
-    }
-
-    .treatment-cat-pill {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(255, 255, 255, 0.94);
-      color: var(--rose-deep);
-      font-size: 0.74rem;
-      font-weight: 800;
-      padding: 5px 12px;
-      border-radius: 999px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .treatment-dur-pill {
-      position: absolute;
-      bottom: 12px;
-      right: 12px;
-      background: rgba(35, 25, 27, 0.8);
-      color: #fff;
-      font-size: 0.74rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 8px;
-    }
-
-    .treatment-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .treatment-body h3 {
-      font-size: 1.38rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 6px;
-      line-height: 1.25;
-    }
-
-    .treatment-body p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    .treatment-benefits {
-      list-style: none;
-      display: grid;
-      gap: 6px;
-      margin-bottom: 18px;
-      font-size: 0.83rem;
-      color: var(--text-body);
-    }
-
-    .treatment-benefits li::before {
-      content: '✦ ';
-      color: var(--champagne-gold);
-      font-weight: 800;
-    }
-
-    .treatment-foot {
-      margin-top: auto;
-      padding-top: 14px;
-      border-top: 1px dashed var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .price-stack {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .price-old {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      text-decoration: line-through;
-    }
-
-    .price-vip {
-      font-size: 1.12rem;
-      font-weight: 800;
-      color: var(--rose-deep);
-    }
-
-    /* VIP Sanctuary & Standard Process */
-    .vip-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .vip-grid > * {
-      min-width: 0;
-    }
-
-    .vip-photo-card {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 6px solid #fff;
-      box-shadow: var(--shadow-md);
-      aspect-ratio: 16 / 10;
-    }
-
-    .vip-photo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .process-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .process-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 16px;
-    }
-
-    .step-badge {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: var(--bg-blush);
-      color: var(--rose-deep);
-      font-weight: 800;
-      font-size: 0.85rem;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-    }
-
-    .process-step strong {
-      display: block;
-      font-size: 0.94rem;
-      color: var(--text-main);
-      margin-bottom: 2px;
-    }
-
-    .process-step span {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-    }
-
-    /* Booking Section */
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 36px;
-      align-items: start;
-    }
-
-    .booking-grid > * {
-      min-width: 0;
-    }
-
-    .booking-perks-card {
-      background: linear-gradient(155deg, #2D1B1E 0%, #4C2830 100%);
-      color: #FDF7F3;
-      border-radius: 24px;
-      padding: 32px 28px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .booking-perks-card h3 {
-      font-size: 1.9rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .booking-perks-card p {
-      font-size: 0.92rem;
-      color: #E7D5D8;
-      margin-bottom: 22px;
-    }
-
-    .vip-perk-list {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .vip-perk-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: #FAF1EC;
-    }
-
-    .vip-perk-list li span {
-      color: #E8C08B;
-      font-weight: 800;
-    }
-
-    .branch-hours {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 14px;
-      padding: 14px 16px;
-      font-size: 0.84rem;
-      color: #F3E5DE;
-    }
-
-    .booking-form-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .form-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .form-field {
-      margin-bottom: 16px;
-      min-width: 0;
-    }
-
-    .form-field label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-
-    .spa-input {
-      width: 100%;
-      background: var(--bg-ivory);
-      border: 1.5px solid var(--border);
-      color: var(--text-main);
-      padding: 11px 14px;
-      border-radius: 12px;
-      font-family: inherit;
-      font-size: 0.92rem;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .spa-input:focus {
-      outline: none;
-      background: #fff;
-      border-color: var(--rose-gold);
-    }
-
-    .slots-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
+    .booking-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--sp-500); align-items: start; }
+    .booking-copy { max-width: 520px; display: flex; flex-direction: column; gap: var(--sp-200); }
+    .booking-copy p { color: var(--ink-secondary); }
+    .form-card { background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-200); }
+    .form-group { display: flex; flex-direction: column; gap: var(--sp-75); }
+    .form-control { width: 100%; padding: var(--sp-100) var(--sp-200); border: 1px solid var(--border-hairline); border-radius: var(--r-md); background-color: var(--bg-base); font-size: 16px; line-height: 24px; transition: border-color 300ms var(--ease-out-expo); }
+    .form-control:hover { border-color: var(--border-strong); }
+    .form-control.is-invalid { border-color: var(--danger); }
+    .field-error { color: var(--danger); min-height: 16px; }
+    .slot-grid { display: flex; flex-wrap: wrap; gap: var(--sp-75); }
     .slot-btn {
-      background: var(--bg-ivory);
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 9px 8px;
-      text-align: center;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.2s;
+      padding: var(--sp-75) var(--sp-100); border-radius: var(--r-md); border: 1px solid var(--border-hairline);
+      background-color: var(--bg-stone); color: var(--ink-primary); cursor: pointer;
+      transition: background-color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo), color 300ms var(--ease-out-expo);
     }
+    .slot-btn.is-active { background-color: var(--ink-primary); border-color: var(--ink-primary); color: var(--bg-base); }
+    .form-status { padding: var(--sp-200); border-radius: var(--r-md); border: 1px solid var(--border-hairline); background-color: var(--bg-stone); display: none; flex-direction: column; gap: var(--sp-75); }
+    .form-status.is-visible { display: flex; }
+    @media (max-width: 899px) { .booking-grid, .form-row { grid-template-columns: 1fr; } .form-card { padding: var(--sp-300); } }
 
-    .slot-btn strong {
-      display: block;
-      font-size: 0.88rem;
-      color: var(--text-main);
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: var(--sp-100); max-width: 880px; }
+    .faq-item { border: 1px solid var(--border-hairline); border-radius: var(--r-xl); background-color: var(--bg-base); overflow: hidden; transition: border-color 300ms var(--ease-out-expo); }
+    .faq-item.is-open { border-color: var(--border-strong); }
+    .faq-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-200); padding: var(--sp-300); background: transparent; border: none; text-align: left; cursor: pointer; }
+    .faq-icon { flex-shrink: 0; color: var(--ink-secondary); transition: transform 400ms var(--ease-out-expo); }
+    .faq-item.is-open .faq-icon { transform: rotate(45deg); }
+    .faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 400ms var(--ease-out-expo); }
+    .faq-item.is-open .faq-panel { grid-template-rows: 1fr; }
+    .faq-panel-inner { overflow: hidden; }
+    .faq-answer { padding: 0 var(--sp-300) var(--sp-300); color: var(--ink-secondary); max-width: 680px; }
+
+    /* Footer & Modal */
+    .site-footer { padding: var(--sp-600) 0; background-color: var(--bg-base); }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-300); padding-top: var(--sp-400); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-300); color: var(--ink-secondary); }
+    .footer-link-btn { background: none; border: none; padding: var(--sp-50) 0; cursor: pointer; color: var(--ink-secondary); transition: color 300ms var(--ease-out-expo); }
+    .footer-link-btn:hover { color: var(--ink-primary); }
+
+    .modal-backdrop { position: fixed; inset: 0; z-index: 150; background-color: rgba(17, 17, 17, 0.56); display: none; align-items: center; justify-content: center; padding: var(--sp-200); }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-box { width: 100%; max-width: 560px; background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .modal-head { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-200); }
+
+    /* Entrance & Stagger Motion */
+    .has-motion .hero-stagger { opacity: 0; transform: translateY(var(--sp-300)); transition: opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo); }
+    .has-motion.is-hero-ready .hero-stagger { opacity: 1; transform: translateY(0); }
+    .has-motion .nav-shell.hero-stagger { transition-delay: 0ms; }
+    .has-motion .hero-title.hero-stagger { transition-delay: 80ms; }
+    .has-motion .hero-sub.hero-stagger { transition-delay: 160ms; }
+    .has-motion .btn-hero-pill.hero-stagger { transition-delay: 240ms; }
+    .has-motion .hero-bottom.hero-stagger { transition-delay: 320ms; }
+
+    .reveal-section { opacity: 0; transform: translateY(var(--sp-400)); transition: opacity 700ms var(--ease-out-expo), transform 700ms var(--ease-out-expo); }
+    .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
+
+    .bento-card, .treatment-card, .step-card {
+      transition: opacity 600ms var(--ease-out-expo), transform 600ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo);
     }
-
-    .slot-btn span {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #059669;
+    .has-motion .reveal-section:not(.is-visible) .bento-card,
+    .has-motion .reveal-section:not(.is-visible) .treatment-card,
+    .has-motion .reveal-section:not(.is-visible) .step-card {
+      opacity: 0; transform: translateY(var(--sp-300));
     }
+    .reveal-section.is-visible .bento-card-wide { transition-delay: 0ms; }
+    .reveal-section.is-visible .bento-stack .bento-card:nth-child(1) { transition-delay: 60ms; }
+    .reveal-section.is-visible .bento-stack .bento-card:nth-child(2) { transition-delay: 120ms; }
+    .reveal-section.is-visible .treatment-card:nth-child(1),
+    .reveal-section.is-visible .step-card:nth-child(1) { transition-delay: 0ms; }
+    .reveal-section.is-visible .treatment-card:nth-child(2),
+    .reveal-section.is-visible .step-card:nth-child(2) { transition-delay: 60ms; }
+    .reveal-section.is-visible .treatment-card:nth-child(3),
+    .reveal-section.is-visible .step-card:nth-child(3) { transition-delay: 120ms; }
+    .reveal-section.is-visible .treatment-card:nth-child(4) { transition-delay: 180ms; }
+    .reveal-section.is-visible .bento-card:hover,
+    .reveal-section.is-visible .treatment-card:hover { transform: translateY(-2px); }
 
-    .slot-btn.low span {
-      color: #D97706;
-    }
-
-    .slot-btn.active {
-      background: var(--rose-deep);
-      border-color: var(--rose-deep);
-      color: #fff;
-    }
-
-    .slot-btn.active strong,
-    .slot-btn.active span {
-      color: #fff;
-    }
-
-    /* Booking Ticket Output */
-    .vip-ticket {
-      display: none;
-      background: linear-gradient(135deg, #FFF9F5 0%, #FBF0EC 100%);
-      border: 1.5px dashed var(--rose-gold);
-      border-radius: 20px;
-      padding: 24px;
-    }
-
-    .vip-ticket.visible {
-      display: block;
-    }
-
-    .ticket-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding-bottom: 14px;
-      border-bottom: 1px dashed var(--border);
-      margin-bottom: 14px;
-    }
-
-    .ticket-code {
-      background: var(--rose-deep);
-      color: #fff;
-      font-size: 0.82rem;
-      font-weight: 800;
-      padding: 5px 12px;
-      border-radius: 999px;
-    }
-
-    .ticket-rows {
-      display: grid;
-      gap: 8px;
-      font-size: 0.9rem;
-      margin-bottom: 18px;
-    }
-
-    .ticket-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .ticket-row span {
-      color: var(--text-muted);
-    }
-
-    .ticket-row strong {
-      color: var(--text-main);
-      text-align: right;
-    }
-
-    /* Floating Quick Bar & Footer */
-    .floating-cta {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 80;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .float-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 15px;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 24px rgba(35, 25, 27, 0.14);
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-
-    .float-pill.primary {
-      background: linear-gradient(135deg, var(--rose-gold), var(--rose-deep));
-      color: #fff;
-      border-color: transparent;
-    }
-
-    .spa-footer {
-      background: #23191B;
-      color: #D7C6C9;
-      padding: 48px 0 28px;
-      font-size: 0.88rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 28px;
-      margin-bottom: 28px;
-    }
-
-    .footer-grid > * {
-      min-width: 0;
-    }
-
-    .spa-footer h4 {
-      color: #fff;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 20px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #A89397;
-    }
-
-    /* Responsive Breakpoints */
-    @media (max-width: 900px) {
-      .nav-links,
-      .header-cta-desktop {
-        display: none;
-      }
-
-      .mobile-menu-btn {
-        display: grid;
-        place-items: center;
-      }
-
-      .hero-grid,
-      .vip-grid,
-      .booking-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .hero-section {
-        padding: 34px 0 48px;
-      }
-
-      .hero-floating-badge {
-        position: static;
-        margin-top: 12px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 16px;
-      }
-
-      .header-inner {
-        gap: 8px;
-      }
-
-      .brand-logo {
-        gap: 8px;
-      }
-
-      .brand-mark {
-        width: 34px;
-        height: 34px;
-        font-size: 1.2rem;
-      }
-
-      .brand-name strong {
-        font-size: 1.15rem;
-      }
-
-      .brand-name small {
-        font-size: 0.56rem;
-        letter-spacing: 0.14em;
-      }
-
-      .header-actions {
-        gap: 6px;
-      }
-
-      .header-actions .btn-sm {
-        padding: 7px 11px;
-        font-size: 0.76rem;
-      }
-
-      .mobile-menu-btn {
-        width: 36px;
-        height: 36px;
-      }
-
-      .section {
-        padding: 50px 0;
-      }
-
-      .form-grid-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .slots-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .booking-form-card,
-      .booking-perks-card {
-        padding: 22px 18px;
-      }
-
-      .templates-grid,
-      .treatments-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .floating-cta {
-        right: 12px;
-        bottom: 12px;
-      }
-
-      .float-label {
-        display: none;
-      }
-
-      .float-pill {
-        padding: 11px 13px;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal-section, .mobile-drawer-item, .reveal-word, .has-motion .hero-stagger, .has-motion .hero-bg-img,
+      .has-motion .reveal-section:not(.is-visible) .bento-card,
+      .has-motion .reveal-section:not(.is-visible) .treatment-card,
+      .has-motion .reveal-section:not(.is-visible) .step-card { opacity: 1; transform: none; transition: none; }
+      .btn, .btn svg, .btn-hero-pill, .btn-hero-pill svg, .faq-panel, .faq-icon, .treatment-media img, .bento-card, .treatment-card, .step-card { transition: none; }
+      .btn:hover svg, .btn-hero-pill:hover svg, .reveal-section.is-visible .bento-card:hover, .reveal-section.is-visible .treatment-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link button-sm">Chuyển đến nội dung chính</a>
 
-  <div class="top-promo-bar">
-    ✦ ƯU ĐÃI KHAI TRƯƠNG THÁNG NÀY: <span>Giảm ngay 30%</span> cho khách đặt lịch liệu trình đầu tiên ✦
-  </div>
-
-  <!-- HEADER -->
-  <header class="spa-header">
-    <div class="container header-inner">
-      <a href="#top" class="brand-logo">
-        <div class="brand-mark">L</div>
-        <div class="brand-name">
-          <strong>LUMIÈRE</strong>
-          <small>Aesthetic &amp; Spa</small>
-        </div>
+  <header class="nav-shell hero-stagger" id="navShell">
+    <nav class="floating-nav" aria-label="Điều hướng chính">
+      <a href="#top" class="brand-link title-4">
+        <svg width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M128 32C154 78 188 112 188 154A60 60 0 0 1 68 154C68 112 102 78 128 32Z"/>
+          <path d="M128 116V214"/>
+        </svg>
+        <span>Lumière Aesthetic</span>
       </a>
-
-      <ul class="nav-links">
-        <li><a href="#treatments">Liệu Trình &amp; Bảng Giá</a></li>
-        <li><a href="#sanctuary">Không Gian VIP</a></li>
-        <li><a href="#booking">Đặt Lịch Hẹn</a></li>
-      </ul>
-
-      <div class="header-actions">
-        <a href="tel:0387637982" class="btn-spa btn-ivory btn-sm header-cta-desktop">📞 0387.637.982</a>
-        <a href="#booking" class="btn-spa btn-rose btn-sm">📅 Đặt Lịch Ngay</a>
-        <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Mở menu">☰</button>
+      <div class="nav-links">
+        <a href="#khong-gian" class="nav-link title-4">Phòng trị liệu</a>
+        <a href="#lieu-trinh" class="nav-link title-4">Liệu trình</a>
+        <a href="#quy-trinh" class="nav-link title-4">Quy trình</a>
+        <a href="#hoi-dap" class="nav-link title-4">Hỏi đáp</a>
       </div>
-    </div>
-
-    <div class="mobile-drawer" id="mobileDrawer">
-      <a href="#treatments" onclick="toggleMobileMenu()">🌸 Liệu Trình &amp; Bảng Giá</a>
-      <a href="#sanctuary" onclick="toggleMobileMenu()">✨ Không Gian VIP &amp; Quy Trình</a>
-      <a href="#booking" onclick="toggleMobileMenu()">📅 Đặt Lịch Hẹn Trực Tuyến</a>
-      <a href="tel:0387637982">📞 Hotline: 0387.637.982</a>
-    </div>
+      <a href="#dat-lich" class="btn btn-primary button-sm nav-cta-desktop">Đặt lịch hẹn</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Mở menu điều hướng">
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </nav>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero-section">
-      <div class="container hero-grid">
-        <div>
-          <div class="hero-eyebrow">
-            <span>✦</span> Viện Thẩm Mỹ &amp; Spa Công Nghệ Cao 5 Sao
-          </div>
-          <h1 class="hero-title">
-            Đánh Thức Vẻ Đẹp <em>Thanh Xuân</em> Chuẩn Y Khoa &amp; Tinh Tế
-          </h1>
-          <p class="hero-desc">
-            Trải nghiệm liệu trình trẻ hóa làn da, tắm trắng sinh học, triệt lông Diode Laser và phun xăm thẩm mỹ tự nhiên trong không gian VIP riêng tư tuyệt đối.
-          </p>
-          <div class="hero-cta-row">
-            <a href="#booking" class="btn-spa btn-rose">
-              <span>📅</span> Đặt Lịch Trải Nghiệm -30%
-            </a>
-            <a href="#treatments" class="btn-spa btn-ivory">
-              <span>💎</span> Xem Bảng Giá Liệu Trình
-            </a>
-          </div>
-          <div class="hero-trust-grid">
-            <div class="trust-stat">
-              <strong>12+ Năm</strong>
-              <span>Chuyên gia thẩm mỹ</span>
-            </div>
-            <div class="trust-stat">
-              <strong>100% FDA</strong>
-              <span>Công nghệ chính hãng</span>
-            </div>
-            <div class="trust-stat">
-              <strong>18.500+</strong>
-              <span>Khách hàng hài lòng</span>
-            </div>
-          </div>
-        </div>
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-list">
+      <div class="mobile-drawer-item"><a href="#khong-gian" class="mobile-drawer-link heading-4">Phòng trị liệu VIP</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#lieu-trinh" class="mobile-drawer-link heading-4">Bảng giá liệu trình</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#quy-trinh" class="mobile-drawer-link heading-4">Quy trình 3 bước</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#hoi-dap" class="mobile-drawer-link heading-4">Câu hỏi thường gặp</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item" style="padding-top: var(--sp-200);"><a href="#dat-lich" class="btn btn-primary button-md" style="width: 100%;">Đặt lịch hẹn riêng tư</a></div>
+    </div>
+    <div class="caption-2" style="color: var(--ink-muted);">Lumière Aesthetic · Thảo Điền, Thành phố Hồ Chí Minh</div>
+  </div>
 
-        <div class="hero-visual">
-          <div class="hero-frame">
-            <img src="image/hero-spa.webp" alt="Khách hàng thư giãn và chăm sóc da chuyên sâu tại Lumière Aesthetic & Spa">
-          </div>
-          <div class="hero-floating-badge">
-            <div class="badge-cert-text">
-              <strong>Cam Kết Hiệu Quả Bằng Văn Bản</strong>
-              <span>Soi da chuyên sâu 3D miễn phí trước mọi liệu trình</span>
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="hero-bg-parallax" id="heroParallax">
+        <img src="./image/hero-cinematic.png" alt="Không gian vòm đá travertine và hồ phản chiếu yên tĩnh tại Lumière Aesthetic" class="hero-bg-img" width="1408" height="768">
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="heading-1 hero-title hero-stagger">Chăm sóc da chuyên sâu<br>trong không gian riêng tư</h1>
+          <p class="body-3 hero-sub hero-stagger">Phòng trị liệu đơn tách biệt hoàn toàn, soi da đa tầng trước buổi làm và cam kết bảng giá niêm yết không phát sinh.</p>
+          <a href="#dat-lich" class="btn-hero-pill button-md hero-stagger">
+            <span>Đặt lịch soi da và tư vấn</span>
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 128H216"/><path d="M144 56L216 128L144 200"/></svg>
+          </a>
+        </div>
+        <div class="hero-bottom caption-2 hero-stagger">
+          <span>Phòng VIP đơn tách biệt · Công nghệ Diode Laser thế hệ mới · Không chèo kéo mua thẻ</span>
+          <a href="#lieu-trinh" style="color: rgba(255, 255, 255, 0.86);">Xem bảng giá niêm yết</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal-section" id="khong-gian">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Sự riêng tư là tiêu chuẩn bắt buộc ở mỗi buổi chăm sóc</h2>
+          <p class="body-3">Toàn bộ phòng điều trị chỉ phục vụ một khách hàng mỗi lượt, sử dụng khăn bông hữu cơ hấp tiệt trùng và dược mỹ phẩm niêm phong.</p>
+        </div>
+        <div class="bento-grid">
+          <article class="bento-card bento-card-wide">
+            <div class="bento-card-media"><img src="./image/spa-vip-room.webp" alt="Phòng trị liệu VIP tách biệt với ánh sáng dịu nhẹ" loading="lazy"></div>
+            <div class="bento-card-body">
+              <h3 class="heading-5">Phòng trị liệu đơn cách âm chuẩn 32 decibel</h3>
+              <p class="body-6">Trang bị giường sưởi ấm điều chỉnh nhiệt độ theo cơ thể cùng phòng tắm tráng khép kín bên trong, giúp bạn thư giãn trọn vẹn từ phút đầu tiên.</p>
             </div>
-            <span class="badge-cert-tag">✓ Chuẩn 5 Sao</span>
+          </article>
+          <div class="bento-stack">
+            <article class="bento-card bento-card-side">
+              <div class="bento-card-media"><img src="./image/facial-glow.webp" alt="Liệu trình phục hồi hàng rào bảo vệ da chuyên sâu" loading="lazy"></div>
+              <div class="bento-card-body">
+                <h3 class="heading-6">Phác đồ cá nhân hóa sau khi soi da 3D</h3>
+                <p class="body-6">Đo chính xác độ ẩm tầng đáy, bã nhờn và sắc tố ẩn trước khi pha tinh chất riêng cho buổi làm hôm đó.</p>
+              </div>
+            </article>
+            <article class="bento-card bento-card-side">
+              <div class="bento-card-media"><img src="./image/laser-care.webp" alt="Thiết bị Diode Laser đầu làm lạnh âm 5 độ" loading="lazy"></div>
+              <div class="bento-card-body">
+                <h3 class="heading-6">Diode Laser đầu làm lạnh âm 5 độ C</h3>
+                <p class="body-6">Triệt lông êm dịu không châm chích, đầu chiếu vệ sinh sát khuẩn bằng tia UV giữa hai lượt khách liên tiếp.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TREATMENTS & PRICING -->
-    <section class="section" id="treatments">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-kicker">Menu Dịch Vụ Độc Quyền</span>
-          <h2>Liệu Trình Thẩm Mỹ &amp; Bảng Giá Ưu Đãi</h2>
-          <p>Chọn nhóm dịch vụ bạn quan tâm để xem chi tiết thời lượng, hiệu quả và mức giá trải nghiệm dành riêng cho khách đặt lịch trực tuyến.</p>
-        </div>
+    <section class="tagline-section" aria-label="Triết lý chăm sóc da">
+      <div class="container"><div class="tagline-wrap"><p class="heading-2" id="taglineReveal">Làn da khỏe đẹp đến từ phác đồ đúng nguyên lý khoa học và đôi tay chăm sóc tận tâm, chứ không phải những lời hứa hẹn cấp tốc.</p></div></div>
+    </section>
 
-        <div class="service-tabs" id="serviceTabs">
-          <button type="button" class="srv-tab-btn active" onclick="filterServices('all', this)">Tất Cả Dịch Vụ</button>
-          <button type="button" class="srv-tab-btn" onclick="filterServices('facial', this)">Chăm Sóc Da Chuyên Sâu</button>
-          <button type="button" class="srv-tab-btn" onclick="filterServices('body', this)">Tắm Trắng &amp; Body</button>
-          <button type="button" class="srv-tab-btn" onclick="filterServices('laser', this)">Triệt Lông &amp; Nâng Cơ</button>
-          <button type="button" class="srv-tab-btn" onclick="filterServices('pmu', this)">Phun Xăm Thẩm Mỹ</button>
+    <section class="section section-stone reveal-section" id="lieu-trinh">
+      <div class="container">
+        <div class="catalog-top">
+          <div class="section-head">
+            <h2 class="heading-3">Danh mục liệu trình và giá niêm yết</h2>
+            <p class="body-3">Chọn nhóm dịch vụ để đối chiếu thời lượng thực hiện và chi phí từng buổi lẻ minh bạch.</p>
+          </div>
+          <div class="filter-bar" role="tablist" aria-label="Lọc liệu trình theo nhóm">
+            <button type="button" class="filter-tab button-sm is-active" role="tab" aria-selected="true" data-filter="all">Tất cả</button>
+            <button type="button" class="filter-tab button-sm" role="tab" aria-selected="false" data-filter="cham-soc-da">Chăm sóc da</button>
+            <button type="button" class="filter-tab button-sm" role="tab" aria-selected="false" data-filter="tam-trang">Tắm trắng</button>
+            <button type="button" class="filter-tab button-sm" role="tab" aria-selected="false" data-filter="laser">Laser</button>
+            <button type="button" class="filter-tab button-sm" role="tab" aria-selected="false" data-filter="phun-xam">Phun xăm</button>
+          </div>
         </div>
 
         <div class="treatments-grid" id="treatmentsGrid">
-          <!-- Rendered by JS -->
+          <article class="treatment-card" data-category="cham-soc-da">
+            <div class="treatment-media"><img src="./image/facial-glow.webp" alt="Liệu trình Cấp ẩm B5 và Oxy tươi phục hồi da" loading="lazy"></div>
+            <div class="treatment-body">
+              <div style="display: flex; flex-direction: column; gap: var(--sp-75);">
+                <div class="treatment-meta"><span class="caption-3 treatment-cat">Chăm sóc da</span><span class="caption-5 mono-num" style="color: var(--ink-muted);">75 phút</span></div>
+                <h3 class="heading-5">Phục hồi màng ẩm B5 và Oxy tươi</h3>
+                <p class="body-6 treatment-desc">Làm sạch sâu không gây khô căng, đẩy tinh chất Hyaluronic phân tử nhỏ và đắp mặt nạ tảo lạnh làm dịu đỏ rát tức thì.</p>
+              </div>
+              <div class="treatment-footer">
+                <span class="heading-6 mono-num">890.000đ</span>
+                <button type="button" class="btn btn-outline button-sm" data-pick-service="Phục hồi màng ẩm B5 và Oxy tươi">Chọn liệu trình</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card" data-category="tam-trang">
+            <div class="treatment-media"><img src="./image/body-whitening.webp" alt="Liệu trình Ủ dưỡng trắng kén tằm phi thuyền" loading="lazy"></div>
+            <div class="treatment-body">
+              <div style="display: flex; flex-direction: column; gap: var(--sp-75);">
+                <div class="treatment-meta"><span class="caption-3 treatment-cat">Tắm trắng</span><span class="caption-5 mono-num" style="color: var(--ink-muted);">90 phút</span></div>
+                <h3 class="heading-5">Ủ trắng kén tằm tơ và ngọc trai</h3>
+                <p class="body-6 treatment-desc">Tẩy tế bào chết cám gạo Nhật dịu nhẹ kết hợp ủ dưỡng phi thuyền hồng ngoại giúp nâng tông sáng mịn tự nhiên, không bắt nắng.</p>
+              </div>
+              <div class="treatment-footer">
+                <span class="heading-6 mono-num">1.450.000đ</span>
+                <button type="button" class="btn btn-outline button-sm" data-pick-service="Ủ trắng kén tằm tơ và ngọc trai">Chọn liệu trình</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card" data-category="laser">
+            <div class="treatment-media"><img src="./image/laser-care.webp" alt="Diode Laser triệt lông lạnh vùng dưới cánh tay" loading="lazy"></div>
+            <div class="treatment-body">
+              <div style="display: flex; flex-direction: column; gap: var(--sp-75);">
+                <div class="treatment-meta"><span class="caption-3 treatment-cat">Laser</span><span class="caption-5 mono-num" style="color: var(--ink-muted);">30 phút</span></div>
+                <h3 class="heading-5">Triệt lông Diode Laser 808nm</h3>
+                <p class="body-6 treatment-desc">Bước sóng chuẩn y khoa triệt tận gốc nang lông kết hợp đầu đá Sapphire làm mát, thu nhỏ lỗ chân lông vùng điều trị.</p>
+              </div>
+              <div class="treatment-footer">
+                <span class="heading-6 mono-num">650.000đ</span>
+                <button type="button" class="btn btn-outline button-sm" data-pick-service="Triệt lông Diode Laser 808nm">Chọn liệu trình</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card" data-category="phun-xam">
+            <div class="treatment-media"><img src="./image/pmu-beauty.webp" alt="Phun môi tế bào gốc hữu cơ tự nhiên" loading="lazy"></div>
+            <div class="treatment-body">
+              <div style="display: flex; flex-direction: column; gap: var(--sp-75);">
+                <div class="treatment-meta"><span class="caption-3 treatment-cat">Phun xăm</span><span class="caption-5 mono-num" style="color: var(--ink-muted);">120 phút</span></div>
+                <h3 class="heading-5">Khử thâm và cấy môi hữu cơ châu Âu</h3>
+                <p class="body-6 treatment-desc">Mực chiết xuất thực vật an toàn, không sưng nề, bảo hành dặm miễn phí trong vòng 60 ngày sau khi bong màu.</p>
+              </div>
+              <div class="treatment-footer">
+                <span class="heading-6 mono-num">2.600.000đ</span>
+                <button type="button" class="btn btn-outline button-sm" data-pick-service="Khử thâm và cấy môi hữu cơ châu Âu">Chọn liệu trình</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          <h3 class="heading-6">Chưa có liệu trình trong mục này</h3>
+          <p class="body-6" style="color: var(--ink-secondary);">Bạn có thể xem toàn bộ 4 dịch vụ nổi bật hoặc đặt lịch soi da để chuyên viên thiết kế buổi chăm sóc riêng.</p>
+          <button type="button" class="btn btn-primary button-sm" id="resetFilterBtn">Hiển thị tất cả liệu trình</button>
         </div>
       </div>
     </section>
 
-    <!-- VIP SANCTUARY & PROCESS -->
-    <section class="section section-soft" id="sanctuary">
-      <div class="container vip-grid">
-        <div class="vip-photo-card">
-          <img loading="lazy" src="image/spa-vip-room.webp" alt="Không gian phòng chờ và phòng điều trị VIP tại Lumière Aesthetic & Spa">
-        </div>
-
-        <div>
-          <span class="section-kicker">Không Gian &amp; Quy Trình</span>
-          <h2 style="font-size: clamp(1.85rem, 3vw, 2.5rem); margin-bottom: 12px; line-height: 1.18;">
-            Riêng Tư Tuyệt Đối — Thư Giãn Như Kỳ Nghỉ Dưỡng
-          </h2>
-          <p style="color: var(--text-body); font-size: 0.96rem;">
-            Mỗi khách hàng được phục vụ tại phòng suite riêng biệt với hương tinh dầu hoa hồng hữu cơ, âm thanh trị liệu tần số nhẹ và bộ dụng cụ vô khuẩn sử dụng 1 lần.
-          </p>
-
-          <div class="process-list">
-            <div class="process-step">
-              <div class="step-badge">01</div>
-              <div>
-                <strong>Soi Da Đa Tầng &amp; Lên Phác Đồ 1:1</strong>
-                <span>Chuyên gia phân tích chỉ số sắc tố, độ ẩm và cấu trúc collagen miễn phí.</span>
-              </div>
-            </div>
-            <div class="process-step">
-              <div class="step-badge">02</div>
-              <div>
-                <strong>Thực Hiện Công Nghệ Đạt Chuẩn FDA / CE</strong>
-                <span>Không xâm lấn, không nghỉ dưỡng, cảm giác êm dịu ngay trong buổi đầu.</span>
-              </div>
-            </div>
-            <div class="process-step">
-              <div class="step-badge">03</div>
-              <div>
-                <strong>Theo Dõi Sau Liệu Trình &amp; Bảo Hành Kết Quả</strong>
-                <span>Chuyên viên nhắc lịch chăm sóc tại nhà và kiểm tra định kỳ hoàn toàn miễn phí.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SMART APPOINTMENT BOOKING -->
-    <section class="section" id="booking">
+    <section class="section reveal-section" id="quy-trinh">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Đặt Lịch Hẹn Trực Tuyến</span>
-          <h2>Giữ Chỗ Phòng VIP &amp; Nhận Ưu Đãi 30%</h2>
-          <p>Không phải chờ đợi tại quầy — chọn sẵn liệu trình, chuyên viên và khung giờ bạn mong muốn.</p>
+          <h2 class="heading-3">Ba bước chuẩn trước khi bước vào phòng trị liệu</h2>
+          <p class="body-3">Minh bạch tình trạng da và chi phí ngay tại bàn tư vấn trước khi bạn quyết định trải nghiệm.</p>
         </div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="caption-3 mono-num step-num">01</span><h3 class="heading-6">Soi da và phân tích chỉ số</h3><p class="body-6">Chụp cắt lớp đa quang phổ kiểm tra tầng biểu bì để xác định chính xác vùng da cần cấp ẩm hay điều tiết dầu.</p></article>
+          <article class="step-card"><span class="caption-3 mono-num step-num">02</span><h3 class="heading-6">Chốt liệu trình và giờ phòng VIP</h3><p class="body-6">Báo giá trọn gói một lần duy nhất, chuẩn bị phòng đơn tiệt trùng riêng theo khung giờ bạn đã đặt trước.</p></article>
+          <article class="step-card"><span class="caption-3 mono-num step-num">03</span><h3 class="heading-6">Theo dõi tiến triển sau buổi làm</h3><p class="body-6">Gửi hướng dẫn chăm sóc tại nhà phù hợp khí hậu nóng ẩm và nhắc lịch kiểm tra lại làn da miễn phí.</p></article>
+        </div>
+      </div>
+    </section>
 
+    <div class="container"><div class="hairline"></div></div>
+
+    <section class="section reveal-section" id="hoi-dap">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Câu hỏi thường gặp</h2>
+          <p class="body-3">Giải đáp rõ ràng về chính sách đặt hẹn, hiệu quả liệu trình và quy trình vệ sinh.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-trigger" aria-expanded="true"><span class="title-2">1. Đặt lịch lần đầu có bị tư vấn mua gói thẻ dài hạn không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Không. Lumière Aesthetic công khai giá theo từng buổi lẻ để khách hàng tự do trải nghiệm chất lượng thực tế trước khi cân nhắc liệu trình dài hơn.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">2. Da nhạy cảm hoặc đang kích ứng có thực hiện được không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Chuyên viên luôn kiểm tra độ nhạy cảm qua máy soi da trước khi làm và ưu tiên các tinh chất phục hồi không hương liệu, không cồn khô.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">3. Tôi có thể yêu cầu riêng chuyên viên nữ nhiều kinh nghiệm không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Có. Bạn có thể chọn trực tiếp chuyên viên phụ trách ngay trong biểu mẫu đặt hẹn bên dưới để hệ thống giữ đúng lịch trống của bạn.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">4. Dụng cụ lấy nhân mụn và đầu chiếu Laser được tiệt trùng ra sao?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Mỗi khách sử dụng bộ dụng cụ dùng một lần bóc tem mới tại chỗ; đầu chiếu Diode Laser được sát khuẩn y tế và chiếu tia UV giữa các ca.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">5. Phun môi hữu cơ mất bao lâu để bong và lên màu tự nhiên?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Lớp vảy mỏng bong tự nhiên sau 3 đến 4 ngày và sắc môi ổn định đều màu sau khoảng 4 tuần. Dặm hoàn thiện lần hai hoàn toàn miễn phí.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">6. Nếu bận đột xuất tôi có thể dời giờ hẹn miễn phí không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Bạn chỉ cần báo trước tối thiểu 2 tiếng để lễ tân giữ lại phòng đơn và chuyển khung giờ trống gần nhất sang ngày phù hợp cho bạn.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-stone reveal-section" id="dat-lich">
+      <div class="container">
         <div class="booking-grid">
-          <div class="booking-perks-card">
-            <h3>Đặc Quyền Khách Đặt Lịch Online</h3>
-            <p>Hệ thống tự động giữ phòng riêng đúng khung giờ bạn chọn và gửi xác nhận ngay trong 1 giây.</p>
-            <ul class="vip-perk-list">
-              <li><span>✓</span> Miễn phí gói soi da chuyên sâu &amp; tư vấn cùng Bác sĩ da liễu (trị giá 500.000đ).</li>
-              <li><span>✓</span> Giảm ngay 30% cho buổi trải nghiệm dịch vụ đầu tiên.</li>
-              <li><span>✓</span> Thưởng thức trà hoa thực dưỡng và tráng miệng cao cấp tại phòng VIP.</li>
-              <li><span>✓</span> Linh hoạt đổi lịch hẹn miễn phí trước 2 tiếng.</li>
-            </ul>
-            <div class="branch-hours">
-              <strong>📍 Cơ sở Flagship:</strong> 128 Bà Triệu, Hai Bà Trưng, Hà Nội<br>
-              <strong>⏱️ Giờ mở cửa:</strong> 09:00 – 21:00 (Thứ 2 – Chủ Nhật)
-            </div>
+          <div class="booking-copy">
+            <h2 class="heading-3">Đặt lịch giữ phòng VIP và khung giờ trống hôm nay</h2>
+            <p class="body-3">Miễn phí soi da đa tầng cho khách đặt lịch trước. Cam kết không cọc trước, hài lòng mới thanh toán sau buổi chăm sóc.</p>
+            <div class="hairline"></div>
+            <div class="caption-2" style="color: var(--ink-secondary);">Địa chỉ: 42 Xuân Thủy, Thảo Điền, Thành phố Thủ Đức · Mở cửa 09:00 đến 20:30 hàng ngày</div>
           </div>
 
-          <div class="booking-form-card">
-            <form id="spaBookingForm" onsubmit="submitSpaBooking(event)">
-              <div class="form-grid-2">
-                <div class="form-field">
-                  <label for="bkName">Họ và Tên Quý Khách *</label>
-                  <input type="text" id="bkName" class="spa-input" placeholder="Ví dụ: Nguyễn Minh Anh" required>
-                </div>
-                <div class="form-field">
-                  <label for="bkPhone">Số Điện Thoại / Zalo *</label>
-                  <input type="tel" id="bkPhone" class="spa-input" placeholder="Ví dụ: 0912.345.678" required>
-                </div>
+          <form class="form-card" id="spaForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="custName" class="title-4">Họ và tên</label>
+                <input type="text" id="custName" class="form-control" placeholder="Ví dụ: Lê Minh Anh" autocomplete="name" required>
+                <span class="caption-5 field-error" id="errCustName" role="alert"></span>
               </div>
+              <div class="form-group">
+                <label for="custPhone" class="title-4">Số điện thoại</label>
+                <input type="tel" id="custPhone" class="form-control" placeholder="Ví dụ: 0912345678" autocomplete="tel" required>
+                <span class="caption-5 field-error" id="errCustPhone" role="alert"></span>
+              </div>
+            </div>
 
-              <div class="form-field">
-                <label for="bkService">Chọn Liệu Trình Quan Tâm *</label>
-                <select id="bkService" class="spa-input" required>
-                  <!-- Populated by JS -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="serviceSelect" class="title-4">Liệu trình quan tâm</label>
+                <select id="serviceSelect" class="form-control">
+                  <option value="Phục hồi màng ẩm B5 và Oxy tươi">Phục hồi màng ẩm B5 và Oxy tươi</option>
+                  <option value="Ủ trắng kén tằm tơ và ngọc trai">Ủ trắng kén tằm tơ và ngọc trai</option>
+                  <option value="Triệt lông Diode Laser 808nm">Triệt lông Diode Laser 808nm</option>
+                  <option value="Khử thâm và cấy môi hữu cơ châu Âu">Khử thâm và cấy môi hữu cơ châu Âu</option>
                 </select>
               </div>
-
-              <div class="form-grid-2">
-                <div class="form-field">
-                  <label for="bkSpecialist">Chuyên Viên Phụ Trách</label>
-                  <select id="bkSpecialist" class="spa-input">
-                    <option value="Bất kỳ chuyên viên phù hợp">Sắp xếp chuyên viên phù hợp nhất</option>
-                    <option value="Master Thảo Vy (10 năm kinh nghiệm)">Master Thảo Vy (Chăm sóc da &amp; Laser)</option>
-                    <option value="Bác sĩ CKI Khánh Linh">Bác sĩ CKI Khánh Linh (Trẻ hóa HIFU)</option>
-                    <option value="Artist Bảo Ngọc">Artist Bảo Ngọc (Phun xăm thẩm mỹ)</option>
-                  </select>
-                </div>
-                <div class="form-field">
-                  <label for="bkDate">Ngày Đến Dự Kiến *</label>
-                  <input type="date" id="bkDate" class="spa-input" required>
-                </div>
+              <div class="form-group">
+                <label for="specialistSelect" class="title-4">Chuyên viên phụ trách</label>
+                <select id="specialistSelect" class="form-control">
+                  <option value="Ngẫu nhiên chuyên viên trống lịch">Ngẫu nhiên chuyên viên trống lịch</option>
+                  <option value="Chuyên viên Thảo Nhi (7 năm kinh nghiệm)">Chuyên viên Thảo Nhi (7 năm kinh nghiệm)</option>
+                  <option value="Chuyên viên Khánh Linh (Chuyên da nhạy cảm)">Chuyên viên Khánh Linh (Chuyên da nhạy cảm)</option>
+                </select>
               </div>
-
-              <div class="form-field">
-                <label>Chọn Khung Giờ Trống *</label>
-                <div class="slots-grid" id="timeSlotsGrid">
-                  <button type="button" class="slot-btn active" onclick="pickSlot(this, '09:30')"><strong>09:30</strong><span>Còn 2 phòng</span></button>
-                  <button type="button" class="slot-btn" onclick="pickSlot(this, '11:00')"><strong>11:00</strong><span>Còn 3 phòng</span></button>
-                  <button type="button" class="slot-btn low" onclick="pickSlot(this, '14:00')"><strong>14:00</strong><span>Sắp hết</span></button>
-                  <button type="button" class="slot-btn" onclick="pickSlot(this, '15:30')"><strong>15:30</strong><span>Còn 2 phòng</span></button>
-                  <button type="button" class="slot-btn low" onclick="pickSlot(this, '17:30')"><strong>17:30</strong><span>Còn 1 phòng</span></button>
-                  <button type="button" class="slot-btn" onclick="pickSlot(this, '19:00')"><strong>19:00</strong><span>Còn 2 phòng</span></button>
-                </div>
-              </div>
-
-              <div class="form-field">
-                <label for="bkNote">Ghi Chú Tình Trạng Da / Yêu Cầu Riêng</label>
-                <textarea id="bkNote" rows="2" class="spa-input" placeholder="Ví dụ: Da nhạy cảm, muốn phòng yên tĩnh..."></textarea>
-              </div>
-
-              <button type="submit" class="btn-spa btn-rose" style="width: 100%; padding: 14px;">
-                <span>✨</span> Xác Nhận Đặt Lịch VIP Ngay
-              </button>
-            </form>
-
-            <!-- VIP Ticket Result -->
-            <div id="vipBookingTicket" class="vip-ticket">
-              <div class="ticket-head">
-                <div>
-                  <strong style="font-size: 1.05rem; color: var(--rose-deep);">✓ ĐẶT LỊCH THÀNH CÔNG</strong>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">Phiếu giữ phòng VIP Lumière Aesthetic</div>
-                </div>
-                <span class="ticket-code" id="tkCode">#LUM-8842</span>
-              </div>
-              <div class="ticket-rows" id="tkDetails"></div>
-              <button type="button" class="btn-spa btn-ivory" style="width: 100%;" onclick="resetSpaBooking()">
-                Đặt Thêm Lịch Hẹn Khác
-              </button>
             </div>
-          </div>
+
+            <div class="form-group">
+              <span class="title-4">Chọn khung giờ còn trống</span>
+              <div class="slot-grid" id="slotGrid" role="group" aria-label="Khung giờ đặt lịch">
+                <button type="button" class="slot-btn button-sm mono-num is-active" data-slot="09:30">09:30</button>
+                <button type="button" class="slot-btn button-sm mono-num" data-slot="11:00">11:00</button>
+                <button type="button" class="slot-btn button-sm mono-num" data-slot="14:30">14:30</button>
+                <button type="button" class="slot-btn button-sm mono-num" data-slot="16:00">16:00</button>
+                <button type="button" class="slot-btn button-sm mono-num" data-slot="18:30">18:30</button>
+              </div>
+            </div>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite">
+              <strong class="body-4" id="formStatusTitle"></strong>
+              <span class="body-6" id="formStatusDesc" style="color: var(--ink-secondary);"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary button-md" id="submitBtn">Xác nhận giữ phòng VIP</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FLOATING CTA -->
-  <div class="floating-cta">
-    <a href="https://zalo.me/0387637982" target="_blank" rel="noopener noreferrer" class="float-pill">
-      <span>💬</span> <span class="float-label">Tư Vấn Zalo</span>
-    </a>
-    <a href="#booking" class="float-pill primary">
-      <span>📅</span> <span class="float-label">Đặt Lịch -30%</span>
-    </a>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="spa-footer">
+  <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>LUMIÈRE AESTHETIC &amp; SPA</h4>
-          <p>Viện thẩm mỹ &amp; chăm sóc sắc đẹp chuẩn 5 sao — nơi khoa học làn da gặp gỡ nghệ thuật thư giãn thuần khiết.</p>
+      <div class="hairline"></div>
+      <div class="footer-inner">
+        <div class="caption-2" style="color: var(--ink-muted);">Lumière Aesthetic · Bản demo thiết kế giao diện thẩm mỹ viện của PAT TECH</div>
+        <div class="footer-links caption-2">
+          <button type="button" class="footer-link-btn" data-legal="privacy">Chính sách bảo mật</button>
+          <button type="button" class="footer-link-btn" data-legal="terms">Điều khoản sử dụng</button>
+          <a href="/" class="footer-link-btn">Quay lại trang chủ PAT TECH</a>
         </div>
-        <div>
-          <h4>Liên Hệ &amp; Đặt Lịch</h4>
-          <p>📍 128 Bà Triệu, Hai Bà Trưng, Hà Nội</p>
-          <p>📞 Hotline VIP: <a href="tel:0387637982" style="color: #F3C6AE;">0387.637.982</a></p>
-          <p>⏱️ 09:00 – 21:00 hàng ngày</p>
-        </div>
-        <div>
-          <h4>Chính Sách Khách Hàng</h4>
-          <p>✓ Soi da tư vấn miễn phí</p>
-          <p>✓ Cam kết công nghệ chuẩn FDA / CE</p>
-          <p>✓ Thiết kế mẫu bởi <a href="https://webgiatot.me/" target="_blank" rel="noopener noreferrer" style="color: #F3C6AE;">PAT TECH (webgiatot.me)</a></p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        © 2026 LUMIÈRE AESTHETIC &amp; SPA — Giao diện mẫu ngành Spa &amp; Thẩm Mỹ Viện thực hiện bởi PAT TECH.
       </div>
     </div>
   </footer>
 
+  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 class="heading-6" id="legalModalTitle">Thông tin pháp lý</h2>
+        <button type="button" class="btn btn-outline button-sm" id="closeLegalBtn">Đóng</button>
+      </div>
+      <div class="hairline"></div>
+      <p class="body-6" id="legalModalBody" style="color: var(--ink-secondary);"></p>
+    </div>
+  </div>
+
   <script>
-    const spaServices = [
-      {
-        id: 'hydro-peel',
-        cat: 'facial',
-        catLabel: 'Chăm Sóc Da',
-        name: 'Thanh Lọc Da Hydro-Peel & Cấy Tinh Chất Căng Bóng',
-        duration: '75 Phút',
-        img: 'image/facial-glow.webp',
-        desc: 'Làm sạch sâu lỗ chân lông bằng đầu xoáy áp lực nước, kết hợp điện di tinh chất HA thuần khiết giúp da căng mịn tức thì.',
-        benefits: ['Hút sạch bã nhờn & mụn cám không đau', 'Cấp ẩm sâu đa tầng, sáng bật 1–2 tông'],
-        oldPrice: '1.200.000đ',
-        vipPrice: '790.000đ'
-      },
-      {
-        id: 'botanical-whitening',
-        cat: 'body',
-        catLabel: 'Tắm Trắng & Body',
-        name: 'Ủ Trắng Thảo Mộc Hoàng Gia & Phi Thuyền Sinh Học',
-        duration: '90 Phút',
-        img: 'image/body-whitening.webp',
-        desc: 'Nuôi dưỡng làn da body trắng hồng tự nhiên từ tinh dầu hoa trắng, sữa non thủy phân và ánh sáng sinh học tái tạo biểu bì.',
-        benefits: ['Không châm chích, không vàng lông', 'Mờ thâm sạm vùng khuỷu tay, lưng & cổ'],
-        oldPrice: '1.850.000đ',
-        vipPrice: '1.190.000đ'
-      },
-      {
-        id: 'diode-laser',
-        cat: 'laser',
-        catLabel: 'Triệt Lông Laser',
-        name: 'Triệt Lông Lạnh Diode Laser 808nm Chuẩn Y Khoa',
-        duration: '45 Phút',
-        img: 'image/laser-care.webp',
-        desc: 'Đầu đá Sapphire làm lạnh -5°C êm ái tuyệt đối, xử lý tận gốc nang lông kết hợp trẻ hóa và làm sáng vùng da điều trị.',
-        benefits: ['Se khít lỗ chân lông, hết thâm sần', 'Bảo hành liệu trình trọn đời bằng thẻ VIP'],
-        oldPrice: '900.000đ',
-        vipPrice: '490.000đ'
-      },
-      {
-        id: 'hifu-lifting',
-        cat: 'laser',
-        catLabel: 'Trẻ Hóa Nâng Cơ',
-        name: 'Nâng Cơ Xóa Nhăn Đa Tầng HIFU Linear Firm',
-        duration: '60 Phút',
-        img: 'image/hero-spa.webp',
-        desc: 'Tác động sóng siêu âm hội tụ vi điểm tới lớp cân cơ SMAS giúp thon gọn viền hàm, nâng cung mày không cần phẫu thuật.',
-        benefits: ['Hiệu quả thấy rõ sau 1 buổi thực hiện', 'Kích thích tăng sinh Collagen tự nhiên 6 tháng'],
-        oldPrice: '4.500.000đ',
-        vipPrice: '2.950.000đ'
-      },
-      {
-        id: 'pmu-lips-brows',
-        cat: 'pmu',
-        catLabel: 'Phun Xăm Thẩm Mỹ',
-        name: 'Điêu Khắc Chân Mày Sợi Tự Nhiên & Khử Thâm Môi Collagen',
-        duration: '90 Phút',
-        img: 'image/pmu-beauty.webp',
-        desc: 'Thiết kế dáng mày chuẩn tỷ lệ vàng khuôn mặt kết hợp mực hữu cơ châu Âu giúp môi hồng hào tự nhiên không sưng đau.',
-        benefits: ['Không cần nghỉ dưỡng, giữ màu 2–3 năm', 'Dụng cụ vô khuẩn riêng biệt 100% cho từng khách'],
-        oldPrice: '3.200.000đ',
-        vipPrice: '2.190.000đ'
-      },
-      {
-        id: 'vip-recovery',
-        cat: 'facial',
-        catLabel: 'Phục Hồi Da VIP',
-        name: 'Phác Đồ Phục Hồi Da Nhạy Cảm & Ngừa Lão Hóa Peptide',
-        duration: '80 Phút',
-        img: 'image/spa-vip-room.webp',
-        desc: 'Dành riêng cho làn da mỏng yếu, thiếu sức sống với phức hợp Peptide và ánh sáng sinh học Omega Light phục hồi hàng rào bảo vệ da.',
-        benefits: ['Làm dịu đỏ rát, củng cố nền da khỏe', 'Thư giãn massage cổ vai gáy tinh dầu oải hương'],
-        oldPrice: '1.500.000đ',
-        vipPrice: '980.000đ'
+    (function () {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion) {
+        document.documentElement.classList.add('is-hero-ready');
+      } else {
+        window.requestAnimationFrame(() => window.requestAnimationFrame(() => document.documentElement.classList.add('is-hero-ready')));
       }
-    ];
 
-    let activeCategory = 'all';
-    let selectedSlot = '09:30';
-
-    function renderTreatments() {
-      const grid = document.getElementById('treatmentsGrid');
-      const filtered = activeCategory === 'all'
-        ? spaServices
-        : spaServices.filter(s => s.cat === activeCategory);
-
-      grid.innerHTML = filtered.map(s => `
-        <article class="treatment-card">
-          <div class="treatment-img-wrap">
-            <img loading="lazy" src="${s.img}" alt="${s.name}">
-            <span class="treatment-cat-pill">${s.catLabel}</span>
-            <span class="treatment-dur-pill">⏱️ ${s.duration}</span>
-          </div>
-          <div class="treatment-body">
-            <h3>${s.name}</h3>
-            <p>${s.desc}</p>
-            <ul class="treatment-benefits">
-              ${s.benefits.map(b => `<li>${b}</li>`).join('')}
-            </ul>
-            <div class="treatment-foot">
-              <div class="price-stack">
-                <span class="price-old">${s.oldPrice}</span>
-                <strong class="price-vip">${s.vipPrice}</strong>
-              </div>
-              <button type="button" class="btn-spa btn-rose btn-sm" onclick="selectTreatmentForBooking('${s.id}')">
-                Chọn Lịch →
-              </button>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    function filterServices(cat, btn) {
-      activeCategory = cat;
-      document.querySelectorAll('.srv-tab-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      renderTreatments();
-    }
-
-    function populateServiceSelect() {
-      const sel = document.getElementById('bkService');
-      sel.innerHTML = spaServices.map(s => `<option value="${s.id}">${s.name} (${s.vipPrice})</option>`).join('');
-    }
-
-    function selectTreatmentForBooking(serviceId) {
-      const sel = document.getElementById('bkService');
-      if (sel) sel.value = serviceId;
-      resetSpaBooking();
-      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function pickSlot(btn, timeStr) {
-      selectedSlot = timeStr;
-      document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-
-    function submitSpaBooking(e) {
-      e.preventDefault();
-      const name = document.getElementById('bkName').value.trim();
-      const phone = document.getElementById('bkPhone').value.trim();
-      const srvSelect = document.getElementById('bkService');
-      const srvName = srvSelect.options[srvSelect.selectedIndex].text;
-      const specialist = document.getElementById('bkSpecialist').value;
-      const dateVal = document.getElementById('bkDate').value;
-      const note = document.getElementById('bkNote').value.trim();
-
-      const code = '#LUM-' + Math.floor(1000 + Math.random() * 9000);
-      document.getElementById('tkCode').innerText = code;
-      document.getElementById('tkDetails').innerHTML = `
-        <div class="ticket-row"><span>Khách hàng:</span><strong>${name} (${phone})</strong></div>
-        <div class="ticket-row"><span>Liệu trình:</span><strong>${srvName}</strong></div>
-        <div class="ticket-row"><span>Chuyên viên:</span><strong>${specialist}</strong></div>
-        <div class="ticket-row"><span>Thời gian hẹn:</span><strong>${selectedSlot} — Ngày ${dateVal}</strong></div>
-        ${note ? `<div class="ticket-row"><span>Ghi chú:</span><strong>${note}</strong></div>` : ''}
-      `;
-
-      document.getElementById('spaBookingForm').style.display = 'none';
-      document.getElementById('vipBookingTicket').classList.add('visible');
-    }
-
-    function resetSpaBooking() {
-      document.getElementById('spaBookingForm').style.display = 'block';
-      document.getElementById('vipBookingTicket').classList.remove('visible');
-    }
-
-    function toggleMobileMenu() {
-      document.getElementById('mobileDrawer').classList.toggle('open');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      renderTreatments();
-      populateServiceSelect();
-      const dateEl = document.getElementById('bkDate');
-      if (dateEl) {
-        const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
-        dateEl.value = tomorrow;
-        dateEl.min = new Date().toISOString().split('T')[0];
+      const heroParallax = document.getElementById('heroParallax');
+      const heroEl = document.getElementById('top');
+      if (heroParallax && heroEl && !reducedMotion) {
+        let rafP = null;
+        window.addEventListener('scroll', () => {
+          if (rafP !== null) return;
+          rafP = window.requestAnimationFrame(() => {
+            rafP = null;
+            const y = window.scrollY || 0;
+            if (y <= heroEl.offsetHeight) heroParallax.style.transform = `translate3d(0, ${(y * 0.18).toFixed(1)}px, 0)`;
+          });
+        }, { passive: true });
       }
-    });
+
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      function setMenuOpen(open) {
+        menuToggle.setAttribute('aria-expanded', String(open));
+        mobileDrawer.setAttribute('aria-hidden', String(!open));
+        mobileDrawer.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      menuToggle.addEventListener('click', () => setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true'));
+      mobileDrawer.querySelectorAll('a').forEach((l) => l.addEventListener('click', () => setMenuOpen(false)));
+
+      const revealSections = document.querySelectorAll('.reveal-section');
+      if (reducedMotion || !('IntersectionObserver' in window)) {
+        revealSections.forEach((el) => el.classList.add('is-visible'));
+      } else {
+        const obs = new IntersectionObserver((entries, o) => {
+          entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); o.unobserve(entry.target); } });
+        }, { threshold: 0.1 });
+        revealSections.forEach((el) => obs.observe(el));
+      }
+
+      const taglineEl = document.getElementById('taglineReveal');
+      if (taglineEl) {
+        const words = taglineEl.textContent.trim().split(/\s+/);
+        taglineEl.innerHTML = words.map((w) => `<span class="reveal-word">${w}</span>`).join(' ');
+        const spans = Array.from(taglineEl.querySelectorAll('.reveal-word'));
+        if (reducedMotion) { spans.forEach((s) => s.classList.add('is-lit')); }
+        else {
+          let rafT = null;
+          const paint = () => {
+            rafT = null;
+            const rect = taglineEl.getBoundingClientRect();
+            const vh = window.innerHeight || 800;
+            const p = Math.min(1, Math.max(0, (vh * 0.85 - rect.top) / (vh * 0.6)));
+            const lit = Math.round(p * spans.length);
+            spans.forEach((s, i) => s.classList.toggle('is-lit', i < lit));
+          };
+          const sched = () => { if (rafT === null) rafT = window.requestAnimationFrame(paint); };
+          window.addEventListener('scroll', sched, { passive: true });
+          window.addEventListener('resize', sched, { passive: true });
+          paint();
+        }
+      }
+
+      const navShell = document.getElementById('navShell');
+      const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+      if (navShell && heroEl && 'IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const left = !entry.isIntersecting;
+            navShell.classList.toggle('is-scrolled', left);
+            if (!left) navLinks.forEach((l) => l.classList.remove('is-active'));
+          });
+        }, { threshold: 0.12 }).observe(heroEl);
+      }
+      if ('IntersectionObserver' in window) {
+        const navObs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && navShell.classList.contains('is-scrolled')) {
+              const id = entry.target.id;
+              navLinks.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === `#${id}`));
+            }
+          });
+        }, { rootMargin: '-35% 0px -55% 0px' });
+        ['khong-gian', 'lieu-trinh', 'quy-trinh', 'hoi-dap'].forEach((id) => { const el = document.getElementById(id); if (el) navObs.observe(el); });
+      }
+
+      // Treatment Filter
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const cards = document.querySelectorAll('.treatment-card');
+      const emptyState = document.getElementById('emptyState');
+      function applyFilter(key) {
+        filterTabs.forEach((t) => {
+          const active = t.dataset.filter === key;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', String(active));
+        });
+        let count = 0;
+        cards.forEach((c) => {
+          const show = key === 'all' || c.dataset.category === key;
+          c.style.display = show ? 'flex' : 'none';
+          if (show) count += 1;
+        });
+        emptyState.classList.toggle('is-visible', count === 0);
+      }
+      filterTabs.forEach((t) => t.addEventListener('click', () => applyFilter(t.dataset.filter)));
+      document.getElementById('resetFilterBtn').addEventListener('click', () => applyFilter('all'));
+
+      // Pick Service + Time Slots
+      const serviceSelect = document.getElementById('serviceSelect');
+      document.querySelectorAll('[data-pick-service]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          serviceSelect.value = btn.dataset.pickService;
+          document.getElementById('dat-lich').scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+          document.getElementById('custName').focus({ preventScroll: true });
+        });
+      });
+
+      let selectedSlot = '09:30';
+      document.querySelectorAll('.slot-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.slot-btn').forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          selectedSlot = btn.dataset.slot;
+        });
+      });
+
+      // FAQ
+      document.querySelectorAll('.faq-trigger').forEach((tr) => {
+        tr.addEventListener('click', () => {
+          const item = tr.closest('.faq-item');
+          const open = !item.classList.contains('is-open');
+          document.querySelectorAll('.faq-item').forEach((o) => { o.classList.remove('is-open'); o.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); });
+          if (open) { item.classList.add('is-open'); tr.setAttribute('aria-expanded', 'true'); }
+        });
+      });
+
+      // Booking Form Validation
+      const form = document.getElementById('spaForm');
+      const custName = document.getElementById('custName');
+      const custPhone = document.getElementById('custPhone');
+      const errName = document.getElementById('errCustName');
+      const errPhone = document.getElementById('errCustPhone');
+      const statusBox = document.getElementById('formStatus');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errName.textContent = ''; errPhone.textContent = '';
+        custName.classList.remove('is-invalid'); custPhone.classList.remove('is-invalid');
+        statusBox.classList.remove('is-visible');
+        const name = custName.value.trim();
+        const phone = custPhone.value.trim().replace(/[\s.]/g, '');
+        let bad = false;
+        if (name.length < 2) { errName.textContent = 'Vui lòng nhập họ và tên đầy đủ.'; custName.classList.add('is-invalid'); bad = true; }
+        if (!/^0\d{9}$/.test(phone)) { errPhone.textContent = 'Số điện thoại cần đủ 10 chữ số bắt đầu bằng số 0.'; custPhone.classList.add('is-invalid'); bad = true; }
+        if (bad) { (name.length < 2 ? custName : custPhone).focus(); return; }
+        document.getElementById('formStatusTitle').textContent = `Đã giữ lịch khung ${selectedSlot} cho ${name}`;
+        document.getElementById('formStatusDesc').textContent = `${serviceSelect.value} · ${document.getElementById('specialistSelect').value}. Lễ tân sẽ nhắn xác nhận qua số ${phone}.`;
+        statusBox.classList.add('is-visible');
+      });
+
+      // Legal Modal
+      const legalModal = document.getElementById('legalModal');
+      const closeLegalBtn = document.getElementById('closeLegalBtn');
+      const legalText = {
+        privacy: 'Thông tin đặt hẹn trên bản mẫu Lumière Aesthetic chỉ dùng để minh họa quy trình giữ phòng VIP, không lưu trữ cho mục đích thương mại.',
+        terms: 'Toàn bộ chi phí buổi lẻ được niêm yết rõ ràng trước khi thực hiện và không yêu cầu đặt cọc trước.'
+      };
+      function closeLegal() { legalModal.classList.remove('is-open'); }
+      document.querySelectorAll('[data-legal]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.getElementById('legalModalTitle').textContent = btn.dataset.legal === 'privacy' ? 'Chính sách bảo mật' : 'Điều khoản sử dụng';
+          document.getElementById('legalModalBody').textContent = legalText[btn.dataset.legal];
+          legalModal.classList.add('is-open');
+          closeLegalBtn.focus();
+        });
+      });
+      closeLegalBtn.addEventListener('click', closeLegal);
+      legalModal.addEventListener('click', (e) => { if (e.target === legalModal) closeLegal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setMenuOpen(false); closeLegal(); } });
+    })();
   </script>
-  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>

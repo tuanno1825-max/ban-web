@@ -3,2263 +3,761 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAT DERMA - Phòng Khám Chuyên Khoa Da Liễu Chuẩn Y Khoa Quốc Tế</title>
+  <title>PAT Derma Clinic · Phòng Khám Chuyên Khoa Da Liễu Thẩm Mỹ</title>
+  <meta name="description" content="Thăm khám 1 kèm 1 cùng bác sĩ chuyên khoa da liễu, điều trị mụn viêm, nám sắc tố, sẹo rỗ và trẻ hóa tầng sâu với thiết bị đạt chuẩn FDA.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PAT Derma Clinic · Phòng Khám Chuyên Khoa Da Liễu">
+  <meta property="og:description" content="So sánh phục hồi da trước và sau điều trị, dự toán phác đồ theo tình trạng da và đặt lịch khám riêng cùng bác sĩ.">
+  <meta property="og:image" content="./image/hero-cinematic.png">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('has-motion');</script>
   <style>
     :root {
-      /* Swiss Clinical & Bright Glass Laboratory Palette */
-      --bg-pure-white: #FFFFFF;
-      --bg-ice-aqua: #F0F9FF;
-      --bg-lab-sky: #E0F2FE;
-      --bg-glass-white: rgba(255, 255, 255, 0.88);
-      --bg-glass-panel: rgba(240, 249, 255, 0.78);
+      --bg-base: #FFFFFF;
+      --bg-medical: #F6F8FA;
+      --bg-elevated: #ECEFF3;
+      --ink-primary: #111111;
+      --ink-secondary: #525252;
+      --ink-muted: #737373;
+      --border-hairline: #E2E6EC;
+      --border-strong: #C2C9D2;
+      --accent: #1D5B79;
+      --accent-hover: #15455C;
+      --danger: #B91C1C;
 
-      --accent-cerulean: #0284C7;
-      --accent-cobalt: #0369A1;
-      --accent-emerald: #0D9488;
-      --accent-emerald-soft: rgba(13, 148, 136, 0.1);
-      --accent-rose: #E11D48;
-      --accent-rose-soft: rgba(225, 29, 72, 0.09);
+      --font-sans: 'Manrope', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
 
-      --cyan-gradient: linear-gradient(135deg, #0284C7 0%, #0369A1 55%, #0D9488 100%);
-      --clinical-pill-gradient: linear-gradient(135deg, #E0F2FE 0%, #F0F9FF 100%);
-      --emerald-gradient: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+      --sp-0: 0px; --sp-50: 4px; --sp-75: 8px; --sp-100: 12px;
+      --sp-200: 16px; --sp-300: 24px; --sp-400: 32px; --sp-500: 40px; --sp-600: 48px;
+      --sp-700: 64px; --sp-800: 80px; --sp-900: 96px;
 
-      --text-heading: #0F172A;
-      --text-body: #334155;
-      --text-muted: #475569;
-      --text-subtle: #64748B;
-
-      --border-clinical: #BAE6FD;
-      --border-Reset: #E2E8F0;
-      --border-cobalt: rgba(2, 132, 199, 0.28);
-
-      --shadow-clinical: 0 20px 45px rgba(2, 132, 199, 0.08);
-      --shadow-clinical-hover: 0 24px 55px rgba(2, 132, 199, 0.15);
-      --shadow-pill: 0 12px 32px rgba(2, 132, 199, 0.1);
-
-      --font-sans: 'Be Vietnam Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-display: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px; --r-2xl: 24px; --r-full: 9999px;
+      --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    html, body {
-      overflow-x: hidden;
-      max-width: 100vw;
-    }
-    body {
-      background-color: var(--bg-pure-white);
-      background-image:
-        radial-gradient(circle at 12% 8%, rgba(224, 242, 254, 0.7) 0%, transparent 38%),
-        radial-gradient(circle at 88% 22%, rgba(204, 251, 241, 0.45) 0%, transparent 40%),
-        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 45%, #F0F9FF 75%, #FFFFFF 100%);
-      color: var(--text-body);
-      font-family: var(--font-sans);
-      line-height: 1.65;
-      overflow-x: hidden;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background-color: var(--bg-base); color: var(--ink-primary); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--bg-base); color: var(--ink-primary); font-family: var(--font-sans); font-size: 16px; line-height: 24px; overflow-x: clip; }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    button, input, select { font-family: inherit; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+
+    .heading-1 { font-size: 60px; line-height: 60px; font-weight: 600; letter-spacing: -0.025em; text-wrap: balance; }
+    .heading-2 { font-size: 48px; line-height: 48px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+    .heading-3 { font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+    .heading-4 { font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.015em; text-wrap: balance; }
+    .heading-5 { font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+    .heading-6 { font-size: 20px; line-height: 28px; font-weight: 600; text-wrap: balance; }
+    .title-2 { font-size: 18px; line-height: 28px; font-weight: 500; }
+    .title-4 { font-size: 14px; line-height: 20px; font-weight: 500; }
+    .body-3 { font-size: 16px; line-height: 24px; font-weight: 400; text-wrap: pretty; }
+    .body-4 { font-size: 14px; line-height: 20px; font-weight: 600; text-wrap: pretty; }
+    .body-6 { font-size: 14px; line-height: 20px; font-weight: 400; text-wrap: pretty; }
+    .button-md { font-size: 16px; line-height: 24px; font-weight: 600; }
+    .button-sm { font-size: 14px; line-height: 20px; font-weight: 600; }
+    .caption-2 { font-size: 14px; line-height: 20px; font-weight: 400; }
+    .caption-3 { font-size: 12px; line-height: 16px; font-weight: 600; }
+    .caption-5 { font-size: 12px; line-height: 16px; font-weight: 400; }
+    .mono-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+    @media (max-width: 767px) {
+      .heading-1 { font-size: 36px; line-height: 40px; }
+      .heading-2 { font-size: 30px; line-height: 36px; }
+      .heading-3 { font-size: 24px; line-height: 32px; }
+      .heading-4 { font-size: 24px; line-height: 32px; }
     }
 
-    /* SWISS CLINICAL TOP TELEMETRY BAR */
-    .top-bar {
-      background: var(--bg-ice-aqua);
-      border-bottom: 1px solid var(--border-clinical);
-      padding: 9px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      z-index: 100;
-      position: relative;
+    .skip-link { position: fixed; top: var(--sp-200); left: var(--sp-200); z-index: 200; padding: var(--sp-75) var(--sp-100); background: var(--ink-primary); color: var(--bg-base); border-radius: var(--r-md); transform: translateY(-160%); transition: transform 300ms var(--ease-out-expo); }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 var(--sp-300); }
+    @media (max-width: 639px) { .container { padding: 0 var(--sp-200); } }
+    .section { padding: var(--sp-800) 0; }
+    .section-medical { background-color: var(--bg-medical); }
+    @media (max-width: 767px) { .section { padding: var(--sp-600) 0; } }
+    .hairline { width: 100%; height: 1px; background-color: var(--border-hairline); }
+    .section-head { max-width: 680px; display: flex; flex-direction: column; gap: var(--sp-100); margin-bottom: var(--sp-500); }
+    .section-head p { color: var(--ink-secondary); }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-75); padding: var(--sp-75) var(--sp-100); border-radius: var(--r-md); border: 1px solid transparent; cursor: pointer; white-space: nowrap; transition: background-color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo), color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo); }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background-color: var(--ink-primary); color: var(--bg-base); }
+    .btn-primary:hover { background-color: var(--accent); }
+    .btn-outline { background-color: var(--bg-base); color: var(--ink-primary); border-color: var(--border-hairline); }
+    .btn-outline:hover { background-color: var(--bg-medical); border-color: var(--border-strong); }
+    .btn-hero-pill svg, .btn svg { transition: transform 300ms var(--ease-out-expo); }
+    .btn-hero-pill:hover svg, .btn:hover svg { transform: translateX(4px); }
+
+    .nav-shell { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--sp-200) 0; background-color: transparent; border-bottom: 1px solid transparent; transition: background-color 400ms var(--ease-out-expo), border-color 400ms var(--ease-out-expo), backdrop-filter 400ms var(--ease-out-expo), opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo); }
+    .nav-shell.is-scrolled { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom-color: var(--border-hairline); }
+    .floating-nav { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 var(--sp-300); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-300); }
+    @media (max-width: 639px) { .floating-nav { padding: 0 var(--sp-200); } }
+    .brand-link { display: inline-flex; align-items: center; gap: var(--sp-75); color: #FFFFFF; transition: color 300ms var(--ease-out-expo); }
+    .nav-shell.is-scrolled .brand-link { color: var(--ink-primary); }
+    .nav-links { display: flex; align-items: center; gap: var(--sp-200); }
+    .nav-link { padding: var(--sp-50) var(--sp-75); border-radius: var(--r-md); color: rgba(255, 255, 255, 0.78); transition: color 300ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo); }
+    .nav-link:hover, .nav-link.is-active { color: #FFFFFF; background-color: rgba(255, 255, 255, 0.12); }
+    .nav-shell.is-scrolled .nav-link { color: var(--ink-secondary); }
+    .nav-shell.is-scrolled .nav-link:hover, .nav-shell.is-scrolled .nav-link.is-active { color: var(--ink-primary); background-color: var(--bg-medical); }
+    .nav-cta-desktop { display: inline-flex; border-radius: var(--r-full); padding: var(--sp-75) var(--sp-200); background-color: #FFFFFF; color: #111111; }
+    .nav-cta-desktop:hover { background-color: #ECEFF3; color: #111111; }
+    .nav-shell.is-scrolled .nav-cta-desktop { background-color: var(--ink-primary); color: var(--bg-base); }
+    .nav-shell.is-scrolled .nav-cta-desktop:hover { background-color: var(--accent); color: var(--bg-base); }
+
+    .menu-toggle { display: none; width: 40px; height: 40px; align-items: center; justify-content: center; background-color: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.24); border-radius: var(--r-full); cursor: pointer; }
+    .nav-shell.is-scrolled .menu-toggle { background-color: var(--bg-medical); border-color: var(--border-hairline); }
+    .menu-lines { width: 18px; height: 12px; position: relative; }
+    .menu-lines span { position: absolute; left: 0; width: 18px; height: 1.5px; background-color: #FFFFFF; transition: transform 500ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo); }
+    .nav-shell.is-scrolled .menu-lines span { background-color: var(--ink-primary); }
+    .menu-lines span:first-child { top: 2px; }
+    .menu-lines span:last-child { top: 8px; }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:first-child { transform: translateY(3px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:last-child { transform: translateY(-3px) rotate(-45deg); }
+    @media (max-width: 899px) { .nav-links, .nav-cta-desktop { display: none; } .menu-toggle { display: inline-flex; } }
+
+    .mobile-drawer { position: fixed; inset: 0; z-index: 95; background-color: rgba(255, 255, 255, 0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; justify-content: space-between; padding: var(--sp-900) var(--sp-300) var(--sp-400); opacity: 0; pointer-events: none; transition: opacity 400ms var(--ease-out-expo); }
+    .mobile-drawer.is-open { opacity: 1; pointer-events: auto; }
+    .mobile-drawer-list { display: flex; flex-direction: column; gap: var(--sp-200); }
+    .mobile-drawer-item { opacity: 0; transform: translateY(var(--sp-300)); transition: transform 500ms var(--ease-out-expo), opacity 500ms var(--ease-out-expo); }
+    .mobile-drawer.is-open .mobile-drawer-item { opacity: 1; transform: translateY(0); }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(1) { transition-delay: 60ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(2) { transition-delay: 120ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(3) { transition-delay: 180ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(4) { transition-delay: 240ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(5) { transition-delay: 300ms; }
+    .mobile-drawer-link { display: flex; justify-content: space-between; padding: var(--sp-100) 0; }
+
+    /* Hero 100svh */
+    .hero { position: relative; min-height: 100svh; background-color: #0F1419; display: flex; flex-direction: column; overflow: hidden; }
+    .hero-bg-parallax { position: absolute; inset: 0; will-change: transform; }
+    .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; transition: transform 1200ms var(--ease-out-expo); }
+    .has-motion:not(.is-hero-ready) .hero-bg-img { transform: scale(1.07); }
+    .has-motion.is-hero-ready .hero-bg-img { transform: scale(1); }
+    .hero-scrim {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(90deg, rgba(15, 20, 25, 0.8) 0%, rgba(15, 20, 25, 0.36) 50%, rgba(15, 20, 25, 0.06) 100%),
+                  linear-gradient(180deg, rgba(15, 20, 25, 0.44) 0%, rgba(15, 20, 25, 0) 24%, rgba(15, 20, 25, 0) 70%, rgba(15, 20, 25, 0.62) 100%);
     }
-    .top-bar-left {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .top-bar-left span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .top-bar-left strong {
-      color: var(--accent-cobalt);
-      font-family: var(--font-mono);
-      font-weight: 700;
-      background: #FFFFFF;
-      padding: 2px 8px;
-      border-radius: 6px;
-      border: 1px solid var(--border-clinical);
-      font-size: 0.76rem;
-    }
-    .top-bar-right {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .medical-badge-pill {
-      background: var(--accent-emerald-soft);
-      border: 1px solid rgba(13, 148, 136, 0.35);
-      color: var(--accent-emerald);
-      padding: 4px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.75rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      letter-spacing: 0.2px;
+    .hero-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding-top: var(--sp-900); padding-bottom: var(--sp-400); }
+    .hero-copy { max-width: 680px; margin: auto 0; padding: var(--sp-500) 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-300); }
+    .hero-title { padding-top: var(--sp-50); padding-bottom: var(--sp-75); color: #FFFFFF; }
+    .hero-sub { max-width: 520px; color: rgba(255, 255, 255, 0.84); }
+    .btn-hero-pill { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-75); padding: var(--sp-75) var(--sp-200); border-radius: var(--r-full); background-color: #FFFFFF; color: #111111; border: 1px solid transparent; cursor: pointer; white-space: nowrap; transition: background-color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo); }
+    .btn-hero-pill:hover { background-color: #ECEFF3; }
+    .btn-hero-pill:active { transform: scale(0.98); }
+    .hero-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-200); color: rgba(255, 255, 255, 0.74); }
+    @media (max-width: 767px) {
+      .hero-bg-img { object-position: 76% center; }
+      .hero-scrim { background: linear-gradient(90deg, rgba(15, 20, 25, 0.84) 0%, rgba(15, 20, 25, 0.5) 100%), linear-gradient(180deg, rgba(15, 20, 25, 0.45) 0%, rgba(15, 20, 25, 0) 24%, rgba(15, 20, 25, 0.65) 100%); }
     }
 
-    /* FLOATING PILL NAVBAR (DETACHED SWISS LAB BAR) */
-    .navbar {
-      position: sticky;
-      top: 14px;
-      max-width: 1320px;
-      margin: 12px auto;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 12px 32px rgba(2, 132, 199, 0.1);
-      border: 1px solid #BAE6FD;
-      padding: 12px 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 95;
-      gap: 20px;
-    }
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .logo-cross {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: var(--cyan-gradient);
-      display: grid;
-      place-items: center;
-      color: #FFFFFF;
-      font-weight: 800;
-      font-size: 1.45rem;
-      font-family: var(--font-mono);
-      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.28);
-      position: relative;
-    }
-    .brand-text h1 {
-      font-family: var(--font-display);
-      font-size: 1.32rem;
-      font-weight: 800;
-      letter-spacing: -0.4px;
-      color: var(--text-heading);
-      line-height: 1.1;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .brand-text h1::after {
-      content: "SWISS LAB";
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      font-weight: 700;
-      color: var(--accent-cerulean);
-      background: var(--bg-lab-sky);
-      border: 1px solid var(--border-clinical);
-      padding: 2px 6px;
-      border-radius: 4px;
-      letter-spacing: 0.8px;
-    }
-    .brand-text p {
-      font-size: 0.66rem;
-      letter-spacing: 1px;
-      color: var(--accent-cobalt);
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-top: 2px;
-    }
+    /* Before / After Skin Slider */
+    .compare-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--sp-400); align-items: center; }
+    .ba-stage { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--border-hairline); background-color: var(--bg-medical); user-select: none; }
+    .ba-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ba-after { clip-path: inset(0 0 0 50%); }
+    .ba-divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background-color: #FFFFFF; pointer-events: none; transform: translateX(-1px); }
+    .ba-handle { position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; border-radius: var(--r-full); background-color: #FFFFFF; color: var(--ink-primary); border: 1px solid var(--border-hairline); display: flex; align-items: center; justify-content: center; transform: translate(-50%, -50%); pointer-events: none; }
+    .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 5; }
+    .ba-label { position: absolute; bottom: var(--sp-200); padding: var(--sp-50) var(--sp-100); border-radius: var(--r-md); background-color: rgba(17, 17, 17, 0.72); color: #FFFFFF; pointer-events: none; z-index: 3; }
+    .ba-label-left { left: var(--sp-200); }
+    .ba-label-right { right: var(--sp-200); }
+    .compare-info { display: flex; flex-direction: column; gap: var(--sp-200); }
+    .compare-info p { color: var(--ink-secondary); }
+    @media (max-width: 899px) { .compare-grid { grid-template-columns: 1fr; } }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      list-style: none;
-      background: var(--bg-ice-aqua);
-      padding: 5px;
-      border-radius: 999px;
-      border: 1px solid rgba(186, 230, 253, 0.7);
-    }
-    .nav-links a {
-      color: var(--text-body);
-      text-decoration: none;
-      font-size: 0.83rem;
-      font-weight: 600;
-      padding: 7px 14px;
-      border-radius: 999px;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--accent-cobalt);
-      background: #FFFFFF;
-      box-shadow: 0 2px 10px rgba(2, 132, 199, 0.1);
-    }
+    /* Doctors & Clinic Bento Grid */
+    .doctors-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-300); }
+    .doctor-card { background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-75); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .doctor-media { border-radius: var(--r-md); overflow: hidden; background-color: var(--bg-elevated); }
+    .doctor-media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center top; }
+    .doctor-body { padding: var(--sp-75) var(--sp-100) var(--sp-100); display: flex; flex-direction: column; gap: var(--sp-75); }
+    .doctor-body p { color: var(--ink-secondary); }
+    @media (max-width: 767px) { .doctors-grid { grid-template-columns: 1fr; } }
 
-    /* CLINICAL BUTTONS */
-    .btn-cyan {
-      background: var(--cyan-gradient);
-      color: #FFFFFF;
-      padding: 11px 24px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.86rem;
-      letter-spacing: 0.2px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      box-shadow: 0 8px 22px rgba(2, 132, 199, 0.25);
-      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-cyan:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(2, 132, 199, 0.38);
-      color: #FFFFFF;
-      filter: brightness(1.05);
-    }
+    /* Tagline Reveal */
+    .tagline-section { padding: var(--sp-900) 0; background-color: var(--bg-base); }
+    .tagline-wrap { max-width: 680px; }
+    .reveal-word { opacity: 0.28; transition: opacity 500ms var(--ease-out-expo); }
+    .reveal-word.is-lit { opacity: 1; }
 
-    .btn-outline-cyan {
-      background: #FFFFFF;
-      color: var(--accent-cobalt);
-      border: 1.5px solid var(--accent-cerulean);
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.86rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.06);
+    /* Protocol Estimator */
+    .protocol-shell { display: grid; grid-template-columns: 1fr 1.15fr; gap: var(--sp-400); align-items: stretch; }
+    .concern-tabs { display: flex; flex-direction: column; gap: var(--sp-100); }
+    .concern-btn {
+      width: 100%; text-align: left; padding: var(--sp-200) var(--sp-300); border-radius: var(--r-xl);
+      border: 1px solid var(--border-hairline); background-color: var(--bg-base); cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: var(--sp-200);
+      transition: border-color 300ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo);
     }
-    .btn-outline-cyan:hover {
-      background: var(--bg-lab-sky);
-      color: var(--text-heading);
-      border-color: var(--accent-cobalt);
-      transform: translateY(-1px);
-    }
+    .concern-btn:hover { border-color: var(--border-strong); }
+    .concern-btn.is-active { background-color: var(--ink-primary); color: var(--bg-base); border-color: var(--ink-primary); }
+    .protocol-preview { background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-75); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .protocol-media { border-radius: var(--r-md); overflow: hidden; background-color: var(--bg-elevated); }
+    .protocol-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .protocol-body { padding: var(--sp-75) var(--sp-200) var(--sp-200); display: flex; flex-direction: column; gap: var(--sp-200); flex: 1; justify-content: space-between; }
+    .protocol-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-200); padding-top: var(--sp-200); }
+    @media (max-width: 899px) { .protocol-shell { grid-template-columns: 1fr; } }
 
-    /* SWISS CLINICAL HERO & DIAGNOSTIC GRID */
-    .hero {
-      position: relative;
-      max-width: 1320px;
-      margin: 14px auto 0;
-      border-radius: 32px;
-      background-color: var(--bg-ice-aqua);
-      background-image:
-        radial-gradient(var(--border-clinical) 1.25px, transparent 1.25px),
-        linear-gradient(125deg, #FFFFFF 0%, #F0F9FF 52%, #E0F2FE 100%);
-      background-size: 24px 24px, 100% 100%;
-      border: 1px solid var(--border-clinical);
-      box-shadow: var(--shadow-clinical);
-      padding: 64px 56px 90px;
-      overflow: hidden;
-    }
-    /* Subtle Swiss Crosshair Watermarks */
-    .hero::before {
-      content: "+   +   +   +   +   +";
-      position: absolute;
-      top: 22px;
-      right: 40px;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      letter-spacing: 14px;
-      color: rgba(2, 132, 199, 0.25);
-      pointer-events: none;
-    }
-    .hero-grid-layout {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 48px;
-      align-items: center;
-      position: relative;
-      z-index: 10;
-    }
-    .hero-content {
-      max-width: 660px;
-      position: relative;
-      z-index: 10;
-    }
-    .hero-eyebrow-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #FFFFFF;
-      border: 1px solid var(--border-clinical);
-      color: var(--accent-cobalt);
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.07);
-    }
-    .fda-pill-code {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--accent-rose-soft);
-      border: 1px solid rgba(225, 29, 72, 0.25);
-      color: var(--accent-rose);
-      font-family: var(--font-mono);
-      font-size: 0.73rem;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 999px;
-    }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.25rem, 4.1vw, 3.45rem);
-      line-height: 1.16;
-      color: var(--text-heading);
-      font-weight: 800;
-      letter-spacing: -0.8px;
-      margin-bottom: 18px;
-    }
-    .hero-title span {
-      background: var(--cyan-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: block;
-      margin-top: 4px;
-    }
-    .hero-desc {
-      color: var(--text-body);
-      font-size: 1.02rem;
-      line-height: 1.72;
-      margin-bottom: 28px;
-      max-width: 600px;
-    }
+    /* FAQ & Booking */
+    .faq-list { display: flex; flex-direction: column; gap: var(--sp-100); max-width: 880px; }
+    .faq-item { border: 1px solid var(--border-hairline); border-radius: var(--r-xl); background-color: var(--bg-base); overflow: hidden; }
+    .faq-item.is-open { border-color: var(--border-strong); }
+    .faq-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-200); padding: var(--sp-300); background: transparent; border: none; text-align: left; cursor: pointer; }
+    .faq-icon { flex-shrink: 0; color: var(--ink-secondary); transition: transform 400ms var(--ease-out-expo); }
+    .faq-item.is-open .faq-icon { transform: rotate(45deg); }
+    .faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 400ms var(--ease-out-expo); }
+    .faq-item.is-open .faq-panel { grid-template-rows: 1fr; }
+    .faq-panel-inner { overflow: hidden; }
+    .faq-answer { padding: 0 var(--sp-300) var(--sp-300); color: var(--ink-secondary); max-width: 680px; }
 
-    /* Clinical Diagnostic Metrics Row inside Hero */
-    .clinical-metrics-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 28px;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid var(--border-clinical);
-      border-radius: 18px;
-      padding: 14px 18px;
-      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.05);
-    }
-    .metric-cell {
-      border-right: 1px dashed var(--border-clinical);
-      padding-right: 12px;
-    }
-    .metric-cell:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
-    .metric-code {
-      font-family: var(--font-mono);
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--accent-cerulean);
-      line-height: 1.2;
-    }
-    .metric-label {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
+    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-500); align-items: start; }
+    .cta-copy { max-width: 520px; display: flex; flex-direction: column; gap: var(--sp-200); }
+    .cta-copy p { color: var(--ink-secondary); }
+    .form-card { background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .form-group { display: flex; flex-direction: column; gap: var(--sp-75); }
+    .form-control { width: 100%; padding: var(--sp-100) var(--sp-200); border: 1px solid var(--border-hairline); border-radius: var(--r-md); background-color: var(--bg-base); font-size: 16px; line-height: 24px; }
+    .form-control.is-invalid { border-color: var(--danger); }
+    .field-error { color: var(--danger); min-height: 16px; }
+    .form-status { padding: var(--sp-200); border-radius: var(--r-md); border: 1px solid var(--border-hairline); background-color: var(--bg-medical); display: none; flex-direction: column; gap: var(--sp-75); }
+    .form-status.is-visible { display: flex; }
+    @media (max-width: 899px) { .cta-grid { grid-template-columns: 1fr; } .form-card { padding: var(--sp-300); } }
 
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 26px;
-    }
+    .site-footer { padding: var(--sp-600) 0; background-color: var(--bg-base); }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-300); padding-top: var(--sp-400); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-300); color: var(--ink-secondary); }
+    .footer-link-btn { background: none; border: none; padding: var(--sp-50) 0; cursor: pointer; color: var(--ink-secondary); }
+    .footer-link-btn:hover { color: var(--ink-primary); }
 
-    .hero-trust-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      background: #FFFFFF;
-      padding: 10px 20px;
-      border-radius: 999px;
-      border: 1px solid var(--border-clinical);
-      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08);
-    }
-    .hero-trust-stars {
-      color: var(--accent-emerald);
-      font-family: var(--font-mono);
-      font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-    }
-    .hero-trust-text {
-      font-size: 0.84rem;
-      color: var(--text-body);
-    }
-    .hero-trust-text strong {
-      color: var(--text-heading);
-      font-family: var(--font-mono);
-      font-weight: 800;
-    }
+    .modal-backdrop { position: fixed; inset: 0; z-index: 150; background-color: rgba(17, 17, 17, 0.56); display: none; align-items: center; justify-content: center; padding: var(--sp-200); }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-box { width: 100%; max-width: 560px; background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .modal-head { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-200); }
 
-    /* Right Hero Visual: Swiss Lab Specimen & Scanner Frame */
-    .hero-lab-visual {
-      position: relative;
-      background: #FFFFFF;
-      border: 1px solid var(--border-clinical);
-      border-radius: 26px;
-      padding: 14px;
-      box-shadow: 0 24px 50px rgba(2, 132, 199, 0.12);
-    }
-    .lab-frame-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 12px 12px;
-      border-bottom: 1px solid var(--bg-lab-sky);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--accent-cobalt);
-      font-weight: 700;
-    }
-    .lab-status-dots {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .lab-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-emerald);
-      display: inline-block;
-    }
-    .hero-img-container {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      height: 410px;
-      background: var(--bg-lab-sky);
-    }
-    .hero-img-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-    /* Crosshair overlay on Hero photo */
-    .scanner-hud-tag {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      right: 16px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-clinical);
-      border-radius: 16px;
-      padding: 12px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
-    }
-    .hud-tag-left {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .hud-tag-code {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--accent-cerulean);
-      text-transform: uppercase;
-    }
-    .hud-tag-title {
-      font-size: 0.86rem;
-      font-weight: 800;
-      color: var(--text-heading);
-    }
-    .hud-tag-badge {
-      background: var(--accent-emerald-soft);
-      border: 1px solid rgba(13, 148, 136, 0.35);
-      color: var(--accent-emerald);
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 800;
-      padding: 6px 12px;
-      border-radius: 10px;
-    }
+    /* Entrance & Stagger */
+    .has-motion .hero-stagger { opacity: 0; transform: translateY(var(--sp-300)); transition: opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo); }
+    .has-motion.is-hero-ready .hero-stagger { opacity: 1; transform: translateY(0); }
+    .has-motion .nav-shell.hero-stagger { transition-delay: 0ms; }
+    .has-motion .hero-title.hero-stagger { transition-delay: 80ms; }
+    .has-motion .hero-sub.hero-stagger { transition-delay: 160ms; }
+    .has-motion .btn-hero-pill.hero-stagger { transition-delay: 240ms; }
+    .has-motion .hero-bottom.hero-stagger { transition-delay: 320ms; }
 
-    /* 4 GOLD COMMITMENTS (BRIGHT GLASSMORPHIC LAB CARDS) */
-    .commitments-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      max-width: 1240px;
-      margin: -44px auto 60px;
-      padding: 0 24px;
-      position: relative;
-      z-index: 30;
-    }
-    .commit-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border-clinical);
-      border-radius: 20px;
-      padding: 22px 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      box-shadow: var(--shadow-clinical);
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .commit-card::after {
-      content: "+";
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--border-clinical);
-    }
-    .commit-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-cerulean);
-      box-shadow: var(--shadow-clinical-hover);
-    }
-    .commit-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      background: var(--bg-ice-aqua);
-      border: 1px solid var(--border-clinical);
-      display: grid;
-      place-items: center;
-      font-size: 1.35rem;
-      flex-shrink: 0;
-      color: var(--accent-cerulean);
-    }
-    .commit-text h4 {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: var(--text-heading);
-      margin-bottom: 4px;
-    }
-    .commit-text p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
+    .reveal-section { opacity: 0; transform: translateY(var(--sp-400)); transition: opacity 700ms var(--ease-out-expo), transform 700ms var(--ease-out-expo); }
+    .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
+    .doctor-card { transition: opacity 600ms var(--ease-out-expo), transform 600ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo); }
+    .has-motion .reveal-section:not(.is-visible) .doctor-card { opacity: 0; transform: translateY(var(--sp-300)); }
+    .reveal-section.is-visible .doctor-card:nth-child(1) { transition-delay: 0ms; }
+    .reveal-section.is-visible .doctor-card:nth-child(2) { transition-delay: 60ms; }
+    .reveal-section.is-visible .doctor-card:nth-child(3) { transition-delay: 120ms; }
+    .reveal-section.is-visible .doctor-card:nth-child(4) { transition-delay: 180ms; }
+    .reveal-section.is-visible .doctor-card:hover { transform: translateY(-2px); }
 
-    /* SECTION TITLE STYLES */
-    .section-wrap {
-      padding: 80px 48px;
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-    .section-header {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 48px;
-    }
-    .section-tag {
-      background: var(--bg-ice-aqua);
-      border: 1px solid var(--border-clinical);
-      color: var(--accent-cobalt);
-      text-transform: uppercase;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      padding: 5px 16px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-      display: inline-block;
-    }
-    .section-heading {
-      font-family: var(--font-display);
-      font-size: clamp(1.9rem, 3vw, 2.55rem);
-      font-weight: 800;
-      letter-spacing: -0.6px;
-      color: var(--text-heading);
-      margin-bottom: 12px;
-      line-height: 1.22;
-    }
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 0.96rem;
-    }
-
-    /* SECTION 1: INTERNATIONAL MEDICAL BOARD CREDENTIAL CARDS (DOCTORS) */
-    .doctors-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .doctor-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-clinical);
-      border-radius: 24px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-clinical);
-      transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-    }
-    .doctor-card::before {
-      content: "BOARD CERTIFIED • SWISS DERMA PROTOCOL";
-      background: var(--bg-ice-aqua);
-      border-bottom: 1px solid var(--border-clinical);
-      padding: 7px 18px;
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      font-weight: 700;
-      color: var(--accent-cobalt);
-      letter-spacing: 1px;
-      display: block;
-    }
-    .doctor-card:hover {
-      transform: translateY(-7px);
-      border-color: var(--accent-cerulean);
-      box-shadow: var(--shadow-clinical-hover);
-    }
-    .doc-img-wrap {
-      width: 100%;
-      height: 300px;
-      position: relative;
-      overflow: hidden;
-      background: var(--bg-lab-sky);
-      border-bottom: 1px solid var(--border-clinical);
-    }
-    .doc-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .doctor-card:hover .doc-img-wrap img {
-      transform: scale(1.05);
-    }
-    .doc-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--accent-cerulean);
-      color: var(--accent-cobalt);
-      padding: 5px 14px;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.3px;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
-    }
-    .doc-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .doc-name {
-      font-family: var(--font-display);
-      font-size: 1.28rem;
-      font-weight: 800;
-      color: var(--text-heading);
-      margin-bottom: 4px;
-    }
-    .doc-role {
-      font-size: 0.83rem;
-      color: var(--accent-cerulean);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .doc-bio {
-      font-size: 0.86rem;
-      color: var(--text-body);
-      line-height: 1.6;
-      margin-bottom: 20px;
-      flex: 1;
-    }
-    .doc-footer {
-      background: var(--bg-ice-aqua);
-      margin: 0 -24px -24px;
-      padding: 16px 24px;
-      border-top: 1px solid var(--border-clinical);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .doc-stat {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-    .doc-stat strong {
-      color: var(--text-heading);
-      font-family: var(--font-mono);
-      font-size: 0.92rem;
-      font-weight: 800;
-    }
-
-    /* SECTION 2: CÁC DỊCH VỤ ĐIỀU TRỊ MŨI NHỌN (TREATMENTS GRID) */
-    .services-filter-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    .tab-btn {
-      background: #FFFFFF;
-      border: 1px solid var(--border-clinical);
-      color: var(--text-body);
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.04);
-    }
-    .tab-btn:hover,
-    .tab-btn.active {
-      background: var(--cyan-gradient);
-      color: #FFFFFF;
-      border-color: transparent;
-      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-    }
-    .service-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-clinical);
-      border-radius: 24px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-clinical);
-      transition: all 0.3s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent-cerulean);
-      box-shadow: var(--shadow-clinical-hover);
-    }
-    .service-img-wrap {
-      width: 100%;
-      height: 205px;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border-clinical);
-    }
-    .service-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .service-card:hover .service-img-wrap img {
-      transform: scale(1.07);
-    }
-    .service-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--border-clinical);
-      color: var(--accent-cobalt);
-      font-family: var(--font-mono);
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-    }
-    .service-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .service-title {
-      font-family: var(--font-display);
-      font-size: 1.18rem;
-      color: var(--text-heading);
-      font-weight: 800;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-    .service-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-      margin-bottom: 16px;
-      flex: 1;
-    }
-    .service-perks {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-bottom: 18px;
-      background: var(--bg-ice-aqua);
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(186, 230, 253, 0.6);
-    }
-    .service-perks li {
-      font-size: 0.8rem;
-      color: var(--text-body);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .service-perks li span {
-      color: var(--accent-emerald);
-      font-weight: 800;
-      font-family: var(--font-mono);
-    }
-    .service-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid var(--border-clinical);
-      padding-top: 16px;
-    }
-    .service-price {
-      font-size: 1.18rem;
-      font-weight: 800;
-      color: var(--accent-cobalt);
-      font-family: var(--font-mono);
-    }
-
-    /* SECTION 3: SEOUL SKIN ANALYSIS CONSOLE (BEFORE / AFTER LAB SCANNER) */
-    .compare-section {
-      background: linear-gradient(180deg, var(--bg-ice-aqua) 0%, var(--bg-lab-sky) 50%, var(--bg-ice-aqua) 100%);
-      border-top: 1px solid var(--border-clinical);
-      border-bottom: 1px solid var(--border-clinical);
-      padding: 90px 48px;
-      position: relative;
-    }
-    .compare-container {
-      max-width: 1180px;
-      margin: 0 auto;
-      background: #FFFFFF;
-      border: 1px solid var(--border-clinical);
-      border-radius: 32px;
-      padding: 44px;
-      box-shadow: var(--shadow-clinical);
-      display: grid;
-      grid-template-columns: 1fr 1.05fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .compare-info h3 {
-      font-family: var(--font-display);
-      font-size: 2.05rem;
-      font-weight: 800;
-      color: var(--text-heading);
-      margin-bottom: 14px;
-      line-height: 1.24;
-      letter-spacing: -0.5px;
-    }
-    .compare-info h3 span {
-      background: var(--cyan-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: block;
-    }
-    .compare-info p {
-      color: var(--text-body);
-      font-size: 0.93rem;
-      line-height: 1.7;
-      margin-bottom: 18px;
-    }
-    .lab-telemetry-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .lab-telemetry-box {
-      background: var(--bg-ice-aqua);
-      border: 1px solid var(--border-clinical);
-      border-radius: 12px;
-      padding: 10px 12px;
-    }
-    .lab-telemetry-box small {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-    .lab-telemetry-box strong {
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-      color: var(--accent-emerald);
-      font-weight: 800;
-    }
-    .compare-instruction-box {
-      background: var(--bg-ice-aqua);
-      border-left: 4px solid var(--accent-cerulean);
-      padding: 12px 18px;
-      border-radius: 0 12px 12px 0;
-      margin-bottom: 24px;
-    }
-    .compare-instruction-box p {
-      font-size: 0.85rem;
-      color: var(--accent-cobalt);
-      font-weight: 600;
-      font-style: italic;
-      margin-bottom: 0;
-    }
-
-    /* INTERACTIVE BEFORE/AFTER SLIDER COMPONENT */
-    .comparison-slider-box {
-      position: relative;
-      width: 100%;
-      height: 430px;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 2px solid var(--accent-cerulean);
-      box-shadow: 0 20px 45px rgba(2, 132, 199, 0.14);
-      user-select: none;
-      background: var(--bg-lab-sky);
-    }
-    .img-before-wrap,
-    .img-after-wrap {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .img-after-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .img-before-wrap {
-      width: 50%;
-      overflow: hidden;
-      z-index: 2;
-      border-right: 2.5px solid var(--accent-cerulean);
-    }
-    .img-before-wrap img {
-      width: 100%;
-      min-width: 500px;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .compare-badge {
-      position: absolute;
-      bottom: 18px;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(8px);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
-    }
-    .badge-before {
-      left: 18px;
-      color: var(--accent-rose);
-      border: 1px solid var(--accent-rose);
-      z-index: 10;
-    }
-    .badge-after {
-      right: 18px;
-      color: var(--accent-emerald);
-      border: 1px solid var(--accent-emerald);
-      z-index: 1;
-    }
-    .slider-handle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: #FFFFFF;
-      border: 2px solid var(--accent-cerulean);
-      color: var(--accent-cobalt);
-      display: grid;
-      place-items: center;
-      font-size: 1.15rem;
-      font-weight: 900;
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
-      z-index: 20;
-      pointer-events: none;
-    }
-    .slider-range-input {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: ew-resize;
-      z-index: 30;
-    }
-
-    /* SECTION 4: SEOUL DIAGNOSTIC COST & PROTOCOL CONSOLE (ESTIMATOR) */
-    .estimator-section {
-      padding: 90px 48px;
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-    .estimator-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-clinical);
-      border-radius: 30px;
-      padding: 48px;
-      box-shadow: var(--shadow-clinical);
-      position: relative;
-      overflow: hidden;
-    }
-    .estimator-card::before {
-      content: "VISIA-3D PROTOCOL CALCULATOR // VERIFIED PRICING ENGINE";
-      display: block;
-      background: var(--bg-ice-aqua);
-      border: 1px solid var(--border-clinical);
-      color: var(--accent-cobalt);
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      padding: 8px 16px;
-      border-radius: 10px;
-      margin-bottom: 28px;
-      text-align: center;
-    }
-    .estimator-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 36px;
-      margin-top: 24px;
-      align-items: center;
-    }
-    .est-field {
-      margin-bottom: 20px;
-    }
-    .est-field label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: var(--text-heading);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-    .est-field select {
-      width: 100%;
-      background: var(--bg-ice-aqua);
-      border: 1.5px solid var(--border-clinical);
-      padding: 13px 16px;
-      border-radius: 14px;
-      color: var(--text-heading);
-      font-family: var(--font-sans);
-      font-weight: 600;
-      font-size: 0.92rem;
-      outline: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .est-field select:focus {
-      border-color: var(--accent-cerulean);
-      background: #FFFFFF;
-      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
-    }
-    .est-result-box {
-      background: linear-gradient(160deg, var(--bg-ice-aqua) 0%, #FFFFFF 100%);
-      border: 2px solid var(--accent-cerulean);
-      border-radius: 24px;
-      padding: 32px 28px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 16px 36px rgba(2, 132, 199, 0.1);
-    }
-    .est-result-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent-cobalt);
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-    .est-price-big {
-      font-family: var(--font-mono);
-      font-size: 2.35rem;
-      font-weight: 800;
-      color: var(--accent-cerulean);
-      margin: 10px 0;
-    }
-    .est-sessions {
-      font-size: 0.92rem;
-      color: var(--accent-emerald);
-      font-weight: 800;
-      margin-bottom: 16px;
-      font-family: var(--font-mono);
-    }
-    .est-gift-tag {
-      background: var(--accent-emerald-soft);
-      border: 1px dashed var(--accent-emerald);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #0F766E;
-      margin-bottom: 22px;
-    }
-
-    /* SECTION 5: DIGITAL HOSPITAL PRIORITY QUEUE KIOSK (BOOKING) */
-    .booking-section {
-      padding: 60px 48px 90px;
-      max-width: 1240px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-    .booking-info h3 {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 800;
-      line-height: 1.24;
-      color: var(--text-heading);
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
-    }
-    .booking-info h3 span {
-      background: var(--cyan-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: block;
-    }
-    .booking-info p {
-      color: var(--text-body);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-    .booking-perk-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
-    .booking-perk-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--bg-ice-aqua);
-      border: 1px solid var(--border-clinical);
-      padding: 10px 16px;
-      border-radius: 14px;
-    }
-    .booking-perk-check {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: var(--accent-emerald-soft);
-      color: var(--accent-emerald);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      font-family: var(--font-mono);
-      flex-shrink: 0;
-    }
-    .booking-perk-text {
-      font-size: 0.88rem;
-      color: var(--text-heading);
-      font-weight: 600;
-    }
-    .emergency-hotline-card {
-      background: var(--bg-lab-sky);
-      border: 1.5px solid var(--border-clinical);
-      border-radius: 18px;
-      padding: 18px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .emergency-hotline-card .hotline-label {
-      font-size: 0.78rem;
-      color: var(--accent-cobalt);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
-    .emergency-hotline-card .hotline-number {
-      font-size: 1.55rem;
-      font-weight: 800;
-      color: var(--accent-cerulean);
-      font-family: var(--font-mono);
-    }
-
-    /* Kiosk Ticket Form Card */
-    .booking-card {
-      background: #FFFFFF;
-      border: 2px solid var(--border-clinical);
-      border-radius: 28px;
-      padding: 36px;
-      box-shadow: var(--shadow-clinical-hover);
-      position: relative;
-      overflow: hidden;
-    }
-    .kiosk-status-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--bg-ice-aqua);
-      border: 1px solid var(--border-clinical);
-      padding: 8px 14px;
-      border-radius: 10px;
-      margin-bottom: 18px;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--accent-cobalt);
-      font-weight: 700;
-    }
-    .kiosk-live-badge {
-      color: var(--accent-emerald);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .form-group-med {
-      margin-bottom: 15px;
-    }
-    .form-group-med label {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--text-heading);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-    .form-group-med input,
-    .form-group-med select {
-      width: 100%;
-      background: var(--bg-ice-aqua);
-      border: 1.5px solid var(--border-clinical);
-      padding: 12px 14px;
-      border-radius: 12px;
-      color: var(--text-heading);
-      font-family: var(--font-sans);
-      font-weight: 500;
-      font-size: 0.9rem;
-      outline: none;
-      transition: all 0.2s;
-    }
-    .form-group-med input::placeholder {
-      color: var(--text-subtle);
-    }
-    .form-group-med input:focus,
-    .form-group-med select:focus {
-      border-color: var(--accent-cerulean);
-      background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
-    }
-
-    /* FOOTER SWISS CLINICAL LABORATORY */
-    .footer {
-      background: var(--bg-ice-aqua);
-      border-top: 1px solid var(--border-clinical);
-      padding: 70px 48px 32px;
-      color: var(--text-body);
-    }
-    .footer-grid {
-      max-width: 1240px;
-      margin: 0 auto 48px;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-      gap: 40px;
-    }
-    .footer-col h4 {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--text-heading);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.86rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover {
-      color: var(--accent-cerulean);
-    }
-    .footer-bottom {
-      max-width: 1240px;
-      margin: 0 auto;
-      border-top: 1px solid var(--border-clinical);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    /* MODAL PHIẾU KHÁM ƯU TIÊN (SWISS DIGITAL BOARDING PASS) */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      display: none;
-      place-items: center;
-      padding: 20px;
-    }
-    .modal-overlay.open {
-      display: grid;
-    }
-    .vip-ticket-modal {
-      background: #FFFFFF;
-      border: 2px solid var(--accent-cerulean);
-      border-radius: 28px;
-      max-width: 520px;
-      width: 100%;
-      padding: 36px;
-      text-align: center;
-      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.25);
-      animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes popIn {
-      from { transform: scale(0.92); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1200px) {
-      .nav-links { display: none; }
-      .navbar { margin: 10px 16px; padding: 12px 18px; gap: 12px; }
-    }
-    @media (max-width: 1080px) {
-      .navbar { margin: 10px 16px; padding: 12px 20px; }
-      .hero { margin: 10px 16px 0; padding: 48px 32px 72px; }
-      .hero-grid-layout { grid-template-columns: minmax(0, 1fr); }
-      .commitments-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: -28px; }
-      .doctors-grid, .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .compare-container, .estimator-grid, .booking-section { grid-template-columns: minmax(0, 1fr); }
-      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 768px) {
-      .top-bar { display: none; }
-      .navbar { margin: 8px 12px; padding: 10px 14px; border-radius: 16px; gap: 8px; }
-      .nav-links { display: none; }
-      .brand-logo { min-width: 0; flex: 1; gap: 8px; }
-      .logo-cross { width: 34px; height: 34px; font-size: 1.15rem; flex-shrink: 0; }
-      .logo-emblem { width: 38px; height: 38px; font-size: 1.15rem; flex-shrink: 0; }
-      .brand-text { min-width: 0; overflow: hidden; }
-      .brand-text h1 { font-size: 1.05rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .brand-text h1::after { display: none; }
-      .brand-text p { display: none; }
-      .navbar .btn-cyan { padding: 8px 12px; font-size: 0.74rem; white-space: nowrap; flex-shrink: 0; }
-      .hero { margin: 8px 12px 0; padding: 28px 16px 36px; border-radius: 20px; }
-      .hero-trust-pill { border-radius: 16px; padding: 10px 14px; flex-wrap: wrap; }
-      .hero-cta-group { flex-direction: column; align-items: stretch; }
-      .hero-cta-group .btn-cyan, .hero-cta-group .btn-outline-clinical { width: 100%; }
-      .hero-grid-layout > *,
-      .compare-container > *,
-      .estimator-grid > *,
-      .booking-section > *,
-      .commitments-grid > *,
-      .doctors-grid > *,
-      .services-grid > *,
-      .footer-grid > * {
-        min-width: 0;
-        max-width: 100%;
-      }
-      .compare-container .btn-cyan,
-      .estimator-card .btn-cyan,
-      .booking-card .btn-cyan,
-      .hero-cta-group .btn-cyan,
-      .vip-ticket-modal .btn-cyan {
-        white-space: normal;
-        text-align: center;
-        justify-content: center;
-        max-width: 100%;
-        line-height: 1.35;
-        padding: 12px 16px;
-      }
-      .clinical-metrics-strip { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px 16px; }
-      .metric-cell { border-right: none; border-bottom: 1px dashed var(--border-clinical); padding-bottom: 8px; }
-      .metric-cell:last-child { border-bottom: none; padding-bottom: 0; }
-      .hero-img-container { height: 300px; }
-      .scanner-hud-tag { left: 10px; right: 10px; bottom: 10px; padding: 10px 12px; flex-direction: column; align-items: flex-start; gap: 6px; }
-      .commitments-grid { grid-template-columns: minmax(0, 1fr); padding: 0 16px; margin-top: 16px; margin-bottom: 36px; }
-      .section-wrap, .compare-section, .estimator-section, .booking-section, .footer { padding: 48px 16px; }
-      .compare-container, .estimator-card, .booking-card, .vip-ticket-modal { padding: 24px 16px; border-radius: 20px; }
-      .lab-telemetry-grid { grid-template-columns: minmax(0, 1fr); }
-      .comparison-slider-box { height: 300px; }
-      .img-before-wrap img { min-width: 300px; }
-      .compare-badge { font-size: 0.65rem; padding: 4px 10px; bottom: 12px; }
-      .emergency-hotline-card { flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px 16px; }
-      .booking-card form > div[style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; }
-      .doctors-grid, .services-grid { grid-template-columns: minmax(0, 1fr); }
-      .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal-section, .mobile-drawer-item, .reveal-word, .has-motion .hero-stagger, .has-motion .hero-bg-img, .has-motion .reveal-section:not(.is-visible) .doctor-card { opacity: 1; transform: none; transition: none; }
+      .btn, .btn svg, .btn-hero-pill, .btn-hero-pill svg, .faq-panel, .faq-icon, .doctor-card { transition: none; }
+      .btn:hover svg, .btn-hero-pill:hover svg, .reveal-section.is-visible .doctor-card:hover { transform: none; }
     }
   </style>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" href="/favicon.ico" sizes="any">
 </head>
 <body>
+  <a href="#main-content" class="skip-link button-sm">Chuyển đến nội dung chính</a>
 
-  <!-- TOP MEDICAL UTILITY BAR -->
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <span>🏥 Giấy Phép Hoạt Động Bộ Y Tế: <strong>Số 08924/BYT-GPHĐ</strong></span>
-      <span>|</span>
-      <span>Hotline Cấp Cứu &amp; Đặt Hẹn: <strong>1900 6836</strong> (Miễn cước 24/7)</span>
-    </div>
-    <div class="top-bar-right">
-      <div class="medical-badge-pill">
-        <span>✔</span>
-        <span>ISO-9001 • Phòng Khám Đạt Chuẩn Vô Khuẩn Quốc Tế</span>
-      </div>
-      <a href="#booking" class="btn-outline-cyan" style="padding: 4px 14px; font-size: 0.76rem;">Đặt Lịch Khám</a>
-    </div>
-  </div>
-
-  <!-- FLOATING PILL NAVBAR -->
-  <nav class="navbar">
-    <a href="#" class="brand-logo">
-      <div class="logo-cross">+</div>
-      <div class="brand-text">
-        <h1>PAT DERMA</h1>
-        <p>Viện Chuyên Khoa Da Liễu Chuẩn Y Khoa</p>
-      </div>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="#hero" class="active">Trang Chủ</a></li>
-      <li><a href="#doctors">Bác Sĩ CKI-II</a></li>
-      <li><a href="#services">Dịch Vụ Mũi Nhọn</a></li>
-      <li><a href="#compare">Trước &amp; Sau Điều Trị</a></li>
-      <li><a href="#estimator">Dự Toán Chi Phí</a></li>
-      <li><a href="#booking">Đặt Lịch Khám 1:1</a></li>
-    </ul>
-
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <a href="#booking" class="btn-cyan">
-        <span>📅</span>
-        <span>Đặt Lịch Bác Sĩ</span>
+  <header class="nav-shell hero-stagger" id="navShell">
+    <nav class="floating-nav" aria-label="Điều hướng chính">
+      <a href="#top" class="brand-link title-4">
+        <svg width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="128" cy="128" r="88"/>
+          <path d="M128 84V172"/>
+          <path d="M84 128H172"/>
+        </svg>
+        <span>PAT Derma Clinic</span>
       </a>
-    </div>
-  </nav>
-
-  <!-- SWISS CLINICAL HERO SECTION -->
-  <section class="hero" id="hero">
-    <div class="hero-grid-layout">
-      <div class="hero-content">
-        <div class="hero-eyebrow-group">
-          <div class="hero-eyebrow">
-            <span>🔬</span>
-            <span>Phác Đồ Cá Nhân Hóa Chuẩn Y Khoa 1:1</span>
-          </div>
-          <span class="fda-pill-code">FDA K210482 • CE MARK</span>
-        </div>
-
-        <h2 class="hero-title">
-          Khôi Phục Làn Da
-          <span>Khẳng Định Sự Tự Tin Rạng Rỡ</span>
-        </h2>
-
-        <p class="hero-desc">
-          Quy tụ đội ngũ Bác sĩ Chuyên khoa Da Liễu CKI - CKII Đại Học Y Dược trực tiếp thăm khám và lên phác đồ. Ứng dụng công nghệ Laser PicoSure &amp; Fractional CO2 chính hãng Hoa Kỳ, cam kết hiệu quả rõ rệt bằng văn bản có dấu mộc.
-        </p>
-
-        <div class="clinical-metrics-strip">
-          <div class="metric-cell">
-            <div class="metric-code">99.4%</div>
-            <div class="metric-label">Tỷ lệ đáp ứng lâm sàng</div>
-          </div>
-          <div class="metric-cell">
-            <div class="metric-code">755nm</div>
-            <div class="metric-label">Bước sóng PicoSure Mỹ</div>
-          </div>
-          <div class="metric-cell">
-            <div class="metric-code">8 Tầng</div>
-            <div class="metric-label">Quét quang phổ VISIA 3D</div>
-          </div>
-        </div>
-
-        <div class="hero-actions">
-          <a href="#booking" class="btn-cyan" style="padding: 13px 28px;">
-            <span>🩺</span>
-            <span>Đặt Hẹn Khám Bác Sĩ 1:1</span>
-          </a>
-          <a href="#estimator" class="btn-outline-cyan" style="padding: 12px 24px;">
-            <span>Dự Toán Chi Phí Liệu Trình</span>
-          </a>
-        </div>
-
-        <div class="hero-trust-pill">
-          <span class="hero-trust-stars">★ ★ ★ ★ ★</span>
-          <span class="hero-trust-text">Hơn <strong>12.500+</strong> ca điều trị da mụn, nám, sẹo rỗ thành công</span>
-        </div>
+      <div class="nav-links">
+        <a href="#phuc-hoi" class="nav-link title-4">Phục hồi da</a>
+        <a href="#bac-si" class="nav-link title-4">Bác sĩ</a>
+        <a href="#phac-do" class="nav-link title-4">Phác đồ</a>
+        <a href="#hoi-dap" class="nav-link title-4">Hỏi đáp</a>
       </div>
+      <a href="#dat-lich" class="btn btn-primary button-sm nav-cta-desktop">Đặt lịch khám</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Mở menu điều hướng">
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </nav>
+  </header>
 
-      <!-- SWISS DERMATOLOGY LAB SPECIMEN & DOCTOR SHOWCASE -->
-      <div class="hero-lab-visual">
-        <div class="lab-frame-header">
-          <span class="lab-status-dots"><i class="lab-dot"></i> VISIA-3D OPTICAL SCANNER ACTIVE</span>
-          <span>LAB ID: #CH-8842</span>
-        </div>
-        <div class="hero-img-container">
-          <img src="image/hero-doctor.webp" alt="Bác sĩ Chuyên Khoa Da Liễu PAT DERMA">
-          <div class="scanner-hud-tag">
-            <div class="hud-tag-left">
-              <span class="hud-tag-code">CHỨNG NHẬN LÂM SÀNG THỤY SĨ - HOA KỲ</span>
-              <span class="hud-tag-title">Phòng Lab Laser &amp; Tái Tạo Biểu Bì Vô Khuẩn</span>
-            </div>
-            <span class="hud-tag-badge">FDA 99.4%</span>
-          </div>
-        </div>
-      </div>
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-list">
+      <div class="mobile-drawer-item"><a href="#phuc-hoi" class="mobile-drawer-link heading-4">Kết quả phục hồi da</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#bac-si" class="mobile-drawer-link heading-4">Đội ngũ bác sĩ</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#phac-do" class="mobile-drawer-link heading-4">Dự toán phác đồ</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#hoi-dap" class="mobile-drawer-link heading-4">Câu hỏi thường gặp</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item" style="padding-top: var(--sp-200);"><a href="#dat-lich" class="btn btn-primary button-md" style="width: 100%;">Đặt lịch khám 1 kèm 1</a></div>
     </div>
-  </section>
-
-  <!-- 4 GOLD COMMITMENTS -->
-  <div class="commitments-grid">
-    <div class="commit-card">
-      <div class="commit-icon">👨‍⚕️</div>
-      <div class="commit-text">
-        <h4>100% Bác Sĩ CKI-II</h4>
-        <p>Bác sĩ chuyên khoa Da Liễu Đại Học Y Dược trực tiếp thăm khám và điều trị.</p>
-      </div>
-    </div>
-
-    <div class="commit-card">
-      <div class="commit-icon">⚡</div>
-      <div class="commit-text">
-        <h4>Laser Chuẩn FDA Hoa Kỳ</h4>
-        <p>100% máy móc nhập khẩu nguyên chiếc từ Mỹ, Thụy Sĩ có chứng nhận CO/CQ.</p>
-      </div>
-    </div>
-
-    <div class="commit-card">
-      <div class="commit-icon">🔍</div>
-      <div class="commit-text">
-        <h4>Soi Da 3D VISIA</h4>
-        <p>Phân tích 8 chỉ số biểu bì &amp; tầng sâu phát hiện chính xác gốc bệnh.</p>
-      </div>
-    </div>
-
-    <div class="commit-card">
-      <div class="commit-icon">📝</div>
-      <div class="commit-text">
-        <h4>Cam Kết Bằng Văn Bản</h4>
-        <p>Ký cam kết hiệu quả phục hồi có dấu mộc pháp lý trước khi thực hiện.</p>
-      </div>
-    </div>
+    <div class="caption-2" style="color: var(--ink-muted);">PAT Derma Clinic · Hai Bà Trưng, Hà Nội</div>
   </div>
 
-  <!-- SECTION 1: ĐỘI NGŨ BÁC SĨ CHUYÊN KHOA DA LIỄU -->
-  <section class="section-wrap" id="doctors">
-    <div class="section-header">
-      <div class="section-tag">Học Vị &amp; Kinh Nghiệm</div>
-      <h3 class="section-heading">Đội Ngũ Bác Sĩ Chuyên Khoa Da Liễu Đầu Ngành</h3>
-      <p class="section-desc">Mỗi khách hàng đều được một bác sĩ chuyên khoa phụ trách theo dõi hồ sơ bệnh án xuyên suốt liệu trình</p>
-    </div>
-
-    <div class="doctors-grid">
-      <!-- BÁC SĨ 1 -->
-      <div class="doctor-card">
-        <div class="doc-img-wrap">
-          <span class="doc-badge">Trưởng Khoa Laser</span>
-          <img loading="lazy" src="image/doctor-woman.webp" alt="Bác sĩ CKI Nguyễn Thanh Vân">
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="hero-bg-parallax" id="heroParallax">
+        <img src="./image/hero-cinematic.png" alt="Ống tinh chất y khoa và giọt dưỡng chất vô trùng tại PAT Derma Clinic" class="hero-bg-img" width="1408" height="768">
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="heading-1 hero-title hero-stagger">Điều trị da liễu y khoa<br>cùng bác sĩ chuyên khoa</h1>
+          <p class="body-3 hero-sub hero-stagger">Chẩn đoán bằng thiết bị soi da cắt lớp, phác đồ rõ từng buổi và sử dụng dược mỹ phẩm chính hãng đạt chuẩn FDA.</p>
+          <a href="#dat-lich" class="btn-hero-pill button-md hero-stagger">
+            <span>Đặt lịch khám 1 kèm 1</span>
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 128H216"/><path d="M144 56L216 128L144 200"/></svg>
+          </a>
         </div>
-        <div class="doc-body">
-          <h4 class="doc-name">BS. CKI Nguyễn Thanh Vân</h4>
-          <p class="doc-role">Trưởng Khoa Laser &amp; Trẻ Hóa Công Nghệ Cao</p>
-          <p class="doc-bio">Hơn 15 năm kinh nghiệm lâm sàng tại Bệnh viện Da Liễu TW. Tu nghiệp chuyên sâu về Laser Pico và Mesotherapy tại Đại học Y khoa Basel (Thụy Sĩ).</p>
-          <div class="doc-footer">
-            <div class="doc-stat">Kinh nghiệm: <strong>15+ Năm</strong></div>
-            <a href="#booking" class="btn-outline-cyan" style="padding: 6px 14px; font-size: 0.78rem;" onclick="selectDoctor('BS. CKI Nguyễn Thanh Vân')">Chọn Bác Sĩ</a>
+        <div class="hero-bottom caption-2 hero-stagger">
+          <span>Bác sĩ chuyên khoa cấp 1 và 2 · Phác đồ chuẩn y khoa · Không kê đơn dư thừa</span>
+          <a href="#phac-do" style="color: rgba(255, 255, 255, 0.86);">Tra cứu phác đồ</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal-section" id="phuc-hoi">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Kiểm chứng tiến triển làn da qua từng giai đoạn</h2>
+          <p class="body-3">Kéo thanh so sánh ảnh chụp cùng điều kiện ánh sáng phòng khám sau phác đồ phục hồi nền da và xử lý mụn viêm.</p>
+        </div>
+        <div class="compare-grid">
+          <div class="ba-stage">
+            <img src="./image/skin-before.webp" alt="Tình trạng da mụn viêm trước khi điều trị" class="ba-img">
+            <img src="./image/skin-after.webp" alt="Làn da phục hồi đều màu sau 6 tuần theo phác đồ" class="ba-img ba-after" id="baAfterImg">
+            <div class="ba-divider" id="baDivider"></div>
+            <div class="ba-handle" id="baHandle" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><path d="M96 64L32 128L96 192"/><path d="M160 64L224 128L160 192"/></svg>
+            </div>
+            <span class="caption-3 ba-label ba-label-left">Tuần 01</span>
+            <span class="caption-3 ba-label ba-label-right">Tuần 06</span>
+            <input type="range" id="baRange" class="ba-range" min="10" max="90" value="50" aria-label="Kéo để so sánh tình trạng da trước và sau điều trị">
+          </div>
+
+          <div class="compare-info">
+            <span class="caption-3" style="color: var(--accent);">Hồ sơ kiểm soát mụn viêm và thâm đỏ</span>
+            <h3 class="heading-5">Phục hồi hàng rào lipid song song xử lý nhân mụn</h3>
+            <p class="body-6">Kết hợp làm dịu viêm nhẹ bằng ánh sáng sinh học LED và hoạt chất kê toa liều thấp, hạn chế tối đa tình trạng bong tróc và tái phát sau điều trị.</p>
+            <div><a href="#dat-lich" class="btn btn-outline button-sm">Đặt lịch kiểm tra nền da</a></div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- BÁC SĨ 2 -->
-      <div class="doctor-card">
-        <div class="doc-img-wrap">
-          <span class="doc-badge">Chuyên Gia Trị Mụn &amp; Sẹo</span>
-          <img loading="lazy" src="image/doctor-man.webp" alt="Bác sĩ CKII Trần Minh Khôi">
+    <section class="section section-medical reveal-section" id="bac-si">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Đội ngũ bác sĩ chuyên khoa và phòng điều trị vô khuẩn</h2>
+          <p class="body-3">Mỗi hồ sơ bệnh án đều do bác sĩ chuyên khoa trực tiếp lên chỉ định và theo dõi sát sao sau từng buổi.</p>
         </div>
-        <div class="doc-body">
-          <h4 class="doc-name">BS. CKII Trần Minh Khôi</h4>
-          <p class="doc-role">Chuyên Gia Điều Trị Mụn Viêm &amp; Tách Đáy Sẹo Rỗ</p>
-          <p class="doc-bio">18 năm công tác trong ngành da liễu thẩm mỹ y khoa. Đã trực tiếp điều trị thành công hơn 8.000 ca mụn bọc nang và sẹo rỗ xơ cứng độ 3.</p>
-          <div class="doc-footer">
-            <div class="doc-stat">Kinh nghiệm: <strong>18+ Năm</strong></div>
-            <a href="#booking" class="btn-outline-cyan" style="padding: 6px 14px; font-size: 0.78rem;" onclick="selectDoctor('BS. CKII Trần Minh Khôi')">Chọn Bác Sĩ</a>
+        <div class="doctors-grid">
+          <article class="doctor-card">
+            <div class="doctor-media"><img src="./image/doctor-woman.webp" alt="Bác sĩ CKI Nguyễn Thảo Vy chuyên khoa Da liễu" loading="lazy"></div>
+            <div class="doctor-body">
+              <span class="caption-3" style="color: var(--accent);">Bác sĩ Chuyên khoa I</span>
+              <h3 class="heading-6">Bác sĩ Nguyễn Thảo Vy</h3>
+              <p class="body-6">11 năm kinh nghiệm lâm sàng về mụn trứng cá, viêm da tiết bã và phục hồi da nhiễm corticoid.</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-media"><img src="./image/doctor-man.webp" alt="Bác sĩ CKII Trần Hoàng Nam chuyên Laser sắc tố" loading="lazy"></div>
+            <div class="doctor-body">
+              <span class="caption-3" style="color: var(--accent);">Bác sĩ Chuyên khoa II</span>
+              <h3 class="heading-6">Bác sĩ Trần Hoàng Nam</h3>
+              <p class="body-6">Chuyên sâu về ứng dụng Laser Pico trong điều trị nám hỗn hợp, tàn nhang và tái tạo sẹo rỗ đa tầng.</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-media"><img src="./image/clinic-room.webp" alt="Phòng điều trị vô trùng chuẩn y khoa" loading="lazy"></div>
+            <div class="doctor-body">
+              <span class="caption-3" style="color: var(--accent);">Kiểm soát nhiễm khuẩn</span>
+              <h3 class="heading-6">Phòng thủ thuật vô khuẩn một chiều</h3>
+              <p class="body-6">Hệ thống lọc khí HEPA thay mới không khí liên tục và quy trình tiệt trùng dụng cụ theo chuẩn bệnh viện.</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-media"><img src="./image/doctor-consult.webp" alt="Bác sĩ tư vấn trực tiếp phác đồ trên hình ảnh soi da" loading="lazy"></div>
+            <div class="doctor-body">
+              <span class="caption-3" style="color: var(--accent);">Hồ sơ số hóa</span>
+              <h3 class="heading-6">Theo dõi tiến triển qua ảnh chuẩn hóa</h3>
+              <p class="body-6">Lưu trữ hình ảnh soi da sau mỗi lần tái khám để điều chỉnh hoạt chất kịp thời theo phản ứng thực tế của da.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tagline-section" aria-label="Cam kết điều trị">
+      <div class="container"><div class="tagline-wrap"><p class="heading-2" id="taglineReveal">Chẩn đoán đúng nguyên nhân ngay từ lần khám đầu tiên giúp bạn tiết kiệm cả thời gian, chi phí và giữ được cấu trúc da khỏe bền lâu.</p></div></div>
+    </section>
+
+    <section class="section section-medical reveal-section" id="phac-do">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Ước tính phác đồ và chi phí theo tình trạng da</h2>
+          <p class="body-3">Chọn vấn đề da bạn đang gặp để xem số buổi tham khảo, công nghệ áp dụng và chi phí dự kiến.</p>
+        </div>
+
+        <div class="protocol-shell">
+          <div class="concern-tabs" role="tablist" aria-label="Chọn tình trạng da">
+            <button type="button" class="concern-btn is-active" role="tab" aria-selected="true" data-concern="mun">
+              <span><strong class="body-4" style="display: block;">Mụn viêm và thâm đỏ</strong><span class="caption-5" style="opacity: 0.78;">Kiểm soát ổ viêm và phục hồi nền da</span></span>
+              <span class="caption-3 mono-num">4 buổi</span>
+            </button>
+            <button type="button" class="concern-btn" role="tab" aria-selected="false" data-concern="nam">
+              <span><strong class="body-4" style="display: block;">Nám sắc tố và tàn nhang</strong><span class="caption-5" style="opacity: 0.78;">Laser Pico kết hợp ức chế melanin</span></span>
+              <span class="caption-3 mono-num">6 buổi</span>
+            </button>
+            <button type="button" class="concern-btn" role="tab" aria-selected="false" data-concern="meso">
+              <span><strong class="body-4" style="display: block;">Da khô xỉn và lão hóa sớm</strong><span class="caption-5" style="opacity: 0.78;">Cấy vi điểm Meso HA chuẩn châu Âu</span></span>
+              <span class="caption-3 mono-num">3 buổi</span>
+            </button>
+          </div>
+
+          <div class="protocol-preview">
+            <div class="protocol-media"><img src="./image/acne-care.webp" alt="Phác đồ xử lý mụn viêm chuẩn y khoa" id="protocolImg"></div>
+            <div class="protocol-body">
+              <div style="display: flex; flex-direction: column; gap: var(--sp-75);">
+                <h3 class="heading-5" id="protocolTitle">Phác đồ kiểm soát mụn viêm chuẩn y khoa</h3>
+                <p class="body-6" id="protocolDesc" style="color: var(--ink-secondary);">Lấy nhân mụn vô khuẩn nhẹ nhàng, chiếu ánh sáng xanh tiêu diệt vi khuẩn P. acnes và điện di phục hồi màng ẩm.</p>
+              </div>
+              <div>
+                <div class="hairline"></div>
+                <div class="protocol-specs">
+                  <div><span class="caption-5" style="color: var(--ink-muted); display: block;">Lộ trình</span><strong class="body-4 mono-num" id="protocolSessions">4 đến 6 buổi</strong></div>
+                  <div><span class="caption-5" style="color: var(--ink-muted); display: block;">Chu kỳ</span><strong class="body-4 mono-num" id="protocolCycle">14 ngày / lần</strong></div>
+                  <div><span class="caption-5" style="color: var(--ink-muted); display: block;">Chi phí từ</span><strong class="body-4 mono-num" id="protocolCost">1.250.000đ</strong></div>
+                </div>
+                <div style="margin-top: var(--sp-200);">
+                  <button type="button" class="btn btn-primary button-sm" id="selectProtocolBtn">Chọn khám theo phác đồ này</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- BÁC SĨ 3 -->
-      <div class="doctor-card">
-        <div class="doc-img-wrap">
-          <span class="doc-badge">Thạc Sĩ Da Liễu</span>
-          <img loading="lazy" src="image/doctor-consult.webp" alt="ThS. BS Lê Hoàng Nam">
+    <section class="section reveal-section" id="hoi-dap">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Câu hỏi thường gặp</h2>
+          <p class="body-3">Thông tin cần biết trước khi thăm khám tại phòng khám chuyên khoa.</p>
         </div>
-        <div class="doc-body">
-          <h4 class="doc-name">ThS. BS Lê Hoàng Nam</h4>
-          <p class="doc-role">Chuyên Gia Phục Hồi Da Nhiễm Corticoid &amp; Meso</p>
-          <p class="doc-bio">Thạc sĩ Da liễu Đại học Y Dược TP.HCM. Diễn giả khách mời thường niên tại Hội nghị Da Liễu Thẩm Mỹ Quốc Tế Châu Á - Thái Bình Dương (DASIL).</p>
-          <div class="doc-footer">
-            <div class="doc-stat">Kinh nghiệm: <strong>12+ Năm</strong></div>
-            <a href="#booking" class="btn-outline-cyan" style="padding: 6px 14px; font-size: 0.78rem;" onclick="selectDoctor('ThS. BS Lê Hoàng Nam')">Chọn Bác Sĩ</a>
+        <div class="faq-list">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-trigger" aria-expanded="true"><span class="title-2">1. Lần đầu đến khám có được bác sĩ trực tiếp soi da không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Mọi ca thăm khám tại PAT Derma Clinic đều do bác sĩ chuyên khoa trực tiếp đọc kết quả phân tích da và lập chỉ định điều trị.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">2. Điều trị Laser sắc tố có làm mỏng da hay bong tróc nhiều không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Công nghệ xung cực ngắn tác động chọn lọc vào cụm sắc tố melanin mà không làm tổn thương lớp sừng bề mặt, bạn có thể sinh hoạt bình thường ngay sau buổi làm.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">3. Tôi đang sử dụng mỹ phẩm ở nhà có cần mang theo khi khám không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Nên mang theo hoặc chụp ảnh bảng thành phần. Bác sĩ sẽ giúp bạn sàng lọc giữ lại những món phù hợp và lược bỏ hoạt chất dễ gây kích ứng.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">4. Chi phí khám và lấy nhân mụn có tách riêng tiền thuốc bôi không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Phí buổi thủ thuật và đơn thuốc dược mỹ phẩm được tách mục rõ ràng để bạn chủ động lựa chọn mua tại phòng khám hoặc tự chuẩn bị theo toa.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">5. Thời gian chờ trung bình khi đặt lịch trước là bao lâu?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Khách đặt lịch trước qua biểu mẫu được cấp mã ưu tiên, tiếp nhận vào phòng soi da trong vòng 5 phút mà không phải xếp hàng.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">6. Phòng khám có xuất hóa đơn đỏ và phiếu xác nhận y khoa không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Có. Toàn bộ thủ thuật và dược mỹ phẩm đều có hóa đơn điện tử và toa chỉ định có chữ ký của bác sĩ điều trị.</p></div></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION 2: DỊCH VỤ ĐIỀU TRỊ MŨI NHỌN (INTERACTIVE TREATMENTS GRID) -->
-  <section class="section-wrap" id="services" style="padding-top: 10px;">
-    <div class="section-header">
-      <div class="section-tag">Phác Đồ Mũi Nhọn</div>
-      <h3 class="section-heading">6 Giải Pháp Điều Trị Da Liễu Độc Quyền</h3>
-      <p class="section-desc">Phác đồ khoa học kết hợp công nghệ ánh sáng tiên tiến và dược mỹ phẩm đặc trị sinh học</p>
-    </div>
-
-    <!-- FILTER TABS -->
-    <div class="services-filter-tabs">
-      <button class="tab-btn active" onclick="filterServices('all', this)">Tất Cả Liệu Trình</button>
-      <button class="tab-btn" onclick="filterServices('acne', this)">Trị Mụn Y Khoa</button>
-      <button class="tab-btn" onclick="filterServices('pigment', this)">Xóa Nám Laser Pico</button>
-      <button class="tab-btn" onclick="filterServices('scar', this)">Cắt Đáy Sẹo Rỗ</button>
-      <button class="tab-btn" onclick="filterServices('meso', this)">Cấy Căng Bóng Meso</button>
-      <button class="tab-btn" onclick="filterServices('antiage', this)">Trẻ Hóa Nâng Cơ</button>
-    </div>
-
-    <div class="services-grid">
-      <!-- 1. TRỊ MỤN Y KHOA -->
-      <div class="service-card" data-cat="acne">
-        <div class="service-img-wrap">
-          <span class="service-tag">Chuẩn Vô Khuẩn 12 Bước</span>
-          <img loading="lazy" src="image/acne-care.webp" alt="Trị mụn y khoa">
-        </div>
-        <div class="service-body">
-          <h4 class="service-title">Trị Mụn Y Khoa Chuẩn Y Tế</h4>
-          <p class="service-desc">Lấy nhân mụn bằng tăm bông vô trùng không đau, diệt khuẩn P.Acnes bằng ánh sáng sinh học Bio-Light và điện di phục hồi tế bào.</p>
-          <ul class="service-perks">
-            <li><span>✔</span> Không thâm, không sẹo rỗ, không tái phát</li>
-            <li><span>✔</span> Giảm 70% sưng viêm sau buổi đầu tiên</li>
-            <li><span>✔</span> Tặng kèm gói thuốc bôi kháng khuẩn chính hãng</li>
-          </ul>
-          <div class="service-bottom">
-            <span class="service-price">499.000đ <small style="font-size: 0.78rem; color: var(--text-subtle); font-weight: 500;">/ buổi</small></span>
-            <button class="btn-cyan" style="padding: 8px 18px; font-size: 0.8rem;" onclick="bookServiceDirect('Trị Mụn Y Khoa 12 Bước')">Đăng Ký</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. LASER PICOSURE XÓA NÁM -->
-      <div class="service-card" data-cat="pigment">
-        <div class="service-img-wrap">
-          <span class="service-tag">FDA Hoa Kỳ Chứng Nhận</span>
-          <img loading="lazy" src="image/laser-treatment.webp" alt="Laser PicoSure trị nám">
-        </div>
-        <div class="service-body">
-          <h4 class="service-title">Laser PicoSure Pro Xóa Nám Đa Tầng</h4>
-          <p class="service-desc">Phát xung pico giây phân rã hạt sắc tố melanin thành bụi siêu nhỏ để cơ thể tự đào thải, sạch chân nám mà không làm mỏng da.</p>
-          <ul class="service-perks">
-            <li><span>✔</span> Xóa sạch nám mảng, tàn nhang, đồi mồi</li>
-            <li><span>✔</span> Không bong tróc, không kiêng khem sau bắn</li>
-            <li><span>✔</span> Kích thích tăng sinh collagen làm đều màu da</li>
-          </ul>
-          <div class="service-bottom">
-            <span class="service-price">1.850.000đ <small style="font-size: 0.78rem; color: var(--text-subtle); font-weight: 500;">/ buổi</small></span>
-            <button class="btn-cyan" style="padding: 8px 18px; font-size: 0.8rem;" onclick="bookServiceDirect('Laser PicoSure Pro Trị Nám')">Đăng Ký</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. CẮT ĐÁY SẸO RỖ & LASER FRACTIONAL CO2 -->
-      <div class="service-card" data-cat="scar">
-        <div class="service-img-wrap">
-          <span class="service-tag">Lấp Đầy Đáy Sẹo 85%+</span>
-          <img loading="lazy" src="image/skin-after.webp" alt="Trị sẹo rỗ">
-        </div>
-        <div class="service-body">
-          <h4 class="service-title">Tách Đáy Sẹo &amp; Laser Fractional CO2</h4>
-          <p class="service-desc">Kỹ thuật bóc tách vi điểm cắt đứt chân xơ sẹo co kéo, kết hợp vi điểm Laser CO2 và huyết tương giàu tiểu cầu PRP lấp đầy hố sẹo.</p>
-          <ul class="service-perks">
-            <li><span>✔</span> Hiệu quả vĩnh viễn không bị lõm lại</li>
-            <li><span>✔</span> Thu nhỏ lỗ chân lông to 80%</li>
-            <li><span>✔</span> Bác sĩ CKII trực tiếp thực hiện trong phòng mổ</li>
-          </ul>
-          <div class="service-bottom">
-            <span class="service-price">2.400.000đ <small style="font-size: 0.78rem; color: var(--text-subtle); font-weight: 500;">/ buổi</small></span>
-            <button class="btn-cyan" style="padding: 8px 18px; font-size: 0.8rem;" onclick="bookServiceDirect('Tách Đáy Sẹo Rỗ & CO2')">Đăng Ký</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. CẤY CĂNG BÓNG MESO THỤY SĨ -->
-      <div class="service-card" data-cat="meso">
-        <div class="service-img-wrap">
-          <span class="service-tag">Tinh Chất HA Thụy Sĩ</span>
-          <img loading="lazy" src="image/meso-skin.webp" alt="Cấy meso căng bóng">
-        </div>
-        <div class="service-body">
-          <h4 class="service-title">Cấy Meso Cocktail Tái Sinh Căng Bóng</h4>
-          <p class="service-desc">Đưa trực tiếp hỗn hợp Hyaluronic Acid nồng độ cao kết hợp 53 amino acid và peptide vào tầng trung bì, phục hồi da nhiễm corticoid.</p>
-          <ul class="service-perks">
-            <li><span>✔</span> Da căng bóng ngậm nước như phủ sương</li>
-            <li><span>✔</span> Phục hồi hàng rào bảo vệ da yếu, mẩn đỏ</li>
-            <li><span>✔</span> Giữ ẩm sâu suốt 6 tháng chỉ sau 1 liệu trình</li>
-          </ul>
-          <div class="service-bottom">
-            <span class="service-price">1.950.000đ <small style="font-size: 0.78rem; color: var(--text-subtle); font-weight: 500;">/ buổi</small></span>
-            <button class="btn-cyan" style="padding: 8px 18px; font-size: 0.8rem;" onclick="bookServiceDirect('Cấy Meso Cocktail Thụy Sĩ')">Đăng Ký</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. TRẺ HÓA NÂNG CƠ ULTHERAPY -->
-      <div class="service-card" data-cat="antiage">
-        <div class="service-img-wrap">
-          <span class="service-tag">Trẻ Hóa Không Dao Kéo</span>
-          <img loading="lazy" src="image/clinic-room.webp" alt="Nâng cơ Ultherapy">
-        </div>
-        <div class="service-body">
-          <h4 class="service-title">Nâng Cơ Trẻ Hóa Ultherapy Prime</h4>
-          <p class="service-desc">Sóng siêu âm hội tụ vi điểm MFU tác động chuẩn xác vào lớp cân cơ nông SMAS, kéo căng vùng da chùng nhão má, xóa rãnh cười.</p>
-          <ul class="service-perks">
-            <li><span>✔</span> Trẻ lại 5 - 10 tuổi ngay sau 60 phút</li>
-            <li><span>✔</span> Tạo đường viền hàm V-Line sắc nét</li>
-            <li><span>✔</span> Duy trì hiệu quả săn chắc từ 1 - 2 năm</li>
-          </ul>
-          <div class="service-bottom">
-            <span class="service-price">6.500.000đ <small style="font-size: 0.78rem; color: var(--text-subtle); font-weight: 500;">/ trọn gói</small></span>
-            <button class="btn-cyan" style="padding: 8px 18px; font-size: 0.8rem;" onclick="bookServiceDirect('Nâng Cơ Trẻ Hóa Ultherapy')">Đăng Ký</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. SOI DA 3D VISIA HOA KỲ -->
-      <div class="service-card" data-cat="acne">
-        <div class="service-img-wrap">
-          <span class="service-tag">Miễn Phí Khám Ban Đầu</span>
-          <img loading="lazy" src="image/doctor-consult.webp" alt="Soi da VISIA">
-        </div>
-        <div class="service-body">
-          <h4 class="service-title">Soi Da 3D VISIA Phân Tích 8 Tầng Da</h4>
-          <p class="service-desc">Công nghệ chụp ảnh ma trận đa phổ đo chính xác: đốm sắc tố ẩn dưới da, vi khuẩn P.Acnes, mạch máu giãn mao mạch và mức độ lão hóa.</p>
-          <ul class="service-perks">
-            <li><span>✔</span> Biết chính xác tuổi thật của làn da</li>
-            <li><span>✔</span> Phát hiện nám tiềm ẩn trước khi trồi lên bề mặt</li>
-            <li><span>✔</span> In báo cáo kết quả chi tiết gửi về điện thoại</li>
-          </ul>
-          <div class="service-bottom">
-            <span class="service-price">0đ <small style="font-size: 0.8rem; color: var(--accent-rose); text-decoration: line-through;">500.000đ</small></span>
-            <button class="btn-cyan" style="padding: 8px 18px; font-size: 0.8rem;" onclick="bookServiceDirect('Soi Da 3D VISIA Miễn Phí')">Đăng Ký</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: BEFORE / AFTER INTERACTIVE COMPARISON SLIDER -->
-  <section class="compare-section" id="compare">
-    <div class="compare-container">
-      <div class="compare-info">
-        <div class="section-tag">Minh Chứng Thực Tế • VISIA-3D SCAN</div>
-        <h3>
-          Hiệu Quả Điều Trị
-          <span>Được Chứng Thực Bằng Hình Ảnh Lâm Sàng</span>
-        </h3>
-        <p>
-          Khách hàng Nguyễn Mai Anh (27 tuổi, Hà Nội): Bị mụn viêm nang và thâm đỏ kéo dài 3 năm do sử dụng mỹ phẩm không rõ nguồn gốc.
-        </p>
-        <p>
-          Sau phác đồ 6 tuần chuẩn y khoa tại PAT DERMA: Tình trạng viêm dứt điểm 100%, hàng rào biểu bì phục hồi dày khỏe, làn da láng mịn và đều màu trở lại.
-        </p>
-
-        <div class="lab-telemetry-grid">
-          <div class="lab-telemetry-box">
-            <small>KHUẨN P.ACNES</small>
-            <strong>-98.2%</strong>
-          </div>
-          <div class="lab-telemetry-box">
-            <small>SẮC TỐ THÂM ĐỎ</small>
-            <strong>-94.6%</strong>
-          </div>
-          <div class="lab-telemetry-box">
-            <small>ĐỘ ĐÀN HỒI BIỂU BÌ</small>
-            <strong>+89.5%</strong>
-          </div>
-        </div>
-
-        <div class="compare-instruction-box">
-          <p>
-            "Kéo thanh trượt trên ảnh để trực tiếp so sánh sự thay đổi của làn da Trước &amp; Sau điều trị."
-          </p>
-        </div>
-
-        <a href="#booking" class="btn-cyan">
-          <span>🩺</span>
-          <span>Tôi Muốn Được Bác Sĩ Tư Vấn Tương Tự</span>
-        </a>
-      </div>
-
-      <!-- THANH TRƯỢT SO SÁNH TRỰC QUAN -->
-      <div class="comparison-slider-box" id="compareSliderBox">
-        <!-- ẢNH SAU KHI ĐIỀU TRỊ -->
-        <div class="img-after-wrap">
-          <img loading="lazy" src="image/skin-after.webp" alt="Làn da sau điều trị mịn màng">
-          <span class="compare-badge badge-after">Sau 6 Tuần (Khỏi 95%)</span>
-        </div>
-
-        <!-- ẢNH TRƯỚC KHI ĐIỀU TRỊ (BỊ CẮT THEO % SLIDER) -->
-        <div class="img-before-wrap" id="beforeLayer">
-          <img loading="lazy" src="image/skin-before.webp" alt="Làn da trước điều trị mụn viêm">
-          <span class="compare-badge badge-before">Trước Điều Trị</span>
-        </div>
-
-        <!-- NÚT KÉO TRUNG TÂM -->
-        <div class="slider-handle" id="sliderHandle">⇆</div>
-
-        <!-- INPUT RANGE KÉO TRỰC QUAN -->
-        <input type="range" min="0" max="100" value="50" class="slider-range-input" id="sliderRange" oninput="handleSliderChange(this.value)">
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: DỰ TOÁN LIỆU TRÌNH & CHI PHÍ REALTIME -->
-  <section class="estimator-section" id="estimator">
-    <div class="estimator-card">
-      <div class="section-header" style="margin-bottom: 24px;">
-        <div class="section-tag">Công Cụ Ước Tính Lâm Sàng</div>
-        <h3 class="section-heading" style="font-size: 2.1rem;">Dự Toán Liệu Trình &amp; Chi Phí Điều Trị</h3>
-        <p class="section-desc">Minh bạch 100% chi phí - Không phát sinh - Cam kết đúng số buổi thỏa thuận</p>
-      </div>
-
-      <div class="estimator-grid">
-        <div>
-          <div class="est-field">
-            <label>1. Tình Trạng Da Hiện Tại Của Bạn</label>
-            <select id="estProblem" onchange="calcTreatment()">
-              <option value="acne">Mụn Viêm, Mụn Bọc, Mụn Ẩn Lan Rộng</option>
-              <option value="pigment">Nám Chân Sâu, Tàn Nhang, Sạm Màu</option>
-              <option value="scar">Sẹo Rỗ, Lỗ Chân Lông To Do Mụn Cũ</option>
-              <option value="corticoid">Da Mỏng Đỏ, Lộ Mao Mạch (Nhiễm Kem Trộn)</option>
-            </select>
+    <section class="section section-medical reveal-section" id="dat-lich">
+      <div class="container">
+        <div class="cta-grid">
+          <div class="cta-copy">
+            <h2 class="heading-3">Đặt lịch khám da liễu 1 kèm 1 cùng bác sĩ chuyên khoa</h2>
+            <p class="body-3">Miễn phí phân tích da đa tầng khi đặt hẹn trước. Nhận phác đồ và chi phí từng buổi minh bạch ngay sau buổi khám.</p>
+            <div class="hairline"></div>
+            <div class="caption-2" style="color: var(--ink-secondary);">Địa chỉ: 56 Bà Triệu, Hai Bà Trưng, Hà Nội · Khám từ 08:30 đến 20:00</div>
           </div>
 
-          <div class="est-field">
-            <label>2. Mức Độ Tổn Thương Của Da</label>
-            <select id="estLevel" onchange="calcTreatment()">
-              <option value="1">Mức độ 1: Nhẹ (Mới xuất hiện dưới 6 tháng)</option>
-              <option value="2" selected>Mức độ 2: Trung bình (Kéo dài 6 tháng - 2 năm)</option>
-              <option value="3">Mức độ 3: Nặng (Kéo dài trên 2 năm, đã từng chữa hỏng nơi khác)</option>
-            </select>
-          </div>
-
-          <div class="est-field">
-            <label>3. Cơ Sở Khám Thuận Tiện</label>
-            <select id="estBranch">
-              <option value="hn1">Cơ sở 1: 136 Hoàng Cầu, Đống Đa, Hà Nội</option>
-              <option value="hn2">Cơ sở 2: 88 Phố Huế, Hai Bà Trưng, Hà Nội</option>
-              <option value="hcm">Cơ sở 3: 215 Nguyễn Đình Chiểu, Quận 3, TP.HCM</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="est-result-box">
-          <div class="est-result-eyebrow">Dự Toán Phác Đồ Đề Xuất</div>
-          <div class="est-price-big" id="resPrice">2.490.000đ</div>
-          <div class="est-sessions" id="resSessions">Liệu trình chuẩn: 3 - 5 Buổi</div>
-          <div class="est-gift-tag">
-            🎁 Tặng kèm: 01 Buổi Soi Da VISIA + 01 Buổi Điện Di Tế Bào Gốc (Trị giá 950.000đ)
-          </div>
-          <button class="btn-cyan" style="width: 100%; justify-content: center;" onclick="bookFromEstimator()">
-            <span>Nhận Ưu Đãi Gói Này</span>
-          </button>
+          <form class="form-card" id="dermaForm" novalidate>
+            <div class="form-group">
+              <label for="custName" class="title-4">Họ và tên</label>
+              <input type="text" id="custName" class="form-control" placeholder="Ví dụ: Đặng Thu Trang" autocomplete="name" required>
+              <span class="caption-5 field-error" id="errCustName" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="custPhone" class="title-4">Số điện thoại</label>
+              <input type="tel" id="custPhone" class="form-control" placeholder="Ví dụ: 0912345678" autocomplete="tel" required>
+              <span class="caption-5 field-error" id="errCustPhone" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="dermaConcern" class="title-4">Vấn đề da cần bác sĩ thăm khám</label>
+              <select id="dermaConcern" class="form-control">
+                <option value="Mụn viêm và thâm đỏ">Mụn viêm và thâm đỏ</option>
+                <option value="Nám sắc tố và tàn nhang">Nám sắc tố và tàn nhang</option>
+                <option value="Da khô xỉn và lão hóa sớm">Da khô xỉn và lão hóa sớm</option>
+              </select>
+            </div>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite">
+              <strong class="body-4" id="formStatusTitle"></strong>
+              <span class="body-6" id="formStatusDesc" style="color: var(--ink-secondary);"></span>
+            </div>
+            <button type="submit" class="btn btn-primary button-md">Đặt lịch khám ưu tiên</button>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- SECTION 5: ĐẶT LỊCH KHÁM BÁC SĨ VIP -->
-  <section class="booking-section" id="booking">
-    <div class="booking-info">
-      <div class="section-tag">Đặt Lịch Thăm Khám 1:1</div>
-      <h3>
-        Đăng Ký Khám 1:1 Cùng
-        <span>Bác Sĩ Chuyên Khoa Da Liễu</span>
-      </h3>
-      <p>
-        Để đảm bảo chất lượng thăm khám kỹ lưỡng và không để quý khách phải chờ đợi lâu, mỗi bác sĩ chỉ tiếp nhận tối đa 15 ca khám chuyên sâu mỗi ngày.
-      </p>
-
-      <div class="booking-perk-list">
-        <div class="booking-perk-item">
-          <div class="booking-perk-check">✓</div>
-          <span class="booking-perk-text">Ưu tiên khám ngay đúng giờ hẹn, không xếp hàng bốc số.</span>
-        </div>
-        <div class="booking-perk-item">
-          <div class="booking-perk-check">✓</div>
-          <span class="booking-perk-text">Bác sĩ chuyên khoa trực tiếp soi da và giải thích phác đồ.</span>
-        </div>
-        <div class="booking-perk-item">
-          <div class="booking-perk-check">✓</div>
-          <span class="booking-perk-text">Tặng trọn bộ phân tích da VISIA 3D hoàn toàn miễn phí.</span>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="hairline"></div>
+      <div class="footer-inner">
+        <div class="caption-2" style="color: var(--ink-muted);">PAT Derma Clinic · Bản demo thiết kế giao diện phòng khám da liễu của PAT TECH</div>
+        <div class="footer-links caption-2">
+          <button type="button" class="footer-link-btn" data-legal="privacy">Chính sách bảo mật</button>
+          <button type="button" class="footer-link-btn" data-legal="terms">Điều khoản sử dụng</button>
+          <a href="/" class="footer-link-btn">Quay lại trang chủ PAT TECH</a>
         </div>
       </div>
-
-      <div class="emergency-hotline-card">
-        <div>
-          <p class="hotline-label">Hotline Đặt Khám Khẩn Cấp</p>
-          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Hỗ trợ xếp lịch ưu tiên 24/7</p>
-        </div>
-        <p class="hotline-number" style="margin: 0;">1900 6836</p>
-      </div>
-    </div>
-
-    <div class="booking-card">
-      <div class="kiosk-status-bar">
-        <span>QUEUE KIOSK #PAT-01</span>
-        <span class="kiosk-live-badge">● CÒN SUẤT KHÁM HÔM NAY</span>
-      </div>
-      <h4 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--text-heading); margin-bottom: 4px;">Phiếu Đăng Ký Khám Ưu Tiên</h4>
-      <p style="font-size: 0.83rem; color: var(--text-muted); margin-bottom: 20px;">Hệ thống sẽ giữ lịch và gửi tin nhắn xác nhận kèm mã số khám</p>
-
-      <form onsubmit="handleBookingSubmit(event)">
-        <div class="form-group-med">
-          <label>Họ Và Tên Bệnh Nhân</label>
-          <input type="text" id="patientName" placeholder="Ví dụ: Trần Hải Đăng" required>
-        </div>
-
-        <div class="form-group-med">
-          <label>Số Điện Thoại</label>
-          <input type="tel" id="patientPhone" placeholder="090x xxx xxx" required>
-        </div>
-
-        <div class="form-group-med">
-          <label>Bác Sĩ Mong Muốn Thăm Khám</label>
-          <select id="patientDoctor">
-            <option value="BS. CKI Nguyễn Thanh Vân">BS. CKI Nguyễn Thanh Vân (Trưởng khoa Laser)</option>
-            <option value="BS. CKII Trần Minh Khôi">BS. CKII Trần Minh Khôi (Chuyên gia Mụn &amp; Sẹo)</option>
-            <option value="ThS. BS Lê Hoàng Nam">ThS. BS Lê Hoàng Nam (Chuyên gia Phục hồi Da)</option>
-            <option value="Bác sĩ trưởng ca khám sớm nhất">Phân công bác sĩ trưởng ca sớm nhất</option>
-          </select>
-        </div>
-
-        <div class="form-group-med">
-          <label>Dịch Vụ Quan Tâm</label>
-          <select id="patientService">
-            <option value="Trị Mụn Y Khoa Chuẩn Y Tế">Trị Mụn Y Khoa Chuẩn Y Tế</option>
-            <option value="Trị Mụn Y Khoa 12 Bước">Trị Mụn Y Khoa 12 Bước</option>
-            <option value="Laser PicoSure Xóa Nám">Laser PicoSure Xóa Nám</option>
-            <option value="Laser PicoSure Pro Trị Nám">Laser PicoSure Pro Trị Nám</option>
-            <option value="Tách Đáy Sẹo Rỗ &amp; Laser CO2">Tách Đáy Sẹo Rỗ &amp; Laser CO2</option>
-            <option value="Tách Đáy Sẹo Rỗ &amp; CO2">Tách Đáy Sẹo Rỗ &amp; CO2</option>
-            <option value="Cấy Meso Căng Bóng Da">Cấy Meso Căng Bóng Da</option>
-            <option value="Cấy Meso Cocktail Thụy Sĩ">Cấy Meso Cocktail Thụy Sĩ</option>
-            <option value="Nâng Cơ Trẻ Hóa Ultherapy">Nâng Cơ Trẻ Hóa Ultherapy</option>
-            <option value="Soi Da 3D VISIA Miễn Phí">Soi Da 3D VISIA Miễn Phí</option>
-          </select>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; box-sizing: border-box;">
-          <div class="form-group-med" style="min-width: 0;">
-            <label>Ngày Khám</label>
-            <input type="date" id="patientDate" required style="width: 100%; box-sizing: border-box; min-width: 0;">
-          </div>
-          <div class="form-group-med" style="min-width: 0;">
-            <label>Khung Giờ</label>
-            <select id="patientTime" style="width: 100%; box-sizing: border-box; min-width: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-              <option value="08:30 - 10:00 (Sáng)">08:30 - 10:00 (Sáng)</option>
-              <option value="10:00 - 11:30 (Sáng)">10:00 - 11:30 (Sáng)</option>
-              <option value="14:00 - 16:00 (Chiều)">14:00 - 16:00 (Chiều)</option>
-              <option value="17:30 - 19:30 (Tối)">17:30 - 19:30 (Tối)</option>
-            </select>
-          </div>
-        </div>
-
-        <button type="submit" class="btn-cyan" style="width: 100%; justify-content: center; padding: 14px; margin-top: 10px;">
-          <span>🩺 Xác Nhận Đặt Lịch Khám Ưu Tiên</span>
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER ĐỒNG BỘ CHUẨN PAT TECH PHẠM ANH TUẤN -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
-          <div class="logo-cross" style="width: 36px; height: 36px; font-size: 1.2rem;">+</div>
-          <span style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--text-heading);">PAT DERMA</span>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px;">
-          Phòng khám Chuyên khoa Da Liễu Thẩm Mỹ Chuẩn Y Khoa. Hoạt động theo giấy phép Bộ Y Tế, tiên phong điều trị cá nhân hóa và công nghệ Laser chuẩn FDA Hoa Kỳ.
-        </p>
-        <p style="font-size: 0.82rem; color: var(--accent-cobalt); font-weight: 700;">
-          📍 3 Cơ sở phòng khám tiêu chuẩn vô khuẩn tại Hà Nội &amp; TP. Hồ Chí Minh.
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Dịch Vụ Điều Trị</h4>
-        <ul class="footer-links">
-          <li><a href="#services">Trị mụn y khoa chuẩn 12 bước</a></li>
-          <li><a href="#services">Laser PicoSure Pro trị nám sâu</a></li>
-          <li><a href="#services">Tách đáy sẹo rỗ vi điểm CO2</a></li>
-          <li><a href="#services">Cấy meso cocktail Thụy Sĩ</a></li>
-          <li><a href="#services">Soi da 3D VISIA Hoa Kỳ</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Cam Kết Y Khoa</h4>
-        <ul class="footer-links">
-          <li><a href="#doctors">100% Bác sĩ CKI-II trực tiếp làm</a></li>
-          <li><a href="#booking">Cam kết hiệu quả bằng văn bản</a></li>
-          <li><a href="#">Quy trình vô khuẩn dụng cụ 1 lần</a></li>
-          <li><a href="#">Dược mỹ phẩm nhập khẩu chính ngạch</a></li>
-          <li><a href="#">Tái khám miễn phí định kỳ</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Hệ Thống Cơ Sở</h4>
-        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">
-          • CS1: 136 Hoàng Cầu, Đống Đa, Hà Nội.
-        </p>
-        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
-          • CS2: 215 Nguyễn Đình Chiểu, Quận 3, TP.HCM.
-        </p>
-        <div style="background: #FFFFFF; border: 1px solid var(--border-clinical); border-radius: 14px; padding: 14px;">
-          <div style="font-size: 0.72rem; color: var(--accent-cobalt); text-transform: uppercase; font-weight: 800; font-family: var(--font-mono);">Tổng Đài Tư Vấn &amp; Đặt Hẹn</div>
-          <div style="font-size: 1.3rem; font-weight: 800; color: var(--accent-cerulean); font-family: var(--font-mono);">1900 6836</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BẢN QUYỀN ĐỒNG BỘ PHẠM ANH TUẤN - PAT TECH -->
-    <div class="footer-bottom">
-      <p>© 2026 PAT TECH (Phạm Anh Tuấn). Toàn bộ bản quyền giao diện và hệ thống được bảo lưu.</p>
-      <p>Thiết kế &amp; Phát triển độc quyền bởi <a href="../../index.html" style="color: var(--accent-cobalt); text-decoration: none; font-weight: 800;">PAT TECH - Phạm Anh Tuấn</a>.</p>
     </div>
   </footer>
 
-  <!-- MODAL XÁC NHẬN PHIẾU KHÁM ƯU TIÊN -->
-  <div class="modal-overlay" id="ticketModal">
-    <div class="vip-ticket-modal">
-      <div style="display: inline-block; background: var(--cyan-gradient); color: #FFFFFF; font-family: var(--font-mono); font-weight: 800; font-size: 0.74rem; letter-spacing: 1.5px; padding: 5px 16px; border-radius: 999px; text-transform: uppercase; margin-bottom: 14px;">
-        Phiếu Khám Ưu Tiên • Priority Pass
+  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 class="heading-6" id="legalModalTitle">Thông tin pháp lý</h2>
+        <button type="button" class="btn btn-outline button-sm" id="closeLegalBtn">Đóng</button>
       </div>
-      <div style="font-size: 2.5rem; margin-bottom: 8px;">🩺</div>
-      <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--text-heading); margin-bottom: 8px;">
-        Đăng Ký Khám Thành Công!
-      </h3>
-      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
-        Bác sĩ đã ghi nhận lịch hẹn của bạn. Khi đến cơ sở, bạn chỉ cần xuất trình mã số này tại quầy Lễ Tân để được mời vào phòng khám ngay:
-      </p>
-
-      <div style="background: var(--bg-ice-aqua); border: 1.5px dashed var(--accent-cerulean); border-radius: 16px; padding: 18px; margin-bottom: 24px; text-align: left;">
-        <div style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 8px;">Bệnh nhân: <strong id="modalName" style="color: var(--text-heading);"></strong></div>
-        <div style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 8px;">Bác sĩ phụ trách: <strong id="modalDoctor" style="color: var(--accent-cobalt);"></strong></div>
-        <div style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 8px;">Dịch vụ &amp; Thời gian: <strong id="modalDateTime" style="color: var(--text-heading);"></strong></div>
-        <div style="font-size: 0.84rem; color: var(--text-muted);">Mã Phiếu Khám: <strong id="modalTicketCode" style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 1.15rem; letter-spacing: 1.5px;"></strong></div>
-      </div>
-
-      <button class="btn-cyan" style="width: 100%; justify-content: center;" onclick="closeModal()">
-        Hoàn Tất &amp; Đóng
-      </button>
+      <div class="hairline"></div>
+      <p class="body-6" id="legalModalBody" style="color: var(--ink-secondary);"></p>
     </div>
   </div>
 
   <script>
-    // Set default date for booking picker (tomorrow)
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    document.getElementById('patientDate').value = tomorrow.toISOString().split('T')[0];
+    (function () {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion) { document.documentElement.classList.add('is-hero-ready'); }
+      else { window.requestAnimationFrame(() => window.requestAnimationFrame(() => document.documentElement.classList.add('is-hero-ready'))); }
 
-    // Filter services tabs
-    function filterServices(cat, btn) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      const heroParallax = document.getElementById('heroParallax');
+      const heroEl = document.getElementById('top');
+      if (heroParallax && heroEl && !reducedMotion) {
+        let rafP = null;
+        window.addEventListener('scroll', () => {
+          if (rafP !== null) return;
+          rafP = window.requestAnimationFrame(() => {
+            rafP = null;
+            const y = window.scrollY || 0;
+            if (y <= heroEl.offsetHeight) heroParallax.style.transform = `translate3d(0, ${(y * 0.18).toFixed(1)}px, 0)`;
+          });
+        }, { passive: true });
+      }
 
-      const cards = document.querySelectorAll('.service-card');
-      cards.forEach(card => {
-        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      function setMenuOpen(open) {
+        menuToggle.setAttribute('aria-expanded', String(open));
+        mobileDrawer.setAttribute('aria-hidden', String(!open));
+        mobileDrawer.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      menuToggle.addEventListener('click', () => setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true'));
+      mobileDrawer.querySelectorAll('a').forEach((l) => l.addEventListener('click', () => setMenuOpen(false)));
+
+      const revealSections = document.querySelectorAll('.reveal-section');
+      if (reducedMotion || !('IntersectionObserver' in window)) { revealSections.forEach((el) => el.classList.add('is-visible')); }
+      else {
+        const obs = new IntersectionObserver((entries, o) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); o.unobserve(e.target); } }); }, { threshold: 0.1 });
+        revealSections.forEach((el) => obs.observe(el));
+      }
+
+      const taglineEl = document.getElementById('taglineReveal');
+      if (taglineEl) {
+        const words = taglineEl.textContent.trim().split(/\s+/);
+        taglineEl.innerHTML = words.map((w) => `<span class="reveal-word">${w}</span>`).join(' ');
+        const spans = Array.from(taglineEl.querySelectorAll('.reveal-word'));
+        if (reducedMotion) { spans.forEach((s) => s.classList.add('is-lit')); }
+        else {
+          let rafT = null;
+          const paint = () => {
+            rafT = null;
+            const rect = taglineEl.getBoundingClientRect();
+            const vh = window.innerHeight || 800;
+            const p = Math.min(1, Math.max(0, (vh * 0.85 - rect.top) / (vh * 0.6)));
+            const lit = Math.round(p * spans.length);
+            spans.forEach((s, i) => s.classList.toggle('is-lit', i < lit));
+          };
+          const sched = () => { if (rafT === null) rafT = window.requestAnimationFrame(paint); };
+          window.addEventListener('scroll', sched, { passive: true });
+          window.addEventListener('resize', sched, { passive: true });
+          paint();
         }
+      }
+
+      const navShell = document.getElementById('navShell');
+      const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+      if (navShell && heroEl && 'IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            const left = !e.isIntersecting;
+            navShell.classList.toggle('is-scrolled', left);
+            if (!left) navLinks.forEach((l) => l.classList.remove('is-active'));
+          });
+        }, { threshold: 0.12 }).observe(heroEl);
+      }
+      if ('IntersectionObserver' in window) {
+        const navObs = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting && navShell.classList.contains('is-scrolled')) {
+              const id = e.target.id;
+              navLinks.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === `#${id}`));
+            }
+          });
+        }, { rootMargin: '-35% 0px -55% 0px' });
+        ['phuc-hoi', 'bac-si', 'phac-do', 'hoi-dap'].forEach((id) => { const el = document.getElementById(id); if (el) navObs.observe(el); });
+      }
+
+      // Before / After Slider
+      const baRange = document.getElementById('baRange');
+      const baAfter = document.getElementById('baAfterImg');
+      const baDivider = document.getElementById('baDivider');
+      const baHandle = document.getElementById('baHandle');
+      function updateSlider(val) {
+        baAfter.style.clipPath = `inset(0 0 0 ${val}%)`;
+        baDivider.style.left = `${val}%`;
+        baHandle.style.left = `${val}%`;
+      }
+      baRange.addEventListener('input', () => updateSlider(baRange.value));
+      updateSlider(50);
+
+      // Protocol Switcher
+      const protocols = {
+        mun: {
+          img: './image/acne-care.webp',
+          alt: 'Phác đồ xử lý mụn viêm chuẩn y khoa',
+          title: 'Phác đồ kiểm soát mụn viêm chuẩn y khoa',
+          desc: 'Lấy nhân mụn vô khuẩn nhẹ nhàng, chiếu ánh sáng xanh tiêu diệt vi khuẩn P. acnes và điện di phục hồi màng ẩm.',
+          sessions: '4 đến 6 buổi',
+          cycle: '14 ngày / lần',
+          cost: '1.250.000đ',
+          selectVal: 'Mụn viêm và thâm đỏ'
+        },
+        nam: {
+          img: './image/laser-treatment.webp',
+          alt: 'Điều trị nám sắc tố bằng Laser Pico thế hệ mới',
+          title: 'Phác đồ bóc tách sắc tố và nám chân sâu',
+          desc: 'Ứng dụng bước sóng Laser Pico phá vỡ cụm melanin thành hạt siêu mịn kết hợp tinh chất Tranexamic acid ngăn tái phát.',
+          sessions: '6 đến 8 buổi',
+          cycle: '21 ngày / lần',
+          cost: '2.400.000đ',
+          selectVal: 'Nám sắc tố và tàn nhang'
+        },
+        meso: {
+          img: './image/meso-skin.webp',
+          alt: 'Cấy vi điểm Meso HA phục hồi cấu trúc trung bì',
+          title: 'Phác đồ trẻ hóa và cấp ẩm đa tầng Meso HA',
+          desc: 'Đưa trực tiếp Hyaluronic acid không liên kết chéo và phức hợp peptide vào trung bì giúp nền da căng mượt rõ rệt.',
+          sessions: '3 buổi',
+          cycle: '30 ngày / lần',
+          cost: '3.800.000đ',
+          selectVal: 'Da khô xỉn và lão hóa sớm'
+        }
+      };
+      let activeConcern = 'mun';
+      const concernSelect = document.getElementById('dermaConcern');
+      document.querySelectorAll('.concern-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.concern;
+          const data = protocols[key];
+          if (!data) return;
+          activeConcern = key;
+          document.querySelectorAll('.concern-btn').forEach((b) => { b.classList.remove('is-active'); b.setAttribute('aria-selected', 'false'); });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+          const imgEl = document.getElementById('protocolImg');
+          imgEl.src = data.img;
+          imgEl.alt = data.alt;
+          document.getElementById('protocolTitle').textContent = data.title;
+          document.getElementById('protocolDesc').textContent = data.desc;
+          document.getElementById('protocolSessions').textContent = data.sessions;
+          document.getElementById('protocolCycle').textContent = data.cycle;
+          document.getElementById('protocolCost').textContent = data.cost;
+        });
       });
-    }
+      document.getElementById('selectProtocolBtn').addEventListener('click', () => {
+        concernSelect.value = protocols[activeConcern].selectVal;
+        document.getElementById('dat-lich').scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+        document.getElementById('custName').focus({ preventScroll: true });
+      });
 
-    // Comparison Slider handler
-    function syncSliderWidth() {
-      const box = document.getElementById('compareSliderBox');
-      const beforeImg = document.querySelector('#beforeLayer img');
-      if (box && beforeImg) {
-        beforeImg.style.width = box.offsetWidth + 'px';
-        beforeImg.style.maxWidth = 'none';
-      }
-    }
-    window.addEventListener('resize', syncSliderWidth);
-    window.addEventListener('DOMContentLoaded', syncSliderWidth);
-    setTimeout(syncSliderWidth, 500);
+      // FAQ
+      document.querySelectorAll('.faq-trigger').forEach((tr) => {
+        tr.addEventListener('click', () => {
+          const item = tr.closest('.faq-item');
+          const open = !item.classList.contains('is-open');
+          document.querySelectorAll('.faq-item').forEach((o) => { o.classList.remove('is-open'); o.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); });
+          if (open) { item.classList.add('is-open'); tr.setAttribute('aria-expanded', 'true'); }
+        });
+      });
 
-    function handleSliderChange(val) {
-      const beforeLayer = document.getElementById('beforeLayer');
-      const handle = document.getElementById('sliderHandle');
-      beforeLayer.style.width = val + '%';
-      handle.style.left = val + '%';
-    }
+      // Form Validation
+      const form = document.getElementById('dermaForm');
+      const custName = document.getElementById('custName');
+      const custPhone = document.getElementById('custPhone');
+      const errName = document.getElementById('errCustName');
+      const errPhone = document.getElementById('errCustPhone');
+      const statusBox = document.getElementById('formStatus');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errName.textContent = ''; errPhone.textContent = '';
+        custName.classList.remove('is-invalid'); custPhone.classList.remove('is-invalid');
+        statusBox.classList.remove('is-visible');
+        const name = custName.value.trim();
+        const phone = custPhone.value.trim().replace(/[\s.]/g, '');
+        let bad = false;
+        if (name.length < 2) { errName.textContent = 'Vui lòng nhập họ và tên đầy đủ.'; custName.classList.add('is-invalid'); bad = true; }
+        if (!/^0\d{9}$/.test(phone)) { errPhone.textContent = 'Số điện thoại cần đủ 10 chữ số bắt đầu bằng số 0.'; custPhone.classList.add('is-invalid'); bad = true; }
+        if (bad) { (name.length < 2 ? custName : custPhone).focus(); return; }
+        document.getElementById('formStatusTitle').textContent = `Đã giữ mã khám ưu tiên cho ${name}`;
+        document.getElementById('formStatusDesc').textContent = `Chuyên khoa: ${concernSelect.value}. Trợ lý bác sĩ sẽ liên hệ xác nhận khung giờ qua số ${phone}.`;
+        statusBox.classList.add('is-visible');
+      });
 
-    // Doctor Selection helper
-    function selectDoctor(docName) {
-      document.getElementById('patientDoctor').value = docName;
-    }
-
-    // Service booking helper
-    function bookServiceDirect(srvName) {
-      document.getElementById('patientService').value = srvName;
-      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Treatment Estimator Calculator
-    function calcTreatment() {
-      const prob = document.getElementById('estProblem').value;
-      const level = document.getElementById('estLevel').value;
-      const priceBox = document.getElementById('resPrice');
-      const sessionBox = document.getElementById('resSessions');
-
-      let price = '1.490.000đ';
-      let sessions = '3 - 5 Buổi (4 - 6 tuần)';
-
-      if (prob === 'acne') {
-        if (level === '1') { price = '1.490.000đ'; sessions = '3 - 4 Buổi (Khỏi dứt điểm 90%)'; }
-        else if (level === '2') { price = '2.490.000đ'; sessions = '5 - 6 Buổi (Khỏi dứt điểm 95%)'; }
-        else { price = '3.990.000đ'; sessions = '8 Buổi (Phác đồ đặc trị mụn bọc nặng)'; }
-      } else if (prob === 'pigment') {
-        if (level === '1') { price = '3.500.000đ'; sessions = '3 Buổi Laser Pico'; }
-        else if (level === '2') { price = '5.800.000đ'; sessions = '5 Buổi Laser Pico đa tầng'; }
-        else { price = '8.900.000đ'; sessions = '8 Buổi (Trị nám chân sâu kháng trị)'; }
-      } else if (prob === 'scar') {
-        if (level === '1') { price = '2.900.000đ'; sessions = '2 Buổi bóc tách + CO2'; }
-        else if (level === '2') { price = '5.200.000đ'; sessions = '4 Buổi lấp đầy đáy sẹo 85%'; }
-        else { price = '8.500.000đ'; sessions = '6 Buổi (Sẹo rỗ xơ cứng lâu năm)'; }
-      } else {
-        if (level === '1') { price = '2.200.000đ'; sessions = '3 Buổi phục hồi biểu bì'; }
-        else if (level === '2') { price = '4.500.000đ'; sessions = '5 Buổi cấy Meso tế bào gốc'; }
-        else { price = '7.200.000đ'; sessions = '8 Buổi phục hồi da teo mỏng lộ mao mạch'; }
-      }
-
-      priceBox.innerText = price;
-      sessionBox.innerText = 'Liệu trình chuẩn: ' + sessions;
-    }
-
-    function bookFromEstimator() {
-      const prob = document.getElementById('estProblem').options[document.getElementById('estProblem').selectedIndex].text;
-      document.getElementById('patientService').value = 'Trị Mụn Y Khoa Chuẩn Y Tế';
-      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Booking Submit Form
-    function handleBookingSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('patientName').value.trim();
-      const phone = document.getElementById('patientPhone').value.trim();
-      const doctor = document.getElementById('patientDoctor').value;
-      const service = document.getElementById('patientService').value;
-      const date = document.getElementById('patientDate').value;
-      const time = document.getElementById('patientTime').value;
-
-      const code = 'PAT-MED-' + Math.floor(1000 + Math.random() * 9000);
-
-      document.getElementById('modalName').innerText = `${name} (${phone})`;
-      document.getElementById('modalDoctor').innerText = doctor;
-      document.getElementById('modalDateTime').innerText = `${service} • Ngày ${date} (${time})`;
-      document.getElementById('modalTicketCode').innerText = code;
-
-      document.getElementById('ticketModal').classList.add('open');
-    }
-
-    function closeModal() {
-      document.getElementById('ticketModal').classList.remove('open');
-      document.querySelector('.booking-card form').reset();
-    }
+      // Legal Modal
+      const legalModal = document.getElementById('legalModal');
+      const closeLegalBtn = document.getElementById('closeLegalBtn');
+      const legalText = {
+        privacy: 'Thông tin hồ sơ khám da trên trang mẫu PAT Derma Clinic được minh họa theo tiêu chuẩn bảo mật bệnh án điện tử.',
+        terms: 'Lộ trình buổi điều trị và mức chi phí tham khảo cần được bác sĩ chuyên khoa xác nhận lại sau khi soi da trực tiếp.'
+      };
+      function closeLegal() { legalModal.classList.remove('is-open'); }
+      document.querySelectorAll('[data-legal]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.getElementById('legalModalTitle').textContent = btn.dataset.legal === 'privacy' ? 'Chính sách bảo mật' : 'Điều khoản sử dụng';
+          document.getElementById('legalModalBody').textContent = legalText[btn.dataset.legal];
+          legalModal.classList.add('is-open');
+          closeLegalBtn.focus();
+        });
+      });
+      closeLegalBtn.addEventListener('click', closeLegal);
+      legalModal.addEventListener('click', (e) => { if (e.target === legalModal) closeLegal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setMenuOpen(false); closeLegal(); } });
+    })();
   </script>
-  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>

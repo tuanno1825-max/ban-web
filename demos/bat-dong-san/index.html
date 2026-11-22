@@ -3,2193 +3,2145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vinhomes Elite Residence - Tuyệt Tác Bất Động Sản Nghỉ Dưỡng Hạng Sang</title>
+  <title>Elite Residence Thủ Thiêm · Biệt thự trên không giới hạn</title>
+  <meta name="description" content="184 căn hộ giới hạn tầm nhìn trực diện sông Sài Gòn tại Thủ Thiêm, thang máy riêng từng căn, pháp lý sở hữu lâu dài và bàn giao Quý 4 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Elite Residence Thủ Thiêm · Biệt thự trên không giới hạn">
+  <meta property="og:description" content="184 căn hộ giới hạn với thang máy riêng và tầm nhìn trực diện sông Sài Gòn. Đăng ký tham quan riêng 1 kèm 1.">
+  <meta property="og:image" content="./image/hero-cinematic.png">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('has-motion');</script>
   <style>
     :root {
-      --bg-champagne: #F9F6F0;
-      --bg-marble-white: #FFFFFF;
-      --bg-med-navy: #071C24;
-      --bg-med-emerald: #0B2833;
-      --gold-primary: #C59B27;
-      --gold-bronze: #8E6B13;
-      --gold-light: #E8CF82;
-      --gold-gradient: linear-gradient(135deg, #D9B44A 0%, #C59B27 50%, #9E7818 100%);
-      --text-navy: #071C24;
-      --text-body: #3E4C52;
-      --text-muted-light: #6E6A5F;
-      --text-white: #FFFFFF;
-      --text-ivory: #F4EFE6;
-      --border-marble: #E5DEC9;
-      --border-gold: rgba(197, 155, 39, 0.38);
-      --font-display: 'Cormorant Garamond', 'Lora', Georgia, serif;
-      --font-serif: 'Lora', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --bg-base: #FFFFFF;
+      --bg-stone: #F7F6F3;
+      --bg-elevated: #EFECE6;
+      --ink-primary: #111111;
+      --ink-secondary: #525252;
+      --ink-muted: #737373;
+      --border-hairline: #E5E2DC;
+      --border-strong: #C9C3B8;
+      --accent: #8C6D3F;
+      --accent-hover: #735832;
+      --danger: #B91C1C;
+      --success: #15803D;
+
+      --font-sans: 'Manrope', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --sp-0: 0px;
+      --sp-25: 2px;
+      --sp-50: 4px;
+      --sp-75: 8px;
+      --sp-100: 12px;
+      --sp-200: 16px;
+      --sp-300: 24px;
+      --sp-400: 32px;
+      --sp-500: 40px;
+      --sp-600: 48px;
+      --sp-700: 64px;
+      --sp-800: 80px;
+      --sp-900: 96px;
+
+      --r-sm: 4px;
+      --r-md: 8px;
+      --r-lg: 12px;
+      --r-xl: 16px;
+      --r-2xl: 24px;
+      --r-full: 9999px;
+
+      --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    html, body {
-      overflow-x: hidden;
-      max-width: 100vw;
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    body {
-      background-color: var(--bg-champagne);
-      color: var(--text-navy);
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--ink-primary);
       font-family: var(--font-sans);
-      line-height: 1.6;
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    /* TOP UTILITY BAR - MEDITERRANEAN EMERALD-NAVY */
-    .top-bar {
-      background: #041218;
-      border-bottom: 1px solid rgba(197, 155, 39, 0.25);
-      padding: 9px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: #CBD5E1;
-      z-index: 100;
-      letter-spacing: 0.3px;
-    }
-    .top-bar-left {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-    .top-bar-left span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .top-bar-left strong {
-      color: var(--gold-light);
-      font-weight: 700;
-    }
-    .top-bar-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .lang-pill {
-      background: rgba(197, 155, 39, 0.16);
-      padding: 3px 12px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--gold-light);
-      border: 1px solid rgba(197, 155, 39, 0.4);
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+    body {
+      background-color: var(--bg-base);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 24px;
+      overflow-x: clip;
     }
 
-    /* MAIN NAVBAR - SUNLIT CHAMPAGNE MARBLE WHITE */
-    .navbar {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-marble);
-      padding: 16px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 90;
-      gap: 24px;
-      box-shadow: 0 8px 30px rgba(7, 28, 36, 0.05);
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+
+    button, input, select, textarea {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
       text-decoration: none;
-      flex-shrink: 0;
-    }
-    .logo-symbol {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      background: var(--bg-med-navy);
-      border: 1px solid var(--gold-primary);
-      display: grid;
-      place-items: center;
-      box-shadow: 0 4px 14px rgba(197, 155, 39, 0.25);
-    }
-    .logo-symbol svg {
-      width: 24px;
-      height: 24px;
-      fill: var(--gold-light);
-    }
-    .logo-text h1 {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      color: var(--text-navy);
-      line-height: 1.1;
-    }
-    .logo-text p {
-      font-size: 0.66rem;
-      letter-spacing: 2.5px;
-      color: var(--gold-bronze);
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-top: 2px;
     }
 
+    /* Typography system (Tailwind scale steps + named styles) */
+    .heading-1 {
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
+    }
+    .heading-2 {
+      font-size: 48px;
+      line-height: 48px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    .heading-3 {
+      font-size: 36px;
+      line-height: 40px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    .heading-4 {
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      text-wrap: balance;
+    }
+    .heading-5 {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+    }
+    .heading-6 {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
+      text-wrap: balance;
+    }
+
+    .title-1 { font-size: 20px; line-height: 28px; font-weight: 500; }
+    .title-2 { font-size: 18px; line-height: 28px; font-weight: 500; }
+    .title-3 { font-size: 16px; line-height: 24px; font-weight: 500; }
+    .title-4 { font-size: 14px; line-height: 20px; font-weight: 500; }
+    .title-5 { font-size: 12px; line-height: 16px; font-weight: 500; }
+
+    .body-1 { font-size: 16px; line-height: 24px; font-weight: 600; text-wrap: pretty; }
+    .body-2 { font-size: 16px; line-height: 24px; font-weight: 500; text-wrap: pretty; }
+    .body-3 { font-size: 16px; line-height: 24px; font-weight: 400; text-wrap: pretty; }
+    .body-4 { font-size: 14px; line-height: 20px; font-weight: 600; text-wrap: pretty; }
+    .body-5 { font-size: 14px; line-height: 20px; font-weight: 500; text-wrap: pretty; }
+    .body-6 { font-size: 14px; line-height: 20px; font-weight: 400; text-wrap: pretty; }
+
+    .button-lg { font-size: 18px; line-height: 28px; font-weight: 600; }
+    .button-md { font-size: 16px; line-height: 24px; font-weight: 600; }
+    .button-sm { font-size: 14px; line-height: 20px; font-weight: 600; }
+    .button-xsm { font-size: 12px; line-height: 16px; font-weight: 600; }
+
+    .caption-1 { font-size: 14px; line-height: 20px; font-weight: 500; }
+    .caption-2 { font-size: 14px; line-height: 20px; font-weight: 400; }
+    .caption-3 { font-size: 12px; line-height: 16px; font-weight: 600; }
+    .caption-4 { font-size: 12px; line-height: 16px; font-weight: 500; }
+    .caption-5 { font-size: 12px; line-height: 16px; font-weight: 400; }
+
+    .mono-num {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media (max-width: 767px) {
+      .heading-1 { font-size: 36px; line-height: 40px; }
+      .heading-2 { font-size: 30px; line-height: 36px; }
+      .heading-3 { font-size: 24px; line-height: 32px; }
+      .heading-4 { font-size: 24px; line-height: 32px; }
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: fixed;
+      top: var(--sp-200);
+      left: var(--sp-200);
+      z-index: 200;
+      padding: var(--sp-75) var(--sp-100);
+      background: var(--ink-primary);
+      color: var(--bg-base);
+      border-radius: var(--r-md);
+      transform: translateY(-160%);
+      transition: transform 300ms var(--ease-out-expo);
+    }
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    /* Focus rings */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Layout containers */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--sp-300);
+      padding-right: var(--sp-300);
+    }
+    @media (max-width: 639px) {
+      .container {
+        padding-left: var(--sp-200);
+        padding-right: var(--sp-200);
+      }
+    }
+
+    .section {
+      padding-top: var(--sp-800);
+      padding-bottom: var(--sp-800);
+    }
+    .section-stone {
+      background-color: var(--bg-stone);
+    }
+    @media (max-width: 767px) {
+      .section {
+        padding-top: var(--sp-600);
+        padding-bottom: var(--sp-600);
+      }
+    }
+
+    .hairline {
+      width: 100%;
+      height: 1px;
+      background-color: var(--border-hairline);
+    }
+
+    /* Buttons (B2: 8px vertical, 12px horizontal padding, solid flat surface) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-75);
+      padding: var(--sp-75) var(--sp-100);
+      border-radius: var(--r-md);
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 300ms var(--ease-out-expo),
+                  border-color 300ms var(--ease-out-expo),
+                  color 300ms var(--ease-out-expo),
+                  transform 300ms var(--ease-out-expo);
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+    .btn-primary {
+      background-color: var(--ink-primary);
+      color: var(--bg-base);
+    }
+    .btn-primary:hover {
+      background-color: var(--accent);
+    }
+    .btn-outline {
+      background-color: var(--bg-base);
+      color: var(--ink-primary);
+      border-color: var(--border-hairline);
+    }
+    .btn-outline:hover {
+      background-color: var(--bg-stone);
+      border-color: var(--border-strong);
+    }
+    .btn[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Transparent Hero Header morphing on scroll */
+    .nav-shell {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: var(--sp-200) var(--sp-0);
+      background-color: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background-color 400ms var(--ease-out-expo),
+                  border-color 400ms var(--ease-out-expo),
+                  backdrop-filter 400ms var(--ease-out-expo);
+    }
+    .nav-shell.is-scrolled {
+      background-color: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: var(--border-hairline);
+    }
+    .floating-nav {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--sp-300);
+      padding-right: var(--sp-300);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-300);
+    }
+    @media (max-width: 639px) {
+      .floating-nav {
+        padding-left: var(--sp-200);
+        padding-right: var(--sp-200);
+      }
+    }
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-75);
+      color: #FFFFFF;
+      transition: color 300ms var(--ease-out-expo);
+    }
+    .nav-shell.is-scrolled .brand-link {
+      color: var(--ink-primary);
+    }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
-      list-style: none;
+      gap: var(--sp-200);
     }
-    .nav-links a {
-      color: var(--text-navy);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      transition: color 0.2s;
-      white-space: nowrap;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
+    .nav-link {
+      padding: var(--sp-50) var(--sp-75);
+      border-radius: var(--r-md);
+      color: rgba(255, 255, 255, 0.78);
+      transition: color 300ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo);
     }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold-bronze);
-      border-bottom-color: var(--gold-primary);
-    }
-
-    .btn-gold {
-      background: var(--gold-gradient);
-      color: #071C24;
-      padding: 11px 24px;
-      border-radius: 6px;
-      font-weight: 800;
-      font-size: 0.86rem;
-      letter-spacing: 0.4px;
-      text-decoration: none;
-      border: 1px solid #D9B44A;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.32);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(197, 155, 39, 0.5);
-      background: linear-gradient(135deg, #E8C766 0%, #C59B27 100%);
-    }
-
-    /* HERO SECTION - DEEP MEDITERRANEAN EMERALD-NAVY (#071C24) + CHAMPAGNE GOLD */
-    .hero {
-      position: relative;
-      min-height: 740px;
-      padding: 96px 48px 136px;
-      background: linear-gradient(180deg, rgba(7, 28, 36, 0.72) 0%, rgba(7, 28, 36, 0.88) 70%, #071C24 100%),
-                  url('image/hero-villa.webp') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--text-white);
-      border-bottom: 3px solid var(--gold-primary);
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(7, 28, 36, 0.78);
-      border: 1px solid var(--gold-primary);
-      color: var(--gold-light);
-      padding: 7px 22px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      margin-bottom: 24px;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.4rem, 5vw, 4.3rem);
-      line-height: 1.16;
-      max-width: 980px;
-      margin-bottom: 20px;
-      font-weight: 700;
+    .nav-link:hover,
+    .nav-link.is-active {
       color: #FFFFFF;
+      background-color: rgba(255, 255, 255, 0.12);
     }
-    .hero-title span {
-      color: var(--gold-light);
-      display: inline-block;
-      margin-top: 6px;
+    .nav-shell.is-scrolled .nav-link {
+      color: var(--ink-secondary);
     }
-
-    .hero-desc {
-      font-size: 1.06rem;
-      color: #E2E8F0;
-      max-width: 760px;
-      margin-bottom: 44px;
-      line-height: 1.7;
+    .nav-shell.is-scrolled .nav-link:hover,
+    .nav-shell.is-scrolled .nav-link.is-active {
+      color: var(--ink-primary);
+      background-color: var(--bg-stone);
     }
-
-    /* FLOATING WHITE-AND-GOLD PROPERTY SEARCH CONCIERGE BAR */
-    .search-filter-card {
-      width: 100%;
-      max-width: 1120px;
-      background: var(--bg-marble-white);
-      border: 2px solid var(--border-marble);
-      border-top: 4px solid var(--gold-primary);
-      border-radius: 12px;
-      padding: 26px 32px 30px;
-      box-shadow: 0 28px 65px rgba(7, 28, 36, 0.45);
-      position: relative;
-      z-index: 20;
-      color: var(--text-navy);
-    }
-
-    .filter-tabs {
-      display: flex;
-      gap: 10px;
-      border-bottom: 1px solid var(--border-marble);
-      padding-bottom: 16px;
-      margin-bottom: 22px;
-      flex-wrap: wrap;
-    }
-    .filter-tab-btn {
-      background: var(--bg-champagne);
-      border: 1px solid var(--border-marble);
-      color: var(--text-body);
-      font-family: inherit;
-      font-size: 0.88rem;
-      font-weight: 700;
-      padding: 9px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .filter-tab-btn:hover {
-      border-color: var(--gold-primary);
-      color: var(--text-navy);
-    }
-    .filter-tab-btn.active {
-      background: var(--bg-med-navy);
-      color: var(--gold-light);
-      border-color: var(--bg-med-navy);
-      box-shadow: 0 4px 14px rgba(7, 28, 36, 0.22);
-    }
-
-    .filter-inputs-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1.2fr 1.2fr 1fr;
-      gap: 18px;
-      align-items: end;
-    }
-    .filter-field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      text-align: left;
-    }
-    .filter-field label {
-      font-size: 0.74rem;
-      font-weight: 800;
-      color: var(--gold-bronze);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-    .filter-field select,
-    .filter-field input {
-      background: var(--bg-champagne);
-      border: 1px solid var(--border-marble);
-      padding: 12px 14px;
-      border-radius: 6px;
-      color: var(--text-navy);
-      font-family: inherit;
-      font-size: 0.9rem;
-      font-weight: 600;
-      outline: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .filter-field select:focus {
-      border-color: var(--gold-primary);
-      background: var(--bg-marble-white);
-    }
-    .btn-search-exec {
-      background: var(--bg-med-navy);
-      color: var(--gold-light);
-      padding: 13px 20px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      border: 1px solid var(--gold-primary);
-      cursor: pointer;
+    .nav-cta-desktop {
       display: inline-flex;
+      border-radius: var(--r-full);
+      padding: var(--sp-75) var(--sp-200);
+      background-color: #FFFFFF;
+      color: #111111;
+    }
+    .nav-cta-desktop:hover {
+      background-color: #EFECE6;
+      color: #111111;
+    }
+    .nav-shell.is-scrolled .nav-cta-desktop {
+      background-color: var(--ink-primary);
+      color: var(--bg-base);
+    }
+    .nav-shell.is-scrolled .nav-cta-desktop:hover {
+      background-color: var(--accent);
+      color: var(--bg-base);
+    }
+
+    /* Menu toggle with smooth morphing bars */
+    .menu-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      box-shadow: 0 6px 20px rgba(7, 28, 36, 0.25);
-      transition: all 0.25s;
-      height: 46px;
-    }
-    .btn-search-exec:hover {
-      background: var(--gold-primary);
-      color: var(--bg-med-navy);
-      transform: translateY(-2px);
-    }
-
-    /* BỘ 3 PHÂN KHÚC CHỦ LỰC ON WARM CHAMPAGNE MARBLE */
-    .pillar-section {
-      padding: 0 48px 72px;
-      margin-top: -54px;
+      background-color: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: var(--r-full);
+      cursor: pointer;
       position: relative;
-      z-index: 30;
+      transition: background-color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo);
     }
-    .pillar-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      max-width: 1280px;
-      margin: 0 auto;
+    .nav-shell.is-scrolled .menu-toggle {
+      background-color: var(--bg-stone);
+      border-color: var(--border-hairline);
     }
-    .pillar-card {
-      background: var(--bg-marble-white);
-      border-radius: 10px;
-      border: 1px solid var(--border-marble);
-      overflow: hidden;
+    .menu-lines {
+      width: 18px;
+      height: 12px;
       position: relative;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 18px 42px rgba(7, 28, 36, 0.08);
     }
-    .pillar-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--gold-primary);
-      box-shadow: 0 26px 55px rgba(7, 28, 36, 0.14);
-    }
-
-    .pillar-img-wrap {
-      width: 100%;
-      height: 230px;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 2px solid var(--border-marble);
-    }
-    .pillar-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .pillar-card:hover .pillar-img-wrap img {
-      transform: scale(1.07);
-    }
-    .pillar-badge-float {
+    .menu-lines span {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(7, 28, 36, 0.9);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--gold-primary);
-      color: var(--gold-light);
-      padding: 5px 14px;
-      border-radius: 4px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      left: 0;
+      width: 18px;
+      height: 1.5px;
+      background-color: #FFFFFF;
+      transition: transform 500ms var(--ease-out-expo), opacity 300ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo);
+    }
+    .nav-shell.is-scrolled .menu-lines span {
+      background-color: var(--ink-primary);
+    }
+    .menu-lines span:first-child { top: 2px; }
+    .menu-lines span:last-child { top: 8px; }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:first-child {
+      transform: translateY(3px) rotate(45deg);
+    }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:last-child {
+      transform: translateY(-3px) rotate(-45deg);
     }
 
-    .pillar-content {
-      padding: 26px;
+    @media (max-width: 899px) {
+      .nav-links,
+      .nav-cta-desktop {
+        display: none;
+      }
+      .menu-toggle {
+        display: inline-flex;
+      }
+    }
+
+    /* Full height mobile menu drawer (B7) */
+    .mobile-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 95;
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       display: flex;
       flex-direction: column;
-      flex: 1;
+      justify-content: space-between;
+      padding: var(--sp-900) var(--sp-300) var(--sp-400);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 400ms var(--ease-out-expo);
     }
-    .pillar-title {
-      font-family: var(--font-serif);
-      font-size: 1.38rem;
-      font-weight: 700;
-      color: var(--text-navy);
-      margin-bottom: 10px;
-      line-height: 1.3;
+    .mobile-drawer.is-open {
+      opacity: 1;
+      pointer-events: auto;
     }
-    .pillar-desc {
-      font-size: 0.9rem;
-      color: var(--text-body);
-      line-height: 1.6;
-      margin-bottom: 22px;
-      flex: 1;
+    .mobile-drawer-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-200);
     }
-    .pillar-bottom {
+    .mobile-drawer-item {
+      opacity: 0;
+      transform: translateY(var(--sp-300));
+      transition: transform 500ms var(--ease-out-expo), opacity 500ms var(--ease-out-expo), color 300ms var(--ease-out-expo);
+    }
+    .mobile-drawer.is-open .mobile-drawer-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(1) { transition-delay: 60ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(2) { transition-delay: 120ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(3) { transition-delay: 180ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(4) { transition-delay: 240ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(5) { transition-delay: 300ms; }
+    .mobile-drawer-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 1px solid var(--border-marble);
-      padding-top: 16px;
-    }
-    .pillar-price {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--gold-bronze);
-    }
-    .pillar-price span {
-      font-family: var(--font-sans);
-      font-size: 0.8rem;
-      color: var(--text-muted-light);
-      font-weight: 500;
-    }
-    .pillar-link {
-      color: var(--text-navy);
-      text-decoration: none;
-      font-size: 0.86rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.2s, color 0.2s;
-    }
-    .pillar-link:hover {
-      color: var(--gold-bronze);
-      gap: 10px;
+      padding: var(--sp-100) var(--sp-0);
+      color: var(--ink-primary);
     }
 
-    /* SECTION TITLE STYLES (SUNLIT CHAMPAGNE SECTIONS) */
-    .section-wrap {
-      padding: 80px 48px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    .section-header {
-      text-align: center;
-      max-width: 740px;
-      margin: 0 auto 48px;
-    }
-    .section-tag {
-      color: var(--gold-bronze);
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 2.8px;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-    .section-heading {
-      font-family: var(--font-serif);
-      font-size: 2.45rem;
-      font-weight: 700;
-      color: var(--text-navy);
-      margin-bottom: 14px;
-      line-height: 1.24;
-    }
-    .section-desc {
-      color: var(--text-body);
-      font-size: 0.96rem;
-    }
-
-    /* PROPERTY SHOWCASE (LUXURY GALLERY FRAMES ON WARM MARBLE WHITE) */
-    .property-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 42px;
-      flex-wrap: wrap;
-    }
-    .prop-tab-btn {
-      background: var(--bg-marble-white);
-      border: 1px solid var(--border-marble);
-      color: var(--text-navy);
-      padding: 11px 24px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .prop-tab-btn:hover,
-    .prop-tab-btn.active {
-      background: var(--bg-med-navy);
-      color: var(--gold-light);
-      border-color: var(--gold-primary);
-      box-shadow: 0 8px 20px rgba(7, 28, 36, 0.16);
-    }
-
-    .properties-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 32px;
-    }
-    .property-card {
-      background: var(--bg-marble-white);
-      border-radius: 10px;
-      border: 1px solid var(--border-marble);
-      padding: 12px;
-      overflow: hidden;
+    /* Full-bleed 100svh Cinematic Hero */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      background-color: #0D141F;
       display: flex;
       flex-direction: column;
-      transition: all 0.3s ease;
-      box-shadow: 0 12px 32px rgba(7, 28, 36, 0.06);
-    }
-    .property-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold-primary);
-      box-shadow: 0 22px 48px rgba(7, 28, 36, 0.14);
-    }
-    .prop-img-container {
-      width: 100%;
-      height: 230px;
-      position: relative;
       overflow: hidden;
-      border-radius: 6px;
-      border: 1px solid var(--border-marble);
     }
-    .prop-img-container img {
+    .hero-bg-parallax {
+      position: absolute;
+      inset: 0;
+      will-change: transform;
+    }
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      object-position: center center;
+      transition: transform 1200ms var(--ease-out-expo);
     }
-    .property-card:hover .prop-img-container img {
-      transform: scale(1.06);
+    .has-motion:not(.is-hero-ready) .hero-bg-img {
+      transform: scale(1.07);
     }
-    .prop-status-tag {
+    .has-motion.is-hero-ready .hero-bg-img {
+      transform: scale(1);
+    }
+    .hero-scrim {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(7, 28, 36, 0.92);
-      color: var(--gold-light);
-      border: 1px solid var(--gold-primary);
-      font-weight: 700;
-      font-size: 0.7rem;
-      padding: 5px 12px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(8, 12, 20, 0.72) 0%, rgba(8, 12, 20, 0.36) 46%, rgba(8, 12, 20, 0.08) 100%),
+        linear-gradient(180deg, rgba(8, 12, 20, 0.45) 0%, rgba(8, 12, 20, 0) 24%, rgba(8, 12, 20, 0) 70%, rgba(8, 12, 20, 0.62) 100%);
     }
-    .prop-body {
-      padding: 20px 12px 12px;
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      padding-top: var(--sp-900);
+      padding-bottom: var(--sp-400);
+    }
+    .hero-copy {
+      max-width: 620px;
+      margin-top: auto;
+      margin-bottom: auto;
+      padding-top: var(--sp-500);
+      padding-bottom: var(--sp-500);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--sp-300);
+    }
+    .hero-title {
+      padding-top: var(--sp-50);
+      padding-bottom: var(--sp-75);
+      color: #FFFFFF;
+    }
+    .hero-sub {
+      max-width: 520px;
+      color: rgba(255, 255, 255, 0.84);
+    }
+    .btn-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-75);
+      padding: var(--sp-75) var(--sp-200);
+      border-radius: var(--r-full);
+      background-color: #FFFFFF;
+      color: #111111;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo);
+    }
+    .btn-hero-pill:hover {
+      background-color: #EFECE6;
+    }
+    .btn-hero-pill:active {
+      transform: scale(0.98);
+    }
+    .hero-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--sp-200);
+      color: rgba(255, 255, 255, 0.72);
+    }
+    @media (max-width: 767px) {
+      .hero-bg-img {
+        object-position: 72% center;
+      }
+      .hero-scrim {
+        background:
+          linear-gradient(90deg, rgba(8, 12, 20, 0.78) 0%, rgba(8, 12, 20, 0.48) 100%),
+          linear-gradient(180deg, rgba(8, 12, 20, 0.45) 0%, rgba(8, 12, 20, 0) 24%, rgba(8, 12, 20, 0.65) 100%);
+      }
+    }
+
+    /* Architectural Highlights: Asymmetric Bento Grid */
+    .section-head {
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-100);
+      margin-bottom: var(--sp-500);
+    }
+    .section-head p {
+      color: var(--ink-secondary);
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: var(--sp-300);
+      align-items: stretch;
+    }
+    .bento-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-300);
+    }
+    .bento-card {
+      background-color: var(--bg-stone);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-xl);
+      padding: var(--sp-75);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-200);
+      height: 100%;
+    }
+    .bento-card-media {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background-color: var(--bg-elevated);
+    }
+    .bento-card-wide .bento-card-media img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .bento-card-side .bento-card-media img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .bento-card-body {
+      padding: var(--sp-75) var(--sp-100) var(--sp-100);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-75);
+    }
+    .bento-card-body p {
+      color: var(--ink-secondary);
+    }
+    @media (max-width: 899px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mandatory Tagline Reveal Section (B11) */
+    .tagline-section {
+      padding-top: var(--sp-900);
+      padding-bottom: var(--sp-900);
+      background-color: var(--bg-base);
+    }
+    .tagline-wrap {
+      max-width: 680px;
+    }
+    .tagline-text {
+      color: var(--ink-primary);
+    }
+    .reveal-word {
+      opacity: 0.28;
+      transition: opacity 500ms var(--ease-out-expo);
+    }
+    .reveal-word.is-lit {
+      opacity: 1;
+    }
+
+    /* Collection Showcase & Tabs */
+    .collection-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: var(--sp-300);
+      margin-bottom: var(--sp-400);
+    }
+    .collection-top .section-head {
+      margin-bottom: 0;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-75);
+    }
+    .filter-tab {
+      padding: var(--sp-75) var(--sp-100);
+      border-radius: var(--r-md);
+      border: 1px solid var(--border-hairline);
+      background-color: var(--bg-base);
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: background-color 300ms var(--ease-out-expo),
+                  color 300ms var(--ease-out-expo),
+                  border-color 300ms var(--ease-out-expo),
+                  transform 300ms var(--ease-out-expo);
+    }
+    .filter-tab:hover {
+      color: var(--ink-primary);
+      border-color: var(--border-strong);
+    }
+    .filter-tab:active {
+      transform: scale(0.98);
+    }
+    .filter-tab.is-active {
+      background-color: var(--ink-primary);
+      color: var(--bg-base);
+      border-color: var(--ink-primary);
+    }
+
+    .residences-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--sp-300);
+    }
+    .residence-card {
+      grid-column: span 6;
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-xl);
+      padding: var(--sp-75);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--sp-200);
+      transition: border-color 300ms var(--ease-out-expo);
+    }
+    .residence-card.is-featured {
+      grid-column: span 7;
+    }
+    .residence-card.is-compact {
+      grid-column: span 5;
+    }
+    .residence-card:hover {
+      border-color: var(--border-strong);
+    }
+    .residence-media {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background-color: var(--bg-stone);
+    }
+    .residence-media img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      transition: transform 500ms var(--ease-out-expo);
+    }
+    .residence-card:hover .residence-media img {
+      transform: scale(1.02);
+    }
+    .residence-content {
+      padding: var(--sp-75) var(--sp-100) var(--sp-100);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-200);
       flex: 1;
+      justify-content: space-between;
     }
-    .prop-location {
-      font-size: 0.78rem;
-      color: var(--gold-bronze);
+    .residence-meta {
       display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 6px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      flex-direction: column;
+      gap: var(--sp-75);
     }
-    .prop-title {
-      font-family: var(--font-serif);
-      font-size: 1.28rem;
-      font-weight: 700;
-      color: var(--text-navy);
-      margin-bottom: 14px;
-      line-height: 1.35;
+    .residence-type {
+      color: var(--accent);
     }
-    .prop-specs {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 0.82rem;
-      color: var(--text-body);
-      font-weight: 600;
-      padding: 12px 0;
-      border-top: 1px solid var(--border-marble);
-      border-bottom: 1px solid var(--border-marble);
-      margin-bottom: 16px;
+    .residence-desc {
+      color: var(--ink-secondary);
+    }
+    .residence-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-100);
+      padding-top: var(--sp-200);
     }
     .spec-item {
       display: flex;
-      align-items: center;
-      gap: 6px;
+      flex-direction: column;
+      gap: var(--sp-25);
     }
-    .prop-footer {
+    .spec-label {
+      color: var(--ink-muted);
+    }
+    .residence-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: auto;
+      gap: var(--sp-200);
+      padding-top: var(--sp-100);
     }
-    .prop-price {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--text-navy);
-    }
-    .prop-price span {
-      font-family: var(--font-sans);
-      font-size: 0.78rem;
-      color: var(--gold-bronze);
-      font-weight: 600;
-    }
-    .btn-prop-action {
-      background: var(--bg-champagne);
-      color: var(--text-navy);
-      border: 1px solid var(--border-marble);
-      padding: 9px 18px;
-      border-radius: 6px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn-prop-action:hover {
-      background: var(--bg-med-navy);
-      color: var(--gold-light);
-      border-color: var(--bg-med-navy);
+    @media (max-width: 899px) {
+      .residence-card,
+      .residence-card.is-featured,
+      .residence-card.is-compact {
+        grid-column: span 12;
+      }
     }
 
-    /* PRIVATE BANKING MORTGAGE CALCULATOR IN DEEP MEDITERRANEAN EMERALD-NAVY (#071C24) */
-    .calculator-section {
-      background: var(--bg-med-navy);
-      border-top: 2px solid var(--gold-primary);
-      border-bottom: 2px solid var(--gold-primary);
-      padding: 96px 48px;
-      color: var(--text-white);
+    /* Empty state (B9) */
+    .empty-state {
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-xl);
+      padding: var(--sp-600) var(--sp-300);
+      background-color: var(--bg-base);
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--sp-200);
     }
-    .calculator-section .section-tag {
-      color: var(--gold-light);
+    .empty-state.is-visible {
+      display: flex;
     }
-    .calculator-section .section-heading {
-      color: #FFFFFF;
-    }
-    .calculator-section .section-desc {
-      color: #CBD5E1;
-    }
-    .calc-container {
-      max-width: 1120px;
-      margin: 0 auto;
-      background: var(--bg-med-emerald);
-      border: 1px solid var(--border-gold);
-      border-radius: 14px;
-      padding: 46px;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+
+    /* Process 3 steps + Finance Calculator */
+    .steps-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 48px;
-      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-300);
+      margin-bottom: var(--sp-600);
     }
-    .calc-sliders {
+    .step-card {
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-xl);
+      padding: var(--sp-300);
+      background-color: var(--bg-base);
       display: flex;
       flex-direction: column;
-      gap: 26px;
+      gap: var(--sp-100);
     }
-    .slider-box {
+    .step-num {
+      color: var(--accent);
+    }
+    .step-card p {
+      color: var(--ink-secondary);
+    }
+    @media (max-width: 899px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-panel {
+      background-color: var(--bg-stone);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-2xl);
+      padding: var(--sp-200);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--sp-200);
+      align-items: stretch;
+    }
+    .calc-controls {
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-md);
+      padding: var(--sp-300);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: var(--sp-300);
     }
-    .slider-head {
+    .calc-field {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-75);
+    }
+    .calc-label-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: #E2E8F0;
+      align-items: baseline;
+      gap: var(--sp-100);
     }
-    .slider-val {
-      font-family: var(--font-serif);
-      color: var(--gold-light);
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-    input[type=range] {
-      -webkit-appearance: none;
+    .range-input {
       width: 100%;
-      height: 8px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.14);
-      outline: none;
-    }
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--gold-gradient);
+      accent-color: var(--ink-primary);
       cursor: pointer;
-      border: 2px solid #FFFFFF;
-      box-shadow: 0 0 12px rgba(197, 155, 39, 0.75);
     }
-    .calc-result-box {
-      background: #041218;
-      border: 1px solid var(--gold-primary);
-      border-radius: 12px;
-      padding: 36px 32px;
+    .calc-result {
+      background-color: var(--ink-primary);
+      color: var(--bg-base);
+      border-radius: var(--r-md);
+      padding: var(--sp-400);
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      text-align: center;
+      justify-content: space-between;
+      gap: var(--sp-300);
     }
-    .res-monthly-title {
-      font-size: 0.82rem;
-      color: #CBD5E1;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-    }
-    .res-monthly-num {
-      font-family: var(--font-serif);
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      line-height: 1.05;
+    .calc-result-muted {
+      color: #A3A3A3;
     }
     .calc-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-200);
+    }
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--sp-200);
+    }
+    .calc-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #2E2E2E;
+    }
+    @media (max-width: 899px) {
+      .calc-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FAQ Accordion */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-100);
+      max-width: 880px;
+    }
+    .faq-item {
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-xl);
+      background-color: var(--bg-base);
+      overflow: hidden;
+      transition: border-color 300ms var(--ease-out-expo);
+    }
+    .faq-item.is-open {
+      border-color: var(--border-strong);
+    }
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-200);
+      padding: var(--sp-300);
+      background-color: transparent;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      color: var(--ink-secondary);
+      transition: transform 400ms var(--ease-out-expo);
+    }
+    .faq-item.is-open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 400ms var(--ease-out-expo);
+    }
+    .faq-item.is-open .faq-panel {
+      grid-template-rows: 1fr;
+    }
+    .faq-panel-inner {
+      overflow: hidden;
+    }
+    .faq-answer {
+      padding: var(--sp-0) var(--sp-300) var(--sp-300);
+      color: var(--ink-secondary);
+      max-width: 680px;
+    }
+
+    /* Final CTA & Private Viewing Form */
+    .cta-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      border-top: 1px solid rgba(197, 155, 39, 0.25);
-      padding-top: 18px;
-      font-size: 0.86rem;
-      text-align: left;
+      gap: var(--sp-500);
+      align-items: start;
     }
-    .calc-breakdown div strong {
-      display: block;
-      color: #FFFFFF;
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      margin-top: 4px;
-    }
-
-    /* VIP RESORT AMENITIES ON CHAMPAGNE MARBLE */
-    .amenities-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .amenity-card {
-      background: var(--bg-marble-white);
-      border: 1px solid var(--border-marble);
-      border-top: 3px solid var(--gold-primary);
-      border-radius: 10px;
-      padding: 30px 22px;
-      text-align: center;
-      transition: all 0.3s;
-      box-shadow: 0 10px 28px rgba(7, 28, 36, 0.05);
-    }
-    .amenity-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold-primary);
-      box-shadow: 0 18px 40px rgba(7, 28, 36, 0.12);
-    }
-    .amenity-icon {
-      font-size: 2.4rem;
-      margin-bottom: 14px;
-    }
-    .amenity-title {
-      font-family: var(--font-serif);
-      font-size: 1.12rem;
-      font-weight: 700;
-      color: var(--text-navy);
-      margin-bottom: 8px;
-    }
-    .amenity-desc {
-      font-size: 0.85rem;
-      color: var(--text-body);
-    }
-
-    /* CONSULTATION FORM SECTION - PRIVATE CONCIERGE */
-    .consult-section {
-      padding: 96px 48px;
-      background: linear-gradient(180deg, rgba(7, 28, 36, 0.84) 0%, rgba(7, 28, 36, 0.94) 100%),
-                  url('image/interior-penthouse.webp') center/cover no-repeat;
-      border-top: 1px solid var(--border-marble);
-    }
-    .consult-container {
-      max-width: 1040px;
-      margin: 0 auto;
-      background: var(--bg-marble-white);
-      border: 2px solid var(--border-marble);
-      border-top: 5px solid var(--gold-primary);
-      border-radius: 14px;
-      padding: 48px;
-      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.65);
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 44px;
-      align-items: center;
-      color: var(--text-navy);
-    }
-    .consult-info h3 {
-      font-family: var(--font-serif);
-      font-size: 2.15rem;
-      line-height: 1.25;
-      margin-bottom: 16px;
-      color: var(--text-navy);
-    }
-    .consult-info p {
-      color: var(--text-body);
-      font-size: 0.92rem;
-      margin-bottom: 24px;
-    }
-    .consult-benefits {
-      list-style: none;
+    .cta-copy {
+      max-width: 520px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      font-size: 0.9rem;
-      color: var(--text-navy);
-      font-weight: 600;
+      gap: var(--sp-200);
     }
-    .consult-benefits li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .cta-copy p {
+      color: var(--ink-secondary);
     }
-    .consult-benefits li span {
-      color: var(--gold-bronze);
-      font-weight: 800;
-    }
-
-    .consult-form {
+    .form-card {
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-xl);
+      padding: var(--sp-400);
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: var(--sp-200);
     }
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      text-align: left;
-    }
-    .form-group label {
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--text-navy);
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
+      gap: var(--sp-75);
     }
     .form-control {
-      background: var(--bg-champagne);
-      border: 1px solid var(--border-marble);
-      padding: 13px 16px;
-      border-radius: 6px;
-      color: var(--text-navy);
-      font-family: inherit;
-      font-size: 0.92rem;
-      font-weight: 500;
-      outline: none;
-      transition: all 0.2s;
-    }
-    .form-control::placeholder {
-      color: var(--text-muted-light);
-    }
-    .form-control:focus {
-      border-color: var(--gold-primary);
-      background: var(--bg-marble-white);
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
       width: 100%;
-      box-sizing: border-box;
+      padding: var(--sp-100) var(--sp-200);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-md);
+      background-color: var(--bg-base);
+      font-size: 16px;
+      line-height: 24px;
+      transition: border-color 300ms var(--ease-out-expo);
     }
-    .form-control {
-      min-width: 0;
-      max-width: 100%;
-      box-sizing: border-box;
+    .form-control:hover {
+      border-color: var(--border-strong);
     }
-
-    /* FOOTER IN DEEP MEDITERRANEAN EMERALD-NAVY */
-    .footer {
-      background: #041218;
-      border-top: 2px solid var(--gold-primary);
-      padding: 64px 48px 32px;
-      color: #CBD5E1;
-      font-size: 0.88rem;
+    .form-control.is-invalid {
+      border-color: var(--danger);
     }
-    .footer-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 44px;
+    .field-error {
+      color: var(--danger);
+      min-height: 16px;
     }
-    .footer-col h4 {
-      color: var(--gold-light);
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-    .footer-col ul {
-      list-style: none;
-      display: flex;
+    .form-status {
+      padding: var(--sp-200);
+      border-radius: var(--r-md);
+      border: 1px solid var(--border-hairline);
+      background-color: var(--bg-stone);
+      display: none;
       flex-direction: column;
-      gap: 10px;
+      gap: var(--sp-75);
     }
-    .footer-col ul a {
-      color: #94A3B8;
-      text-decoration: none;
-      transition: color 0.2s;
+    .form-status.is-visible {
+      display: flex;
     }
-    .footer-col ul a:hover {
-      color: var(--gold-light);
+    .skeleton-box {
+      display: none;
+      flex-direction: column;
+      gap: var(--sp-100);
+      padding: var(--sp-200);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-md);
+      background-color: var(--bg-stone);
     }
-    .footer-bottom {
-      border-top: 1px solid rgba(197, 155, 39, 0.2);
-      padding-top: 24px;
-      text-align: center;
-      font-size: 0.82rem;
-      color: #94A3B8;
+    .skeleton-box.is-visible {
+      display: flex;
+    }
+    .skeleton-bar {
+      height: 16px;
+      border-radius: var(--r-sm);
+      background-color: var(--bg-elevated);
+      animation: pulse-soft 1.2s var(--ease-out-expo) infinite;
+    }
+    @keyframes pulse-soft {
+      0%, 100% { opacity: 0.55; }
+      50% { opacity: 1; }
+    }
+    @media (max-width: 899px) {
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-card {
+        padding: var(--sp-300);
+      }
     }
 
-    /* MODAL TẢI BẢNG GIÁ / ĐẶT HẸN VIP */
-    .modal-overlay {
+    /* Footer */
+    .site-footer {
+      padding-top: var(--sp-600);
+      padding-bottom: var(--sp-600);
+      background-color: var(--bg-base);
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--sp-300);
+      padding-top: var(--sp-400);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-300);
+      color: var(--ink-secondary);
+    }
+    .footer-link-btn {
+      background: none;
+      border: none;
+      padding: var(--sp-50) var(--sp-0);
+      cursor: pointer;
+      color: var(--ink-secondary);
+      transition: color 300ms var(--ease-out-expo);
+    }
+    .footer-link-btn:hover {
+      color: var(--ink-primary);
+    }
+
+    /* Lightweight Legal Modal */
+    .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(7, 28, 36, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 999;
+      z-index: 150;
+      background-color: rgba(17, 17, 17, 0.56);
       display: none;
-      place-items: center;
-      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      padding: var(--sp-200);
     }
-    .modal-overlay.open {
-      display: grid;
-    }
-    .vip-modal-box {
-      background: var(--bg-marble-white);
-      border: 2px solid var(--border-marble);
-      border-top: 5px solid var(--gold-primary);
-      border-radius: 14px;
-      max-width: 520px;
-      width: 100%;
-      padding: 36px;
-      text-align: center;
-      position: relative;
-      color: var(--text-navy);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
-    }
-    .vip-ticket-code {
-      font-family: monospace;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--gold-bronze);
-      letter-spacing: 2px;
-      background: var(--bg-champagne);
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px dashed var(--gold-primary);
-      margin: 18px 0;
-    }
-
-    /* SKY PENTHOUSE 3D FLOOR EXPLORER (FLAGSHIP SAMANA STYLE) */
-    .sky-tour-section {
-      background: linear-gradient(180deg, #041218 0%, #071C24 60%, #041218 100%);
-      border-top: 2px solid var(--gold-primary);
-      border-bottom: 2px solid var(--gold-primary);
-      padding: 82px 48px;
-      color: #FFFFFF;
-      overflow-x: clip;
-    }
-    .sky-tour-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    .sky-tour-topbar {
+    .modal-backdrop.is-open {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
     }
-    .sky-lighting-toggle {
-      display: inline-flex;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(197, 155, 39, 0.4);
-      border-radius: 999px;
-      padding: 4px;
-      gap: 4px;
-    }
-    .sky-light-btn {
-      background: transparent;
-      border: none;
-      color: #CBD5E1;
-      font-family: inherit;
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 8px 16px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-    .sky-light-btn.active {
-      background: var(--gold-gradient);
-      color: #041218;
-      box-shadow: 0 4px 14px rgba(197, 155, 39, 0.4);
-    }
-    .sky-explorer-layout {
-      display: grid;
-      grid-template-columns: 1.45fr 0.78fr;
-      gap: 26px;
-      align-items: stretch;
-    }
-    .sky-explorer-layout > * {
-      min-width: 0;
-    }
-    .sky-stage-col {
+    .modal-box {
+      width: 100%;
+      max-width: 560px;
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--r-xl);
+      padding: var(--sp-400);
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      min-width: 0;
+      gap: var(--sp-200);
     }
-    .sky-explorer-stage {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      min-height: 260px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(197, 155, 39, 0.5);
-      background: #020a0e;
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6);
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--sp-200);
     }
-    .sky-scene-layer {
-      position: absolute;
-      inset: 0;
+
+    .btn-hero-pill svg,
+    .btn svg {
+      transition: transform 300ms var(--ease-out-expo);
+    }
+    .btn-hero-pill:hover svg,
+    .btn:hover svg {
+      transform: translateX(4px);
+    }
+    .faq-trigger:hover svg,
+    .faq-item.is-open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-item:not(.is-open) .faq-trigger:hover svg {
+      transform: none;
+    }
+
+    /* Hero Entrance Choreography & Staggered Grid Reveals */
+    .has-motion .hero-stagger {
       opacity: 0;
-      transform: scale(1.06);
-      transition: opacity 0.65s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-      pointer-events: none;
+      transform: translateY(var(--sp-300));
+      transition: opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo);
     }
-    .sky-scene-layer.active {
+    .has-motion.is-hero-ready .hero-stagger {
       opacity: 1;
-      transform: scale(1);
+      transform: translateY(0);
     }
-    .sky-scene-layer img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .has-motion .nav-shell.hero-stagger { transition-delay: 0ms; }
+    .has-motion .hero-title.hero-stagger { transition-delay: 80ms; }
+    .has-motion .hero-sub.hero-stagger { transition-delay: 160ms; }
+    .has-motion .btn-hero-pill.hero-stagger { transition-delay: 240ms; }
+    .has-motion .hero-bottom.hero-stagger { transition-delay: 320ms; }
+
+    /* Scroll reveal animations (B7) */
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(var(--sp-400));
+      transition: opacity 700ms var(--ease-out-expo), transform 700ms var(--ease-out-expo);
     }
-    .sky-explorer-stage[data-lighting="day"] .sky-scene-layer img {
-      filter: brightness(1.16) saturate(1.06) contrast(1.02);
-    }
-    .sky-lighting-tint {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      transition: background 0.6s ease;
-      background: linear-gradient(180deg, rgba(4, 18, 24, 0.08) 0%, rgba(4, 18, 24, 0.55) 100%);
-    }
-    .sky-explorer-stage[data-lighting="day"] .sky-lighting-tint {
-      background: linear-gradient(180deg, rgba(186, 230, 253, 0.14) 0%, rgba(7, 28, 36, 0.28) 100%);
-    }
-    .sky-stage-arrows {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      display: flex;
-      gap: 8px;
-      z-index: 5;
-    }
-    .sky-arrow-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: rgba(4, 18, 24, 0.72);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(232, 207, 130, 0.45);
-      color: #FFFFFF;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      transition: all 0.2s ease;
-    }
-    .sky-arrow-btn:hover {
-      background: var(--gold-primary);
-      color: #041218;
-    }
-    .sky-room-hud {
-      position: absolute;
-      bottom: 18px;
-      left: 18px;
-      max-width: 420px;
-      background: rgba(4, 18, 24, 0.78);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(232, 207, 130, 0.42);
-      border-radius: 14px;
-      padding: 16px 18px;
-      z-index: 4;
-      color: #FFFFFF;
-    }
-    .sky-room-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 4px;
-    }
-    .sky-room-hud h3 {
-      font-family: var(--font-serif);
-      font-size: 1.55rem;
-      color: #FFFFFF;
-      line-height: 1.2;
-      margin-bottom: 6px;
-    }
-    .sky-room-hud p {
-      font-size: 0.82rem;
-      color: #CBD5E1;
-      line-height: 1.5;
-    }
-    .sky-steps-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-    .sky-step-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 10px;
-      padding: 10px 12px;
-      text-align: left;
-      color: #CBD5E1;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      min-width: 0;
-    }
-    .sky-step-btn strong {
-      display: block;
-      font-size: 0.72rem;
-      color: var(--gold-light);
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-    }
-    .sky-step-btn span {
-      display: block;
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .sky-step-btn.active {
-      background: rgba(197, 155, 39, 0.18);
-      border-color: var(--gold-primary);
-      box-shadow: 0 6px 18px rgba(197, 155, 39, 0.2);
-    }
-    .sky-floor-hud {
-      background: rgba(11, 40, 51, 0.76);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(197, 155, 39, 0.45);
-      border-radius: 16px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
-    }
-    .floor-pills-row {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .floor-pill-btn {
-      flex: 1;
-      min-width: 44px;
-      padding: 9px 6px;
-      border-radius: 8px;
-      background: rgba(4, 18, 24, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: #CBD5E1;
-      font-family: inherit;
-      font-size: 0.85rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .floor-pill-btn.active {
-      background: var(--gold-gradient);
-      color: #041218;
-      border-color: var(--gold-light);
-    }
-    .floor-number-display {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      border-bottom: 1px solid rgba(197, 155, 39, 0.28);
-      padding-bottom: 14px;
-    }
-    .floor-num-big {
-      font-family: var(--font-serif);
-      font-size: 3.1rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--gold-light);
-    }
-    .floor-status-chip {
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 5px 11px;
-      border-radius: 999px;
-      background: rgba(16, 185, 129, 0.18);
-      border: 1px solid rgba(52, 211, 153, 0.45);
-      color: #6EE7B7;
-      white-space: nowrap;
-    }
-    .floor-specs-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .floor-spec-box {
-      background: rgba(4, 18, 24, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 10px 12px;
-    }
-    .floor-spec-box span {
-      display: block;
-      font-size: 0.7rem;
-      color: #94A3B8;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
-    .floor-spec-box strong {
-      display: block;
-      font-size: 0.96rem;
-      color: #FFFFFF;
-      margin-top: 2px;
-    }
-    .filter-status-toast {
-      display: none;
-      margin-top: 16px;
-      padding: 12px 16px;
-      border-radius: 8px;
-      background: #ECFDF5;
-      border: 1px solid #86EFAC;
-      color: #065F46;
-      font-size: 0.86rem;
-      font-weight: 600;
-      text-align: left;
-    }
-    .filter-status-toast.visible {
-      display: block;
+    .reveal-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 1200px) {
-      .nav-links { display: none; }
-      .navbar { padding: 12px 20px; gap: 14px; }
+    .bento-card,
+    .residence-card,
+    .step-card {
+      transition: opacity 600ms var(--ease-out-expo),
+                  transform 600ms var(--ease-out-expo),
+                  border-color 300ms var(--ease-out-expo),
+                  background-color 300ms var(--ease-out-expo);
     }
-    @media (max-width: 1024px) {
-      .top-bar { padding: 8px 24px; }
-      .navbar { padding: 14px 24px; }
-      .pillar-grid { grid-template-columns: minmax(0, 1fr); }
-      .sky-explorer-layout { grid-template-columns: minmax(0, 1fr); }
-      .calc-container { grid-template-columns: minmax(0, 1fr); }
-      .amenities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .consult-container { grid-template-columns: minmax(0, 1fr); }
-      .footer-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .filter-inputs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .has-motion .reveal-section:not(.is-visible) .bento-card,
+    .has-motion .reveal-section:not(.is-visible) .residence-card,
+    .has-motion .reveal-section:not(.is-visible) .step-card {
+      opacity: 0;
+      transform: translateY(var(--sp-300));
     }
-    @media (max-width: 768px) {
-      .top-bar { display: none; }
-      .navbar { padding: 12px 16px; gap: 10px; }
-      .logo-symbol { width: 36px; height: 36px; }
-      .logo-text h1 { font-size: 1.1rem; letter-spacing: 1px; }
-      .logo-text p { display: none; }
-      .navbar .btn-gold { padding: 8px 12px; font-size: 0.75rem; }
-      .hero { padding: 48px 16px 64px; min-height: auto; }
-      .search-filter-card { padding: 20px 16px; }
-      .filter-inputs-grid { grid-template-columns: minmax(0, 1fr); }
-      .filter-inputs-grid > *,
-      .calc-container > *,
-      .consult-container > *,
-      .form-row > *,
-      .calc-breakdown > *,
-      .pillar-grid > *,
-      .sky-explorer-layout > *,
-      .properties-grid > *,
-      .amenities-grid > *,
-      .footer-container > * {
-        min-width: 0;
-        max-width: 100%;
-      }
-      .calc-container .btn-gold,
-      .consult-container .btn-gold,
-      .search-filter-card .btn-gold,
-      .vip-modal-box .btn-gold {
-        white-space: normal;
-        text-align: center;
-        justify-content: center;
-        max-width: 100%;
-        line-height: 1.35;
-        padding: 12px 16px;
-      }
-      .slider-head { flex-wrap: wrap; gap: 4px 10px; }
-      .form-control,
-      .filter-field select,
-      .filter-field input {
-        max-width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
-      }
-      .pillar-section { padding: 0 16px 48px; margin-top: -24px; }
-      .sky-tour-section { padding: 48px 16px; }
-      .sky-explorer-stage { aspect-ratio: 16 / 10; min-height: 220px; }
-      .sky-room-hud { position: static; max-width: 100%; border-radius: 12px; margin-top: 2px; }
-      .sky-steps-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .sky-floor-hud { padding: 18px 16px; }
-      .section-wrap, .calculator-section, .consult-section, .footer { padding: 48px 16px; }
-      .properties-grid { grid-template-columns: minmax(0, 1fr); }
-      .prop-specs { flex-wrap: wrap; gap: 10px; }
-      .amenities-grid, .footer-container, .form-row, .calc-breakdown { grid-template-columns: minmax(0, 1fr); }
-      .calc-container, .consult-container, .vip-modal-box { padding: 24px 16px; }
-      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .reveal-section.is-visible .bento-card-wide { transition-delay: 0ms; }
+    .reveal-section.is-visible .bento-stack .bento-card:nth-child(1) { transition-delay: 60ms; }
+    .reveal-section.is-visible .bento-stack .bento-card:nth-child(2) { transition-delay: 120ms; }
+    .reveal-section.is-visible .residence-card:nth-child(1),
+    .reveal-section.is-visible .step-card:nth-child(1) { transition-delay: 0ms; }
+    .reveal-section.is-visible .residence-card:nth-child(2),
+    .reveal-section.is-visible .step-card:nth-child(2) { transition-delay: 60ms; }
+    .reveal-section.is-visible .residence-card:nth-child(3),
+    .reveal-section.is-visible .step-card:nth-child(3) { transition-delay: 120ms; }
+    .reveal-section.is-visible .residence-card:nth-child(4) { transition-delay: 180ms; }
+    .reveal-section.is-visible .bento-card:hover,
+    .reveal-section.is-visible .residence-card:hover {
+      transform: translateY(-2px);
     }
-    @media (max-width: 600px) {
-      .hide-xs { display: none; }
-      .navbar { padding: 10px 14px; gap: 8px; }
-      .brand-logo { min-width: 0; flex: 1; gap: 8px; }
-      .logo-symbol { width: 34px; height: 34px; flex-shrink: 0; }
-      .logo-text { min-width: 0; }
-      .logo-text h1 { font-size: 0.96rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .logo-text p { display: none; }
-      .navbar .btn-gold { padding: 8px 11px; font-size: 0.72rem; white-space: nowrap; flex-shrink: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal-section,
+      .mobile-drawer-item,
+      .reveal-word,
+      .has-motion .hero-stagger,
+      .has-motion .hero-bg-img,
+      .has-motion .reveal-section:not(.is-visible) .bento-card,
+      .has-motion .reveal-section:not(.is-visible) .residence-card,
+      .has-motion .reveal-section:not(.is-visible) .step-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .btn,
+      .btn svg,
+      .btn-hero-pill,
+      .btn-hero-pill svg,
+      .faq-panel,
+      .faq-icon,
+      .residence-media img,
+      .bento-card,
+      .residence-card,
+      .step-card {
+        transition: none;
+      }
+      .btn:hover svg,
+      .btn-hero-pill:hover svg,
+      .reveal-section.is-visible .bento-card:hover,
+      .reveal-section.is-visible .residence-card:hover {
+        transform: none;
+      }
+      .skeleton-bar {
+        animation: none;
+      }
     }
   </style>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" href="/favicon.ico" sizes="any">
 </head>
 <body>
+  <a href="#main-content" class="skip-link button-sm">Chuyển đến nội dung chính</a>
 
-  <!-- TOP UTILITY BAR (Mediterranean Emerald-Navy & Champagne Gold) -->
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <span>🇻🇳 VN / 🇬🇧 EN</span>
-      <span>📞 Private Concierge: <strong>1800 1036</strong> (Miễn phí 24/7)</span>
-      <span>📧 vip@vinhomes-elite.vn</span>
+  <!-- Transparent Full-Width Navigation -->
+  <header class="nav-shell hero-stagger" id="navShell">
+    <nav class="floating-nav" aria-label="Điều hướng chính">
+      <a href="#top" class="brand-link title-4">
+        <svg width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 216H232"/>
+          <path d="M40 216V56L112 24V216"/>
+          <path d="M112 104L200 72V216"/>
+          <path d="M72 88V104"/>
+          <path d="M72 136V152"/>
+          <path d="M156 128V144"/>
+          <path d="M156 176V192"/>
+        </svg>
+        <span>Elite Residence</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#khong-gian" class="nav-link title-4">Không gian</a>
+        <a href="#bo-suu-tap" class="nav-link title-4">Bộ sưu tập</a>
+        <a href="#tai-chinh" class="nav-link title-4">Tài chính</a>
+        <a href="#hoi-dap" class="nav-link title-4">Hỏi đáp</a>
+      </div>
+
+      <a href="#dat-lich" class="btn btn-primary button-sm nav-cta-desktop">Đặt lịch xem nhà</a>
+
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Mở menu điều hướng">
+        <span class="menu-lines" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Full-height Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-list">
+      <div class="mobile-drawer-item">
+        <a href="#khong-gian" class="mobile-drawer-link heading-4">Không gian kiến trúc</a>
+        <div class="hairline"></div>
+      </div>
+      <div class="mobile-drawer-item">
+        <a href="#bo-suu-tap" class="mobile-drawer-link heading-4">Bộ sưu tập căn hộ</a>
+        <div class="hairline"></div>
+      </div>
+      <div class="mobile-drawer-item">
+        <a href="#tai-chinh" class="mobile-drawer-link heading-4">Ước tính tài chính</a>
+        <div class="hairline"></div>
+      </div>
+      <div class="mobile-drawer-item">
+        <a href="#hoi-dap" class="mobile-drawer-link heading-4">Câu hỏi thường gặp</a>
+        <div class="hairline"></div>
+      </div>
+      <div class="mobile-drawer-item" style="padding-top: var(--sp-200);">
+        <a href="#dat-lich" class="btn btn-primary button-md" style="width: 100%;">Đặt lịch tham quan riêng</a>
+      </div>
     </div>
-    <div class="top-bar-right">
-      <span>Đón tiếp khách VIP bằng xe Limousine &amp; Du thuyền riêng</span>
-      <span class="lang-pill">Giỏ Hàng Ngoại Giao T11</span>
+    <div class="caption-2" style="color: var(--ink-muted);">
+      Phòng kinh doanh Thủ Thiêm · Thành phố Hồ Chí Minh
     </div>
   </div>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <a href="#" class="brand-logo">
-      <div class="logo-symbol">
-        <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.8L19.5 19h-15L12 5.8z"/></svg>
+  <main id="main-content">
+    <!-- Full-Bleed Cinematic Hero Section -->
+    <section class="hero" id="top">
+      <div class="hero-bg-parallax" id="heroParallax">
+        <img src="./image/hero-cinematic.png" alt="Toàn cảnh kiến trúc biệt thự trên không Elite Residence ven sông Sài Gòn lúc hoàng hôn" class="hero-bg-img" width="1408" height="768">
       </div>
-      <div class="logo-text">
-        <h1>VINHOMES ELITE</h1>
-        <p>Mediterranean Penthouse &amp; Villa</p>
-      </div>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="#hero" class="active">Trang Chủ</a></li>
-      <li><a href="#phan-khuc">Phân Khúc VIP</a></li>
-      <li><a href="#sky-tour">Sky Tour 3D</a></li>
-      <li><a href="#du-an">Bộ Sưu Tập Dinh Thự</a></li>
-      <li><a href="#tinh-vay">Private Banking</a></li>
-      <li><a href="#tien-ich">Đặc Quyền 5 Sao</a></li>
-    </ul>
-
-    <button class="btn-gold" onclick="openBrochureModal()">
-      <span>📥</span> Tải Bảng Giá<span class="hide-xs"> &amp; Mặt Bằng</span>
-    </button>
-  </header>
-
-  <!-- HERO SECTION IN DEEP MEDITERRANEAN EMERALD-NAVY + CHAMPAGNE GOLD -->
-  <section class="hero" id="hero">
-    <div class="hero-eyebrow">
-      <span>✨</span> MEDITERRANEAN OCEANFRONT &amp; RIVERSIDE COLLECTION
-    </div>
-
-    <h2 class="hero-title">
-      Kiến Tạo Di Sản Vĩnh Cửu <br>
-      <span>BIỆT THỰ ĐẢO &amp; SKY PENTHOUSE</span>
-    </h2>
-
-    <p class="hero-desc">
-      Đặc quyền sở hữu Đợt 1 phân khu kim cương ven hồ &amp; đại lộ Địa Trung Hải. Thanh toán 15% nhận nhà ngay • Ân hạn nợ gốc và hỗ trợ lãi suất 0% trong 24 tháng • Sổ hồng trao tay lâu dài.
-    </p>
-
-    <!-- FLOATING WHITE-AND-GOLD PROPERTY SEARCH CONCIERGE BAR -->
-    <div class="search-filter-card">
-      <div class="filter-tabs">
-        <button class="filter-tab-btn active" onclick="switchFilterTab(this, 'ban')">Bất Động Sản Bán</button>
-        <button class="filter-tab-btn" onclick="switchFilterTab(this, 'thue')">Bất Động Sản Cho Thuê</button>
-        <button class="filter-tab-btn" onclick="switchFilterTab(this, 'nghi-duong')">Biệt Thự Đảo Nghỉ Dưỡng</button>
-      </div>
-
-      <div class="filter-inputs-grid">
-        <div class="filter-field">
-          <label>Vị trí dự án</label>
-          <select id="filterLocation">
-            <option value="all">Tất cả khu đô thị</option>
-            <option value="q1">Vinhomes Central Park (Quận 1)</option>
-            <option value="q9">Vinhomes Grand Park (TP. Thủ Đức)</option>
-            <option value="hn1">Vinhomes Ocean Park (Hà Nội)</option>
-            <option value="hn2">Vinhomes Riverside (Long Biên)</option>
-          </select>
-        </div>
-
-        <div class="filter-field">
-          <label>Loại hình sản phẩm</label>
-          <select id="filterType">
-            <option value="all">Tất cả loại hình</option>
-            <option value="villa">Biệt thự đơn lập ven hồ</option>
-            <option value="penthouse">Sky Penthouse Horizon 360°</option>
-            <option value="shophouse">Shophouse thương mại mặt tiền</option>
-            <option value="condo">Căn hộ hạng sang 2PN - 3PN</option>
-          </select>
-        </div>
-
-        <div class="filter-field">
-          <label>Mức ngân sách dự kiến</label>
-          <select id="filterBudget">
-            <option value="all">Mọi mức giá</option>
-            <option value="3-6">Từ 3,5 Tỷ - 6 Tỷ (Vay 70%)</option>
-            <option value="6-12">Từ 6 Tỷ - 12 Tỷ</option>
-            <option value="15+">Trên 15 Tỷ (Dinh thự VIP)</option>
-            <option value="thue">Cho thuê: 25Tr - 80Tr/tháng</option>
-          </select>
-        </div>
-
-        <button class="btn-search-exec" onclick="applySearchFilter()">
-          <span>🔍</span> Tìm Kiếm (68 Căn)
-        </button>
-      </div>
-      <div id="filterStatusToast" class="filter-status-toast" role="status" aria-live="polite"></div>
-    </div>
-  </section>
-
-  <!-- BỘ 3 PHÂN KHÚC CHỦ LỰC ON CHAMPAGNE IVORY -->
-  <section class="pillar-section" id="phan-khuc">
-    <div class="pillar-grid">
-
-      <!-- Card 1: Bất Động Sản Bán -->
-      <div class="pillar-card">
-        <div class="pillar-img-wrap">
-          <img src="image/shophouse-complex.webp" alt="Bất Động Sản Bán">
-          <div class="pillar-badge-float">🏛️ SỔ HỒNG TRAO TAY</div>
-        </div>
-        <div class="pillar-content">
-          <h3 class="pillar-title">Bất Động Sản Bán</h3>
-          <p class="pillar-desc">
-            Phân khu Shophouse thương mại phố đi bộ &amp; Dinh thự đơn lập mặt tiền đại lộ. Vị trí kim cương sinh lời khai thác dòng tiền và tăng giá bền vững.
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="heading-1 hero-title hero-stagger">Biệt thự trên không<br>giữa lòng Thủ Thiêm</h1>
+          <p class="body-3 hero-sub hero-stagger">
+            184 căn hộ giới hạn nhìn trực diện sông Sài Gòn, thang máy riêng từng căn và không gian tĩnh lặng tuyệt đối.
           </p>
-          <div class="pillar-bottom">
-            <div class="pillar-price">Từ 6.8 Tỷ <span>/ căn</span></div>
-            <a href="#du-an" class="pillar-link">Khám phá ngay ➔</a>
+          <a href="#dat-lich" class="btn-hero-pill button-md hero-stagger">
+            <span>Đặt lịch tham quan riêng</span>
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M40 128H216"/>
+              <path d="M144 56L216 128L144 200"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-bottom caption-2 hero-stagger">
+          <span>184 căn giới hạn · Pháp lý sở hữu lâu dài · Bàn giao Quý 4 2027</span>
+          <a href="#khong-gian" style="color: rgba(255, 255, 255, 0.86);">Khám phá kiến trúc</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architectural Highlights (Asymmetric Bento Layout) -->
+    <section class="section reveal-section" id="khong-gian">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Không gian được đo ni đóng giày cho sự riêng tư</h2>
+          <p class="body-3">Mỗi mặt bằng chỉ bố trí hai đến ba căn hộ một tầng, tách biệt sảnh chờ và sử dụng vật liệu tự nhiên nguyên khối.</p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-card-wide">
+            <div class="bento-card-media">
+              <img src="./image/penthouse-pool.webp" alt="Hồ bơi vô cực trên tầng 42 nhìn toàn cảnh sông Sài Gòn" loading="lazy">
+            </div>
+            <div class="bento-card-body">
+              <h3 class="heading-5">Hồ bơi vô cực riêng biệt trên tầng 42</h3>
+              <p class="body-6">Chiều dài 22,5 mét sử dụng công nghệ lọc nước khoáng không clo, ôm trọn góc nhìn 270 độ về phía bán đảo Thủ Thiêm và trung tâm Quận 1.</p>
+            </div>
+          </article>
+
+          <div class="bento-stack">
+            <article class="bento-card bento-card-side">
+              <div class="bento-card-media">
+                <img src="./image/interior-penthouse.webp" alt="Phòng khách thông tầng cao 6,4 mét với hệ kính hộp cách âm" loading="lazy">
+              </div>
+              <div class="bento-card-body">
+                <h3 class="heading-6">Trần cao 6,4 mét và kính hộp Low E</h3>
+                <p class="body-6">Hệ kính ba lớp cản 92% bức xạ nhiệt và giữ độ ồn trong nhà dưới 28 decibel ngay cả giờ cao điểm.</p>
+              </div>
+            </article>
+
+            <article class="bento-card bento-card-side">
+              <div class="bento-card-media">
+                <img src="./image/penthouse-bedroom.webp" alt="Phòng ngủ Master lát gỗ sồi và đá tự nhiên đón nắng sớm" loading="lazy">
+              </div>
+              <div class="bento-card-body">
+                <h3 class="heading-6">Phòng ngủ Master hoàn thiện đá tự nhiên</h3>
+                <p class="body-6">Sàn gỗ sồi châu Âu bản lớn kết hợp đá Travertine khai thác nguyên khối từ Ý, đón ánh sáng Đông Nam dịu nhẹ mỗi sáng.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Card 2: Bất Động Sản Cho Thuê -->
-      <div class="pillar-card">
-        <div class="pillar-img-wrap">
-          <img loading="lazy" src="image/interior-penthouse.webp" alt="Bất Động Sản Cho Thuê">
-          <div class="pillar-badge-float">🔑 FULL NỘI THẤT Ý</div>
-        </div>
-        <div class="pillar-content">
-          <h3 class="pillar-title">Bất Động Sản Cho Thuê</h3>
-          <p class="pillar-desc">
-            Căn hộ cao cấp &amp; Sky Penthouse tầng cao ngắm trọn hoàng hôn. Đầy đủ trang thiết bị thông minh Smarthome, dịch vụ quản gia quản lý chuẩn 5 sao.
+    <!-- Mandatory Tagline Reveal Section (B11) -->
+    <section class="tagline-section" aria-label="Tuyên ngôn kiến trúc">
+      <div class="container">
+        <div class="tagline-wrap">
+          <p class="heading-2 tagline-text" id="taglineReveal">
+            Không gian sống đích thực không cần phô trương. Chỉ cần đủ tĩnh lặng để mỗi sáng bạn nhìn thấy mặt sông phẳng lặng ngay từ phòng khách.
           </p>
-          <div class="pillar-bottom">
-            <div class="pillar-price">Từ 22 Triệu <span>/ tháng</span></div>
-            <a href="#du-an" class="pillar-link">Xem giỏ hàng thuê ➔</a>
-          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Card 3: Chính Sách & Ưu Đãi Đợt 1 -->
-      <div class="pillar-card">
-        <div class="pillar-img-wrap">
-          <img loading="lazy" src="image/island-villa.webp" alt="Chính Sách &amp; Ưu Đãi">
-          <div class="pillar-badge-float">💎 ĐẶC QUYỀN ĐỢT 1</div>
-        </div>
-        <div class="pillar-content">
-          <h3 class="pillar-title">Chính Sách &amp; Siêu Ưu Đãi</h3>
-          <p class="pillar-desc">
-            Ân hạn nợ gốc và 0% lãi suất 24 tháng. Tặng Voucher xe điện VinFast 200 Triệu, chiết khấu thanh toán sớm 9.5% và miễn phí quản lý 5 năm.
-          </p>
-          <div class="pillar-bottom">
-            <div class="pillar-price">Chỉ 15% <span>nhận nhà</span></div>
-            <a href="#tinh-vay" class="pillar-link">Nhận ưu đãi VIP ➔</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FLAGSHIP INTERACTIVE SKY PENTHOUSE & FLOOR EXPLORER -->
-  <section class="sky-tour-section" id="sky-tour">
-    <div class="sky-tour-inner">
-      <div class="sky-tour-topbar">
-        <div>
-          <div class="section-tag" style="color: var(--gold-light); margin-bottom: 6px;">FLAGSHIP INTERACTIVE WALKTHROUGH • TẦNG 11 – 15</div>
-          <h2 class="section-heading" style="color: #FFFFFF; text-align: left; margin-bottom: 6px;">Khám Phá Sky Penthouse &amp; Chọn Tầng Trực Quan</h2>
-          <p style="color: #CBD5E1; font-size: 0.94rem; max-width: 680px;">Chuyển đổi từng không gian từ mặt tiền tòa tháp ven vịnh vào hồ bơi vô cực, phòng khách trần cao và phòng ngủ Master kết hợp chọn tầng thời gian thực.</p>
-        </div>
-
-        <div class="sky-lighting-toggle" role="group" aria-label="Chế độ ánh sáng">
-          <button type="button" class="sky-light-btn active" data-mode="twilight" onclick="toggleLightingMode('twilight', this)">🌙 Hoàng Hôn &amp; Đêm</button>
-          <button type="button" class="sky-light-btn" data-mode="day" onclick="toggleLightingMode('day', this)">☀️ Ban Ngày</button>
-        </div>
-      </div>
-
-      <div class="sky-explorer-layout">
-        <div class="sky-stage-col">
-          <div class="sky-explorer-stage" id="skyExplorerStage" data-lighting="twilight">
-            <div class="sky-scene-layer active" data-scene="0">
-              <img loading="lazy" src="image/penthouse-tower.webp" alt="Toàn cảnh tòa tháp ven vịnh và các tầng Penthouse 11-15">
-            </div>
-            <div class="sky-scene-layer" data-scene="1">
-              <img loading="lazy" src="image/penthouse-pool.webp" alt="Hồ bơi vô cực và sân thượng Sky Penthouse">
-            </div>
-            <div class="sky-scene-layer" data-scene="2">
-              <img loading="lazy" src="image/interior-penthouse.webp" alt="Phòng khách Penthouse trần cao 4.2m">
-            </div>
-            <div class="sky-scene-layer" data-scene="3">
-              <img loading="lazy" src="image/penthouse-bedroom.webp" alt="Phòng ngủ Master Panorama 270 độ">
-            </div>
-
-            <div class="sky-lighting-tint"></div>
-
-            <div class="sky-stage-arrows">
-              <button type="button" class="sky-arrow-btn" onclick="stepSkyScene(-1)" aria-label="Không gian trước">←</button>
-              <button type="button" class="sky-arrow-btn" onclick="stepSkyScene(1)" aria-label="Không gian tiếp theo">→</button>
-            </div>
-
-            <div class="sky-room-hud" id="skyRoomHudDesktop">
-              <div class="sky-room-eyebrow" id="skyRoomTag">01 • WATERFRONT ICON</div>
-              <h3 id="skyRoomTitle">Tower Exterior &amp; Marina</h3>
-              <p id="skyRoomDesc">Mặt tiền kính Low-E 3 lớp hướng thẳng bến du thuyền, hệ đèn kiến trúc hắt vàng nổi bật toàn bộ tầng Penthouse 11–15.</p>
-            </div>
+    <!-- Collection Showcase -->
+    <section class="section section-stone reveal-section" id="bo-suu-tap">
+      <div class="container">
+        <div class="collection-top">
+          <div class="section-head">
+            <h2 class="heading-3">Bộ sưu tập sản phẩm giới hạn</h2>
+            <p class="body-3">Diện tích thông thủy và đơn giá dự kiến áp dụng trong đợt công bố quý này.</p>
           </div>
 
-          <div class="sky-steps-bar">
-            <button type="button" class="sky-step-btn active" data-step="0" onclick="selectSkyScene(0)">
-              <strong>01 • Mặt Tiền</strong>
-              <span>Tower Exterior</span>
-            </button>
-            <button type="button" class="sky-step-btn" data-step="1" onclick="selectSkyScene(1)">
-              <strong>02 • Sân Thượng</strong>
-              <span>Infinity Terrace</span>
-            </button>
-            <button type="button" class="sky-step-btn" data-step="2" onclick="selectSkyScene(2)">
-              <strong>03 • Nội Thất</strong>
-              <span>The Living Room</span>
-            </button>
-            <button type="button" class="sky-step-btn" data-step="3" onclick="selectSkyScene(3)">
-              <strong>04 • Nghỉ Dưỡng</strong>
-              <span>Master Bedroom</span>
-            </button>
+          <div class="filter-bar" role="tablist" aria-label="Lọc theo loại hình bất động sản">
+            <button type="button" class="filter-tab button-sm is-active" role="tab" aria-selected="true" data-filter="all">Tất cả</button>
+            <button type="button" class="filter-tab button-sm" role="tab" aria-selected="false" data-filter="penthouse">Sky Penthouse</button>
+            <button type="button" class="filter-tab button-sm" role="tab" aria-selected="false" data-filter="villa">Biệt thự đảo</button>
+            <button type="button" class="filter-tab button-sm" role="tab" aria-selected="false" data-filter="shophouse">Shophouse</button>
           </div>
         </div>
 
-        <!-- RIGHT: GLASSMORPHISM FLOOR HUD (11 - 15) -->
-        <aside class="sky-floor-hud">
-          <div>
-            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 10px;">
-              CHỌN TẦNG ĐANG MỞ BÁN
-            </div>
-            <div class="floor-pills-row">
-              <button type="button" class="floor-pill-btn active" onclick="selectSkyFloor(11, this)">F11</button>
-              <button type="button" class="floor-pill-btn" onclick="selectSkyFloor(12, this)">F12</button>
-              <button type="button" class="floor-pill-btn" onclick="selectSkyFloor(13, this)">F13</button>
-              <button type="button" class="floor-pill-btn" onclick="selectSkyFloor(14, this)">F14</button>
-              <button type="button" class="floor-pill-btn" onclick="selectSkyFloor(15, this)">F15</button>
-            </div>
-          </div>
-
-          <div class="floor-number-display">
+        <div class="residences-grid" id="residencesGrid">
+          <article class="residence-card is-featured" data-category="penthouse">
             <div>
-              <div style="font-size: 0.78rem; color: #94A3B8;">TẦNG ĐƯỢC CHỌN</div>
-              <div class="floor-num-big" id="hudFloorLabel">Floor 11</div>
+              <div class="residence-media">
+                <img src="./image/penthouse-tower.webp" alt="Tháp căn hộ Sky Penthouse hướng sông Sài Gòn" loading="lazy">
+              </div>
+              <div class="residence-content">
+                <div class="residence-meta">
+                  <span class="caption-3 residence-type">Sky Penthouse</span>
+                  <h3 class="heading-5">Penthouse Thông Tầng T41</h3>
+                  <p class="body-6 residence-desc">Thang máy riêng mở thẳng vào tiền sảnh căn hộ, hai mặt thoáng nhìn trực diện bến du thuyền và công viên ven sông.</p>
+                </div>
+                <div>
+                  <div class="hairline"></div>
+                  <div class="residence-specs">
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Diện tích</span>
+                      <span class="body-4 mono-num">318 m²</span>
+                    </div>
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Bố trí</span>
+                      <span class="body-4">4 phòng ngủ</span>
+                    </div>
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Giá dự kiến</span>
+                      <span class="body-4 mono-num">41,2 tỷ</span>
+                    </div>
+                  </div>
+                  <div class="residence-footer">
+                    <span class="caption-2" style="color: var(--ink-muted);">Còn 3 căn vị trí góc</span>
+                    <button type="button" class="btn btn-outline button-sm" data-select-unit="Sky Penthouse 318 m²">Nhận mặt bằng</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span class="floor-status-chip" id="hudFloorStatus">Còn 1 căn VIP</span>
-          </div>
+          </article>
 
-          <div>
-            <div style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: #FFFFFF; margin-bottom: 4px;" id="hudFloorName">Sky Residence — Panorama Bay</div>
-            <p style="font-size: 0.82rem; color: #CBD5E1;" id="hudFloorNote">Ban công kính vô cực 270°, bàn giao hoàn thiện nội thất Ý nhập khẩu.</p>
-          </div>
-
-          <div class="floor-specs-list">
-            <div class="floor-spec-box">
-              <span>Độ cao trần / cốt</span>
-              <strong id="hudFloorHeight">+52m • 3.8m</strong>
+          <article class="residence-card is-compact" data-category="villa">
+            <div>
+              <div class="residence-media">
+                <img src="./image/island-villa.webp" alt="Biệt thự đảo ven hồ với sân vườn riêng" loading="lazy">
+              </div>
+              <div class="residence-content">
+                <div class="residence-meta">
+                  <span class="caption-3 residence-type">Biệt thự đảo</span>
+                  <h3 class="heading-5">Biệt thự đơn lập Đảo Ngọc</h3>
+                  <p class="body-6 residence-desc">Ba mặt giáp kênh đào sinh thái, tích hợp sân vườn nhiệt đới và hầm đỗ hai xe riêng biệt.</p>
+                </div>
+                <div>
+                  <div class="hairline"></div>
+                  <div class="residence-specs">
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Diện tích</span>
+                      <span class="body-4 mono-num">286 m²</span>
+                    </div>
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Bố trí</span>
+                      <span class="body-4">3 tầng nổi</span>
+                    </div>
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Giá dự kiến</span>
+                      <span class="body-4 mono-num">36,8 tỷ</span>
+                    </div>
+                  </div>
+                  <div class="residence-footer">
+                    <span class="caption-2" style="color: var(--ink-muted);">Sở hữu lâu dài</span>
+                    <button type="button" class="btn btn-outline button-sm" data-select-unit="Biệt thự đảo 286 m²">Nhận mặt bằng</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="floor-spec-box">
-              <span>Diện tích thông thủy</span>
-              <strong id="hudFloorArea">185 m² • 3PN</strong>
+          </article>
+
+          <article class="residence-card is-compact" data-category="shophouse">
+            <div>
+              <div class="residence-media">
+                <img src="./image/shophouse-complex.webp" alt="Dãy nhà phố thương mại Shophouse trục đại lộ trung tâm" loading="lazy">
+              </div>
+              <div class="residence-content">
+                <div class="residence-meta">
+                  <span class="caption-3 residence-type">Shophouse</span>
+                  <h3 class="heading-5">Shophouse Đại lộ Vòng Cung</h3>
+                  <p class="body-6 residence-desc">Mặt tiền rộng 7,5 mét phục vụ showroom hoặc văn phòng đại diện, lối đi riêng tách biệt tầng ở bên trên.</p>
+                </div>
+                <div>
+                  <div class="hairline"></div>
+                  <div class="residence-specs">
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Diện tích</span>
+                      <span class="body-4 mono-num">194 m²</span>
+                    </div>
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Bố trí</span>
+                      <span class="body-4">4 tầng</span>
+                    </div>
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Giá dự kiến</span>
+                      <span class="body-4 mono-num">19,6 tỷ</span>
+                    </div>
+                  </div>
+                  <div class="residence-footer">
+                    <span class="caption-2" style="color: var(--ink-muted);">Lợi suất thuê 6,4%/năm</span>
+                    <button type="button" class="btn btn-outline button-sm" data-select-unit="Shophouse 194 m²">Nhận mặt bằng</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="floor-spec-box">
-              <span>Hướng tầm nhìn</span>
-              <strong id="hudFloorView">Vịnh Du Thuyền</strong>
+          </article>
+
+          <article class="residence-card is-featured" data-category="penthouse">
+            <div>
+              <div class="residence-media">
+                <img src="./image/interior-penthouse.webp" alt="Căn hộ Sky Villa một tầng với ban công dài 14 mét" loading="lazy">
+              </div>
+              <div class="residence-content">
+                <div class="residence-meta">
+                  <span class="caption-3 residence-type">Sky Penthouse</span>
+                  <h3 class="heading-5">Sky Villa Tầng 34 Hướng Nam</h3>
+                  <p class="body-6 residence-desc">Thiết kế một mặt sàn liền mạch kết nối phòng khách và bếp đảo, ban công dài 14,2 mét đón gió sông quanh năm.</p>
+                </div>
+                <div>
+                  <div class="hairline"></div>
+                  <div class="residence-specs">
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Diện tích</span>
+                      <span class="body-4 mono-num">242 m²</span>
+                    </div>
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Bố trí</span>
+                      <span class="body-4">3 phòng ngủ</span>
+                    </div>
+                    <div class="spec-item">
+                      <span class="caption-5 spec-label">Giá dự kiến</span>
+                      <span class="body-4 mono-num">28,4 tỷ</span>
+                    </div>
+                  </div>
+                  <div class="residence-footer">
+                    <span class="caption-2" style="color: var(--ink-muted);">Bàn giao hoàn thiện cơ bản</span>
+                    <button type="button" class="btn btn-outline button-sm" data-select-unit="Sky Villa 242 m²">Nhận mặt bằng</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="floor-spec-box">
-              <span>Giá giao dịch Đợt 1</span>
-              <strong style="color: var(--gold-light);" id="hudFloorPrice">16.8 Tỷ</strong>
+          </article>
+        </div>
+
+        <div class="empty-state" id="emptyCollectionState">
+          <h3 class="heading-6">Chưa có sản phẩm phù hợp với bộ lọc này</h3>
+          <p class="body-6" style="color: var(--ink-secondary);">Bạn có thể xem lại toàn bộ 4 dòng sản phẩm đang mở bán hoặc để lại nhu cầu để chuyên viên lọc riêng giỏ hàng chuyển nhượng.</p>
+          <button type="button" class="btn btn-primary button-sm" id="resetFilterBtn">Hiển thị tất cả sản phẩm</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works + Mortgage Estimator -->
+    <section class="section reveal-section" id="tai-chinh">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Quy trình chọn căn và ước tính phương án vay</h2>
+          <p class="body-3">Làm việc minh bạch từ bước xem nhà mẫu đến khi nhận bảng tính dòng tiền chi tiết.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="caption-3 mono-num step-num">01</span>
+            <h3 class="heading-6">Chọn loại hình căn hộ</h3>
+            <p class="body-6">Xác định nhu cầu ở thực, tích sản lâu dài hoặc khai thác thương mại để lọc đúng mã căn có hướng và tầng phù hợp.</p>
+          </article>
+          <article class="step-card">
+            <span class="caption-3 mono-num step-num">02</span>
+            <h3 class="heading-6">Tham quan thực tế 1 kèm 1</h3>
+            <p class="body-6">Trải nghiệm nhà mẫu theo khung giờ riêng đặt trước, kiểm tra trực tiếp vật liệu bàn giao và tiêu chuẩn cách âm.</p>
+          </article>
+          <article class="step-card">
+            <span class="caption-3 mono-num step-num">03</span>
+            <h3 class="heading-6">Nhận bảng giá gốc và chính sách vay</h3>
+            <p class="body-6">Đối chiếu tiến độ thanh toán chuẩn, gói hỗ trợ lãi suất 0% trong 24 tháng đầu và ưu đãi thanh toán sớm.</p>
+          </article>
+        </div>
+
+        <div class="calc-panel" aria-label="Công cụ ước tính trả góp hàng tháng">
+          <div class="calc-controls">
+            <div class="calc-field">
+              <div class="calc-label-row">
+                <label for="calcPrice" class="title-4">Giá trị căn hộ</label>
+                <span class="body-4 mono-num" id="calcPriceOut">28,4 tỷ</span>
+              </div>
+              <input type="range" id="calcPrice" class="range-input" min="15" max="50" step="0.2" value="28.4">
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label-row">
+                <label for="calcRatio" class="title-4">Tỷ lệ vay ngân hàng</label>
+                <span class="body-4 mono-num" id="calcRatioOut">65%</span>
+              </div>
+              <input type="range" id="calcRatio" class="range-input" min="30" max="70" step="5" value="65">
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label-row">
+                <label for="calcYears" class="title-4">Thời hạn vay</label>
+                <span class="body-4 mono-num" id="calcYearsOut">20 năm</span>
+              </div>
+              <input type="range" id="calcYears" class="range-input" min="5" max="30" step="1" value="20">
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label-row">
+                <label for="calcRate" class="title-4">Lãi suất tham chiếu sau ưu đãi</label>
+                <span class="body-4 mono-num" id="calcRateOut">7,8%/năm</span>
+              </div>
+              <input type="range" id="calcRate" class="range-input" min="5.5" max="11" step="0.1" value="7.8">
             </div>
           </div>
 
-          <button type="button" class="btn-gold" style="width: 100%; justify-content: center;" onclick="selectFloorForConsult()">
-            <span>📅</span> Đặt Lịch Xem Tầng Này →
-          </button>
-        </aside>
-      </div>
-    </div>
-  </section>
+          <div class="calc-result">
+            <div>
+              <span class="caption-2 calc-result-muted">Ước tính gốc và lãi mỗi tháng (sau 24 tháng 0%)</span>
+              <div class="heading-2 mono-num" id="calcMonthlyOut" style="margin-top: var(--sp-100);">152,4 triệu</div>
+            </div>
 
-  <!-- KHO DỰ ÁN NỔI BẬT ĐANG MỞ BÁN (SUNLIT CHAMPAGNE MARBLE GALLERY) -->
-  <section class="section-wrap" id="du-an">
-    <div class="section-header">
-      <div class="section-tag">GIỎ HÀNG NGOẠI GIAO ĐỘC QUYỀN</div>
-      <h2 class="section-heading">Tuyển Tập Dự Án Đang Mở Bán</h2>
-      <p class="section-desc">Mỗi sản phẩm đều được bảo chứng pháp lý 100%, bảo lãnh tiến độ ngân hàng và tiềm năng tăng trưởng đột phá.</p>
-    </div>
+            <div class="calc-breakdown">
+              <div class="calc-row">
+                <span class="body-6 calc-result-muted">Vốn tự có ban đầu</span>
+                <span class="body-4 mono-num" id="calcEquityOut">9,94 tỷ</span>
+              </div>
+              <div class="calc-divider"></div>
+              <div class="calc-row">
+                <span class="body-6 calc-result-muted">Dư nợ vay dự kiến</span>
+                <span class="body-4 mono-num" id="calcLoanOut">18,46 tỷ</span>
+              </div>
+              <div class="calc-divider"></div>
+              <div class="calc-row">
+                <span class="body-6 calc-result-muted">Gói hỗ trợ lãi suất 0%</span>
+                <span class="body-4 mono-num">24 tháng đầu</span>
+              </div>
+            </div>
 
-    <!-- TABS -->
-    <div class="property-tabs">
-      <button class="prop-tab-btn active" onclick="filterProjects('all', this)">Tất Cả Dự Án</button>
-      <button class="prop-tab-btn" onclick="filterProjects('villa', this)">Biệt Thự Đảo Ven Hồ</button>
-      <button class="prop-tab-btn" onclick="filterProjects('penthouse', this)">Penthouse &amp; Sky Villa</button>
-      <button class="prop-tab-btn" onclick="filterProjects('shophouse', this)">Shophouse Thương Mại</button>
-    </div>
-
-    <!-- PROPERTIES GRID -->
-    <div class="properties-grid" id="propertiesList">
-      <!-- Item 1 -->
-      <div class="property-card" data-cat="villa">
-        <div class="prop-img-container">
-          <img loading="lazy" src="image/island-villa.webp" alt="Biệt thự đảo The Horizon">
-          <span class="prop-status-tag">HOT - CHỈ CÒN 2 CĂN</span>
-        </div>
-        <div class="prop-body">
-          <div class="prop-location">📍 Vinhomes Riverside • Long Biên, Hà Nội</div>
-          <h3 class="prop-title">Dinh Thự Đơn Lập The River Sanctuary</h3>
-          <div class="prop-specs">
-            <div class="spec-item">📐 380 m²</div>
-            <div class="spec-item">🛏️ 5 Phòng Ngủ</div>
-            <div class="spec-item">🧭 Đông Nam (View Sông)</div>
-          </div>
-          <div class="prop-footer">
-            <div class="prop-price">28.5 Tỷ <span>(Vốn 4.2 Tỷ)</span></div>
-            <button class="btn-prop-action" onclick="openPropertyBooking('Dinh Thự The River Sanctuary', '28.5 Tỷ')">Nhận Mặt Bằng 3D</button>
+            <a href="#dat-lich" class="btn btn-outline button-md" style="width: 100%;">Nhận bảng tính dòng tiền PDF</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Item 2 -->
-      <div class="property-card" data-cat="penthouse">
-        <div class="prop-img-container">
-          <img loading="lazy" src="image/interior-penthouse.webp" alt="Sky Penthouse Horizon">
-          <span class="prop-status-tag">FULL NỘI THẤT CAO CẤP</span>
-        </div>
-        <div class="prop-body">
-          <div class="prop-location">📍 Landmark 81 • Quận 1, TP. HCM</div>
-          <h3 class="prop-title">Sky Penthouse Horizon Panorama 360°</h3>
-          <div class="prop-specs">
-            <div class="spec-item">📐 215 m²</div>
-            <div class="spec-item">🛏️ 3 PN + 1 Studio</div>
-            <div class="spec-item">🧭 Trực diện Sông Sài Gòn</div>
-          </div>
-          <div class="prop-footer">
-            <div class="prop-price">18.9 Tỷ <span>(Thuê: 65Tr/th)</span></div>
-            <button class="btn-prop-action" onclick="openPropertyBooking('Sky Penthouse Horizon 360°', '18.9 Tỷ')">Xem Nhà Mẫu</button>
-          </div>
-        </div>
-      </div>
+    <div class="container"><div class="hairline"></div></div>
 
-      <!-- Item 3 -->
-      <div class="property-card" data-cat="shophouse">
-        <div class="prop-img-container">
-          <img loading="lazy" src="image/shophouse-complex.webp" alt="Shophouse Broadway">
-          <span class="prop-status-tag">SẴN HỢP ĐỒNG THUÊ 80TR</span>
-        </div>
-        <div class="prop-body">
-          <div class="prop-location">📍 Vinhomes Grand Park • TP. Thủ Đức</div>
-          <h3 class="prop-title">Shophouse Phố Đi Bộ Broadway Boulevard</h3>
-          <div class="prop-specs">
-            <div class="spec-item">📐 145 m² (1 Trệt 4 Lầu)</div>
-            <div class="spec-item">🏪 Mặt tiền 8m</div>
-            <div class="spec-item">🧭 Bắc</div>
-          </div>
-          <div class="prop-footer">
-            <div class="prop-price">14.2 Tỷ <span>(Khai thác ngay)</span></div>
-            <button class="btn-prop-action" onclick="openPropertyBooking('Shophouse Phố Đi Bộ Broadway', '14.2 Tỷ')">Tải Hợp Đồng Mẫu</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRIVATE BANKING MORTGAGE CALCULATOR IN DEEP MEDITERRANEAN EMERALD-NAVY (#071C24) -->
-  <section class="calculator-section" id="tinh-vay">
-    <div class="section-header" style="margin-bottom: 40px;">
-      <div class="section-tag">PRIVATE BANKING &amp; WEALTH MANAGEMENT</div>
-      <h2 class="section-heading">Ước Tính Dòng Tiền &amp; Gói Vay Ưu Đãi Độc Quyền</h2>
-      <p class="section-desc">Kéo thanh trượt để tính toán ngay số tiền cần chuẩn bị và tiền gốc lãi hàng tháng với gói hỗ trợ 0% của ngân hàng.</p>
-    </div>
-
-    <div class="calc-container">
-      <div class="calc-sliders">
-        <!-- Giá trị BĐS -->
-        <div class="slider-box">
-          <div class="slider-head">
-            <span>Giá trị Bất động sản</span>
-            <span class="slider-val" id="valHomePrice">8.0 Tỷ</span>
-          </div>
-          <input type="range" id="sliderHomePrice" min="2" max="30" step="0.5" value="8" oninput="updateCalculator()">
+    <!-- FAQ Section -->
+    <section class="section reveal-section" id="hoi-dap">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Câu hỏi thường gặp</h2>
+          <p class="body-3">Các thông tin quan trọng về pháp lý, tiến độ thanh toán và tiêu chuẩn bàn giao.</p>
         </div>
 
-        <!-- Tỷ lệ vay -->
-        <div class="slider-box">
-          <div class="slider-head">
-            <span>Tỷ lệ vay ngân hàng</span>
-            <span class="slider-val" id="valLoanPercent">70%</span>
+        <div class="faq-list" id="faqList">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-trigger" aria-expanded="true">
+              <span class="title-2">1. Pháp lý dự án và thời hạn sở hữu được quy định ra sao?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true">
+                <path d="M40 128H216"/>
+                <path d="M128 40V216"/>
+              </svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p class="body-6 faq-answer">Toàn bộ các căn Sky Penthouse và Biệt thự đảo được cấp sổ hồng sở hữu lâu dài đối với người Việt Nam và thời hạn 50 năm theo quy định hiện hành đối với khách hàng nước ngoài.</p>
+              </div>
+            </div>
           </div>
-          <input type="range" id="sliderLoanPercent" min="30" max="80" step="5" value="70" oninput="updateCalculator()">
-        </div>
 
-        <!-- Thời gian vay -->
-        <div class="slider-box">
-          <div class="slider-head">
-            <span>Thời hạn vay vốn</span>
-            <span class="slider-val" id="valLoanYears">25 Năm</span>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span class="title-2">2. Tiến độ thanh toán chuẩn chia thành mấy đợt?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true">
+                <path d="M40 128H216"/>
+                <path d="M128 40V216"/>
+              </svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p class="body-6 faq-answer">Khách hàng thanh toán 15% khi ký hợp đồng mua bán, 35% chia đều theo tiến độ xây dựng đến khi cất nóc, 45% khi nhận thông báo bàn giao nhà và 5% còn lại khi nhận sổ hồng.</p>
+              </div>
+            </div>
           </div>
-          <input type="range" id="sliderLoanYears" min="5" max="35" step="5" value="25" oninput="updateCalculator()">
-        </div>
 
-        <!-- Lãi suất -->
-        <div class="slider-box">
-          <div class="slider-head">
-            <span>Lãi suất sau ưu đãi (%/năm)</span>
-            <span class="slider-val" id="valInterestRate">8.5%/năm</span>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span class="title-2">3. Phí quản lý vận hành dự kiến mỗi tháng là bao nhiêu?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true">
+                <path d="M40 128H216"/>
+                <path d="M128 40V216"/>
+              </svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p class="body-6 faq-answer">Đơn vị vận hành quốc tế dự kiến thu mức phí 38.000đ trên mỗi mét vuông thông thủy một tháng, đã bao gồm dịch vụ lễ tân riêng, an ninh nhiều lớp và bảo trì hồ bơi khoáng.</p>
+              </div>
+            </div>
           </div>
-          <input type="range" id="sliderInterestRate" min="6" max="12" step="0.5" value="8.5" oninput="updateCalculator()">
-        </div>
-      </div>
 
-      <!-- Result Card -->
-      <div class="calc-result-box">
-        <div class="res-monthly-title">Ước tính trả hàng tháng (Gốc + Lãi)</div>
-        <div class="res-monthly-num" id="resMonthlyPay">38.4 Triệu</div>
-        <div style="font-size: 0.82rem; color: var(--gold-light); font-weight: 600;">🎁 Ân hạn nợ gốc &amp; Miễn lãi 0% trong 24 tháng đầu</div>
-
-        <div class="calc-breakdown">
-          <div>
-            <span style="color: #94A3B8;">Vốn tự có (30%):</span>
-            <strong id="resDownPayment">2.4 Tỷ</strong>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span class="title-2">4. Chính sách vay ngân hàng và ân hạn nợ gốc áp dụng thế nào?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true">
+                <path d="M40 128H216"/>
+                <path d="M128 40V216"/>
+              </svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p class="body-6 faq-answer">Ngân hàng đối tác hỗ trợ vay tối đa 70% giá trị căn hộ với lãi suất 0% và ân hạn nợ gốc trong 24 tháng đầu tiên kể từ ngày giải ngân đầu tiên.</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <span style="color: #94A3B8;">Ngân hàng giải ngân:</span>
-            <strong id="resLoanAmount">5.6 Tỷ</strong>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span class="title-2">5. Tiêu chuẩn bàn giao nội thất thực tế gồm những hạng mục nào?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true">
+                <path d="M40 128H216"/>
+                <path d="M128 40V216"/>
+              </svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p class="body-6 faq-answer">Căn hộ bàn giao hoàn thiện liền tường gồm hệ tủ bếp nhập khẩu Đức, thiết bị vệ sinh châu Âu, điều hòa âm trần nối ống gió và hệ kính hộp cách âm Low E toàn mặt ngoài.</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <button class="btn-gold" style="width: 100%; justify-content: center; margin-top: 10px;" onclick="openBrochureModal()">
-          <span>📄</span> Nhận Bảng Dòng Tiền Chi Tiết (Excel)
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ĐẶC QUYỀN TIỆN ÍCH 5 SAO ON CHAMPAGNE MARBLE -->
-  <section class="section-wrap" id="tien-ich">
-    <div class="section-header">
-      <div class="section-tag">RESORT AMENITIES</div>
-      <h2 class="section-heading">Đặc Quyền Nghỉ Dưỡng Chuẩn Quốc Tế</h2>
-      <p class="section-desc">Hệ sinh thái tiện ích khép kín đáp ứng trọn vẹn phong cách sống thượng lưu của giới tinh hoa.</p>
-    </div>
-
-    <div class="amenities-grid">
-      <div class="amenity-card">
-        <div class="amenity-icon">🏊‍♂️</div>
-        <h4 class="amenity-title">Hồ Bơi Vô Cực</h4>
-        <p class="amenity-desc">Hồ bơi tràn chân mây điện phân muối khoáng, ngắm hoàng hôn ven hồ.</p>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-icon">🛥️</div>
-        <h4 class="amenity-title">Bến Du Thuyền</h4>
-        <p class="amenity-desc">Bến đỗ du thuyền sang trọng chuẩn quốc tế phục vụ các buổi tiệc riêng tư.</p>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-icon">⛳</div>
-        <h4 class="amenity-title">Sân Golf &amp; Zen Garden</h4>
-        <p class="amenity-desc">Sân gạt golf 18 lỗ mini hòa quyện vườn thiền Nhật Bản thanh tịnh.</p>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-icon">🛡️</div>
-        <h4 class="amenity-title">An Ninh AI Đa Lớp</h4>
-        <p class="amenity-desc">Camera AI nhận diện khuôn mặt và đội ngũ bảo vệ tuần tra 24/7 tuyệt đối an toàn.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM TƯ VẤN VIP & ĐẶT LỊCH XE LIMOUSINE ĐÓN XEM NHÀ MẪU -->
-  <section class="consult-section" id="lien-he">
-    <div class="consult-container">
-      <div class="consult-info">
-        <div style="color: var(--gold-bronze); font-size: 0.78rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 6px;">EXCLUSIVE PRIVILEGE</div>
-        <h3>Trải Nghiệm Thực Tế <br>Nhà Mẫu Bằng Xe Limousine</h3>
-        <p>Chúng tôi cung cấp dịch vụ xe đưa đón tận nơi riêng tư và chuyên viên tư vấn phân tích chuyên sâu cho quý khách hàng.</p>
-        <ul class="consult-benefits">
-          <li><span>✓</span> Nhận trọn bộ hồ sơ pháp lý &amp; file quy hoạch 1/500</li>
-          <li><span>✓</span> Ưu tiên chọn căn góc, view hồ đẹp nhất giỏ hàng Đợt 1</li>
-          <li><span>✓</span> Hỗ trợ hoàn tất thủ tục ngân hàng trong 24 giờ</li>
-        </ul>
-      </div>
-
-      <form class="consult-form" onsubmit="handleConsultSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Họ và Tên Quý Khách *</label>
-            <input type="text" id="custName" class="form-control" placeholder="Ví dụ: Ông Trần Quốc Bảo" required>
-          </div>
-          <div class="form-group">
-            <label>Số Điện Thoại / Zalo *</label>
-            <input type="tel" id="custPhone" class="form-control" placeholder="0987.xxx.xxx" required>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span class="title-2">6. Làm thế nào để đặt lịch xem nhà mẫu riêng tư?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true">
+                <path d="M40 128H216"/>
+                <path d="M128 40V216"/>
+              </svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p class="body-6 faq-answer">Bạn chỉ cần chọn loại căn quan tâm và để lại số điện thoại ở biểu mẫu bên dưới. Chuyên viên dự án sẽ gửi thư mời kèm vị trí đỗ xe VIP tại nhà mẫu Thủ Thiêm đúng khung giờ bạn chọn.</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="form-group">
-          <label>Dự án hoặc Loại hình quan tâm</label>
-          <select id="custInterest" class="form-control">
-            <option value="Biệt thự đơn lập ven hồ">Biệt thự đơn lập ven sông (15 - 35 Tỷ)</option>
-            <option value="Dinh Thự The River Sanctuary">Dinh Thự The River Sanctuary (28.5 Tỷ)</option>
-            <option value="Sky Penthouse Horizon 360°">Sky Penthouse Horizon 360° (18.9 Tỷ)</option>
-            <option value="Shophouse Phố Đi Bộ Broadway">Shophouse Phố Đi Bộ Broadway (14.2 Tỷ)</option>
-            <option value="Căn hộ cao cấp cho thuê">Căn hộ cho thuê hạng sang (Từ 22Tr/tháng)</option>
-          </select>
+    <!-- Final CTA & Private Viewing Form -->
+    <section class="section section-stone reveal-section" id="dat-lich">
+      <div class="container">
+        <div class="cta-grid">
+          <div class="cta-copy">
+            <h2 class="heading-3">Đặt lịch tham quan riêng nhà mẫu Thủ Thiêm</h2>
+            <p class="body-3">
+              Tham quan riêng 1 kèm 1 cùng chuyên viên dự án. Nhận trọn bộ mặt bằng và bảng giá gốc, cam kết không gọi điện làm phiền.
+            </p>
+            <div class="hairline"></div>
+            <div class="caption-2" style="color: var(--ink-secondary);">
+              Địa chỉ nhà mẫu: Đường Trần Bạch Đằng, Khu đô thị mới Thủ Thiêm, Thành phố Thủ Đức
+            </div>
+          </div>
+
+          <form class="form-card" id="viewingForm" novalidate>
+            <div class="form-group">
+              <label for="buyerName" class="title-4">Họ và tên</label>
+              <input type="text" id="buyerName" class="form-control" placeholder="Ví dụ: Nguyễn Minh Khôi" autocomplete="name" required>
+              <span class="caption-5 field-error" id="errBuyerName" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="buyerPhone" class="title-4">Số điện thoại</label>
+              <input type="tel" id="buyerPhone" class="form-control" placeholder="Ví dụ: 0912345678" autocomplete="tel" required>
+              <span class="caption-5 field-error" id="errBuyerPhone" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="buyerUnit" class="title-4">Loại căn quan tâm</label>
+              <select id="buyerUnit" class="form-control">
+                <option value="Sky Penthouse 318 m²">Sky Penthouse 318 m²</option>
+                <option value="Sky Villa 242 m²">Sky Villa 242 m²</option>
+                <option value="Biệt thự đảo 286 m²">Biệt thự đảo 286 m²</option>
+                <option value="Shophouse 194 m²">Shophouse 194 m²</option>
+              </select>
+            </div>
+
+            <div class="skeleton-box" id="formLoadingSkeleton" aria-hidden="true">
+              <div class="skeleton-bar" style="width: 60%;"></div>
+              <div class="skeleton-bar" style="width: 90%;"></div>
+            </div>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite">
+              <strong class="body-4" id="formStatusTitle"></strong>
+              <span class="body-6" id="formStatusDesc" style="color: var(--ink-secondary);"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary button-md" id="submitViewingBtn">Đặt lịch tham quan riêng</button>
+          </form>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="form-group">
-          <label>Yêu cầu đón tiếp riêng</label>
-          <input type="text" id="custNote" class="form-control" placeholder="Ví dụ: Đón tại Quận 1 lúc 9h sáng thứ 7...">
+  <footer class="site-footer">
+    <div class="container">
+      <div class="hairline"></div>
+      <div class="footer-inner">
+        <div class="caption-2" style="color: var(--ink-muted);">
+          Elite Residence Thủ Thiêm · Bản demo thiết kế giao diện chuẩn kiến trúc tối giản
         </div>
-
-        <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 14px; font-size: 0.95rem; margin-top: 6px;">
-          <span>🚀</span> Đăng Ký Trải Nghiệm &amp; Nhận Bảng Giá Zalo
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4 style="color: var(--gold-light); font-size: 1.2rem; font-family: var(--font-serif);">VINHOMES ELITE RESIDENCE</h4>
-        <p style="line-height: 1.6; margin-bottom: 14px;">Hệ thống phân phối chiến lược F1 các dự án bất động sản hạng sang, nghỉ dưỡng và đầu tư sinh lời hàng đầu Việt Nam.</p>
-        <p>📍 <strong style="color: #FFFFFF;">Trụ sở chính:</strong> Tầng 48, Keangnam Landmark 72, Hà Nội &amp; Landmark 81, TP. HCM</p>
+        <div class="footer-links caption-2">
+          <button type="button" class="footer-link-btn" data-legal="privacy">Chính sách bảo mật</button>
+          <button type="button" class="footer-link-btn" data-legal="terms">Điều khoản sử dụng</button>
+          <a href="/" class="footer-link-btn">Quay lại trang chủ PAT TECH</a>
+        </div>
       </div>
-
-      <div class="footer-col">
-        <h4>Sản Phẩm Đang Mở Bán</h4>
-        <ul>
-          <li><a href="#du-an">Biệt thự Đảo Kim Cương</a></li>
-          <li><a href="#du-an">Sky Penthouse Horizon</a></li>
-          <li><a href="#du-an">Shophouse Phố Đi Bộ</a></li>
-          <li><a href="#du-an">Căn hộ Nghỉ Dưỡng Ven Hồ</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Chính Sách &amp; Pháp Lý</h4>
-        <ul>
-          <li><a href="#tinh-vay">Tiến độ thanh toán Đợt 1</a></li>
-          <li><a href="#tinh-vay">Chính sách bảo lãnh ngân hàng</a></li>
-          <li><a href="#du-an">Sổ hồng sở hữu vĩnh viễn</a></li>
-          <li><a href="#lien-he">Hợp đồng mua bán mẫu</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Liên Hệ Chuyên Viên VIP</h4>
-        <p>Hotline phục vụ 24/7:</p>
-        <p style="font-size: 1.35rem; font-weight: 800; color: var(--gold-light); font-family: var(--font-serif); margin: 6px 0;">1800 1036</p>
-        <p>Email: vip@vinhomes-elite.vn</p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 PAT TECH (Phạm Anh Tuấn). Toàn bộ bản quyền giao diện và hệ thống được bảo lưu • Thiết kế &amp; Phát triển bởi <a href="../../index.html" style="color: var(--gold-light); text-decoration: none; font-weight: 700;">PAT TECH - Phạm Anh Tuấn</a></p>
     </div>
   </footer>
 
-  <!-- MODAL XÁC NHẬN ĐĂNG KÝ VIP -->
-  <div class="modal-overlay" id="vipModal">
-    <div class="vip-modal-box">
-      <div style="background: var(--bg-champagne); border: 1px solid var(--gold-primary); color: var(--gold-bronze); padding: 5px 16px; border-radius: 999px; font-size: 0.74rem; font-weight: 800; display: inline-block; margin-bottom: 12px;">
-        ĐÃ XÁC NHẬN YÊU CẦU THÀNH CÔNG
+  <!-- Legal Info Modal -->
+  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 class="heading-6" id="legalModalTitle">Thông tin pháp lý</h2>
+        <button type="button" class="btn btn-outline button-sm" id="closeLegalBtn">Đóng</button>
       </div>
-      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--text-navy); margin-bottom: 8px;">Thẻ Hẹn Chuyên Viên VIP</h3>
-      <p style="color: var(--text-body); font-size: 0.88rem;">Bộ file PDF mặt bằng chi tiết và bảng giá đã được gửi tự động qua số Zalo của bạn.</p>
-
-      <div class="vip-ticket-code" id="modalTicketCode">VH-9988VIP</div>
-
-      <div style="text-align: left; font-size: 0.88rem; background: var(--bg-champagne); border: 1px solid var(--border-marble); padding: 16px; border-radius: 8px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--text-navy);">
-        <div><strong>Khách hàng:</strong> <span id="modalCustName">-</span></div>
-        <div><strong>Dự án quan tâm:</strong> <span id="modalCustInterest">-</span></div>
-        <div><strong>Dịch vụ hỗ trợ:</strong> Xe Limousine đưa đón xem nhà mẫu thực tế</div>
-      </div>
-
-      <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="closeVipModal()">
-        Hoàn Tất &amp; Đóng
-      </button>
+      <div class="hairline"></div>
+      <p class="body-6" id="legalModalBody" style="color: var(--ink-secondary);"></p>
     </div>
   </div>
 
   <script>
-    // Tab switching for filter
-    function switchFilterTab(btn, mode) {
-      document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
+    (function () {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Apply Filter Search (no jarring native alert)
-    function applySearchFilter() {
-      const locSelect = document.getElementById('filterLocation');
-      const typeSelect = document.getElementById('filterType');
-      const budgetSelect = document.getElementById('filterBudget');
-      const loc = locSelect.options[locSelect.selectedIndex].text;
-      const type = typeSelect.options[typeSelect.selectedIndex].text;
-      const budget = budgetSelect.options[budgetSelect.selectedIndex].text;
-      const toast = document.getElementById('filterStatusToast');
-      if (toast) {
-        toast.innerHTML = `✓ Đã lọc giỏ hàng: <strong>${loc}</strong> • <strong>${type}</strong> • <strong>${budget}</strong> — Đang hiển thị các căn tiêu biểu bên dưới.`;
-        toast.classList.add('visible');
-      }
-      document.getElementById('du-an').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // SKY PENTHOUSE WALKTHROUGH & FLOOR HUD (11 - 15)
-    const skyScenesData = [
-      {
-        tag: '01 • WATERFRONT ICON',
-        title: 'Tower Exterior & Marina',
-        desc: 'Mặt tiền kính Low-E 3 lớp hướng thẳng bến du thuyền, hệ đèn kiến trúc hắt vàng nổi bật toàn bộ tầng Penthouse 11–15.'
-      },
-      {
-        tag: '02 • SKY INFINITY POOL',
-        title: 'Infinity Pool Terrace',
-        desc: 'Hồ bơi nước ấm tràn bờ ngay hiên căn hộ kết nối thẳng cửa kính trượt tự động dẫn vào phòng khách.'
-      },
-      {
-        tag: '03 • GRAND SALON',
-        title: 'The Living Room',
-        desc: 'Không gian tiếp khách thông tầng cao 4.2m lát đá Marble Champagne nguyên tấm và đèn chùm pha lê thủ công.'
-      },
-      {
-        tag: '04 • PRIVATE SUITE',
-        title: 'Master Bedroom 270°',
-        desc: 'Phòng ngủ Master ốp gỗ sồi xẻ rãnh với ban công kính toàn cảnh ôm trọn vịnh biển về đêm.'
-      }
-    ];
-
-    const skyFloorsData = {
-      11: { name: 'Sky Residence — Panorama Bay', status: 'Còn 1 căn VIP', note: 'Ban công kính vô cực 270°, bàn giao hoàn thiện nội thất Ý nhập khẩu.', height: '+52m • 3.8m', area: '185 m² • 3PN', view: 'Vịnh Du Thuyền', price: '16.8 Tỷ' },
-      12: { name: 'Horizon Suite — Corner Glass', status: 'Còn 2 căn', note: 'Căn góc 2 mặt thoáng đón gió biển trực tiếp, thang máy riêng quẹt thẻ.', height: '+56m • 3.8m', area: '205 m² • 3PN+', view: 'Đông Nam Biển', price: '18.5 Tỷ' },
-      13: { name: 'Atelier Sky Duplex', status: 'Sắp hết hàng', note: 'Thiết kế thông tầng kèm hầm rượu vang riêng và hệ điều khiển Smarthome.', height: '+60m • 4.2m', area: '240 m² • 4PN', view: 'Toàn Cảnh Vịnh', price: '22.9 Tỷ' },
-      14: { name: 'Royal Pool Penthouse', status: 'Còn 1 căn', note: 'Sở hữu hồ bơi muối khoáng vô cực riêng dài 12m ngay ngoài hiên phòng khách.', height: '+64m • 4.2m', area: '275 m² • 4PN', view: 'Bến Du Thuyền', price: '27.4 Tỷ' },
-      15: { name: 'The Crown Sky Villa (Độc Bản)', status: 'Độc Bản Tầng Đỉnh', note: 'Tuyệt tác tầng cao nhất với sân vườn trên không, bể sục Jacuzzi & quản gia 24/7.', height: '+68m • 4.6m', area: '320 m² • 5PN', view: 'Panorama 360°', price: '34.5 Tỷ' }
-    };
-
-    let currentSkyScene = 0;
-    let currentSkyFloor = 11;
-
-    function selectSkyScene(idx) {
-      currentSkyScene = (idx + skyScenesData.length) % skyScenesData.length;
-      document.querySelectorAll('.sky-scene-layer').forEach((el, i) => {
-        el.classList.toggle('active', i === currentSkyScene);
-      });
-      document.querySelectorAll('.sky-step-btn').forEach((btn, i) => {
-        btn.classList.toggle('active', i === currentSkyScene);
-      });
-      const data = skyScenesData[currentSkyScene];
-      document.getElementById('skyRoomTag').innerText = data.tag;
-      document.getElementById('skyRoomTitle').innerText = data.title;
-      document.getElementById('skyRoomDesc').innerText = data.desc;
-    }
-
-    function stepSkyScene(delta) {
-      selectSkyScene(currentSkyScene + delta);
-    }
-
-    function toggleLightingMode(mode, btn) {
-      const stage = document.getElementById('skyExplorerStage');
-      if (stage) stage.setAttribute('data-lighting', mode);
-      document.querySelectorAll('.sky-light-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-    }
-
-    function selectSkyFloor(floorNum, btn) {
-      currentSkyFloor = floorNum;
-      document.querySelectorAll('.floor-pill-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-
-      const info = skyFloorsData[floorNum];
-      document.getElementById('hudFloorLabel').innerText = `Floor ${floorNum}`;
-      document.getElementById('hudFloorStatus').innerText = info.status;
-      document.getElementById('hudFloorName').innerText = info.name;
-      document.getElementById('hudFloorNote').innerText = info.note;
-      document.getElementById('hudFloorHeight').innerText = info.height;
-      document.getElementById('hudFloorArea').innerText = info.area;
-      document.getElementById('hudFloorView').innerText = info.view;
-      document.getElementById('hudFloorPrice').innerText = info.price;
-    }
-
-    function selectFloorForConsult() {
-      const info = skyFloorsData[currentSkyFloor];
-      document.getElementById('custInterest').value = 'Sky Penthouse Horizon 360°';
-      document.getElementById('custNote').value = `Quan tâm Floor ${currentSkyFloor} (${info.name} - ${info.area} - Giá ${info.price}), muốn đặt lịch xem thực tế.`;
-      document.getElementById('lien-he').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Subtle scroll-linked depth zoom when user scrolls through #sky-tour
-    (function initSkyScrollDepth() {
-      const stage = document.getElementById('skyExplorerStage');
-      if (!stage || typeof IntersectionObserver === 'undefined') return;
-      let isVisible = false;
-      let rafPending = false;
-      const obs = new IntersectionObserver(entries => {
-        isVisible = entries.some(e => e.isIntersecting);
-      }, { threshold: 0.05 });
-      obs.observe(stage);
-
-      window.addEventListener('scroll', () => {
-        if (!isVisible || rafPending) return;
-        rafPending = true;
-        requestAnimationFrame(() => {
-          const rect = stage.getBoundingClientRect();
-          const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
-          const activeLayer = stage.querySelector('.sky-scene-layer.active');
-          if (activeLayer) {
-            const zoom = 1 + progress * 0.055;
-            activeLayer.style.transform = `scale(${zoom.toFixed(3)})`;
-          }
-          rafPending = false;
+      // Trigger Hero entrance choreography on first paint
+      if (reducedMotion) {
+        document.documentElement.classList.add('is-hero-ready');
+      } else {
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            document.documentElement.classList.add('is-hero-ready');
+          });
         });
-      }, { passive: true });
-    })();
+      }
 
-    // Filter project tabs
-    function filterProjects(cat, btn) {
-      document.querySelectorAll('.prop-tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      // Subtle Hero scroll parallax
+      const heroParallax = document.getElementById('heroParallax');
+      const heroSectionEl = document.getElementById('top');
+      if (heroParallax && heroSectionEl && !reducedMotion) {
+        let parallaxRaf = null;
+        const paintParallax = () => {
+          parallaxRaf = null;
+          const y = window.scrollY || window.pageYOffset || 0;
+          if (y <= heroSectionEl.offsetHeight) {
+            heroParallax.style.transform = `translate3d(0, ${(y * 0.18).toFixed(1)}px, 0)`;
+          }
+        };
+        window.addEventListener('scroll', () => {
+          if (parallaxRaf === null) parallaxRaf = window.requestAnimationFrame(paintParallax);
+        }, { passive: true });
+      }
 
-      const cards = document.querySelectorAll('.property-card');
-      cards.forEach(card => {
-        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
+      // Mobile Menu Drawer
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      function setMenuOpen(open) {
+        menuToggle.setAttribute('aria-expanded', String(open));
+        mobileDrawer.setAttribute('aria-hidden', String(!open));
+        mobileDrawer.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        setMenuOpen(!isOpen);
+      });
+      mobileDrawer.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setMenuOpen(false));
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          setMenuOpen(false);
+          closeLegalModal();
         }
       });
-    }
 
-    // Interactive Mortgage Calculator
-    function updateCalculator() {
-      const price = parseFloat(document.getElementById('sliderHomePrice').value);
-      const percent = parseInt(document.getElementById('sliderLoanPercent').value);
-      const years = parseInt(document.getElementById('sliderLoanYears').value);
-      const rate = parseFloat(document.getElementById('sliderInterestRate').value);
+      // Scroll Reveal for sections (B7)
+      const revealSections = document.querySelectorAll('.reveal-section');
+      if (reducedMotion || !('IntersectionObserver' in window)) {
+        revealSections.forEach((el) => el.classList.add('is-visible'));
+      } else {
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealSections.forEach((el) => sectionObserver.observe(el));
+      }
 
-      document.getElementById('valHomePrice').innerText = price.toFixed(1) + ' Tỷ';
-      document.getElementById('valLoanPercent').innerText = percent + '%';
-      document.getElementById('valLoanYears').innerText = years + ' Năm';
-      document.getElementById('valInterestRate').innerText = rate.toFixed(1) + '%/năm';
+      // Mandatory Tagline Reveal word by word (B11)
+      const taglineEl = document.getElementById('taglineReveal');
+      if (taglineEl) {
+        const words = taglineEl.textContent.trim().split(/\s+/);
+        taglineEl.innerHTML = words.map((word) => `<span class="reveal-word">${word}</span>`).join(' ');
+        const wordSpans = Array.from(taglineEl.querySelectorAll('.reveal-word'));
 
-      const loanAmount = price * (percent / 100); // Tỷ VNĐ
-      const downPayment = price - loanAmount; // Tỷ VNĐ
+        if (reducedMotion) {
+          wordSpans.forEach((span) => span.classList.add('is-lit'));
+        } else {
+          let rafId = null;
+          const updateTaglineReveal = () => {
+            rafId = null;
+            const rect = taglineEl.getBoundingClientRect();
+            const vh = window.innerHeight || 800;
+            const start = vh * 0.85;
+            const end = vh * 0.25;
+            const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+            const litCount = Math.round(progress * wordSpans.length);
+            wordSpans.forEach((span, idx) => {
+              span.classList.toggle('is-lit', idx < litCount);
+            });
+          };
+          const scheduleReveal = () => {
+            if (rafId === null) {
+              rafId = window.requestAnimationFrame(updateTaglineReveal);
+            }
+          };
+          window.addEventListener('scroll', scheduleReveal, { passive: true });
+          window.addEventListener('resize', scheduleReveal, { passive: true });
+          updateTaglineReveal();
+        }
+      }
 
-      document.getElementById('resDownPayment').innerText = downPayment.toFixed(1) + ' Tỷ';
-      document.getElementById('resLoanAmount').innerText = loanAmount.toFixed(1) + ' Tỷ';
+      // Header scroll morph & Active navigation link sync via IntersectionObserver
+      const navShell = document.getElementById('navShell');
+      const heroEl = document.getElementById('top');
+      const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+      if (navShell && heroEl && 'IntersectionObserver' in window) {
+        const heroObs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const leftHero = !entry.isIntersecting;
+            navShell.classList.toggle('is-scrolled', leftHero);
+            if (!leftHero) {
+              navLinks.forEach((link) => link.classList.remove('is-active'));
+            }
+          });
+        }, { threshold: 0.15 });
+        heroObs.observe(heroEl);
+      }
 
-      // Tính tiền trả hàng tháng (Dư nợ giảm dần hoặc niên kim)
-      const monthlyRate = (rate / 100) / 12;
-      const totalMonths = years * 12;
-      const loanVND = loanAmount * 1000000000;
+      const trackedIds = ['khong-gian', 'bo-suu-tap', 'tai-chinh', 'hoi-dap'];
+      if ('IntersectionObserver' in window) {
+        const navObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              navLinks.forEach((link) => {
+                link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+              });
+            }
+          });
+        }, { rootMargin: '-35% 0px -55% 0px' });
+        trackedIds.forEach((id) => {
+          const target = document.getElementById(id);
+          if (target) navObserver.observe(target);
+        });
+      }
 
-      // Công thức trả đều hàng tháng: P * r * (1+r)^n / ((1+r)^n - 1)
-      const monthlyPayVND = loanVND * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
-      const monthlyMillion = monthlyPayVND / 1000000;
+      // Collection Filter Tabs + Select Unit CTA
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const residenceCards = document.querySelectorAll('.residence-card');
+      const emptyState = document.getElementById('emptyCollectionState');
+      const resetFilterBtn = document.getElementById('resetFilterBtn');
 
-      document.getElementById('resMonthlyPay').innerText = monthlyMillion.toFixed(1) + ' Triệu';
-    }
+      function applyFilter(filterKey) {
+        filterTabs.forEach((tab) => {
+          const active = tab.dataset.filter === filterKey;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-selected', String(active));
+        });
+        let visibleCount = 0;
+        residenceCards.forEach((card) => {
+          const match = filterKey === 'all' || card.dataset.category === filterKey;
+          card.style.display = match ? 'flex' : 'none';
+          if (match) visibleCount += 1;
+        });
+        emptyState.classList.toggle('is-visible', visibleCount === 0);
+      }
 
-    // Modal Booking
-    function openPropertyBooking(title, price) {
-      document.getElementById('custInterest').value = title;
-      document.getElementById('custNote').value = `Quan tâm căn ${title} (${price}), muốn xem mặt bằng và sa bàn thực tế`;
-      document.getElementById('lien-he').scrollIntoView({ behavior: 'smooth' });
-    }
+      filterTabs.forEach((tab) => {
+        tab.addEventListener('click', () => applyFilter(tab.dataset.filter));
+      });
+      if (resetFilterBtn) {
+        resetFilterBtn.addEventListener('click', () => applyFilter('all'));
+      }
 
-    function openBrochureModal() {
-      document.getElementById('lien-he').scrollIntoView({ behavior: 'smooth' });
-    }
+      const buyerUnitSelect = document.getElementById('buyerUnit');
+      document.querySelectorAll('[data-select-unit]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const unit = btn.getAttribute('data-select-unit');
+          if (buyerUnitSelect && unit) {
+            buyerUnitSelect.value = unit;
+          }
+          document.getElementById('dat-lich').scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+          document.getElementById('buyerName').focus({ preventScroll: true });
+        });
+      });
 
-    function handleConsultSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('custName').value.trim();
-      const phone = document.getElementById('custPhone').value.trim();
-      const interest = document.getElementById('custInterest').value;
+      // Mortgage Calculator
+      const calcPrice = document.getElementById('calcPrice');
+      const calcRatio = document.getElementById('calcRatio');
+      const calcYears = document.getElementById('calcYears');
+      const calcRate = document.getElementById('calcRate');
 
-      const code = 'VH-' + Math.floor(1000 + Math.random() * 9000) + 'VIP';
+      function formatViDecimal(num, decimals) {
+        return num.toFixed(decimals).replace('.', ',');
+      }
 
-      document.getElementById('modalCustName').innerText = `${name} (${phone})`;
-      document.getElementById('modalCustInterest').innerText = interest;
-      document.getElementById('modalTicketCode').innerText = code;
+      function updateMortgage() {
+        const priceTy = parseFloat(calcPrice.value);
+        const ratio = parseFloat(calcRatio.value);
+        const years = parseInt(calcYears.value, 10);
+        const annualRate = parseFloat(calcRate.value);
 
-      document.getElementById('vipModal').classList.add('open');
-    }
+        const loanTy = priceTy * (ratio / 100);
+        const equityTy = priceTy - loanTy;
+        const loanVnd = loanTy * 1000; // triệu đồng
+        const monthlyRate = annualRate / 100 / 12;
+        const months = years * 12;
+        const factor = Math.pow(1 + monthlyRate, months);
+        const monthlyMillion = loanVnd * (monthlyRate * factor) / (factor - 1);
 
-    function closeVipModal() {
-      document.getElementById('vipModal').classList.remove('open');
-      document.querySelector('.consult-form').reset();
-    }
+        document.getElementById('calcPriceOut').textContent = `${formatViDecimal(priceTy, 1)} tỷ`;
+        document.getElementById('calcRatioOut').textContent = `${ratio}%`;
+        document.getElementById('calcYearsOut').textContent = `${years} năm`;
+        document.getElementById('calcRateOut').textContent = `${formatViDecimal(annualRate, 1)}%/năm`;
+        document.getElementById('calcEquityOut').textContent = `${formatViDecimal(equityTy, 2)} tỷ`;
+        document.getElementById('calcLoanOut').textContent = `${formatViDecimal(loanTy, 2)} tỷ`;
+        document.getElementById('calcMonthlyOut').textContent = `${formatViDecimal(monthlyMillion, 1)} triệu`;
+      }
+      [calcPrice, calcRatio, calcYears, calcRate].forEach((input) => {
+        input.addEventListener('input', updateMortgage);
+      });
+      updateMortgage();
 
-    // Init
-    updateCalculator();
+      // FAQ Accordion
+      document.querySelectorAll('.faq-trigger').forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('.faq-item');
+          const willOpen = !item.classList.contains('is-open');
+          document.querySelectorAll('.faq-item').forEach((other) => {
+            other.classList.remove('is-open');
+            other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+          if (willOpen) {
+            item.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // Form validation & calm inline confirmation (B9, B10)
+      const viewingForm = document.getElementById('viewingForm');
+      const buyerName = document.getElementById('buyerName');
+      const buyerPhone = document.getElementById('buyerPhone');
+      const errBuyerName = document.getElementById('errBuyerName');
+      const errBuyerPhone = document.getElementById('errBuyerPhone');
+      const formLoadingSkeleton = document.getElementById('formLoadingSkeleton');
+      const formStatus = document.getElementById('formStatus');
+      const formStatusTitle = document.getElementById('formStatusTitle');
+      const formStatusDesc = document.getElementById('formStatusDesc');
+      const submitViewingBtn = document.getElementById('submitViewingBtn');
+
+      function normalizePhone(raw) {
+        return raw.replace(/[\s.]/g, '');
+      }
+
+      viewingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errBuyerName.textContent = '';
+        errBuyerPhone.textContent = '';
+        buyerName.classList.remove('is-invalid');
+        buyerPhone.classList.remove('is-invalid');
+        formStatus.classList.remove('is-visible');
+
+        const nameVal = buyerName.value.trim();
+        const phoneVal = normalizePhone(buyerPhone.value.trim());
+        let hasError = false;
+
+        if (nameVal.length < 2) {
+          errBuyerName.textContent = 'Vui lòng nhập họ và tên đầy đủ.';
+          buyerName.classList.add('is-invalid');
+          hasError = true;
+        }
+        if (!/^0\d{9}$/.test(phoneVal)) {
+          errBuyerPhone.textContent = 'Số điện thoại cần đủ 10 chữ số bắt đầu bằng số 0.';
+          buyerPhone.classList.add('is-invalid');
+          hasError = true;
+        }
+
+        if (hasError) {
+          (nameVal.length < 2 ? buyerName : buyerPhone).focus();
+          return;
+        }
+
+        submitViewingBtn.disabled = true;
+        formLoadingSkeleton.classList.add('is-visible');
+
+        window.setTimeout(() => {
+          formLoadingSkeleton.classList.remove('is-visible');
+          submitViewingBtn.disabled = false;
+          formStatusTitle.textContent = `Đã ghi nhận lịch tham quan cho ${nameVal}`;
+          formStatusDesc.textContent = `Chuyên viên sẽ gửi mặt bằng ${buyerUnitSelect.value} và xác nhận khung giờ qua số ${phoneVal} trong giờ làm việc.`;
+          formStatus.classList.add('is-visible');
+          viewingForm.reset();
+        }, 320);
+      });
+
+      // Legal Modal
+      const legalModal = document.getElementById('legalModal');
+      const legalModalTitle = document.getElementById('legalModalTitle');
+      const legalModalBody = document.getElementById('legalModalBody');
+      const closeLegalBtn = document.getElementById('closeLegalBtn');
+
+      const legalCopy = {
+        privacy: {
+          title: 'Chính sách bảo mật thông tin',
+          body: 'Thông tin họ tên và số điện thoại bạn cung cấp trên trang demo này chỉ dùng để minh họa quy trình tiếp nhận lịch tham quan nhà mẫu, không lưu trữ hay chia sẻ cho bên thứ ba.'
+        },
+        terms: {
+          title: 'Điều khoản sử dụng bản mẫu',
+          body: 'Thông số diện tích, đơn giá và lịch biểu thanh toán trên trang Elite Residence là dữ liệu mô phỏng phục vụ mục đích kiểm tra giao diện bất động sản của PAT TECH.'
+        }
+      };
+
+      function closeLegalModal() {
+        legalModal.classList.remove('is-open');
+      }
+
+      document.querySelectorAll('[data-legal]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const entry = legalCopy[btn.dataset.legal];
+          if (!entry) return;
+          legalModalTitle.textContent = entry.title;
+          legalModalBody.textContent = entry.body;
+          legalModal.classList.add('is-open');
+          closeLegalBtn.focus();
+        });
+      });
+
+      closeLegalBtn.addEventListener('click', closeLegalModal);
+      legalModal.addEventListener('click', (e) => {
+        if (e.target === legalModal) closeLegalModal();
+      });
+    })();
   </script>
-  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>

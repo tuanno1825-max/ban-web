@@ -3,951 +3,741 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURORA DENTAL LAB - Viện Nha Khoa Thẩm Mỹ &amp; Chỉnh Nha Chuẩn Thụy Sĩ</title>
-  <meta name="description" content="Viện Nha Khoa Thẩm Mỹ Aurora Dental Lab: Dán sứ Veneer, Niềng răng Invisalign, Cấy ghép Implant 3D, Thanh kéo Before/After &amp; Trả góp 0% lãi suất.">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <title>Aurora Dental Lab · Nha Khoa Thẩm Mỹ & Chỉnh Nha Chuẩn Thụy Sĩ</title>
+  <meta name="description" content="Chỉnh nha khay trong suốt, dán sứ Veneer bảo tồn men răng và cấy ghép Implant với phim chụp CT ConeBeam 3D cùng gói trả góp 0% minh bạch.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aurora Dental Lab · Nha Khoa Thẩm Mỹ Chuẩn Thụy Sĩ">
+  <meta property="og:description" content="Xem kết quả trước sau thực tế, tính phương án trả góp 0% theo tháng và đặt lịch chụp phim CT 3D riêng.">
+  <meta property="og:image" content="./image/hero-cinematic.png">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('has-motion');</script>
   <style>
     :root {
-      --bg-pearl: #F8FAFC;
-      --bg-surface: #FFFFFF;
-      --bg-ice: #EEF6F6;
-      --deep-teal: #0B3B3C;
-      --accent-teal: #0F766E;
-      --accent-emerald: #14B8A6;
-      --gold-primary: #C9A45C;
-      --gold-light: #E8D5A7;
-      --gold-gradient: linear-gradient(135deg, #0F766E 0%, #0B3B3C 100%);
-      --text-main: #0F172A;
-      --text-body: #334155;
-      --text-muted: #64748B;
-      --border: #E2E8F0;
-      --shadow-sm: 0 6px 20px rgba(11, 59, 60, 0.06);
-      --shadow-md: 0 22px 48px -14px rgba(11, 59, 60, 0.16);
-      --radius: 20px;
+      --bg-base: #FFFFFF;
+      --bg-clinical: #F5F7F7;
+      --bg-elevated: #EBF0EF;
+      --ink-primary: #111111;
+      --ink-secondary: #525252;
+      --ink-muted: #737373;
+      --border-hairline: #E0E5E4;
+      --border-strong: #BFC9C7;
+      --accent: #0F6B64;
+      --accent-hover: #0B524D;
+      --danger: #B91C1C;
+
+      --font-sans: 'Manrope', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --sp-0: 0px; --sp-25: 2px; --sp-50: 4px; --sp-75: 8px; --sp-100: 12px;
+      --sp-200: 16px; --sp-300: 24px; --sp-400: 32px; --sp-500: 40px; --sp-600: 48px;
+      --sp-700: 64px; --sp-800: 80px; --sp-900: 96px;
+
+      --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px; --r-2xl: 24px; --r-full: 9999px;
+      --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-pearl);
-      color: var(--text-main);
-      line-height: 1.65;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background-color: var(--bg-base); color: var(--ink-primary); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--bg-base); color: var(--ink-primary); font-family: var(--font-sans); font-size: 16px; line-height: 24px; overflow-x: clip; }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    button, input, select { font-family: inherit; color: inherit; }
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
 
-    .container { max-width: 1220px; margin: 0 auto; padding: 0 22px; }
+    .heading-1 { font-size: 60px; line-height: 60px; font-weight: 600; letter-spacing: -0.025em; text-wrap: balance; }
+    .heading-2 { font-size: 48px; line-height: 48px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+    .heading-3 { font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+    .heading-4 { font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.015em; text-wrap: balance; }
+    .heading-5 { font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+    .heading-6 { font-size: 20px; line-height: 28px; font-weight: 600; text-wrap: balance; }
+    .title-2 { font-size: 18px; line-height: 28px; font-weight: 500; }
+    .title-4 { font-size: 14px; line-height: 20px; font-weight: 500; }
+    .body-3 { font-size: 16px; line-height: 24px; font-weight: 400; text-wrap: pretty; }
+    .body-4 { font-size: 14px; line-height: 20px; font-weight: 600; text-wrap: pretty; }
+    .body-6 { font-size: 14px; line-height: 20px; font-weight: 400; text-wrap: pretty; }
+    .button-md { font-size: 16px; line-height: 24px; font-weight: 600; }
+    .button-sm { font-size: 14px; line-height: 20px; font-weight: 600; }
+    .caption-2 { font-size: 14px; line-height: 20px; font-weight: 400; }
+    .caption-3 { font-size: 12px; line-height: 16px; font-weight: 600; }
+    .caption-5 { font-size: 12px; line-height: 16px; font-weight: 400; }
+    .mono-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
-    .top-strip {
-      background: var(--deep-teal);
-      color: #E2F1F0;
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-align: center;
-      padding: 8px 16px;
-    }
-    .top-strip strong { color: var(--gold-light); }
-
-    /* Header */
-    .dental-header {
-      position: sticky;
-      top: 0;
-      z-index: 90;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 74px;
-      gap: 14px;
-    }
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      flex-shrink: 0;
-    }
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: var(--gold-gradient);
-      color: #FFFFFF;
-      display: grid;
-      place-items: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      box-shadow: 0 6px 16px rgba(15, 118, 110, 0.28);
-    }
-    .brand-name { display: flex; flex-direction: column; line-height: 1.12; }
-    .brand-name strong {
-      font-size: 1.18rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--deep-teal);
-    }
-    .brand-name small {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent-teal);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text-body);
-      white-space: nowrap;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent-teal); }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-    .mobile-menu-btn {
-      display: none;
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg-surface);
-      font-size: 1.1rem;
-      cursor: pointer;
-    }
-    .mobile-drawer {
-      display: none;
-      flex-direction: column;
-      gap: 8px;
-      padding: 12px 18px 16px;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-    }
-    .mobile-drawer.open { display: flex; }
-    .mobile-drawer a { padding: 7px 0; font-weight: 600; border-bottom: 1px dashed var(--border); }
-
-    /* Buttons */
-    .btn-dental {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 22px;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.22s ease;
-    }
-    .btn-teal {
-      background: var(--gold-gradient);
-      color: #FFFFFF;
-      box-shadow: 0 8px 22px -6px rgba(15, 118, 110, 0.45);
-    }
-    .btn-teal:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(15, 118, 110, 0.58); }
-    .btn-pearl {
-      background: var(--bg-surface);
-      color: var(--deep-teal);
-      border-color: var(--border);
-    }
-    .btn-pearl:hover { border-color: var(--accent-teal); color: var(--accent-teal); }
-    .btn-sm { padding: 8px 14px; font-size: 0.82rem; border-radius: 10px; }
-
-    /* Hero */
-    .hero-section {
-      padding: 52px 0 64px;
-      background: radial-gradient(circle at 85% 15%, rgba(20, 184, 166, 0.1) 0%, transparent 45%);
-      overflow-x: clip;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 42px;
-      align-items: center;
-    }
-    .hero-grid > * { min-width: 0; }
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: var(--bg-ice);
-      border: 1px solid rgba(15, 118, 110, 0.25);
-      color: var(--accent-teal);
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 16px;
-      max-width: 100%;
-    }
-    .hero-title {
-      font-size: clamp(2.2rem, 4.2vw, 3.45rem);
-      line-height: 1.12;
-      color: var(--deep-teal);
-      margin-bottom: 16px;
-    }
-    .hero-title em { color: var(--accent-teal); font-style: italic; }
-    .hero-desc { font-size: 1rem; color: var(--text-body); margin-bottom: 24px; max-width: 540px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-    .hero-metrics > div { min-width: 0; }
-    .hero-metrics strong { display: block; font-size: 1.45rem; font-weight: 800; color: var(--accent-teal); }
-    .hero-metrics span { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
-
-    .hero-visual { position: relative; min-width: 0; }
-    .hero-card-img {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 5px solid #FFFFFF;
-      box-shadow: var(--shadow-md);
-      aspect-ratio: 16 / 10;
-    }
-    .hero-card-img img { width: 100%; height: 100%; object-fit: cover; }
-    .hero-cert-chip {
-      position: absolute;
-      bottom: -16px;
-      left: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-shadow: var(--shadow-sm);
+    @media (max-width: 767px) {
+      .heading-1 { font-size: 36px; line-height: 40px; }
+      .heading-2 { font-size: 30px; line-height: 36px; }
+      .heading-3 { font-size: 24px; line-height: 32px; }
+      .heading-4 { font-size: 24px; line-height: 32px; }
     }
 
-    /* Section Commons */
-    .section { padding: 72px 0; overflow-x: clip; }
-    .section-ice { background: var(--bg-ice); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .section-head { text-align: center; max-width: 740px; margin: 0 auto 38px; }
-    .section-kicker {
-      display: inline-block;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent-teal);
-      margin-bottom: 8px;
-    }
-    .section-head h2 {
-      font-size: clamp(1.9rem, 3.2vw, 2.65rem);
-      line-height: 1.16;
-      color: var(--deep-teal);
-      margin-bottom: 10px;
-    }
-    .section-head p { color: var(--text-muted); font-size: 0.96rem; }
+    .skip-link { position: fixed; top: var(--sp-200); left: var(--sp-200); z-index: 200; padding: var(--sp-75) var(--sp-100); background: var(--ink-primary); color: var(--bg-base); border-radius: var(--r-md); transform: translateY(-160%); transition: transform 300ms var(--ease-out-expo); }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-    /* Before/After Smile Compare */
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 32px;
-      align-items: center;
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 var(--sp-300); }
+    @media (max-width: 639px) { .container { padding: 0 var(--sp-200); } }
+    .section { padding: var(--sp-800) 0; }
+    .section-clinical { background-color: var(--bg-clinical); }
+    @media (max-width: 767px) { .section { padding: var(--sp-600) 0; } }
+    .hairline { width: 100%; height: 1px; background-color: var(--border-hairline); }
+    .section-head { max-width: 680px; display: flex; flex-direction: column; gap: var(--sp-100); margin-bottom: var(--sp-500); }
+    .section-head p { color: var(--ink-secondary); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-75);
+      padding: var(--sp-75) var(--sp-100); border-radius: var(--r-md); border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+      transition: background-color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo), color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo);
     }
-    .compare-grid > * { min-width: 0; }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background-color: var(--ink-primary); color: var(--bg-base); }
+    .btn-primary:hover { background-color: var(--accent); }
+    .btn-outline { background-color: var(--bg-base); color: var(--ink-primary); border-color: var(--border-hairline); }
+    .btn-outline:hover { background-color: var(--bg-clinical); border-color: var(--border-strong); }
+    .btn-hero-pill svg, .btn svg { transition: transform 300ms var(--ease-out-expo); }
+    .btn-hero-pill:hover svg, .btn:hover svg { transform: translateX(4px); }
+
+    /* Navigation */
+    .nav-shell { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--sp-200) 0; background-color: transparent; border-bottom: 1px solid transparent; transition: background-color 400ms var(--ease-out-expo), border-color 400ms var(--ease-out-expo), backdrop-filter 400ms var(--ease-out-expo), opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo); }
+    .nav-shell.is-scrolled { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom-color: var(--border-hairline); }
+    .floating-nav { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 var(--sp-300); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-300); }
+    @media (max-width: 639px) { .floating-nav { padding: 0 var(--sp-200); } }
+    .brand-link { display: inline-flex; align-items: center; gap: var(--sp-75); color: #FFFFFF; transition: color 300ms var(--ease-out-expo); }
+    .nav-shell.is-scrolled .brand-link { color: var(--ink-primary); }
+    .nav-links { display: flex; align-items: center; gap: var(--sp-200); }
+    .nav-link { padding: var(--sp-50) var(--sp-75); border-radius: var(--r-md); color: rgba(255, 255, 255, 0.78); transition: color 300ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo); }
+    .nav-link:hover, .nav-link.is-active { color: #FFFFFF; background-color: rgba(255, 255, 255, 0.12); }
+    .nav-shell.is-scrolled .nav-link { color: var(--ink-secondary); }
+    .nav-shell.is-scrolled .nav-link:hover, .nav-shell.is-scrolled .nav-link.is-active { color: var(--ink-primary); background-color: var(--bg-clinical); }
+    .nav-cta-desktop { display: inline-flex; border-radius: var(--r-full); padding: var(--sp-75) var(--sp-200); background-color: #FFFFFF; color: #111111; }
+    .nav-cta-desktop:hover { background-color: #EBF0EF; color: #111111; }
+    .nav-shell.is-scrolled .nav-cta-desktop { background-color: var(--ink-primary); color: var(--bg-base); }
+    .nav-shell.is-scrolled .nav-cta-desktop:hover { background-color: var(--accent); color: var(--bg-base); }
+
+    .menu-toggle { display: none; width: 40px; height: 40px; align-items: center; justify-content: center; background-color: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.24); border-radius: var(--r-full); cursor: pointer; }
+    .nav-shell.is-scrolled .menu-toggle { background-color: var(--bg-clinical); border-color: var(--border-hairline); }
+    .menu-lines { width: 18px; height: 12px; position: relative; }
+    .menu-lines span { position: absolute; left: 0; width: 18px; height: 1.5px; background-color: #FFFFFF; transition: transform 500ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo); }
+    .nav-shell.is-scrolled .menu-lines span { background-color: var(--ink-primary); }
+    .menu-lines span:first-child { top: 2px; }
+    .menu-lines span:last-child { top: 8px; }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:first-child { transform: translateY(3px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:last-child { transform: translateY(-3px) rotate(-45deg); }
+    @media (max-width: 899px) { .nav-links, .nav-cta-desktop { display: none; } .menu-toggle { display: inline-flex; } }
+
+    .mobile-drawer { position: fixed; inset: 0; z-index: 95; background-color: rgba(255, 255, 255, 0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; justify-content: space-between; padding: var(--sp-900) var(--sp-300) var(--sp-400); opacity: 0; pointer-events: none; transition: opacity 400ms var(--ease-out-expo); }
+    .mobile-drawer.is-open { opacity: 1; pointer-events: auto; }
+    .mobile-drawer-list { display: flex; flex-direction: column; gap: var(--sp-200); }
+    .mobile-drawer-item { opacity: 0; transform: translateY(var(--sp-300)); transition: transform 500ms var(--ease-out-expo), opacity 500ms var(--ease-out-expo); }
+    .mobile-drawer.is-open .mobile-drawer-item { opacity: 1; transform: translateY(0); }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(1) { transition-delay: 60ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(2) { transition-delay: 120ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(3) { transition-delay: 180ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(4) { transition-delay: 240ms; }
+    .mobile-drawer.is-open .mobile-drawer-item:nth-child(5) { transition-delay: 300ms; }
+    .mobile-drawer-link { display: flex; justify-content: space-between; padding: var(--sp-100) 0; }
+
+    /* Hero 100svh */
+    .hero { position: relative; min-height: 100svh; background-color: #0E1418; display: flex; flex-direction: column; overflow: hidden; }
+    .hero-bg-parallax { position: absolute; inset: 0; will-change: transform; }
+    .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; transition: transform 1200ms var(--ease-out-expo); }
+    .has-motion:not(.is-hero-ready) .hero-bg-img { transform: scale(1.07); }
+    .has-motion.is-hero-ready .hero-bg-img { transform: scale(1); }
+    .hero-scrim {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(90deg, rgba(10, 16, 20, 0.78) 0%, rgba(10, 16, 20, 0.36) 48%, rgba(10, 16, 20, 0.08) 100%),
+                  linear-gradient(180deg, rgba(10, 16, 20, 0.45) 0%, rgba(10, 16, 20, 0) 24%, rgba(10, 16, 20, 0) 70%, rgba(10, 16, 20, 0.62) 100%);
+    }
+    .hero-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding-top: var(--sp-900); padding-bottom: var(--sp-400); }
+    .hero-copy { max-width: 680px; margin: auto 0; padding: var(--sp-500) 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-300); }
+    .hero-title { padding-top: var(--sp-50); padding-bottom: var(--sp-75); color: #FFFFFF; }
+    .hero-sub { max-width: 520px; color: rgba(255, 255, 255, 0.84); }
+    .btn-hero-pill {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-75);
+      padding: var(--sp-75) var(--sp-200); border-radius: var(--r-full);
+      background-color: #FFFFFF; color: #111111; border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+      transition: background-color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo);
+    }
+    .btn-hero-pill:hover { background-color: #EBF0EF; }
+    .btn-hero-pill:active { transform: scale(0.98); }
+    .hero-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-200); color: rgba(255, 255, 255, 0.74); }
+    @media (max-width: 767px) {
+      .hero-bg-img { object-position: 75% center; }
+      .hero-scrim { background: linear-gradient(90deg, rgba(10, 16, 20, 0.84) 0%, rgba(10, 16, 20, 0.5) 100%), linear-gradient(180deg, rgba(10, 16, 20, 0.45) 0%, rgba(10, 16, 20, 0) 24%, rgba(10, 16, 20, 0.65) 100%); }
+    }
+
+    /* Before / After Interactive Smile Slider */
+    .compare-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--sp-400); align-items: center; }
     .ba-stage {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 4px solid #FFFFFF;
-      box-shadow: var(--shadow-md);
-      --pos: 52%;
-      user-select: none;
+      position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: var(--r-xl); overflow: hidden;
+      border: 1px solid var(--border-hairline); background-color: var(--bg-clinical); user-select: none;
     }
-    .ba-img-after,
-    .ba-img-before {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .ba-img-before {
-      clip-path: inset(0 calc(100% - var(--pos)) 0 0);
-    }
+    .ba-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ba-after { clip-path: inset(0 0 0 50%); }
     .ba-divider {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: var(--pos);
-      width: 2px;
-      background: #FFFFFF;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
-      pointer-events: none;
+      position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background-color: #FFFFFF; pointer-events: none;
+      transform: translateX(-1px);
     }
     .ba-handle {
-      position: absolute;
-      top: 50%;
-      left: var(--pos);
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--accent-teal);
-      color: #FFFFFF;
-      border: 3px solid #FFFFFF;
-      display: grid;
-      place-items: center;
-      font-size: 0.85rem;
-      font-weight: 800;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-      pointer-events: none;
+      position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; border-radius: var(--r-full);
+      background-color: #FFFFFF; color: var(--ink-primary); border: 1px solid var(--border-hairline);
+      display: flex; align-items: center; justify-content: center; transform: translate(-50%, -50%); pointer-events: none;
     }
-    .ba-badge {
-      position: absolute;
-      top: 14px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      background: rgba(15, 23, 42, 0.76);
-      color: #FFFFFF;
+    .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 5; }
+    .ba-label {
+      position: absolute; bottom: var(--sp-200); padding: var(--sp-50) var(--sp-100); border-radius: var(--r-md);
+      background-color: rgba(17, 17, 17, 0.72); color: #FFFFFF; pointer-events: none; z-index: 3;
     }
-    .ba-badge.left { left: 14px; }
-    .ba-badge.right { right: 14px; background: rgba(15, 118, 110, 0.9); }
+    .ba-label-left { left: var(--sp-200); }
+    .ba-label-right { right: var(--sp-200); }
+    .compare-info { display: flex; flex-direction: column; gap: var(--sp-200); }
+    .compare-info p { color: var(--ink-secondary); }
+    @media (max-width: 899px) { .compare-grid { grid-template-columns: 1fr; } }
 
-    .ba-slider-control {
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .ba-slider-control input[type="range"] {
-      flex: 1;
-      accent-color: var(--accent-teal);
-      cursor: pointer;
-    }
-    .case-tabs { display: grid; gap: 12px; }
-    .case-btn {
-      background: var(--bg-surface);
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 16px 18px;
-      text-align: left;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.2s;
-    }
-    .case-btn.active {
-      border-color: var(--accent-teal);
-      background: #FFFFFF;
-      box-shadow: 0 10px 26px rgba(15, 118, 110, 0.12);
-    }
-    .case-btn strong { display: block; font-size: 0.98rem; color: var(--deep-teal); margin-bottom: 4px; }
-    .case-btn span { font-size: 0.84rem; color: var(--text-muted); }
+    /* Bento Showcase */
+    .bento-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: var(--sp-300); align-items: stretch; }
+    .bento-stack { display: flex; flex-direction: column; gap: var(--sp-300); }
+    .bento-card { background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-75); display: flex; flex-direction: column; gap: var(--sp-200); height: 100%; }
+    .bento-card-media { border-radius: var(--r-md); overflow: hidden; background-color: var(--bg-elevated); }
+    .bento-card-wide .bento-card-media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .bento-card-side .bento-card-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .bento-card-body { padding: var(--sp-75) var(--sp-100) var(--sp-100); display: flex; flex-direction: column; gap: var(--sp-75); }
+    .bento-card-body p { color: var(--ink-secondary); }
+    @media (max-width: 899px) { .bento-grid { grid-template-columns: 1fr; } }
 
-    /* Services Catalog */
-    .filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 30px; }
-    .filter-pill {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      color: var(--text-body);
-      padding: 9px 16px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .filter-pill.active { background: var(--gold-gradient); color: #FFFFFF; border-color: transparent; }
+    /* Tagline Reveal (B11) */
+    .tagline-section { padding: var(--sp-900) 0; background-color: var(--bg-base); }
+    .tagline-wrap { max-width: 680px; }
+    .reveal-word { opacity: 0.28; transition: opacity 500ms var(--ease-out-expo); }
+    .reveal-word.is-lit { opacity: 1; }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 22px;
-    }
-    .srv-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-sm);
-      min-width: 0;
-    }
-    .srv-img { aspect-ratio: 4 / 3; overflow: hidden; position: relative; }
-    .srv-img img { width: 100%; height: 100%; object-fit: cover; }
-    .srv-tag {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(255, 255, 255, 0.94);
-      color: var(--deep-teal);
-      padding: 4px 11px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-    }
-    .srv-body { padding: 18px 20px; display: flex; flex-direction: column; flex: 1; }
-    .srv-body h3 { font-size: 1.38rem; color: var(--deep-teal); margin-bottom: 6px; }
-    .srv-body p { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 14px; }
-    .srv-foot {
-      margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px dashed var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .srv-price { font-size: 1.08rem; font-weight: 800; color: var(--accent-teal); }
+    /* Installment Calculator */
+    .calc-panel { background-color: var(--bg-clinical); border: 1px solid var(--border-hairline); border-radius: var(--r-2xl); padding: var(--sp-200); display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--sp-200); align-items: stretch; }
+    .calc-controls { background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-md); padding: var(--sp-300); display: flex; flex-direction: column; gap: var(--sp-300); }
+    .calc-field { display: flex; flex-direction: column; gap: var(--sp-75); }
+    .calc-label-row { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-100); }
+    .range-input { width: 100%; accent-color: var(--accent); cursor: pointer; }
+    .term-pills { display: flex; flex-wrap: wrap; gap: var(--sp-75); }
+    .term-btn { padding: var(--sp-75) var(--sp-100); border-radius: var(--r-md); border: 1px solid var(--border-hairline); background-color: var(--bg-clinical); cursor: pointer; transition: background-color 300ms var(--ease-out-expo), color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo); }
+    .term-btn.is-active { background-color: var(--ink-primary); border-color: var(--ink-primary); color: var(--bg-base); }
+    .calc-result { background-color: var(--ink-primary); color: var(--bg-base); border-radius: var(--r-md); padding: var(--sp-400); display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-300); }
+    .calc-result-muted { color: #A3A3A3; }
+    .calc-breakdown { display: flex; flex-direction: column; gap: var(--sp-200); }
+    .calc-row { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-200); }
+    .calc-divider { width: 100%; height: 1px; background-color: #2E2E2E; }
+    @media (max-width: 899px) { .calc-panel { grid-template-columns: 1fr; } }
 
-    /* Installment 0% Calculator */
-    .calc-card {
-      background: var(--deep-teal);
-      color: #FFFFFF;
-      border-radius: 24px;
-      padding: 36px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
-      align-items: center;
-      box-shadow: var(--shadow-md);
-    }
-    .calc-card > * { min-width: 0; }
-    .calc-group { margin-bottom: 20px; }
-    .calc-label-row { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 8px; color: #CBD5E1; }
-    .calc-label-row strong { color: var(--gold-light); font-size: 1rem; }
-    .calc-range { width: 100%; accent-color: var(--accent-emerald); cursor: pointer; }
-    .seg-row { display: flex; gap: 8px; flex-wrap: wrap; }
-    .seg-btn {
-      flex: 1;
-      min-width: 64px;
-      padding: 9px 10px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: #FFFFFF;
-      font-weight: 700;
-      font-size: 0.84rem;
-      font-family: inherit;
-      cursor: pointer;
-    }
-    .seg-btn.active { background: var(--accent-emerald); color: #042F2E; border-color: transparent; }
-    .calc-result-panel {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(232, 213, 167, 0.35);
-      border-radius: 18px;
-      padding: 26px;
-      text-align: center;
-    }
-    .calc-monthly-big {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.7rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      line-height: 1.1;
-      margin: 6px 0 14px;
-    }
-    .calc-meta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-      padding-top: 14px;
-      margin-bottom: 18px;
-      font-size: 0.84rem;
-    }
+    /* FAQ & Form */
+    .faq-list { display: flex; flex-direction: column; gap: var(--sp-100); max-width: 880px; }
+    .faq-item { border: 1px solid var(--border-hairline); border-radius: var(--r-xl); background-color: var(--bg-base); overflow: hidden; }
+    .faq-item.is-open { border-color: var(--border-strong); }
+    .faq-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-200); padding: var(--sp-300); background: transparent; border: none; text-align: left; cursor: pointer; }
+    .faq-icon { flex-shrink: 0; color: var(--ink-secondary); transition: transform 400ms var(--ease-out-expo); }
+    .faq-item.is-open .faq-icon { transform: rotate(45deg); }
+    .faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 400ms var(--ease-out-expo); }
+    .faq-item.is-open .faq-panel { grid-template-rows: 1fr; }
+    .faq-panel-inner { overflow: hidden; }
+    .faq-answer { padding: 0 var(--sp-300) var(--sp-300); color: var(--ink-secondary); max-width: 680px; }
 
-    /* Booking */
-    .booking-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 32px; align-items: start; }
-    .booking-grid > * { min-width: 0; }
-    .booking-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
-    }
-    .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .f-group { margin-bottom: 14px; min-width: 0; }
-    .f-group label { display: block; font-size: 0.84rem; font-weight: 700; margin-bottom: 5px; }
-    .f-input {
-      width: 100%;
-      background: var(--bg-pearl);
-      border: 1.5px solid var(--border);
-      padding: 11px 13px;
-      border-radius: 11px;
-      font-family: inherit;
-      font-size: 0.9rem;
-    }
-    .f-input:focus { outline: none; border-color: var(--accent-teal); background: #FFFFFF; }
-    .dental-ticket {
-      display: none;
-      background: var(--bg-ice);
-      border: 1.5px dashed var(--accent-teal);
-      border-radius: 18px;
-      padding: 22px;
-    }
-    .dental-ticket.visible { display: block; }
+    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-500); align-items: start; }
+    .cta-copy { max-width: 520px; display: flex; flex-direction: column; gap: var(--sp-200); }
+    .cta-copy p { color: var(--ink-secondary); }
+    .form-card { background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .form-group { display: flex; flex-direction: column; gap: var(--sp-75); }
+    .form-control { width: 100%; padding: var(--sp-100) var(--sp-200); border: 1px solid var(--border-hairline); border-radius: var(--r-md); background-color: var(--bg-base); font-size: 16px; line-height: 24px; }
+    .form-control.is-invalid { border-color: var(--danger); }
+    .field-error { color: var(--danger); min-height: 16px; }
+    .form-status { padding: var(--sp-200); border-radius: var(--r-md); border: 1px solid var(--border-hairline); background-color: var(--bg-clinical); display: none; flex-direction: column; gap: var(--sp-75); }
+    .form-status.is-visible { display: flex; }
+    @media (max-width: 899px) { .cta-grid { grid-template-columns: 1fr; } .form-card { padding: var(--sp-300); } }
 
-    .dental-footer {
-      background: #072627;
-      color: #CBD5E1;
-      padding: 40px 0 24px;
-      font-size: 0.86rem;
-      text-align: center;
-    }
+    .site-footer { padding: var(--sp-600) 0; background-color: var(--bg-base); }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-300); padding-top: var(--sp-400); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-300); color: var(--ink-secondary); }
+    .footer-link-btn { background: none; border: none; padding: var(--sp-50) 0; cursor: pointer; color: var(--ink-secondary); }
+    .footer-link-btn:hover { color: var(--ink-primary); }
 
-    @media (max-width: 900px) {
-      .nav-links, .header-phone-desk { display: none; }
-      .mobile-menu-btn { display: grid; place-items: center; }
-      .hero-grid, .compare-grid, .calc-card, .booking-grid { grid-template-columns: minmax(0, 1fr); }
-      .hero-cert-chip { position: static; margin-top: 12px; }
-    }
-    @media (max-width: 600px) {
-      .container { padding: 0 14px; }
-      .header-inner { gap: 8px; }
-      .brand-logo { flex-shrink: 1; min-width: 0; flex: 1; gap: 8px; }
-      .brand-mark { width: 32px; height: 32px; font-size: 1.05rem; flex-shrink: 0; }
-      .brand-name { min-width: 0; overflow: hidden; }
-      .brand-name strong { font-size: 0.92rem; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .brand-name small { display: none; }
-      .header-actions { gap: 6px; flex-shrink: 0; }
-      .header-actions .btn-sm { padding: 7px 9px; font-size: 0.72rem; white-space: nowrap; }
-      .mobile-menu-btn { width: 36px; height: 36px; flex-shrink: 0; }
-      .section { padding: 48px 0; }
-      .calc-card, .booking-box { padding: 22px 16px; }
-      .form-2col, .services-grid { grid-template-columns: minmax(0, 1fr); }
+    .modal-backdrop { position: fixed; inset: 0; z-index: 150; background-color: rgba(17, 17, 17, 0.56); display: none; align-items: center; justify-content: center; padding: var(--sp-200); }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-box { width: 100%; max-width: 560px; background-color: var(--bg-base); border: 1px solid var(--border-hairline); border-radius: var(--r-xl); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .modal-head { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-200); }
+
+    /* Entrance & Stagger */
+    .has-motion .hero-stagger { opacity: 0; transform: translateY(var(--sp-300)); transition: opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo); }
+    .has-motion.is-hero-ready .hero-stagger { opacity: 1; transform: translateY(0); }
+    .has-motion .nav-shell.hero-stagger { transition-delay: 0ms; }
+    .has-motion .hero-title.hero-stagger { transition-delay: 80ms; }
+    .has-motion .hero-sub.hero-stagger { transition-delay: 160ms; }
+    .has-motion .btn-hero-pill.hero-stagger { transition-delay: 240ms; }
+    .has-motion .hero-bottom.hero-stagger { transition-delay: 320ms; }
+
+    .reveal-section { opacity: 0; transform: translateY(var(--sp-400)); transition: opacity 700ms var(--ease-out-expo), transform 700ms var(--ease-out-expo); }
+    .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
+    .bento-card { transition: opacity 600ms var(--ease-out-expo), transform 600ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo); }
+    .has-motion .reveal-section:not(.is-visible) .bento-card { opacity: 0; transform: translateY(var(--sp-300)); }
+    .reveal-section.is-visible .bento-card-wide { transition-delay: 0ms; }
+    .reveal-section.is-visible .bento-stack .bento-card:nth-child(1) { transition-delay: 60ms; }
+    .reveal-section.is-visible .bento-stack .bento-card:nth-child(2) { transition-delay: 120ms; }
+    .reveal-section.is-visible .bento-card:hover { transform: translateY(-2px); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal-section, .mobile-drawer-item, .reveal-word, .has-motion .hero-stagger, .has-motion .hero-bg-img, .has-motion .reveal-section:not(.is-visible) .bento-card { opacity: 1; transform: none; transition: none; }
+      .btn, .btn svg, .btn-hero-pill, .btn-hero-pill svg, .faq-panel, .faq-icon, .bento-card { transition: none; }
+      .btn:hover svg, .btn-hero-pill:hover svg, .reveal-section.is-visible .bento-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
-  <div class="top-strip">
-    ✦ Tặng gói <strong>Chụp CT ConeBeam 3D &amp; Thiết Kế Nụ Cười Digital</strong> trị giá 1.500.000đ khi đặt lịch online ✦
-  </div>
+  <a href="#main-content" class="skip-link button-sm">Chuyển đến nội dung chính</a>
 
-  <header class="dental-header">
-    <div class="container header-inner">
-      <a href="#top" class="brand-logo">
-        <div class="brand-mark">A</div>
-        <div class="brand-name">
-          <strong>AURORA DENTAL</strong>
-          <small>Swiss Implant &amp; Orthodontics</small>
-        </div>
+  <header class="nav-shell hero-stagger" id="navShell">
+    <nav class="floating-nav" aria-label="Điều hướng chính">
+      <a href="#top" class="brand-link title-4">
+        <svg width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M84 44C58 44 44 68 44 100C44 148 64 216 86 216C102 216 110 166 128 166C146 166 154 216 170 216C192 216 212 148 212 100C212 68 198 44 172 44C154 44 142 54 128 54C114 54 102 44 84 44Z"/>
+        </svg>
+        <span>Aurora Dental Lab</span>
       </a>
-
-      <ul class="nav-links">
-        <li><a href="#smile-check">Before / After</a></li>
-        <li><a href="#services">Bảng Giá Nha Khoa</a></li>
-        <li><a href="#installmentCalc">Trả Góp 0%</a></li>
-        <li><a href="#booking">Đặt Lịch CT 3D</a></li>
-      </ul>
-
-      <div class="header-actions">
-        <a href="tel:0387637982" class="btn-dental btn-pearl btn-sm header-phone-desk">📞 0387.637.982</a>
-        <a href="#booking" class="btn-dental btn-teal btn-sm">📅 Đặt Lịch 3D</a>
-        <button type="button" class="mobile-menu-btn" onclick="toggleDentalMenu()" aria-label="Mở menu">☰</button>
+      <div class="nav-links">
+        <a href="#ket-qua" class="nav-link title-4">Trước và sau</a>
+        <a href="#chuyen-khoa" class="nav-link title-4">Chuyên khoa</a>
+        <a href="#tra-gop" class="nav-link title-4">Trả góp 0%</a>
+        <a href="#hoi-dap" class="nav-link title-4">Hỏi đáp</a>
       </div>
-    </div>
-
-    <div class="mobile-drawer" id="dentalDrawer">
-      <a href="#smile-check" onclick="toggleDentalMenu()">✨ So Sánh Trước &amp; Sau</a>
-      <a href="#services" onclick="toggleDentalMenu()">🦷 Dịch Vụ &amp; Bảng Giá</a>
-      <a href="#installmentCalc" onclick="toggleDentalMenu()">💳 Máy Tính Trả Góp 0%</a>
-      <a href="#booking" onclick="toggleDentalMenu()">📅 Đặt Lịch Chụp CT 3D</a>
-      <a href="tel:0387637982">📞 Hotline: 0387.637.982</a>
-    </div>
+      <a href="#dat-lich" class="btn btn-primary button-sm nav-cta-desktop">Đặt chụp CT 3D</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Mở menu điều hướng">
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </nav>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero-section">
-      <div class="container hero-grid">
-        <div>
-          <div class="hero-pill"><span>🇨🇭</span> Nha Khoa Chuẩn Y Khoa Thụy Sĩ</div>
-          <h1 class="hero-title">Kiến Tạo <em>Nụ Cười Tự Tin</em> Không Đau &amp; Bảo Hành Trọn Đời</h1>
-          <p class="hero-desc">Ứng dụng máy quét dấu răng iTero 5D và công nghệ CT ConeBeam 3D chuẩn đoán chính xác từng milimet — dán sứ Veneer bảo tồn răng thật, niềng Invisalign và Implant tức thì.</p>
-          <div class="hero-actions">
-            <a href="#booking" class="btn-dental btn-teal">📅 Đặt Lịch Quét Răng 3D Miễn Phí</a>
-            <a href="#installmentCalc" class="btn-dental btn-pearl">💳 Tính Trả Góp 0%</a>
-          </div>
-          <div class="hero-metrics">
-            <div><strong>100%</strong><span>Bác sĩ ĐH Y Dược</span></div>
-            <div><strong>0% Lãi</strong><span>Trả góp tới 24 tháng</span></div>
-            <div><strong>15 Năm</strong><span>Thẻ bảo hành sứ</span></div>
-          </div>
-        </div>
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-list">
+      <div class="mobile-drawer-item"><a href="#ket-qua" class="mobile-drawer-link heading-4">So sánh kết quả thực tế</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#chuyen-khoa" class="mobile-drawer-link heading-4">Phòng kỹ thuật số</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#tra-gop" class="mobile-drawer-link heading-4">Dự toán trả góp 0%</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item"><a href="#hoi-dap" class="mobile-drawer-link heading-4">Câu hỏi thường gặp</a><div class="hairline"></div></div>
+      <div class="mobile-drawer-item" style="padding-top: var(--sp-200);"><a href="#dat-lich" class="btn btn-primary button-md" style="width: 100%;">Đặt lịch chụp phim CT 3D</a></div>
+    </div>
+    <div class="caption-2" style="color: var(--ink-muted);">Aurora Dental Lab · Quận 1, Thành phố Hồ Chí Minh</div>
+  </div>
 
-        <div class="hero-visual">
-          <div class="hero-card-img">
-            <img src="image/hero-dental.webp" alt="Phòng khám nha khoa thẩm mỹ Aurora Dental Lab">
-          </div>
-          <div class="hero-cert-chip">
-            <div>
-              <strong style="font-size:0.86rem;display:block;">Vô Khuẩn Tuyệt Đối 1 Khách / 1 Phòng</strong>
-              <span style="font-size:0.75rem;color:var(--text-muted);">Hệ thống tiệt trùng chuẩn Châu Âu Class B</span>
-            </div>
-            <span style="background:var(--bg-ice);color:var(--accent-teal);font-size:0.74rem;font-weight:800;padding:5px 10px;border-radius:999px;white-space:nowrap;">✓ FDA Approved</span>
-          </div>
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="hero-bg-parallax" id="heroParallax">
+        <img src="./image/hero-cinematic.png" alt="Phòng nha khoa vô trùng phong cách kiến trúc Thụy Sĩ tại Aurora Dental Lab" class="hero-bg-img" width="1408" height="768">
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="heading-1 hero-title hero-stagger">Thiết kế nụ cười tự nhiên<br>bảo tồn tối đa răng gốc</h1>
+          <p class="body-3 hero-sub hero-stagger">Lập phác đồ kỹ thuật số trên dữ liệu phim CT ConeBeam 3D, niềng khay trong suốt và dán sứ siêu mỏng chuẩn Thụy Sĩ.</p>
+          <a href="#dat-lich" class="btn-hero-pill button-md hero-stagger">
+            <span>Đặt lịch chụp CT 3D miễn phí</span>
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 128H216"/><path d="M144 56L216 128L144 200"/></svg>
+          </a>
+        </div>
+        <div class="hero-bottom caption-2 hero-stagger">
+          <span>Bác sĩ chuyên khoa trực tiếp điều trị · Trả góp 0% lãi suất · Hợp đồng bảo hành minh bạch</span>
+          <a href="#ket-qua" style="color: rgba(255, 255, 255, 0.86);">Xem ca lâm sàng</a>
         </div>
       </div>
     </section>
 
-    <!-- BEFORE / AFTER SMILE SLIDER -->
-    <section class="section section-ice" id="smile-check">
+    <section class="section reveal-section" id="ket-qua">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Kết Quả Lâm Sàng Thực Tế</span>
-          <h2>Kéo Thanh Trượt Xem Nụ Cười Trước &amp; Sau</h2>
-          <p>Trực quan hóa sự thay đổi của hàm răng sau khi thiết kế nụ cười chuẩn tỷ lệ khuôn mặt.</p>
+          <h2 class="heading-3">Kéo thanh trượt để kiểm chứng thay đổi trước và sau</h2>
+          <p class="body-3">Ảnh chụp lâm sàng giữ nguyên góc hàm và ánh sáng phòng khám, tập trung cân đối cung cười hài hòa với khuôn mặt.</p>
         </div>
-
         <div class="compare-grid">
-          <div>
-            <div class="ba-stage" id="smileCompare">
-              <img loading="lazy" src="image/smile-after.webp" alt="Nụ cười sau điều trị" class="ba-img-after">
-              <img loading="lazy" src="image/smile-before.webp" alt="Nụ cười trước điều trị" class="ba-img-before">
-              <div class="ba-divider"></div>
-              <div class="ba-handle">↔</div>
-              <span class="ba-badge left">TRƯỚC</span>
-              <span class="ba-badge right">SAU ĐIỀU TRỊ</span>
+          <div class="ba-stage" id="baStage">
+            <img src="./image/smile-before.webp" alt="Tình trạng nụ cười trước khi dán sứ và chỉnh nha" class="ba-img">
+            <img src="./image/smile-after.webp" alt="Kết quả nụ cười tự nhiên sau khi hoàn thiện Veneer" class="ba-img ba-after" id="baAfterImg">
+            <div class="ba-divider" id="baDivider"></div>
+            <div class="ba-handle" id="baHandle" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><path d="M96 64L32 128L96 192"/><path d="M160 64L224 128L160 192"/></svg>
             </div>
-            <div class="ba-slider-control">
-              <span style="font-size:0.8rem;font-weight:700;">Trước</span>
-              <input type="range" id="baRange" min="5" max="95" value="52" oninput="updateSmileCompare(this.value)" aria-label="Kéo so sánh trước sau">
-              <span style="font-size:0.8rem;font-weight:700;color:var(--accent-teal);">Sau</span>
-            </div>
+            <span class="caption-3 ba-label ba-label-left">Trước điều trị</span>
+            <span class="caption-3 ba-label ba-label-right">Sau 14 ngày</span>
+            <input type="range" id="baRange" class="ba-range" min="10" max="90" value="50" aria-label="Kéo để so sánh ảnh nụ cười trước và sau điều trị">
           </div>
 
-          <div class="case-tabs">
-            <button type="button" class="case-btn active" onclick="selectDentalCase(0, this)">
-              <strong>01. Dán Sứ Veneer Emax Siêu Mỏng 0.3mm</strong>
-              <span>Khắc phục răng nhiễm màu, thưa kẽ — bảo tồn tối đa mô răng thật trong 48 giờ.</span>
-            </button>
-            <button type="button" class="case-btn" onclick="selectDentalCase(1, this)">
-              <strong>02. Niềng Răng Trong Suốt Invisalign Hoa Kỳ</strong>
-              <span>Chỉnh khấp khểnh, hô nhẹ không lộ mắc cài — xem trước kết quả nụ cười bằng ClinCheck 3D.</span>
-            </button>
-            <button type="button" class="case-btn" onclick="selectDentalCase(2, this)">
-              <strong>03. Cấy Ghép Implant Straumann Thụy Sĩ</strong>
-              <span>Khôi phục răng mất ăn nhai chắc khỏe như răng thật chỉ với 15 phút đặt trụ không sưng đau.</span>
-            </button>
+          <div class="compare-info">
+            <span class="caption-3" style="color: var(--accent);">Ca lâm sàng Veneer E.max 0,3 mm</span>
+            <h3 class="heading-5">Khắc phục thưa kẽ và xỉn màu nhẹ không mài nhỏ răng</h3>
+            <p class="body-6">Bác sĩ sử dụng bản sao sáp thử trực tiếp trên miệng trước khi chế tác 12 mặt dán sứ siêu mỏng, giữ nguyên tủy sống và cảm giác ăn nhai thật.</p>
+            <div><a href="#dat-lich" class="btn btn-outline button-sm">Xem thiết kế thử nụ cười của bạn</a></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES CATALOG -->
-    <section class="section" id="services">
+    <section class="section section-clinical reveal-section" id="chuyen-khoa">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Bảng Giá Niêm Yết Minh Bạch</span>
-          <h2>Dịch Vụ Nha Khoa Chuyên Sâu</h2>
-          <p>Không phát sinh chi phí ẩn trong suốt quá trình điều trị. Bấm chọn dịch vụ để tính ngay mức trả góp 0%.</p>
+          <h2 class="heading-3">Ba trụ cột kỹ thuật số trong quy trình nha khoa</h2>
+          <p class="body-3">Giảm thời gian ngồi ghế và loại bỏ cảm giác khó chịu nhờ quét dấu hàm 3D thay cho vật liệu lấy dấu truyền thống.</p>
         </div>
-
-        <div class="filter-pills">
-          <button type="button" class="filter-pill active" onclick="filterDental('all', this)">Tất Cả</button>
-          <button type="button" class="filter-pill" onclick="filterDental('ortho', this)">Niềng Răng</button>
-          <button type="button" class="filter-pill" onclick="filterDental('veneer', this)">Răng Sứ Veneer</button>
-          <button type="button" class="filter-pill" onclick="filterDental('implant', this)">Trồng Implant</button>
-        </div>
-
-        <div class="services-grid" id="dentalServicesGrid"></div>
-      </div>
-    </section>
-
-    <!-- 0% INSTALLMENT CALCULATOR -->
-    <section class="section" id="installmentCalc" style="padding-top: 10px;">
-      <div class="container">
-        <div class="calc-card">
-          <div>
-            <span class="section-kicker" style="color:var(--gold-light);">Hỗ Trợ Tài Chính 0% Lãi Suất</span>
-            <h2 style="font-size:clamp(1.85rem,3vw,2.45rem);margin-bottom:18px;color:#fff;">Máy Tính Trả Góp Nha Khoa 0%</h2>
-
-            <div class="calc-group">
-              <div class="calc-label-row"><span>Tổng chi phí dự kiến:</span><strong id="lblTotalCost">36.000.000đ</strong></div>
-              <input type="range" id="costRange" class="calc-range" min="10" max="120" step="2" value="36" oninput="calcDentalInstallment()">
+        <div class="bento-grid">
+          <article class="bento-card bento-card-wide">
+            <div class="bento-card-media"><img src="./image/implant-suite.webp" alt="Phòng phẫu thuật Implant vô trùng áp lực dương" loading="lazy"></div>
+            <div class="bento-card-body">
+              <h3 class="heading-5">Phòng cấy ghép Implant Straumann vô trùng tách biệt</h3>
+              <p class="body-6">Sử dụng máng hướng dẫn phẫu thuật in 3D giúp đặt trụ chính xác theo mật độ xương hàm, hạn chế sưng đau và rút ngắn thời gian lành thương.</p>
             </div>
-
-            <div class="calc-group">
-              <div class="calc-label-row"><span>Trả trước tại phòng khám:</span><strong id="lblDownPct">30%</strong></div>
-              <div class="seg-row" id="downPctBtns">
-                <button type="button" class="seg-btn" onclick="setDownPct(20, this)">20%</button>
-                <button type="button" class="seg-btn active" onclick="setDownPct(30, this)">30%</button>
-                <button type="button" class="seg-btn" onclick="setDownPct(50, this)">50%</button>
+          </article>
+          <div class="bento-stack">
+            <article class="bento-card bento-card-side">
+              <div class="bento-card-media"><img src="./image/invisalign-care.webp" alt="Chỉnh nha khay trong suốt mô phỏng chuyển động răng 3D" loading="lazy"></div>
+              <div class="bento-card-body">
+                <h3 class="heading-6">Chỉnh nha khay trong suốt biết trước kết quả</h3>
+                <p class="body-6">Theo dõi từng bước dịch chuyển chân răng trên mô hình số trước khi bấm sản xuất bộ khay cá nhân.</p>
               </div>
-            </div>
-
-            <div class="calc-group" style="margin-bottom:0;">
-              <div class="calc-label-row"><span>Kỳ hạn trả góp (Lãi 0%):</span><strong id="lblMonths">12 Tháng</strong></div>
-              <div class="seg-row" id="monthBtns">
-                <button type="button" class="seg-btn" onclick="setMonths(6, this)">6 Tháng</button>
-                <button type="button" class="seg-btn active" onclick="setMonths(12, this)">12 Tháng</button>
-                <button type="button" class="seg-btn" onclick="setMonths(18, this)">18 Tháng</button>
-                <button type="button" class="seg-btn" onclick="setMonths(24, this)">24 Tháng</button>
+            </article>
+            <article class="bento-card bento-card-side">
+              <div class="bento-card-media"><img src="./image/hero-dental.webp" alt="Bác sĩ chuyên khoa thăm khám trực tiếp 1 kèm 1" loading="lazy"></div>
+              <div class="bento-card-body">
+                <h3 class="heading-6">Thăm khám 1 kèm 1 cùng bác sĩ chuyên khoa</h3>
+                <p class="body-6">Bác sĩ trực tiếp đọc phim CT ConeBeam và giải thích rõ ràng các lựa chọn điều trị trước khi lập hợp đồng.</p>
               </div>
-            </div>
-          </div>
-
-          <div class="calc-result-panel">
-            <div style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#CBD5E1;">Mỗi tháng chỉ cần thanh toán</div>
-            <div class="calc-monthly-big" id="resMonthly">2.100.000đ</div>
-            <div class="calc-meta-grid">
-              <div><span style="color:#94A3B8;display:block;">Trả trước</span><strong id="resDownAmt" style="color:#fff;">10.800.000đ</strong></div>
-              <div><span style="color:#94A3B8;display:block;">Lãi suất áp dụng</span><strong style="color:#6EE7B7;">0% / năm</strong></div>
-            </div>
-            <button type="button" class="btn-dental btn-pearl" style="width:100%;" onclick="applyInstallmentToForm()">
-              ✨ Giữ Suất Trả Góp 0% Này
-            </button>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BOOKING -->
-    <section class="section section-ice" id="booking">
+    <section class="tagline-section" aria-label="Chuẩn mực điều trị">
+      <div class="container"><div class="tagline-wrap"><p class="heading-2" id="taglineReveal">Một nụ cười đẹp chỉ thực sự có giá trị khi khớp cắn chuẩn xác và men răng gốc của bạn được giữ gìn trọn vẹn qua nhiều năm.</p></div></div>
+    </section>
+
+    <section class="section section-clinical reveal-section" id="tra-gop">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Đặt Lịch Khám Ưu Tiên</span>
-          <h2>Nhận Suất Chụp CT 3D &amp; Tư Vấn Bác Sĩ CKI</h2>
-          <p>Không phải chờ đợi tại quầy — thông tin đặt lịch được bảo mật và gửi xác nhận ngay trong 1 giây.</p>
+          <h2 class="heading-3">Bảng tính trả góp 0% lãi suất theo tháng</h2>
+          <p class="body-3">Chủ động chọn mức trả trước và kỳ hạn phù hợp từ 6 đến 24 tháng, không phát sinh phí chuyển đổi.</p>
         </div>
 
-        <div class="booking-grid">
-          <div class="booking-box" style="background:var(--deep-teal);color:#fff;border-color:transparent;">
-            <h3 style="font-size:1.85rem;color:#fff;margin-bottom:12px;">Quyền Lợi Khám Lần Đầu</h3>
-            <p style="color:#CBD5E1;font-size:0.9rem;margin-bottom:18px;">Mỗi ca điều trị đều được Hội đồng Bác sĩ lập phác đồ trực quan bằng hình ảnh 3D trước khi thực hiện.</p>
-            <ul style="list-style:none;display:grid;gap:10px;font-size:0.88rem;color:#E2F1F0;margin-bottom:18px;">
-              <li>✓ Miễn phí chụp phim CT ConeBeam 3D toàn hàm</li>
-              <li>✓ Miễn phí quét mẫu răng iTero &amp; mô phỏng nụ cười</li>
-              <li>✓ Ký hợp đồng cam kết bảo hành sứ/Implant bằng văn bản</li>
-            </ul>
-            <div style="background:rgba(255,255,255,0.08);padding:12px 14px;border-radius:12px;font-size:0.84rem;">
-              📍 68 Tràng Thi, Hoàn Kiếm, Hà Nội &amp; 190 Nguyễn Đình Chiểu, Q.3, TP.HCM<br>
-              ⏱️ 08:30 – 20:00 (Cả Thứ 7 &amp; Chủ Nhật)
+        <div class="calc-panel" aria-label="Công cụ tính trả góp nha khoa 0% lãi suất">
+          <div class="calc-controls">
+            <div class="calc-field">
+              <div class="calc-label-row"><label for="dentalTotal" class="title-4">Tổng chi phí dịch vụ</label><span class="body-4 mono-num" id="dentalTotalOut">36.000.000đ</span></div>
+              <input type="range" id="dentalTotal" class="range-input" min="12000000" max="120000000" step="2000000" value="36000000">
+            </div>
+            <div class="calc-field">
+              <div class="calc-label-row"><label for="dentalDown" class="title-4">Tỷ lệ thanh toán ban đầu</label><span class="body-4 mono-num" id="dentalDownOut">30%</span></div>
+              <input type="range" id="dentalDown" class="range-input" min="20" max="60" step="5" value="30">
+            </div>
+            <div class="calc-field">
+              <span class="title-4">Chọn kỳ hạn trả góp</span>
+              <div class="term-pills" id="termPills">
+                <button type="button" class="term-btn button-sm mono-num" data-months="6">6 tháng</button>
+                <button type="button" class="term-btn button-sm mono-num is-active" data-months="12">12 tháng</button>
+                <button type="button" class="term-btn button-sm mono-num" data-months="18">18 tháng</button>
+                <button type="button" class="term-btn button-sm mono-num" data-months="24">24 tháng</button>
+              </div>
             </div>
           </div>
 
-          <div class="booking-box">
-            <form id="dentalBookingForm" onsubmit="submitDentalBooking(event)">
-              <div class="form-2col">
-                <div class="f-group">
-                  <label for="dnName">Họ và Tên *</label>
-                  <input type="text" id="dnName" class="f-input" placeholder="Ví dụ: Phạm Gia Huy" required>
-                </div>
-                <div class="f-group">
-                  <label for="dnPhone">Số Điện Thoại / Zalo *</label>
-                  <input type="tel" id="dnPhone" class="f-input" placeholder="0912.345.678" required>
-                </div>
-              </div>
-              <div class="form-2col">
-                <div class="f-group">
-                  <label for="dnBranch">Chọn Cơ Sở Khám</label>
-                  <select id="dnBranch" class="f-input">
-                    <option>Cơ sở Hà Nội (68 Tràng Thi)</option>
-                    <option>Cơ sở TP.HCM (190 Nguyễn Đình Chiểu)</option>
-                  </select>
-                </div>
-                <div class="f-group">
-                  <label for="dnDate">Ngày Khám Dự Kiến *</label>
-                  <input type="date" id="dnDate" class="f-input" required>
-                </div>
-              </div>
-              <div class="f-group">
-                <label for="dnService">Dịch Vụ Quan Tâm *</label>
-                <select id="dnService" class="f-input">
-                  <option>Dán Sứ Veneer Emax Thụy Sĩ</option>
-                  <option>Niềng Răng Trong Suốt Invisalign</option>
-                  <option>Cấy Ghép Implant Straumann 3D</option>
-                  <option>Tẩy Trắng Răng Laser Zoom White</option>
-                </select>
-              </div>
-              <div class="f-group">
-                <label for="dnNote">Tình Trạng Răng / Ghi Chú</label>
-                <textarea id="dnNote" rows="2" class="f-input" placeholder="Ví dụ: Muốn tư vấn niềng trong suốt trả góp 0%..."></textarea>
-              </div>
-              <button type="submit" class="btn-dental btn-teal" style="width:100%;padding:14px;">
-                🚀 Xác Nhận Đặt Lịch Chụp CT 3D
-              </button>
-            </form>
-
-            <div id="dentalTicket" class="dental-ticket">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                <strong style="color:var(--deep-teal);">✓ PHIẾU KHÁM ƯU TIÊN CT 3D</strong>
-                <span id="dnTicketCode" style="background:var(--accent-teal);color:#fff;font-size:0.78rem;font-weight:800;padding:4px 10px;border-radius:999px;">#AUR-3041</span>
-              </div>
-              <div id="dnTicketBody" style="font-size:0.88rem;display:grid;gap:6px;margin-bottom:14px;"></div>
-              <button type="button" class="btn-dental btn-pearl btn-sm" style="width:100%;" onclick="resetDentalForm()">Đặt Lịch Hẹn Khác</button>
+          <div class="calc-result">
+            <div>
+              <span class="caption-2 calc-result-muted">Khoản thanh toán mỗi tháng (0% lãi suất)</span>
+              <div class="heading-2 mono-num" id="dentalMonthlyOut" style="margin-top: var(--sp-100);">2.100.000đ</div>
             </div>
+            <div class="calc-breakdown">
+              <div class="calc-row"><span class="body-6 calc-result-muted">Thanh toán ban đầu</span><span class="body-4 mono-num" id="dentalUpfrontOut">10.800.000đ</span></div>
+              <div class="calc-divider"></div>
+              <div class="calc-row"><span class="body-6 calc-result-muted">Phần chia theo kỳ hạn</span><span class="body-4 mono-num" id="dentalRemainOut">25.200.000đ</span></div>
+              <div class="calc-divider"></div>
+              <div class="calc-row"><span class="body-6 calc-result-muted">Phí hồ sơ và chuyển đổi</span><span class="body-4 mono-num">0đ</span></div>
+            </div>
+            <a href="#dat-lich" class="btn btn-outline button-md" style="width: 100%; background-color: #FFFFFF; color: #111111;">Đăng ký phương án này</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal-section" id="hoi-dap">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Câu hỏi thường gặp</h2>
+          <p class="body-3">Các thông tin quan trọng trước khi chụp phim và tư vấn cùng bác sĩ.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-trigger" aria-expanded="true"><span class="title-2">1. Dán sứ Veneer có phải mài nhỏ răng thật không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Phần lớn trường hợp chỉ cần xử lý nhám bề mặt men từ 0,2 đến 0,4 mm để giữ chặt mặt dán sứ mà không chạm vào ngà răng hay tủy sống.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">2. Chụp phim CT ConeBeam 3D và quét dấu hàm mất bao lâu?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Toàn bộ quá trình chụp phim và quét dấu hàm kỹ thuật số chỉ mất khoảng 15 phút, kết quả hiển thị ngay trên màn hình để bác sĩ phân tích trực tiếp.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">3. Trả góp 0% có yêu cầu thẻ tín dụng không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Phòng khám hỗ trợ cả hai hình thức: thanh toán trả góp trực tiếp theo giai đoạn điều trị bằng tiền mặt hoặc chuyển đổi 0% qua thẻ của hơn 25 ngân hàng.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">4. Cắm trụ Implant mất bao nhiêu ngày mới gắn răng ăn nhai?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Thủ thuật đặt trụ diễn ra trong 30 phút. Với dòng trụ Straumann SLActive, thời gian tích hợp xương rút ngắn còn 6 đến 8 tuần trước khi gắn mão sứ cố định.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">5. Chính sách bảo hành răng sứ và trụ Implant được ghi thế nào?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Khách hàng nhận thẻ bảo hành chính hãng kèm mã tra cứu điện tử và hợp đồng cam kết kiểm tra định kỳ miễn phí mỗi 6 tháng.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">6. Tôi đến khám tư vấn trước mà chưa làm ngay có mất phí không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Khách đặt hẹn trước qua biểu mẫu bên dưới được miễn phí hoàn toàn bước thăm khám, chụp CT 3D và nhận bản báo giá chi tiết bằng văn bản.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-clinical reveal-section" id="dat-lich">
+      <div class="container">
+        <div class="cta-grid">
+          <div class="cta-copy">
+            <h2 class="heading-3">Đặt lịch chụp CT 3D và tư vấn trực tiếp cùng bác sĩ</h2>
+            <p class="body-3">Nhận phim chụp 3D và phác đồ chi tiết trước khi quyết định. Cam kết bảo mật hồ sơ y khoa và không phát sinh chi phí tư vấn.</p>
+            <div class="hairline"></div>
+            <div class="caption-2" style="color: var(--ink-secondary);">Địa chỉ: 118 Nguyễn Du, Bến Thành, Quận 1 · Làm việc từ 08:30 đến 19:30</div>
+          </div>
+
+          <form class="form-card" id="dentalForm" novalidate>
+            <div class="form-group">
+              <label for="custName" class="title-4">Họ và tên</label>
+              <input type="text" id="custName" class="form-control" placeholder="Ví dụ: Phạm Quốc Bảo" autocomplete="name" required>
+              <span class="caption-5 field-error" id="errCustName" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="custPhone" class="title-4">Số điện thoại</label>
+              <input type="tel" id="custPhone" class="form-control" placeholder="Ví dụ: 0912345678" autocomplete="tel" required>
+              <span class="caption-5 field-error" id="errCustPhone" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="dentalService" class="title-4">Dịch vụ cần tư vấn</label>
+              <select id="dentalService" class="form-control">
+                <option value="Dán sứ Veneer bảo tồn răng gốc">Dán sứ Veneer bảo tồn răng gốc</option>
+                <option value="Chỉnh nha khay trong suốt 3D">Chỉnh nha khay trong suốt 3D</option>
+                <option value="Cấy ghép Implant Straumann">Cấy ghép Implant Straumann</option>
+              </select>
+            </div>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite">
+              <strong class="body-4" id="formStatusTitle"></strong>
+              <span class="body-6" id="formStatusDesc" style="color: var(--ink-secondary);"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary button-md">Đặt lịch chụp CT 3D miễn phí</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="dental-footer">
+  <footer class="site-footer">
     <div class="container">
-      <p>© 2026 AURORA DENTAL LAB — Giao diện mẫu ngành Nha Khoa Thẩm Mỹ thiết kế bởi <a href="https://webgiatot.me/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);font-weight:700;">PAT TECH (webgiatot.me)</a></p>
+      <div class="hairline"></div>
+      <div class="footer-inner">
+        <div class="caption-2" style="color: var(--ink-muted);">Aurora Dental Lab · Bản demo thiết kế giao diện nha khoa của PAT TECH</div>
+        <div class="footer-links caption-2">
+          <button type="button" class="footer-link-btn" data-legal="privacy">Chính sách bảo mật</button>
+          <button type="button" class="footer-link-btn" data-legal="terms">Điều khoản sử dụng</button>
+          <a href="/" class="footer-link-btn">Quay lại trang chủ PAT TECH</a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 class="heading-6" id="legalModalTitle">Thông tin pháp lý</h2>
+        <button type="button" class="btn btn-outline button-sm" id="closeLegalBtn">Đóng</button>
+      </div>
+      <div class="hairline"></div>
+      <p class="body-6" id="legalModalBody" style="color: var(--ink-secondary);"></p>
+    </div>
+  </div>
+
   <script>
-    const dentalServices = [
-      { cat: 'veneer', tag: 'Phổ Biến Nhất', name: 'Dán Sứ Veneer Emax Press Đức', priceNum: 36, priceStr: '6.000.000đ / răng', img: 'image/smile-after.webp', desc: 'Siêu mỏng 0.3mm không mài nhỏ răng thật, màu trắng trong tự nhiên.' },
-      { cat: 'ortho', tag: 'Trả Góp 0%', name: 'Niềng Răng Trong Suốt Invisalign', priceNum: 68, priceStr: 'Từ 48.000.000đ', img: 'image/invisalign-care.webp', desc: 'Khay niềng trong suốt tháo lắp linh hoạt, biết trước kết quả 3D.' },
-      { cat: 'implant', tag: 'Bảo Hành Trọn Đời', name: 'Cấy Ghép Implant Straumann Thụy Sĩ', priceNum: 28, priceStr: 'Từ 24.000.000đ / trụ', img: 'image/implant-suite.webp', desc: 'Tích hợp xương siêu nhanh trong 3 tuần bằng công nghệ SLActive.' },
-      { cat: 'ortho', tag: 'Tiết Kiệm', name: 'Niềng Mắc Cài Sứ Tự Buộc 3M', priceNum: 34, priceStr: 'Từ 34.000.000đ', img: 'image/hero-dental.webp', desc: 'Lực kéo ổn định, rút ngắn thời gian chỉnh nha tới 6 tháng.' }
-    ];
+    (function () {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion) { document.documentElement.classList.add('is-hero-ready'); }
+      else { window.requestAnimationFrame(() => window.requestAnimationFrame(() => document.documentElement.classList.add('is-hero-ready'))); }
 
-    let activeCat = 'all';
-    let downPct = 30;
-    let months = 12;
+      const heroParallax = document.getElementById('heroParallax');
+      const heroEl = document.getElementById('top');
+      if (heroParallax && heroEl && !reducedMotion) {
+        let rafP = null;
+        window.addEventListener('scroll', () => {
+          if (rafP !== null) return;
+          rafP = window.requestAnimationFrame(() => {
+            rafP = null;
+            const y = window.scrollY || 0;
+            if (y <= heroEl.offsetHeight) heroParallax.style.transform = `translate3d(0, ${(y * 0.18).toFixed(1)}px, 0)`;
+          });
+        }, { passive: true });
+      }
 
-    function renderDentalServices() {
-      const grid = document.getElementById('dentalServicesGrid');
-      const items = activeCat === 'all' ? dentalServices : dentalServices.filter(s => s.cat === activeCat);
-      grid.innerHTML = items.map(s => `
-        <article class="srv-card">
-          <div class="srv-img">
-            <img loading="lazy" src="${s.img}" alt="${s.name}">
-            <span class="srv-tag">${s.tag}</span>
-          </div>
-          <div class="srv-body">
-            <h3>${s.name}</h3>
-            <p>${s.desc}</p>
-            <div class="srv-foot">
-              <strong class="srv-price">${s.priceStr}</strong>
-              <button type="button" class="btn-dental btn-teal btn-sm" onclick="jumpToInstallment(${s.priceNum})">Tính Trả Góp →</button>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      function setMenuOpen(open) {
+        menuToggle.setAttribute('aria-expanded', String(open));
+        mobileDrawer.setAttribute('aria-hidden', String(!open));
+        mobileDrawer.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      menuToggle.addEventListener('click', () => setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true'));
+      mobileDrawer.querySelectorAll('a').forEach((l) => l.addEventListener('click', () => setMenuOpen(false)));
 
-    function filterDental(cat, btn) {
-      activeCat = cat;
-      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      renderDentalServices();
-    }
+      const revealSections = document.querySelectorAll('.reveal-section');
+      if (reducedMotion || !('IntersectionObserver' in window)) { revealSections.forEach((el) => el.classList.add('is-visible')); }
+      else {
+        const obs = new IntersectionObserver((entries, o) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); o.unobserve(e.target); } }); }, { threshold: 0.1 });
+        revealSections.forEach((el) => obs.observe(el));
+      }
 
-    function updateSmileCompare(val) {
-      document.getElementById('smileCompare').style.setProperty('--pos', val + '%');
-    }
+      const taglineEl = document.getElementById('taglineReveal');
+      if (taglineEl) {
+        const words = taglineEl.textContent.trim().split(/\s+/);
+        taglineEl.innerHTML = words.map((w) => `<span class="reveal-word">${w}</span>`).join(' ');
+        const spans = Array.from(taglineEl.querySelectorAll('.reveal-word'));
+        if (reducedMotion) { spans.forEach((s) => s.classList.add('is-lit')); }
+        else {
+          let rafT = null;
+          const paint = () => {
+            rafT = null;
+            const rect = taglineEl.getBoundingClientRect();
+            const vh = window.innerHeight || 800;
+            const p = Math.min(1, Math.max(0, (vh * 0.85 - rect.top) / (vh * 0.6)));
+            const lit = Math.round(p * spans.length);
+            spans.forEach((s, i) => s.classList.toggle('is-lit', i < lit));
+          };
+          const sched = () => { if (rafT === null) rafT = window.requestAnimationFrame(paint); };
+          window.addEventListener('scroll', sched, { passive: true });
+          window.addEventListener('resize', sched, { passive: true });
+          paint();
+        }
+      }
 
-    function selectDentalCase(idx, btn) {
-      document.querySelectorAll('.case-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      const positions = [52, 68, 38];
-      const pos = positions[idx] || 52;
-      document.getElementById('baRange').value = pos;
-      updateSmileCompare(pos);
-    }
+      const navShell = document.getElementById('navShell');
+      const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+      if (navShell && heroEl && 'IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            const left = !e.isIntersecting;
+            navShell.classList.toggle('is-scrolled', left);
+            if (!left) navLinks.forEach((l) => l.classList.remove('is-active'));
+          });
+        }, { threshold: 0.12 }).observe(heroEl);
+      }
+      if ('IntersectionObserver' in window) {
+        const navObs = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting && navShell.classList.contains('is-scrolled')) {
+              const id = e.target.id;
+              navLinks.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === `#${id}`));
+            }
+          });
+        }, { rootMargin: '-35% 0px -55% 0px' });
+        ['ket-qua', 'chuyen-khoa', 'tra-gop', 'hoi-dap'].forEach((id) => { const el = document.getElementById(id); if (el) navObs.observe(el); });
+      }
 
-    function setDownPct(pct, btn) {
-      downPct = pct;
-      document.querySelectorAll('#downPctBtns .seg-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      calcDentalInstallment();
-    }
+      // Before / After Slider
+      const baRange = document.getElementById('baRange');
+      const baAfter = document.getElementById('baAfterImg');
+      const baDivider = document.getElementById('baDivider');
+      const baHandle = document.getElementById('baHandle');
+      function updateSlider(val) {
+        baAfter.style.clipPath = `inset(0 0 0 ${val}%)`;
+        baDivider.style.left = `${val}%`;
+        baHandle.style.left = `${val}%`;
+      }
+      baRange.addEventListener('input', () => updateSlider(baRange.value));
+      updateSlider(50);
 
-    function setMonths(m, btn) {
-      months = m;
-      document.querySelectorAll('#monthBtns .seg-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      calcDentalInstallment();
-    }
+      // 0% Installment Calculator
+      const dentalTotal = document.getElementById('dentalTotal');
+      const dentalDown = document.getElementById('dentalDown');
+      let termMonths = 12;
+      function updateDentalCalc() {
+        const total = parseInt(dentalTotal.value, 10);
+        const downPct = parseInt(dentalDown.value, 10);
+        const upfront = Math.round(total * (downPct / 100));
+        const remain = total - upfront;
+        const monthly = Math.round(remain / termMonths);
+        document.getElementById('dentalTotalOut').textContent = `${total.toLocaleString('vi-VN')}đ`;
+        document.getElementById('dentalDownOut').textContent = `${downPct}%`;
+        document.getElementById('dentalUpfrontOut').textContent = `${upfront.toLocaleString('vi-VN')}đ`;
+        document.getElementById('dentalRemainOut').textContent = `${remain.toLocaleString('vi-VN')}đ`;
+        document.getElementById('dentalMonthlyOut').textContent = `${monthly.toLocaleString('vi-VN')}đ`;
+      }
+      dentalTotal.addEventListener('input', updateDentalCalc);
+      dentalDown.addEventListener('input', updateDentalCalc);
+      document.querySelectorAll('.term-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.term-btn').forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          termMonths = parseInt(btn.dataset.months, 10);
+          updateDentalCalc();
+        });
+      });
+      updateDentalCalc();
 
-    function calcDentalInstallment() {
-      const totalMil = parseInt(document.getElementById('costRange').value, 10);
-      const totalVnd = totalMil * 1000000;
-      const downAmt = Math.round(totalVnd * (downPct / 100));
-      const monthly = Math.round((totalVnd - downAmt) / months);
+      // FAQ
+      document.querySelectorAll('.faq-trigger').forEach((tr) => {
+        tr.addEventListener('click', () => {
+          const item = tr.closest('.faq-item');
+          const open = !item.classList.contains('is-open');
+          document.querySelectorAll('.faq-item').forEach((o) => { o.classList.remove('is-open'); o.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); });
+          if (open) { item.classList.add('is-open'); tr.setAttribute('aria-expanded', 'true'); }
+        });
+      });
 
-      document.getElementById('lblTotalCost').innerText = totalVnd.toLocaleString('vi-VN') + 'đ';
-      document.getElementById('lblDownPct').innerText = downPct + '%';
-      document.getElementById('lblMonths').innerText = months + ' Tháng';
-      document.getElementById('resDownAmt').innerText = downAmt.toLocaleString('vi-VN') + 'đ';
-      document.getElementById('resMonthly').innerText = monthly.toLocaleString('vi-VN') + 'đ';
-    }
+      // Form Validation
+      const form = document.getElementById('dentalForm');
+      const custName = document.getElementById('custName');
+      const custPhone = document.getElementById('custPhone');
+      const errName = document.getElementById('errCustName');
+      const errPhone = document.getElementById('errCustPhone');
+      const statusBox = document.getElementById('formStatus');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errName.textContent = ''; errPhone.textContent = '';
+        custName.classList.remove('is-invalid'); custPhone.classList.remove('is-invalid');
+        statusBox.classList.remove('is-visible');
+        const name = custName.value.trim();
+        const phone = custPhone.value.trim().replace(/[\s.]/g, '');
+        let bad = false;
+        if (name.length < 2) { errName.textContent = 'Vui lòng nhập họ và tên đầy đủ.'; custName.classList.add('is-invalid'); bad = true; }
+        if (!/^0\d{9}$/.test(phone)) { errPhone.textContent = 'Số điện thoại cần đủ 10 chữ số bắt đầu bằng số 0.'; custPhone.classList.add('is-invalid'); bad = true; }
+        if (bad) { (name.length < 2 ? custName : custPhone).focus(); return; }
+        document.getElementById('formStatusTitle').textContent = `Đã tiếp nhận lịch chụp CT 3D cho ${name}`;
+        document.getElementById('formStatusDesc').textContent = `${document.getElementById('dentalService').value} · Trợ lý bác sĩ sẽ liên hệ qua số ${phone}.`;
+        statusBox.classList.add('is-visible');
+      });
 
-    function jumpToInstallment(mil) {
-      document.getElementById('costRange').value = mil;
-      calcDentalInstallment();
-      document.getElementById('installmentCalc').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function applyInstallmentToForm() {
-      const total = document.getElementById('lblTotalCost').innerText;
-      const monthly = document.getElementById('resMonthly').innerText;
-      document.getElementById('dnNote').value = `Đăng ký giữ suất trả góp 0% (${months} tháng, mỗi tháng ${monthly} trên tổng ${total}).`;
-      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function submitDentalBooking(e) {
-      e.preventDefault();
-      const name = document.getElementById('dnName').value.trim();
-      const phone = document.getElementById('dnPhone').value.trim();
-      const branch = document.getElementById('dnBranch').value;
-      const date = document.getElementById('dnDate').value;
-      const service = document.getElementById('dnService').value;
-      const code = '#AUR-' + Math.floor(1000 + Math.random() * 9000);
-      document.getElementById('dnTicketCode').innerText = code;
-      document.getElementById('dnTicketBody').innerHTML = `
-        <div><strong>Khách hàng:</strong> ${name} (${phone})</div>
-        <div><strong>Dịch vụ:</strong> ${service}</div>
-        <div><strong>Cơ sở &amp; Ngày:</strong> ${branch} • ${date}</div>
-      `;
-      document.getElementById('dentalBookingForm').style.display = 'none';
-      document.getElementById('dentalTicket').classList.add('visible');
-    }
-
-    function resetDentalForm() {
-      document.getElementById('dentalBookingForm').style.display = 'block';
-      document.getElementById('dentalTicket').classList.remove('visible');
-    }
-
-    function toggleDentalMenu() {
-      document.getElementById('dentalDrawer').classList.toggle('open');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      renderDentalServices();
-      calcDentalInstallment();
-      const d = document.getElementById('dnDate');
-      if (d) d.value = new Date(Date.now() + 86400000).toISOString().split('T')[0];
-    });
+      // Legal Modal
+      const legalModal = document.getElementById('legalModal');
+      const closeLegalBtn = document.getElementById('closeLegalBtn');
+      const legalText = {
+        privacy: 'Hồ sơ chụp phim và thông tin cá nhân trên bản mẫu Aurora Dental Lab được minh họa tuân thủ bảo mật riêng tư y khoa.',
+        terms: 'Chi phí trả góp 0% trên trang là ước tính minh họa dựa trên tỷ lệ thanh toán ban đầu và kỳ hạn bạn lựa chọn.'
+      };
+      function closeLegal() { legalModal.classList.remove('is-open'); }
+      document.querySelectorAll('[data-legal]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.getElementById('legalModalTitle').textContent = btn.dataset.legal === 'privacy' ? 'Chính sách bảo mật' : 'Điều khoản sử dụng';
+          document.getElementById('legalModalBody').textContent = legalText[btn.dataset.legal];
+          legalModal.classList.add('is-open');
+          closeLegalBtn.focus();
+        });
+      });
+      closeLegalBtn.addEventListener('click', closeLegal);
+      legalModal.addEventListener('click', (e) => { if (e.target === legalModal) closeLegal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setMenuOpen(false); closeLegal(); } });
+    })();
   </script>
-  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>
