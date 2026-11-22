@@ -1228,10 +1228,20 @@
       inset: 0;
       z-index: 200;
       background-color: var(--bg-black);
-      display: none;
+      display: flex;
       flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(10px) scale(0.992);
+      transition: opacity 260ms var(--ease-out-expo), transform 320ms var(--ease-out-expo), visibility 260ms var(--ease-out-expo);
     }
-    .preview-modal.is-open { display: flex; }
+    .preview-modal.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
     .preview-bar {
       display: flex;
       flex-wrap: wrap;
@@ -1262,17 +1272,23 @@
     .preview-skeleton {
       position: absolute;
       inset: var(--sp-300);
+      z-index: 2;
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--r-xl);
       padding: var(--sp-400);
-      display: none;
+      display: flex;
       flex-direction: column;
       gap: var(--sp-200);
       max-width: 960px;
       margin: auto;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 220ms var(--ease-out-expo);
     }
-    .preview-skeleton.is-visible { display: flex; }
+    .preview-skeleton.is-visible {
+      opacity: 1;
+    }
     .skeleton-line {
       height: 20px;
       border-radius: var(--r-sm);
@@ -1288,8 +1304,12 @@
       height: 100%;
       border: 1px solid var(--border-subtle);
       border-radius: var(--r-lg);
-      background-color: #FFFFFF;
-      transition: width 400ms var(--ease-out-expo);
+      background-color: var(--bg-surface);
+      opacity: 0;
+      transition: width 400ms var(--ease-out-expo), opacity 280ms var(--ease-out-expo);
+    }
+    .preview-frame.is-loaded {
+      opacity: 1;
     }
     .preview-frame.is-mobile {
       width: 390px;
@@ -2405,7 +2425,29 @@
         heroObs.observe(heroEl);
       }
 
-      const trackedIds = ['kho-mau', 'quy-trinh', 'bang-gia', 'hoi-dap'];
+      const hashAliases = {
+        '#templates': '#kho-mau',
+        '#pricing': '#bang-gia'
+      };
+
+      function resolveLegacyHash() {
+        const targetSelector = hashAliases[window.location.hash];
+        if (!targetSelector) return;
+        const targetEl = document.querySelector(targetSelector);
+        if (!targetEl) return;
+        if (history && history.replaceState) {
+          history.replaceState(null, '', targetSelector);
+        }
+        requestAnimationFrame(() => {
+          targetEl.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+        });
+      }
+
+      window.addEventListener('hashchange', resolveLegacyHash);
+      window.addEventListener('DOMContentLoaded', resolveLegacyHash);
+      resolveLegacyHash();
+
+      const trackedIds = ['kho-mau', 'quy-trinh', 'bang-gia', 'hoi-dap', 'tu-van'];
       if ('IntersectionObserver' in window) {
         const navObs = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
@@ -2531,6 +2573,7 @@
       const viewDesktopBtn = document.getElementById('viewDesktopBtn');
       const viewMobileBtn = document.getElementById('viewMobileBtn');
       let previewTemplateId = 'bat-dong-san';
+      let closeResetTimer = null;
 
       function setPreviewDevice(mode) {
         const mobile = mode === 'mobile';
@@ -2540,9 +2583,14 @@
       }
 
       function openPreview(url, title, tplId) {
+        if (closeResetTimer) {
+          clearTimeout(closeResetTimer);
+          closeResetTimer = null;
+        }
         previewTemplateId = tplId || 'bat-dong-san';
         previewTitle.textContent = title;
         openTabLink.href = url;
+        previewIframe.classList.remove('is-loaded');
         previewSkeleton.classList.add('is-visible');
         previewIframe.src = url;
         setPreviewDevice('desktop');
@@ -2552,13 +2600,23 @@
 
       function closePreview() {
         previewModal.classList.remove('is-open');
-        previewIframe.src = 'about:blank';
+        previewIframe.classList.remove('is-loaded');
         previewSkeleton.classList.remove('is-visible');
         document.body.style.overflow = '';
+        closeResetTimer = setTimeout(() => {
+          if (!previewModal.classList.contains('is-open')) {
+            previewIframe.src = 'about:blank';
+          }
+        }, 280);
       }
 
       previewIframe.addEventListener('load', () => {
+        const currentSrc = previewIframe.getAttribute('src');
+        if (!currentSrc || currentSrc === 'about:blank' || !previewModal.classList.contains('is-open')) {
+          return;
+        }
         previewSkeleton.classList.remove('is-visible');
+        previewIframe.classList.add('is-loaded');
       });
 
       viewDesktopBtn.addEventListener('click', () => setPreviewDevice('desktop'));

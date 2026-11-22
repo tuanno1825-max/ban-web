@@ -3,806 +3,718 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATELIER MỘC &amp; ĐÁ - Kiến Trúc &amp; Thi Công Nội Thất Trọn Gói</title>
-  <meta name="description" content="Thiết kế kiến trúc &amp; thi công nội thất trọn gói chìa khóa trao tay. Kéo xem thực tế Thô sang Hoàn thiện &amp; dự toán chi phí theo m2.">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <title>Atelier Mộc &amp; Đá · Kiến Trúc &amp; Thi Công Nội Thất Trọn Gói</title>
+  <meta name="description" content="Thiết kế và thi công nội thất gỗ óc chó, đá tự nhiên theo bản vẽ 3D. So sánh hiện trạng thô và hoàn thiện thực tế cùng dự toán chi phí theo mét vuông.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Atelier Mộc &amp; Đá · Kiến Trúc &amp; Thi Công Nội Thất">
+  <meta property="og:description" content="Khám phá phong cách Modern Luxury, Indochine, Wabi Sabi và tính dự toán thi công theo mét vuông trực tuyến.">
+  <meta property="og:image" content="./image/hero-interior.webp">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('has-motion');</script>
   <style>
     :root {
-      --bg-travertine: #F5F1EB;
-      --bg-surface: #FFFFFF;
-      --bg-linen: #EDE6DC;
-      --walnut: #2B211A;
-      --gold-primary: #B68D4C;
-      --gold-bronze: #8A652E;
-      --gold-light: #DEC08A;
-      --champagne: #B68D4C;
-      --gold-gradient: linear-gradient(135deg, #C79F5D 0%, #9E7437 100%);
-      --text-main: #2B211A;
-      --text-body: #52443A;
-      --text-muted: #7C6E63;
-      --border: #E0D6C9;
-      --shadow-sm: 0 8px 22px rgba(43, 33, 26, 0.06);
-      --shadow-md: 0 24px 50px -14px rgba(43, 33, 26, 0.18);
-      --radius: 18px;
+      --bg-paper: #F4EFE6;
+      --bg-white: #FFFFFF;
+      --bg-linen: #ECE5D8;
+      --ink-walnut: #221B15;
+      --ink-secondary: #5A4E43;
+      --ink-muted: #847669;
+      --border-grid: #DFD6C7;
+      --border-strong: #C2B5A0;
+      --accent-brass: #9A6F3B;
+      --accent-hover: #7D582C;
+      --danger: #B91C1C;
+
+      --font-sans: 'Manrope', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --sp-0: 0px; --sp-50: 4px; --sp-75: 8px; --sp-100: 12px;
+      --sp-200: 16px; --sp-300: 24px; --sp-400: 32px; --sp-500: 40px; --sp-600: 48px;
+      --sp-700: 64px; --sp-800: 80px; --sp-900: 96px;
+
+      --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px;
+      --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      background: var(--bg-travertine);
-      color: var(--text-main);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background-color: var(--bg-paper); color: var(--ink-walnut); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--bg-paper); color: var(--ink-walnut); font-family: var(--font-sans); font-size: 16px; line-height: 24px; overflow-x: clip; }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    button, input, select { font-family: inherit; color: inherit; }
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
 
-    .container { max-width: 1220px; margin: 0 auto; padding: 0 22px; }
+    .heading-1 { font-size: 54px; line-height: 58px; font-weight: 600; letter-spacing: -0.025em; text-wrap: balance; }
+    .heading-2 { font-size: 40px; line-height: 44px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+    .heading-3 { font-size: 32px; line-height: 38px; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+    .heading-4 { font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.015em; text-wrap: balance; }
+    .heading-5 { font-size: 22px; line-height: 28px; font-weight: 600; text-wrap: balance; }
+    .heading-6 { font-size: 18px; line-height: 26px; font-weight: 600; text-wrap: balance; }
+    .title-2 { font-size: 18px; line-height: 26px; font-weight: 500; }
+    .title-4 { font-size: 14px; line-height: 20px; font-weight: 500; }
+    .body-3 { font-size: 16px; line-height: 24px; font-weight: 400; text-wrap: pretty; }
+    .body-4 { font-size: 14px; line-height: 20px; font-weight: 600; text-wrap: pretty; }
+    .body-6 { font-size: 14px; line-height: 20px; font-weight: 400; text-wrap: pretty; }
+    .button-md { font-size: 16px; line-height: 24px; font-weight: 600; }
+    .button-sm { font-size: 14px; line-height: 20px; font-weight: 600; }
+    .caption-2 { font-size: 14px; line-height: 20px; font-weight: 400; }
+    .caption-3 { font-size: 12px; line-height: 16px; font-weight: 600; }
+    .caption-5 { font-size: 12px; line-height: 16px; font-weight: 400; }
+    .mono-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
-    .top-strip {
-      background: var(--walnut);
-      color: #EFE8DE;
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-align: center;
-      padding: 8px 16px;
+    @media (max-width: 767px) {
+      .heading-1 { font-size: 36px; line-height: 40px; }
+      .heading-2 { font-size: 28px; line-height: 34px; }
+      .heading-3 { font-size: 24px; line-height: 32px; }
     }
-    .top-strip strong { color: var(--gold-light); }
 
-    .arch-header {
-      position: sticky;
-      top: 0;
-      z-index: 90;
-      background: rgba(245, 241, 235, 0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
+    .skip-link { position: fixed; top: var(--sp-200); left: var(--sp-200); z-index: 200; padding: var(--sp-75) var(--sp-100); background: var(--ink-walnut); color: var(--bg-paper); border-radius: var(--r-sm); transform: translateY(-160%); transition: transform 300ms var(--ease-out-expo); }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 2px solid var(--accent-brass); outline-offset: 2px; }
+
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--sp-300); }
+    @media (max-width: 639px) { .container { padding: 0 var(--sp-200); } }
+    .section { padding: var(--sp-800) 0; }
+    .section-white { background-color: var(--bg-white); }
+    @media (max-width: 767px) { .section { padding: var(--sp-600) 0; } }
+    .hairline { width: 100%; height: 1px; background-color: var(--border-grid); }
+    .section-head { max-width: 660px; display: flex; flex-direction: column; gap: var(--sp-100); margin-bottom: var(--sp-400); }
+    .section-head p { color: var(--ink-secondary); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-75);
+      padding: var(--sp-75) var(--sp-200); border-radius: var(--r-sm); border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+      transition: background-color 300ms var(--ease-out-expo), border-color 300ms var(--ease-out-expo), color 300ms var(--ease-out-expo), transform 300ms var(--ease-out-expo);
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background-color: var(--ink-walnut); color: var(--bg-paper); }
+    .btn-primary:hover { background-color: var(--accent-brass); color: #FFFFFF; }
+    .btn-outline { background-color: transparent; color: var(--ink-walnut); border-color: var(--border-strong); }
+    .btn-outline:hover { background-color: var(--bg-linen); }
+    .btn svg { transition: transform 300ms var(--ease-out-expo); }
+    .btn:hover svg { transform: translateX(4px); }
+
+    /* Architectural Top Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 100; background-color: rgba(244, 239, 230, 0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-grid);
     }
     .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
-      gap: 14px;
+      max-width: 1280px; margin: 0 auto; padding: var(--sp-200) var(--sp-300);
+      display: flex; align-items: center; justify-content: space-between; gap: var(--sp-300);
     }
-    .brand-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-    .logo-emblem {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: var(--walnut);
-      color: var(--gold-light);
-      border: 1px solid var(--gold-primary);
-      display: grid;
-      place-items: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-      font-size: 1.15rem;
-    }
-    .brand-text h1 {
-      font-size: 1.32rem;
-      line-height: 1.05;
-      letter-spacing: 0.04em;
-      color: var(--walnut);
-    }
-    .brand-text p {
-      font-size: 0.64rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold-bronze);
-    }
-    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
-    .nav-links a { font-size: 0.88rem; font-weight: 600; color: var(--text-body); white-space: nowrap; }
-    .nav-links a:hover { color: var(--gold-bronze); }
-    .header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .mobile-menu-btn {
-      display: none;
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg-surface);
-      font-size: 1.1rem;
-      cursor: pointer;
-    }
-    .mobile-drawer {
-      display: none;
-      flex-direction: column;
-      gap: 8px;
-      padding: 12px 18px 16px;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-    }
-    .mobile-drawer.open { display: flex; }
-    .mobile-drawer a { padding: 7px 0; font-weight: 600; border-bottom: 1px dashed var(--border); }
+    @media (max-width: 639px) { .header-inner { padding: var(--sp-200); } }
+    .brand-mark { display: inline-flex; align-items: center; gap: var(--sp-75); font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: var(--sp-300); color: var(--ink-secondary); }
+    .nav-link { padding: var(--sp-50) 0; border-bottom: 1px solid transparent; transition: color 250ms, border-color 250ms; }
+    .nav-link:hover, .nav-link.is-active { color: var(--ink-walnut); border-bottom-color: var(--accent-brass); }
+    .menu-toggle { display: none; width: 40px; height: 40px; align-items: center; justify-content: center; background-color: var(--bg-white); border: 1px solid var(--border-grid); border-radius: var(--r-sm); cursor: pointer; }
+    .menu-lines { width: 18px; height: 12px; position: relative; }
+    .menu-lines span { position: absolute; left: 0; width: 18px; height: 1.5px; background-color: var(--ink-walnut); transition: transform 400ms var(--ease-out-expo); }
+    .menu-lines span:first-child { top: 2px; }
+    .menu-lines span:last-child { top: 8px; }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:first-child { transform: translateY(3px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-lines span:last-child { transform: translateY(-3px) rotate(-45deg); }
+    @media (max-width: 899px) { .nav-links, .header-cta { display: none; } .menu-toggle { display: inline-flex; } }
 
-    .btn-arch {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 22px;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.22s ease;
-    }
-    .btn-brass {
-      background: var(--gold-gradient);
-      color: #FFFFFF;
-      box-shadow: 0 8px 20px -6px rgba(138, 101, 46, 0.45);
-    }
-    .btn-brass:hover { transform: translateY(-2px); }
-    .btn-stone { background: var(--bg-surface); color: var(--walnut); border-color: var(--border); }
-    .btn-sm { padding: 8px 14px; font-size: 0.8rem; }
+    .mobile-drawer { position: fixed; inset: 0; z-index: 95; background-color: var(--bg-paper); display: flex; flex-direction: column; justify-content: space-between; padding: var(--sp-900) var(--sp-300) var(--sp-400); opacity: 0; pointer-events: none; transition: opacity 350ms var(--ease-out-expo); }
+    .mobile-drawer.is-open { opacity: 1; pointer-events: auto; }
+    .mobile-drawer-list { display: flex; flex-direction: column; gap: var(--sp-200); }
+    .mobile-drawer-link { display: block; padding: var(--sp-100) 0; }
 
-    /* Hero */
-    .hero-section { padding: 52px 0 64px; overflow-x: clip; }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; }
-    .hero-grid > * { min-width: 0; }
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: var(--bg-linen);
-      border: 1px solid var(--border);
-      color: var(--gold-bronze);
-      font-size: 0.76rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
+    /* 50/50 Asymmetric Split Architectural Hero */
+    .split-hero {
+      padding: var(--sp-500) 0 var(--sp-700);
+      border-bottom: 1px solid var(--border-grid);
     }
-    .hero-title { font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: 1.12; margin-bottom: 16px; color: var(--walnut); }
-    .hero-title em { color: var(--gold-bronze); font-style: italic; }
-    .hero-desc { color: var(--text-body); font-size: 1rem; margin-bottom: 24px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
-    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 20px; border-top: 1px solid var(--border); }
-    .hero-stats > div { min-width: 0; }
-    .hero-stats strong { display: block; font-size: 1.45rem; color: var(--gold-bronze); }
-    .hero-stats span { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
+    .split-grid {
+      display: grid; grid-template-columns: 1fr 1.05fr; gap: var(--sp-500); align-items: stretch;
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-400);
+      padding: var(--sp-200) 0;
+    }
+    .hero-headline-group { display: flex; flex-direction: column; gap: var(--sp-200); align-items: flex-start; }
+    .hero-kicker { color: var(--accent-brass); letter-spacing: 0.04em; text-transform: uppercase; }
+    .hero-sub { color: var(--ink-secondary); max-width: 500px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--sp-100); padding-top: var(--sp-100); }
 
+    .arch-spec-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border-grid); background-color: var(--bg-white); border-radius: var(--r-md);
+      overflow: hidden;
+    }
+    .arch-spec-cell {
+      padding: var(--sp-200); display: flex; flex-direction: column; gap: var(--sp-50);
+    }
+    .arch-spec-cell + .arch-spec-cell { border-left: 1px solid var(--border-grid); }
+    .arch-spec-label { color: var(--ink-muted); }
+
+    .hero-right {
+      display: flex; flex-direction: column; gap: var(--sp-100);
+    }
     .hero-frame {
-      border-radius: 22px;
-      overflow: hidden;
-      border: 5px solid #FFFFFF;
-      box-shadow: var(--shadow-md);
-      aspect-ratio: 16 / 10;
+      position: relative; flex: 1; min-height: 460px; border-radius: var(--r-md); overflow: hidden;
+      border: 1px solid var(--border-grid); background-color: var(--bg-linen);
     }
-    .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease-out-expo); }
+    .has-motion:not(.is-ready) .hero-frame img { transform: scale(1.04); }
+    .has-motion.is-ready .hero-frame img { transform: scale(1); }
+    .hero-caption { display: flex; justify-content: space-between; align-items: center; color: var(--ink-muted); gap: var(--sp-200); }
+    @media (max-width: 959px) {
+      .split-grid { grid-template-columns: 1fr; }
+      .hero-frame { min-height: 320px; aspect-ratio: 4 / 3; }
+      .arch-spec-strip { grid-template-columns: 1fr; }
+      .arch-spec-cell + .arch-spec-cell { border-left: none; border-top: 1px solid var(--border-grid); }
+    }
 
-    .section { padding: 72px 0; overflow-x: clip; }
-    .section-linen { background: var(--bg-linen); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .section-head { text-align: center; max-width: 740px; margin: 0 auto 38px; }
-    .section-kicker {
-      display: inline-block;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold-bronze);
-      margin-bottom: 8px;
-    }
-    .section-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.6rem); line-height: 1.16; margin-bottom: 10px; }
-    .section-head p { color: var(--text-muted); font-size: 0.96rem; }
+    /* Before / After Raw to Finished Slider */
+    .compare-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: var(--sp-400); align-items: center; }
+    .ba-stage { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--border-grid); background-color: var(--bg-linen); user-select: none; }
+    .ba-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ba-after { clip-path: inset(0 0 0 50%); }
+    .ba-divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background-color: #FFFFFF; pointer-events: none; transform: translateX(-1px); }
+    .ba-handle { position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; border-radius: 9999px; background-color: #FFFFFF; color: var(--ink-walnut); border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; transform: translate(-50%, -50%); pointer-events: none; }
+    .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 5; }
+    .ba-label { position: absolute; bottom: var(--sp-200); padding: var(--sp-50) var(--sp-100); border-radius: var(--r-sm); background-color: rgba(34, 27, 21, 0.8); color: #FFFFFF; pointer-events: none; z-index: 3; }
+    .ba-label-left { left: var(--sp-200); }
+    .ba-label-right { right: var(--sp-200); }
+    .compare-notes { display: flex; flex-direction: column; gap: var(--sp-200); }
+    .compare-notes p { color: var(--ink-secondary); }
+    @media (max-width: 899px) { .compare-grid { grid-template-columns: 1fr; } }
 
-    /* Raw -> Finished Slider */
-    .transform-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; }
-    .transform-grid > * { min-width: 0; }
-    .ba-stage {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 4px solid #FFFFFF;
-      box-shadow: var(--shadow-md);
-      --pos: 50%;
+    /* Style Gallery Switcher */
+    .style-shell { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: var(--sp-400); align-items: stretch; }
+    .style-tabs { display: flex; flex-direction: column; gap: var(--sp-100); }
+    .style-tab {
+      text-align: left; padding: var(--sp-200) var(--sp-300); border-radius: var(--r-md); border: 1px solid var(--border-grid);
+      background-color: var(--bg-white); cursor: pointer; display: flex; flex-direction: column; gap: var(--sp-50);
+      transition: border-color 300ms var(--ease-out-expo), background-color 300ms var(--ease-out-expo);
     }
-    .ba-stage img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .ba-raw { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
-    .ba-line {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: var(--pos);
-      width: 2px;
-      background: #FFFFFF;
-      pointer-events: none;
-    }
-    .ba-knob {
-      position: absolute;
-      top: 50%;
-      left: var(--pos);
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--walnut);
-      color: var(--gold-light);
-      border: 2px solid #FFFFFF;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      pointer-events: none;
-    }
-    .ba-tag {
-      position: absolute;
-      top: 14px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      background: rgba(43, 33, 26, 0.82);
-      color: #FFFFFF;
-    }
-    .ba-tag.left { left: 14px; }
-    .ba-tag.right { right: 14px; background: var(--gold-primary); color: #fff; }
-    .ba-range-bar { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
-    .ba-range-bar input { flex: 1; accent-color: var(--gold-primary); cursor: pointer; }
-
-    /* Style Projects */
-    .filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 28px; }
-    .filter-pill {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      color: var(--text-body);
-      padding: 9px 16px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-    }
-    .filter-pill.active { background: var(--walnut); color: var(--gold-light); border-color: transparent; }
-
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
-    .proj-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-    .proj-img { aspect-ratio: 4 / 3; overflow: hidden; position: relative; }
-    .proj-img img { width: 100%; height: 100%; object-fit: cover; }
-    .proj-tag {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(43, 33, 26, 0.86);
-      color: var(--gold-light);
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 4px 11px;
-      border-radius: 999px;
-    }
-    .proj-body { padding: 18px 20px; display: flex; flex-direction: column; flex: 1; }
-    .proj-body h3 { font-size: 1.38rem; margin-bottom: 6px; }
-    .proj-body p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; }
+    .style-tab:hover { border-color: var(--border-strong); }
+    .style-tab.is-active { background-color: var(--ink-walnut); color: var(--bg-paper); border-color: var(--ink-walnut); }
+    .style-tab.is-active span { color: rgba(244, 239, 230, 0.78); }
+    .style-preview { background-color: var(--bg-white); border: 1px solid var(--border-grid); border-radius: var(--r-md); padding: var(--sp-100); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .style-media { border-radius: var(--r-sm); overflow: hidden; background-color: var(--bg-linen); }
+    .style-media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+    .style-meta { padding: var(--sp-100); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-200); }
+    .swatch-row { display: flex; align-items: center; gap: var(--sp-100); }
+    .swatch-dot { width: 24px; height: 24px; border-radius: var(--r-sm); border: 1px solid var(--border-strong); }
+    @media (max-width: 899px) { .style-shell { grid-template-columns: 1fr; } }
 
     /* m2 Cost Estimator */
-    .est-card {
-      background: var(--walnut);
-      color: #FFFFFF;
-      border-radius: 22px;
-      padding: 36px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
-      align-items: center;
-      box-shadow: var(--shadow-md);
-    }
-    .est-card > * { min-width: 0; }
-    .est-row { margin-bottom: 18px; }
-    .est-label { display: flex; justify-content: space-between; font-size: 0.86rem; color: #DFD5C9; margin-bottom: 8px; }
-    .est-label strong { color: var(--gold-light); }
-    .seg-row { display: flex; gap: 8px; flex-wrap: wrap; }
-    .seg-btn {
-      flex: 1;
-      min-width: 82px;
-      padding: 9px 10px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: #FFFFFF;
-      font-size: 0.82rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-    }
-    .seg-btn.active { background: var(--gold-gradient); color: #FFFFFF; border-color: transparent; }
-    .est-result-panel {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(222, 192, 138, 0.35);
-      border-radius: 16px;
-      padding: 26px;
-      text-align: center;
-    }
-    .est-price-big {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.6rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      margin: 6px 0 14px;
-    }
-    .est-meta {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-      padding-top: 14px;
-      margin-bottom: 18px;
-      font-size: 0.84rem;
-    }
+    .calc-panel { background-color: var(--bg-white); border: 1px solid var(--border-grid); border-radius: var(--r-md); padding: var(--sp-200); display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--sp-200); }
+    .calc-controls { padding: var(--sp-300); display: flex; flex-direction: column; gap: var(--sp-300); }
+    .calc-field { display: flex; flex-direction: column; gap: var(--sp-75); }
+    .calc-label-row { display: flex; justify-content: space-between; align-items: baseline; }
+    .range-input { width: 100%; accent-color: var(--accent-brass); cursor: pointer; }
+    .pill-group { display: flex; flex-wrap: wrap; gap: var(--sp-75); }
+    .tier-btn { padding: var(--sp-75) var(--sp-100); border-radius: var(--r-sm); border: 1px solid var(--border-grid); background-color: var(--bg-paper); cursor: pointer; transition: background-color 250ms, color 250ms; }
+    .tier-btn.is-active { background-color: var(--ink-walnut); color: var(--bg-paper); border-color: var(--ink-walnut); }
+    .calc-result { background-color: var(--ink-walnut); color: var(--bg-paper); border-radius: var(--r-sm); padding: var(--sp-400); display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-300); }
+    .calc-muted { color: #C2B5A0; }
+    .calc-rows { display: flex; flex-direction: column; gap: var(--sp-100); }
+    .calc-row { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-200); }
+    .calc-line { width: 100%; height: 1px; background-color: #3B3026; }
+    @media (max-width: 899px) { .calc-panel { grid-template-columns: 1fr; } }
 
-    /* Booking */
-    .booking-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 32px; align-items: start; }
-    .booking-grid > * { min-width: 0; }
-    .booking-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
-    }
-    .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .f-group { margin-bottom: 14px; min-width: 0; }
-    .f-group label { display: block; font-size: 0.84rem; font-weight: 700; margin-bottom: 5px; }
-    .f-input {
-      width: 100%;
-      background: var(--bg-travertine);
-      border: 1.5px solid var(--border);
-      padding: 11px 13px;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 0.9rem;
-    }
-    .f-input:focus { outline: none; border-color: var(--gold-primary); background: #FFFFFF; }
-    .arch-ticket {
-      display: none;
-      background: var(--bg-linen);
-      border: 1.5px dashed var(--gold-primary);
-      border-radius: 16px;
-      padding: 22px;
-    }
-    .arch-ticket.visible { display: block; }
+    /* FAQ & Form */
+    .faq-list { display: flex; flex-direction: column; gap: var(--sp-100); max-width: 880px; }
+    .faq-item { border: 1px solid var(--border-grid); border-radius: var(--r-md); background-color: var(--bg-white); overflow: hidden; }
+    .faq-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-200); padding: var(--sp-300); background: transparent; border: none; text-align: left; cursor: pointer; }
+    .faq-icon { flex-shrink: 0; color: var(--ink-secondary); transition: transform 350ms var(--ease-out-expo); }
+    .faq-item.is-open .faq-icon { transform: rotate(45deg); }
+    .faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 350ms var(--ease-out-expo); }
+    .faq-item.is-open .faq-panel { grid-template-rows: 1fr; }
+    .faq-panel-inner { overflow: hidden; }
+    .faq-answer { padding: 0 var(--sp-300) var(--sp-300); color: var(--ink-secondary); max-width: 680px; }
 
-    .arch-footer {
-      background: #1E1611;
-      color: #C7BBAE;
-      padding: 40px 0 24px;
-      font-size: 0.86rem;
-      text-align: center;
-    }
+    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-500); align-items: start; }
+    .cta-copy { max-width: 520px; display: flex; flex-direction: column; gap: var(--sp-200); }
+    .cta-copy p { color: var(--ink-secondary); }
+    .form-card { background-color: var(--bg-white); border: 1px solid var(--border-grid); border-radius: var(--r-md); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .form-group { display: flex; flex-direction: column; gap: var(--sp-75); }
+    .form-control { width: 100%; padding: var(--sp-100) var(--sp-200); border: 1px solid var(--border-grid); border-radius: var(--r-sm); background-color: var(--bg-white); font-size: 16px; line-height: 24px; }
+    .form-control.is-invalid { border-color: var(--danger); }
+    .field-error { color: var(--danger); min-height: 16px; }
+    .form-status { padding: var(--sp-200); border-radius: var(--r-sm); border: 1px solid var(--border-grid); background-color: var(--bg-paper); display: none; flex-direction: column; gap: var(--sp-75); }
+    .form-status.is-visible { display: flex; }
+    @media (max-width: 899px) { .cta-grid { grid-template-columns: 1fr; } .form-card { padding: var(--sp-300); } }
 
-    @media (max-width: 900px) {
-      .nav-links, .header-phone-desk { display: none; }
-      .mobile-menu-btn { display: grid; place-items: center; }
-      .hero-grid, .transform-grid, .est-card, .booking-grid { grid-template-columns: minmax(0, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .container { padding: 0 14px; }
-      .header-inner { gap: 8px; }
-      .brand-logo { flex-shrink: 1; min-width: 0; flex: 1; gap: 8px; }
-      .logo-emblem { width: 32px; height: 32px; font-size: 0.88rem; flex-shrink: 0; }
-      .brand-text { min-width: 0; overflow: hidden; }
-      .brand-text h1 { font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .brand-text p { display: none; }
-      .header-actions { gap: 6px; flex-shrink: 0; }
-      .header-actions .btn-sm { padding: 7px 9px; font-size: 0.72rem; white-space: nowrap; }
-      .mobile-menu-btn { width: 36px; height: 36px; flex-shrink: 0; }
-      .section { padding: 48px 0; }
-      .est-card, .booking-box { padding: 22px 16px; }
-      .form-2col, .projects-grid { grid-template-columns: minmax(0, 1fr); }
+    .site-footer { padding: var(--sp-600) 0; background-color: var(--bg-paper); }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-300); padding-top: var(--sp-400); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-300); color: var(--ink-secondary); }
+    .footer-link-btn { background: none; border: none; padding: var(--sp-50) 0; cursor: pointer; color: var(--ink-secondary); }
+    .footer-link-btn:hover { color: var(--ink-walnut); }
+
+    .modal-backdrop { position: fixed; inset: 0; z-index: 150; background-color: rgba(34, 27, 21, 0.56); display: none; align-items: center; justify-content: center; padding: var(--sp-200); }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-box { width: 100%; max-width: 560px; background-color: var(--bg-white); border: 1px solid var(--border-grid); border-radius: var(--r-md); padding: var(--sp-400); display: flex; flex-direction: column; gap: var(--sp-200); }
+    .modal-head { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-200); }
+
+    .reveal-section { opacity: 0; transform: translateY(var(--sp-300)); transition: opacity 650ms var(--ease-out-expo), transform 650ms var(--ease-out-expo); }
+    .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal-section, .has-motion .hero-frame img { opacity: 1; transform: none; transition: none; }
+      .btn, .btn svg, .faq-panel, .faq-icon { transition: none; }
+      .btn:hover svg { transform: none; }
     }
   </style>
 </head>
 <body>
-  <div class="top-strip">
-    ✦ Tặng ngay <strong>Bản Vẽ Phối Cảnh 3D trị giá 15 Triệu</strong> khi ký hợp đồng thi công nội thất trọn gói ✦
-  </div>
+  <a href="#main-content" class="skip-link button-sm">Chuyển đến nội dung chính</a>
 
-  <header class="arch-header">
-    <div class="container header-inner">
-      <a href="#top" class="brand-logo">
-        <div class="logo-emblem">MĐ</div>
-        <div class="brand-text">
-          <h1>ATELIER MỘC &amp; ĐÁ</h1>
-          <p>Architecture &amp; Bespoke Interior</p>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="brand-mark title-4">
+        <svg width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M40 216V40H136V216"/>
+          <path d="M136 104H216V216"/>
+          <path d="M24 216H232"/>
+        </svg>
+        <span>Atelier Mộc &amp; Đá</span>
       </a>
-
-      <ul class="nav-links">
-        <li><a href="#transform">Thô → Hoàn Thiện</a></li>
-        <li><a href="#projects">Phong Cách</a></li>
-        <li><a href="#interiorCalc">Dự Toán m²</a></li>
-        <li><a href="#booking">Khảo Sát 3D</a></li>
-      </ul>
-
-      <div class="header-actions">
-        <a href="tel:0387637982" class="btn-arch btn-stone btn-sm header-phone-desk">📞 0387.637.982</a>
-        <a href="#booking" class="btn-arch btn-brass btn-sm">📐 Khảo Sát 3D</a>
-        <button type="button" class="mobile-menu-btn" onclick="toggleArchMenu()" aria-label="Mở menu">☰</button>
-      </div>
-    </div>
-
-    <div class="mobile-drawer" id="archDrawer">
-      <a href="#transform" onclick="toggleArchMenu()">✨ Hiện Trạng Thô → Hoàn Thiện</a>
-      <a href="#projects" onclick="toggleArchMenu()">🛋️ Bộ Sưu Tập Phong Cách</a>
-      <a href="#interiorCalc" onclick="toggleArchMenu()">📐 Dự Toán Chi Phí Theo m²</a>
-      <a href="#booking" onclick="toggleArchMenu()">📋 Đăng Ký Khảo Sát Miễn Phí</a>
+      <nav class="nav-links title-4" aria-label="Điều hướng chính">
+        <a href="#hien-trang" class="nav-link">Thô sang hoàn thiện</a>
+        <a href="#phong-cach" class="nav-link">Phong cách</a>
+        <a href="#du-toan" class="nav-link">Dự toán m²</a>
+        <a href="#hoi-dap" class="nav-link">Hỏi đáp</a>
+      </nav>
+      <a href="#khao-sat" class="btn btn-primary button-sm header-cta">Đặt đo Laser 3D</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Mở menu">
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero-section">
-      <div class="container hero-grid">
-        <div>
-          <div class="hero-pill"><span>🏛️</span> Xưởng Sản Xuất Trực Tiếp 2.000m²</div>
-          <h1 class="hero-title">May Đo <em>Không Gian Sống</em> Tinh Tế &amp; Chuẩn Bản Vẽ 99%</h1>
-          <p class="hero-desc">Từ căn hộ thô đến tổ ấm hoàn thiện chìa khóa trao tay trong 45 ngày — cam kết không phát sinh chi phí ngoài dự toán và bảo hành kết cấu 5 năm.</p>
-          <div class="hero-actions">
-            <a href="#interiorCalc" class="btn-arch btn-brass">📐 Dự Toán Chi Phí Theo m²</a>
-            <a href="#transform" class="btn-arch btn-stone">✨ Xem Thực Tế Thô → Hoàn Thiện</a>
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-list">
+      <a href="#hien-trang" class="mobile-drawer-link heading-4">So sánh hiện trạng</a>
+      <div class="hairline"></div>
+      <a href="#phong-cach" class="mobile-drawer-link heading-4">Thư viện phong cách</a>
+      <div class="hairline"></div>
+      <a href="#du-toan" class="mobile-drawer-link heading-4">Bảng dự toán chi phí</a>
+      <div class="hairline"></div>
+      <a href="#hoi-dap" class="mobile-drawer-link heading-4">Câu hỏi thường gặp</a>
+      <div class="hairline"></div>
+      <a href="#khao-sat" class="btn btn-primary button-md" style="margin-top: var(--sp-200);">Đặt khảo sát đo đạc 3D</a>
+    </div>
+    <div class="caption-2" style="color: var(--ink-muted);">Atelier Mộc &amp; Đá · Xưởng sản xuất gỗ tự nhiên trực tiếp</div>
+  </div>
+
+  <main id="main-content">
+    <section class="split-hero" id="top">
+      <div class="container">
+        <div class="split-grid">
+          <div class="hero-left">
+            <div class="hero-headline-group">
+              <span class="caption-3 hero-kicker">Kiến trúc nội thất bespoke</span>
+              <h1 class="heading-1">Thi công chuẩn bản vẽ 3D<br>bằng gỗ óc chó thật</h1>
+              <p class="body-3 hero-sub">Trực tiếp đo đạc Laser từng milimet, sản xuất tại xưởng riêng không qua trung gian và cam kết giống phối cảnh 98% khi bàn giao.</p>
+              <div class="hero-actions">
+                <a href="#du-toan" class="btn btn-primary button-md">
+                  <span>Tính dự toán theo m²</span>
+                  <svg width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 128H216"/><path d="M144 56L216 128L144 200"/></svg>
+                </a>
+                <a href="#hien-trang" class="btn btn-outline button-md">Xem thực tế bàn giao</a>
+              </div>
+            </div>
+
+            <div class="arch-spec-strip">
+              <div class="arch-spec-cell">
+                <span class="caption-5 arch-spec-label">Xưởng sản xuất</span>
+                <strong class="title-4 mono-num">1.800 m²</strong>
+              </div>
+              <div class="arch-spec-cell">
+                <span class="caption-5 arch-spec-label">Bảo hành kết cấu</span>
+                <strong class="title-4 mono-num">60 tháng</strong>
+              </div>
+              <div class="arch-spec-cell">
+                <span class="caption-5 arch-spec-label">Hoàn thiện căn hộ</span>
+                <strong class="title-4 mono-num">42 ngày</strong>
+              </div>
+            </div>
           </div>
-          <div class="hero-stats">
-            <div><strong>45 Ngày</strong><span>Bàn giao hoàn thiện</span></div>
-            <div><strong>350+</strong><span>Công trình đã bàn giao</span></div>
-            <div><strong>0%</strong><span>Phí trung gian xưởng</span></div>
+
+          <div class="hero-right">
+            <div class="hero-frame">
+              <img src="./image/hero-interior.webp" alt="Phòng khách nội thất gỗ óc chó và đá Travertine do Atelier Mộc và Đá hoàn thiện">
+            </div>
+            <div class="hero-caption caption-5">
+              <span>Công trình: Căn hộ Duplex Thủ Thiêm · 186 m²</span>
+              <span class="mono-num">Gỗ óc chó Bắc Mỹ · Đá Travertine Ý</span>
+            </div>
           </div>
-        </div>
-        <div class="hero-frame">
-          <img src="image/hero-interior.webp" alt="Phòng khách thiết kế nội thất Modern Luxury tại Atelier Mộc & Đá">
         </div>
       </div>
     </section>
 
-    <!-- RAW TO FINISHED SLIDER -->
-    <section class="section section-linen" id="transform">
+    <section class="section section-white reveal-section" id="hien-trang">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Kiểm Chứng Thực Tế Thi Công</span>
-          <h2>Từ Bàn Giao Thô Đến Tổ Ấm Hoàn Hảo</h2>
-          <p>Kéo thanh trượt để đối chiếu hiện trạng tường thô ban đầu và không gian nội thất sau 45 ngày thi công.</p>
+          <h2 class="heading-3">So sánh hiện trạng bàn giao thô và hoàn thiện 100%</h2>
+          <p class="body-3">Kéo thanh trượt để quan sát toàn bộ quá trình xử lý trần thạch cao, đường điện âm và hệ tủ gỗ liền tường tại công trình thực tế.</p>
         </div>
-
-        <div class="transform-grid">
-          <div>
-            <div class="ba-stage" id="transformCompare">
-              <img loading="lazy" src="image/room-finished.webp" alt="Căn hộ sau khi hoàn thiện nội thất">
-              <img loading="lazy" src="image/room-raw.webp" alt="Hiện trạng bàn giao thô ban đầu" class="ba-raw">
-              <div class="ba-line"></div>
-              <div class="ba-knob">↔</div>
-              <span class="ba-tag left">HIỆN TRẠNG THÔ</span>
-              <span class="ba-tag right">HOÀN THIỆN 100%</span>
+        <div class="compare-grid">
+          <div class="ba-stage">
+            <img src="./image/room-raw.webp" alt="Hiện trạng căn hộ bàn giao thô trước khi thi công" class="ba-img">
+            <img src="./image/room-finished.webp" alt="Không gian phòng khách hoàn thiện nội thất gỗ óc chó" class="ba-img ba-after" id="baAfterImg">
+            <div class="ba-divider" id="baDivider"></div>
+            <div class="ba-handle" id="baHandle" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><path d="M96 64L32 128L96 192"/><path d="M160 64L224 128L160 192"/></svg>
             </div>
-            <div class="ba-range-bar">
-              <span style="font-size:0.8rem;font-weight:700;">Thô 100%</span>
-              <input type="range" min="5" max="95" value="50" oninput="document.getElementById('transformCompare').style.setProperty('--pos', this.value + '%')" aria-label="Kéo xem quá trình hoàn thiện">
-              <span style="font-size:0.8rem;font-weight:700;color:var(--gold-bronze);">Bàn giao</span>
-            </div>
+            <span class="caption-3 ba-label ba-label-left">Hiện trạng thô</span>
+            <span class="caption-3 ba-label ba-label-right">Hoàn thiện sau 42 ngày</span>
+            <input type="range" id="baRange" class="ba-range" min="10" max="90" value="50" aria-label="Kéo để so sánh hiện trạng thô và hoàn thiện">
           </div>
 
-          <div style="display:grid;gap:14px;">
-            <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:18px;">
-              <strong style="display:block;font-size:1rem;margin-bottom:4px;">🪵 Gỗ An Cường &amp; Óc Chó Bắc Mỹ</strong>
-              <span style="font-size:0.86rem;color:var(--text-muted);">Cam kết đúng chủng loại vật liệu theo mẫu ký duyệt, có chứng thư xuất xưởng rõ ràng.</span>
-            </div>
-            <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:18px;">
-              <strong style="display:block;font-size:1rem;margin-bottom:4px;">⏱️ Phạt Tiến Độ 1%/Ngày Nếu Trễ Hẹn</strong>
-              <span style="font-size:0.86rem;color:var(--text-muted);">Hợp đồng quy định rõ từng mốc nghiệm thu thô, điện nước, sơn bả và lắp đặt đồ rời.</span>
-            </div>
-            <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:18px;">
-              <strong style="display:block;font-size:1rem;margin-bottom:4px;">🛡️ Bảo Hành 5 Năm • Bảo Trì Trọn Đời</strong>
-              <span style="font-size:0.86rem;color:var(--text-muted);">Đội kỹ thuật xử lý sự cố bản lề, đèn LED, đường nước trong vòng 24 giờ.</span>
-            </div>
+          <div class="compare-notes">
+            <span class="caption-3" style="color: var(--accent-brass);">Nhật ký thi công · Quận 2</span>
+            <h3 class="heading-5">Kiểm soát khe hở tủ âm tường dưới 2 milimet</h3>
+            <p class="body-6">Kỹ sư công trường dùng máy quét Laser ghi nhận độ nghiêng tường bê tông trước khi ra bản vẽ sản xuất CNC, giúp hệ tủ khớp khít không cần nẹp che thô.</p>
+            <div><a href="#khao-sat" class="btn btn-outline button-sm">Đặt lịch đo hiện trạng căn hộ của bạn</a></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- STYLE GALLERY -->
-    <section class="section" id="projects">
+    <section class="section reveal-section" id="phong-cach">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Tuyển Tập Công Trình 2026</span>
-          <h2>Lựa Chọn Phong Cách Nội Thất Yêu Thích</h2>
-          <p>Mỗi công trình được cá nhân hóa theo thói quen sinh hoạt, ánh sáng tự nhiên và ngân sách của gia chủ.</p>
+          <h2 class="heading-3">Ba ngôn ngữ vật liệu chủ đạo tại xưởng</h2>
+          <p class="body-3">Chọn phong cách để xem phối hợp thực tế giữa gỗ tự nhiên, đá vân mây và tông ánh sáng.</p>
         </div>
 
-        <div class="filter-pills">
-          <button type="button" class="filter-pill active" onclick="filterInterior('all', this)">Tất Cả</button>
-          <button type="button" class="filter-pill" onclick="filterInterior('luxury', this)">Modern Luxury</button>
-          <button type="button" class="filter-pill" onclick="filterInterior('indochine', this)">Indochine</button>
-          <button type="button" class="filter-pill" onclick="filterInterior('wabisabi', this)">Wabi-Sabi</button>
-        </div>
-
-        <div class="projects-grid" id="interiorProjectsGrid"></div>
-      </div>
-    </section>
-
-    <!-- M2 COST ESTIMATOR -->
-    <section class="section" id="interiorCalc" style="padding-top: 10px;">
-      <div class="container">
-        <div class="est-card">
-          <div>
-            <span class="section-kicker" style="color:var(--gold-light);">Công Cụ Dự Toán Thông Minh</span>
-            <h2 style="font-size:clamp(1.85rem,3vw,2.45rem);margin-bottom:18px;color:#fff;">Dự Toán Chi Phí Thiết Kế &amp; Thi Công Theo m²</h2>
-
-            <div class="est-row">
-              <div class="est-label"><span>Loại hình công trình:</span><strong id="lblHouseType">Chung cư</strong></div>
-              <div class="seg-row" id="houseTypeBtns">
-                <button type="button" class="seg-btn active" onclick="setHouseType('chungcu', 'Chung cư', 1.0, this)">Chung cư</button>
-                <button type="button" class="seg-btn" onclick="setHouseType('nhapho', 'Nhà phố', 1.12, this)">Nhà phố</button>
-                <button type="button" class="seg-btn" onclick="setHouseType('bietthu', 'Biệt thự', 1.28, this)">Biệt thự</button>
-              </div>
-            </div>
-
-            <div class="est-row">
-              <div class="est-label"><span>Diện tích sàn cần làm:</span><strong id="lblArea">85 m²</strong></div>
-              <input type="range" id="areaRange" style="width:100%;accent-color:var(--gold-light);cursor:pointer;" min="35" max="350" step="5" value="85" oninput="calcInteriorCost()">
-            </div>
-
-            <div class="est-row">
-              <div class="est-label"><span>Phong cách thiết kế:</span><strong id="lblStyle">Modern Luxury</strong></div>
-              <div class="seg-row" id="styleBtns">
-                <button type="button" class="seg-btn" onclick="setArchStyle('Tối giản', 4.2, this)">Tối giản</button>
-                <button type="button" class="seg-btn" onclick="setArchStyle('Indochine', 5.2, this)">Indochine</button>
-                <button type="button" class="seg-btn active" onclick="setArchStyle('Modern Luxury', 5.8, this)">Modern Luxury</button>
-              </div>
-            </div>
-
-            <div class="est-row" style="margin-bottom:0;">
-              <div class="est-label"><span>Phạm vi gói triển khai:</span><strong id="lblPackage">Trọn gói chìa khóa trao tay</strong></div>
-              <div class="seg-row" id="pkgBtns">
-                <button type="button" class="seg-btn" onclick="setArchPkg('design', 'Chỉ thiết kế 3D', this)">Thiết kế 3D</button>
-                <button type="button" class="seg-btn" onclick="setArchPkg('build', 'Thi công hoàn thiện', this)">Thi công</button>
-                <button type="button" class="seg-btn active" onclick="setArchPkg('turnkey', 'Trọn gói chìa khóa trao tay', this)">Trọn gói</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="est-result-panel">
-            <div style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#DFD5C9;">Tổng dự toán tham khảo</div>
-            <div class="est-price-big" id="resTotalEst">493.000.000đ</div>
-            <div class="est-meta">
-              <div><span style="color:#C7BBAE;display:block;">Phí thiết kế 3D</span><strong id="resDesignFee" style="color:#6EE7B7;">Miễn phí 100%</strong></div>
-              <div><span style="color:#C7BBAE;display:block;">Thời gian dự kiến</span><strong id="resDuration" style="color:#fff;">40 – 45 ngày</strong></div>
-            </div>
-            <button type="button" class="btn-arch btn-brass" style="width:100%;" onclick="applyInteriorEst()">
-              📐 Nhận Báo Giá Chi Tiết Theo Diện Tích Này
+        <div class="style-shell">
+          <div class="style-tabs" role="tablist" aria-label="Chọn phong cách nội thất">
+            <button type="button" class="style-tab is-active" role="tab" aria-selected="true" data-style="modern">
+              <strong class="heading-6">Modern Luxury</strong>
+              <span class="body-6" style="color: var(--ink-secondary);">Gỗ óc chó sẫm kết hợp đá Travertine và nẹp đồng xước mờ.</span>
+            </button>
+            <button type="button" class="style-tab" role="tab" aria-selected="false" data-style="indochine">
+              <strong class="heading-6">Indochine Đương Đại</strong>
+              <span class="body-6" style="color: var(--ink-secondary);">Mây đan mắt cáo, gỗ gõ đỏ và gạch bông thủ công thanh lịch.</span>
+            </button>
+            <button type="button" class="style-tab" role="tab" aria-selected="false" data-style="wabisabi">
+              <strong class="heading-6">Wabi Sabi Mộc Mạc</strong>
+              <span class="body-6" style="color: var(--ink-secondary);">Sơn hiệu ứng vôi vữa, gỗ sồi tẩy trắng và vải linen thô.</span>
             </button>
           </div>
+
+          <div class="style-preview">
+            <div class="style-media"><img src="./image/hero-interior.webp" alt="Phòng khách Modern Luxury gỗ óc chó" id="styleImg"></div>
+            <div class="style-meta">
+              <div>
+                <h3 class="heading-6" id="styleTitle">Modern Luxury · Óc chó &amp; Travertine</h3>
+                <span class="caption-2" id="styleMaterial" style="color: var(--ink-secondary);">Đơn giá thi công tham khảo: 6,2 triệu / m² sàn</span>
+              </div>
+              <div class="swatch-row" id="swatchRow" aria-label="Bảng màu vật liệu">
+                <span class="swatch-dot" style="background: #221B15;" title="Óc chó"></span>
+                <span class="swatch-dot" style="background: #DCD3C4;" title="Đá Travertine"></span>
+                <span class="swatch-dot" style="background: #9A6F3B;" title="Đồng xước"></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- BOOKING -->
-    <section class="section section-linen" id="booking">
+    <section class="section section-white reveal-section" id="du-toan">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Khảo Sát Hiện Trạng Miễn Phí</span>
-          <h2>Đăng Ký Lên Concept 3D &amp; Báo Giá Xưởng</h2>
-          <p>Kiến trúc sư trưởng đến đo đạc trực tiếp bằng máy Laser 3D và tư vấn giải pháp công năng miễn phí.</p>
+          <h2 class="heading-3">Dự toán thiết kế 3D và thi công trọn gói theo mét vuông</h2>
+          <p class="body-3">Ước tính nhanh ngân sách dự kiến theo loại hình nhà, diện tích sử dụng và phân khúc vật liệu.</p>
         </div>
 
-        <div class="booking-grid">
-          <div class="booking-box" style="background:var(--walnut);color:#fff;border-color:transparent;">
-            <h3 style="font-size:1.85rem;color:#fff;margin-bottom:12px;">Quy Trình 3 Bước Minh Bạch</h3>
-            <ul style="list-style:none;display:grid;gap:12px;font-size:0.88rem;color:#EFE8DE;margin-bottom:18px;">
-              <li><strong>01. Đo đạc Laser &amp; Lắng nghe:</strong> Lên layout bố trí mặt bằng công năng miễn phí trong 48 giờ.</li>
-              <li><strong>02. Phối cảnh 3D &amp; Chọn mẫu gỗ:</strong> Duyệt vật liệu thật tại Showroom hoặc tận nhà.</li>
-              <li><strong>03. Sản xuất &amp; Lắp đặt trọn gói:</strong> Thi công sạch sẽ, bàn giao đúng tiến độ cam kết.</li>
-            </ul>
-            <div style="background:rgba(255,255,255,0.08);padding:12px 14px;border-radius:12px;font-size:0.84rem;">
-              📍 Studio: Khu Biệt Thự An Phú, Thủ Đức &amp; Thảo Điền / Hà Nội<br>
-              📞 Hotline KTS: 0387.637.982
+        <div class="calc-panel">
+          <div class="calc-controls">
+            <div class="calc-field">
+              <span class="title-4">Loại hình công trình</span>
+              <div class="pill-group" id="propTypeGroup">
+                <button type="button" class="tier-btn button-sm is-active" data-mult="1">Căn hộ chung cư</button>
+                <button type="button" class="tier-btn button-sm" data-mult="1.12">Nhà phố</button>
+                <button type="button" class="tier-btn button-sm" data-mult="1.25">Biệt thự</button>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label-row"><label for="areaRange" class="title-4">Diện tích thi công</label><span class="body-4 mono-num" id="areaOut">95 m²</span></div>
+              <input type="range" id="areaRange" class="range-input" min="45" max="300" step="5" value="95">
+            </div>
+
+            <div class="calc-field">
+              <span class="title-4">Gói vật liệu và hoàn thiện</span>
+              <div class="pill-group" id="finishTierGroup">
+                <button type="button" class="tier-btn button-sm" data-rate="4200000">Cơ bản</button>
+                <button type="button" class="tier-btn button-sm is-active" data-rate="5800000">Cao cấp</button>
+                <button type="button" class="tier-btn button-sm" data-rate="7900000">Bespoke gỗ tự nhiên</button>
+              </div>
             </div>
           </div>
 
-          <div class="booking-box">
-            <form id="interiorBookingForm" onsubmit="submitInteriorForm(event)">
-              <div class="form-2col">
-                <div class="f-group">
-                  <label for="inName">Họ và Tên Gia Chủ *</label>
-                  <input type="text" id="inName" class="f-input" placeholder="Ví dụ: Anh Hoàng Nam" required>
-                </div>
-                <div class="f-group">
-                  <label for="inPhone">Số Điện Thoại / Zalo *</label>
-                  <input type="tel" id="inPhone" class="f-input" placeholder="0912.345.678" required>
-                </div>
-              </div>
-              <div class="f-group">
-                <label for="inProject">Dự Án / Loại Hình &amp; Phong Cách</label>
-                <select id="inProject" class="f-input">
-                  <option>Chung cư — Modern Luxury</option>
-                  <option>Chung cư — Indochine / Wabi-Sabi</option>
-                  <option>Nhà phố / Shophouse Trọn Gói</option>
-                  <option>Biệt thự Cao Cấp Chìa Khóa Trao Tay</option>
-                </select>
-              </div>
-              <div class="f-group">
-                <label for="inNote">Diện Tích &amp; Yêu Cầu Cụ Thể</label>
-                <textarea id="inNote" rows="2" class="f-input" placeholder="Ví dụ: Căn hộ 85m2 2PN bàn giao thô, cần nhận báo giá trọn gói..."></textarea>
-              </div>
-              <button type="submit" class="btn-arch btn-brass" style="width:100%;padding:14px;">
-                🚀 Gửi Yêu Cầu Khảo Sát &amp; Báo Giá
-              </button>
-            </form>
-
-            <div id="archTicket" class="arch-ticket">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                <strong>✓ MÃ HỒ SƠ KIẾN TRÚC</strong>
-                <span id="archCode" style="background:var(--walnut);color:var(--gold-light);font-size:0.78rem;font-weight:800;padding:4px 10px;border-radius:999px;">#AMD-5521</span>
-              </div>
-              <div id="archTicketBody" style="font-size:0.88rem;display:grid;gap:6px;margin-bottom:14px;"></div>
-              <button type="button" class="btn-arch btn-stone btn-sm" style="width:100%;" onclick="resetInteriorForm()">Tạo Yêu Cầu Khảo Sát Khác</button>
+          <div class="calc-result">
+            <div>
+              <span class="caption-2 calc-muted">Tổng ngân sách trọn gói ước tính</span>
+              <div class="heading-2 mono-num" id="totalCostOut" style="margin-top: var(--sp-100);">551.000.000đ</div>
             </div>
+            <div class="calc-rows">
+              <div class="calc-row"><span class="body-6 calc-muted">Chi phí thiết kế 3D &amp; bản vẽ kỹ thuật</span><span class="body-4 mono-num" id="designCostOut">23.750.000đ</span></div>
+              <div class="calc-line"></div>
+              <div class="calc-row"><span class="body-6 calc-muted">Phần cải tạo thô, trần đèn &amp; điện nước</span><span class="body-4 mono-num" id="fitoutCostOut">165.300.000đ</span></div>
+              <div class="calc-line"></div>
+              <div class="calc-row"><span class="body-6 calc-muted">Đồ gỗ nội thất sản xuất tại xưởng</span><span class="body-4 mono-num" id="furnitureCostOut">361.950.000đ</span></div>
+            </div>
+            <a href="#khao-sat" class="btn btn-primary button-md" style="background-color: #FFFFFF; color: #221B15; width: 100%;">Nhận bảng bóc tách vật liệu chi tiết</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal-section" id="hoi-dap">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-3">Câu hỏi thường gặp</h2>
+          <p class="body-3">Minh bạch về nguồn gỗ, tiến độ xưởng và chế độ bảo hành sau bàn giao.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-trigger" aria-expanded="true"><span class="title-2">1. Nếu ký hợp đồng thi công trọn gói có được miễn phí thiết kế 3D không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Khi khách hàng chuyển sang hợp đồng thi công trọn gói tại xưởng, 100% chi phí thiết kế 3D ban đầu sẽ được khấu trừ trực tiếp vào đợt thanh toán nghiệm thu.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">2. Tôi có thể đến trực tiếp xưởng kiểm tra phôi gỗ trước khi sơn không?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Hoàn toàn được. Khách hàng luôn được mời tới xưởng mộc trước công đoạn sơn phủ để nghiệm thu đúng chủng loại gỗ óc chó Bắc Mỹ hay An Cường chống ẩm đã ký.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">3. Thời gian hoàn thiện một căn hộ 2 hoặc 3 phòng ngủ là bao lâu?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Tổng thời gian từ lúc duyệt bản vẽ kỹ thuật đến khi lắp đặt sạch sẽ bàn giao chìa khóa là từ 35 đến 45 ngày làm việc, có điều khoản phạt tiến độ rõ ràng.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false"><span class="title-2">4. Phụ kiện bản lề và ray trượt tủ dùng của hãng nào?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" aria-hidden="true"><path d="M40 128H216"/><path d="M128 40V216"/></svg></button>
+            <div class="faq-panel"><div class="faq-panel-inner"><p class="body-6 faq-answer">Toàn bộ hệ bản lề giảm chấn và ray âm sử dụng Blum hoặc Hafele chính hãng có tem bảo hành điện tử theo công trình.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white reveal-section" id="khao-sat">
+      <div class="container">
+        <div class="cta-grid">
+          <div class="cta-copy">
+            <h2 class="heading-3">Đặt lịch kiến trúc sư đo đạc Laser miễn phí tại công trình</h2>
+            <p class="body-3">Mang theo hộp mẫu gỗ óc chó, đá tự nhiên và vải bọc thật để bạn cầm trực tiếp dưới ánh sáng căn hộ trước khi quyết định.</p>
+            <div class="hairline"></div>
+            <div class="caption-2" style="color: var(--ink-secondary);">Showroom &amp; Văn phòng: 24 Nguyễn Cơ Thạch, Sala, Thành phố Thủ Đức</div>
+          </div>
+
+          <form class="form-card" id="interiorForm" novalidate>
+            <div class="form-group">
+              <label for="custName" class="title-4">Họ và tên</label>
+              <input type="text" id="custName" class="form-control" placeholder="Ví dụ: Hoàng Gia Minh" autocomplete="name" required>
+              <span class="caption-5 field-error" id="errCustName" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="custPhone" class="title-4">Số điện thoại</label>
+              <input type="tel" id="custPhone" class="form-control" placeholder="Ví dụ: 0912345678" autocomplete="tel" required>
+              <span class="caption-5 field-error" id="errCustPhone" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="projectStyle" class="title-4">Phong cách mong muốn</label>
+              <select id="projectStyle" class="form-control">
+                <option value="Modern Luxury">Modern Luxury</option>
+                <option value="Indochine Đương Đại">Indochine Đương Đại</option>
+                <option value="Wabi Sabi Mộc Mạc">Wabi Sabi Mộc Mạc</option>
+              </select>
+            </div>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite">
+              <strong class="body-4" id="formStatusTitle"></strong>
+              <span class="body-6" id="formStatusDesc" style="color: var(--ink-secondary);"></span>
+            </div>
+            <button type="submit" class="btn btn-primary button-md">Đặt lịch đo hiện trạng miễn phí</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="arch-footer">
+  <footer class="site-footer">
     <div class="container">
-      <p>© 2026 ATELIER MỘC &amp; ĐÁ — Giao diện mẫu ngành Kiến Trúc &amp; Nội Thất thực hiện bởi <a href="https://webgiatot.me/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);font-weight:700;">PAT TECH (webgiatot.me)</a></p>
+      <div class="hairline"></div>
+      <div class="footer-inner">
+        <div class="caption-2" style="color: var(--ink-muted);">Atelier Mộc &amp; Đá · Bản demo thiết kế giao diện nội thất của PAT TECH</div>
+        <div class="footer-links caption-2">
+          <button type="button" class="footer-link-btn" data-legal="privacy">Chính sách bảo mật</button>
+          <button type="button" class="footer-link-btn" data-legal="terms">Điều khoản sử dụng</button>
+          <a href="/" class="footer-link-btn">Quay lại trang chủ PAT TECH</a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 class="heading-6" id="legalModalTitle">Thông tin pháp lý</h2>
+        <button type="button" class="btn btn-outline button-sm" id="closeLegalBtn">Đóng</button>
+      </div>
+      <div class="hairline"></div>
+      <p class="body-6" id="legalModalBody" style="color: var(--ink-secondary);"></p>
+    </div>
+  </div>
+
   <script>
-    const interiorProjects = [
-      { cat: 'luxury', tag: 'Modern Luxury • 115m²', name: 'Penthouse Metropole Thủ Thiêm', img: 'image/hero-interior.webp', desc: 'Gỗ óc chó tự nhiên kết hợp đá Marble Travertine và hệ đèn hắt ấm.' },
-      { cat: 'indochine', tag: 'Indochine • 140m²', name: 'Biệt Thự Phố Đông Dương Hoài Cổ', img: 'image/style-indochine.webp', desc: 'Đan mây thủ công, gỗ sẫm màu chạm khắc tinh tế cùng đèn đồng ấm áp.' },
-      { cat: 'wabisabi', tag: 'Wabi-Sabi • 90m²', name: 'Căn Hộ Thiền Tịnh Sơn Hiệu Ứng', img: 'image/style-wabisabi.webp', desc: 'Tường hiệu ứng vữa thô mộc mạc hòa quyện vải linen và gỗ sồi nhạt.' },
-      { cat: 'luxury', tag: 'Hoàn Thiện • 85m²', name: 'Căn Hộ Bàn Giao Thô Chìa Khóa Trao Tay', img: 'image/room-finished.webp', desc: 'Thi công trọn gói trong 42 ngày đúng phối cảnh 3D tới 99%.' }
-    ];
+    (function () {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion) { document.documentElement.classList.add('is-ready'); }
+      else { window.requestAnimationFrame(() => window.requestAnimationFrame(() => document.documentElement.classList.add('is-ready'))); }
 
-    let activeInteriorCat = 'all';
-    let houseMult = 1.0;
-    let houseLabel = 'Chung cư';
-    let styleName = 'Modern Luxury';
-    let styleRateMil = 5.8;
-    let pkgType = 'turnkey';
-    let pkgLabel = 'Trọn gói chìa khóa trao tay';
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      function setMenuOpen(open) {
+        menuToggle.setAttribute('aria-expanded', String(open));
+        mobileDrawer.setAttribute('aria-hidden', String(!open));
+        mobileDrawer.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      menuToggle.addEventListener('click', () => setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true'));
+      mobileDrawer.querySelectorAll('a').forEach((l) => l.addEventListener('click', () => setMenuOpen(false)));
 
-    function renderInteriorProjects() {
-      const grid = document.getElementById('interiorProjectsGrid');
-      const list = activeInteriorCat === 'all' ? interiorProjects : interiorProjects.filter(p => p.cat === activeInteriorCat);
-      grid.innerHTML = list.map(p => `
-        <article class="proj-card">
-          <div class="proj-img">
-            <img loading="lazy" src="${p.img}" alt="${p.name}">
-            <span class="proj-tag">${p.tag}</span>
-          </div>
-          <div class="proj-body">
-            <h3>${p.name}</h3>
-            <p>${p.desc}</p>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    function filterInterior(cat, btn) {
-      activeInteriorCat = cat;
-      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      renderInteriorProjects();
-    }
-
-    function setHouseType(id, label, mult, btn) {
-      houseMult = mult;
-      houseLabel = label;
-      document.getElementById('lblHouseType').innerText = label;
-      document.querySelectorAll('#houseTypeBtns .seg-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      calcInteriorCost();
-    }
-
-    function setArchStyle(name, rateMil, btn) {
-      styleName = name;
-      styleRateMil = rateMil;
-      document.getElementById('lblStyle').innerText = name;
-      document.querySelectorAll('#styleBtns .seg-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      calcInteriorCost();
-    }
-
-    function setArchPkg(pkg, label, btn) {
-      pkgType = pkg;
-      pkgLabel = label;
-      document.getElementById('lblPackage').innerText = label;
-      document.querySelectorAll('#pkgBtns .seg-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      calcInteriorCost();
-    }
-
-    function calcInteriorCost() {
-      const area = parseInt(document.getElementById('areaRange').value, 10);
-      document.getElementById('lblArea').innerText = area + ' m²';
-
-      const designRatePerM2 = styleName === 'Modern Luxury' ? 280000 : 220000;
-      const designFee = area * designRatePerM2;
-      const buildTotal = Math.round(area * styleRateMil * 1000000 * houseMult);
-
-      let totalDisplay = buildTotal;
-      let designStr = 'Miễn phí 100%';
-      let durationStr = area > 160 ? '60 – 75 ngày' : '35 – 45 ngày';
-
-      if (pkgType === 'design') {
-        totalDisplay = designFee;
-        designStr = designFee.toLocaleString('vi-VN') + 'đ';
-        durationStr = '10 – 15 ngày';
-      } else if (pkgType === 'build') {
-        totalDisplay = Math.round(buildTotal * 0.94);
-        designStr = 'Đã có bản vẽ';
+      const revealSections = document.querySelectorAll('.reveal-section');
+      if (reducedMotion || !('IntersectionObserver' in window)) { revealSections.forEach((el) => el.classList.add('is-visible')); }
+      else {
+        const obs = new IntersectionObserver((entries, o) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); o.unobserve(e.target); } }); }, { threshold: 0.1 });
+        revealSections.forEach((el) => obs.observe(el));
       }
 
-      document.getElementById('resTotalEst').innerText = totalDisplay.toLocaleString('vi-VN') + 'đ';
-      document.getElementById('resDesignFee').innerText = designStr;
-      document.getElementById('resDuration').innerText = durationStr;
-    }
+      // Before / After Slider
+      const baRange = document.getElementById('baRange');
+      const baAfter = document.getElementById('baAfterImg');
+      const baDivider = document.getElementById('baDivider');
+      const baHandle = document.getElementById('baHandle');
+      function updateSlider(val) {
+        baAfter.style.clipPath = `inset(0 0 0 ${val}%)`;
+        baDivider.style.left = `${val}%`;
+        baHandle.style.left = `${val}%`;
+      }
+      baRange.addEventListener('input', () => updateSlider(baRange.value));
+      updateSlider(50);
 
-    function applyInteriorEst() {
-      const area = document.getElementById('areaRange').value;
-      const total = document.getElementById('resTotalEst').innerText;
-      document.getElementById('inNote').value = `${houseLabel} ${area}m² • Phong cách ${styleName} • Gói ${pkgLabel} (Dự toán ${total}).`;
-      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-    }
+      // Style Gallery Switcher
+      const styleMap = {
+        modern: { img: './image/hero-interior.webp', alt: 'Phòng khách Modern Luxury gỗ óc chó', title: 'Modern Luxury · Óc chó & Travertine', mat: 'Đơn giá thi công tham khảo: 6,2 triệu / m² sàn', colors: ['#221B15', '#DCD3C4', '#9A6F3B'], val: 'Modern Luxury' },
+        indochine: { img: './image/style-indochine.webp', alt: 'Không gian Indochine kết hợp mây đan và gỗ tự nhiên', title: 'Indochine Đương Đại · Gõ đỏ & Mây đan', mat: 'Đơn giá thi công tham khảo: 6,8 triệu / m² sàn', colors: ['#3B2314', '#D7C49E', '#1E3A2F'], val: 'Indochine Đương Đại' },
+        wabisabi: { img: './image/style-wabisabi.webp', alt: 'Không gian Wabi Sabi tối giản sơn vữa và gỗ sồi', title: 'Wabi Sabi · Gỗ sồi & Vôi vữa tự nhiên', mat: 'Đơn giá thi công tham khảo: 5,4 triệu / m² sàn', colors: ['#E8E0D4', '#B99F80', '#6E665E'], val: 'Wabi Sabi Mộc Mạc' }
+      };
+      document.querySelectorAll('.style-tab').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const item = styleMap[btn.dataset.style];
+          if (!item) return;
+          document.querySelectorAll('.style-tab').forEach((b) => { b.classList.remove('is-active'); b.setAttribute('aria-selected', 'false'); });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+          const img = document.getElementById('styleImg');
+          img.src = item.img;
+          img.alt = item.alt;
+          document.getElementById('styleTitle').textContent = item.title;
+          document.getElementById('styleMaterial').textContent = item.mat;
+          document.getElementById('swatchRow').innerHTML = item.colors.map((c) => `<span class="swatch-dot" style="background: ${c};"></span>`).join('');
+          document.getElementById('projectStyle').value = item.val;
+        });
+      });
 
-    function submitInteriorForm(e) {
-      e.preventDefault();
-      const name = document.getElementById('inName').value.trim();
-      const phone = document.getElementById('inPhone').value.trim();
-      const proj = document.getElementById('inProject').value;
-      const note = document.getElementById('inNote').value.trim();
-      const code = '#AMD-' + Math.floor(1000 + Math.random() * 9000);
-      document.getElementById('archCode').innerText = code;
-      document.getElementById('archTicketBody').innerHTML = `
-        <div><strong>Gia chủ:</strong> ${name} (${phone})</div>
-        <div><strong>Công trình:</strong> ${proj}</div>
-        ${note ? `<div><strong>Chi tiết:</strong> ${note}</div>` : ''}
-      `;
-      document.getElementById('interiorBookingForm').style.display = 'none';
-      document.getElementById('archTicket').classList.add('visible');
-    }
+      // m2 Cost Estimator
+      let propMult = 1;
+      let finishRate = 5800000;
+      const areaRange = document.getElementById('areaRange');
+      function updateEstimate() {
+        const area = parseInt(areaRange.value, 10);
+        const total = Math.round(area * finishRate * propMult);
+        const design = Math.round(area * 250000 * propMult);
+        const fitout = Math.round((total - design) * 0.31);
+        const furniture = total - design - fitout;
+        document.getElementById('areaOut').textContent = `${area} m²`;
+        document.getElementById('totalCostOut').textContent = `${total.toLocaleString('vi-VN')}đ`;
+        document.getElementById('designCostOut').textContent = `${design.toLocaleString('vi-VN')}đ`;
+        document.getElementById('fitoutCostOut').textContent = `${fitout.toLocaleString('vi-VN')}đ`;
+        document.getElementById('furnitureCostOut').textContent = `${furniture.toLocaleString('vi-VN')}đ`;
+      }
+      areaRange.addEventListener('input', updateEstimate);
+      document.querySelectorAll('#propTypeGroup .tier-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#propTypeGroup .tier-btn').forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          propMult = parseFloat(btn.dataset.mult);
+          updateEstimate();
+        });
+      });
+      document.querySelectorAll('#finishTierGroup .tier-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#finishTierGroup .tier-btn').forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          finishRate = parseInt(btn.dataset.rate, 10);
+          updateEstimate();
+        });
+      });
+      updateEstimate();
 
-    function resetInteriorForm() {
-      document.getElementById('interiorBookingForm').style.display = 'block';
-      document.getElementById('archTicket').classList.remove('visible');
-    }
+      // FAQ
+      document.querySelectorAll('.faq-trigger').forEach((tr) => {
+        tr.addEventListener('click', () => {
+          const item = tr.closest('.faq-item');
+          const open = !item.classList.contains('is-open');
+          document.querySelectorAll('.faq-item').forEach((o) => { o.classList.remove('is-open'); o.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); });
+          if (open) { item.classList.add('is-open'); tr.setAttribute('aria-expanded', 'true'); }
+        });
+      });
 
-    function toggleArchMenu() {
-      document.getElementById('archDrawer').classList.toggle('open');
-    }
+      // Form
+      const form = document.getElementById('interiorForm');
+      const custName = document.getElementById('custName');
+      const custPhone = document.getElementById('custPhone');
+      const errName = document.getElementById('errCustName');
+      const errPhone = document.getElementById('errCustPhone');
+      const statusBox = document.getElementById('formStatus');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errName.textContent = ''; errPhone.textContent = '';
+        custName.classList.remove('is-invalid'); custPhone.classList.remove('is-invalid');
+        statusBox.classList.remove('is-visible');
+        const name = custName.value.trim();
+        const phone = custPhone.value.trim().replace(/[\s.]/g, '');
+        let bad = false;
+        if (name.length < 2) { errName.textContent = 'Vui lòng nhập họ và tên đầy đủ.'; custName.classList.add('is-invalid'); bad = true; }
+        if (!/^0\d{9}$/.test(phone)) { errPhone.textContent = 'Số điện thoại cần đủ 10 chữ số bắt đầu bằng số 0.'; custPhone.classList.add('is-invalid'); bad = true; }
+        if (bad) { (name.length < 2 ? custName : custPhone).focus(); return; }
+        document.getElementById('formStatusTitle').textContent = `Đã đặt lịch đo Laser cho ${name}`;
+        document.getElementById('formStatusDesc').textContent = `Phong cách ${document.getElementById('projectStyle').value} · Dự toán hiện tại ${document.getElementById('totalCostOut').textContent}. Kiến trúc sư sẽ gọi qua số ${phone}.`;
+        statusBox.classList.add('is-visible');
+      });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      renderInteriorProjects();
-      calcInteriorCost();
-    });
+      // Legal Modal
+      const legalModal = document.getElementById('legalModal');
+      const closeLegalBtn = document.getElementById('closeLegalBtn');
+      const legalText = {
+        privacy: 'Bản vẽ hiện trạng và thông tin liên hệ trên trang mẫu Atelier Mộc và Đá chỉ dùng minh họa quy trình khảo sát thực tế.',
+        terms: 'Đơn giá theo mét vuông trên trang là mức ước tính tham khảo theo quy cách vật liệu chuẩn tại xưởng.'
+      };
+      function closeLegal() { legalModal.classList.remove('is-open'); }
+      document.querySelectorAll('[data-legal]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.getElementById('legalModalTitle').textContent = btn.dataset.legal === 'privacy' ? 'Chính sách bảo mật' : 'Điều khoản sử dụng';
+          document.getElementById('legalModalBody').textContent = legalText[btn.dataset.legal];
+          legalModal.classList.add('is-open');
+          closeLegalBtn.focus();
+        });
+      });
+      closeLegalBtn.addEventListener('click', closeLegal);
+      legalModal.addEventListener('click', (e) => { if (e.target === legalModal) closeLegal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setMenuOpen(false); closeLegal(); } });
+    })();
   </script>
-  <script src="/js/demo-bridge.js"></script>
 </body>
 </html>
